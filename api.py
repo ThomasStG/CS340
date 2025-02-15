@@ -75,7 +75,7 @@ def incrementItem(itemID, numAdded, cursor, connection):
 def decrimentItem(itemID, numRemoved, cursor, connection):
     item = getItem(itemID, cursor)
     newCount = item["count"] - numRemoved
-
+    newCount = max(newCount, 0)
     cursor.execute(
         """UPDATE items SET count = ? WHERE id = ?""",
         (
