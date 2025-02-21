@@ -1,7 +1,7 @@
 import sqlite3
 
 
-def connectDB():
+def buildDB():
     connection = sqlite3.connect("./data.db")
     cursor = connection.cursor()
     # Create a table
@@ -9,16 +9,17 @@ def connectDB():
         """CREATE TABLE IF NOT EXISTS 
             items (
                 id INTEGER PRIMARY KEY, 
-                name TEXT, 
-                size TEXT, 
-                isMetric INTEGER, 
-                location TEXT, 
-                count INTEGER, 
-                threshold INTEGER, 
-                isContacted INTEGER
+                name TEXT NOT NULL, 
+                size TEXT NOT NULL, 
+                isMetric INTEGER NOT NULL, 
+                location TEXT NOT NULL, 
+                count INTEGER NOT NULL, 
+                threshold INTEGER NOT NULL, 
+                isContacted INTEGER NOT NULL
             )"""
     )
-    return connection, cursor
+    connection.commit()
+    connection.close()
 
 
 def findByName(name, isMetric, size, cursor):
@@ -72,7 +73,7 @@ def incrementItem(itemID, numAdded, cursor, connection):
     connection.commit()
 
 
-def decrimentItem(itemID, numRemoved, cursor, connection):
+def decrementItem(itemID, numRemoved, cursor, connection):
     item = getItem(itemID, cursor)
     newCount = item["count"] - numRemoved
     newCount = max(newCount, 0)
@@ -114,7 +115,7 @@ def removeItem(itemID, cursor, connection):
                    """,
         (itemID,),
     )
-    connection.execute()
+    connection.commit()
 
 
 # print(getItem(1, cur))
@@ -122,4 +123,4 @@ def removeItem(itemID, cursor, connection):
 # print(cur.fetchall())
 # incrementItem(1, 4, cur, con)
 # print(getItem(1, cur))
-# decrimentItem(1, 8, cur, con)
+# decrementItem(1, 8, cur, con)
