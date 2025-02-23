@@ -5,9 +5,18 @@ import sys
 
 from flask import Flask, g, jsonify, request
 from flask_cors import CORS
+from fuzzywuzzy import process
 
-from api import (addItem, buildDB, decrementItem, findByName, getItem,
-                 incrementItem, removeItem)
+from api import (
+    addItem,
+    buildDB,
+    decrementItem,
+    findByName,
+    fzf,
+    getItem,
+    incrementItem,
+    removeItem,
+)
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for Angular frontend
@@ -101,11 +110,11 @@ def parseLocationToList(location):
     return json.loads(location)
 
 
-@app.route("/increment", methods=["POST"])
+@app.route("/increment", methods=["GET"])
 def increment():
     connection = get_db()
     cursor = connection.cursor()
-    data = request.json  # Ensure this is a dictionary
+    data = request.args
     if (
         not data
         or "name" not in data
@@ -131,11 +140,11 @@ def increment():
         return jsonify({"message": f"Error incrementing item: {str(e)}"}), 400
 
 
-@app.route("/decrement", methods=["POST"])
+@app.route("/decrement", methods=["GET"])
 def decrement():
     connection = get_db()
     cursor = connection.cursor()
-    data = request.json
+    data = request.args
     if (
         not data
         or "name" not in data
@@ -161,30 +170,36 @@ def decrement():
         return jsonify({"message": f"Error decrementing item: {str(e)}"}), 400
 
 
-@app.route("/find", methods=["POST"])
+@app.route("/find", methods=["GET"])
 def findItem():
     connection = get_db()
     cursor = connection.cursor()
-    data = request.json
+    data = request.args
     if not data or "name" not in data or "isMetric" not in data or "size" not in data:
         return jsonify({"error": "Invalid data"}), 400
 
     try:
-        itemId = findByName(data["name"], data["isMetric"], data["size"], cursor)
+        print(
+            f"Searching for item with name: {data['name']}, isMetric: {data['isMetric']}, size: {data['size']}"
+        )
+        metric_val = data["isMetric"].strip().lower() == "true"
+        itemId = findByName(data["name"], metric_val, data["size"], cursor)
+        print(itemId)
         if itemId is None:
             return jsonify({"message": "Error item not found"}), 404
         item = getItem(itemId, cursor)
+        print(item)
         item["location"] = parseLocationToList(item["location"])
-        return jsonify({"message": "Item found successfully", "data": item})
+        return jsonify({"message": "Item found successfully", "data": [item]})
     except Exception as e:
         return jsonify({"message": f"Error finding item: {str(e)}"}), 400
 
 
-@app.route("/add", methods=["POST"])
+@app.route("/add", methods=["GET"])
 def add():
     connection = get_db()
     cursor = connection.cursor()
-    data = request.json
+    data = request.args
     if (
         not data
         or "name" not in data
@@ -207,16 +222,16 @@ def add():
             cursor,
             connection,
         )
-       return jsonify({"message": "Item added successfully"})
+        return jsonify({"message": "Item added successfully"})
     except Exception as e:
         return jsonify({"message": f"Error adding item: {str(e)}"}), 400
 
 
-@app.route("/remove", methods=["POST"])
+@app.route("/remove", methods=["GET"])
 def remove():
     connection = get_db()
     cursor = connection.cursor()
-    data = request.json
+    data = request.args
     if not data or "name" not in data or "isMetric" not in data or "size" not in data:
         return jsonify({"error": "Invalid data"}), 400
 
@@ -231,6 +246,27 @@ def remove():
         return jsonify({"message": f"Error removing item: {str(e)}"}), 400
 
 
+@app.route("/fuzzyfind", methods=["GET"])
+def fuzzy():
+    connection = get_db()
+    cursor = connection.cursor()
+    data = request.args
+    if not data or "name" not in data or "isMetric" not in data or "size" not in data:
+        return jsonify({"error": "Invalid data"}), 400
+
+    try:
+        print(
+            f"Searching for item with name: {data['name']}, isMetric: {data['isMetric']}, size: {data['size']}"
+        )
+        metric_val = data["isMetric"].strip().lower() == "true"
+        item = fzf(data["name"], metric_val, data["size"], cursor)
+        print(item)
+        item["location"] = parseLocationToList(item["location"])
+        return jsonify({"message": "Item found successfully", "data": [item]})
+    except Exception as e:
+        return jsonify({"message": f"Error finding item: {str(e)}"}), 400
+
+
 if __name__ == "__main__":
     buildDB()
-    app.run(debug=True)
+    app.run(debug=True, port=3000)  # Runs on http://localhost:3000
