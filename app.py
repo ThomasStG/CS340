@@ -190,7 +190,7 @@ def findItem():
         item = getItem(itemId, cursor)
         print(item)
         item["location"] = parseLocationToList(item["location"])
-        return jsonify({"message": "Item found successfully", "data": [item]})
+        return jsonify({"message": "Item found successfully", "data": item})
     except Exception as e:
         return jsonify({"message": f"Error finding item: {str(e)}"}), 400
 
@@ -259,10 +259,13 @@ def fuzzy():
             f"Searching for item with name: {data['name']}, isMetric: {data['isMetric']}, size: {data['size']}"
         )
         metric_val = data["isMetric"].strip().lower() == "true"
-        item = fzf(data["name"], metric_val, data["size"], cursor)
-        print(item)
-        item["location"] = parseLocationToList(item["location"])
-        return jsonify({"message": "Item found successfully", "data": [item]})
+        print("1")
+        items = fzf(data["name"], metric_val, data["size"], cursor)
+        print("2")
+        for item in items:
+            if "location" in item and item["location"] is not None:
+                item["location"] = parseLocationToList(item["location"])
+        return jsonify({"message": "Item found successfully", "data": items})
     except Exception as e:
         return jsonify({"message": f"Error finding item: {str(e)}"}), 400
 

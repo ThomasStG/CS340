@@ -46,10 +46,10 @@ def fzf(name, isMetric, size, cursor, top_n=5):
         """,
         (isMetric,),
     )
-    data = cursor.fetchall()  # List of sqlite3.Row (dictionary-like)
+    data = cursor.fetchall()
 
     if not data:
-        return []  # Return empty list if no data exists
+        return []
 
     # Convert rows to dictionaries
     row_dict = {row["id"]: dict(row) for row in data}
@@ -57,18 +57,18 @@ def fzf(name, isMetric, size, cursor, top_n=5):
     # Create a dictionary {id: "name size"} for fuzzy matching
     choices = {row["id"]: f"{row['name']} {row['size']}" for row in data}
 
-    # Query string to match against
-    query = f"{name} {size}"
+    # Handle cases where size is empty or None
+    query = f"{name} {size}" if size else name
 
-    # Get top N matches (IDs retained)
+    # Get top N matches with their IDs
     best_matches = process.extract(
         query, choices, scorer=fuzz.partial_ratio, limit=top_n
     )
 
-    # Extract full rows as dictionaries
-    results = [row_dict[match[2]] for match in best_matches]  # match[2] is ID
+    # Extract full rows as dictionaries using their IDs
+    results = [row_dict[match[2]] for match in best_matches]
 
-    return results  # List of dictionaries
+    return results  # Return structured output
 
 
 def getItem(itemID, cursor):
@@ -88,7 +88,7 @@ def getItem(itemID, cursor):
     cursor.row_factory = sqlite3.Row  # This makes fetch results act like dicts
     item = cursor.fetchone()
 
-    return dict(item) if item else None  # Convert Row to a dictionary
+    return [dict(item)] if item else None  # Convert Row to a dictionary
 
 
 def incrementItem(itemID, numAdded, cursor, connection):
