@@ -122,13 +122,13 @@ def decrementItem(itemID, numRemoved, cursor, connection):
     )
     connection.commit()
     if newCount < int(item["threshold"]) and not item["isContacted"]:
-        print("ERROR")
         cursor.execute(
             """
                        UPDATE items SET isContacted = 1 WHERE id = ?
                        """,
             (itemID,),
         )
+        return 1
 
 
 def addItem(name, size, isMetric, location, count, threshold, cursor, connection):

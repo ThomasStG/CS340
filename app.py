@@ -158,12 +158,15 @@ def decrement():
         itemId = findByName(data["name"], data["isMetric"], data["size"], cursor)
         if itemId is None:
             return jsonify({"message": "Error item not found"}), 404
-        decrementItem(
+        message_status = decrementItem(
             itemId,
             data["num"],
             cursor,
             connection,
         )
+        if message_status == 1:
+            # send email
+            print("Sending Email")
 
         return jsonify({"message": "Item decremented successfully"})
     except Exception as e:
@@ -189,7 +192,9 @@ def findItem():
             return jsonify({"message": "Error item not found"}), 404
         item = getItem(itemId, cursor)
         print(item)
-        item["location"] = parseLocationToList(item["location"])
+
+        if "location" in item and item["location"] is not None:
+            item["location"] = parseLocationToList(item["location"])
         return jsonify({"message": "Item found successfully", "data": item})
     except Exception as e:
         return jsonify({"message": f"Error finding item: {str(e)}"}), 400
@@ -232,7 +237,8 @@ def remove():
     connection = get_db()
     cursor = connection.cursor()
     data = request.args
-    if not data or "name" not in data or "isMetric" not in data or "size" not in data:
+    if not data or ["name", "isMetric", "size"] not in data:
+        # if not data or "name" not in data or "isMetric" not in data or "size" not in data:
         return jsonify({"error": "Invalid data"}), 400
 
     try:
@@ -259,17 +265,22 @@ def fuzzy():
             f"Searching for item with name: {data['name']}, isMetric: {data['isMetric']}, size: {data['size']}"
         )
         metric_val = data["isMetric"].strip().lower() == "true"
-        print("1")
         items = fzf(data["name"], metric_val, data["size"], cursor)
-        print("2")
         for item in items:
             if "location" in item and item["location"] is not None:
                 item["location"] = parseLocationToList(item["location"])
+        print(items)
         return jsonify({"message": "Item found successfully", "data": items})
     except Exception as e:
         return jsonify({"message": f"Error finding item: {str(e)}"}), 400
 
 
-if __name__ == "__main__":
+def runServer():
     buildDB()
     app.run(debug=True, port=3000)  # Runs on http://localhost:3000
+
+
+if __name__ == "__main__":
+    main()
+
+# email api: ex. RESEND
