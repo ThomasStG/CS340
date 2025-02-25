@@ -15,7 +15,7 @@
     top: 0;
     z-index: 1;
     display: grid;
-    grid-template-columns: 15% 15% 10% 10% 10% 10% 10%   ;
+    grid-template-columns: 15% 15% 10% 10% 10% 10% 10% 10% 10%;
   }
 
   .headerColumn{
@@ -26,6 +26,16 @@
   .content {
     overflow-y: auto; 
     flex-grow: 1; 
+    padding: 10px; 
+  }
+
+  .item{
+    display: grid;
+    grid-template-columns: 15% 15% 10% 10% 10% 10% 10% 10% 10%;
+  }
+
+  .itemColumn{
+    height: 20px;
     padding: 10px;
   }
   

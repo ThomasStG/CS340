@@ -27,39 +27,38 @@
     <div class="headerColumn">
       Add/Subtract
     </div>
+
+    <div class="headerColumn">
+      Admin?: 
+      <input type="text" [(ngModel)]="enteredPW" (input)="checkPassword()">
+    </div>
+
+    <div *ngIf="isAdminValid">
+      <p>hello admin user, future admin stuff will go here.</p>
+    </div>
     
   </div>
 
   <!-- This div is for the content scrolling section -->
   <div class="content">
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
-    <p>test</p>
+    @for(item of testList; track item.size){
+      <div class="item">
+        <div class="itemColumn">{{item.name}}</div>
+        <div class="itemColumn">{{item.size}}</div>
+        <div class="itemColumn">{{item.ismetric}}</div>
+        <div class="itemColumn">{{item.location}}</div>
+        <div class="itemColumn">{{item.count}}</div>
+        <div class="itemColumn">{{item.threshold}}</div>
+        <div class="itemColumn">
+          <input style="width:40px" type="number" [(ngModel)]="itemInput[item.name]" placeholder="1">
+          <button (click)="incrementCount(item)">+</button>
+          <button (click)="decrementCount(item)">-</button>
+        </div>
+        <div class="itemColumn">
+          <button id="{{item.name}}" (click)="getName($event)">Show Name</button>
+        </div>
+        
+      </div>
+    }
   </div>
 </div>
-`
