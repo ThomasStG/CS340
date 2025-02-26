@@ -1,6 +1,12 @@
-<ng-container>
-  <td>{{ item.name }}</td>
-  <td>{{ item.size }}</td>
-  <td>{{ item.metric }}</td>
-  <td>{{ item.count }}</td>
-</ng-container>
+<div class="item">
+  <div class="itemColumn">{{item.name}}</div>
+  <div class="itemColumn">{{item.size}}</div>
+  <div class="itemColumn">{{item.metric ? 'Yes' : 'No'}}</div>
+  <div class="itemColumn">{{item.location}}</div>
+  <div class="itemColumn">{{item.count}}</div>
+  <div class="itemColumn">{{item.threshold}}</div>
+  <div class="itemColumn">
+    <input class="subtractAmount" type="text"/>
+    <button>-</button>
+  </div>
+</div>

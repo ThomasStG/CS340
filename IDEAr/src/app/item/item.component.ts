@@ -11,6 +11,7 @@ export class ItemComponent {
     name: '',
     size: '',
     metric: false,
+    location: '',
     count: 0,
     threshold: 0,
   };

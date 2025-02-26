@@ -1,16 +1,17 @@
-<app-item-search (formSubmit)="handleSearch($event)"></app-item-search>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Size</th>
-      <th>Metric</th>
-      <th>Count</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of items">
+
+
+
+<div class="scrollable-box">
+
+  <app-item-search (formSubmit)="handleSearch($event)"></app-item-search>
+
+  <div class="content">
+    <div *ngFor="let item of items">
       <app-item [item]="item"></app-item>
-    </tr>
-  </tbody>
-</table>
+    </div>
+  </div>
+
+</div>
+<!--
+
+-->
