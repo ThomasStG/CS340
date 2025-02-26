@@ -13,6 +13,7 @@ from api import (
     decrementItem,
     findByName,
     fzf,
+    getAll,
     getItem,
     incrementItem,
     removeItem,
@@ -273,6 +274,17 @@ def fuzzy():
         return jsonify({"message": "Item found successfully", "data": items})
     except Exception as e:
         return jsonify({"message": f"Error finding item: {str(e)}"}), 400
+
+
+@app.route("/findAll", methods=["GET"])
+def listAll():
+    connection = get_db()
+    cursor = connection.cursor()
+    try:
+        items = getAll(cursor)
+        return jsonify({"message": "items found successfully", "data": items})
+    except Exception as e:
+        return jsonify({"message": f"Error finding items: {str(e)}"}), 400
 
 
 def runServer():

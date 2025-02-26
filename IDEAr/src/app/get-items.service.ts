@@ -20,4 +20,8 @@ export class GetItemsService {
     const url = `http://127.0.0.1:3000/fuzzyfind?name=${encodeURIComponent(name)}&isMetric=${isMetric}&size=${size}`;
     return this.http.get(url);
   }
+  getAllItems(): Observable<any> {
+    const url = 'http://127.0.0.1:3000/findAll';
+    return this.http.get(url);
+  }
 }

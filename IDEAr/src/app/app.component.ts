@@ -52,7 +52,7 @@ export class AppComponent {
   }
 
   ngOnInit(): void {
-    this.getItemsService.getItem('Plastic Screws', false, '8/32').subscribe({
+    this.getItemsService.getAllItems().subscribe({
       next: (response) => {
         console.log('API Response:', response);
         this.items = response.data; // Extract 'data' from response

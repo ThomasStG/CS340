@@ -24,6 +24,19 @@ def buildDB():
     connection.close()
 
 
+def getAll(cursor):
+    cursor.execute(
+        """
+                   SELECT name, isMetric, size, location, count, threshold
+                   FROM items
+                   """
+    )
+    items = cursor.fetchall()
+    return [
+        dict(zip([column[0] for column in cursor.description], row)) for row in items
+    ]
+
+
 def findByName(name, isMetric, size, cursor):
     cursor.execute(
         """
