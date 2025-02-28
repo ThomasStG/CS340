@@ -5,7 +5,7 @@
   </div>
   <title>Size</title>
   <div class="flex flex-col">
-    
+
   </div>
   <select formControlName="metric">
     <option value="True">Metric</option>
@@ -15,8 +15,6 @@
   <button type="button" (click)="onSubmit('multi')">Search Similar</button>
 </div>
 -->
-
-
 
 <div [formGroup]="myForm" class="header">
   <div class="headerColumn">
@@ -33,24 +31,15 @@
     <div *ngIf="myForm.controls.size.invalid && myForm.controls.size.touched">
       <small>Size is required.</small>
     </div>
-
   </div>
   <div class="headerColumn">
-    Is Metric: 
-    <input type="checkbox" formControlName="Metric">
+    Is Metric:
+    <input type="checkbox" formControlName="metric" />
   </div>
-  <div class="headerColumn">
-    Location
-  </div>
-  <div class="headerColumn">
-    Count
-  </div>
-  <div class="headerColumn">
-    Threshold
-  </div>
-  <div class="headerColumn">
-    Add/Subtract
-  </div>
+  <div class="headerColumn">Location</div>
+  <div class="headerColumn">Count</div>
+  <div class="headerColumn">Threshold</div>
+  <div class="headerColumn">Add/Subtract</div>
 
   <div class="headerColumn">
     <button type="button" (click)="onSubmit('single')">Search</button>
@@ -58,5 +47,5 @@
   <div class="headerColumn">
     <button type="button" (click)="onSubmit('multi')">Search Similar</button>
   </div>
-
 </div>
+

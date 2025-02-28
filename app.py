@@ -93,7 +93,7 @@ def main():
 
 
 def importCSV():
-    con = get_db()
+    con = sqlite3.connect("data.db")
     cur = con.cursor()
     cur.execute("""DELETE FROM items""")
     with open("./SampleData.csv", newline="") as csvfile:
@@ -270,6 +270,10 @@ def fuzzy():
         for item in items:
             if "location" in item and item["location"] is not None:
                 item["location"] = parseLocationToList(item["location"])
+        if item["isMetric"]:
+            item["isMetric"] = 1
+        else:
+            item["isMetric"] = 0
         print(items)
         return jsonify({"message": "Item found successfully", "data": items})
     except Exception as e:

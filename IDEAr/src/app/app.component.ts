@@ -29,6 +29,7 @@ export class AppComponent {
       .subscribe({
         next: (response) => {
           console.log('API Response:', response);
+          console.log(response.data);
           this.items = response.data; // Extract 'data' from response
         },
         error: (err) => {
