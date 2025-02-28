@@ -1,64 +1,15 @@
-<!-- This div is for the whole box including the header -->
+<!-- Main layout of the app -->
 <div class="scrollable-box">
-
-  <!-- This div is for the header section -->
   <div class="header">
-    <div class="headerColumn">
-      Name:
-      <input type="text" [(ngModel)]="Name">
-    </div>
-    <div class="headerColumn">
-      Size
-      <input type="text" [(ngModel)]="Size">
-    </div>
-    <div class="headerColumn">
-      Is Metric: 
-      <input type="checkbox" [(ngModel)]="isMetric">
-    </div>
-    <div class="headerColumn">
-      Location
-    </div>
-    <div class="headerColumn">
-      Count
-    </div>
-    <div class="headerColumn">
-      Threshold
-    </div>
-    <div class="headerColumn">
-      Add/Subtract
-    </div>
+    <h1>IDEr</h1>
 
-    <div class="headerColumn">
-      Admin?: 
-      <input type="text" [(ngModel)]="enteredPW" (input)="checkPassword()">
-    </div>
-
-    <div *ngIf="isAdminValid">
-      <p>hello admin user, future admin stuff will go here.</p>
-    </div>
-    
+    <!-- Navigation -->
+    <nav>
+      <button routerLink="/">Home</button>
+      <button routerLink="/admin">Admin</button>
+    </nav>
   </div>
 
-  <!-- This div is for the content scrolling section -->
-  <div class="content">
-    @for(item of testList; track item.size){
-      <div class="item">
-        <div class="itemColumn">{{item.name}}</div>
-        <div class="itemColumn">{{item.size}}</div>
-        <div class="itemColumn">{{item.ismetric}}</div>
-        <div class="itemColumn">{{item.location}}</div>
-        <div class="itemColumn">{{item.count}}</div>
-        <div class="itemColumn">{{item.threshold}}</div>
-        <div class="itemColumn">
-          <input style="width:40px" type="number" [(ngModel)]="itemInput[item.name]" placeholder="1">
-          <button (click)="incrementCount(item)">+</button>
-          <button (click)="decrementCount(item)">-</button>
-        </div>
-        <div class="itemColumn">
-          <button id="{{item.name}}" (click)="getName($event)">Show Name</button>
-        </div>
-        
-      </div>
-    }
-  </div>
+  <!-- This will load the current page (Home or Admin) -->
+  <router-outlet></router-outlet>
 </div>

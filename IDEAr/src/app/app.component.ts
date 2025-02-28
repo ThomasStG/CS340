@@ -35,4 +35,7 @@ export class AppComponent {
   checkPassword(){
     this.isAdminValid = this.enteredPW === this.correctPW;
   }
+
+ 
+
 }
