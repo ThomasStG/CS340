@@ -17,13 +17,13 @@
 ### Clone the Project
 
 ```sh
-git clone https://github.com/your-repo-name.git
+git clone https://github.com/ThomasStG/CS340.git
 ```
 
 ### Navigate to the Directory
 
 ```sh
-cd your-repo-name
+cd CS340/IDEAr
 ```
 
 ### Install Dependencies
@@ -43,6 +43,7 @@ To ensure consistency, it's recommended to use a virtual environment for Python.
 ### Create a Virtual Environment
 
 ```sh
+cd ..
 python3 -m venv venv
 ```
 
