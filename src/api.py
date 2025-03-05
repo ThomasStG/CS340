@@ -40,14 +40,9 @@ def build_db() -> None:
     """
     Ensures the table exists in the database
     """
-    with sqlite3.connect("./data.db") as connection:
+    with sqlite3.connect("../data/data.db") as connection:
         cursor = connection.cursor()
         # Create a table
-        cursor.execute(
-            """
-                       DROP TABLE items
-                       """
-        )
         cursor.execute(
             """CREATE TABLE IF NOT EXISTS 
                 items (
@@ -129,7 +124,6 @@ def fzf(
     Returns:
         list[dict]: list of json objects
     """
-    cursor.row_factory = sqlite3.Row  # Fetch results as dictionaries
     cursor.execute(
         """
         SELECT name, is_metric, size, location, count, threshold

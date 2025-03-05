@@ -23,8 +23,11 @@ Endpoints:
 
 import csv
 import json
+import os
 import sqlite3
 
+import resend
+from dotenv import load_dotenv
 from flask import Flask, g, jsonify, request
 from flask_cors import CORS
 
@@ -58,7 +61,7 @@ def get_db() -> sqlite3.Connection:
 
 
 @app.teardown_appcontext
-def teardown_db(exception: Exception) -> None:
+def teardown_db(_: Exception) -> None:
     """
     Cleans up the connections and global variable on quit.
 
@@ -153,7 +156,16 @@ def import_csv(uri: str) -> None:
     with open(uri, newline="", encoding="utf-8") as csvfile:
         spamreader = csv.reader(csvfile, delimiter=",", quotechar="|")
         for row in spamreader:
-            add_item(row[1], row[2], row[3], row[4], row[5], row[6], cur, con)
+            add_item(
+                row[1],
+                row[2],
+                row[3].strip().lower() == "true",
+                row[4],
+                int(row[5]),
+                int(row[6]),
+                cur,
+                con,
+            )
     con.commit()
 
 
@@ -172,7 +184,16 @@ def add_from_csv(uri) -> None:
     with open(uri, newline="", encoding="utf-8") as csvfile:
         spamreader = csv.reader(csvfile, delimiter=",", quotechar="|")
         for row in spamreader:
-            add_item(row[1], row[2], row[3], row[4], row[5], row[6], cur, con)
+            add_item(
+                row[1],
+                row[2],
+                row[3].strip().lower() == "true",
+                row[4],
+                int(row[5]),
+                int(row[6]),
+                cur,
+                con,
+            )
     con.commit()
 
 
@@ -230,8 +251,7 @@ def increment():
             cursor,
         )
         if item_id is None:
-            return jsonify({"status": "error", "message": "Error item not found"}), 404
-
+            raise ValueError("Item not found")
         increment_item(
             item_id,
             int(data["num"]),
@@ -244,8 +264,8 @@ def increment():
             jsonify({"status": "error", "message": f"Invalid request: {str(e)}"}),
             400,
         )
-    except ValueError:
-        return jsonify({"status": "error", "message": "Invalid number format"}), 400
+    except ValueError as e:
+        return jsonify({"status": "error", "message": f"Invalid value: {str(e)}"}), 422
     except sqlite3.IntegrityError:
         return jsonify({"status": "error", "message": "Database integrity error"}), 400
     except sqlite3.OperationalError:
@@ -287,7 +307,7 @@ def decrement():
             cursor,
         )
         if item_id is None:
-            return jsonify({"status": "error", "message": "Error item not found"}), 404
+            raise ValueError("Item not found")
         message_status = decrement_item(
             item_id,
             int(data["num"]),
@@ -296,8 +316,32 @@ def decrement():
         )
         if message_status == 1:
             # send email
-            # TODO: send email
-            print("Sending Email")
+            try:
+                load_dotenv("../data/.env")
+
+                resend.api_key = os.getenv("Resend_API")
+                _ = resend.Emails.send(
+                    {
+                        "from": "onboarding@resend.dev",
+                        "to": "i91503647@gmail.com",
+                        "subject": "{data['name']} {data['size']} is running low!",
+                        "html": f"""
+                        <h2>Stock Reminder</h2>
+                        <p>This is a reminder to stock up on <strong>{data['name']} {data['size']}</strong>.</p>
+                        <p><strong>Current count:</strong> {data['count']}</p>""",
+                    }
+                )
+                print("Sending Email")
+            except Exception as e:
+                return (
+                    jsonify(
+                        {
+                            "status": "error",
+                            "message": f"There was an error sending the email: {str(e)}",
+                        }
+                    ),
+                    500,
+                )
 
         return jsonify({"status": "success"}), 200
     except KeyError as e:
@@ -305,8 +349,8 @@ def decrement():
             jsonify({"status": "error", "message": f"Invalid request: {str(e)}"}),
             400,
         )
-    except ValueError:
-        return jsonify({"status": "error", "message": "Invalid number format"}), 400
+    except ValueError as e:
+        return jsonify({"status": "error", "message": f"Invalid value: {str(e)}"}), 422
     except sqlite3.IntegrityError:
         return jsonify({"status": "error", "message": "Database integrity error"}), 400
     except sqlite3.OperationalError:
@@ -349,12 +393,16 @@ def find_item():
         item_id = find_by_name(data["name"], metric_val, data["size"], cursor)
         print(item_id)
         if item_id is None:
-            return jsonify({"status": "error", "message": "Error item not found"}), 404
+            raise ValueError("Item not found")
         item = get_item(item_id, cursor)
         print(item)
 
-        if "location" in item and item["location"] is not None:
-            item["location"] = parse_location_to_list(item["location"])
+        if (
+            isinstance(item, dict)
+            and "location" in item
+            and item[0]["location"] is not None
+        ):
+            item[0]["location"] = parse_location_to_list(item[0]["location"])
         return (
             jsonify(
                 {
@@ -370,8 +418,8 @@ def find_item():
             jsonify({"status": "error", "message": f"Invalid request: {str(e)}"}),
             400,
         )
-    except ValueError:
-        return jsonify({"status": "error", "message": "Invalid number format"}), 400
+    except ValueError as e:
+        return jsonify({"status": "error", "message": f"Invalid value: {str(e)}"}), 422
     except sqlite3.IntegrityError:
         return jsonify({"status": "error", "message": "Database integrity error"}), 400
     except sqlite3.OperationalError:
@@ -425,8 +473,8 @@ def add():
             jsonify({"status": "error", "message": f"Invalid request: {str(e)}"}),
             400,
         )
-    except ValueError:
-        return jsonify({"status": "error", "message": "Invalid number format"}), 400
+    except ValueError as e:
+        return jsonify({"status": "error", "message": f"Invalid value: {str(e)}"}), 422
     except sqlite3.IntegrityError:
         return jsonify({"status": "error", "message": "Database integrity error"}), 400
     except sqlite3.OperationalError:
@@ -466,7 +514,7 @@ def remove():
             cursor,
         )
         if item_id is None:
-            return jsonify({"status": "error", "message": "Error item not found"}), 404
+            raise ValueError("Item not found")
         remove_item(item_id, cursor, connection)
 
         return jsonify({"status": "success"}), 200
@@ -475,8 +523,8 @@ def remove():
             jsonify({"status": "error", "message": f"Invalid request: {str(e)}"}),
             400,
         )
-    except ValueError:
-        return jsonify({"status": "error", "message": "Invalid number format"}), 400
+    except ValueError as e:
+        return jsonify({"status": "error", "message": f"Invalid value: {str(e)}"}), 422
     except sqlite3.IntegrityError:
         return jsonify({"status": "error", "message": "Database integrity error"}), 400
     except sqlite3.OperationalError:
@@ -511,18 +559,17 @@ def fuzzy():
 
     try:
         print(
-            f"Searching for item with name: {data['name']}, isMetric: {data['isMetric']}, size: {data['size']}"
+            f"""Searching for item with
+            name: {data['name']},
+            isMetric: {data['isMetric']},
+            size: {data['size']}"""
         )
         metric_val = data["isMetric"].strip().lower() == "true"
         items = fzf(data["name"], metric_val, data["size"], cursor)
         for item in items:
             if "location" in item and item["location"] is not None:
                 item["location"] = parse_location_to_list(item["location"])
-            # TODO: may change this to string output "true"/"false" to pass to frontend
-            if item["isMetric"]:
-                item["isMetric"] = 1
-            else:
-                item["isMetric"] = 0
+            item["isMetric"] = str(item["isMetric"])
         print(items)
         return (
             jsonify(
@@ -539,8 +586,8 @@ def fuzzy():
             jsonify({"status": "error", "message": f"Invalid request: {str(e)}"}),
             400,
         )
-    except ValueError:
-        return jsonify({"status": "error", "message": "Invalid number format"}), 400
+    except ValueError as e:
+        return jsonify({"status": "error", "message": f"Invalid value: {str(e)}"}), 422
     except sqlite3.IntegrityError:
         return jsonify({"status": "error", "message": "Database integrity error"}), 400
     except sqlite3.OperationalError:
@@ -578,8 +625,8 @@ def list_all():
             ),
             200,
         )
-    except ValueError:
-        return jsonify({"status": "error", "message": "Invalid number format"}), 400
+    except ValueError as e:
+        return jsonify({"status": "error", "message": f"Invalid value: {str(e)}"}), 422
     except sqlite3.IntegrityError:
         return jsonify({"status": "error", "message": "Database integrity error"}), 400
     except sqlite3.OperationalError:
