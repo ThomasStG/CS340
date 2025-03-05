@@ -6,7 +6,7 @@ import { ItemData } from '../item-data';
   templateUrl: './item.component.html',
   styleUrl: './item.component.css',
 })
-export class ItemComponent implements OnInit {
+export class ItemComponent {
   @Input() item: ItemData = {
     name: '',
     size: '',
@@ -15,11 +15,4 @@ export class ItemComponent implements OnInit {
     count: 0,
     threshold: 0,
   };
-  ngOnInit() {
-    this.item.metric = this.normalizeMetric(this.item.metric);
-  }
-
-  normalizeMetric(value: any): boolean {
-    return value === 'True' || value === 1 || value === true; // Normalize to boolean
-  }
 }
