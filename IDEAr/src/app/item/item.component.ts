@@ -6,13 +6,18 @@ import { ItemData } from '../item-data';
   templateUrl: './item.component.html',
   styleUrl: './item.component.css',
 })
-export class ItemComponent {
+export class ItemComponent implements OnInit {
   @Input() item: ItemData = {
     name: '',
     size: '',
-    metric: true,
+    is_metric: 'True',
     location: '',
     count: 0,
     threshold: 0,
   };
+  ngOnInit() {
+    console.log(this.item);
+    this.item.location = JSON.parse(this.item.location);
+    console.log(this.item);
+  }
 }
