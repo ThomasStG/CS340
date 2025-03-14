@@ -1,26 +1,22 @@
 import { Component } from '@angular/core';
+import { ItemSearchComponent } from '../item-search/item-search.component';
+import { ItemData } from '../item-data';
+import { GetItemsService } from '../get-items.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.css',
 })
 export class HomeComponent {
-  // Move these from AppComponent
-  Name: string = '';
-  Size: string = '';
-  isMetric: boolean = false;
-  testList: any[] = [
-    { name: 'Item 1', size: 'Small', ismetric: true, location: 'A1', count: 5, threshold: 10 },
-    { name: 'Item 2', size: 'Large', ismetric: false, location: 'B2', count: 3, threshold: 7 }
-  ];
-  itemInput: { [key: string]: number } = {};
+  items: ItemData[] = [];
+  constructor(private getItemsService: GetItemsService) {}
 
   trackBySize(index: number, item: any) {
     return item.size;
   }
 
-  incrementCount(item: any) {
+  /* incrementCount(item: any) {
     if (!this.itemInput[item.name]) {
       this.itemInput[item.name] = 1;
     }
@@ -36,7 +32,58 @@ export class HomeComponent {
 
   getName(event: any) {
     alert(`Item Name: ${event.target.id}`);
+  } */
+  singleSearch(data: any) {
+    this.getItemsService.getItem(data.name, data.metric, data.size).subscribe({
+      next: (response) => {
+        console.log('API Response:', response);
+        this.items = response.data; // Extract 'data' from response
+      },
+      error: (err) => {
+        console.error('Error fetching item:', err);
+      },
+    });
+  }
+  multiSearch(data: any) {
+    this.getItemsService
+      .getFuzzyItems(data.name, data.metric, data.size)
+      .subscribe({
+        next: (response) => {
+          console.log('API Response:', response);
+
+          console.log(response.data);
+          this.items = response.data; // Extract 'data' from response
+          console.log(this.items);
+        },
+        error: (err) => {
+          console.error('Error fetching item:', err);
+        },
+      });
   }
 
+  handleSearch(event: { data: any; action: string }) {
+    var action = event.action;
+    var data = event.data;
+    console.log(data);
+    switch (action) {
+      case 'single':
+        this.singleSearch(data);
+        break;
+      case 'multi':
+        this.multiSearch(data);
+        break;
+    }
+  }
 
+  ngOnInit(): void {
+    this.getItemsService.getAllItems().subscribe({
+      next: (response) => {
+        console.log('API Response:', response);
+        this.items = response.data; // Extract 'data' from response
+      },
+      error: (err) => {
+        console.error('Error fetching item:', err);
+      },
+    });
+  }
 }

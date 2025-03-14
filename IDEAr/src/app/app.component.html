@@ -1,17 +1,16 @@
-
-
-
+<!-- Main layout of the app -->
 <div class="scrollable-box">
+  <div class="header">
+    <h1>IDEr</h1>
 
-  <app-item-search (formSubmit)="handleSearch($event)"></app-item-search>
-
-  <div class="content">
-    <div *ngFor="let item of items">
-      <app-item [item]="item"></app-item>
-    </div>
+    <!-- Navigation -->
+    <nav>
+      <button routerLink="/">Home</button>
+      <button routerLink="/admin">Admin</button>
+    </nav>
   </div>
 
+  <!-- This will load the current page (Home or Admin) -->
+  <router-outlet></router-outlet>
 </div>
-<!--
 
--->
