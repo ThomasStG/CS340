@@ -22,10 +22,14 @@ Endpoints:
 """
 
 import csv
+import datetime
+import hashlib
 import json
+import logging
 import os
 import sqlite3
 
+import jwt
 import resend
 from dotenv import load_dotenv
 from flask import Flask, g, jsonify, request
@@ -42,6 +46,7 @@ from api import (
     increment_item,
     remove_item,
 )
+from auth import change_password, create_account, get_salt, login
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for Angular frontend
@@ -73,6 +78,7 @@ def teardown_db(_: Exception) -> None:
     """
     db = g.pop("db", None)
 
+    # closes the connection if it exists
     if db is not None:
         db.close()
 
@@ -140,6 +146,52 @@ def main() -> None:
                 print(get_item(item_id, cur))
 
 
+def handle_exceptions(exception: Exception) -> jsonify:
+    """
+    Handles exceptions thrown by the API
+
+    Args:
+        exception (Exception): the exception thrown
+
+    Returns:
+        jsonify: a message and status code
+    """
+    if isinstance(exception, KeyError):
+        return (
+            jsonify(
+                {"status": "error", "message": f"Invalid request: {str(exception)}"}
+            ),
+            400,
+        )
+    elif isinstance(exception, ValueError):
+        return (
+            jsonify({"status": "error", "message": f"Invalid value: {str(exception)}"}),
+            422,
+        )
+    elif isinstance(exception, sqlite3.IntegrityError):
+        return jsonify({"status": "error", "message": "Database integrity error"}), 400
+    elif isinstance(exception, sqlite3.OperationalError):
+        return jsonify({"status": "error", "message": "Database operation failed"}), 500
+    else:
+        return (
+            jsonify(
+                {"status": "error", "message": f"Unexpected error: {str(exception)}"}
+            ),
+            500,
+        )
+
+
+def generate_token(username: str):
+    SECRET_KEY = os.environ.get("Login_Token_Secret_Key")
+    payload = {
+        "iat": datetime.datetime.utcnow(),
+        "exp": datetime.datetime.utcnow() + datetime.timedelta(minutes=30),
+        "username": username,
+    }
+    token = jwt.encode(payload, SECRET_KEY, algorithm="HS256")
+    return token
+
+
 def import_csv(uri: str) -> None:
     """
     Deletes all items from the database and repopulates with values from a CSV file
@@ -150,16 +202,20 @@ def import_csv(uri: str) -> None:
     Returns:
         None
     """
-    con = sqlite3.connect(uri)
+    con = sqlite3.connect("../data/data.db")
     cur = con.cursor()
-    cur.execute("""DELETE FROM items""")
+    cur.execute(
+        """DELETE FROM items"""
+    )  # delete all items so only csv data is in the database
+
+    # open csv file and read the data into the database
     with open(uri, newline="", encoding="utf-8") as csvfile:
         spamreader = csv.reader(csvfile, delimiter=",", quotechar="|")
         for row in spamreader:
             add_item(
                 row[1],
                 row[2],
-                row[3].strip().lower() == "true",
+                row[3] == "1",
                 row[4],
                 int(row[5]),
                 int(row[6]),
@@ -179,22 +235,33 @@ def add_from_csv(uri) -> None:
     Returns:
         None
     """
-    con = sqlite3.connect(uri)
-    cur = con.cursor()
-    with open(uri, newline="", encoding="utf-8") as csvfile:
-        spamreader = csv.reader(csvfile, delimiter=",", quotechar="|")
-        for row in spamreader:
-            add_item(
-                row[1],
-                row[2],
-                row[3].strip().lower() == "true",
-                row[4],
-                int(row[5]),
-                int(row[6]),
-                cur,
-                con,
-            )
-    con.commit()
+    with sqlite3.connect("../data/data.db") as con:
+        cur = con.cursor()
+
+        # open csv file and read the data into the database
+        with open(uri, newline="", encoding="utf-8") as csvfile:
+            spamreader = csv.reader(csvfile, delimiter=",", quotechar="|")
+            for row in spamreader:
+                if len(row) < 7:  # Ensure the row has enough columns
+                    print(f"Skipping malformed row: {row}")
+                    continue
+
+                try:
+                    add_item(
+                        row[1],
+                        row[2],
+                        row[3].strip().lower() == "true",
+                        row[4],
+                        int(row[5]),  # Convert safely
+                        int(row[6]),
+                        cur,
+                        con,
+                    )
+                except ValueError:
+                    print(f"Skipping row due to invalid integer values: {row}")
+                    continue
+
+        con.commit()  # Ensure all changes are committed
 
 
 def parse_location_to_string(location: str) -> str:
@@ -230,7 +297,7 @@ def increment():
 
     Args:
        name (str): the name of the item
-       isMetric (int): whether the item is metric (1) or not (0)
+       is_metric (int): whether the item is metric (1) or not (0)
        size (str): the size of the item
        num (int): the number to increment by
 
@@ -240,18 +307,21 @@ def increment():
     connection = get_db()
     cursor = connection.cursor()
     data = request.args
-    if not data or not all(key in data for key in ["name", "isMetric", "size", "num"]):
+    if not data or not all(key in data for key in ["name", "is_metric", "size", "num"]):
         raise KeyError("Missing required parameters")
 
     try:
+        # find item
         item_id = find_by_name(
             data["name"],
-            data["isMetric"].strip().lower() == "true",
+            data["is_metric"].strip().lower() == "true",
             data["size"],
             cursor,
         )
         if item_id is None:
             raise ValueError("Item not found")
+
+        # increment item
         increment_item(
             item_id,
             int(data["num"]),
@@ -259,22 +329,8 @@ def increment():
             connection,
         )
         return jsonify({"status": "success"}), 200
-    except KeyError as e:
-        return (
-            jsonify({"status": "error", "message": f"Invalid request: {str(e)}"}),
-            400,
-        )
-    except ValueError as e:
-        return jsonify({"status": "error", "message": f"Invalid value: {str(e)}"}), 422
-    except sqlite3.IntegrityError:
-        return jsonify({"status": "error", "message": "Database integrity error"}), 400
-    except sqlite3.OperationalError:
-        return jsonify({"status": "error", "message": "Database operation failed"}), 500
     except Exception as e:
-        return (
-            jsonify({"status": "error", "message": f"Unexpected error: {str(e)}"}),
-            500,
-        )
+        return handle_exceptions(e)
 
 
 @app.route("/decrement", methods=["GET"])
@@ -286,7 +342,7 @@ def decrement():
 
     Args:
        name (str): the name of the item
-       isMetric (int): whether the item is metric (1) or not (0)
+       is_metric (int): whether the item is metric (1) or not (0)
        size (str): the size of the item
        num (int): the number to decrement by
 
@@ -296,18 +352,21 @@ def decrement():
     connection = get_db()
     cursor = connection.cursor()
     data = request.args
-    if not data or not all(key in data for key in ["name", "isMetric", "size", "num"]):
+    if not data or not all(key in data for key in ["name", "is_metric", "size", "num"]):
         raise KeyError("Missing required parameters")
 
     try:
+        # find item
         item_id = find_by_name(
             data["name"],
-            data["isMetric"].strip().lower() == "true",
+            data["is_metric"].strip().lower() == "true",
             data["size"],
             cursor,
         )
         if item_id is None:
             raise ValueError("Item not found")
+
+        # decrement item
         message_status = decrement_item(
             item_id,
             int(data["num"]),
@@ -324,10 +383,11 @@ def decrement():
                     {
                         "from": "onboarding@resend.dev",
                         "to": "i91503647@gmail.com",
-                        "subject": "{data['name']} {data['size']} is running low!",
+                        "subject": f"{data['name']} {data['size']} is running low!",
                         "html": f"""
                         <h2>Stock Reminder</h2>
                         <p>This is a reminder to stock up on <strong>{data['name']} {data['size']}</strong>.</p>
+
                         <p><strong>Current count:</strong> {data['count']}</p>""",
                     }
                 )
@@ -344,22 +404,8 @@ def decrement():
                 )
 
         return jsonify({"status": "success"}), 200
-    except KeyError as e:
-        return (
-            jsonify({"status": "error", "message": f"Invalid request: {str(e)}"}),
-            400,
-        )
-    except ValueError as e:
-        return jsonify({"status": "error", "message": f"Invalid value: {str(e)}"}), 422
-    except sqlite3.IntegrityError:
-        return jsonify({"status": "error", "message": "Database integrity error"}), 400
-    except sqlite3.OperationalError:
-        return jsonify({"status": "error", "message": "Database operation failed"}), 500
     except Exception as e:
-        return (
-            jsonify({"status": "error", "message": f"Unexpected error: {str(e)}"}),
-            500,
-        )
+        return handle_exceptions(e)
 
 
 @app.route("/find", methods=["GET"])
@@ -370,7 +416,7 @@ def find_item():
 
     Args:
        name (str): the name of the item
-       isMetric (int): whether the item is metric (1) or not (0)
+       is_metric (int): whether the item is metric (1) or not (0)
        size (str): the size of the item
 
     Returns:
@@ -379,23 +425,24 @@ def find_item():
     connection = get_db()
     cursor = connection.cursor()
     data = request.args
-    if not data or "name" not in data or "isMetric" not in data or "size" not in data:
+    logger = logging.getLogger(__name__)
+    if not data or "name" not in data or "is_metric" not in data or "size" not in data:
         raise KeyError("Missing required parameters")
 
     try:
-        print(
+        logger.info(
             f"""Searching for item with
                 name: {data['name']},
-                isMetric: {data['isMetric']},
+                is_metric: {data['is_metric']},
                 size: {data['size']}"""
         )
-        metric_val = data["isMetric"].strip().lower() == "true"
+
+        # convert metric_val to a bool
+        metric_val = data["is_metric"].strip().lower() == "true"
         item_id = find_by_name(data["name"], metric_val, data["size"], cursor)
-        print(item_id)
         if item_id is None:
             raise ValueError("Item not found")
         item = get_item(item_id, cursor)
-        print(item)
 
         if (
             isinstance(item, dict)
@@ -403,6 +450,8 @@ def find_item():
             and item[0]["location"] is not None
         ):
             item[0]["location"] = parse_location_to_list(item[0]["location"])
+        item[0]["is_metric"] = data["is_metric"].strip().capitalize()
+
         return (
             jsonify(
                 {
@@ -413,22 +462,8 @@ def find_item():
             ),
             200,
         )
-    except KeyError as e:
-        return (
-            jsonify({"status": "error", "message": f"Invalid request: {str(e)}"}),
-            400,
-        )
-    except ValueError as e:
-        return jsonify({"status": "error", "message": f"Invalid value: {str(e)}"}), 422
-    except sqlite3.IntegrityError:
-        return jsonify({"status": "error", "message": "Database integrity error"}), 400
-    except sqlite3.OperationalError:
-        return jsonify({"status": "error", "message": "Database operation failed"}), 500
     except Exception as e:
-        return (
-            jsonify({"status": "error", "message": f"Unexpected error: {str(e)}"}),
-            500,
-        )
+        return handle_exceptions(e)
 
 
 @app.route("/add", methods=["GET"])
@@ -439,7 +474,7 @@ def add():
 
     Args:
        name (str): the name of the item
-       isMetric (int): whether the item is metric (1) or not (0)
+       is_metric (int): whether the item is metric (1) or not (0)
        size (str): the size of the item
        num (int): the number of the item
        threshold (int): the threshold of the item
@@ -452,7 +487,7 @@ def add():
     data = request.args
     if not data or not all(
         key in data
-        for key in ["name", "isMetric", "size", "num", "threshold", "location"]
+        for key in ["name", "is_metric", "size", "num", "threshold", "location"]
     ):
         raise KeyError("Missing required parameters")
 
@@ -460,7 +495,7 @@ def add():
         add_item(
             data["name"],
             data["size"],
-            data["isMetric"].strip().lower() == "true",
+            data["is_metric"].strip().lower() == "true",
             parse_location_to_string(data["location"]),
             int(data["num"]),
             data["threshold"],
@@ -468,22 +503,8 @@ def add():
             connection,
         )
         return jsonify({"status": "success"}), 200
-    except KeyError as e:
-        return (
-            jsonify({"status": "error", "message": f"Invalid request: {str(e)}"}),
-            400,
-        )
-    except ValueError as e:
-        return jsonify({"status": "error", "message": f"Invalid value: {str(e)}"}), 422
-    except sqlite3.IntegrityError:
-        return jsonify({"status": "error", "message": "Database integrity error"}), 400
-    except sqlite3.OperationalError:
-        return jsonify({"status": "error", "message": "Database operation failed"}), 500
     except Exception as e:
-        return (
-            jsonify({"status": "error", "message": f"Unexpected error: {str(e)}"}),
-            500,
-        )
+        return handle_exceptions(e)
 
 
 @app.route("/remove", methods=["GET"])
@@ -494,7 +515,7 @@ def remove():
 
     Args:
        name (str): the name of the item
-       isMetric (int): whether the item is metric (1) or not (0)
+       is_metric (int): whether the item is metric (1) or not (0)
        size (str): the size of the item
 
     Returns:
@@ -503,37 +524,26 @@ def remove():
     connection = get_db()
     cursor = connection.cursor()
     data = request.args
-    if not data or not all(key in data for key in ["name", "isMetric", "size"]):
+    if not data or not all(key in data for key in ["name", "is_metric", "size"]):
         raise KeyError("Missing required parameters")
 
     try:
+        # find item
         item_id = find_by_name(
             data["name"],
-            data["isMetric"].strip().lower() == "true",
+            data["is_metric"].strip().lower() == "true",
             data["size"],
             cursor,
         )
         if item_id is None:
             raise ValueError("Item not found")
+
+        # remove item
         remove_item(item_id, cursor, connection)
 
         return jsonify({"status": "success"}), 200
-    except KeyError as e:
-        return (
-            jsonify({"status": "error", "message": f"Invalid request: {str(e)}"}),
-            400,
-        )
-    except ValueError as e:
-        return jsonify({"status": "error", "message": f"Invalid value: {str(e)}"}), 422
-    except sqlite3.IntegrityError:
-        return jsonify({"status": "error", "message": "Database integrity error"}), 400
-    except sqlite3.OperationalError:
-        return jsonify({"status": "error", "message": "Database operation failed"}), 500
     except Exception as e:
-        return (
-            jsonify({"status": "error", "message": f"Unexpected error: {str(e)}"}),
-            500,
-        )
+        return handle_exceptions(e)
 
 
 @app.route("/fuzzyfind", methods=["GET"])
@@ -544,7 +554,7 @@ def fuzzy():
 
     Args:
        name (str): the name of the item
-       isMetric (int): whether the item is metric (1) or not (0)
+       is_metric (int): whether the item is metric (1) or not (0)
        size (str): the size of the item
        num (int): the number to increment by
 
@@ -554,23 +564,24 @@ def fuzzy():
     connection = get_db()
     cursor = connection.cursor()
     data = request.args
-    if not data or not all(key in data for key in ["name", "isMetric", "size"]):
+    logger = logging.getLogger(__name__)
+    if not data or not all(key in data for key in ["name", "is_metric", "size"]):
         raise KeyError("Missing required parameters")
 
     try:
-        print(
+        logger.info(
             f"""Searching for item with
             name: {data['name']},
-            isMetric: {data['isMetric']},
+            is_metric: {data['is_metric']},
             size: {data['size']}"""
         )
-        metric_val = data["isMetric"].strip().lower() == "true"
+        metric_val = data["is_metric"].strip().lower() == "true"
         items = fzf(data["name"], metric_val, data["size"], cursor)
+        # parse location and convert is_metric to string
         for item in items:
             if "location" in item and item["location"] is not None:
                 item["location"] = parse_location_to_list(item["location"])
-            item["isMetric"] = str(item["isMetric"])
-        print(items)
+            item["is_metric"] = str(metric_val)
         return (
             jsonify(
                 {
@@ -581,22 +592,8 @@ def fuzzy():
             ),
             200,
         )
-    except KeyError as e:
-        return (
-            jsonify({"status": "error", "message": f"Invalid request: {str(e)}"}),
-            400,
-        )
-    except ValueError as e:
-        return jsonify({"status": "error", "message": f"Invalid value: {str(e)}"}), 422
-    except sqlite3.IntegrityError:
-        return jsonify({"status": "error", "message": "Database integrity error"}), 400
-    except sqlite3.OperationalError:
-        return jsonify({"status": "error", "message": "Database operation failed"}), 500
     except Exception as e:
-        return (
-            jsonify({"status": "error", "message": f"Unexpected error: {str(e)}"}),
-            500,
-        )
+        return handle_exceptions(e)
 
 
 @app.route("/findAll", methods=["GET"])
@@ -614,7 +611,12 @@ def list_all():
     connection = get_db()
     cursor = connection.cursor()
     try:
+
+        # gets all items and converts is_metric to string
         items = get_all(cursor)
+        for item in items:
+            item["is_metric"] = str(item["is_metric"] == 1)
+
         return (
             jsonify(
                 {
@@ -625,17 +627,8 @@ def list_all():
             ),
             200,
         )
-    except ValueError as e:
-        return jsonify({"status": "error", "message": f"Invalid value: {str(e)}"}), 422
-    except sqlite3.IntegrityError:
-        return jsonify({"status": "error", "message": "Database integrity error"}), 400
-    except sqlite3.OperationalError:
-        return jsonify({"status": "error", "message": "Database operation failed"}), 500
     except Exception as e:
-        return (
-            jsonify({"status": "error", "message": f"Unexpected error: {str(e)}"}),
-            500,
-        )
+        return handle_exceptions(e)
 
 
 def run_server():
@@ -649,8 +642,103 @@ def run_server():
         None
     """
     build_db()
+
+    # sets up logging
+    date = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    logging.basicConfig(
+        filename=f"../logs/api_log.log",
+        level=logging.DEBUG,
+        format="%(asctime)s - %(levelname)s - %(message)s",
+    )
+    logger = logging.getLogger(__name__)
+    logger.info(f"API server started {date}")
     app.run(debug=True, port=3000)  # Runs on http://localhost:3000
 
 
+@app.route("/trylogin", methods=["POST"])
+def try_login() -> jsonify:
+    """
+    Attempts to log the user in
+
+    Args:
+        username (str): the username of the user
+        password (str): the hashed password of the user
+        salt (str): the salt of the user
+
+    Returns:
+        bool: whether the login was successful
+    """
+    try:
+        data = request.json
+        if (
+            data
+            and "username" not in data
+            and "password" not in data
+            and "salt" not in data
+        ):
+            raise KeyError("Missing required parameters")
+
+        username = data["username"]
+        password = data["password"]
+        salt = data["salt"]
+        connection = get_db()
+        cursor = connection.cursor()
+        salt = get_salt(username, cursor)
+
+        # Create a SHA-256 hash object
+        hash_object = hashlib.sha256()
+
+        # Update the hash object with the salt and password
+        hash_object.update(salt + password.encode("utf-8"))
+
+        # Get the hashed password as a hexadecimal string
+        hashed_password = hash_object.hexdigest()
+
+        if not login(username, hashed_password, salt, cursor):
+            raise Exception("Login failed")
+        token = generate_token(username)
+        return jsonify({"status": "success", "token": token}), 200
+    except Exception as e:
+        return handle_exceptions(e)
+
+
+@app.route("/register", methods=["POST"])
+def register():
+    try:
+        data = request.json
+        if (
+            data
+            and "username" not in data
+            and "password" not in data
+            and "salt" not in data
+        ):
+            raise KeyError("Missing required parameters")
+
+        username = data["username"]
+        password = data["password"]
+        salt = data["salt"]
+        connection = get_db()
+        cursor = connection.cursor()
+        salt = os.urandom(32)
+
+        # Create a SHA-256 hash object
+        hash_object = hashlib.sha256()
+
+        # Update the hash object with the salt and password
+        hash_object.update(salt + password.encode("utf-8"))
+
+        # Get the hashed password as a hexadecimal string
+        hashed_password = hash_object.hexdigest()
+
+        if not create_account(
+            username, hashed_password, salt.hex(), cursor, connection
+        ):
+            raise Exception("Login failed")
+        token = generate_token(username)
+        return jsonify({"status": "success", "token": token}), 200
+    except Exception as e:
+        return handle_exceptions(e)
+
+
 if __name__ == "__main__":
-    main()
+    pass

@@ -1,20 +1,76 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
+import { GetItemsService } from '../get-items.service';
+import { ItemData } from '../item-data';
 
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
-  styleUrl: './admin.component.css'
+  styleUrl: './admin.component.css',
 })
 export class AdminComponent {
-
-  passwordRequired: boolean = true;
-  password: string = '';
-
-  checkPassword() {
-    if (this.password === '1123') {
-      this.passwordRequired = false;
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private getItemsService: GetItemsService,
+  ) {}
+  items: ItemData[] = [];
+  ngOnInit(): void {
+    if (!this.authService.isAuthenticated()) {
+      console.log(this.authService.isAuthenticated());
+      this.router.navigate(['/authentication']);
     } else {
-      alert('Incorrect password');
+      this.getItemsService.getAllItems().subscribe({
+        next: (response) => {
+          console.log('API Response:', response);
+          this.items = response.data; // Extract 'data' from response
+        },
+        error: (err) => {
+          console.error('Error fetching item:', err);
+        },
+      });
+    }
+  }
+  singleSearch(data: any) {
+    this.getItemsService.getItem(data.name, data.metric, data.size).subscribe({
+      next: (response) => {
+        console.log('API Response:', response);
+        this.items = response.data; // Extract 'data' from response
+      },
+      error: (err) => {
+        console.error('Error fetching item:', err);
+      },
+    });
+  }
+  multiSearch(data: any) {
+    this.getItemsService
+      .getFuzzyItems(data.name, data.metric, data.size)
+      .subscribe({
+        next: (response) => {
+          console.log('API Response:', response);
+
+          console.log(response.data);
+          this.items = response.data; // Extract 'data' from response
+          console.log(this.items);
+        },
+        error: (err) => {
+          console.error('Error fetching item:', err);
+        },
+      });
+  }
+
+  handleSearch(event: { data: any; action: string }) {
+    var action = event.action;
+    var data = event.data;
+    console.log(data);
+    switch (action) {
+      case 'single':
+        this.singleSearch(data);
+        break;
+      case 'multi':
+        this.multiSearch(data);
+        break;
     }
   }
 }

@@ -31,6 +31,7 @@ Dependencies:
     (`python-Levenshtein` is optional but recommended for better performance.)
 """
 
+import logging
 import sqlite3
 
 from fuzzywuzzy import fuzz, process
@@ -40,6 +41,7 @@ def build_db() -> None:
     """
     Ensures the table exists in the database
     """
+    logger = logging.getLogger(__name__)
     with sqlite3.connect("../data/data.db") as connection:
         cursor = connection.cursor()
         # Create a table
@@ -69,6 +71,7 @@ def get_all(cursor: sqlite3.Cursor) -> list[dict]:
     Returns:
         list[dict]: list of items in dictionary
     """
+    logger = logging.getLogger(__name__)
     cursor.execute(
         """
                    SELECT name, is_metric, size, location, count, threshold
@@ -76,6 +79,9 @@ def get_all(cursor: sqlite3.Cursor) -> list[dict]:
                    """
     )
     items = cursor.fetchall()
+    if not items:
+        logger.debug("No items found")
+
     return [
         dict(zip([column[0] for column in cursor.description], row)) for row in items
     ]
@@ -96,6 +102,7 @@ def find_by_name(
     Returns:
         int: item id of the object
     """
+    logger = logging.getLogger(__name__)
     cursor.execute(
         """
         SELECT id FROM items 
@@ -104,6 +111,9 @@ def find_by_name(
         (name, is_metric, size),
     )
     item = cursor.fetchone()  # Fetch the first matching row
+
+    if not item:
+        logger.debug("Item not found")
 
     return item[0] if item else None  # Return ID if found, otherwise None
 
@@ -124,9 +134,10 @@ def fzf(
     Returns:
         list[dict]: list of json objects
     """
+    logger = logging.getLogger(__name__)
     cursor.execute(
         """
-        SELECT name, is_metric, size, location, count, threshold
+        SELECT id, name, is_metric, size, location, count, threshold
         FROM items WHERE is_metric = ?
         """,
         (is_metric,),
@@ -134,6 +145,7 @@ def fzf(
     data = cursor.fetchall()
 
     if not data:
+        logger.debug("No items found")
         return []
 
     # Convert rows to dictionaries
@@ -167,6 +179,7 @@ def get_item(item_id: int, cursor: sqlite3.Cursor) -> list[dict]:
     Returns:
         list[dict]: item information as a dict in a list.
     """
+    logger = logging.getLogger(__name__)
     cursor.execute(
         """SELECT 
             name, 
@@ -180,8 +193,10 @@ def get_item(item_id: int, cursor: sqlite3.Cursor) -> list[dict]:
             WHERE id = ?""",
         (item_id,),
     )
-    cursor.row_factory = sqlite3.Row  # This makes fetch results act like dicts
     item = cursor.fetchone()
+
+    if not item:
+        logger.debug("Item not found")
 
     return [dict(item)] if item else None  # Convert Row to a dictionary
 
@@ -198,6 +213,7 @@ def increment_item(
         cursor (sqlite3.Cursor): SQLite cursor object to execute queries
         connection (sqlite3.Connection): SQLite connection object to commit changes
     """
+    logger = logging.getLogger(__name__)
 
     item = get_item(item_id, cursor)  # get items information from id
     new_count = item[0]["count"] + num_added
@@ -214,6 +230,8 @@ def increment_item(
             item_id,
         ),
     )
+
+    logger.debug("Item %i count incremented by %i", item_id, num_added)
 
     connection.commit()  # save the database
 
@@ -236,6 +254,7 @@ def decrement_item(
     Returns:
         int: status code (0/1) for if an email needs to be sent
     """
+    logger = logging.getLogger(__name__)
     item = get_item(item_id, cursor)
     new_count = item[0]["count"] - num_removed
     new_count = max(new_count, 0)
@@ -254,6 +273,7 @@ def decrement_item(
                        """,
             (item_id,),
         )
+        connection.commit()
         return 1
     return 0
 
@@ -281,6 +301,7 @@ def add_item(
         cursor (sqlite3.Cursor): SQLite cursor object to execute queries
         connection (sqlite3.Connection): SQLite connection object to commit changes
     """
+    logger = logging.getLogger(__name__)
     cursor.execute(
         """
                    INSERT INTO items
@@ -290,6 +311,8 @@ def add_item(
                    """,
         (name, size, is_metric, location, count, threshold, 0),
     )
+
+    logger.debug("Item %s added", name)
     connection.commit()
 
 
@@ -304,10 +327,12 @@ def remove_item(
         cursor (sqlite3.Cursor): SQLite cursor object to execute queries
         connection (sqlite3.Connection): SQLite connection object to commit changes
     """
+    logger = logging.getLogger(__name__)
     cursor.execute(
         """
                     DELETE FROM items WHERE id = ?
                    """,
         (item_id,),
     )
+    logger.debug("Item %i removed", item_id)
     connection.commit()

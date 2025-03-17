@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import * as crypto from 'crypto';
+import { AuthService } from './auth.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,24 +7,9 @@ import * as crypto from 'crypto';
 })
 export class AppComponent {
   title = 'IDEAr';
-  salt: string = '';
-  password: string = '';
 
-  constructor() {
-    this.salt = crypto.randomBytes(16).toString('hex');
-    this.password = 'password';
-  }
-
-  hashPassword(password: string): string {
-    const hash = crypto
-      .createHmac('sha256', this.salt)
-      .update(password)
-      .digest('hex');
-    return hash;
-  }
-
-  checkPassword(password: string, hash: string): boolean {
-    const newHash = this.hashPassword(password);
-    return newHash === hash;
+  constructor(public authService: AuthService) {}
+  logout() {
+    this.authService.logout();
   }
 }

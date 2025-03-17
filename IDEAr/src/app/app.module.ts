@@ -13,10 +13,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthenticationComponent } from './authentication/authentication.component';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
-  { path: '', component: AppComponent }, // Home Page
+  { path: '', component: HomeComponent }, // Home Page
   { path: 'admin', component: AdminComponent }, // Admin Page
+  { path: 'authentication', component: AuthenticationComponent },
 ];
 
 @NgModule({
@@ -27,11 +30,13 @@ const routes: Routes = [
     ItemSearchComponent,
     HomeComponent,
     AdminComponent,
+    AuthenticationComponent,
   ],
   imports: [
     ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
   ],
