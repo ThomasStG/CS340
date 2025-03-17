@@ -1,0 +1,21 @@
+
+<div *ngIf="passwordRequired">
+    <p>Enter Admin Password:</p>
+    <input type="password" [(ngModel)]="password">
+    <button (click)="checkPassword()">Submit</button>
+  </div>
+  
+  <div *ngIf="!passwordRequired">
+    <h1>Welcome to the Admin Page</h1>
+    <!-- Your admin content here -->
+    
+    <p>we have yet to put things here, come back later!.</p>
+    
+    <a routerLink="/">Go Back to Home</a>
+
+  <div>
+    <img src="assets/SolidSnake.jpg" alt="Admin Page Image" width="200">
+    <p>nice try, turn back now!</p>
+  </div>
+  </div>
+

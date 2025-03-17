@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { ItemData } from './item-data';
-import { GetItemsService } from './get-items.service';
+import * as crypto from 'crypto';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,59 +7,24 @@ import { GetItemsService } from './get-items.service';
 })
 export class AppComponent {
   title = 'IDEAr';
-  items: ItemData[] = [];
+  salt: string = '';
+  password: string = '';
 
-  constructor(private getItemsService: GetItemsService) {}
-
-  singleSearch(data: any) {
-    this.getItemsService.getItem(data.name, data.metric, data.size).subscribe({
-      next: (response) => {
-        console.log('API Response:', response);
-        this.items = response.data; // Extract 'data' from response
-      },
-      error: (err) => {
-        console.error('Error fetching item:', err);
-      },
-    });
-  }
-  multiSearch(data: any) {
-    this.getItemsService
-      .getFuzzyItems(data.name, data.metric, data.size)
-      .subscribe({
-        next: (response) => {
-          console.log('API Response:', response);
-          console.log(response.data);
-          this.items = response.data; // Extract 'data' from response
-        },
-        error: (err) => {
-          console.error('Error fetching item:', err);
-        },
-      });
+  constructor() {
+    this.salt = crypto.randomBytes(16).toString('hex');
+    this.password = 'password';
   }
 
-  handleSearch(event: { data: any; action: string }) {
-    var action = event.action;
-    var data = event.data;
-    console.log(data);
-    switch (action) {
-      case 'single':
-        this.singleSearch(data);
-        break;
-      case 'multi':
-        this.multiSearch(data);
-        break;
-    }
+  hashPassword(password: string): string {
+    const hash = crypto
+      .createHmac('sha256', this.salt)
+      .update(password)
+      .digest('hex');
+    return hash;
   }
 
-  ngOnInit(): void {
-    this.getItemsService.getAllItems().subscribe({
-      next: (response) => {
-        console.log('API Response:', response);
-        this.items = response.data; // Extract 'data' from response
-      },
-      error: (err) => {
-        console.error('Error fetching item:', err);
-      },
-    });
+  checkPassword(password: string, hash: string): boolean {
+    const newHash = this.hashPassword(password);
+    return newHash === hash;
   }
 }

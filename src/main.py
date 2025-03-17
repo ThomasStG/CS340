@@ -6,9 +6,8 @@ import subprocess
 import sys
 
 subprocess.check_call(
-    [sys.executable, "-m", "pip", "install", "-r" "./requirements.txt"]
+    [sys.executable, "-m", "pip", "install", "-r" "../requirements.txt"]
 )
 from app import run_server
 
-print(help(app.py))
 run_server()
