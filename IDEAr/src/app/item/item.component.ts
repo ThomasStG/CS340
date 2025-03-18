@@ -20,4 +20,16 @@ export class ItemComponent implements OnInit {
     this.item.location = JSON.parse(this.item.location);
     console.log(this.item);
   }
+
+  @Input() itemPopup: any;  // The item passed to this component
+  isPopupVisible = false;
+
+  showPopup() {
+    this.isPopupVisible = true;
+  }
+
+  closePopup(event: Event) {
+    event.stopPropagation();
+    this.isPopupVisible = false;
+  }
 }
