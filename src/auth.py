@@ -1,3 +1,13 @@
+"""
+This module provides functions for interacting with an 
+SQLite database for an inventory management system.
+It includes functions to:
+    - Ensure the table exists in the database  
+    - Log in a user  
+    - Create a new user account  
+    - Change the password of a user
+"""
+
 import sqlite3
 
 
@@ -24,24 +34,24 @@ def ensure_table():
                 """
         )
         connection.commit()
+        connection.close()
 
 
-def login(username: str, password: str, salt: str, cursor: sqlite3.Cursor) -> bool:
+def login(username: str, password: str, cursor: sqlite3.Cursor) -> bool:
     """
     Attempts to log the user in
 
     Args:
         username (str): the username of the user
         password (str): the hashed password of the user
-        salt (str): the salt of the user
         cursor (sqlite3.Cursor): the cursor to the database
 
     Returns:
         bool: whether the login was successful
     """
     cursor.execute(
-        "SELECT * FROM users WHERE username = ? AND password = ? AND salt = ?",
-        (username, password, salt),
+        "SELECT * FROM users WHERE username = ? AND password = ?",
+        (username, password),
     )
     return cursor.fetchone() is not None
 
@@ -113,3 +123,26 @@ def get_salt(username: str, cursor: sqlite3.Cursor) -> str:
     """
     cursor.execute("SELECT salt FROM users WHERE username = ?", (username,))
     return cursor.fetchone()[0]
+
+
+# import hashlib
+# import os
+
+# if __name__ == "__main__":
+#     ensure_table()
+#     connection = sqlite3.connect("../data/data.db")
+#     cursor = connection.cursor()
+#     username = "admin"
+#     password = "password"
+#     salt = os.urandom(32)
+
+#     # Create a SHA-256 hash object
+#     hash_object = hashlib.sha256()
+
+#     # Update the hash object with the salt and password
+#     hash_object.update(salt + password.encode("utf-8"))
+
+#     # Get the hashed password as a hexadecimal string
+#     hashed_password = hash_object.hexdigest()
+#     create_account(username, hashed_password, salt.hex(), cursor, connection)
+#     connection.close()

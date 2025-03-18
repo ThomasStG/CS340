@@ -182,14 +182,20 @@ def handle_exceptions(exception: Exception) -> jsonify:
 
 
 def generate_token(username: str):
+    load_dotenv("../data/.env")
     SECRET_KEY = os.environ.get("Login_Token_Secret_Key")
     payload = {
-        "iat": datetime.datetime.utcnow(),
-        "exp": datetime.datetime.utcnow() + datetime.timedelta(minutes=30),
+        "iat": datetime.datetime.now(datetime.timezone.utc),
+        "exp": datetime.datetime.now(datetime.timezone.utc)
+        + datetime.timedelta(minutes=30),
         "username": username,
     }
-    token = jwt.encode(payload, SECRET_KEY, algorithm="HS256")
-    return token
+    try:
+        token = jwt.encode(payload, SECRET_KEY, algorithm="HS256")
+        return token
+    except Exception as e:
+        print(f"JWT encoding error: {e}")
+        raise
 
 
 def import_csv(uri: str) -> None:
@@ -663,38 +669,33 @@ def try_login() -> jsonify:
     Args:
         username (str): the username of the user
         password (str): the hashed password of the user
-        salt (str): the salt of the user
 
     Returns:
         bool: whether the login was successful
     """
     try:
         data = request.json
-        if (
-            data
-            and "username" not in data
-            and "password" not in data
-            and "salt" not in data
-        ):
+        if data is None or "username" not in data or "password" not in data:
             raise KeyError("Missing required parameters")
 
         username = data["username"]
         password = data["password"]
-        salt = data["salt"]
         connection = get_db()
         cursor = connection.cursor()
-        salt = get_salt(username, cursor)
+        stored_salt = get_salt(username, cursor)
+
+        salt = bytes.fromhex(stored_salt)  # Convert hex string back to bytes
 
         # Create a SHA-256 hash object
         hash_object = hashlib.sha256()
 
-        # Update the hash object with the salt and password
+        #     # Update the hash object with the salt and password
         hash_object.update(salt + password.encode("utf-8"))
 
-        # Get the hashed password as a hexadecimal string
+        #     # Get the hashed password as a hexadecimal string
         hashed_password = hash_object.hexdigest()
-
-        if not login(username, hashed_password, salt, cursor):
+        login_success = login(username, hashed_password, cursor)
+        if not login_success:
             raise Exception("Login failed")
         token = generate_token(username)
         return jsonify({"status": "success", "token": token}), 200
@@ -736,6 +737,40 @@ def register():
             raise Exception("Login failed")
         token = generate_token(username)
         return jsonify({"status": "success", "token": token}), 200
+    except Exception as e:
+        return handle_exceptions(e)
+
+
+@app.route("/changePassword", methods=["POST"])
+def change_pass():
+    """
+    Handles changing a user's password
+
+    Args:
+        username (str): the username of the user
+        old_password (str): the old password of the user
+        new_password (str): the new password of the user
+
+    Returns:
+        json: a message and status code
+    """
+    try:
+        data = request.json
+        if (
+            data
+            and "username" not in data
+            and "old_password" not in data
+            and "new_password" not in data
+        ):
+            raise KeyError("Missing required parameters")
+
+        username = data["username"]
+        old_password = data["old_password"]
+        new_password = data["new_password"]
+        connection = get_db()
+        cursor = connection.cursor()
+        change_password(username, old_password, new_password, cursor, connection)
+        return jsonify({"status": "success", "message": "Password changed"}), 200
     except Exception as e:
         return handle_exceptions(e)
 
