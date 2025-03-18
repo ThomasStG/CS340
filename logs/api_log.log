@@ -166,3 +166,500 @@
 2025-03-17 14:57:39,117 - INFO - API server started 2025-03-17_14-57-39
 2025-03-17 14:57:39,132 - WARNING -  * Debugger is active!
 2025-03-17 14:57:39,138 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 15:48:00,727 - INFO - API server started 2025-03-17_15-48-00
+2025-03-17 15:48:00,772 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2025-03-17 15:48:00,772 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-17 15:48:00,773 - INFO -  * Restarting with stat
+2025-03-17 15:48:01,243 - INFO - API server started 2025-03-17_15-48-01
+2025-03-17 15:48:01,262 - WARNING -  * Debugger is active!
+2025-03-17 15:48:01,268 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 15:50:06,382 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-17 15:50:06,418 - INFO -  * Restarting with stat
+2025-03-17 15:50:07,036 - INFO - API server started 2025-03-17_15-50-07
+2025-03-17 15:50:07,059 - WARNING -  * Debugger is active!
+2025-03-17 15:50:07,064 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 15:52:07,905 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-17 15:52:07,950 - INFO -  * Restarting with stat
+2025-03-17 22:14:43,923 - INFO - API server started 2025-03-17_22-14-43
+2025-03-17 22:14:43,954 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2025-03-17 22:14:43,955 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-17 22:14:43,955 - INFO -  * Restarting with stat
+2025-03-17 22:14:44,503 - INFO - API server started 2025-03-17_22-14-44
+2025-03-17 22:14:44,522 - WARNING -  * Debugger is active!
+2025-03-17 22:14:44,527 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 22:14:50,853 - INFO - 127.0.0.1 - - [17/Mar/2025 22:14:50] "GET /findAll HTTP/1.1" 200 -
+2025-03-17 22:14:53,563 - INFO - 127.0.0.1 - - [17/Mar/2025 22:14:53] "GET /findAll HTTP/1.1" 200 -
+2025-03-17 22:14:55,115 - INFO - 127.0.0.1 - - [17/Mar/2025 22:14:55] "GET /findAll HTTP/1.1" 200 -
+2025-03-17 22:15:01,129 - INFO - 127.0.0.1 - - [17/Mar/2025 22:15:01] "GET /findAll HTTP/1.1" 200 -
+2025-03-17 22:15:32,503 - INFO - 127.0.0.1 - - [17/Mar/2025 22:15:32] "GET /findAll HTTP/1.1" 200 -
+2025-03-17 22:27:55,880 - INFO - 127.0.0.1 - - [17/Mar/2025 22:27:55] "GET /findAll HTTP/1.1" 200 -
+2025-03-17 22:45:08,563 - ERROR - 127.0.0.1 - - [17/Mar/2025 22:45:08] code 400, message Bad request version ('\x97<¦ßìÁêáaRZ©å@\x15ëEü')
+2025-03-17 22:45:08,563 - INFO - 127.0.0.1 - - [17/Mar/2025 22:45:08] "[31m[1m\x16\x03\x01\x06À\x01\x00\x06¼\x03\x03å,\x1cþÐä\x1f\x97<¦ßìÁêáaRZ©å@\x15ëEü[0m" 400 -
+2025-03-17 22:45:08,564 - ERROR - 127.0.0.1 - - [17/Mar/2025 22:45:08] code 400, message Bad request version ('\x00\x02\x01\x00\x00+\x00\x07\x06jj\x03\x04\x03\x03\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00')
+2025-03-17 22:45:08,564 - INFO - 127.0.0.1 - - [17/Mar/2025 22:45:08] "[31m[1m\x16\x03\x01\x06à\x01\x00\x06Ü\x03\x03×NCçÝ\x83ãCKpzX\x1fùú\x0bòIÒièí@.£ý®ÄT@.\x1c \x8e\x9bP\x12l]{ÝÕ"\x9eZÞÔåïc:\x8e)\x8e²X@þY­\x0fP\x071\x8b\x00 zz\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06szz\x00\x00\x00\x0b\x00\x02\x01\x00\x00+\x00\x07\x06jj\x03\x04\x03\x03\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00[0m" 400 -
+2025-03-17 22:47:23,243 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/auth.py', reloading
+2025-03-17 22:47:23,284 - INFO -  * Restarting with stat
+2025-03-17 22:47:23,946 - INFO - API server started 2025-03-17_22-47-23
+2025-03-17 22:47:23,967 - WARNING -  * Debugger is active!
+2025-03-17 22:47:23,973 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 22:47:45,583 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/auth.py', reloading
+2025-03-17 22:47:45,617 - INFO -  * Restarting with stat
+2025-03-17 22:47:46,196 - INFO - API server started 2025-03-17_22-47-46
+2025-03-17 22:47:46,217 - WARNING -  * Debugger is active!
+2025-03-17 22:47:46,222 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 22:48:07,750 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/auth.py', reloading
+2025-03-17 22:48:07,783 - INFO -  * Restarting with stat
+2025-03-17 22:48:08,357 - INFO - API server started 2025-03-17_22-48-08
+2025-03-17 22:48:08,381 - WARNING -  * Debugger is active!
+2025-03-17 22:48:08,386 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 22:48:31,370 - INFO - API server started 2025-03-17_22-48-31
+2025-03-17 22:48:31,398 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2025-03-17 22:48:31,398 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-17 22:48:31,399 - INFO -  * Restarting with stat
+2025-03-17 22:48:31,876 - INFO - API server started 2025-03-17_22-48-31
+2025-03-17 22:48:31,895 - WARNING -  * Debugger is active!
+2025-03-17 22:48:31,900 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 22:48:40,709 - ERROR - 127.0.0.1 - - [17/Mar/2025 22:48:40] code 400, message Bad request version ('¸ðã²¦\x98Q{Aá\x8eÌ\x9eº"\x06WEæà\x8aaÚËV\x86Z°i')
+2025-03-17 22:48:40,710 - INFO - 127.0.0.1 - - [17/Mar/2025 22:48:40] "[31m[1m\x16\x03\x01\x06À\x01\x00\x06¼\x03\x03cÎë?âfuÌ\x19ð Ô]\x92¢ÂÖBÓ×\x89\x08?\x0b\x84H\x14Í1¾\x99+ &¤WÙ#\x1d¿ý°õ v°~\x90p\x8a&i»¼bÂº\x0fÃÊr¸\x12^\x16\x00 **\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06S\x1a\x1a\x00\x00\x00+\x00\x07\x06ÚÚ\x03\x04\x03\x03\x00\x0b\x00\x02\x01\x00þ\x0d\x00Ú\x00\x00\x01\x00\x01«\x00 ¸ðã²¦\x98Q{Aá\x8eÌ\x9eº"\x06WEæà\x8aaÚËV\x86Z°i[0m" 400 -
+2025-03-17 22:48:40,711 - ERROR - 127.0.0.1 - - [17/Mar/2025 22:48:40] code 400, message Bad request version ('<~ïF¼½¤c»Æ')
+2025-03-17 22:48:40,711 - INFO - 127.0.0.1 - - [17/Mar/2025 22:48:40] "[31m[1m\x16\x03\x01\x06à\x01\x00\x06Ü\x03\x03ó\x86øS}{ø\x1c\x80B|oµì\x1e\x1a¥|x\x0c(µ\x88K\x1f±!P²\x02Bâ B­µ¶VF\x12\x1f<~ïF¼½¤c»Æ[0m" 400 -
+2025-03-17 22:49:15,272 - ERROR - 127.0.0.1 - - [17/Mar/2025 22:49:15] code 400, message Bad request version ('T#Seá3LÓ*BS0¼P¾¢5\x0fàh\x80')
+2025-03-17 22:49:15,274 - INFO - 127.0.0.1 - - [17/Mar/2025 22:49:15] "[31m[1m\x16\x03\x01\x06 \x01\x00\x06\x9c\x03\x03îR«\x99\x0c\x9cÐ\x81M\x1b¸[Ö\x81\x0ddORGiV\x07)]ÀQ\x1cP/ä¸\x1a ÊîªÌ¤µ_î\x17+ÔÞ·\x14DHç0à\x95ù§*[û&è\x1f¬°÷\x0b\x00 \x9a\x9a\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x063êê\x00\x00Di\x00\x05\x00\x03\x02h2\x003\x04ï\x04ízz\x00\x01\x00\x11ì\x04ÀàÑjê¸\x10_|<\x07\x83x\x1e¨»]é\x9dß,\x03â;©\x1cú0)Ä¢\x86P\x94gi\x1dV\x10\x97\x07s!ðð\x9bÉZ»÷ù+ Fsä\x1bxè\x07XtA7²\x91\x12\x9b8cð\x06\x85T#Seá3LÓ*BS0¼P¾¢5\x0fàh\x80[0m" 400 -
+2025-03-17 22:49:15,275 - ERROR - 127.0.0.1 - - [17/Mar/2025 22:49:15] code 400, message Bad request version ('P\x94«÷e\x94ÔOyÖzqZ\x9aÛ\x96\x9aI¬\x8dI(')
+2025-03-17 22:49:15,275 - INFO - 127.0.0.1 - - [17/Mar/2025 22:49:15] "[31m[1m\x16\x03\x01\x06À\x01\x00\x06¼\x03\x03\x04ºtÂ\x8d\x8akß\x1a0Í\x9f´ºp«ýH\x14\x07\x9e¤Þ\x08%´ÔÏ\x9fåI´ rÔñ+?ß¨T8ñøuVÁ¤\x0b\x01\x12\x93\x91\x1då6\x90~ò\x05Ëªõo²\x00 ºº\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06Súú\x00\x00\x00#\x00\x00\x00\x05\x00\x05\x01\x00\x00\x00\x00Di\x00\x05\x00\x03\x02h2\x003\x04ï\x04íªª\x00\x01\x00\x11ì\x04ÀS\x17È9(¹O)wpW\x86ð\x02B\x0cfÎ\x96\x16@Cu\x08JÂÏ­µ\x817¬7Ñ\x18«B'V|á3\x15é5å¨\x7fòµj\x9fÇgß0QÓs(¨°@ü\x18\x0dL\x19}åz#q\x99ÍÎÚ$nk]ÔY0o\x13]\x86ÆbZ\x16¼rªf½¥.§\x91Çû+Ç\x18\x95K\x08©Fñ¦\x16ªÙ'\x8fÊ],+6\x14*\x12\x8f§_ú\x1b\x0eæ\x958Ò`¿ÊLÎN1>\x8cJ\x1c¨±@¤\x15\x06P\x1a\x07\x80·\x068\x14°v\x85\x16\x92Å\x91'E\x93\x08C¦M\x00YóJ\x09O&º#\x80\x8d\x01\x02a1\x86À3&\x97Ì \x86ó N,6\x8c~\x0cS¿\x0b\x8fî¸ÂüÇ¢áXAÔ¥?Íx\x8fõxkRùÎVIyDR\x11\x8fGeå;H\x8c2 lÊÏ]\x898\x0c°££\x8ah\x89W-h\x00Á«©ª\x17Ø¨¢õ}*ëz\x17µ$\x95Ç\\ïC\x8e³Ô\x8f ÷u\x90D\x91¨,¥YòÃ»hÁÁúL|à\x1f\x97ª=\x02Ü²\x17Ü`d,\x17\x1cP\x94«÷e\x94ÔOyÖzqZ\x9aÛ\x96\x9aI¬\x8dI(\x09[0m" 400 -
+2025-03-17 22:51:14,704 - ERROR - 127.0.0.1 - - [17/Mar/2025 22:51:14] code 400, message Bad request version ('Ö;¤`d*ÇI')
+2025-03-17 22:51:14,705 - INFO - 127.0.0.1 - - [17/Mar/2025 22:51:14] "[31m[1m\x16\x03\x01\x07\x00\x01\x00\x06ü\x03\x03ÑrZÒáyg\x901ZîbtÂýßgÃS;\x8a-'\x039|\x9eÿÿ`:\x96 B§©Fl¥0\x82'\x81g\x10<Ý³7\x89\x80x Dô\x16\x181\x19\x16\x1e\x8bOì\x86\x00 \x1a\x1a\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06\x93ÊÊ\x00\x00\x00\x0b\x00\x02\x01\x00\x00\x05\x00\x05\x01\x00\x00\x00\x00þ\x0d\x01\x1a\x00\x00\x01\x00\x01q\x00 Ï\x04¡a\x8c\x91Êùß´@\x9c9Ñ1\x1b¯0þ^nàFWÔO\x80\x9dq\x86ÌB\x00ðÎÔûÜÿë\x05\x83\x05î\x99æÝ\x8a)\x815Un\x0d\x9aJ\x98\x87\x18\x84ú=ïú+\x95j¹\x98Çõ\x02GEÿHóßª©\x1aYSY4½Áv\x81\x93jk\x06«\x9bØMa>\x04>Ü1\x1e\x8aÛ\x8a\x049ædãkÐ·ì\x8bDÌÓ2y\x92BH\x18e\x1e-Nfû\x9bÃØWL'\x89ÍÑ\x82\x08?\x83\x8eÛíigÈKô\x0cãRÿ>P+ë¿d\x1b'}<¿Ñ]q[:\x84\x00B7S·â<f¤Ò\x03]^bØÙ`\\BaO!\x0fcÑùÈû\x9eúx9Ø\x1b\x89À·\x9a\x10\x9f\x97pfm\x0c$\x84\x98s­Æ\x1e\x80¨^wÄ´`\x92,m\x87&ùsýê\x9dUA¢ÔY\x7f3¿¦XÒK 7ÀN\x9f¶f\x8eEnÃ[\x14°°\x93\x95ãï\x00\x17\x00\x00\x003\x04ï\x04í\x1a\x1a\x00\x01\x00\x11ì\x04À\x7f§\x9cÆ73\x05Ó\x1bÔ\x96v&Ç¸e\x15\x98\x0cá\x1bQ»H\x13\x9bB\x1b¤\x9f#\x02\x14\x16¹\x0cLéhù"Ob,Râù/Ï\x86É'`´øa\x1c\\\x06S+6Ëá±l\x15Ê\x8dÊë«\x18\x81\x1dÖ;¤`d*ÇI[0m" 400 -
+2025-03-17 22:51:14,706 - ERROR - 127.0.0.1 - - [17/Mar/2025 22:51:14] code 400, message Bad request version ('ÊÊ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x063\x9a\x9a\x00\x00\x003\x04ï\x04í')
+2025-03-17 22:51:14,706 - INFO - 127.0.0.1 - - [17/Mar/2025 22:51:14] "[31m[1m\x16\x03\x01\x06 \x01\x00\x06\x9c\x03\x03g)Ö»\x9cl±2\x9dr<jÒoqßÆ|}Hû\x1b·íK\x86\x86E\x01þ\x87Õ Ç\x08\x16åaBEû\x1cl­çF\x9c\x06Å&kn|KEÆ\x1f¸\x1e@\x91\x8cèS\x1b\x00 ÊÊ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x063\x9a\x9a\x00\x00\x003\x04ï\x04í[0m" 400 -
+2025-03-17 22:51:34,674 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-17 22:51:34,725 - INFO -  * Restarting with stat
+2025-03-17 22:51:35,384 - INFO - API server started 2025-03-17_22-51-35
+2025-03-17 22:51:35,410 - WARNING -  * Debugger is active!
+2025-03-17 22:51:35,416 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 22:51:37,839 - ERROR - 127.0.0.1 - - [17/Mar/2025 22:51:37] code 400, message Bad request version ('úú\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x063')
+2025-03-17 22:51:37,839 - INFO - 127.0.0.1 - - [17/Mar/2025 22:51:37] "[31m[1m\x16\x03\x01\x06 \x01\x00\x06\x9c\x03\x03ôhBI\x97mº\x91n\x98í\x14@:9b­íÀJY\x96²Ëºº'¥-RG0 \x82I\x858|\x9aT\x85ì\x10rô@\x1a8ìíkj¦b\x8dKÍÔe\x1b\x92og\x97È\x00 úú\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x063[0m" 400 -
+2025-03-17 22:51:37,840 - ERROR - 127.0.0.1 - - [17/Mar/2025 22:51:37] code 400, message Bad request version ('\x02h2\x08http/1.1\x00')
+2025-03-17 22:51:37,840 - INFO - 127.0.0.1 - - [17/Mar/2025 22:51:37] "[31m[1m\x16\x03\x01\x06 \x01\x00\x06\x9c\x03\x03\x90\x14ºåGª\x14\x93\x8emLUCø\x14Õ\x0c¸Dó\x17 \x9c/Um\x86LRþ·1 Ë{´wÎ\x0fö9c\x93l\x9aÏb½ñ\x10oyª\x8c\x15Û\x0f\x8c¬³Âþõzr\x00 ªª\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x063jj\x00\x00\x00\x12\x00\x00\x00\x1b\x00\x03\x02\x00\x02ÿ\x01\x00\x01\x00\x00\x17\x00\x00þ\x0d\x00º\x00\x00\x01\x00\x01r\x00 =;Ðê!g4/,^\x9cÂB\x8dÛÍùàõÚ=s \x89\x83·í\x9f{½\x12'\x00\x90¥p\x17ú5±Ê)C\x9d\x0eú\x9aóE\x12\x8f\x06²c\x83r=\x99\x95±! 6óV\x15àÈ\x0e<\x08æÔ\x8bW\x97\x15,ô\x13BI'ÇD^Ñ°`N5+«U\x8ds\x9c?&\x06°v(Ä1lÔOZuG;\x133ª¬ Eâo¨¯\x9b©R2\x8dþC\x9cÖ@\\\x07l;\x1e:êyä´[þP¶'Fþé\x11F¦ \x0fu?ú\x90ô^\x92£gÀ\x07üñQ\x1bA_/ê\x1c\x1aMõ\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00\x10\x00\x0e\x00\x0c\x02h2\x08http/1.1\x00[0m" 400 -
+2025-03-17 22:51:42,231 - ERROR - 127.0.0.1 - - [17/Mar/2025 22:51:42] code 400, message Bad request version ('\x02h2\x08http/1.1\x00+\x00\x07\x06\x9a\x9a\x03\x04\x03\x03\x003\x04ï\x04í')
+2025-03-17 22:51:42,232 - INFO - 127.0.0.1 - - [17/Mar/2025 22:51:42] "[31m[1m\x16\x03\x01\x06à\x01\x00\x06Ü\x03\x03ùî\x07ÿÂ'Ã\x89êI\x13\x03Î¥§6Ø5Äq&:Â#6\x80¢©³p\x1eS °È\x17\x89ø\x9e\x8f\x1d\x07\x85i\x93nw×\x9d\x89\x12.ÔDT-mN\x91Ö\x1e\x0f\x9b\x91Ü\x00 ªª\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06sêê\x00\x00\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00-\x00\x02\x01\x01\x00\x0b\x00\x02\x01\x00\x00\x10\x00\x0e\x00\x0c\x02h2\x08http/1.1\x00+\x00\x07\x06\x9a\x9a\x03\x04\x03\x03\x003\x04ï\x04í[0m" 400 -
+2025-03-17 22:51:42,232 - ERROR - 127.0.0.1 - - [17/Mar/2025 22:51:42] code 400, message Bad request version (':ÑX`')
+2025-03-17 22:51:42,232 - INFO - 127.0.0.1 - - [17/Mar/2025 22:51:42] "[31m[1m\x16\x03\x01\x07\x00\x01\x00\x06ü\x03\x03ºÓ[\x88¦\x08%\x9a´ÏÕ\x9fôRÉù\x0eßü=kÚ=TÝØì!2\x9aJ\x1f \x98\x0e\x93\x07}J4B\x92\x0cý\x92Ú\x92\x9b|Ao\x9c\x98Wï ®Ñ\x02\x14eG\x1b8\x80\x00 \x1a\x1a\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06\x93zz\x00\x00\x00\x12\x00\x00ÿ\x01\x00\x01\x00\x00+\x00\x07\x06\x1a\x1a\x03\x04\x03\x03\x00\x10\x00\x0e\x00\x0c\x02h2\x08http/1.1\x00\x0b\x00\x02\x01\x00\x00\x0d\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01\x00\x1b\x00\x03\x02\x00\x02\x00\x17\x00\x00Di\x00\x05\x00\x03\x02h2\x00\x05\x00\x05\x01\x00\x00\x00\x00\x003\x04ï\x04íÊÊ\x00\x01\x00\x11ì\x04À\x92\x1b\x8eÍA0\x9bZ\x9fæ\x97\x8fe\x93pØáA\x11\x03Fç\x80XGj1*¬\x9cëZ\x88#\x03*`Ã\x87?\x1a\x97=tjbr\x89\x81'm«è¡+Ä\x86è@\x05CºUåë\x98ó§`\x0b\x12\x1ewé\x0c\x1fêHEFUFc]zH\x99`Ô\x86t÷%\x8a{­\x08\x9b\x93h¼\x04\x99ÑxØl=^ç­ÉüÄ2\x9b\x0b\x1c\x14\x03ÅC5J¨yzÄM\x8cà\x89wÑÊF¢\x03ÕZr!Z\x13\x8e\x11Èî÷1\x00"M\x07\x18e\x15EËuå\x91ù\x1c HÌ\x8c/çA0%C\x1d\x09\x97ªÑ\x0cm8\x01ªá&\x8c\x80B}ê0\x01\x94\x90û\x08\x12|a®p\x080m#9¸7\x8aC@\x90."cþ Íu|\x11$|7Ì1Cjè¥\x95Ú>\x8f\x86k× \\,àP\x1aÂHÉ´'\x03\x9c\x89-,$\x83æM\x1e¡Ï.\x93w\x00±²\x7f\\¸§ç0\x90@¨\x82Û7V\x921ýÄj8a&\x90÷\x03Uì'«*\x99]\x1cÄþR®\x9cW°h¤\x01^p\x83\x8fTtü\x8c\x1f\x0brb\x19f\x08×Ê\x0f\x02S(»g\x00U\x81\x99ø÷\x98ÿ\x08§_\x87\x04qÅW²z\x85\x00|9\x14:\x04ìZ\x8bñL\x81­q'Z"t·\x15\x9a'\x0c±\x9d\x813hi\x940ªsU\x95w\x0e\x0b+dÄ\x85:ÑX`[0m" 400 -
+2025-03-17 22:51:42,613 - ERROR - 127.0.0.1 - - [17/Mar/2025 22:51:42] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x06à\x01\x00\x06Ü\x03\x03\x83d\x9d,\x8eJùâ¶åÕ´RðëÛË¥Å$|\x83\x07\x044c8\x18Æe\x84d')
+2025-03-17 22:51:42,613 - INFO - 127.0.0.1 - - [17/Mar/2025 22:51:42] "[31m[1m\x16\x03\x01\x06à\x01\x00\x06Ü\x03\x03\x83d\x9d,\x8eJùâ¶åÕ´RðëÛË¥Å$|\x83\x07\x044c8\x18Æe\x84d %'\x9e\x96f$\x86éÈ°ÔxíèJ!FbV\x13\x08\x08\x80\x1b8Ã?bßÇ[0m" 400 -
+2025-03-17 22:51:42,615 - ERROR - 127.0.0.1 - - [17/Mar/2025 22:51:42] code 400, message Bad request syntax ('\x16\x03\x01\x06À\x01\x00\x06¼\x03\x03!\x13mØA!¨\x9dW±')
+2025-03-17 22:51:42,615 - INFO - 127.0.0.1 - - [17/Mar/2025 22:51:42] "[31m[1m\x16\x03\x01\x06À\x01\x00\x06¼\x03\x03!\x13mØA!¨\x9dW±[0m" 400 -
+2025-03-17 22:51:45,177 - ERROR - 127.0.0.1 - - [17/Mar/2025 22:51:45] code 400, message Bad request version ('0\x8fj\x84VÄì\x8e7\x17A*\xadûZòæ\x82åXÉÃÏ£®\x96õ{6>k©mP\x95$`')
+2025-03-17 22:51:45,179 - INFO - 127.0.0.1 - - [17/Mar/2025 22:51:45] "[31m[1m\x16\x03\x01\x06À\x01\x00\x06¼\x03\x03\x7f1\x8f\x94k\x7fXc¦Qð\x12\x9c5-\x96±{Þ\x9ab\x90Êéo`\x89¥\x1bîòt ; \x86\x00àÿ¶\x91$n\x9d\x8cjsjÅdØ\x82\x88î­¶\x88ÝÃ@\x12©ô3¤\x00 úú\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06Sêê\x00\x00þ\x0d\x00Ú\x00\x00\x01\x00\x01Ë\x00 A¡Z\x1b÷\x80ðk!S&3ö\x13:;ó·Ö.!±ÚÌ·\x07a5$FÀE\x00°b°,f\x89¾!WÊ,\x03*\x03¢Ööx\x11\x9b\x00Í\x82\x9c³h\x95\x17|mØÞ½)ÓÆ÷ 0\x8fj\x84VÄì\x8e7\x17A*­ûZòæ\x82åXÉÃÏ£®\x96õ{6>k©mP\x95$`[0m" 400 -
+2025-03-17 22:51:45,180 - ERROR - 127.0.0.1 - - [17/Mar/2025 22:51:45] code 400, message Bad request version ('ÚÚ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x063')
+2025-03-17 22:51:45,180 - INFO - 127.0.0.1 - - [17/Mar/2025 22:51:45] "[31m[1m\x16\x03\x01\x06 \x01\x00\x06\x9c\x03\x03ªÓ%Ï'=ÿß\x85Üß\x9c\x0f\x07Ï§o{GDQ\x87tñß\x97\x16é\x0cM|C ô\x9dÀÿ\x09áE9ël\x9a¬?ÜÂ\x8d«*\x1b±ã`¬\x09"Ó¡²®cí\x00\x00 ÚÚ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x063[0m" 400 -
+2025-03-17 22:52:17,695 - ERROR - 127.0.0.1 - - [17/Mar/2025 22:52:17] code 400, message Bad request version ('oÖ')
+2025-03-17 22:52:17,696 - INFO - 127.0.0.1 - - [17/Mar/2025 22:52:17] "[31m[1m\x16\x03\x01\x06à\x01\x00\x06Ü\x03\x03\x10Ö\x16Õç_°f\x02çzrâù\x8d|\x02©vkEJ\x1cp \x08\x00£\x1eoÖ[0m" 400 -
+2025-03-17 22:52:17,697 - ERROR - 127.0.0.1 - - [17/Mar/2025 22:52:17] code 400, message Bad request version ('\x9a\x9a\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x063ÚÚ\x00\x00\x00')
+2025-03-17 22:52:17,697 - INFO - 127.0.0.1 - - [17/Mar/2025 22:52:17] "[31m[1m\x16\x03\x01\x06 \x01\x00\x06\x9c\x03\x03\x8bö\x11\x9dr4]\x87f¦õøCµaNÃ\x90h\x80\x03ã&æ\x899jSD(\x18\x19 \x1e°\x97Xk*­D¨ÔwÏSÛ\x81\x93K#\x87\x97\x11\x0fïY}P¸î\x9d¶\x88ì\x00 \x9a\x9a\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x063ÚÚ\x00\x00\x00[0m" 400 -
+2025-03-17 22:53:06,124 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-17 22:53:06,163 - INFO -  * Restarting with stat
+2025-03-17 22:53:06,793 - INFO - API server started 2025-03-17_22-53-06
+2025-03-17 22:53:06,824 - WARNING -  * Debugger is active!
+2025-03-17 22:53:06,831 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 22:53:08,622 - ERROR - 127.0.0.1 - - [17/Mar/2025 22:53:08] code 400, message Bad request version ('é+ÿCÖ\x7f0Ú\x16Ì\x86\x8eò')
+2025-03-17 22:53:08,622 - INFO - 127.0.0.1 - - [17/Mar/2025 22:53:08] "[31m[1m\x16\x03\x01\x06 \x01\x00\x06\x9c\x03\x03GW¬&\x1e¼è\x9d\x1cé+ÿCÖ\x7f0Ú\x16Ì\x86\x8eò[0m" 400 -
+2025-03-17 22:53:08,624 - ERROR - 127.0.0.1 - - [17/Mar/2025 22:53:08] code 400, message Bad request version ('ÚÚ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06S')
+2025-03-17 22:53:08,625 - INFO - 127.0.0.1 - - [17/Mar/2025 22:53:08] "[31m[1m\x16\x03\x01\x06À\x01\x00\x06¼\x03\x03\x0d0T®É\x8fñÑ\x1eÇ\x9dMÑlí\x8f\x17{mAc*\x91p¾]\x01R°\x82\x8d® \x1b\x95U¼Q§E\x9f$÷ôæAä-\x1bzzÒLRO\x1aäÒq\x96\x8d)\x7fsm\x00 ÚÚ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06S[0m" 400 -
+2025-03-17 22:54:00,113 - INFO - 127.0.0.1 - - [17/Mar/2025 22:54:00] "[33mOPTIONS /login HTTP/1.1[0m" 404 -
+2025-03-17 22:55:04,979 - INFO - 127.0.0.1 - - [17/Mar/2025 22:55:04] "[33mOPTIONS /login HTTP/1.1[0m" 404 -
+2025-03-17 22:56:04,753 - INFO - 127.0.0.1 - - [17/Mar/2025 22:56:04] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-17 22:56:04,758 - INFO - 127.0.0.1 - - [17/Mar/2025 22:56:04] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-03-17 22:56:32,141 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-17 22:56:32,175 - INFO -  * Restarting with stat
+2025-03-17 22:56:32,867 - INFO - API server started 2025-03-17_22-56-32
+2025-03-17 22:56:32,889 - WARNING -  * Debugger is active!
+2025-03-17 22:56:32,894 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 22:56:35,823 - INFO - 127.0.0.1 - - [17/Mar/2025 22:56:35] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-17 22:56:35,826 - INFO - 127.0.0.1 - - [17/Mar/2025 22:56:35] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-03-17 22:56:37,107 - INFO - 127.0.0.1 - - [17/Mar/2025 22:56:37] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-03-17 22:57:26,360 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-17 22:57:26,392 - INFO -  * Restarting with stat
+2025-03-17 22:58:26,399 - INFO - API server started 2025-03-17_22-58-26
+2025-03-17 22:58:26,431 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2025-03-17 22:58:26,431 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-17 22:58:26,432 - INFO -  * Restarting with stat
+2025-03-17 22:58:26,896 - INFO - API server started 2025-03-17_22-58-26
+2025-03-17 22:58:26,913 - WARNING -  * Debugger is active!
+2025-03-17 22:58:26,919 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 22:58:29,132 - INFO - 127.0.0.1 - - [17/Mar/2025 22:58:29] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-17 22:58:29,154 - INFO - 127.0.0.1 - - [17/Mar/2025 22:58:29] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-03-17 23:01:21,735 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-17 23:01:21,765 - INFO -  * Restarting with stat
+2025-03-17 23:01:22,376 - INFO - API server started 2025-03-17_23-01-22
+2025-03-17 23:01:22,400 - WARNING -  * Debugger is active!
+2025-03-17 23:01:22,405 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:01:23,953 - INFO - 127.0.0.1 - - [17/Mar/2025 23:01:23] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-17 23:01:23,973 - INFO - 127.0.0.1 - - [17/Mar/2025 23:01:23] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-03-17 23:01:42,874 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-17 23:01:42,905 - INFO -  * Restarting with stat
+2025-03-17 23:01:43,518 - INFO - API server started 2025-03-17_23-01-43
+2025-03-17 23:01:43,542 - WARNING -  * Debugger is active!
+2025-03-17 23:01:43,550 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:01:44,777 - INFO - 127.0.0.1 - - [17/Mar/2025 23:01:44] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-17 23:01:44,779 - INFO - 127.0.0.1 - - [17/Mar/2025 23:01:44] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-03-17 23:01:57,907 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-17 23:01:57,944 - INFO -  * Restarting with stat
+2025-03-17 23:01:58,601 - INFO - API server started 2025-03-17_23-01-58
+2025-03-17 23:01:58,626 - WARNING -  * Debugger is active!
+2025-03-17 23:01:58,632 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:01:58,701 - INFO - 127.0.0.1 - - [17/Mar/2025 23:01:58] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-17 23:01:58,703 - INFO - 127.0.0.1 - - [17/Mar/2025 23:01:58] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-03-17 23:02:20,125 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-17 23:02:20,157 - INFO -  * Restarting with stat
+2025-03-17 23:02:20,837 - INFO - API server started 2025-03-17_23-02-20
+2025-03-17 23:02:20,860 - WARNING -  * Debugger is active!
+2025-03-17 23:02:20,865 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:02:20,891 - INFO - 127.0.0.1 - - [17/Mar/2025 23:02:20] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-17 23:02:20,894 - INFO - 127.0.0.1 - - [17/Mar/2025 23:02:20] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-03-17 23:03:08,143 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-17 23:03:08,189 - INFO -  * Restarting with stat
+2025-03-17 23:03:08,873 - INFO - API server started 2025-03-17_23-03-08
+2025-03-17 23:03:08,897 - WARNING -  * Debugger is active!
+2025-03-17 23:03:08,903 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:03:09,695 - INFO - 127.0.0.1 - - [17/Mar/2025 23:03:09] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-17 23:03:09,698 - INFO - 127.0.0.1 - - [17/Mar/2025 23:03:09] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-03-17 23:03:27,531 - INFO - 127.0.0.1 - - [17/Mar/2025 23:03:27] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-17 23:03:27,534 - INFO - 127.0.0.1 - - [17/Mar/2025 23:03:27] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-03-17 23:05:06,926 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-17 23:05:06,955 - INFO -  * Restarting with stat
+2025-03-17 23:05:07,643 - INFO - API server started 2025-03-17_23-05-07
+2025-03-17 23:05:07,668 - WARNING -  * Debugger is active!
+2025-03-17 23:05:07,674 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:05:08,901 - INFO - 127.0.0.1 - - [17/Mar/2025 23:05:08] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-17 23:05:08,904 - INFO - 127.0.0.1 - - [17/Mar/2025 23:05:08] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-03-17 23:05:29,137 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-17 23:05:29,170 - INFO -  * Restarting with stat
+2025-03-17 23:05:29,756 - INFO - API server started 2025-03-17_23-05-29
+2025-03-17 23:05:29,780 - WARNING -  * Debugger is active!
+2025-03-17 23:05:29,785 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:05:32,531 - INFO - 127.0.0.1 - - [17/Mar/2025 23:05:32] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-17 23:05:32,536 - INFO - 127.0.0.1 - - [17/Mar/2025 23:05:32] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-03-17 23:05:51,316 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-17 23:05:51,354 - INFO -  * Restarting with stat
+2025-03-17 23:05:51,867 - INFO - API server started 2025-03-17_23-05-51
+2025-03-17 23:05:51,887 - WARNING -  * Debugger is active!
+2025-03-17 23:05:51,892 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:05:52,654 - INFO - 127.0.0.1 - - [17/Mar/2025 23:05:52] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-17 23:05:52,656 - INFO - 127.0.0.1 - - [17/Mar/2025 23:05:52] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-03-17 23:06:03,236 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-17 23:06:03,264 - INFO -  * Restarting with stat
+2025-03-17 23:06:03,754 - INFO - API server started 2025-03-17_23-06-03
+2025-03-17 23:06:03,775 - WARNING -  * Debugger is active!
+2025-03-17 23:06:03,780 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:06:05,827 - INFO - 127.0.0.1 - - [17/Mar/2025 23:06:05] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-17 23:06:05,829 - INFO - 127.0.0.1 - - [17/Mar/2025 23:06:05] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-03-17 23:06:14,008 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-17 23:06:14,037 - INFO -  * Restarting with stat
+2025-03-17 23:06:14,563 - INFO - API server started 2025-03-17_23-06-14
+2025-03-17 23:06:14,583 - WARNING -  * Debugger is active!
+2025-03-17 23:06:14,589 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:06:16,675 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-17 23:06:16,715 - INFO -  * Restarting with stat
+2025-03-17 23:06:17,213 - INFO - API server started 2025-03-17_23-06-17
+2025-03-17 23:06:17,231 - WARNING -  * Debugger is active!
+2025-03-17 23:06:17,236 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:06:18,751 - INFO - 127.0.0.1 - - [17/Mar/2025 23:06:18] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-17 23:06:18,763 - INFO - 127.0.0.1 - - [17/Mar/2025 23:06:18] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-03-17 23:07:44,776 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/auth.py', reloading
+2025-03-17 23:07:44,820 - INFO -  * Restarting with stat
+2025-03-17 23:07:45,492 - INFO - API server started 2025-03-17_23-07-45
+2025-03-17 23:07:45,512 - WARNING -  * Debugger is active!
+2025-03-17 23:07:45,518 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:09:10,101 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-17 23:09:10,137 - INFO -  * Restarting with stat
+2025-03-17 23:09:10,729 - INFO - API server started 2025-03-17_23-09-10
+2025-03-17 23:09:10,752 - WARNING -  * Debugger is active!
+2025-03-17 23:09:10,760 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:09:22,051 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-17 23:09:22,087 - INFO -  * Restarting with stat
+2025-03-17 23:09:22,704 - INFO - API server started 2025-03-17_23-09-22
+2025-03-17 23:09:22,729 - WARNING -  * Debugger is active!
+2025-03-17 23:09:22,735 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:09:23,268 - INFO - 127.0.0.1 - - [17/Mar/2025 23:09:23] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-17 23:09:23,282 - INFO - 127.0.0.1 - - [17/Mar/2025 23:09:23] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-03-17 23:09:34,074 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-17 23:09:34,110 - INFO -  * Restarting with stat
+2025-03-17 23:09:34,668 - INFO - API server started 2025-03-17_23-09-34
+2025-03-17 23:09:34,688 - WARNING -  * Debugger is active!
+2025-03-17 23:09:34,693 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:09:37,688 - INFO - 127.0.0.1 - - [17/Mar/2025 23:09:37] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-17 23:09:37,695 - INFO - 127.0.0.1 - - [17/Mar/2025 23:09:37] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-03-17 23:10:35,411 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/auth.py', reloading
+2025-03-17 23:10:35,442 - INFO -  * Restarting with stat
+2025-03-17 23:10:36,068 - INFO - API server started 2025-03-17_23-10-36
+2025-03-17 23:10:36,092 - WARNING -  * Debugger is active!
+2025-03-17 23:10:36,098 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:10:36,851 - INFO - 127.0.0.1 - - [17/Mar/2025 23:10:36] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-17 23:10:36,860 - INFO - 127.0.0.1 - - [17/Mar/2025 23:10:36] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-03-17 23:11:55,474 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/auth.py', reloading
+2025-03-17 23:11:55,511 - INFO -  * Restarting with stat
+2025-03-17 23:11:56,166 - INFO - API server started 2025-03-17_23-11-56
+2025-03-17 23:11:56,191 - WARNING -  * Debugger is active!
+2025-03-17 23:11:56,202 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:11:58,602 - INFO - 127.0.0.1 - - [17/Mar/2025 23:11:58] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-17 23:11:58,604 - INFO - 127.0.0.1 - - [17/Mar/2025 23:11:58] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-03-17 23:12:15,787 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-17 23:12:15,823 - INFO -  * Restarting with stat
+2025-03-17 23:12:16,450 - INFO - API server started 2025-03-17_23-12-16
+2025-03-17 23:12:16,473 - WARNING -  * Debugger is active!
+2025-03-17 23:12:16,478 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:12:18,108 - INFO - 127.0.0.1 - - [17/Mar/2025 23:12:18] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-17 23:12:18,116 - INFO - 127.0.0.1 - - [17/Mar/2025 23:12:18] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-03-17 23:13:45,001 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/auth.py', reloading
+2025-03-17 23:13:45,039 - INFO -  * Restarting with stat
+2025-03-17 23:13:45,694 - INFO - API server started 2025-03-17_23-13-45
+2025-03-17 23:13:45,717 - WARNING -  * Debugger is active!
+2025-03-17 23:13:45,724 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:13:59,174 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/auth.py', reloading
+2025-03-17 23:13:59,206 - INFO -  * Restarting with stat
+2025-03-17 23:13:59,741 - INFO - API server started 2025-03-17_23-13-59
+2025-03-17 23:13:59,760 - WARNING -  * Debugger is active!
+2025-03-17 23:13:59,765 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:14:01,552 - INFO - 127.0.0.1 - - [17/Mar/2025 23:14:01] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-17 23:14:01,558 - INFO - 127.0.0.1 - - [17/Mar/2025 23:14:01] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-03-17 23:14:48,064 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-17 23:14:48,096 - INFO -  * Restarting with stat
+2025-03-17 23:15:30,807 - INFO - API server started 2025-03-17_23-15-30
+2025-03-17 23:15:30,836 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2025-03-17 23:15:30,837 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-17 23:15:30,838 - INFO -  * Restarting with stat
+2025-03-17 23:15:31,311 - INFO - API server started 2025-03-17_23-15-31
+2025-03-17 23:15:31,328 - WARNING -  * Debugger is active!
+2025-03-17 23:15:31,334 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:15:33,276 - INFO - 127.0.0.1 - - [17/Mar/2025 23:15:33] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-17 23:15:33,279 - INFO - 127.0.0.1 - - [17/Mar/2025 23:15:33] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-03-17 23:16:07,307 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/auth.py', reloading
+2025-03-17 23:16:07,338 - INFO -  * Restarting with stat
+2025-03-17 23:16:07,870 - INFO - API server started 2025-03-17_23-16-07
+2025-03-17 23:16:07,890 - WARNING -  * Debugger is active!
+2025-03-17 23:16:07,895 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:16:09,149 - INFO - 127.0.0.1 - - [17/Mar/2025 23:16:09] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-17 23:16:09,161 - INFO - 127.0.0.1 - - [17/Mar/2025 23:16:09] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-03-17 23:16:49,920 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/auth.py', reloading
+2025-03-17 23:16:49,955 - INFO -  * Restarting with stat
+2025-03-17 23:16:50,451 - INFO - API server started 2025-03-17_23-16-50
+2025-03-17 23:16:50,471 - WARNING -  * Debugger is active!
+2025-03-17 23:16:50,477 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:17:15,142 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-17 23:17:15,171 - INFO -  * Restarting with stat
+2025-03-17 23:17:15,708 - INFO - API server started 2025-03-17_23-17-15
+2025-03-17 23:17:15,728 - WARNING -  * Debugger is active!
+2025-03-17 23:17:15,734 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:17:15,909 - INFO - 127.0.0.1 - - [17/Mar/2025 23:17:15] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-17 23:17:15,912 - INFO - 127.0.0.1 - - [17/Mar/2025 23:17:15] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-03-17 23:17:27,076 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-17 23:17:27,110 - INFO -  * Restarting with stat
+2025-03-17 23:17:27,634 - INFO - API server started 2025-03-17_23-17-27
+2025-03-17 23:17:27,653 - WARNING -  * Debugger is active!
+2025-03-17 23:17:27,659 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:17:28,217 - INFO - 127.0.0.1 - - [17/Mar/2025 23:17:28] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-17 23:17:28,230 - INFO - 127.0.0.1 - - [17/Mar/2025 23:17:28] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-03-17 23:17:37,949 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-17 23:17:37,977 - INFO -  * Restarting with stat
+2025-03-17 23:17:38,558 - INFO - API server started 2025-03-17_23-17-38
+2025-03-17 23:17:38,585 - WARNING -  * Debugger is active!
+2025-03-17 23:17:38,591 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:17:39,071 - INFO - 127.0.0.1 - - [17/Mar/2025 23:17:39] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-17 23:17:39,074 - INFO - 127.0.0.1 - - [17/Mar/2025 23:17:39] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-03-17 23:17:46,622 - INFO - 127.0.0.1 - - [17/Mar/2025 23:17:46] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-17 23:17:46,625 - INFO - 127.0.0.1 - - [17/Mar/2025 23:17:46] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-03-17 23:17:46,796 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-17 23:17:46,852 - INFO -  * Restarting with stat
+2025-03-17 23:17:47,415 - INFO - API server started 2025-03-17_23-17-47
+2025-03-17 23:17:47,436 - WARNING -  * Debugger is active!
+2025-03-17 23:17:47,442 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:17:50,303 - INFO - 127.0.0.1 - - [17/Mar/2025 23:17:50] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-03-17 23:18:00,742 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-17 23:18:00,788 - INFO -  * Restarting with stat
+2025-03-17 23:18:01,272 - INFO - API server started 2025-03-17_23-18-01
+2025-03-17 23:18:01,290 - WARNING -  * Debugger is active!
+2025-03-17 23:18:01,296 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:18:02,067 - INFO - 127.0.0.1 - - [17/Mar/2025 23:18:02] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-17 23:18:02,077 - INFO - 127.0.0.1 - - [17/Mar/2025 23:18:02] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-03-17 23:18:08,500 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-17 23:18:08,532 - INFO -  * Restarting with stat
+2025-03-17 23:18:09,014 - INFO - API server started 2025-03-17_23-18-09
+2025-03-17 23:18:09,033 - WARNING -  * Debugger is active!
+2025-03-17 23:18:09,038 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:18:10,633 - INFO - 127.0.0.1 - - [17/Mar/2025 23:18:10] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-17 23:18:10,636 - INFO - 127.0.0.1 - - [17/Mar/2025 23:18:10] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-03-17 23:18:25,533 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-17 23:18:25,564 - INFO -  * Restarting with stat
+2025-03-17 23:18:26,028 - INFO - API server started 2025-03-17_23-18-26
+2025-03-17 23:18:26,047 - WARNING -  * Debugger is active!
+2025-03-17 23:18:26,054 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:18:26,093 - INFO - 127.0.0.1 - - [17/Mar/2025 23:18:26] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-17 23:18:26,097 - INFO - 127.0.0.1 - - [17/Mar/2025 23:18:26] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-03-17 23:18:45,570 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-17 23:18:45,620 - INFO -  * Restarting with stat
+2025-03-17 23:18:46,110 - INFO - API server started 2025-03-17_23-18-46
+2025-03-17 23:18:46,128 - WARNING -  * Debugger is active!
+2025-03-17 23:18:46,134 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:18:47,174 - INFO - 127.0.0.1 - - [17/Mar/2025 23:18:47] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-17 23:18:47,183 - INFO - 127.0.0.1 - - [17/Mar/2025 23:18:47] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-03-17 23:18:57,481 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-17 23:18:57,520 - INFO -  * Restarting with stat
+2025-03-17 23:18:58,006 - INFO - API server started 2025-03-17_23-18-58
+2025-03-17 23:18:58,027 - WARNING -  * Debugger is active!
+2025-03-17 23:18:58,032 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:18:59,513 - INFO - 127.0.0.1 - - [17/Mar/2025 23:18:59] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-17 23:18:59,516 - INFO - 127.0.0.1 - - [17/Mar/2025 23:18:59] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-03-17 23:20:24,326 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-17 23:20:24,362 - INFO -  * Restarting with stat
+2025-03-17 23:20:25,015 - INFO - API server started 2025-03-17_23-20-25
+2025-03-17 23:20:25,037 - WARNING -  * Debugger is active!
+2025-03-17 23:20:25,043 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:20:27,116 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-17 23:20:27,147 - INFO -  * Restarting with stat
+2025-03-17 23:20:27,641 - INFO - API server started 2025-03-17_23-20-27
+2025-03-17 23:20:27,660 - WARNING -  * Debugger is active!
+2025-03-17 23:20:27,665 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:20:29,082 - INFO - 127.0.0.1 - - [17/Mar/2025 23:20:29] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-17 23:20:29,091 - INFO - 127.0.0.1 - - [17/Mar/2025 23:20:29] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-03-17 23:20:35,870 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-17 23:20:35,898 - INFO -  * Restarting with stat
+2025-03-17 23:20:36,358 - INFO - API server started 2025-03-17_23-20-36
+2025-03-17 23:20:36,380 - WARNING -  * Debugger is active!
+2025-03-17 23:20:36,385 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:21:03,010 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-17 23:21:03,044 - INFO -  * Restarting with stat
+2025-03-17 23:21:03,531 - INFO - API server started 2025-03-17_23-21-03
+2025-03-17 23:21:03,550 - WARNING -  * Debugger is active!
+2025-03-17 23:21:03,556 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:21:15,846 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-17 23:21:15,875 - INFO -  * Restarting with stat
+2025-03-17 23:21:16,362 - INFO - API server started 2025-03-17_23-21-16
+2025-03-17 23:21:16,381 - WARNING -  * Debugger is active!
+2025-03-17 23:21:16,387 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:21:17,966 - INFO - 127.0.0.1 - - [17/Mar/2025 23:21:17] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-17 23:21:17,969 - INFO - 127.0.0.1 - - [17/Mar/2025 23:21:17] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-03-17 23:22:54,005 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/auth.py', reloading
+2025-03-17 23:22:54,039 - INFO -  * Restarting with stat
+2025-03-17 23:22:54,680 - INFO - API server started 2025-03-17_23-22-54
+2025-03-17 23:22:54,707 - WARNING -  * Debugger is active!
+2025-03-17 23:22:54,714 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:23:04,967 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-17 23:23:05,003 - INFO -  * Restarting with stat
+2025-03-17 23:23:05,582 - INFO - API server started 2025-03-17_23-23-05
+2025-03-17 23:23:05,601 - WARNING -  * Debugger is active!
+2025-03-17 23:23:05,606 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:23:07,312 - INFO - 127.0.0.1 - - [17/Mar/2025 23:23:07] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-17 23:23:07,315 - INFO - 127.0.0.1 - - [17/Mar/2025 23:23:07] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-03-17 23:23:39,493 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-17 23:23:39,524 - INFO -  * Restarting with stat
+2025-03-17 23:23:40,089 - INFO - API server started 2025-03-17_23-23-40
+2025-03-17 23:23:40,108 - WARNING -  * Debugger is active!
+2025-03-17 23:23:40,114 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:23:42,820 - INFO - 127.0.0.1 - - [17/Mar/2025 23:23:42] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-17 23:23:42,822 - INFO - 127.0.0.1 - - [17/Mar/2025 23:23:42] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-03-17 23:24:55,273 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-17 23:24:55,306 - INFO -  * Restarting with stat
+2025-03-17 23:25:19,457 - INFO - API server started 2025-03-17_23-25-19
+2025-03-17 23:25:19,485 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2025-03-17 23:25:19,486 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-17 23:25:19,486 - INFO -  * Restarting with stat
+2025-03-17 23:25:19,948 - INFO - API server started 2025-03-17_23-25-19
+2025-03-17 23:25:19,967 - WARNING -  * Debugger is active!
+2025-03-17 23:25:19,974 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:25:21,002 - INFO - 127.0.0.1 - - [17/Mar/2025 23:25:21] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-17 23:25:21,004 - INFO - 127.0.0.1 - - [17/Mar/2025 23:25:21] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-03-17 23:26:00,090 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-17 23:26:00,121 - INFO -  * Restarting with stat
+2025-03-17 23:26:00,736 - INFO - API server started 2025-03-17_23-26-00
+2025-03-17 23:26:00,763 - WARNING -  * Debugger is active!
+2025-03-17 23:26:00,770 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:26:02,064 - INFO - 127.0.0.1 - - [17/Mar/2025 23:26:02] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-17 23:26:02,068 - INFO - 127.0.0.1 - - [17/Mar/2025 23:26:02] "POST /trylogin HTTP/1.1" 200 -
+2025-03-17 23:26:02,106 - INFO - 127.0.0.1 - - [17/Mar/2025 23:26:02] "GET /findAll HTTP/1.1" 200 -
+2025-03-17 23:26:16,293 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-17 23:26:16,327 - INFO -  * Restarting with stat
+2025-03-17 23:26:16,833 - INFO - API server started 2025-03-17_23-26-16
+2025-03-17 23:26:16,854 - WARNING -  * Debugger is active!
+2025-03-17 23:26:16,859 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:26:54,929 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/auth.py', reloading
+2025-03-17 23:26:54,965 - INFO -  * Restarting with stat
+2025-03-17 23:26:55,474 - INFO - API server started 2025-03-17_23-26-55
+2025-03-17 23:26:55,493 - WARNING -  * Debugger is active!
+2025-03-17 23:26:55,499 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:27:02,770 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/auth.py', reloading
+2025-03-17 23:27:02,805 - INFO -  * Restarting with stat
+2025-03-17 23:27:03,292 - INFO - API server started 2025-03-17_23-27-03
+2025-03-17 23:27:03,312 - WARNING -  * Debugger is active!
+2025-03-17 23:27:03,318 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:27:28,009 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/auth.py', reloading
+2025-03-17 23:27:28,041 - INFO -  * Restarting with stat
+2025-03-17 23:28:08,461 - INFO - API server started 2025-03-17_23-28-08
+2025-03-17 23:28:08,486 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2025-03-17 23:28:08,486 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-17 23:28:08,487 - INFO -  * Restarting with stat
+2025-03-17 23:28:08,959 - INFO - API server started 2025-03-17_23-28-08
+2025-03-17 23:28:08,977 - WARNING -  * Debugger is active!
+2025-03-17 23:28:08,984 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 23:28:11,805 - INFO - 127.0.0.1 - - [17/Mar/2025 23:28:11] "GET /findAll HTTP/1.1" 200 -
+2025-03-17 23:28:20,304 - INFO - 127.0.0.1 - - [17/Mar/2025 23:28:20] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-17 23:28:20,312 - INFO - 127.0.0.1 - - [17/Mar/2025 23:28:20] "POST /trylogin HTTP/1.1" 200 -
+2025-03-17 23:28:20,335 - INFO - 127.0.0.1 - - [17/Mar/2025 23:28:20] "GET /findAll HTTP/1.1" 200 -
+2025-03-17 23:31:33,686 - INFO - 127.0.0.1 - - [17/Mar/2025 23:31:33] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 00:08:25,257 - INFO - 127.0.0.1 - - [18/Mar/2025 00:08:25] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 01:06:13,224 - INFO - 127.0.0.1 - - [18/Mar/2025 01:06:13] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 06:20:17,048 - INFO - 127.0.0.1 - - [18/Mar/2025 06:20:17] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 06:45:06,148 - INFO - 127.0.0.1 - - [18/Mar/2025 06:45:06] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 06:45:26,121 - INFO - 127.0.0.1 - - [18/Mar/2025 06:45:26] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 09:00:06,218 - INFO - 127.0.0.1 - - [18/Mar/2025 09:00:06] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 09:06:28,840 - INFO - 127.0.0.1 - - [18/Mar/2025 09:06:28] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 09:28:18,685 - INFO - 127.0.0.1 - - [18/Mar/2025 09:28:18] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 09:33:09,922 - INFO - 127.0.0.1 - - [18/Mar/2025 09:33:09] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 09:33:27,528 - INFO - 127.0.0.1 - - [18/Mar/2025 09:33:27] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-18 09:33:27,534 - INFO - 127.0.0.1 - - [18/Mar/2025 09:33:27] "POST /trylogin HTTP/1.1" 200 -
+2025-03-18 09:33:27,577 - INFO - 127.0.0.1 - - [18/Mar/2025 09:33:27] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 09:33:31,986 - INFO - 127.0.0.1 - - [18/Mar/2025 09:33:31] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 09:42:08,643 - INFO - 127.0.0.1 - - [18/Mar/2025 09:42:08] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 10:49:45,883 - INFO - 127.0.0.1 - - [18/Mar/2025 10:49:45] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 10:50:03,216 - INFO - 127.0.0.1 - - [18/Mar/2025 10:50:03] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 15:05:29,558 - INFO - API server started 2025-03-18_15-05-29
+2025-03-18 15:05:29,588 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2025-03-18 15:05:29,588 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-18 15:05:29,589 - INFO -  * Restarting with stat
+2025-03-18 15:05:30,037 - INFO - API server started 2025-03-18_15-05-30
+2025-03-18 15:05:30,056 - WARNING -  * Debugger is active!
+2025-03-18 15:05:30,062 - INFO -  * Debugger PIN: 507-368-162
+2025-03-18 15:05:34,276 - INFO - 127.0.0.1 - - [18/Mar/2025 15:05:34] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 15:06:00,180 - INFO - 127.0.0.1 - - [18/Mar/2025 15:06:00] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-18 15:06:00,183 - INFO - 127.0.0.1 - - [18/Mar/2025 15:06:00] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-03-18 15:06:01,994 - INFO - 127.0.0.1 - - [18/Mar/2025 15:06:01] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-03-18 15:06:14,847 - INFO - 127.0.0.1 - - [18/Mar/2025 15:06:14] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-18 15:06:14,851 - INFO - 127.0.0.1 - - [18/Mar/2025 15:06:14] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-03-18 15:06:22,983 - INFO - 127.0.0.1 - - [18/Mar/2025 15:06:22] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-18 15:06:22,986 - INFO - 127.0.0.1 - - [18/Mar/2025 15:06:22] "POST /trylogin HTTP/1.1" 200 -
+2025-03-18 15:06:23,006 - INFO - 127.0.0.1 - - [18/Mar/2025 15:06:23] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 15:06:28,140 - INFO - 127.0.0.1 - - [18/Mar/2025 15:06:28] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 15:10:28,671 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/auth.py', reloading
+2025-03-18 15:10:28,714 - INFO -  * Restarting with stat
+2025-03-18 15:10:29,317 - INFO - API server started 2025-03-18_15-10-29
+2025-03-18 15:10:29,339 - WARNING -  * Debugger is active!
+2025-03-18 15:10:29,344 - INFO -  * Debugger PIN: 507-368-162
+2025-03-18 15:10:51,869 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/auth.py', reloading
+2025-03-18 15:10:51,901 - INFO -  * Restarting with stat
+2025-03-18 15:10:52,473 - INFO - API server started 2025-03-18_15-10-52
+2025-03-18 15:10:52,493 - WARNING -  * Debugger is active!
+2025-03-18 15:10:52,498 - INFO -  * Debugger PIN: 507-368-162
+2025-03-18 15:11:09,987 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/auth.py', reloading
+2025-03-18 15:11:10,020 - INFO -  * Restarting with stat
+2025-03-18 15:11:10,609 - INFO - API server started 2025-03-18_15-11-10
+2025-03-18 15:11:10,629 - WARNING -  * Debugger is active!
+2025-03-18 15:11:10,636 - INFO -  * Debugger PIN: 507-368-162
+2025-03-18 15:11:36,394 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/auth.py', reloading
+2025-03-18 15:11:36,426 - INFO -  * Restarting with stat
