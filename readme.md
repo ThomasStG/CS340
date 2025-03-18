@@ -1,27 +1,82 @@
-# installation
+# Installation Guide
 
 ## Windows
 
-### install npm and Node.js
+### Install npm and Node.js
 
-- option 1: use nvm
+#### Option 1: Use nvm (Node Version Manager)
 
-1. https://github.com/coreybutler/nvm-windows/releases
-2. use the nvm_setup.exe
-3. install.
-4. download node.js 18.13 (`nvm install 18.13`)
-5. run `nvm use 18.13`
+1. Download **nvm for Windows**: [GitHub Releases](https://github.com/coreybutler/nvm-windows/releases)
+2. Run `nvm_setup.exe` and follow the installation steps.
+3. Install Node.js version 18.13:
+   ```sh
+   nvm install 18.13
+   nvm use 18.13
+   ```
 
-### clone the project
+### Clone the Project
 
-### navigate to the directory
+```sh
+git clone https://github.com/ThomasStG/CS340.git
+```
 
-### install dependencies
+### Navigate to the Directory
 
-- `npm i`
+```sh
+cd CS340/IDEAr
+```
 
-### Done
+### Install Dependencies
 
-## Tailwind Guide
+```sh
+npm install
+```
 
-- https://tailwindcss.com/docs/installation/using-vite
+Now you are ready to run the project!
+
+---
+
+## Python Virtual Environment
+
+To ensure consistency, it's recommended to use a virtual environment for Python.
+
+### Create a Virtual Environment
+
+```sh
+cd ..
+python3 -m venv venv
+```
+
+### Activate the Virtual Environment
+
+- **Mac/Linux**:
+  ```sh
+  source venv/bin/activate
+  ```
+- **Windows (Command Prompt)**:
+  ```sh
+  venv\Scripts\activate
+  ```
+- **Windows (PowerShell)**:
+  ```sh
+  venv\Scripts\Activate.ps1
+  ```
+
+### Install Python Dependencies
+
+```sh
+pip install -r requirements.txt
+```
+
+---
+
+## Tailwind CSS Guide
+
+To set up Tailwind with Vite:
+
+```sh
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
+
+For more details, check the [Tailwind CSS Documentation](https://tailwindcss.com/docs/installation/using-vite).

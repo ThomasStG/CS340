@@ -1,0 +1,14 @@
+.header {
+    background-color: #f0f0f0;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 15% 15% 10% 10% 10% 10% 10% 10% 10%;
+}
+
+.headerColumn{
+    height: 80px;
+    padding: 10px;
+}

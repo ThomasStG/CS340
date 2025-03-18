@@ -35,7 +35,7 @@ export class GetItemsService {
   }
 
   getItem(name: string, isMetric: boolean, size: string): Observable<any> {
-    const url = `http://127.0.0.1:3000/find?name=${encodeURIComponent(name)}&isMetric=${isMetric}&size=${size}`;
+    const url = `http://127.0.0.1:3000/find?name=${encodeURIComponent(name)}&is_metric=${isMetric}&size=${size}`;
     return this.http.get(url);
   }
   getFuzzyItems(
@@ -43,7 +43,7 @@ export class GetItemsService {
     isMetric: boolean,
     size: string,
   ): Observable<any> {
-    const url = `http://127.0.0.1:3000/fuzzyfind?name=${encodeURIComponent(name)}&isMetric=${isMetric}&size=${size}`;
+    const url = `http://127.0.0.1:3000/fuzzyfind?name=${encodeURIComponent(name)}&is_metric=${isMetric}&size=${size}`;
     return this.http.get(url);
   }
   getAllItems(): Observable<any> {

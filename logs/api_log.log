@@ -1,0 +1,168 @@
+2025-03-11 17:53:13,873 - INFO - API server started 2025-03-11_17-53-13
+2025-03-11 17:53:13,928 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2025-03-11 17:53:13,928 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-11 17:53:13,929 - INFO -  * Restarting with stat
+2025-03-11 17:53:14,369 - INFO - API server started 2025-03-11_17-53-14
+2025-03-11 17:53:14,387 - WARNING -  * Debugger is active!
+2025-03-11 17:53:14,393 - INFO -  * Debugger PIN: 140-445-775
+2025-03-11 17:53:30,212 - INFO - 127.0.0.1 - - [11/Mar/2025 17:53:30] "GET /findAll HTTP/1.1" 200 -
+2025-03-11 17:53:30,212 - INFO - 127.0.0.1 - - [11/Mar/2025 17:53:30] "GET /findAll HTTP/1.1" 200 -
+2025-03-11 17:53:30,371 - INFO - 127.0.0.1 - - [11/Mar/2025 17:53:30] "GET /findAll HTTP/1.1" 200 -
+2025-03-11 17:54:33,533 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-11 17:54:33,571 - INFO -  * Restarting with stat
+2025-03-11 17:54:48,274 - INFO - API server started 2025-03-11_17-54-48
+2025-03-11 17:54:48,301 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2025-03-11 17:54:48,301 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-11 17:54:48,302 - INFO -  * Restarting with stat
+2025-03-11 17:54:48,759 - INFO - API server started 2025-03-11_17-54-48
+2025-03-11 17:54:48,775 - WARNING -  * Debugger is active!
+2025-03-11 17:54:48,781 - INFO -  * Debugger PIN: 140-445-775
+2025-03-11 17:54:51,724 - INFO - 127.0.0.1 - - [11/Mar/2025 17:54:51] "GET /findAll HTTP/1.1" 200 -
+2025-03-11 17:54:51,808 - INFO - 127.0.0.1 - - [11/Mar/2025 17:54:51] "GET /findAll HTTP/1.1" 200 -
+2025-03-11 17:55:02,271 - INFO - 127.0.0.1 - - [11/Mar/2025 17:55:02] "[31m[1mGET /find?name=M5&is_metric=True&size=.5 HTTP/1.1[0m" 400 -
+2025-03-11 17:55:11,978 - INFO - 127.0.0.1 - - [11/Mar/2025 17:55:11] "[31m[1mGET /find?name=M5&is_metric=True&size=.5 HTTP/1.1[0m" 400 -
+2025-03-11 17:56:05,880 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-11 17:56:05,907 - INFO -  * Restarting with stat
+2025-03-11 17:56:06,515 - INFO - API server started 2025-03-11_17-56-06
+2025-03-11 17:56:06,535 - WARNING -  * Debugger is active!
+2025-03-11 17:56:06,541 - INFO -  * Debugger PIN: 140-445-775
+2025-03-11 17:56:09,424 - INFO - 127.0.0.1 - - [11/Mar/2025 17:56:09] "[31m[1mGET /find?name=M5&is_metric=True&size=.5 HTTP/1.1[0m" 400 -
+2025-03-11 17:57:28,688 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-11 17:57:28,719 - INFO -  * Restarting with stat
+2025-03-11 17:57:29,346 - INFO - API server started 2025-03-11_17-57-29
+2025-03-11 17:57:29,368 - WARNING -  * Debugger is active!
+2025-03-11 17:57:29,373 - INFO -  * Debugger PIN: 140-445-775
+2025-03-11 17:57:30,975 - DEBUG - Starting new HTTPS connection (1): api.resend.com:443
+2025-03-11 17:57:31,826 - DEBUG - https://api.resend.com:443 "POST /emails HTTP/1.1" 200 45
+2025-03-11 17:57:31,847 - DEBUG - Starting new HTTPS connection (1): api.resend.com:443
+2025-03-11 17:57:32,434 - DEBUG - https://api.resend.com:443 "POST /emails HTTP/1.1" 200 45
+2025-03-11 17:57:32,435 - DEBUG - Starting new HTTPS connection (1): api.resend.com:443
+2025-03-11 17:57:33,181 - DEBUG - https://api.resend.com:443 "POST /emails HTTP/1.1" 200 45
+2025-03-11 17:57:33,191 - DEBUG - Starting new HTTPS connection (1): api.resend.com:443
+2025-03-11 17:57:33,742 - DEBUG - https://api.resend.com:443 "POST /emails HTTP/1.1" 200 45
+2025-03-11 17:57:33,749 - DEBUG - Starting new HTTPS connection (1): api.resend.com:443
+2025-03-11 17:57:34,241 - DEBUG - https://api.resend.com:443 "POST /emails HTTP/1.1" 200 45
+2025-03-11 17:57:34,246 - DEBUG - Starting new HTTPS connection (1): api.resend.com:443
+2025-03-11 17:57:34,926 - DEBUG - https://api.resend.com:443 "POST /emails HTTP/1.1" 200 45
+2025-03-11 17:57:34,934 - DEBUG - Starting new HTTPS connection (1): api.resend.com:443
+2025-03-11 17:57:35,557 - DEBUG - https://api.resend.com:443 "POST /emails HTTP/1.1" 200 45
+2025-03-11 17:57:35,558 - DEBUG - Starting new HTTPS connection (1): api.resend.com:443
+2025-03-11 17:57:36,116 - DEBUG - https://api.resend.com:443 "POST /emails HTTP/1.1" 200 45
+2025-03-11 17:57:36,127 - DEBUG - Starting new HTTPS connection (1): api.resend.com:443
+2025-03-11 17:57:36,701 - DEBUG - https://api.resend.com:443 "POST /emails HTTP/1.1" 200 45
+2025-03-11 17:57:36,702 - DEBUG - Starting new HTTPS connection (1): api.resend.com:443
+2025-03-11 17:57:37,224 - DEBUG - https://api.resend.com:443 "POST /emails HTTP/1.1" 200 45
+2025-03-11 17:57:37,231 - INFO - 127.0.0.1 - - [11/Mar/2025 17:57:37] "GET /findAll HTTP/1.1" 200 -
+2025-03-11 17:57:37,330 - DEBUG - Starting new HTTPS connection (1): api.resend.com:443
+2025-03-11 17:57:37,851 - DEBUG - https://api.resend.com:443 "POST /emails HTTP/1.1" 200 45
+2025-03-11 17:57:37,856 - DEBUG - Starting new HTTPS connection (1): api.resend.com:443
+2025-03-11 17:57:38,437 - DEBUG - https://api.resend.com:443 "POST /emails HTTP/1.1" 200 45
+2025-03-11 17:57:38,438 - DEBUG - Starting new HTTPS connection (1): api.resend.com:443
+2025-03-11 17:57:38,939 - DEBUG - https://api.resend.com:443 "POST /emails HTTP/1.1" 200 45
+2025-03-11 17:57:38,945 - DEBUG - Starting new HTTPS connection (1): api.resend.com:443
+2025-03-11 17:57:39,437 - DEBUG - https://api.resend.com:443 "POST /emails HTTP/1.1" 200 45
+2025-03-11 17:57:39,438 - DEBUG - Starting new HTTPS connection (1): api.resend.com:443
+2025-03-11 17:57:40,034 - DEBUG - https://api.resend.com:443 "POST /emails HTTP/1.1" 200 45
+2025-03-11 17:57:40,036 - DEBUG - Starting new HTTPS connection (1): api.resend.com:443
+2025-03-11 17:57:40,684 - DEBUG - https://api.resend.com:443 "POST /emails HTTP/1.1" 200 45
+2025-03-11 17:57:40,685 - DEBUG - Starting new HTTPS connection (1): api.resend.com:443
+2025-03-11 17:57:41,269 - DEBUG - https://api.resend.com:443 "POST /emails HTTP/1.1" 200 45
+2025-03-11 17:57:41,270 - DEBUG - Starting new HTTPS connection (1): api.resend.com:443
+2025-03-11 17:57:41,840 - DEBUG - https://api.resend.com:443 "POST /emails HTTP/1.1" 200 45
+2025-03-11 17:57:41,841 - DEBUG - Starting new HTTPS connection (1): api.resend.com:443
+2025-03-11 17:57:42,397 - DEBUG - https://api.resend.com:443 "POST /emails HTTP/1.1" 200 45
+2025-03-11 17:57:42,398 - DEBUG - Starting new HTTPS connection (1): api.resend.com:443
+2025-03-11 17:57:42,948 - DEBUG - https://api.resend.com:443 "POST /emails HTTP/1.1" 200 45
+2025-03-11 17:57:42,950 - INFO - 127.0.0.1 - - [11/Mar/2025 17:57:42] "GET /findAll HTTP/1.1" 200 -
+2025-03-11 17:57:58,222 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-11 17:57:58,256 - INFO -  * Restarting with stat
+2025-03-11 17:57:58,786 - INFO - API server started 2025-03-11_17-57-58
+2025-03-11 17:57:58,804 - WARNING -  * Debugger is active!
+2025-03-11 17:57:58,810 - INFO -  * Debugger PIN: 140-445-775
+2025-03-11 17:58:16,291 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-11 17:58:16,323 - INFO -  * Restarting with stat
+2025-03-11 17:58:16,969 - INFO - API server started 2025-03-11_17-58-16
+2025-03-11 17:58:16,989 - WARNING -  * Debugger is active!
+2025-03-11 17:58:16,995 - INFO -  * Debugger PIN: 140-445-775
+2025-03-11 17:58:22,324 - DEBUG - Starting new HTTPS connection (1): api.resend.com:443
+2025-03-11 17:58:22,877 - DEBUG - https://api.resend.com:443 "POST /emails HTTP/1.1" 200 45
+2025-03-11 17:58:22,884 - INFO - 127.0.0.1 - - [11/Mar/2025 17:58:22] "GET /findAll HTTP/1.1" 200 -
+2025-03-11 17:58:22,967 - DEBUG - Starting new HTTPS connection (1): api.resend.com:443
+2025-03-11 17:58:23,611 - DEBUG - https://api.resend.com:443 "POST /emails HTTP/1.1" 200 45
+2025-03-11 17:58:23,612 - INFO - 127.0.0.1 - - [11/Mar/2025 17:58:23] "GET /findAll HTTP/1.1" 200 -
+2025-03-11 17:59:30,114 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-11 17:59:30,149 - INFO -  * Restarting with stat
+2025-03-11 17:59:30,805 - INFO - API server started 2025-03-11_17-59-30
+2025-03-11 17:59:30,827 - WARNING -  * Debugger is active!
+2025-03-11 17:59:30,834 - INFO -  * Debugger PIN: 140-445-775
+2025-03-11 17:59:56,568 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-11 17:59:56,607 - INFO -  * Restarting with stat
+2025-03-11 17:59:57,087 - INFO - API server started 2025-03-11_17-59-57
+2025-03-11 17:59:57,108 - WARNING -  * Debugger is active!
+2025-03-11 17:59:57,114 - INFO -  * Debugger PIN: 140-445-775
+2025-03-11 18:01:00,356 - INFO - 127.0.0.1 - - [11/Mar/2025 18:01:00] "GET /findAll HTTP/1.1" 200 -
+2025-03-11 18:01:00,428 - INFO - 127.0.0.1 - - [11/Mar/2025 18:01:00] "GET /findAll HTTP/1.1" 200 -
+2025-03-11 18:01:06,633 - INFO - 127.0.0.1 - - [11/Mar/2025 18:01:06] "GET /findAll HTTP/1.1" 200 -
+2025-03-11 18:01:06,781 - INFO - 127.0.0.1 - - [11/Mar/2025 18:01:06] "GET /findAll HTTP/1.1" 200 -
+2025-03-17 14:25:12,282 - INFO - API server started 2025-03-17_14-25-12
+2025-03-17 14:25:12,323 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2025-03-17 14:25:12,323 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-17 14:25:12,324 - INFO -  * Restarting with stat
+2025-03-17 14:25:12,754 - INFO - API server started 2025-03-17_14-25-12
+2025-03-17 14:25:12,774 - WARNING -  * Debugger is active!
+2025-03-17 14:25:12,779 - INFO -  * Debugger PIN: 140-445-775
+2025-03-17 14:25:26,913 - INFO - 127.0.0.1 - - [17/Mar/2025 14:25:26] "GET /findAll HTTP/1.1" 200 -
+2025-03-17 14:26:02,739 - INFO - 127.0.0.1 - - [17/Mar/2025 14:26:02] "GET /findAll HTTP/1.1" 200 -
+2025-03-17 14:26:08,020 - INFO - 127.0.0.1 - - [17/Mar/2025 14:26:08] "GET /findAll HTTP/1.1" 200 -
+2025-03-17 14:26:50,711 - INFO - 127.0.0.1 - - [17/Mar/2025 14:26:50] "GET /findAll HTTP/1.1" 200 -
+2025-03-17 14:30:09,952 - ERROR - 127.0.0.1 - - [17/Mar/2025 14:30:09] code 400, message Bad request version ('\x0eQC³sS')
+2025-03-17 14:30:09,953 - INFO - 127.0.0.1 - - [17/Mar/2025 14:30:09] "[31m[1m\x16\x03\x01\x06 \x01\x00\x06\x9c\x03\x03.Êà\x9akn\x17\x7f-\x9f-\x08\x9e@ú\x9aI\x06\x84xRÜÖ3\x1cÕkËÑ\x86y* jxLf¨VmÇ\x81ì°Ò \x94ì£\x8aª´Ë(XYù\x94\x14!·Ê\x9f\x96¸\x00 JJ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x063JJ\x00\x00\x00#\x00\x00\x003\x04ï\x04í::\x00\x01\x00\x11ì\x04À\x7f»£\x86åBîh\x12^Ûr\x0b¤\x85\x8f\x06Ê\x16E \x0eQC³sS[0m" 400 -
+2025-03-17 14:30:09,954 - ERROR - 127.0.0.1 - - [17/Mar/2025 14:30:09] code 400, message Bad request version ('¦\x8fE\x80\x15öÑøA÷ìHò\x8f')
+2025-03-17 14:30:09,954 - INFO - 127.0.0.1 - - [17/Mar/2025 14:30:09] "[31m[1m\x16\x03\x01\x07\x00\x01\x00\x06ü\x03\x03¢jQÓ×\\¯\x1dE9ó\x91 ¦\x8fE\x80\x15öÑøA÷ìHò\x8f[0m" 400 -
+2025-03-17 14:36:34,325 - INFO - 127.0.0.1 - - [17/Mar/2025 14:36:34] "GET /findAll HTTP/1.1" 200 -
+2025-03-17 14:36:44,926 - INFO - 127.0.0.1 - - [17/Mar/2025 14:36:44] "GET /findAll HTTP/1.1" 200 -
+2025-03-17 14:36:51,722 - INFO - 127.0.0.1 - - [17/Mar/2025 14:36:51] "GET /findAll HTTP/1.1" 200 -
+2025-03-17 14:36:53,910 - INFO - 127.0.0.1 - - [17/Mar/2025 14:36:53] "GET /findAll HTTP/1.1" 200 -
+2025-03-17 14:36:54,427 - INFO - 127.0.0.1 - - [17/Mar/2025 14:36:54] "GET /findAll HTTP/1.1" 200 -
+2025-03-17 14:36:55,588 - INFO - 127.0.0.1 - - [17/Mar/2025 14:36:55] "GET /findAll HTTP/1.1" 200 -
+2025-03-17 14:36:55,920 - INFO - 127.0.0.1 - - [17/Mar/2025 14:36:55] "GET /findAll HTTP/1.1" 200 -
+2025-03-17 14:36:56,198 - INFO - 127.0.0.1 - - [17/Mar/2025 14:36:56] "GET /findAll HTTP/1.1" 200 -
+2025-03-17 14:36:56,450 - INFO - 127.0.0.1 - - [17/Mar/2025 14:36:56] "GET /findAll HTTP/1.1" 200 -
+2025-03-17 14:36:56,634 - INFO - 127.0.0.1 - - [17/Mar/2025 14:36:56] "GET /findAll HTTP/1.1" 200 -
+2025-03-17 14:36:57,764 - INFO - 127.0.0.1 - - [17/Mar/2025 14:36:57] "GET /findAll HTTP/1.1" 200 -
+2025-03-17 14:36:58,069 - INFO - 127.0.0.1 - - [17/Mar/2025 14:36:58] "GET /findAll HTTP/1.1" 200 -
+2025-03-17 14:36:58,405 - INFO - 127.0.0.1 - - [17/Mar/2025 14:36:58] "GET /findAll HTTP/1.1" 200 -
+2025-03-17 14:36:58,730 - INFO - 127.0.0.1 - - [17/Mar/2025 14:36:58] "GET /findAll HTTP/1.1" 200 -
+2025-03-17 14:37:10,006 - INFO - 127.0.0.1 - - [17/Mar/2025 14:37:10] "GET /findAll HTTP/1.1" 200 -
+2025-03-17 14:37:17,456 - INFO - 127.0.0.1 - - [17/Mar/2025 14:37:17] "GET /findAll HTTP/1.1" 200 -
+2025-03-17 14:42:09,222 - INFO - 127.0.0.1 - - [17/Mar/2025 14:42:09] "GET /findAll HTTP/1.1" 200 -
+2025-03-17 14:42:09,332 - INFO - 127.0.0.1 - - [17/Mar/2025 14:42:09] "GET /findAll HTTP/1.1" 200 -
+2025-03-17 14:44:36,608 - INFO - 127.0.0.1 - - [17/Mar/2025 14:44:36] "GET /findAll HTTP/1.1" 200 -
+2025-03-17 14:44:36,733 - INFO - 127.0.0.1 - - [17/Mar/2025 14:44:36] "GET /findAll HTTP/1.1" 200 -
+2025-03-17 14:44:40,743 - INFO - 127.0.0.1 - - [17/Mar/2025 14:44:40] "GET /findAll HTTP/1.1" 200 -
+2025-03-17 14:44:46,319 - INFO - 127.0.0.1 - - [17/Mar/2025 14:44:46] "GET /findAll HTTP/1.1" 200 -
+2025-03-17 14:45:33,035 - INFO - 127.0.0.1 - - [17/Mar/2025 14:45:33] "GET /findAll HTTP/1.1" 200 -
+2025-03-17 14:45:33,312 - INFO - 127.0.0.1 - - [17/Mar/2025 14:45:33] "GET /findAll HTTP/1.1" 200 -
+2025-03-17 14:45:37,924 - INFO - 127.0.0.1 - - [17/Mar/2025 14:45:37] "GET /findAll HTTP/1.1" 200 -
+2025-03-17 14:45:41,230 - INFO - 127.0.0.1 - - [17/Mar/2025 14:45:41] "GET /findAll HTTP/1.1" 200 -
+2025-03-17 14:47:49,529 - INFO - 127.0.0.1 - - [17/Mar/2025 14:47:49] "GET /findAll HTTP/1.1" 200 -
+2025-03-17 14:47:55,248 - INFO - 127.0.0.1 - - [17/Mar/2025 14:47:55] "GET /findAll HTTP/1.1" 200 -
+2025-03-17 14:57:21,460 - INFO - API server started 2025-03-17_14-57-21
+2025-03-17 14:57:21,492 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2025-03-17 14:57:21,492 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-17 14:57:21,493 - INFO -  * Restarting with stat
+2025-03-17 14:57:21,906 - INFO - API server started 2025-03-17_14-57-21
+2025-03-17 14:57:21,921 - WARNING -  * Debugger is active!
+2025-03-17 14:57:21,926 - INFO -  * Debugger PIN: 507-368-162
+2025-03-17 14:57:38,686 - INFO - API server started 2025-03-17_14-57-38
+2025-03-17 14:57:38,709 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2025-03-17 14:57:38,709 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-17 14:57:38,709 - INFO -  * Restarting with stat
+2025-03-17 14:57:39,117 - INFO - API server started 2025-03-17_14-57-39
+2025-03-17 14:57:39,132 - WARNING -  * Debugger is active!
+2025-03-17 14:57:39,138 - INFO -  * Debugger PIN: 507-368-162

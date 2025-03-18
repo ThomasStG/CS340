@@ -1,0 +1,15 @@
+.item{
+    display: grid;
+    grid-template-columns: 15% 15% 10% 10% 10% 10% 10% 10% 10%;
+  }
+
+.itemColumn{
+    height: 20px;
+    padding: 10px;
+}
+
+.subtractAmount{
+  height: 20px;
+  width: 50px;
+  border:1px solid #000000;
+}

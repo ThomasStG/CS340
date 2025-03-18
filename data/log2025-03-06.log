@@ -1,0 +1,8 @@
+2025-03-06 10:40:24,750 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2025-03-06 10:40:24,750 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-06 10:40:24,751 - INFO -  * Restarting with stat
+2025-03-06 10:40:25,210 - WARNING -  * Debugger is active!
+2025-03-06 10:40:25,216 - INFO -  * Debugger PIN: 103-901-504
+2025-03-06 10:41:17,681 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-06 10:41:17,724 - INFO -  * Restarting with stat

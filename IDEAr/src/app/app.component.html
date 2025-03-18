@@ -1,16 +1,16 @@
-<app-item-search (formSubmit)="handleSearch($event)"></app-item-search>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Size</th>
-      <th>Metric</th>
-      <th>Count</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of items">
-      <app-item [item]="item"></app-item>
-    </tr>
-  </tbody>
-</table>
+<!-- Main layout of the app -->
+<div class="scrollable-box">
+  <div class="header">
+    <h1>IDEr</h1>
+
+    <!-- Navigation -->
+    <nav>
+      <button routerLink="/">Home</button>
+      <button routerLink="/admin">Admin</button>
+      <button (click)="logout()">logout</button>
+    </nav>
+  </div>
+
+  <!-- This will load the current page (Home or Admin) -->
+  <router-outlet></router-outlet>
+</div>
