@@ -45,11 +45,12 @@ from api import (
     get_item,
     increment_item,
     remove_item,
+    update_item,
 )
 from auth import change_password, create_account, get_salt, login
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS for Angular frontend
+CORS(app, origins=["http://localhost:4200"])
 
 
 def get_db() -> sqlite3.Connection:
@@ -637,28 +638,57 @@ def list_all():
         return handle_exceptions(e)
 
 
-def run_server():
+@app.route("/updateitem", methods=["GET"])
+def update():
     """
-    Ensures the database is has the table for items, then runs the development server
+    Handles updating an item in the database.
+    Data is passed from frontend through a GET request
 
     Args:
-        None
+       name (str): the name of the item
+       is_metric (int): whether the item is metric (1) or not (0)
+       size (str): the size of the item
+       location (str): the location of the item
+       num (int): the number to increment by
+       threshold (int): the threshold of the item
 
     Returns:
-        None
+        json: a message and status code
     """
-    build_db()
+    try:
+        data = request.args
+        if not data or not all(
+            key in data
+            for key in [
+                "name",
+                "is_metric",
+                "size",
+                "new_name",
+                "new_size",
+                "new_is_metric",
+                "location",
+                "threshold",
+            ]
+        ):
+            raise KeyError("Missing required parameters")
 
-    # sets up logging
-    date = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    logging.basicConfig(
-        filename=f"../logs/api_log.log",
-        level=logging.DEBUG,
-        format="%(asctime)s - %(levelname)s - %(message)s",
-    )
-    logger = logging.getLogger(__name__)
-    logger.info(f"API server started {date}")
-    app.run(debug=True, port=3000)  # Runs on http://localhost:3000
+        connection = get_db()
+        cursor = connection.cursor()
+        update_item(
+            data["name"],
+            data["size"],
+            data["is_metric"].strip().lower() == "true",
+            data["location"],
+            data["threshold"],
+            data["new_name"],
+            data["new_size"],
+            data["new_is_metric"].strip().lower() == "true",
+            cursor,
+            connection,
+        )
+        return jsonify({"status": "success"}), 200
+    except Exception as e:
+        return handle_exceptions(e)
 
 
 @app.route("/trylogin", methods=["POST"])
@@ -773,6 +803,30 @@ def change_pass():
         return jsonify({"status": "success", "message": "Password changed"}), 200
     except Exception as e:
         return handle_exceptions(e)
+
+
+def run_server():
+    """
+    Ensures the database is has the table for items, then runs the development server
+
+    Args:
+        None
+
+    Returns:
+        None
+    """
+    build_db()
+
+    # sets up logging
+    date = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    logging.basicConfig(
+        filename=f"../logs/api_log.log",
+        level=logging.DEBUG,
+        format="%(asctime)s - %(levelname)s - %(message)s",
+    )
+    logger = logging.getLogger(__name__)
+    logger.info(f"API server started {date}")
+    app.run(debug=True, port=3000)  # Runs on http://localhost:3000
 
 
 if __name__ == "__main__":

@@ -166,3 +166,22 @@
 2025-03-17 14:57:39,117 - INFO - API server started 2025-03-17_14-57-39
 2025-03-17 14:57:39,132 - WARNING -  * Debugger is active!
 2025-03-17 14:57:39,138 - INFO -  * Debugger PIN: 507-368-162
+2025-03-18 22:08:59,030 - INFO - API server started 2025-03-18_22-08-59
+2025-03-18 22:08:59,058 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2025-03-18 22:08:59,058 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-18 22:08:59,059 - INFO -  * Restarting with stat
+2025-03-18 22:08:59,517 - INFO - API server started 2025-03-18_22-08-59
+2025-03-18 22:08:59,536 - WARNING -  * Debugger is active!
+2025-03-18 22:08:59,543 - INFO -  * Debugger PIN: 507-368-162
+2025-03-18 22:09:05,034 - ERROR - 127.0.0.1 - - [18/Mar/2025 22:09:05] code 400, message Bad request version ("Ü\x90'Â<Ñ»")
+2025-03-18 22:09:05,035 - INFO - 127.0.0.1 - - [18/Mar/2025 22:09:05] "[31m[1m\x16\x03\x01\x06à\x01\x00\x06Ü\x03\x03%HF&Fò\x8cl8d:\x83°RÕ4×\x1aWÐ*\x0d\x8bÜ-#®£]|t( Ü\x90'Â<Ñ»[0m" 400 -
+2025-03-18 22:09:05,036 - ERROR - 127.0.0.1 - - [18/Mar/2025 22:09:05] code 400, message Bad request version ('ZZ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06\x93::\x00\x00\x00')
+2025-03-18 22:09:05,036 - INFO - 127.0.0.1 - - [18/Mar/2025 22:09:05] "[31m[1m\x16\x03\x01\x07\x00\x01\x00\x06ü\x03\x03Cµ\x1eQ¤øû\x9aQ¥M¿¼\x8bó\x93tD+Þ"\x87bÜ¢ä xk\x10\x8b¥ q\x88¹l\x13Uß\x05ë&e\x86ÜÂ\x9bU\x0e\x86+\x90¤>\x8a©Y÷e.'FÚ¹\x00 ZZ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06\x93::\x00\x00\x00[0m" 400 -
+2025-03-18 22:09:30,260 - INFO - 127.0.0.1 - - [18/Mar/2025 22:09:30] "[33mOPTIONS /login HTTP/1.1[0m" 404 -
+2025-03-18 22:09:48,905 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-18 22:09:48,940 - INFO -  * Restarting with stat
+2025-03-18 22:09:49,538 - INFO - API server started 2025-03-18_22-09-49
+2025-03-18 22:09:49,561 - WARNING -  * Debugger is active!
+2025-03-18 22:09:49,567 - INFO -  * Debugger PIN: 507-368-162
+2025-03-18 22:09:59,583 - INFO - 127.0.0.1 - - [18/Mar/2025 22:09:59] "[33mOPTIONS /login HTTP/1.1[0m" 404 -
