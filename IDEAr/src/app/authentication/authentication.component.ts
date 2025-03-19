@@ -17,12 +17,13 @@ export class AuthenticationComponent {
     private authService: AuthService,
   ) {}
   login(event: Event): void {
-    console.log(this.username, this.password);
     this.authService.login(this.username, this.password).subscribe({
       next: (response) => {
         if (response.token) {
+          console.log('loggedin');
           this.router.navigate(['/admin']);
         } else {
+          console.log('login failed');
           console.error(response.error); // "Invalid credentials"
         }
       },

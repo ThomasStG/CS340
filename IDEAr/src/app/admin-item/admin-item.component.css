@@ -1,12 +1,6 @@
-.container {
-  overflow-x: auto; /* Allows horizontal scrolling */
-  white-space: nowrap; /* Prevents text wrapping */
-}
-
 .item {
   display: grid;
   grid-template-columns: 15% 15% 10% 10% 10% 10% 10% 10% 10%;
-  min-width: 900px; /* Ensure it doesn't shrink too much */
 }
 
 .itemColumn {
