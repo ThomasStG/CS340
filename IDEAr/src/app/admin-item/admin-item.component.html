@@ -1,4 +1,4 @@
-<div class="itemColumn" (click)="showPopup()">{{ item.name }}</div>
+<!-- <div class="itemColumn" (click)="showPopup()">{{ item.name }}</div> -->
 <div class="itemColumn">{{ item.size }}</div>
 <div class="itemColumn">{{ item.is_metric }}</div>
 <div class="itemColumn">{{ item.location }}</div>
@@ -9,17 +9,19 @@
   <button>-</button>
 </div>
 
-<div *ngIf="isPopupVisible" class="overlay" (click)="closePopup($event)"></div>
+<!-- <div *ngIf="isPopupVisible" class="overlay" (click)="closePopup($event)"></div> -->
 
-<div *ngIf="isPopupVisible" class="popup">
-  <div class="popup-content">
-    <input type="text" [(ngModel)]="item.name" />
-    <input type="text" [(ngModel)]="item.size" />
-    <input type="text" [(ngModel)]="item.is_metric" />
-    <input type="text" [(ngModel)]="item.location" />
-    <input type="text" [(ngModel)]="item.count" />
-    <input type="text" [(ngModel)]="item.threshold" />
-    <button (click)="closePopup($event)" class="close-button">Close</button>
-    <button (click)="updateItem()" class="update-button">Update</button>
-  </div>
-</div>
+<!-- <div *ngIf="isPopupVisible" class="popup"> -->
+<!--   <div class="popup-content"> -->
+<!--     <input type="text" [(ngModel)]="item.name" /> -->
+<!--     <input type="text" [(ngModel)]="item.size" /> -->
+<!--     <input type="text" [(ngModel)]="item.is_metric" /> -->
+<!--     <input type="text" [(ngModel)]="item.location" /> -->
+<!--     <input type="text" [(ngModel)]="item.count" /> -->
+<!--     <input type="text" [(ngModel)]="item.threshold" /> -->
+<!--     <!-- <button (click)="closePopup($event)" class="close-button">Close</button> -->
+-->
+<!--     <!-- <button (click)="updateItem()" class="update-button">Update</button> -->
+-->
+<!--   </div> -->
+<!-- </div> -->

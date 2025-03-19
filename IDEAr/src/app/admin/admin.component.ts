@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { GetItemsService } from '../get-items.service';
 import { ItemData } from '../item-data';
+import { AdminItemComponent } from '../admin-item/admin-item.component';
 
 @Component({
   selector: 'app-admin',
