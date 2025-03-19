@@ -13,12 +13,13 @@
 
 <div *ngIf="isPopupVisible" class="popup">
   <div class="popup-content">
-    <h1 class="popup-header">{{ item.name }}</h1>
-    <p class="popup-info">Size: {{ item.size }}</p>
-    <p class="popup-info">Metric: {{ item.is_metric }}</p>
-    <p class="popup-info">Location: {{ item.location }}</p>
-    <p class="popup-info">Count: {{ item.count }}</p>
-    <p class="popup-info">Threshold: {{ item.threshold }}</p>
+    <input type="text" [(ngModel)]="item.name" />
+    <input type="text" [(ngModel)]="item.size" />
+    <input type="text" [(ngModel)]="item.is_metric" />
+    <input type="text" [(ngModel)]="item.location" />
+    <input type="text" [(ngModel)]="item.count" />
+    <input type="text" [(ngModel)]="item.threshold" />
     <button (click)="closePopup($event)" class="close-button">Close</button>
+    <button (click)="updateItem()" class="update-button">Update</button>
   </div>
 </div>
