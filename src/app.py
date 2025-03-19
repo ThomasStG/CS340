@@ -46,10 +46,12 @@ from api import (
     increment_item,
     remove_item,
 )
-from auth import change_password, create_account, get_salt, login
+from auth import change_password, check_token, create_account, get_salt, login
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS for Angular frontend
+CORS(
+    app, supports_credentials=True, origins=["http://localhost:4200"]
+)  # Enable CORS for Angular frontend
 
 
 def get_db() -> sqlite3.Connection:
@@ -694,11 +696,43 @@ def try_login() -> jsonify:
 
         #     # Get the hashed password as a hexadecimal string
         hashed_password = hash_object.hexdigest()
-        login_success = login(username, hashed_password, cursor)
-        if not login_success:
+        token = login(username, hashed_password, cursor)
+        if token == "":
             raise Exception("Login failed")
-        token = generate_token(username)
         return jsonify({"status": "success", "token": token}), 200
+    except Exception as e:
+        return handle_exceptions(e)
+
+
+@app.route("/isLoggedIn", methods=["POST"])
+def is_logged_in():
+    """
+    Checks if the user is logged in
+
+    Args:
+        token (str): the token of the user
+
+    Returns:
+        bool: whether the user is logged in
+    """
+    try:
+        data = request.json
+        if data is None or "token" not in data:
+            raise KeyError("Missing required parameters")
+
+        token = data["token"]
+        try:
+            username = jwt.decode(token, options={"verify_signature": False}).get(
+                "username"
+            )
+        except Exception as e:
+            return jsonify({"status": "error", "output": "false"}), 401
+        print(username)
+        connection = get_db()
+        cursor = connection.cursor()
+        # if check_token(token, username, cursor):
+        return jsonify({"status": "success", "output": "true"}), 200
+        return jsonify({"status": "error", "output": "false"}), 401
     except Exception as e:
         return handle_exceptions(e)
 

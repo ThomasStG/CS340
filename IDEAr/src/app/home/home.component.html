@@ -1,8 +1,8 @@
 <div class="scrollable-box">
   <app-item-search (formSubmit)="handleSearch($event)"></app-item-search>
 
-  <div class="content">
-    <div *ngFor="let item of items">
+  <div class="flex flex-col">
+    <div *ngFor="let item of items" class="">
       <app-item [item]="item"></app-item>
     </div>
   </div>
@@ -10,4 +10,3 @@
 <!--
 
 -->
-
