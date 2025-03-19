@@ -663,3 +663,160 @@
 2025-03-18 15:11:10,636 - INFO -  * Debugger PIN: 507-368-162
 2025-03-18 15:11:36,394 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/auth.py', reloading
 2025-03-18 15:11:36,426 - INFO -  * Restarting with stat
+2025-03-18 22:12:30,109 - INFO - API server started 2025-03-18_22-12-30
+2025-03-18 22:12:30,137 - WARNING -  * Debugger is active!
+2025-03-18 22:12:30,145 - INFO -  * Debugger PIN: 507-368-162
+2025-03-18 22:13:41,197 - INFO - 127.0.0.1 - - [18/Mar/2025 22:13:41] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-18 22:13:41,201 - INFO - 127.0.0.1 - - [18/Mar/2025 22:13:41] "POST /trylogin HTTP/1.1" 200 -
+2025-03-18 22:13:41,226 - INFO - 127.0.0.1 - - [18/Mar/2025 22:13:41] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-18 22:13:41,230 - INFO - 127.0.0.1 - - [18/Mar/2025 22:13:41] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-18 22:13:48,712 - INFO - 127.0.0.1 - - [18/Mar/2025 22:13:48] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-18 22:13:48,717 - INFO - 127.0.0.1 - - [18/Mar/2025 22:13:48] "POST /trylogin HTTP/1.1" 200 -
+2025-03-18 22:13:48,744 - INFO - 127.0.0.1 - - [18/Mar/2025 22:13:48] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-18 22:13:48,759 - INFO - 127.0.0.1 - - [18/Mar/2025 22:13:48] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-18 22:14:13,677 - INFO - 127.0.0.1 - - [18/Mar/2025 22:14:13] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-18 22:14:13,684 - INFO - 127.0.0.1 - - [18/Mar/2025 22:14:13] "POST /trylogin HTTP/1.1" 200 -
+2025-03-18 22:14:13,712 - INFO - 127.0.0.1 - - [18/Mar/2025 22:14:13] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-18 22:14:13,716 - INFO - 127.0.0.1 - - [18/Mar/2025 22:14:13] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-18 22:14:16,238 - INFO - 127.0.0.1 - - [18/Mar/2025 22:14:16] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-18 22:14:16,898 - INFO - 127.0.0.1 - - [18/Mar/2025 22:14:16] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 22:14:17,583 - INFO - 127.0.0.1 - - [18/Mar/2025 22:14:17] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-18 22:14:19,256 - INFO - 127.0.0.1 - - [18/Mar/2025 22:14:19] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 22:14:19,742 - INFO - 127.0.0.1 - - [18/Mar/2025 22:14:19] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-18 22:14:19,747 - INFO - 127.0.0.1 - - [18/Mar/2025 22:14:19] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-18 22:14:24,699 - INFO - 127.0.0.1 - - [18/Mar/2025 22:14:24] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-18 22:14:24,703 - INFO - 127.0.0.1 - - [18/Mar/2025 22:14:24] "POST /trylogin HTTP/1.1" 200 -
+2025-03-18 22:14:24,728 - INFO - 127.0.0.1 - - [18/Mar/2025 22:14:24] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-18 22:15:21,272 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/auth.py', reloading
+2025-03-18 22:15:21,892 - INFO - API server started 2025-03-18_22-15-21
+2025-03-18 22:15:21,911 - WARNING -  * Debugger is active!
+2025-03-18 22:15:21,918 - INFO -  * Debugger PIN: 507-368-162
+2025-03-18 22:15:26,244 - INFO - 127.0.0.1 - - [18/Mar/2025 22:15:26] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-18 22:15:26,250 - INFO - 127.0.0.1 - - [18/Mar/2025 22:15:26] "POST /trylogin HTTP/1.1" 200 -
+2025-03-18 22:15:26,295 - INFO - 127.0.0.1 - - [18/Mar/2025 22:15:26] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-18 22:15:26,317 - INFO - 127.0.0.1 - - [18/Mar/2025 22:15:26] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-18 22:15:40,583 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/auth.py', reloading
+2025-03-18 22:15:41,189 - INFO - API server started 2025-03-18_22-15-41
+2025-03-18 22:15:41,211 - WARNING -  * Debugger is active!
+2025-03-18 22:15:41,216 - INFO -  * Debugger PIN: 507-368-162
+2025-03-18 22:16:45,535 - INFO - 127.0.0.1 - - [18/Mar/2025 22:16:45] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-18 22:16:45,539 - INFO - 127.0.0.1 - - [18/Mar/2025 22:16:45] "POST /trylogin HTTP/1.1" 200 -
+2025-03-18 22:16:45,564 - INFO - 127.0.0.1 - - [18/Mar/2025 22:16:45] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-18 22:16:45,567 - INFO - 127.0.0.1 - - [18/Mar/2025 22:16:45] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-18 22:18:07,599 - INFO - 127.0.0.1 - - [18/Mar/2025 22:18:07] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-18 22:18:07,604 - INFO - 127.0.0.1 - - [18/Mar/2025 22:18:07] "POST /trylogin HTTP/1.1" 200 -
+2025-03-18 22:18:07,632 - INFO - 127.0.0.1 - - [18/Mar/2025 22:18:07] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-18 22:18:07,635 - INFO - 127.0.0.1 - - [18/Mar/2025 22:18:07] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-18 22:19:36,568 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-18 22:19:37,269 - INFO - API server started 2025-03-18_22-19-37
+2025-03-18 22:19:37,301 - WARNING -  * Debugger is active!
+2025-03-18 22:19:37,314 - INFO -  * Debugger PIN: 507-368-162
+2025-03-18 22:19:44,421 - INFO - 127.0.0.1 - - [18/Mar/2025 22:19:44] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-18 22:19:44,424 - INFO - 127.0.0.1 - - [18/Mar/2025 22:19:44] "POST /trylogin HTTP/1.1" 200 -
+2025-03-18 22:19:44,457 - INFO - 127.0.0.1 - - [18/Mar/2025 22:19:44] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-18 22:19:44,461 - INFO - 127.0.0.1 - - [18/Mar/2025 22:19:44] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-18 22:23:01,550 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-18 22:23:02,200 - INFO - API server started 2025-03-18_22-23-02
+2025-03-18 22:23:02,218 - WARNING -  * Debugger is active!
+2025-03-18 22:23:02,224 - INFO -  * Debugger PIN: 507-368-162
+2025-03-18 22:23:11,519 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-18 22:23:12,215 - INFO - API server started 2025-03-18_22-23-12
+2025-03-18 22:23:12,241 - WARNING -  * Debugger is active!
+2025-03-18 22:23:12,247 - INFO -  * Debugger PIN: 507-368-162
+2025-03-18 22:23:16,441 - INFO - 127.0.0.1 - - [18/Mar/2025 22:23:16] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-18 22:23:16,446 - INFO - 127.0.0.1 - - [18/Mar/2025 22:23:16] "POST /trylogin HTTP/1.1" 200 -
+2025-03-18 22:23:16,468 - INFO - 127.0.0.1 - - [18/Mar/2025 22:23:16] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-18 22:23:16,470 - INFO - 127.0.0.1 - - [18/Mar/2025 22:23:16] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-03-18 22:23:16,478 - INFO - 127.0.0.1 - - [18/Mar/2025 22:23:16] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 22:23:48,799 - INFO - 127.0.0.1 - - [18/Mar/2025 22:23:48] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 22:23:50,960 - INFO - 127.0.0.1 - - [18/Mar/2025 22:23:50] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 22:23:56,136 - INFO - 127.0.0.1 - - [18/Mar/2025 22:23:56] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 22:24:22,378 - INFO - 127.0.0.1 - - [18/Mar/2025 22:24:22] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-18 22:24:31,907 - INFO - 127.0.0.1 - - [18/Mar/2025 22:24:31] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-18 22:25:17,171 - INFO - 127.0.0.1 - - [18/Mar/2025 22:25:17] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-18 22:25:54,870 - INFO - 127.0.0.1 - - [18/Mar/2025 22:25:54] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-18 22:25:55,878 - INFO - 127.0.0.1 - - [18/Mar/2025 22:25:55] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-18 22:25:55,880 - INFO - 127.0.0.1 - - [18/Mar/2025 22:25:55] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-18 22:26:32,390 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-18 22:26:33,084 - INFO - API server started 2025-03-18_22-26-33
+2025-03-18 22:26:33,108 - WARNING -  * Debugger is active!
+2025-03-18 22:26:33,114 - INFO -  * Debugger PIN: 507-368-162
+2025-03-18 22:26:39,076 - INFO - 127.0.0.1 - - [18/Mar/2025 22:26:39] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-18 22:26:39,080 - INFO - 127.0.0.1 - - [18/Mar/2025 22:26:39] "POST /trylogin HTTP/1.1" 200 -
+2025-03-18 22:26:39,147 - INFO - 127.0.0.1 - - [18/Mar/2025 22:26:39] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-18 22:26:39,151 - INFO - 127.0.0.1 - - [18/Mar/2025 22:26:39] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-03-18 22:26:39,158 - INFO - 127.0.0.1 - - [18/Mar/2025 22:26:39] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 22:26:41,909 - INFO - 127.0.0.1 - - [18/Mar/2025 22:26:41] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 22:26:42,438 - INFO - 127.0.0.1 - - [18/Mar/2025 22:26:42] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-03-18 22:26:42,448 - INFO - 127.0.0.1 - - [18/Mar/2025 22:26:42] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 22:26:43,242 - INFO - 127.0.0.1 - - [18/Mar/2025 22:26:43] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 22:26:44,528 - INFO - 127.0.0.1 - - [18/Mar/2025 22:26:44] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-18 22:26:44,532 - INFO - 127.0.0.1 - - [18/Mar/2025 22:26:44] "[35m[1mPOST /isLoggedIn HTTP/1.1[0m" 500 -
+2025-03-18 22:26:57,901 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-03-18 22:26:58,509 - INFO - API server started 2025-03-18_22-26-58
+2025-03-18 22:26:58,529 - WARNING -  * Debugger is active!
+2025-03-18 22:26:58,535 - INFO -  * Debugger PIN: 507-368-162
+2025-03-18 22:27:18,672 - INFO - API server started 2025-03-18_22-27-18
+2025-03-18 22:27:18,704 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2025-03-18 22:27:18,704 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-18 22:27:18,705 - INFO -  * Restarting with stat
+2025-03-18 22:27:19,185 - INFO - API server started 2025-03-18_22-27-19
+2025-03-18 22:27:19,203 - WARNING -  * Debugger is active!
+2025-03-18 22:27:19,209 - INFO -  * Debugger PIN: 507-368-162
+2025-03-18 22:27:25,700 - INFO - 127.0.0.1 - - [18/Mar/2025 22:27:25] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-18 22:27:25,705 - INFO - 127.0.0.1 - - [18/Mar/2025 22:27:25] "POST /trylogin HTTP/1.1" 200 -
+2025-03-18 22:27:25,756 - INFO - 127.0.0.1 - - [18/Mar/2025 22:27:25] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-18 22:27:25,763 - INFO - 127.0.0.1 - - [18/Mar/2025 22:27:25] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-03-18 22:27:25,772 - INFO - 127.0.0.1 - - [18/Mar/2025 22:27:25] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 22:27:28,324 - INFO - 127.0.0.1 - - [18/Mar/2025 22:27:28] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 22:27:29,255 - INFO - 127.0.0.1 - - [18/Mar/2025 22:27:29] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-18 22:27:34,187 - INFO - 127.0.0.1 - - [18/Mar/2025 22:27:34] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-18 22:27:34,195 - INFO - 127.0.0.1 - - [18/Mar/2025 22:27:34] "POST /trylogin HTTP/1.1" 200 -
+2025-03-18 22:27:34,247 - INFO - 127.0.0.1 - - [18/Mar/2025 22:27:34] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-18 22:27:34,253 - INFO - 127.0.0.1 - - [18/Mar/2025 22:27:34] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-03-18 22:27:34,261 - INFO - 127.0.0.1 - - [18/Mar/2025 22:27:34] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 22:28:15,004 - INFO - 127.0.0.1 - - [18/Mar/2025 22:28:15] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-18 22:28:15,315 - INFO - 127.0.0.1 - - [18/Mar/2025 22:28:15] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-18 22:28:15,362 - INFO - 127.0.0.1 - - [18/Mar/2025 22:28:15] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-03-18 22:28:15,370 - INFO - 127.0.0.1 - - [18/Mar/2025 22:28:15] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 22:28:26,472 - INFO - 127.0.0.1 - - [18/Mar/2025 22:28:26] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-18 22:28:26,629 - INFO - 127.0.0.1 - - [18/Mar/2025 22:28:26] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-18 22:28:26,636 - INFO - 127.0.0.1 - - [18/Mar/2025 22:28:26] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-03-18 22:28:26,647 - INFO - 127.0.0.1 - - [18/Mar/2025 22:28:26] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 22:39:06,697 - INFO - 127.0.0.1 - - [18/Mar/2025 22:39:06] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-18 22:39:06,697 - INFO - 127.0.0.1 - - [18/Mar/2025 22:39:06] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-18 22:39:32,884 - INFO - 127.0.0.1 - - [18/Mar/2025 22:39:32] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-18 22:39:33,633 - INFO - 127.0.0.1 - - [18/Mar/2025 22:39:33] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-18 22:39:33,658 - INFO - 127.0.0.1 - - [18/Mar/2025 22:39:33] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-03-18 22:39:33,716 - INFO - 127.0.0.1 - - [18/Mar/2025 22:39:33] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 22:39:33,822 - INFO - 127.0.0.1 - - [18/Mar/2025 22:39:33] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 22:39:44,709 - INFO - 127.0.0.1 - - [18/Mar/2025 22:39:44] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 22:40:23,105 - INFO - 127.0.0.1 - - [18/Mar/2025 22:40:23] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 22:40:34,403 - INFO - 127.0.0.1 - - [18/Mar/2025 22:40:34] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 22:40:42,923 - INFO - 127.0.0.1 - - [18/Mar/2025 22:40:42] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 22:40:51,322 - INFO - 127.0.0.1 - - [18/Mar/2025 22:40:51] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 22:41:38,924 - INFO - 127.0.0.1 - - [18/Mar/2025 22:41:38] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 22:42:24,649 - INFO - 127.0.0.1 - - [18/Mar/2025 22:42:24] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 22:43:16,599 - INFO - 127.0.0.1 - - [18/Mar/2025 22:43:16] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 22:43:31,343 - INFO - 127.0.0.1 - - [18/Mar/2025 22:43:31] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 22:43:42,609 - INFO - 127.0.0.1 - - [18/Mar/2025 22:43:42] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 22:44:25,931 - INFO - 127.0.0.1 - - [18/Mar/2025 22:44:25] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 22:44:30,092 - INFO - 127.0.0.1 - - [18/Mar/2025 22:44:30] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 22:44:50,981 - INFO - 127.0.0.1 - - [18/Mar/2025 22:44:50] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 22:45:10,756 - INFO - 127.0.0.1 - - [18/Mar/2025 22:45:10] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 22:45:17,883 - INFO - 127.0.0.1 - - [18/Mar/2025 22:45:17] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 22:45:24,680 - INFO - 127.0.0.1 - - [18/Mar/2025 22:45:24] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 22:45:42,801 - INFO - 127.0.0.1 - - [18/Mar/2025 22:45:42] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 22:46:30,918 - INFO - 127.0.0.1 - - [18/Mar/2025 22:46:30] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 22:46:32,850 - INFO - 127.0.0.1 - - [18/Mar/2025 22:46:32] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 22:47:46,135 - INFO - 127.0.0.1 - - [18/Mar/2025 22:47:46] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 22:47:46,158 - INFO - 127.0.0.1 - - [18/Mar/2025 22:47:46] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 22:48:13,998 - INFO - 127.0.0.1 - - [18/Mar/2025 22:48:13] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 22:48:26,800 - INFO - 127.0.0.1 - - [18/Mar/2025 22:48:26] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 22:51:53,538 - INFO - 127.0.0.1 - - [18/Mar/2025 22:51:53] "GET /findAll HTTP/1.1" 200 -
+2025-03-18 22:55:53,881 - INFO - 127.0.0.1 - - [18/Mar/2025 22:55:53] "GET /findAll HTTP/1.1" 200 -
+2025-03-19 08:15:06,953 - INFO - 127.0.0.1 - - [19/Mar/2025 08:15:06] "GET /findAll HTTP/1.1" 200 -
+2025-03-19 08:42:29,739 - INFO - 127.0.0.1 - - [19/Mar/2025 08:42:29] "GET /findAll HTTP/1.1" 200 -
+2025-03-19 10:48:30,541 - INFO - 127.0.0.1 - - [19/Mar/2025 10:48:30] "GET /findAll HTTP/1.1" 200 -
+2025-03-19 10:48:32,963 - INFO - 127.0.0.1 - - [19/Mar/2025 10:48:32] "GET /findAll HTTP/1.1" 200 -

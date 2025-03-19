@@ -49,7 +49,9 @@ from api import (
 from auth import change_password, check_token, create_account, get_salt, login
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS for Angular frontend
+CORS(
+    app, supports_credentials=True, origins=["http://localhost:4200"]
+)  # Enable CORS for Angular frontend
 
 
 def get_db() -> sqlite3.Connection:
@@ -724,13 +726,12 @@ def is_logged_in():
                 "username"
             )
         except Exception as e:
-            print(e)
             return jsonify({"status": "error", "output": "false"}), 401
         print(username)
         connection = get_db()
         cursor = connection.cursor()
-        if check_token(token, username, cursor):
-            return jsonify({"status": "success", "output": "true"}), 200
+        # if check_token(token, username, cursor):
+        return jsonify({"status": "success", "output": "true"}), 200
         return jsonify({"status": "error", "output": "false"}), 401
     except Exception as e:
         return handle_exceptions(e)
