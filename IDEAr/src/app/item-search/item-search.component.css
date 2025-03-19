@@ -9,6 +9,12 @@
 }
 
 .headerColumn{
-    height: 80px;
+    height: auto;
+    width: auto;
     padding: 10px;
+}
+
+.textBox{
+    height: 30px;
+    width: auto;
 }

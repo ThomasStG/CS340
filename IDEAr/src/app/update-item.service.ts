@@ -1,21 +1,26 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { ItemData } from './item-data';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UpdateItemService {
   constructor(private http: HttpClient) {}
-  updateItem(
-    name: string,
-    isMetric: boolean,
-    size: string,
-    location: string,
-    threshold: number,
-  ): Observable<any> {
-    var locationJSON = JSON.stringify(location);
-    const url = `http://127.0.0.1:3000/update?name=${encodeURIComponent(name)}&isMetric=${isMetric}&size=${size}&${encodeURIComponent(locationJSON)}&${threshold}`;
+  updateItem(newItem: ItemData, oldItem: ItemData): Observable<any> {
+    var locationJSON = JSON.stringify(newItem.location);
+    const url = `http://127.0.0.1:3000/updateitem?
+                  name=${encodeURIComponent(oldItem.name)}&
+                  new_name=${encodeURIComponent(newItemname)}&
+                  isMetric=${oldItem.isMetric}&
+                  new_isMetric=${newItem.isMetric}&
+                  size=${oldItem.size}&
+                  new_size=${newItem.size}&
+                  id=${oldItem.id}&
+                  count=${newItem.count}&
+                  location=${encodeURIComponent(locationJSON)}&
+                  threshold=${newItem.threshold}`;
     return this.http.get(url);
   }
 }

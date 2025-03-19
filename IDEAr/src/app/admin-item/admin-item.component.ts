@@ -1,12 +1,16 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ItemData } from '../item-data';
+import { UpdateService } from '../update-item.service';
 
 @Component({
-  selector: 'app-item',
-  templateUrl: './item.component.html',
-  styleUrl: './item.component.css',
+  selector: 'app-admin-item',
+  templateUrl: './admin-item.component.html',
+  styleUrl: './admin-item.component.css',
 })
-export class ItemComponent implements OnInit {
+export class AdminItemComponent implements OnInit {
+  constructor() {
+    updateService = new UpdateService();
+  }
   @Input() item: ItemData = {
     id: 0,
     name: '',
@@ -16,6 +20,7 @@ export class ItemComponent implements OnInit {
     count: 0,
     threshold: 0,
   };
+  oldItem: ItemData = { ...this.item };
   ngOnInit() {
     this.item.location = JSON.parse(this.item.location);
   }
@@ -30,5 +35,10 @@ export class ItemComponent implements OnInit {
   closePopup(event: Event) {
     event.stopPropagation();
     this.isPopupVisible = false;
+  }
+  updateItem(event: Event) {
+    event.stopPropagation();
+    this.isPopupVisible = false;
+    this.updateService.updateItem(this.item, this.oldItem);
   }
 }
