@@ -2,11 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ItemData } from '../item-data';
 
 @Component({
-  selector: 'app-item',
-  templateUrl: './item.component.html',
-  styleUrl: './item.component.css',
+  selector: 'app-admin-item',
+  templateUrl: './admin-item.component.html',
+  styleUrl: './admin-item.component.css',
 })
-export class ItemComponent implements OnInit {
+export class AdminItemComponent implements OnInit {
   @Input() item: ItemData = {
     id: 0,
     name: '',

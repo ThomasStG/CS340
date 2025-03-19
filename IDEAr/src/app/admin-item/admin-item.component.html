@@ -1,0 +1,24 @@
+<div class="itemColumn" (click)="showPopup()">{{ item.name }}</div>
+<div class="itemColumn">{{ item.size }}</div>
+<div class="itemColumn">{{ item.is_metric }}</div>
+<div class="itemColumn">{{ item.location }}</div>
+<div class="itemColumn">{{ item.count }}</div>
+<div class="itemColumn">{{ item.threshold }}</div>
+<div class="itemColumn">
+  <input class="subtractAmount" type="text" />
+  <button>-</button>
+</div>
+
+<div *ngIf="isPopupVisible" class="overlay" (click)="closePopup($event)"></div>
+
+<div *ngIf="isPopupVisible" class="popup">
+  <div class="popup-content">
+    <h1 class="popup-header">{{ item.name }}</h1>
+    <p class="popup-info">Size: {{ item.size }}</p>
+    <p class="popup-info">Metric: {{ item.is_metric }}</p>
+    <p class="popup-info">Location: {{ item.location }}</p>
+    <p class="popup-info">Count: {{ item.count }}</p>
+    <p class="popup-info">Threshold: {{ item.threshold }}</p>
+    <button (click)="closePopup($event)" class="close-button">Close</button>
+  </div>
+</div>

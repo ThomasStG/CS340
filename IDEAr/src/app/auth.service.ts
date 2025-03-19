@@ -19,7 +19,7 @@ export class AuthService {
       token?: string;
       message?: string;
       error?: string;
-    }>('https://127.0.0.1:3000/login', {
+    }>('http://127.0.0.1:3000/login', {
       username: username,
       password: password,
     });
