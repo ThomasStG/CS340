@@ -17,20 +17,21 @@ export class AdminComponent {
   ) {}
   items: ItemData[] = [];
   ngOnInit(): void {
-    if (!this.authService.isAuthenticated()) {
-      console.log(this.authService.isAuthenticated());
-      this.router.navigate(['/authentication']);
-    } else {
-      this.getItemsService.getAllItems().subscribe({
-        next: (response) => {
-          console.log('API Response:', response);
-          this.items = response.data; // Extract 'data' from response
-        },
-        error: (err) => {
-          console.error('Error fetching item:', err);
-        },
-      });
-    }
+    this.authService.isAuthenticated().subscribe((isAuth) => {
+      if (!isAuth) {
+        this.router.navigate(['/authentication']);
+      } else {
+        this.getItemsService.getAllItems().subscribe({
+          next: (response) => {
+            console.log('API Response:', response);
+            this.items = response.data; // Extract 'data' from response
+          },
+          error: (err) => {
+            console.error('Error fetching item:', err);
+          },
+        });
+      }
+    });
   }
   singleSearch(data: any) {
     this.getItemsService.getItem(data.name, data.metric, data.size).subscribe({
