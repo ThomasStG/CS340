@@ -19,6 +19,11 @@ Endpoints:
     /api/decrement: Decrements an item's count by `num_removed`.
     /api/remove: Deletes an item from the database.
     /api/fuzzyfind: Returns a list of items that are similar to the search term.
+    /api/updateitem: Updates an item's information in the database.
+    /api/trylogin: Attempts to log the user in.
+    /api/isLoggedIn: Checks if the user is logged in.
+    /api/register: Registers a new user.
+    /api/changePassword: Changes the user's password.
 """
 
 import csv

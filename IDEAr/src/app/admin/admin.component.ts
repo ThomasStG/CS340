@@ -4,6 +4,7 @@ import { AuthService } from '../auth.service';
 import { GetItemsService } from '../get-items.service';
 import { ItemData } from '../item-data';
 import { AdminItemComponent } from '../admin-item/admin-item.component';
+import { Observable, of} from 'rxjs';
 
 @Component({
   selector: 'app-admin',
@@ -18,7 +19,8 @@ export class AdminComponent {
   ) {}
   items: ItemData[] = [];
   ngOnInit(): void {
-    this.authService.isAuthenticated().subscribe((isAuth) => {
+    const isAuth = this.authService.isAuthenticated();
+    //this.authService.isAuthenticated().subscribe((isAuth) => {
       if (!isAuth) {
         this.router.navigate(['/authentication']);
       } else {
@@ -32,8 +34,8 @@ export class AdminComponent {
           },
         });
       }
-    });
-  }
+    };
+  //});
   singleSearch(data: any) {
     this.getItemsService.getItem(data.name, data.metric, data.size).subscribe({
       next: (response) => {
