@@ -1,16 +1,14 @@
 <!-- Main layout of the app -->
-<div class="scrollable-box">
-  <div class="header">
-    <h1>IDEr</h1>
+<div class="header">
+  <h1>IDEr</h1>
 
-    <!-- Navigation -->
-    <nav>
-      <button routerLink="/">Home</button>
-      <button routerLink="/admin">Admin</button>
-      <button (click)="logout()">logout</button>
-    </nav>
-  </div>
-
-  <!-- This will load the current page (Home or Admin) -->
-  <router-outlet></router-outlet>
+  <!-- Navigation -->
+  <nav class="flex gap-3 justify-center">
+    <button routerLink="/">Home</button>
+    <button routerLink="/admin">Admin</button>
+    <button (click)="logout()">logout</button>
+  </nav>
 </div>
+
+<!-- This will load the current page (Home, Admin, or Authentication) -->
+<router-outlet></router-outlet>

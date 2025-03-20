@@ -1,14 +1,19 @@
 """
-This module provides functions for interacting with an 
+This module provides functions for interacting with an
 SQLite database for an inventory management system.
 It includes functions to:
-    - Ensure the table exists in the database  
-    - Log in a user  
-    - Create a new user account  
+    - Ensure the table exists in the database
+    - Log in a user
+    - Create a new user account
     - Change the password of a user
 """
 
+import datetime
+import os
 import sqlite3
+
+import jwt
+from dotenv import load_dotenv
 
 
 def ensure_table():
@@ -29,7 +34,8 @@ def ensure_table():
                     id INTEGER PRIMARY KEY,
                     username TEXT NOT NULL UNIQUE,
                     password TEXT NOT NULL,
-                    salt TEXT NOT NULL
+                    salt TEXT NOT NULL,
+                    token TEXT
                 )
                 """
         )
@@ -37,7 +43,24 @@ def ensure_table():
         connection.close()
 
 
-def login(username: str, password: str, cursor: sqlite3.Cursor) -> bool:
+def generate_token(username: str):
+    load_dotenv("../data/.env")
+    SECRET_KEY = os.environ.get("Login_Token_Secret_Key")
+    payload = {
+        "iat": datetime.datetime.now(datetime.timezone.utc),
+        "exp": datetime.datetime.now(datetime.timezone.utc)
+        + datetime.timedelta(minutes=30),
+        "username": username,
+    }
+    try:
+        token = jwt.encode(payload, SECRET_KEY, algorithm="HS256")
+        return token
+    except Exception as e:
+        print(f"JWT encoding error: {e}")
+        raise
+
+
+def login(username: str, password: str, cursor: sqlite3.Cursor) -> str:
     """
     Attempts to log the user in
 
@@ -53,7 +76,31 @@ def login(username: str, password: str, cursor: sqlite3.Cursor) -> bool:
         "SELECT * FROM users WHERE username = ? AND password = ?",
         (username, password),
     )
-    return cursor.fetchone() is not None
+    if cursor.fetchone() is None:
+        return ""
+    return generate_token(username)
+
+
+def check_token(token: str, username: str, cursor: sqlite3.Cursor) -> bool:
+    """
+    Checks if the user is logged in
+
+    Args:
+        token (str): the token of the user
+        username (str): the username of the user
+        cursor (sqlite3.Cursor): the cursor to the database
+
+    Returns:
+        bool: whether the user is logged in
+    """
+    cursor.execute(
+        "SELECT token FROM users WHERE username = ?",
+        (username,),
+    )
+    old_token = cursor.fetchone()[0]
+    if old_token != token:
+        return False
+    return True
 
 
 def create_account(

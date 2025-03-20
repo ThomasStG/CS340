@@ -45,11 +45,14 @@ from api import (
     get_item,
     increment_item,
     remove_item,
+    update_item,
 )
-from auth import change_password, create_account, get_salt, login
+from auth import change_password, check_token, create_account, get_salt, login
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS for Angular frontend
+CORS(
+    app, supports_credentials=True, origins=["http://localhost:4200"]
+)  # Enable CORS for Angular frontend
 
 
 def get_db() -> sqlite3.Connection:
@@ -637,28 +640,59 @@ def list_all():
         return handle_exceptions(e)
 
 
-def run_server():
+@app.route("/updateitem", methods=["GET"])
+def update():
     """
-    Ensures the database is has the table for items, then runs the development server
+    Handles updating an item in the database.
+    Data is passed from frontend through a GET request
 
     Args:
-        None
+       name (str): the name of the item
+       is_metric (int): whether the item is metric (1) or not (0)
+       size (str): the size of the item
+       location (str): the location of the item
+       num (int): the number to increment by
+       threshold (int): the threshold of the item
 
     Returns:
-        None
+        json: a message and status code
     """
-    build_db()
+    try:
+        data = request.args
+        if not data or not all(
+            key in data
+            for key in [
+                "name",
+                "is_metric",
+                "size",
+                "new_name",
+                "new_size",
+                "new_is_metric",
+                "location",
+                "threshold",
+                "id",
+                "count",
+            ]
+        ):
+            raise KeyError("Missing required parameters")
 
-    # sets up logging
-    date = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    logging.basicConfig(
-        filename=f"../logs/api_log.log",
-        level=logging.DEBUG,
-        format="%(asctime)s - %(levelname)s - %(message)s",
-    )
-    logger = logging.getLogger(__name__)
-    logger.info(f"API server started {date}")
-    app.run(debug=True, port=3000)  # Runs on http://localhost:3000
+        connection = get_db()
+        cursor = connection.cursor()
+        update_item(
+            data["name"],
+            data["size"],
+            data["is_metric"].strip().lower() == "true",
+            data["location"],
+            data["threshold"],
+            data["new_name"],
+            data["new_size"],
+            data["new_is_metric"].strip().lower() == "true",
+            cursor,
+            connection,
+        )
+        return jsonify({"status": "success"}), 200
+    except Exception as e:
+        return handle_exceptions(e)
 
 
 @app.route("/trylogin", methods=["POST"])
@@ -694,11 +728,42 @@ def try_login() -> jsonify:
 
         #     # Get the hashed password as a hexadecimal string
         hashed_password = hash_object.hexdigest()
-        login_success = login(username, hashed_password, cursor)
-        if not login_success:
+        token = login(username, hashed_password, cursor)
+        if token == "":
             raise Exception("Login failed")
-        token = generate_token(username)
         return jsonify({"status": "success", "token": token}), 200
+    except Exception as e:
+        return handle_exceptions(e)
+
+
+@app.route("/isLoggedIn", methods=["POST"])
+def is_logged_in():
+    """
+    Checks if the user is logged in
+
+    Args:
+        token (str): the token of the user
+
+    Returns:
+        bool: whether the user is logged in
+    """
+    try:
+        data = request.json
+        if data is None or "token" not in data:
+            raise KeyError("Missing required parameters")
+
+        token = data["token"]
+        try:
+            username = jwt.decode(token, options={"verify_signature": False}).get(
+                "username"
+            )
+        except Exception as e:
+            return jsonify({"status": "error", "output": "false"}), 401
+        connection = get_db()
+        cursor = connection.cursor()
+        # if check_token(token, username, cursor):
+        return jsonify({"status": "success", "output": "true"}), 200
+        return jsonify({"status": "error", "output": "false"}), 401
     except Exception as e:
         return handle_exceptions(e)
 
@@ -773,6 +838,30 @@ def change_pass():
         return jsonify({"status": "success", "message": "Password changed"}), 200
     except Exception as e:
         return handle_exceptions(e)
+
+
+def run_server():
+    """
+    Ensures the database is has the table for items, then runs the development server
+
+    Args:
+        None
+
+    Returns:
+        None
+    """
+    build_db()
+
+    # sets up logging
+    date = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    logging.basicConfig(
+        filename=f"../logs/api_log.log",
+        level=logging.DEBUG,
+        format="%(asctime)s - %(levelname)s - %(message)s",
+    )
+    logger = logging.getLogger(__name__)
+    logger.info(f"API server started {date}")
+    app.run(debug=True, port=3000)  # Runs on http://localhost:3000
 
 
 if __name__ == "__main__":

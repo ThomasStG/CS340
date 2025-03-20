@@ -1,26 +1,26 @@
 """
-This module provides functions for interacting with an 
+This module provides functions for interacting with an
 SQLite database for an inventory management system.
 It includes functions to:
-    - Ensure the table exists in the database  
-    - Retrieve all items  Perform fuzzy searching for items 
-    - Find an item ID based on its identifying information  
-    - Retrieve a specific item  
-    - Increment an item's count  
-    - Decrement an item's count  
-    - Add a new item  
-    - Remove an item  
+    - Ensure the table exists in the database
+    - Retrieve all items  Perform fuzzy searching for items
+    - Find an item ID based on its identifying information
+    - Retrieve a specific item
+    - Increment an item's count
+    - Decrement an item's count
+    - Add a new item
+    - Remove an item
 
 Functions:
-    build_db() -> None  
-    get_all(cursor: sqlite3.Cursor) -> list[dict]  
-    find_by_name(name: str, is_metric: int, size: str, cursor: sqlite3.Cursor) -> int | None  
+    build_db() -> None
+    get_all(cursor: sqlite3.Cursor) -> list[dict]
+    find_by_name(name: str, is_metric: int, size: str, cursor: sqlite3.Cursor) -> int | None
     fzf(name: str, is_metric: int, size: str, cursor: sqlite3.Cursor, top_n: int = 5) -> list[dict]
-    get_item(item_id: int, cursor: sqlite3.Cursor) -> list[dict] | None  
-    increment_item(item_id: int, num_added: int, cursor: sqlite3.Cursor, connection: sqlite3.Connection) -> None  
-    decrement_item(item_id: int, num_removed: int, cursor: sqlite3.Cursor, connection: sqlite3.Connection) -> int  
-    add_item(name: str, size: str, is_metric: int, location: str, count: int, threshold: int, cursor: sqlite3.Cursor, connection: sqlite3.Connection) -> None  
-    remove_item(item_id: int, cursor: sqlite3.Cursor, connection: sqlite3.Connection) -> None  
+    get_item(item_id: int, cursor: sqlite3.Cursor) -> list[dict] | None
+    increment_item(item_id: int, num_added: int, cursor: sqlite3.Cursor, connection: sqlite3.Connection) -> None
+    decrement_item(item_id: int, num_removed: int, cursor: sqlite3.Cursor, connection: sqlite3.Connection) -> int
+    add_item(name: str, size: str, is_metric: int, location: str, count: int, threshold: int, cursor: sqlite3.Cursor, connection: sqlite3.Connection) -> None
+    remove_item(item_id: int, cursor: sqlite3.Cursor, connection: sqlite3.Connection) -> None
 
 Dependencies:
     `sqlite3`: Built-in Python module for interacting with SQLite databases.
@@ -74,7 +74,7 @@ def get_all(cursor: sqlite3.Cursor) -> list[dict]:
     logger = logging.getLogger(__name__)
     cursor.execute(
         """
-                   SELECT name, is_metric, size, location, count, threshold
+                   SELECT id, name, is_metric, size, location, count, threshold
                    FROM items
                    """
     )
@@ -182,6 +182,7 @@ def get_item(item_id: int, cursor: sqlite3.Cursor) -> list[dict]:
     logger = logging.getLogger(__name__)
     cursor.execute(
         """SELECT 
+            id,
             name, 
             is_metric, 
             size,
@@ -335,4 +336,43 @@ def remove_item(
         (item_id,),
     )
     logger.debug("Item %i removed", item_id)
+    connection.commit()
+
+
+def update_item(
+    name: str,
+    size: str,
+    is_metric: bool,
+    location: str,
+    threshold: int,
+    new_name: str,
+    new_size: str,
+    new_is_metric: bool,
+    cursor: sqlite3.Cursor,
+    connection: sqlite3.Connection,
+) -> None:
+    """
+    updates an item in the database
+
+    Args:
+        name (str): name of the item
+        size (str): size of the item
+        is_metric (int): whether the item is metric (1) or not (0)
+        location (str): the location string of the item
+        threshold (int): the minimum threshold before ordering more
+        cursor (sqlite3.Cursor): SQLite cursor object to execute queries
+        connection (sqlite3.Connection): SQLite connection object to commit changes
+
+    Returns:
+        None
+    """
+    logger = logging.getLogger(__name__)
+    item_id = find_by_name(name, is_metric, size, cursor)
+    cursor.execute(
+        """
+                   UPDATE items SET name = ?, size = ?, is_metric = ?, location = ?, threshold = ? WHERE id = ?
+                   """,
+        (new_name, new_size, new_is_metric, location, threshold, item_id),
+    )
+    logger.debug("Item %s updated", name)
     connection.commit()

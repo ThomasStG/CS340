@@ -19,7 +19,7 @@
 <div [formGroup]="myForm" class="header">
   <div class="headerColumn">
     Name:
-    <input type="text" formControlName="name" />
+    <input class="textBox" type="text" formControlName="name" />
     <div *ngIf="myForm.controls.name.invalid && myForm.controls.name.touched">
       <small>Name is required.</small>
     </div>
@@ -27,7 +27,7 @@
   <div class="headerColumn">
     Size:
 
-    <input type="text" formControlName="size" />
+    <input class="textBox" type="text" formControlName="size" />
     <div *ngIf="myForm.controls.size.invalid && myForm.controls.size.touched">
       <small>Size is required.</small>
     </div>
@@ -38,8 +38,6 @@
   </div>
   <div class="headerColumn">Location</div>
   <div class="headerColumn">Count</div>
-  <div class="headerColumn">Threshold</div>
-  <div class="headerColumn">Add/Subtract</div>
 
   <div class="headerColumn">
     <button type="button" (click)="onSubmit('single')">Search</button>
@@ -48,4 +46,3 @@
     <button type="button" (click)="onSubmit('multi')">Search Similar</button>
   </div>
 </div>
-
