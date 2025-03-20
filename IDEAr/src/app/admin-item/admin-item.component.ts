@@ -8,9 +8,7 @@ import { UpdateItemService } from '../update-item.service';
   styleUrl: './admin-item.component.css',
 })
 export class AdminItemComponent implements OnInit {
-  // constructor() {
-  //   private updateService = new UpdateItemService();
-  // }
+  constructor(private updateItemService: UpdateItemService) {}
   @Input() item: ItemData = {
     id: 0,
     name: '',
@@ -20,26 +18,43 @@ export class AdminItemComponent implements OnInit {
     count: 0,
     threshold: 0,
   };
-  // isPopupVisible = false;
-  // oldItem: ItemData;
+  newItem: ItemData = { ...this.item };
   ngOnInit() {
     this.item.location = JSON.parse(this.item.location);
-    // oldItem = { ...this.item };
+    this.newItem = this.item;
   }
 
-  // isPopupVisible = false;
+  isPopupVisible = false;
+  isEditing = false;
 
-  // showPopup() {
-  //   this.isPopupVisible = true;
-  // }
+  editItem(event: Event) {
+    event.stopPropagation();
+    this.isEditing = true;
+  }
 
-  // closePopup(event: Event) {
-  //   event.stopPropagation();
-  //   this.isPopupVisible = false;
-  // }
-  // updateItem(event: Event) {
-  //   event.stopPropagation();
-  //   this.isPopupVisible = false;
-  //   this.updateService.updateItem(this.item, this.oldItem);
-  // }
+  showPopup() {
+    this.isPopupVisible = true;
+  }
+
+  closePopup(event: Event) {
+    event.stopPropagation();
+    this.isPopupVisible = false;
+    this.isEditing = false;
+  }
+  updateItem(event: Event) {
+    event.stopPropagation();
+    this.isEditing = false;
+    this.isPopupVisible = false;
+    this.updateItemService
+      .updateItem(this.item, this.newItem)
+      .subscribe((response) => {
+        console.log(response);
+      });
+  }
+  deleteItem(event: Event) {
+    event.stopPropagation();
+    this.updateItemService.deleteItem(this.item).subscribe((response) => {
+      console.log(response);
+    });
+  }
 }

@@ -670,6 +670,8 @@ def update():
                 "new_is_metric",
                 "location",
                 "threshold",
+                "id",
+                "count",
             ]
         ):
             raise KeyError("Missing required parameters")
@@ -757,7 +759,6 @@ def is_logged_in():
             )
         except Exception as e:
             return jsonify({"status": "error", "output": "false"}), 401
-        print(username)
         connection = get_db()
         cursor = connection.cursor()
         # if check_token(token, username, cursor):
