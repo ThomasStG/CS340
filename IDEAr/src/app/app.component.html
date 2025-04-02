@@ -1,14 +1,18 @@
 <!-- Main layout of the app -->
-<div class="header">
+<div [class.dark]="(darkMode | async)">
+<div class="header" class="bg-gray-100 text-black dark:bg-gray-900 dark:text-white">
   <h1>IDEr</h1>
 
-    <!-- Navigation -->
-    <nav class="flex gap-3 align-center justify-center">
-      <button routerLink="/">Home</button>
-      <button routerLink="/admin">Admin</button>
-      <button (click)="logout()">logout</button>
-    </nav>
-  </div>
+  <!-- Navigation -->
+  <nav class="flex gap-3 align-center justify-center">
+    <button routerLink="/">Home</button>
+    <button routerLink="/admin">Admin</button>
+    <button (click)="logout()">logout</button>
+    <button (click)="setMode(false)">Light Mode☀️</button>
+    <button (click)="setMode(true)">Dark Mode🌑</button>
+  </nav>
+</div>
 
   <!-- This will load the current page (Home or Admin) -->
 <router-outlet></router-outlet>
+</div>

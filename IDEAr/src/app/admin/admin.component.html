@@ -1,7 +1,7 @@
-<div class="scrollable-box">
+<div class="scrollable-box h-full">
   <app-item-search (formSubmit)="handleSearch($event)"></app-item-search>
 
-  <div class="content">
+  <div class="content h-full bg-gray-100 text-black dark:bg-gray-900 dark:text-white ">
     <div *ngFor="let item of items">
       <app-item [item]="item"></app-item>
     </div>
