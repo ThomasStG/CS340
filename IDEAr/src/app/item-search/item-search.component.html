@@ -16,33 +16,32 @@
 </div>
 -->
 
-<div [formGroup]="myForm" class="header">
-  <div class="headerColumn">
+<div [formGroup]="myForm" class="bg-gray-300 dark:bg-gray-800">
+  <th class="headerColumn">
     Name:
     <input class="textBox" type="text" formControlName="name" />
     <div *ngIf="myForm.controls.name.invalid && myForm.controls.name.touched">
       <small>Name is required.</small>
     </div>
-  </div>
-  <div class="headerColumn">
+  </th>
+  <th class="headerColumn">
     Size:
 
     <input class="textBox" type="text" formControlName="size" />
     <div *ngIf="myForm.controls.size.invalid && myForm.controls.size.touched">
       <small>Size is required.</small>
     </div>
-  </div>
-  <div class="headerColumn">
+  </th>
+  <th class="headerColumn">
     Is Metric:
     <input type="checkbox" formControlName="metric" />
-  </div>
-  <div class="headerColumn">Location</div>
-  <div class="headerColumn">Count</div>
+  </th>
+  <th class="headerColumn">Count</th>
 
-  <div class="headerColumn">
+  <th class="headerColumn">
     <button type="button" (click)="onSubmit('single')">Search</button>
-  </div>
-  <div class="headerColumn">
+  </th>
+  <th class="headerColumn">
     <button type="button" (click)="onSubmit('multi')">Search Similar</button>
-  </div>
+  </th>
 </div>

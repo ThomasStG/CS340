@@ -1,8 +1,8 @@
 <div class="item" (click)="showPopup()">
-  <div class="itemColumn">{{ item.name }}</div>
-  <div class="itemColumn">{{ item.size }}</div>
-  <div class="itemColumn">{{ item.is_metric }}</div>
-  <div class="itemColumn">{{ item.count }}</div>
+  <td class="itemColumn">{{ item.name }}</td>
+  <td class="itemColumn">{{ item.size }}</td>
+  <td class="itemColumn">{{ item.is_metric }}</td>
+  <td class="itemColumn">{{ item.count }}</td>
 
   <div
     *ngIf="isPopupVisible"

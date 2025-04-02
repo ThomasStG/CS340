@@ -1047,3 +1047,370 @@
 2025-03-20 14:55:00,764 - INFO - 127.0.0.1 - - [20/Mar/2025 14:55:00] "GET /findAll HTTP/1.1" 200 -
 2025-03-20 14:55:09,289 - INFO - 127.0.0.1 - - [20/Mar/2025 14:55:09] "GET /findAll HTTP/1.1" 200 -
 2025-03-20 14:55:21,382 - INFO - 127.0.0.1 - - [20/Mar/2025 14:55:21] "GET /findAll HTTP/1.1" 200 -
+2025-03-20 16:16:36,642 - INFO - 127.0.0.1 - - [20/Mar/2025 16:16:36] "GET /findAll HTTP/1.1" 200 -
+2025-03-20 16:17:05,637 - INFO - 127.0.0.1 - - [20/Mar/2025 16:17:05] "GET /findAll HTTP/1.1" 200 -
+2025-03-20 16:17:15,960 - INFO - 127.0.0.1 - - [20/Mar/2025 16:17:15] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-20 16:17:15,964 - INFO - 127.0.0.1 - - [20/Mar/2025 16:17:15] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-03-20 16:17:15,968 - INFO - 127.0.0.1 - - [20/Mar/2025 16:17:15] "GET /findAll HTTP/1.1" 200 -
+2025-03-20 16:17:23,368 - DEBUG - Item Self Locking Retaining Ring updated
+2025-03-20 16:17:23,369 - INFO - 127.0.0.1 - - [20/Mar/2025 16:17:23] "GET /updateitem?name=Self%20Locking%20Retaining%20Ring&new_name=Self%20Locking%20Retaining%20Ring&is_metric=True&new_is_metric=True&size=SM&new_size=SM&id=1&count=22&location="\\"\\\\\\"\\\\\\"\\""&threshold=100 HTTP/1.1" 200 -
+2025-03-20 16:18:40,408 - INFO - 127.0.0.1 - - [20/Mar/2025 16:18:40] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-20 16:18:40,434 - INFO - 127.0.0.1 - - [20/Mar/2025 16:18:40] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-20 16:18:40,616 - INFO - 127.0.0.1 - - [20/Mar/2025 16:18:40] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-20 16:18:40,632 - INFO - 127.0.0.1 - - [20/Mar/2025 16:18:40] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-03-20 16:18:40,643 - INFO - 127.0.0.1 - - [20/Mar/2025 16:18:40] "GET /findAll HTTP/1.1" 200 -
+2025-03-20 16:19:19,589 - INFO - 127.0.0.1 - - [20/Mar/2025 16:19:19] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-20 16:19:19,742 - INFO - 127.0.0.1 - - [20/Mar/2025 16:19:19] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-20 16:19:19,757 - INFO - 127.0.0.1 - - [20/Mar/2025 16:19:19] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-03-20 16:19:19,764 - INFO - 127.0.0.1 - - [20/Mar/2025 16:19:19] "GET /findAll HTTP/1.1" 200 -
+2025-03-20 16:19:31,679 - INFO - 127.0.0.1 - - [20/Mar/2025 16:19:31] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-20 16:19:31,793 - INFO - 127.0.0.1 - - [20/Mar/2025 16:19:31] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-20 16:19:31,808 - INFO - 127.0.0.1 - - [20/Mar/2025 16:19:31] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-03-20 16:19:31,819 - INFO - 127.0.0.1 - - [20/Mar/2025 16:19:31] "GET /findAll HTTP/1.1" 200 -
+2025-03-20 16:19:58,206 - INFO - 127.0.0.1 - - [20/Mar/2025 16:19:58] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-20 16:19:58,299 - INFO - 127.0.0.1 - - [20/Mar/2025 16:19:58] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-20 16:19:58,311 - INFO - 127.0.0.1 - - [20/Mar/2025 16:19:58] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-03-20 16:19:58,322 - INFO - 127.0.0.1 - - [20/Mar/2025 16:19:58] "GET /findAll HTTP/1.1" 200 -
+2025-03-20 16:20:10,461 - INFO - 127.0.0.1 - - [20/Mar/2025 16:20:10] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-20 16:20:10,542 - INFO - 127.0.0.1 - - [20/Mar/2025 16:20:10] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-20 16:20:10,554 - INFO - 127.0.0.1 - - [20/Mar/2025 16:20:10] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-03-20 16:20:10,574 - INFO - 127.0.0.1 - - [20/Mar/2025 16:20:10] "GET /findAll HTTP/1.1" 200 -
+2025-03-20 16:21:23,595 - INFO - 127.0.0.1 - - [20/Mar/2025 16:21:23] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-20 16:21:23,727 - INFO - 127.0.0.1 - - [20/Mar/2025 16:21:23] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-20 16:21:23,739 - INFO - 127.0.0.1 - - [20/Mar/2025 16:21:23] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-03-20 16:21:23,756 - INFO - 127.0.0.1 - - [20/Mar/2025 16:21:23] "GET /findAll HTTP/1.1" 200 -
+2025-03-20 16:21:54,879 - INFO - 127.0.0.1 - - [20/Mar/2025 16:21:54] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-20 16:21:54,980 - INFO - 127.0.0.1 - - [20/Mar/2025 16:21:54] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-20 16:21:54,996 - INFO - 127.0.0.1 - - [20/Mar/2025 16:21:54] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-03-20 16:21:55,010 - INFO - 127.0.0.1 - - [20/Mar/2025 16:21:55] "GET /findAll HTTP/1.1" 200 -
+2025-03-20 16:22:07,667 - INFO - 127.0.0.1 - - [20/Mar/2025 16:22:07] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-20 16:22:07,767 - INFO - 127.0.0.1 - - [20/Mar/2025 16:22:07] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-20 16:22:07,779 - INFO - 127.0.0.1 - - [20/Mar/2025 16:22:07] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-03-20 16:22:07,793 - INFO - 127.0.0.1 - - [20/Mar/2025 16:22:07] "GET /findAll HTTP/1.1" 200 -
+2025-03-20 16:22:21,055 - INFO - 127.0.0.1 - - [20/Mar/2025 16:22:21] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-20 16:22:21,137 - INFO - 127.0.0.1 - - [20/Mar/2025 16:22:21] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-20 16:22:21,146 - INFO - 127.0.0.1 - - [20/Mar/2025 16:22:21] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-03-20 16:22:21,159 - INFO - 127.0.0.1 - - [20/Mar/2025 16:22:21] "GET /findAll HTTP/1.1" 200 -
+2025-03-20 16:24:02,920 - INFO - 127.0.0.1 - - [20/Mar/2025 16:24:02] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-20 16:24:03,059 - INFO - 127.0.0.1 - - [20/Mar/2025 16:24:03] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-20 16:24:03,086 - INFO - 127.0.0.1 - - [20/Mar/2025 16:24:03] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-03-20 16:24:03,090 - INFO - 127.0.0.1 - - [20/Mar/2025 16:24:03] "GET /findAll HTTP/1.1" 200 -
+2025-03-20 16:24:18,190 - INFO - 127.0.0.1 - - [20/Mar/2025 16:24:18] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-20 16:24:18,294 - INFO - 127.0.0.1 - - [20/Mar/2025 16:24:18] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-20 16:24:18,307 - INFO - 127.0.0.1 - - [20/Mar/2025 16:24:18] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-03-20 16:24:18,315 - INFO - 127.0.0.1 - - [20/Mar/2025 16:24:18] "GET /findAll HTTP/1.1" 200 -
+2025-03-20 16:24:27,559 - INFO - 127.0.0.1 - - [20/Mar/2025 16:24:27] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-20 16:24:27,635 - INFO - 127.0.0.1 - - [20/Mar/2025 16:24:27] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-20 16:24:27,647 - INFO - 127.0.0.1 - - [20/Mar/2025 16:24:27] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-03-20 16:24:27,661 - INFO - 127.0.0.1 - - [20/Mar/2025 16:24:27] "GET /findAll HTTP/1.1" 200 -
+2025-03-20 16:24:47,459 - INFO - 127.0.0.1 - - [20/Mar/2025 16:24:47] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-20 16:24:47,579 - INFO - 127.0.0.1 - - [20/Mar/2025 16:24:47] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-20 16:24:47,583 - INFO - 127.0.0.1 - - [20/Mar/2025 16:24:47] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-03-20 16:24:47,609 - INFO - 127.0.0.1 - - [20/Mar/2025 16:24:47] "GET /findAll HTTP/1.1" 200 -
+2025-03-24 15:46:18,998 - INFO - API server started 2025-03-24_15-46-18
+2025-03-24 15:46:19,037 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2025-03-24 15:46:19,037 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-24 15:46:19,038 - INFO -  * Restarting with stat
+2025-03-24 15:46:19,500 - INFO - API server started 2025-03-24_15-46-19
+2025-03-24 15:46:19,519 - WARNING -  * Debugger is active!
+2025-03-24 15:46:19,524 - INFO -  * Debugger PIN: 507-368-162
+2025-03-24 15:46:52,027 - INFO - 127.0.0.1 - - [24/Mar/2025 15:46:52] "GET /findAll HTTP/1.1" 200 -
+2025-03-24 15:47:16,230 - INFO - 127.0.0.1 - - [24/Mar/2025 15:47:16] "GET /findAll HTTP/1.1" 200 -
+2025-03-24 15:47:17,121 - INFO - 127.0.0.1 - - [24/Mar/2025 15:47:17] "GET /findAll HTTP/1.1" 200 -
+2025-03-24 15:47:18,199 - INFO - 127.0.0.1 - - [24/Mar/2025 15:47:18] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-24 15:47:18,203 - INFO - 127.0.0.1 - - [24/Mar/2025 15:47:18] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-03-24 15:47:18,209 - INFO - 127.0.0.1 - - [24/Mar/2025 15:47:18] "GET /findAll HTTP/1.1" 200 -
+2025-03-24 15:48:10,494 - INFO - 127.0.0.1 - - [24/Mar/2025 15:48:10] "GET /findAll HTTP/1.1" 200 -
+2025-03-24 15:49:44,999 - INFO - Searching for item with
+            name: Tee Nut,
+            is_metric: false,
+            size: 6/32
+2025-03-24 15:49:45,004 - INFO - 127.0.0.1 - - [24/Mar/2025 15:49:45] "GET /fuzzyfind?name=Tee%20Nut&is_metric=false&size=6/32 HTTP/1.1" 200 -
+2025-03-24 15:50:18,313 - INFO - Searching for item with
+            name: Tee Nut,
+            is_metric: true,
+            size: 6/32
+2025-03-24 15:50:18,313 - INFO - 127.0.0.1 - - [24/Mar/2025 15:50:18] "GET /fuzzyfind?name=Tee%20Nut&is_metric=true&size=6/32 HTTP/1.1" 200 -
+2025-03-24 15:50:51,945 - INFO - 127.0.0.1 - - [24/Mar/2025 15:50:51] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-24 15:50:51,949 - INFO - 127.0.0.1 - - [24/Mar/2025 15:50:51] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-24 15:50:56,258 - INFO - 127.0.0.1 - - [24/Mar/2025 15:50:56] "GET /findAll HTTP/1.1" 200 -
+2025-03-24 15:51:02,083 - INFO - 127.0.0.1 - - [24/Mar/2025 15:51:02] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-24 15:51:02,087 - INFO - 127.0.0.1 - - [24/Mar/2025 15:51:02] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-24 15:51:06,424 - INFO - 127.0.0.1 - - [24/Mar/2025 15:51:06] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-03-24 15:51:06,426 - INFO - 127.0.0.1 - - [24/Mar/2025 15:51:06] "POST /trylogin HTTP/1.1" 200 -
+2025-03-24 15:51:06,450 - INFO - 127.0.0.1 - - [24/Mar/2025 15:51:06] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-03-24 15:51:06,467 - INFO - 127.0.0.1 - - [24/Mar/2025 15:51:06] "GET /findAll HTTP/1.1" 200 -
+2025-03-24 15:51:13,912 - DEBUG - Item Self Locking Retaining Ring updated
+2025-03-24 15:51:13,912 - INFO - 127.0.0.1 - - [24/Mar/2025 15:51:13] "GET /updateitem?name=Self%20Locking%20Retaining%20Ring&new_name=Self%20Locking%20Retaining%20Ring&is_metric=True&new_is_metric=True&size=LG&new_size=LG&id=2&count=32&location=null&threshold=0 HTTP/1.1" 200 -
+2025-03-24 15:51:27,254 - DEBUG - Item Self Locking Retaining Ring updated
+2025-03-24 15:51:27,255 - INFO - 127.0.0.1 - - [24/Mar/2025 15:51:27] "GET /updateitem?name=Self%20Locking%20Retaining%20Ring&new_name=Self%20Locking%20Retaining%20Ring&is_metric=True&new_is_metric=True&size=SM&new_size=SM&id=1&count=22&location="\\"\\\\\\"\\\\\\"\\""&threshold=100 HTTP/1.1" 200 -
+2025-03-24 15:51:56,499 - DEBUG - Item Self Locking Retaining Ring updated
+2025-03-24 15:51:56,500 - INFO - 127.0.0.1 - - [24/Mar/2025 15:51:56] "GET /updateitem?name=Self%20Locking%20Retaining%20Ring&new_name=Self%20Locking%20Retaining%20Ring&is_metric=True&new_is_metric=True&size=SM&new_size=SM&id=1&count=60&location="\\"\\\\\\"\\\\\\"\\""&threshold=100 HTTP/1.1" 200 -
+2025-03-24 15:51:58,492 - INFO - 127.0.0.1 - - [24/Mar/2025 15:51:58] "GET /findAll HTTP/1.1" 200 -
+2025-03-24 15:52:04,723 - INFO - 127.0.0.1 - - [24/Mar/2025 15:52:04] "GET /findAll HTTP/1.1" 200 -
+2025-03-24 15:52:26,435 - INFO - Searching for item with
+                name: M5,
+                is_metric: True,
+                size: .4
+2025-03-24 15:52:26,436 - DEBUG - Item not found
+2025-03-24 15:52:26,436 - INFO - 127.0.0.1 - - [24/Mar/2025 15:52:26] "[31m[1mGET /find?name=M5&is_metric=True&size=.4 HTTP/1.1[0m" 422 -
+2025-03-24 15:52:27,163 - INFO - Searching for item with
+                name: M5,
+                is_metric: True,
+                size: .4
+2025-03-24 15:52:27,163 - DEBUG - Item not found
+2025-03-24 15:52:27,163 - INFO - 127.0.0.1 - - [24/Mar/2025 15:52:27] "[31m[1mGET /find?name=M5&is_metric=True&size=.4 HTTP/1.1[0m" 422 -
+2025-03-24 15:52:27,338 - INFO - Searching for item with
+                name: M5,
+                is_metric: True,
+                size: .4
+2025-03-24 15:52:27,338 - DEBUG - Item not found
+2025-03-24 15:52:27,338 - INFO - 127.0.0.1 - - [24/Mar/2025 15:52:27] "[31m[1mGET /find?name=M5&is_metric=True&size=.4 HTTP/1.1[0m" 422 -
+2025-03-24 15:52:27,487 - INFO - Searching for item with
+                name: M5,
+                is_metric: True,
+                size: .4
+2025-03-24 15:52:27,487 - DEBUG - Item not found
+2025-03-24 15:52:27,488 - INFO - 127.0.0.1 - - [24/Mar/2025 15:52:27] "[31m[1mGET /find?name=M5&is_metric=True&size=.4 HTTP/1.1[0m" 422 -
+2025-03-24 15:52:27,671 - INFO - Searching for item with
+                name: M5,
+                is_metric: True,
+                size: .4
+2025-03-24 15:52:27,671 - DEBUG - Item not found
+2025-03-24 15:52:27,672 - INFO - 127.0.0.1 - - [24/Mar/2025 15:52:27] "[31m[1mGET /find?name=M5&is_metric=True&size=.4 HTTP/1.1[0m" 422 -
+2025-03-24 15:52:27,836 - INFO - Searching for item with
+                name: M5,
+                is_metric: True,
+                size: .4
+2025-03-24 15:52:27,837 - DEBUG - Item not found
+2025-03-24 15:52:27,837 - INFO - 127.0.0.1 - - [24/Mar/2025 15:52:27] "[31m[1mGET /find?name=M5&is_metric=True&size=.4 HTTP/1.1[0m" 422 -
+2025-03-24 15:52:27,995 - INFO - Searching for item with
+                name: M5,
+                is_metric: True,
+                size: .4
+2025-03-24 15:52:27,995 - DEBUG - Item not found
+2025-03-24 15:52:27,995 - INFO - 127.0.0.1 - - [24/Mar/2025 15:52:27] "[31m[1mGET /find?name=M5&is_metric=True&size=.4 HTTP/1.1[0m" 422 -
+2025-03-24 15:52:28,125 - INFO - Searching for item with
+                name: M5,
+                is_metric: True,
+                size: .4
+2025-03-24 15:52:28,126 - DEBUG - Item not found
+2025-03-24 15:52:28,126 - INFO - 127.0.0.1 - - [24/Mar/2025 15:52:28] "[31m[1mGET /find?name=M5&is_metric=True&size=.4 HTTP/1.1[0m" 422 -
+2025-03-24 15:52:28,278 - INFO - Searching for item with
+                name: M5,
+                is_metric: True,
+                size: .4
+2025-03-24 15:52:28,278 - DEBUG - Item not found
+2025-03-24 15:52:28,278 - INFO - 127.0.0.1 - - [24/Mar/2025 15:52:28] "[31m[1mGET /find?name=M5&is_metric=True&size=.4 HTTP/1.1[0m" 422 -
+2025-03-24 15:52:35,807 - INFO - Searching for item with
+                name: M5,
+                is_metric: True,
+                size: .5
+2025-03-24 15:52:35,808 - INFO - 127.0.0.1 - - [24/Mar/2025 15:52:35] "GET /find?name=M5&is_metric=True&size=.5 HTTP/1.1" 200 -
+2025-03-24 15:52:52,808 - INFO - Searching for item with
+            name: M5,
+            is_metric: True,
+            size: .5
+2025-03-24 15:52:52,809 - INFO - 127.0.0.1 - - [24/Mar/2025 15:52:52] "GET /fuzzyfind?name=M5&is_metric=True&size=.5 HTTP/1.1" 200 -
+2025-03-24 15:53:26,896 - INFO - 127.0.0.1 - - [24/Mar/2025 15:53:26] "GET /findAll HTTP/1.1" 200 -
+2025-03-24 16:11:13,681 - INFO - 127.0.0.1 - - [24/Mar/2025 16:11:13] "GET /findAll HTTP/1.1" 200 -
+2025-03-24 16:43:39,765 - INFO - 127.0.0.1 - - [24/Mar/2025 16:43:39] "GET /findAll HTTP/1.1" 200 -
+2025-03-24 17:09:43,029 - INFO - 127.0.0.1 - - [24/Mar/2025 17:09:43] "GET /findAll HTTP/1.1" 200 -
+2025-03-24 17:09:55,484 - INFO - 127.0.0.1 - - [24/Mar/2025 17:09:55] "GET /findAll HTTP/1.1" 200 -
+2025-03-24 18:27:22,479 - INFO - 127.0.0.1 - - [24/Mar/2025 18:27:22] "GET /findAll HTTP/1.1" 200 -
+2025-03-24 18:50:37,079 - INFO - 127.0.0.1 - - [24/Mar/2025 18:50:37] "GET /findAll HTTP/1.1" 200 -
+2025-03-24 18:57:48,364 - INFO - 127.0.0.1 - - [24/Mar/2025 18:57:48] "GET /findAll HTTP/1.1" 200 -
+2025-03-24 18:59:31,243 - INFO - 127.0.0.1 - - [24/Mar/2025 18:59:31] "GET /findAll HTTP/1.1" 200 -
+2025-03-24 19:00:05,938 - INFO - 127.0.0.1 - - [24/Mar/2025 19:00:05] "GET /findAll HTTP/1.1" 200 -
+2025-03-24 19:00:27,899 - INFO - 127.0.0.1 - - [24/Mar/2025 19:00:27] "GET /findAll HTTP/1.1" 200 -
+2025-03-24 22:12:33,836 - INFO - 127.0.0.1 - - [24/Mar/2025 22:12:33] "GET /findAll HTTP/1.1" 200 -
+2025-03-24 22:16:26,638 - INFO - 127.0.0.1 - - [24/Mar/2025 22:16:26] "GET /findAll HTTP/1.1" 200 -
+2025-03-25 08:30:06,470 - INFO - 127.0.0.1 - - [25/Mar/2025 08:30:06] "GET /findAll HTTP/1.1" 200 -
+2025-03-25 09:00:06,570 - INFO - 127.0.0.1 - - [25/Mar/2025 09:00:06] "GET /findAll HTTP/1.1" 200 -
+2025-03-25 10:30:26,489 - INFO - 127.0.0.1 - - [25/Mar/2025 10:30:26] "GET /findAll HTTP/1.1" 200 -
+2025-03-25 10:45:38,906 - INFO - 127.0.0.1 - - [25/Mar/2025 10:45:38] "GET /findAll HTTP/1.1" 200 -
+2025-03-25 10:45:41,514 - INFO - 127.0.0.1 - - [25/Mar/2025 10:45:41] "GET /findAll HTTP/1.1" 200 -
+2025-03-25 10:47:24,918 - INFO - 127.0.0.1 - - [25/Mar/2025 10:47:24] "GET /findAll HTTP/1.1" 200 -
+2025-03-25 10:47:44,394 - INFO - 127.0.0.1 - - [25/Mar/2025 10:47:44] "GET /findAll HTTP/1.1" 200 -
+2025-03-25 11:35:48,325 - INFO - 127.0.0.1 - - [25/Mar/2025 11:35:48] "GET /findAll HTTP/1.1" 200 -
+2025-03-25 12:18:34,971 - INFO - 127.0.0.1 - - [25/Mar/2025 12:18:34] "GET /findAll HTTP/1.1" 200 -
+2025-03-25 12:21:39,289 - INFO - 127.0.0.1 - - [25/Mar/2025 12:21:39] "GET /findAll HTTP/1.1" 200 -
+2025-03-25 13:30:06,452 - INFO - 127.0.0.1 - - [25/Mar/2025 13:30:06] "GET /findAll HTTP/1.1" 200 -
+2025-03-25 15:00:06,815 - INFO - 127.0.0.1 - - [25/Mar/2025 15:00:06] "GET /findAll HTTP/1.1" 200 -
+2025-03-25 15:27:44,388 - INFO - 127.0.0.1 - - [25/Mar/2025 15:27:44] "GET /findAll HTTP/1.1" 200 -
+2025-03-25 15:49:55,350 - INFO - 127.0.0.1 - - [25/Mar/2025 15:49:55] "GET /findAll HTTP/1.1" 200 -
+2025-03-25 18:04:36,506 - INFO - 127.0.0.1 - - [25/Mar/2025 18:04:36] "GET /findAll HTTP/1.1" 200 -
+2025-03-25 23:20:50,991 - INFO - 127.0.0.1 - - [25/Mar/2025 23:20:50] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 08:15:06,503 - INFO - 127.0.0.1 - - [26/Mar/2025 08:15:06] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 10:46:40,422 - INFO - 127.0.0.1 - - [26/Mar/2025 10:46:40] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:23:52,580 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/api.py', reloading
+2025-03-26 11:23:52,657 - INFO -  * Restarting with stat
+2025-03-26 11:23:53,712 - INFO - API server started 2025-03-26_11-23-53
+2025-03-26 11:23:53,741 - WARNING -  * Debugger is active!
+2025-03-26 11:23:53,747 - INFO -  * Debugger PIN: 507-368-162
+2025-03-26 11:24:15,544 - INFO - API server started 2025-03-26_11-24-15
+2025-03-26 11:24:15,590 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2025-03-26 11:24:15,590 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-26 11:24:15,591 - INFO -  * Restarting with stat
+2025-03-26 11:24:16,055 - INFO - API server started 2025-03-26_11-24-16
+2025-03-26 11:24:16,076 - WARNING -  * Debugger is active!
+2025-03-26 11:24:16,084 - INFO -  * Debugger PIN: 507-368-162
+2025-03-26 11:24:34,106 - INFO - 127.0.0.1 - - [26/Mar/2025 11:24:34] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:24:37,288 - INFO - 127.0.0.1 - - [26/Mar/2025 11:24:37] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:24:41,235 - INFO - Searching for item with
+            name: test,
+            is_metric: True,
+            size: test
+2025-03-26 11:24:41,235 - INFO - 127.0.0.1 - - [26/Mar/2025 11:24:41] "GET /fuzzyfind?name=test&is_metric=True&size=test HTTP/1.1" 200 -
+2025-03-26 11:24:44,137 - INFO - Searching for item with
+            name: test,
+            is_metric: false,
+            size: test
+2025-03-26 11:24:44,137 - INFO - 127.0.0.1 - - [26/Mar/2025 11:24:44] "GET /fuzzyfind?name=test&is_metric=false&size=test HTTP/1.1" 200 -
+2025-03-26 11:25:06,299 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/api.py', reloading
+2025-03-26 11:25:06,341 - INFO -  * Restarting with stat
+2025-03-26 11:25:06,959 - INFO - API server started 2025-03-26_11-25-06
+2025-03-26 11:25:06,983 - WARNING -  * Debugger is active!
+2025-03-26 11:25:06,990 - INFO -  * Debugger PIN: 507-368-162
+2025-03-26 11:26:03,298 - INFO - API server started 2025-03-26_11-26-03
+2025-03-26 11:26:03,356 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2025-03-26 11:26:03,356 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-26 11:26:03,357 - INFO -  * Restarting with stat
+2025-03-26 11:26:03,831 - INFO - API server started 2025-03-26_11-26-03
+2025-03-26 11:26:03,881 - WARNING -  * Debugger is active!
+2025-03-26 11:26:03,922 - INFO -  * Debugger PIN: 507-368-162
+2025-03-26 11:26:06,496 - INFO - 127.0.0.1 - - [26/Mar/2025 11:26:06] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:26:10,086 - INFO - 127.0.0.1 - - [26/Mar/2025 11:26:10] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-26 11:26:10,089 - INFO - 127.0.0.1 - - [26/Mar/2025 11:26:10] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-03-26 11:26:10,095 - INFO - 127.0.0.1 - - [26/Mar/2025 11:26:10] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:32:26,200 - INFO - 127.0.0.1 - - [26/Mar/2025 11:32:26] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-26 11:32:26,201 - INFO - 127.0.0.1 - - [26/Mar/2025 11:32:26] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:32:26,250 - INFO - 127.0.0.1 - - [26/Mar/2025 11:32:26] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-26 11:32:26,250 - INFO - 127.0.0.1 - - [26/Mar/2025 11:32:26] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:32:26,537 - INFO - 127.0.0.1 - - [26/Mar/2025 11:32:26] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-26 11:32:26,627 - INFO - 127.0.0.1 - - [26/Mar/2025 11:32:26] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-03-26 11:32:26,649 - INFO - 127.0.0.1 - - [26/Mar/2025 11:32:26] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:32:46,751 - DEBUG - Item test updated
+2025-03-26 11:32:46,752 - INFO - 127.0.0.1 - - [26/Mar/2025 11:32:46] "GET /updateitem?name=test&new_name=test&is_metric=True&new_is_metric=True&size=test&new_size=test&id=11&count=1&location="{\\"shelf\\":%20\\"1\\",%20\\"rack\\":%20\\"1\\",%20\\"box\\":%20\\"1\\",%20\\"height\\":%20\\"1\\",%20\\"width\\":%20\\"1\\",%20\\"depth\\":%20\\"1\\"}"&threshold=1 HTTP/1.1" 200 -
+2025-03-26 11:33:15,718 - INFO - API server started 2025-03-26_11-33-15
+2025-03-26 11:33:15,747 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2025-03-26 11:33:15,747 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-26 11:33:15,748 - INFO -  * Restarting with stat
+2025-03-26 11:33:16,217 - INFO - API server started 2025-03-26_11-33-16
+2025-03-26 11:33:16,233 - WARNING -  * Debugger is active!
+2025-03-26 11:33:16,238 - INFO -  * Debugger PIN: 507-368-162
+2025-03-26 11:33:17,601 - INFO - 127.0.0.1 - - [26/Mar/2025 11:33:17] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-26 11:33:17,701 - INFO - 127.0.0.1 - - [26/Mar/2025 11:33:17] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-26 11:33:17,715 - INFO - 127.0.0.1 - - [26/Mar/2025 11:33:17] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-03-26 11:33:17,727 - INFO - 127.0.0.1 - - [26/Mar/2025 11:33:17] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:34:07,184 - DEBUG - Item test updated
+2025-03-26 11:34:07,186 - INFO - 127.0.0.1 - - [26/Mar/2025 11:34:07] "GET /updateitem?name=test&new_name=test&is_metric=True&new_is_metric=True&size=test&new_size=test&id=11&count=1&location="\\"{\\\\\\"shelf\\\\\\":%20\\\\\\"1\\\\\\",%20\\\\\\"rack\\\\\\":%20\\\\\\"1\\\\\\",%20\\\\\\"box\\\\\\":%20\\\\\\"1\\\\\\",%20\\\\\\"height\\\\\\":%20\\\\\\"1\\\\\\",%20\\\\\\"width\\\\\\":%20\\\\\\"1\\\\\\",%20\\\\\\"depth\\\\\\":%20\\\\\\"1\\\\\\"}\\""&threshold=1 HTTP/1.1" 200 -
+2025-03-26 11:35:58,630 - INFO - 127.0.0.1 - - [26/Mar/2025 11:35:58] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-26 11:35:58,631 - INFO - 127.0.0.1 - - [26/Mar/2025 11:35:58] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-26 11:35:58,632 - INFO - 127.0.0.1 - - [26/Mar/2025 11:35:58] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:35:58,971 - INFO - 127.0.0.1 - - [26/Mar/2025 11:35:58] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-26 11:35:58,984 - INFO - 127.0.0.1 - - [26/Mar/2025 11:35:58] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-03-26 11:35:59,067 - INFO - 127.0.0.1 - - [26/Mar/2025 11:35:59] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:36:12,367 - DEBUG - Item test updated
+2025-03-26 11:36:12,367 - INFO - 127.0.0.1 - - [26/Mar/2025 11:36:12] "GET /updateitem?name=test&new_name=test&is_metric=True&new_is_metric=True&size=test&new_size=test&id=11&count=1&location="\\"{\\\\\\"shelf\\\\\\":%20\\\\\\"1\\\\\\",%20\\\\\\"rack\\\\\\":%20\\\\\\"1\\\\\\",%20\\\\\\"box\\\\\\":%20\\\\\\"1\\\\\\",%20\\\\\\"height\\\\\\":%20\\\\\\"1\\\\\\",%20\\\\\\"width\\\\\\":%20\\\\\\"1\\\\\\",%20\\\\\\"depth\\\\\\":%20\\\\\\"1\\\\\\"}\\""&threshold=1 HTTP/1.1" 200 -
+2025-03-26 11:39:12,141 - INFO - 127.0.0.1 - - [26/Mar/2025 11:39:12] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-26 11:39:12,305 - INFO - 127.0.0.1 - - [26/Mar/2025 11:39:12] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-26 11:39:12,314 - INFO - 127.0.0.1 - - [26/Mar/2025 11:39:12] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-03-26 11:39:12,333 - INFO - 127.0.0.1 - - [26/Mar/2025 11:39:12] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:39:12,873 - INFO - 127.0.0.1 - - [26/Mar/2025 11:39:12] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:39:40,196 - INFO - 127.0.0.1 - - [26/Mar/2025 11:39:40] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-26 11:39:40,197 - INFO - 127.0.0.1 - - [26/Mar/2025 11:39:40] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:39:40,210 - INFO - 127.0.0.1 - - [26/Mar/2025 11:39:40] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-26 11:39:40,402 - INFO - 127.0.0.1 - - [26/Mar/2025 11:39:40] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-26 11:39:40,410 - INFO - 127.0.0.1 - - [26/Mar/2025 11:39:40] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-03-26 11:39:40,424 - INFO - 127.0.0.1 - - [26/Mar/2025 11:39:40] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:40:38,542 - INFO - 127.0.0.1 - - [26/Mar/2025 11:40:38] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-26 11:40:38,542 - INFO - 127.0.0.1 - - [26/Mar/2025 11:40:38] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-26 11:40:38,548 - INFO - 127.0.0.1 - - [26/Mar/2025 11:40:38] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:40:38,754 - INFO - 127.0.0.1 - - [26/Mar/2025 11:40:38] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-26 11:40:38,775 - INFO - 127.0.0.1 - - [26/Mar/2025 11:40:38] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-03-26 11:40:38,810 - INFO - 127.0.0.1 - - [26/Mar/2025 11:40:38] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:41:15,946 - INFO - 127.0.0.1 - - [26/Mar/2025 11:41:15] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-26 11:41:15,959 - INFO - 127.0.0.1 - - [26/Mar/2025 11:41:15] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:41:16,093 - INFO - 127.0.0.1 - - [26/Mar/2025 11:41:16] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-26 11:41:16,116 - INFO - 127.0.0.1 - - [26/Mar/2025 11:41:16] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-03-26 11:41:16,123 - INFO - 127.0.0.1 - - [26/Mar/2025 11:41:16] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:41:21,061 - INFO - 127.0.0.1 - - [26/Mar/2025 11:41:21] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:41:23,727 - INFO - 127.0.0.1 - - [26/Mar/2025 11:41:23] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-26 11:41:23,731 - INFO - 127.0.0.1 - - [26/Mar/2025 11:41:23] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-03-26 11:41:23,738 - INFO - 127.0.0.1 - - [26/Mar/2025 11:41:23] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:41:24,732 - INFO - 127.0.0.1 - - [26/Mar/2025 11:41:24] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:41:25,377 - INFO - 127.0.0.1 - - [26/Mar/2025 11:41:25] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-03-26 11:41:25,386 - INFO - 127.0.0.1 - - [26/Mar/2025 11:41:25] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:41:25,806 - INFO - 127.0.0.1 - - [26/Mar/2025 11:41:25] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:41:26,336 - INFO - 127.0.0.1 - - [26/Mar/2025 11:41:26] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-03-26 11:41:26,345 - INFO - 127.0.0.1 - - [26/Mar/2025 11:41:26] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:41:26,776 - INFO - 127.0.0.1 - - [26/Mar/2025 11:41:26] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:43:03,406 - INFO - 127.0.0.1 - - [26/Mar/2025 11:43:03] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:43:03,901 - INFO - 127.0.0.1 - - [26/Mar/2025 11:43:03] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:43:07,941 - INFO - 127.0.0.1 - - [26/Mar/2025 11:43:07] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:43:25,357 - INFO - 127.0.0.1 - - [26/Mar/2025 11:43:25] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:43:25,870 - INFO - 127.0.0.1 - - [26/Mar/2025 11:43:25] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:44:05,045 - INFO - 127.0.0.1 - - [26/Mar/2025 11:44:05] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:44:05,058 - INFO - 127.0.0.1 - - [26/Mar/2025 11:44:05] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:44:29,416 - INFO - 127.0.0.1 - - [26/Mar/2025 11:44:29] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:44:29,871 - INFO - 127.0.0.1 - - [26/Mar/2025 11:44:29] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:45:41,459 - INFO - 127.0.0.1 - - [26/Mar/2025 11:45:41] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:45:41,872 - INFO - 127.0.0.1 - - [26/Mar/2025 11:45:41] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:45:54,674 - INFO - 127.0.0.1 - - [26/Mar/2025 11:45:54] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:45:54,875 - INFO - 127.0.0.1 - - [26/Mar/2025 11:45:54] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:46:04,708 - INFO - 127.0.0.1 - - [26/Mar/2025 11:46:04] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:46:04,982 - INFO - 127.0.0.1 - - [26/Mar/2025 11:46:04] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:46:08,807 - INFO - 127.0.0.1 - - [26/Mar/2025 11:46:08] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:46:08,893 - INFO - 127.0.0.1 - - [26/Mar/2025 11:46:08] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:46:25,161 - INFO - 127.0.0.1 - - [26/Mar/2025 11:46:25] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:46:25,870 - INFO - 127.0.0.1 - - [26/Mar/2025 11:46:25] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:48:12,619 - INFO - 127.0.0.1 - - [26/Mar/2025 11:48:12] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-26 11:48:12,622 - INFO - 127.0.0.1 - - [26/Mar/2025 11:48:12] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-03-26 11:48:12,625 - INFO - 127.0.0.1 - - [26/Mar/2025 11:48:12] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:48:30,949 - DEBUG - Item not found
+2025-03-26 11:48:30,950 - DEBUG - Item testheui;lkjhghj.kl.hgfdhjkl;hgfdshjkl;hgfdshjkl;hgfdsghjkl;jhgfdsghjkljhgdfsghjkl;kjghfdhjkl;hgfdsghjklgfdjklgfdhjklgfdh updated
+2025-03-26 11:48:30,950 - INFO - 127.0.0.1 - - [26/Mar/2025 11:48:30] "GET /updateitem?name=testheui;lkjhghj.kl.hgfdhjkl;hgfdshjkl;hgfdshjkl;hgfdsghjkl;jhgfdsghjkljhgdfsghjkl;kjghfdhjkl;hgfdsghjklgfdjklgfdhjklgfdh&new_name=testheui;lkjhghj.kl.hgfdhjkl;hgfdshjkl;hgfdshjkl;hgfdsghjkl;jhgfdsghjkljhgdfsghjkl;kjghfdhjkl;hgfdsghjklgfdjklgfdhjklgfdh&is_metric=True&new_is_metric=True&size=test&new_size=test&id=11&count=1&location="\\"{\\\\\\"shelf\\\\\\":%20\\\\\\"1\\\\\\",%20\\\\\\"rack\\\\\\":%20\\\\\\"1\\\\\\",%20\\\\\\"box\\\\\\":%20\\\\\\"1\\\\\\",%20\\\\\\"height\\\\\\":%20\\\\\\"1\\\\\\",%20\\\\\\"width\\\\\\":%20\\\\\\"1\\\\\\",%20\\\\\\"depth\\\\\\":%20\\\\\\"1\\\\\\"}\\""&threshold=1 HTTP/1.1" 200 -
+2025-03-26 11:48:33,649 - INFO - 127.0.0.1 - - [26/Mar/2025 11:48:33] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:48:39,898 - INFO - 127.0.0.1 - - [26/Mar/2025 11:48:39] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-26 11:48:39,901 - INFO - 127.0.0.1 - - [26/Mar/2025 11:48:39] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-03-26 11:48:39,906 - INFO - 127.0.0.1 - - [26/Mar/2025 11:48:39] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:52:17,505 - INFO - 127.0.0.1 - - [26/Mar/2025 11:52:17] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-26 11:52:17,507 - INFO - 127.0.0.1 - - [26/Mar/2025 11:52:17] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 11:52:17,885 - INFO - 127.0.0.1 - - [26/Mar/2025 11:52:17] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-26 11:52:17,898 - INFO - 127.0.0.1 - - [26/Mar/2025 11:52:17] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-03-26 11:52:17,922 - INFO - 127.0.0.1 - - [26/Mar/2025 11:52:17] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 12:00:32,004 - INFO - 127.0.0.1 - - [26/Mar/2025 12:00:32] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-26 12:00:32,005 - INFO - 127.0.0.1 - - [26/Mar/2025 12:00:32] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 12:00:32,375 - INFO - 127.0.0.1 - - [26/Mar/2025 12:00:32] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-26 12:00:32,411 - INFO - 127.0.0.1 - - [26/Mar/2025 12:00:32] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-03-26 12:00:32,433 - INFO - 127.0.0.1 - - [26/Mar/2025 12:00:32] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 12:05:43,689 - INFO - 127.0.0.1 - - [26/Mar/2025 12:05:43] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-26 12:05:43,690 - INFO - 127.0.0.1 - - [26/Mar/2025 12:05:43] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 12:05:43,880 - INFO - 127.0.0.1 - - [26/Mar/2025 12:05:43] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-26 12:05:43,898 - INFO - 127.0.0.1 - - [26/Mar/2025 12:05:43] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-03-26 12:05:43,914 - INFO - 127.0.0.1 - - [26/Mar/2025 12:05:43] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 12:19:51,540 - INFO - 127.0.0.1 - - [26/Mar/2025 12:19:51] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-26 12:19:51,541 - INFO - 127.0.0.1 - - [26/Mar/2025 12:19:51] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 12:19:51,767 - INFO - 127.0.0.1 - - [26/Mar/2025 12:19:51] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-26 12:19:51,775 - INFO - 127.0.0.1 - - [26/Mar/2025 12:19:51] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-03-26 12:19:51,804 - INFO - 127.0.0.1 - - [26/Mar/2025 12:19:51] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 12:20:19,972 - INFO - 127.0.0.1 - - [26/Mar/2025 12:20:19] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-26 12:20:19,972 - INFO - 127.0.0.1 - - [26/Mar/2025 12:20:19] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 12:20:20,195 - INFO - 127.0.0.1 - - [26/Mar/2025 12:20:20] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-26 12:20:20,208 - INFO - 127.0.0.1 - - [26/Mar/2025 12:20:20] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-03-26 12:20:20,220 - INFO - 127.0.0.1 - - [26/Mar/2025 12:20:20] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 13:45:54,489 - INFO - 127.0.0.1 - - [26/Mar/2025 13:45:54] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-26 13:45:54,490 - INFO - 127.0.0.1 - - [26/Mar/2025 13:45:54] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 13:45:54,982 - INFO - 127.0.0.1 - - [26/Mar/2025 13:45:54] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-26 13:45:54,997 - INFO - 127.0.0.1 - - [26/Mar/2025 13:45:54] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-03-26 13:45:55,098 - INFO - 127.0.0.1 - - [26/Mar/2025 13:45:55] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 14:30:06,089 - INFO - 127.0.0.1 - - [26/Mar/2025 14:30:06] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-03-26 14:30:06,090 - INFO - 127.0.0.1 - - [26/Mar/2025 14:30:06] "GET /findAll HTTP/1.1" 200 -
+2025-03-26 14:30:06,346 - INFO - 127.0.0.1 - - [26/Mar/2025 14:30:06] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-03-26 14:30:06,355 - INFO - 127.0.0.1 - - [26/Mar/2025 14:30:06] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-03-26 14:30:06,406 - INFO - 127.0.0.1 - - [26/Mar/2025 14:30:06] "GET /findAll HTTP/1.1" 200 -

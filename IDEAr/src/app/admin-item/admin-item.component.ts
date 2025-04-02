@@ -31,6 +31,10 @@ export class AdminItemComponent implements OnInit {
     event.stopPropagation();
     this.isEditing = true;
   }
+  cancelEditing(event: Event) {
+    event.stopPropagation();
+    this.isEditing = false;
+  }
 
   showPopup() {
     this.isPopupVisible = true;

@@ -153,19 +153,19 @@
             />
           </td>
         </tr>
-        <tr>
-          <td>
-            <button (click)="updateItem($event)" class="close-button">
-              Save
-            </button>
-          </td>
-          <td>
-            <button (click)="deleteItem($event)" class="close-button">
-              Delete
-            </button>
-          </td>
-        </tr>
       </table>
+      <div class="flex justify-center items-center">
+        <button (click)="updateItem($event)" class="close-button">Save</button>
+        <button
+          (click)="deleteItem($event)"
+          class="close-button justify-center items-center"
+        >
+          Delete
+        </button>
+        <button (click)="cancelEditing($event)" class="close-button">
+          Cancel
+        </button>
+      </div>
     </div>
     <div *ngIf="!isEditing" class="flex flex-col editing-popup">
       <h1 class="popup-header">{{ item.name }}</h1>
