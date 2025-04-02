@@ -20,8 +20,8 @@ export class AdminComponent {
   ngOnInit(): void {
     this.authService.isAuthenticated().subscribe((isAuth) => {
       if (!isAuth) {
-        this.router.navigate(['/authentication']);
-      } else {
+       // this.router.navigate(['/authentication']);
+      //} else {
         this.getItemsService.getAllItems().subscribe({
           next: (response) => {
             console.log('API Response:', response);

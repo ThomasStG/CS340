@@ -16,8 +16,8 @@
 </div>
 -->
 
-<div [formGroup]="myForm" class="bg-gray-300 dark:bg-gray-800">
-  <th class="headerColumn">
+<div [formGroup]="myForm" class="header bg-gray-300 text-black dark:bg-gray-700 dark:text-white">
+  <div class="headerColumn">
     Name:
     <input class="textBox" type="text" formControlName="name" />
     <div *ngIf="myForm.controls.name.invalid && myForm.controls.name.touched">

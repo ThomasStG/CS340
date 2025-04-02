@@ -1,8 +1,14 @@
-<div class="item" (click)="showPopup()">
-  <div class="itemColumn">{{ item.name }}</div>
-  <div class="itemColumn">{{ item.size }}</div>
-  <div class="itemColumn">{{ item.is_metric }}</div>
-  <div class="itemColumn">{{ item.count }}</div>
+<!-- <div class="itemColumn" (click)="showPopup()">{{ item.name }}</div> -->
+<div class="flex flex-col h-full bg-gray-100 text-black dark:bg-gray-900 dark:text-white">
+<div class="itemColumn">{{ item.size }}</div>
+<div class="itemColumn">{{ item.is_metric }}</div>
+<div class="itemColumn">{{ item.location }}</div>
+<div class="itemColumn">{{ item.count }}</div>
+<div class="itemColumn">{{ item.threshold }}</div>
+<div class="itemColumn">
+  <input class="subtractAmount" type="text" />
+  <button>-</button>
+</div>
 </div>
 
 <div *ngIf="isPopupVisible" class="overlay" (click)="closePopup($event)"></div>
