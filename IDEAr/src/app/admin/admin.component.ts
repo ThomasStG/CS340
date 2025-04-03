@@ -4,6 +4,8 @@ import { AuthService } from '../auth.service';
 import { GetItemsService } from '../get-items.service';
 import { ItemData } from '../item-data';
 import { AdminItemComponent } from '../admin-item/admin-item.component';
+import { MatDialog } from '@angular/material/dialog';
+import { AdminPopupComponent } from '../admin-popup/admin-popup.component';
 
 @Component({
   selector: 'app-admin',
@@ -15,6 +17,7 @@ export class AdminComponent {
     private authService: AuthService,
     private router: Router,
     private getItemsService: GetItemsService,
+    private dialog: MatDialog,
   ) {}
   items: ItemData[] = [];
   ngOnInit(): void {
@@ -74,5 +77,8 @@ export class AdminComponent {
         this.multiSearch(data);
         break;
     }
+  }
+  addItem(event: any) {
+    this.dialog.open(AdminPopupComponent);
   }
 }

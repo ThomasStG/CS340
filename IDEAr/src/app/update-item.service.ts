@@ -27,4 +27,23 @@ threshold=${newItem.threshold}`;
     const url = `http://127.0.0.1:3000/deleteitem?id=${item.id}`;
     return this.http.get(url);
   }
+  decrementItem(item: ItemData, toChange: number): Observable<any> {
+    const url = `http://127.0.0.1:3000/decrement?name=${encodeURIComponent(item.name)}&is_metric=${item.is_metric}&size=${item.size}&num=${toChange}`;
+    return this.http.get(url);
+  }
+  incrementItem(item: ItemData, toChange: number): Observable<any> {
+    const url = `http://127.0.0.1:3000/increment?name=${encodeURIComponent(item.name)}&is_metric=${item.is_metric}&size=${item.size}&num=${toChange}`;
+    return this.http.get(url);
+  }
+  addItem(item: ItemData): Observable<any> {
+    var locationJSON = JSON.stringify(item.location);
+    const url = `http://127.0.0.1:3000/add?
+name=${encodeURIComponent(item.name)}&
+is_metric=${item.is_metric}&
+size=${item.size}&
+num=${item.count}&
+location=${encodeURIComponent(locationJSON)}&
+threshold=${item.threshold}`;
+    return this.http.get(url);
+  }
 }

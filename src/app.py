@@ -501,6 +501,7 @@ def add():
         raise KeyError("Missing required parameters")
 
     try:
+        print("a")
         add_item(
             data["name"],
             data["size"],

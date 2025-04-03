@@ -16,6 +16,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { FormsModule } from '@angular/forms';
 import { AdminItemComponent } from './admin-item/admin-item.component';
+import { AdminPopupComponent } from './admin-popup/admin-popup.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent }, // Home Page
@@ -33,6 +34,7 @@ const routes: Routes = [
     AdminComponent,
     AuthenticationComponent,
     AdminItemComponent,
+    AdminPopupComponent,
   ],
   imports: [
     ReactiveFormsModule,

@@ -1,8 +1,13 @@
-<div class="item" (click)="showPopup()">
-  <div class="itemColumn">{{ item.name }}</div>
-  <div class="itemColumn">{{ item.size }}</div>
-  <div class="itemColumn">{{ item.is_metric }}</div>
-  <div class="itemColumn">{{ item.count }}</div>
+<div class="item" >
+  <div class="itemColumn"(click)="showPopup()">{{ item.name }}</div>
+  <div class="itemColumn"(click)="showPopup()">{{ item.size }}</div>
+  <div class="itemColumn"(click)="showPopup()">{{ item.is_metric }}</div>
+  <div class="itemColumn"(click)="showPopup()">{{ item.count }}</div>
+  <div class="flex gap-3">
+  <input type="number" [(ngModel)]="toChange" class="bg-gray-50 hover:border-solid hover:border-black-50 hover:border-2"/>
+  <button (click)="incrementItem($event)" class="hover:border-solid hover:border-black-50 hover:border-2">Add</button>
+  <button (click)="decrementItem($event)"class="hover:border-solid hover:border-black-50 hover:border-2">Remove</button>
+  </div>
 </div>
 
 <div *ngIf="isPopupVisible" class="overlay" (click)="closePopup($event)"></div>
