@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { AuthService } from './auth.service';
-import {OnInit } from '@angular/core';
-import { UtilityService } from './utility.service';
+import { AuthService } from './services/auth.service';
+import { OnInit } from '@angular/core';
+import { UtilityService } from './services/utility.service';
 import { BehaviorSubject } from 'rxjs';
 
 @Component({
@@ -9,23 +9,24 @@ import { BehaviorSubject } from 'rxjs';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   title = 'IDEAr';
   darkMode = new BehaviorSubject<boolean>(false);
 
-
-  constructor(public authService: AuthService, public utilityService:UtilityService) {}
+  constructor(
+    public authService: AuthService,
+    public utilityService: UtilityService,
+  ) {}
   logout() {
     this.authService.logout();
   }
 
-  setMode(val:boolean){
+  setMode(val: boolean) {
     this.utilityService.setMode(val);
     this.darkMode.next(val);
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.darkMode.next(this.utilityService.isDarkMode());
-  } 
+  }
 }
-

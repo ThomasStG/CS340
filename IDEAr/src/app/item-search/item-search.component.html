@@ -17,7 +17,7 @@
 -->
 
 <div [formGroup]="myForm" class="header bg-gray-300 text-black dark:bg-gray-700 dark:text-white">
-  <div class="headerColumn">
+  <th class="headerColumn">
     Name:
     <input class="textBox" type="text" formControlName="name" />
     <div *ngIf="myForm.controls.name.invalid && myForm.controls.name.touched">

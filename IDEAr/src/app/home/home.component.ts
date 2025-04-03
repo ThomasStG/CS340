@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ItemSearchComponent } from '../item-search/item-search.component';
 import { ItemData } from '../item-data';
-import { GetItemsService } from '../get-items.service';
+import { GetItemsService } from '../services/get-items.service';
 
 @Component({
   selector: 'app-home',

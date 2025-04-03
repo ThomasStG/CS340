@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../auth.service';
-import { GetItemsService } from '../get-items.service';
+import { AuthService } from '../services/auth.service';
+import { GetItemsService } from '../services/get-items.service';
 import { ItemData } from '../item-data';
 import { AdminItemComponent } from '../admin-item/admin-item.component';
 
@@ -20,8 +20,8 @@ export class AdminComponent {
   ngOnInit(): void {
     this.authService.isAuthenticated().subscribe((isAuth) => {
       if (!isAuth) {
-       // this.router.navigate(['/authentication']);
-      //} else {
+        // this.router.navigate(['/authentication']);
+        //} else {
         this.getItemsService.getAllItems().subscribe({
           next: (response) => {
             console.log('API Response:', response);

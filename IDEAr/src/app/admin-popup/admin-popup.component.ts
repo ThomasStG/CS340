@@ -1,14 +1,15 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ItemData } from '../item-data';
+import { Input } from '@angular/core';
 import { UpdateItemService } from '../services/update-item.service';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-admin-item',
-  templateUrl: './admin-item.component.html',
-  styleUrl: './admin-item.component.css',
+  selector: 'app-admin-popup',
+  templateUrl: './admin-popup.component.html',
+  styleUrl: './admin-popup.component.css',
 })
-export class AdminItemComponent implements OnInit {
-  constructor(private updateItemService: UpdateItemService) {}
+export class AdminPopupComponent {
   @Input() item: ItemData = {
     id: 0,
     name: '',
@@ -18,14 +19,27 @@ export class AdminItemComponent implements OnInit {
     count: 0,
     threshold: 0,
   };
+  itemTitle = '';
+
+  isAdding = false;
+  isPopupVisible = false;
+  isEditing = false;
+
+  constructor(
+    private updateItemService: UpdateItemService,
+    private dialogRef: MatDialogRef<AdminPopupComponent>,
+  ) {}
   newItem: ItemData = { ...this.item };
   ngOnInit() {
     this.item.location = JSON.parse(this.item.location);
     this.newItem = this.item;
+    if (this.item.name == '') {
+      this.itemTitle = 'New Item';
+      this.isAdding = true;
+    } else {
+      this.itemTitle = this.item.name;
+    }
   }
-
-  isPopupVisible = false;
-  isEditing = false;
 
   editItem(event: Event) {
     event.stopPropagation();
@@ -48,17 +62,28 @@ export class AdminItemComponent implements OnInit {
   updateItem(event: Event) {
     event.stopPropagation();
     this.isEditing = false;
-    this.isPopupVisible = false;
     this.updateItemService
       .updateItem(this.item, this.newItem)
       .subscribe((response) => {
         console.log(response);
       });
+    // TODO: Close popup
   }
   deleteItem(event: Event) {
     event.stopPropagation();
     this.updateItemService.deleteItem(this.item).subscribe((response) => {
       console.log(response);
     });
+  }
+  addItem(event: Event) {
+    event.stopPropagation();
+    this.updateItemService.addItem(this.item);
+  }
+  cancelAdding(event: Event) {
+    this.isAdding = false;
+    // TODO: Close popup
+  }
+  close() {
+    this.dialogRef.close();
   }
 }

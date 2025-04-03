@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ItemData } from './item-data';
+import { ItemData } from '../item-data';
 
 @Injectable({
   providedIn: 'root',
@@ -27,4 +27,5 @@ threshold=${newItem.threshold}`;
     const url = `http://127.0.0.1:3000/deleteitem?id=${item.id}`;
     return this.http.get(url);
   }
+  addItem(item: ItemData): void {}
 }
