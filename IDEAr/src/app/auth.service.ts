@@ -61,7 +61,7 @@ export class AuthService {
       7,
       '/',
       '',
-      false /*TODO: set to true for production */,
+      false, //TODO: set to true for production,
       'Lax',
     );
   }
@@ -69,5 +69,8 @@ export class AuthService {
   // ? Remove Token from Cookies
   removeToken(): void {
     this.cookieService.delete(this.token, '/');
+  }
+  getToken(): string {
+    return this.cookieService.get(this.token);
   }
 }

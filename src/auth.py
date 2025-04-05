@@ -32,6 +32,7 @@ def ensure_table():
             """
                 CREATE TABLE users (
                     id INTEGER PRIMARY KEY,
+                    access INTEGER NOT NULL default 3,
                     username TEXT NOT NULL UNIQUE,
                     password TEXT NOT NULL,
                     salt TEXT NOT NULL,
@@ -60,7 +61,9 @@ def generate_token(username: str):
         raise
 
 
-def login(username: str, password: str, cursor: sqlite3.Cursor) -> str:
+def login(
+    username: str, password: str, cursor: sqlite3.Cursor, connection: sqlite3.Connection
+) -> str:
     """
     Attempts to log the user in
 
@@ -78,7 +81,13 @@ def login(username: str, password: str, cursor: sqlite3.Cursor) -> str:
     )
     if cursor.fetchone() is None:
         return ""
-    return generate_token(username)
+    token = generate_token(username)
+    cursor.execute(
+        "UPDATE users SET token = ? WHERE username = ?",
+        (token, username),
+    )
+    connection.commit()
+    return token
 
 
 def check_token(token: str, username: str, cursor: sqlite3.Cursor) -> bool:
@@ -132,7 +141,6 @@ def create_account(
 
 def change_password(
     username: str,
-    old_password: str,
     new_password: str,
     cursor: sqlite3.Cursor,
     connection: sqlite3.Connection,
@@ -142,7 +150,6 @@ def change_password(
 
     Args:
         username (str): the username of the user
-        old_password (str): the old password of the user
         new_password (str): the new password of the user
         cursor (sqlite3.Cursor): the cursor to the database
         connection (sqlite3.Connection): the connection to the database
@@ -151,8 +158,8 @@ def change_password(
         None
     """
     cursor.execute(
-        "UPDATE users SET password = ? WHERE username = ? AND password = ?",
-        (new_password, username, old_password),
+        "UPDATE users SET password = ? WHERE username = ?",
+        (new_password, username),
     )
     connection.commit()
 

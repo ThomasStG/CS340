@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ItemData } from '../item-data';
 import { UpdateItemService } from '../update-item.service';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-admin-popup',
@@ -21,6 +22,7 @@ export class AdminPopupComponent {
   constructor(
     public dialog: MatDialog,
     private updateItemService: UpdateItemService,
+    private authService: AuthService,
   ) {}
   close() {
     this.dialog.closeAll();
