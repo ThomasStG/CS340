@@ -1318,3 +1318,66 @@
 2025-03-26 14:30:06,346 - INFO - 127.0.0.1 - - [26/Mar/2025 14:30:06] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
 2025-03-26 14:30:06,355 - INFO - 127.0.0.1 - - [26/Mar/2025 14:30:06] "POST /isLoggedIn HTTP/1.1" 200 -
 2025-03-26 14:30:06,406 - INFO - 127.0.0.1 - - [26/Mar/2025 14:30:06] "GET /findAll HTTP/1.1" 200 -
+2025-04-05 12:08:06,807 - INFO - API server started 2025-04-05_12-08-06
+2025-04-05 12:08:06,880 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2025-04-05 12:08:06,880 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-05 12:08:06,884 - INFO -  * Restarting with stat
+2025-04-05 12:08:12,423 - INFO - API server started 2025-04-05_12-08-12
+2025-04-05 12:08:12,456 - WARNING -  * Debugger is active!
+2025-04-05 12:08:12,467 - INFO -  * Debugger PIN: 511-801-390
+2025-04-05 12:12:30,108 - INFO - 127.0.0.1 - - [05/Apr/2025 12:12:30] "GET /findAll HTTP/1.1" 200 -
+2025-04-05 12:12:45,295 - INFO - 127.0.0.1 - - [05/Apr/2025 12:12:45] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-05 12:12:45,304 - INFO - 127.0.0.1 - - [05/Apr/2025 12:12:45] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-05 12:12:45,315 - INFO - 127.0.0.1 - - [05/Apr/2025 12:12:45] "GET /findAll HTTP/1.1" 200 -
+2025-04-05 12:12:50,728 - INFO - 127.0.0.1 - - [05/Apr/2025 12:12:50] "GET /findAll HTTP/1.1" 200 -
+2025-04-05 12:12:51,696 - INFO - 127.0.0.1 - - [05/Apr/2025 12:12:51] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-05 12:12:51,702 - INFO - 127.0.0.1 - - [05/Apr/2025 12:12:51] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-05 12:12:51,714 - INFO - 127.0.0.1 - - [05/Apr/2025 12:12:51] "GET /findAll HTTP/1.1" 200 -
+2025-04-05 12:12:56,443 - INFO - 127.0.0.1 - - [05/Apr/2025 12:12:56] "GET /findAll HTTP/1.1" 200 -
+2025-04-05 12:12:56,896 - INFO - 127.0.0.1 - - [05/Apr/2025 12:12:56] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-05 12:12:56,905 - INFO - 127.0.0.1 - - [05/Apr/2025 12:12:56] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-05 12:12:56,915 - INFO - 127.0.0.1 - - [05/Apr/2025 12:12:56] "GET /findAll HTTP/1.1" 200 -
+2025-04-05 12:12:57,475 - INFO - 127.0.0.1 - - [05/Apr/2025 12:12:57] "GET /findAll HTTP/1.1" 200 -
+2025-04-05 12:13:00,671 - INFO - 127.0.0.1 - - [05/Apr/2025 12:13:00] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-05 12:13:00,682 - INFO - 127.0.0.1 - - [05/Apr/2025 12:13:00] "GET /findAll HTTP/1.1" 200 -
+2025-04-05 12:13:01,577 - INFO - 127.0.0.1 - - [05/Apr/2025 12:13:01] "GET /findAll HTTP/1.1" 200 -
+2025-04-05 12:13:02,295 - INFO - 127.0.0.1 - - [05/Apr/2025 12:13:02] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-05 12:13:02,302 - INFO - 127.0.0.1 - - [05/Apr/2025 12:13:02] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-05 12:13:02,310 - INFO - 127.0.0.1 - - [05/Apr/2025 12:13:02] "GET /findAll HTTP/1.1" 200 -
+2025-04-05 12:13:38,102 - INFO - API server started 2025-04-05_12-13-38
+2025-04-05 12:13:38,152 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2025-04-05 12:13:38,152 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-05 12:13:38,155 - INFO -  * Restarting with stat
+2025-04-05 12:13:42,664 - INFO - API server started 2025-04-05_12-13-42
+2025-04-05 12:13:42,688 - WARNING -  * Debugger is active!
+2025-04-05 12:13:42,695 - INFO -  * Debugger PIN: 511-801-390
+2025-04-05 12:15:16,119 - INFO - API server started 2025-04-05_12-15-16
+2025-04-05 12:15:16,156 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2025-04-05 12:15:16,156 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-05 12:15:16,158 - INFO -  * Restarting with stat
+2025-04-05 12:15:20,254 - INFO - API server started 2025-04-05_12-15-20
+2025-04-05 12:15:20,277 - WARNING -  * Debugger is active!
+2025-04-05 12:15:20,284 - INFO -  * Debugger PIN: 511-801-390
+2025-04-05 12:17:04,916 - INFO - API server started 2025-04-05_12-17-04
+2025-04-05 12:17:04,946 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2025-04-05 12:17:04,946 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-05 12:17:04,948 - INFO -  * Restarting with stat
+2025-04-05 12:17:08,281 - INFO - API server started 2025-04-05_12-17-08
+2025-04-05 12:17:08,300 - WARNING -  * Debugger is active!
+2025-04-05 12:17:08,306 - INFO -  * Debugger PIN: 511-801-390
+2025-04-05 12:17:52,529 - INFO - API server started 2025-04-05_12-17-52
+2025-04-05 12:17:52,564 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2025-04-05 12:17:52,565 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-05 12:17:52,567 - INFO -  * Restarting with stat
+2025-04-05 12:17:56,656 - INFO - API server started 2025-04-05_12-17-56
+2025-04-05 12:17:56,679 - WARNING -  * Debugger is active!
+2025-04-05 12:17:56,688 - INFO -  * Debugger PIN: 511-801-390
+2025-04-05 12:18:17,206 - INFO - 127.0.0.1 - - [05/Apr/2025 12:18:17] "GET /findAll HTTP/1.1" 200 -
+2025-04-05 12:18:24,211 - INFO - 127.0.0.1 - - [05/Apr/2025 12:18:24] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-05 12:18:24,216 - INFO - 127.0.0.1 - - [05/Apr/2025 12:18:24] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-05 12:18:24,224 - INFO - 127.0.0.1 - - [05/Apr/2025 12:18:24] "GET /findAll HTTP/1.1" 200 -
