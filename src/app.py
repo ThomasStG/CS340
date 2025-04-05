@@ -320,9 +320,20 @@ def increment():
     connection = get_db()
     cursor = connection.cursor()
     data = request.args
-    # TODO: add security by taking auth token and chekcing it against stored auth token
-    if not data or not all(key in data for key in ["name", "is_metric", "size", "num"]):
+    if not data or not all(
+        key in data for key in ["name", "is_metric", "size", "num", "token"]
+    ):
         raise KeyError("Missing required parameters")
+    try:
+        token = data["token"]
+        username = jwt.decode(token, options={"verify_signature": False}).get(
+            "username"
+        )
+
+        if not check_token(token, username, cursor):
+            raise ValueError("Invalid token")
+    except Exception as e:
+        return handle_exceptions(e)
 
     try:
         # find item
@@ -367,11 +378,17 @@ def decrement():
     connection = get_db()
     cursor = connection.cursor()
     data = request.args
-    # TODO: add security by taking auth token and chekcing it against stored auth token
     if not data or not all(
         key in data for key in ["name", "is_metric", "size", "num", "token"]
     ):
         raise KeyError("Missing required parameters")
+
+    try:
+        # check token
+        if not check_token(data["token"], data["name"], cursor):
+            raise ValueError("Invalid token")
+    except Exception as e:
+        return handle_exceptions(e)
 
     try:
         # find item
@@ -497,7 +514,6 @@ def add():
     connection = get_db()
     cursor = connection.cursor()
     data = request.args
-    # TODO: add security by taking auth token and chekcing it against stored auth token
     if not data or not all(
         key in data
         for key in [
@@ -563,9 +579,28 @@ def remove():
     connection = get_db()
     cursor = connection.cursor()
     data = request.args
-    # TODO: add security by taking auth token and chekcing it against stored auth token
-    if not data or not all(key in data for key in ["name", "is_metric", "size"]):
+    if not data or not all(
+        key in data for key in ["name", "is_metric", "size", "token"]
+    ):
         raise KeyError("Missing required parameters")
+    try:
+        token = data["token"]
+        username, level = jwt.decode(token, options={"verify_signature": False}).get(
+            "username", "level"
+        )
+
+        if not check_token(token, username, cursor):
+            raise ValueError("Invalid token")
+        if level != 0:
+            raise ValueError("User does not have permission to remove items")
+
+        logger = logging.getLogger(app)
+        logger.info(
+            f"User '{username}' removed item with name: {data['name']}, size: {data['size']}, is_metric: {data['is_metric']}"
+        )
+
+    except Exception as e:
+        return handle_exceptions(e)
 
     try:
         # find item
@@ -684,7 +719,6 @@ def update():
     """
     try:
         data = request.args
-        # TODO: add security by taking auth token and chekcing it against stored auth token
         if not data or not all(
             key in data
             for key in [
@@ -801,6 +835,8 @@ def is_logged_in():
             username = jwt.decode(token, options={"verify_signature": False}).get(
                 "username"
             )
+            if not check_token(token, username, get_db().cursor()):
+                raise KeyError("Invalid token")
         except Exception as e:
             return jsonify({"status": "error", "output": "false"}), 401
         connection = get_db()
@@ -821,12 +857,14 @@ def register():
             and "username" not in data
             and "password" not in data
             and "salt" not in data
+            and "level" not in data
         ):
             raise KeyError("Missing required parameters")
 
         username = data["username"]
         password = data["password"]
         salt = data["salt"]
+        level = int(data["level"])
         connection = get_db()
         cursor = connection.cursor()
         salt = os.urandom(32)
@@ -841,10 +879,10 @@ def register():
         hashed_password = hash_object.hexdigest()
 
         if not create_account(
-            username, hashed_password, salt.hex(), cursor, connection
+            username, level, hashed_password, salt.hex(), cursor, connection
         ):
             raise Exception("Login failed")
-        token = generate_token(username)
+        token = generate_token(username, level)
         return jsonify({"status": "success", "token": token}), 200
     except Exception as e:
         return handle_exceptions(e)
@@ -865,18 +903,29 @@ def change_pass():
     """
     try:
         data = request.json
-        # TODO: add security by taking auth token and chekcing it against stored auth token
         if (
             data
             and "username" not in data
             # and "old_password" not in data
             and "new_password" not in data
+            and "token" not in data
         ):
             raise KeyError("Missing required parameters")
 
         username = data["username"]
         # old_password = data["old_password"]
         new_password = data["new_password"]
+        token = data["token"]
+        try:
+            username, levle = jwt.decode(
+                token, options={"verify_signature": False}
+            ).get("username", "level")
+            if not check_token(token, username, cursor):
+                raise ValueError("Invalid token")
+            if not level == 0:
+                raise ValueError("Unauthorized")
+        except Exception as e:
+            return jsonify({"status": "error", "message": "Invalid token"}), 401
         connection = get_db()
         cursor = connection.cursor()
         change_password(username, new_password, cursor, connection)

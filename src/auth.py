@@ -114,6 +114,7 @@ def check_token(token: str, username: str, cursor: sqlite3.Cursor) -> bool:
 
 def create_account(
     username: str,
+    level: int,
     password: str,
     salt: str,
     cursor: sqlite3.Cursor,
@@ -133,8 +134,8 @@ def create_account(
         None
     """
     cursor.execute(
-        "INSERT INTO users (username, password, salt) VALUES (?, ?, ?)",
-        (username, password, salt),
+        "INSERT INTO users (username, level, password, salt) VALUES (?, ?, ?, ?)",
+        (username, level, password, salt),
     )
     connection.commit()
 
@@ -197,5 +198,5 @@ if __name__ == "__main__":
 
     # Get the hashed password as a hexadecimal string
     hashed_password = hash_object.hexdigest()
-    create_account(username, hashed_password, salt.hex(), cursor, connection)
+    create_account(username, 0, hashed_password, salt.hex(), cursor, connection)
     connection.close()
