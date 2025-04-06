@@ -16,10 +16,10 @@
 </div>
 -->
 
-<div [formGroup]="myForm" class="header">
+<div [formGroup]="myForm" class="header bg-gray-300 text-black dark:bg-gray-700 dark:text-white">
   <div class="headerColumn">
     Name:
-    <input class="textBox" type="text" formControlName="name" />
+    <input class="textBox dark:text-black" type="text" formControlName="name" />
     <div *ngIf="myForm.controls.name.invalid && myForm.controls.name.touched">
       <small>Name is required.</small>
     </div>
@@ -27,7 +27,7 @@
   <div class="headerColumn">
     Size:
 
-    <input class="textBox" type="text" formControlName="size" />
+    <input class="textBox dark:text-black" type="text" formControlName="size" />
     <div *ngIf="myForm.controls.size.invalid && myForm.controls.size.touched">
       <small>Size is required.</small>
     </div>

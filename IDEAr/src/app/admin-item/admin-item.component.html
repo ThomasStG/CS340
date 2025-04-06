@@ -4,7 +4,7 @@
   <div class="itemColumn"(click)="showPopup()">{{ item.is_metric }}</div>
   <div class="itemColumn"(click)="showPopup()">{{ item.count }}</div>
   <div class="flex gap-3">
-  <input type="number" [(ngModel)]="toChange" class="bg-gray-50 hover:border-solid hover:border-black-50 hover:border-2"/>
+  <input type="number" [(ngModel)]="toChange" class="bg-gray-50 hover:border-solid hover:border-black-50 hover:border-2 bg-gray-300 dark:bg-gray-800"/>
   <button (click)="incrementItem($event)" class="hover:border-solid hover:border-black-50 hover:border-2">Add</button>
   <button (click)="decrementItem($event)"class="hover:border-solid hover:border-black-50 hover:border-2">Remove</button>
   </div>
