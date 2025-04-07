@@ -30,18 +30,22 @@ import os
 import sqlite3
 
 import jwt
+import pandas as pd
 import resend
 from dotenv import load_dotenv
 from flask import Flask, g, jsonify, request
 from flask_cors import CORS
+from werkzeug.utils import secure_filename
 
 from api import (
     add_item,
+    backup_data,
     build_db,
     decrement_item,
     find_by_name,
     fzf,
     get_all,
+    get_backup_files,
     get_item,
     increment_item,
     remove_item,
@@ -185,8 +189,10 @@ def handle_exceptions(exception: Exception) -> jsonify:
 
 
 def generate_token(username: str):
+    print("generate token")
     load_dotenv("../data/.env")
     SECRET_KEY = os.environ.get("Login_Token_Secret_Key")
+    print(SECRET_KEY)
     payload = {
         "iat": datetime.datetime.now(datetime.timezone.utc),
         "exp": datetime.datetime.now(datetime.timezone.utc)
@@ -211,27 +217,32 @@ def import_csv(uri: str) -> None:
     Returns:
         None
     """
-    con = sqlite3.connect("../data/data.db")
-    cur = con.cursor()
-    cur.execute(
-        """DELETE FROM items"""
-    )  # delete all items so only csv data is in the database
+    try:
+        con = sqlite3.connect("../data/data.db")
+        cur = con.cursor()
+        cur.execute(
+            """DELETE FROM items"""
+        )  # delete all items so only csv data is in the database
 
-    # open csv file and read the data into the database
-    with open(uri, newline="", encoding="utf-8") as csvfile:
-        spamreader = csv.reader(csvfile, delimiter=",", quotechar="|")
-        for row in spamreader:
+        # open csv file and read the data into the database
+        df = pd.read_csv(uri)
+        for row in df.itertuples():
             add_item(
-                row[1],
-                row[2],
-                row[3] == "1",
-                row[4],
-                int(row[5]),
-                int(row[6]),
+                row.name,
+                row.size,
+                row.is_metric == "1",
+                row.location,
+                row.count,
+                row.threshold,
                 cur,
                 con,
             )
-    con.commit()
+        con.commit()
+    except Exception as e:
+        con.rollback()
+        print(f"Error importing CSV: {e}")
+    finally:
+        con.close()
 
 
 def add_from_csv(uri) -> None:
@@ -244,33 +255,27 @@ def add_from_csv(uri) -> None:
     Returns:
         None
     """
-    with sqlite3.connect("../data/data.db") as con:
+    try:
+        con = sqlite3.connect("../data/data.db")
         cur = con.cursor()
-
-        # open csv file and read the data into the database
-        with open(uri, newline="", encoding="utf-8") as csvfile:
-            spamreader = csv.reader(csvfile, delimiter=",", quotechar="|")
-            for row in spamreader:
-                if len(row) < 7:  # Ensure the row has enough columns
-                    print(f"Skipping malformed row: {row}")
-                    continue
-
-                try:
-                    add_item(
-                        row[1],
-                        row[2],
-                        row[3].strip().lower() == "true",
-                        row[4],
-                        int(row[5]),  # Convert safely
-                        int(row[6]),
-                        cur,
-                        con,
-                    )
-                except ValueError:
-                    print(f"Skipping row due to invalid integer values: {row}")
-                    continue
-
-        con.commit()  # Ensure all changes are committed
+        df = pd.read_csv(uri)
+        for row in df.itertuples():
+            add_item(
+                row.name,
+                row.size,
+                row.is_metric == "1",
+                row.location,
+                row.count,
+                row.threshold,
+                cur,
+                con,
+            )
+        con.commit()
+    except Exception as e:
+        con.rollback()
+        print(f"Error importing CSV: {e}")
+    finally:
+        con.close()
 
 
 def parse_location_to_string(location: str) -> str:
@@ -309,6 +314,7 @@ def increment():
        is_metric (int): whether the item is metric (1) or not (0)
        size (str): the size of the item
        num (int): the number to increment by
+       token (str): the cookie of the user
 
     Returns:
         json: a message and status code
@@ -316,9 +322,21 @@ def increment():
     connection = get_db()
     cursor = connection.cursor()
     data = request.args
-    if not data or not all(key in data for key in ["name", "is_metric", "size", "num"]):
+    if not data or not all(
+        key in data for key in ["name", "is_metric", "size", "num", "token"]
+    ):
         raise KeyError("Missing required parameters")
+    try:
+        token = data["token"]
+        username = jwt.decode(token, options={"verify_signature": False}).get(
+            "username"
+        )
 
+        if not check_token(token, username, cursor):
+            raise ValueError("Invalid token")
+
+    except Exception as e:
+        return handle_exceptions(e)
     try:
         # find item
         item_id = find_by_name(
@@ -354,6 +372,7 @@ def decrement():
        is_metric (int): whether the item is metric (1) or not (0)
        size (str): the size of the item
        num (int): the number to decrement by
+       token (str): the cookie of the user
 
     Returns:
         json: a message and status code
@@ -361,8 +380,17 @@ def decrement():
     connection = get_db()
     cursor = connection.cursor()
     data = request.args
-    if not data or not all(key in data for key in ["name", "is_metric", "size", "num"]):
+    if not data or not all(
+        key in data for key in ["name", "is_metric", "size", "num", "token"]
+    ):
         raise KeyError("Missing required parameters")
+
+    try:
+        # check token
+        if not check_token(data["token"], data["name"], cursor):
+            raise ValueError("Invalid token")
+    except Exception as e:
+        return handle_exceptions(e)
 
     try:
         # find item
@@ -488,6 +516,8 @@ def add():
        num (int): the number of the item
        threshold (int): the threshold of the item
        location (str): the location of the item
+       token (str): the cookie of the user
+
     Returns:
         json: a message and status code
     """
@@ -496,11 +526,36 @@ def add():
     data = request.args
     if not data or not all(
         key in data
-        for key in ["name", "is_metric", "size", "num", "threshold", "location"]
+        for key in [
+            "name",
+            "is_metric",
+            "size",
+            "num",
+            "threshold",
+            "location",
+            "token",
+        ]
     ):
         raise KeyError("Missing required parameters")
+    try:
+        token = data["token"]
+        username = jwt.decode(token, options={"verify_signature": False}).get(
+            "username"
+        )
+
+        if not check_token(token, username, cursor):
+            raise ValueError("Invalid token")
+
+        logger = logging.getLogger(app)
+        logger.info(
+            f"User '{username}' added item with name: {data['name']}, size: {data['size']}, is_metric: {data['is_metric']}, num: {data['num']}, threshold: {data['threshold']}, location: {data['location']}"
+        )
+
+    except Exception as e:
+        return handle_exceptions(e)
 
     try:
+
         add_item(
             data["name"],
             data["size"],
@@ -708,17 +763,20 @@ def try_login() -> jsonify:
         bool: whether the login was successful
     """
     try:
+        print(request.json)
         data = request.json
         if data is None or "username" not in data or "password" not in data:
             raise KeyError("Missing required parameters")
 
         username = data["username"]
         password = data["password"]
+        print(username, password)
         connection = get_db()
         cursor = connection.cursor()
         stored_salt = get_salt(username, cursor)
 
         salt = bytes.fromhex(stored_salt)  # Convert hex string back to bytes
+        print(salt)
 
         # Create a SHA-256 hash object
         hash_object = hashlib.sha256()
@@ -729,10 +787,13 @@ def try_login() -> jsonify:
         #     # Get the hashed password as a hexadecimal string
         hashed_password = hash_object.hexdigest()
         token = login(username, hashed_password, cursor)
+        print("token")
         if token == "":
+            print("Login failed")
             raise Exception("Login failed")
         return jsonify({"status": "success", "token": token}), 200
     except Exception as e:
+        print("exception")
         return handle_exceptions(e)
 
 
@@ -749,20 +810,25 @@ def is_logged_in():
     """
     try:
         data = request.json
+        print("a")
         if data is None or "token" not in data:
             raise KeyError("Missing required parameters")
 
         token = data["token"]
+        print(token)
         try:
             username = jwt.decode(token, options={"verify_signature": False}).get(
                 "username"
             )
+            print(username)
         except Exception as e:
             return jsonify({"status": "error", "output": "false"}), 401
         connection = get_db()
         cursor = connection.cursor()
-        # if check_token(token, username, cursor):
-        return jsonify({"status": "success", "output": "true"}), 200
+        if check_token(token, username, cursor):
+            print("true")
+            return jsonify({"status": "success", "output": "true"}), 200
+        print("false")
         return jsonify({"status": "error", "output": "false"}), 401
     except Exception as e:
         return handle_exceptions(e)
@@ -836,6 +902,103 @@ def change_pass():
         cursor = connection.cursor()
         change_password(username, old_password, new_password, cursor, connection)
         return jsonify({"status": "success", "message": "Password changed"}), 200
+    except Exception as e:
+        return handle_exceptions(e)
+
+
+@app.route("/backupDatabase", methods=["GET"])
+def backup_database():
+    """
+    Handles backing up the database
+
+    Args:
+        None
+
+    Returns:
+        json: a message and status code
+    """
+    try:
+        print("start")
+        backup_data(get_db().cursor())
+        print("Database backed up")
+
+        return jsonify({"status": "success", "message": "Database backed up"}), 200
+    except Exception as e:
+        return handle_exceptions(e)
+
+
+@app.route("/restoreDatabase", methods=["GET"])
+def restore_database():
+    """
+    Handles restoring the database
+
+    Args:
+        None
+
+    Returns:
+        json: a message and status code
+    """
+    try:
+        data = request.args
+        if not data or "file" not in data:
+            raise KeyError("Missing required parameters")
+
+        file = data["file"]
+        import_csv(file)
+
+        return jsonify({"status": "success", "message": "Database restored"}), 200
+    except Exception as e:
+        return handle_exceptions(e)
+
+
+@app.route("/getFiles", methods=["GET"])
+def get_files():
+    """
+    Handles getting the files
+
+    Args:
+        None
+
+    Returns:
+        json: a message and status code
+    """
+    try:
+        return jsonify({"status": "success", "files": get_backup_files()}), 200
+    except Exception as e:
+        return handle_exceptions(e)
+
+
+@app.route("/uploadFile", methods=["POST"])
+def upload_file():
+    """
+    Handles uploading a file
+
+    Args:
+        None
+
+    Returns:
+        json: a message and status code
+    """
+    try:
+        data = request.files
+        if not data or "file" not in data:
+            raise KeyError("Missing required parameters")
+
+        uploaded_file = request.files["file"]
+        filename = secure_filename(uploaded_file.filename)
+        file_path = os.path.join("../data", filename)
+
+        # Read the content BEFORE saving
+        file_contents = uploaded_file.read().decode("utf-8")
+
+        # Save the file
+        with open(file_path, "w", encoding="utf-8") as f:
+            f.write(file_contents)
+
+        # Optionally import the CSV content
+        # import_csv(file_path)
+
+        return jsonify({"status": "success", "message": "File uploaded"}), 200
     except Exception as e:
         return handle_exceptions(e)
 

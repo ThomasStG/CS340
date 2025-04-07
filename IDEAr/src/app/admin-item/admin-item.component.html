@@ -1,349 +1,351 @@
+
 <!-- <div class="itemColumn" (click)="showPopup()">{{ item.name }}</div> -->
-<div class="flex flex-col h-full bg-gray-100 text-black dark:bg-gray-900 dark:text-white">
-<td class="itemColumn">{{ item.size }}</td>
-<td class="itemColumn">{{ item.is_metric }}</td>
-<td class="itemColumn">{{ item.location }}</td>
-<td class="itemColumn">{{ item.count }}</td>
-<td class="itemColumn">{{ item.threshold }}</td>
-<td class="itemColumn">
-  <input class="subtractAmount" type="text" />
-  <button>-</button>
-</td>
-</div>
+<tr>
+  <td class="itemColumn">{{ item.name }}</td>
+  <td class="itemColumn">{{ item.size }}</td>
+  <td class="itemColumn">{{ item.is_metric }}</td>
+  <td class="itemColumn">{{ item.count }}</td>
+  <td class="itemColumn">{{ item.threshold }}</td>
+  <td class="itemColumn">
+    <input class="changeNum" type="number" [(ngModel)]="changeNum"/>
+    <button (click)="decrementItem($event)"> - </button>
+    <button (click)="incrementItem($event)"> + </button>
+  </td>
+</tr>
 
-<div *ngIf="isPopupVisible" class="overlay" (click)="closePopup($event)"></div>
+<!-- <div *ngIf="isPopupVisible" class="overlay" (click)="closePopup($event)"></div> -->
 
-<div *ngIf="isPopupVisible" class="popup">
-  <div class="popup-content">
-    <div *ngIf="isEditing" class="flex flex-col editing-popup">
-      <h1 class="popup-header">{{ item.name }}</h1>
-      <table>
-        <tr>
-          <td>
-            <label>Name:</label>
-          </td>
-          <td>
-            <input
-              class="editing-popup-info"
-              type="text"
-              [(ngModel)]="item.name"
-            />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <label>Size:</label>
-          </td>
-          <td>
-            <input
-              class="editing-popup-info"
-              type="text"
-              [(ngModel)]="item.size"
-            />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <label>Metric:</label>
-          </td>
-          <td>
-            <input
-              class="editing-popup-info"
-              type="text"
-              [(ngModel)]="item.is_metric"
-            />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <label>Location:</label>
-          </td>
-          <td>
-            <table>
-              <tr>
-                <td>
-                  <label>Unit:</label>
-                </td>
-                <td>
-                  <input
-                    class="editing-popup-info"
-                    type="text"
-                    [(ngModel)]="item.location[0]"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <label>Shelf:</label>
-                </td>
-                <td>
-                  <input
-                    class="editing-popup-info"
-                    type="text"
-                    [(ngModel)]="item.location[1]"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <label>Position:</label>
-                </td>
-                <td>
-                  <input
-                    class="editing-popup-info"
-                    type="text"
-                    [(ngModel)]="item.location[2]"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <label>Height:</label>
-                </td>
-                <td>
-                  <input
-                    class="editing-popup-info"
-                    type="text"
-                    [(ngModel)]="item.location[3]"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <label>Width:</label>
-                </td>
-                <td>
-                  <input
-                    class="editing-popup-info"
-                    type="text"
-                    [(ngModel)]="item.location[4]"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <label>Depth:</label>
-                </td>
-                <td>
-                  <input
-                    class="editing-popup-info"
-                    type="text"
-                    [(ngModel)]="item.location[5]"
-                  />
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <label>Count:</label>
-          </td>
-          <td>
-            <input
-              class="editing-popup-info"
-              type="text"
-              [(ngModel)]="item.count"
-            />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <label>Threshold:</label>
-          </td>
-          <td>
-            <input
-              class="editing-popup-info"
-              type="text"
-              [(ngModel)]="item.threshold"
-            />
-          </td>
-        </tr>
-      </table>
-      <div class="flex justify-center items-center">
-        <button (click)="updateItem($event)" class="close-button">Save</button>
-        <button
-          (click)="deleteItem($event)"
-          class="close-button justify-center items-center"
-        >
-          Delete
-        </button>
-        <button (click)="cancelEditing($event)" class="close-button">
-          Cancel
-        </button>
-      </div>
-    </div>
-    <div *ngIf="!isEditing" class="flex flex-col editing-popup">
-      <h1 class="popup-header">{{ item.name }}</h1>
-      <table>
-        <tr>
-          <td>
-            <label>Name:</label>
-          </td>
-          <td>
-            <input
-              class="popup-info"
-              type="text"
-              [(ngModel)]="item.name"
-              readonly
-            />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <label>Size:</label>
-          </td>
-          <td>
-            <input
-              class="popup-info"
-              type="text"
-              [(ngModel)]="item.size"
-              readonly
-            />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <label>Metric:</label>
-          </td>
-          <td>
-            <input
-              class="popup-info"
-              type="text"
-              [(ngModel)]="item.is_metric"
-              readonly
-            />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <label>Location:</label>
-          </td>
-          <td>
-            <table>
-              <tr>
-                <td>
-                  <label>Unit:</label>
-                </td>
-                <td>
-                  <input
-                    class="popup-info"
-                    type="text"
-                    [(ngModel)]="item.location[0]"
-                    readonly
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <label>Shelf:</label>
-                </td>
-                <td>
-                  <input
-                    class="popup-info"
-                    type="text"
-                    [(ngModel)]="item.location[1]"
-                    readonly
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <label>Position:</label>
-                </td>
-                <td>
-                  <input
-                    class="popup-info"
-                    type="text"
-                    [(ngModel)]="item.location[2]"
-                    readonly
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <label>Height:</label>
-                </td>
-                <td>
-                  <input
-                    class="popup-info"
-                    type="text"
-                    [(ngModel)]="item.location[3]"
-                    readonly
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <label>Width:</label>
-                </td>
-                <td>
-                  <input
-                    class="popup-info"
-                    type="text"
-                    [(ngModel)]="item.location[4]"
-                    readonly
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <label>Depth:</label>
-                </td>
-                <td>
-                  <input
-                    class="popup-info"
-                    type="text"
-                    [(ngModel)]="item.location[5]"
-                    readonly
-                  />
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <label>Count:</label>
-          </td>
-          <td>
-            <input
-              class="popup-info"
-              type="text"
-              [(ngModel)]="item.count"
-              readonly
-            />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <label>Threshold:</label>
-          </td>
-          <td>
-            <input
-              class="popup-info"
-              type="text"
-              [(ngModel)]="item.threshold"
-              readonly
-            />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <button (click)="editItem($event)" class="close-button">
-              Edit
-            </button>
-          </td>
-        </tr>
-      </table>
-    </div>
+<!-- <div *ngIf="isPopupVisible" class="popup"> -->
+<!--   <div class="popup-content"> -->
+<!--     <div *ngIf="isEditing" class="flex flex-col editing-popup"> -->
+<!--       <h1 class="popup-header">{{ item.name }}</h1> -->
+<!--       <table> -->
+<!--         <tr> -->
+<!--           <td> -->
+<!--             <label>Name:</label> -->
+<!--           </td> -->
+<!--           <td> -->
+<!--             <input -->
+<!--               class="editing-popup-info" -->
+<!--               type="text" -->
+<!--               [(ngModel)]="item.name" -->
+<!--             /> -->
+<!--           </td> -->
+<!--         </tr> -->
+<!--         <tr> -->
+<!--           <td> -->
+<!--             <label>Size:</label> -->
+<!--           </td> -->
+<!--           <td> -->
+<!--             <input -->
+<!--               class="editing-popup-info" -->
+<!--               type="text" -->
+<!--               [(ngModel)]="item.size" -->
+<!--             /> -->
+<!--           </td> -->
+<!--         </tr> -->
+<!--         <tr> -->
+<!--           <td> -->
+<!--             <label>Metric:</label> -->
+<!--           </td> -->
+<!--           <td> -->
+<!--             <input -->
+<!--               class="editing-popup-info" -->
+<!--               type="text" -->
+<!--               [(ngModel)]="item.is_metric" -->
+<!--             /> -->
+<!--           </td> -->
+<!--         </tr> -->
+<!--         <tr> -->
+<!--           <td> -->
+<!--             <label>Location:</label> -->
+<!--           </td> -->
+<!--           <td> -->
+<!--             <table> -->
+<!--               <tr> -->
+<!--                 <td> -->
+<!--                   <label>Unit:</label> -->
+<!--                 </td> -->
+<!--                 <td> -->
+<!--                   <input -->
+<!--                     class="editing-popup-info" -->
+<!--                     type="text" -->
+<!--                     [(ngModel)]="item.location[0]" -->
+<!--                   /> -->
+<!--                 </td> -->
+<!--               </tr> -->
+<!--               <tr> -->
+<!--                 <td> -->
+<!--                   <label>Shelf:</label> -->
+<!--                 </td> -->
+<!--                 <td> -->
+<!--                   <input -->
+<!--                     class="editing-popup-info" -->
+<!--                     type="text" -->
+<!--                     [(ngModel)]="item.location[1]" -->
+<!--                   /> -->
+<!--                 </td> -->
+<!--               </tr> -->
+<!--               <tr> -->
+<!--                 <td> -->
+<!--                   <label>Position:</label> -->
+<!--                 </td> -->
+<!--                 <td> -->
+<!--                   <input -->
+<!--                     class="editing-popup-info" -->
+<!--                     type="text" -->
+<!--                     [(ngModel)]="item.location[2]" -->
+<!--                   /> -->
+<!--                 </td> -->
+<!--               </tr> -->
+<!--               <tr> -->
+<!--                 <td> -->
+<!--                   <label>Height:</label> -->
+<!--                 </td> -->
+<!--                 <td> -->
+<!--                   <input -->
+<!--                     class="editing-popup-info" -->
+<!--                     type="text" -->
+<!--                     [(ngModel)]="item.location[3]" -->
+<!--                   /> -->
+<!--                 </td> -->
+<!--               </tr> -->
+<!--               <tr> -->
+<!--                 <td> -->
+<!--                   <label>Width:</label> -->
+<!--                 </td> -->
+<!--                 <td> -->
+<!--                   <input -->
+<!--                     class="editing-popup-info" -->
+<!--                     type="text" -->
+<!--                     [(ngModel)]="item.location[4]" -->
+<!--                   /> -->
+<!--                 </td> -->
+<!--               </tr> -->
+<!--               <tr> -->
+<!--                 <td> -->
+<!--                   <label>Depth:</label> -->
+<!--                 </td> -->
+<!--                 <td> -->
+<!--                   <input -->
+<!--                     class="editing-popup-info" -->
+<!--                     type="text" -->
+<!--                     [(ngModel)]="item.location[5]" -->
+<!--                   /> -->
+<!--                 </td> -->
+<!--               </tr> -->
+<!--             </table> -->
+<!--           </td> -->
+<!--         </tr> -->
+<!--         <tr> -->
+<!--           <td> -->
+<!--             <label>Count:</label> -->
+<!--           </td> -->
+<!--           <td> -->
+<!--             <input -->
+<!--               class="editing-popup-info" -->
+<!--               type="text" -->
+<!--               [(ngModel)]="item.count" -->
+<!--             /> -->
+<!--           </td> -->
+<!--         </tr> -->
+<!--         <tr> -->
+<!--           <td> -->
+<!--             <label>Threshold:</label> -->
+<!--           </td> -->
+<!--           <td> -->
+<!--             <input -->
+<!--               class="editing-popup-info" -->
+<!--               type="text" -->
+<!--               [(ngModel)]="item.threshold" -->
+<!--             /> -->
+<!--           </td> -->
+<!--         </tr> -->
+<!--       </table> -->
+<!--       <div class="flex justify-center items-center"> -->
+<!--         <button (click)="updateItem($event)" class="close-button">Save</button> -->
+<!--         <button -->
+<!--           (click)="deleteItem($event)" -->
+<!--           class="close-button justify-center items-center" -->
+<!--         > -->
+<!--           Delete -->
+<!--         </button> -->
+<!--         <button (click)="cancelEditing($event)" class="close-button"> -->
+<!--           Cancel -->
+<!--         </button> -->
+<!--       </div> -->
+<!--     </div> -->
+<!--     <div *ngIf="!isEditing" class="flex flex-col editing-popup"> -->
+<!--       <h1 class="popup-header">{{ item.name }}</h1> -->
+<!--       <table> -->
+<!--         <tr> -->
+<!--           <td> -->
+<!--             <label>Name:</label> -->
+<!--           </td> -->
+<!--           <td> -->
+<!--             <input -->
+<!--               class="popup-info" -->
+<!--               type="text" -->
+<!--               [(ngModel)]="item.name" -->
+<!--               readonly -->
+<!--             /> -->
+<!--           </td> -->
+<!--         </tr> -->
+<!--         <tr> -->
+<!--           <td> -->
+<!--             <label>Size:</label> -->
+<!--           </td> -->
+<!--           <td> -->
+<!--             <input -->
+<!--               class="popup-info" -->
+<!--               type="text" -->
+<!--               [(ngModel)]="item.size" -->
+<!--               readonly -->
+<!--             /> -->
+<!--           </td> -->
+<!--         </tr> -->
+<!--         <tr> -->
+<!--           <td> -->
+<!--             <label>Metric:</label> -->
+<!--           </td> -->
+<!--           <td> -->
+<!--             <input -->
+<!--               class="popup-info" -->
+<!--               type="text" -->
+<!--               [(ngModel)]="item.is_metric" -->
+<!--               readonly -->
+<!--             /> -->
+<!--           </td> -->
+<!--         </tr> -->
+<!--         <tr> -->
+<!--           <td> -->
+<!--             <label>Location:</label> -->
+<!--           </td> -->
+<!--           <td> -->
+<!--             <table> -->
+<!--               <tr> -->
+<!--                 <td> -->
+<!--                   <label>Unit:</label> -->
+<!--                 </td> -->
+<!--                 <td> -->
+<!--                   <input -->
+<!--                     class="popup-info" -->
+<!--                     type="text" -->
+<!--                     [(ngModel)]="item.location[0]" -->
+<!--                     readonly -->
+<!--                   /> -->
+<!--                 </td> -->
+<!--               </tr> -->
+<!--               <tr> -->
+<!--                 <td> -->
+<!--                   <label>Shelf:</label> -->
+<!--                 </td> -->
+<!--                 <td> -->
+<!--                   <input -->
+<!--                     class="popup-info" -->
+<!--                     type="text" -->
+<!--                     [(ngModel)]="item.location[1]" -->
+<!--                     readonly -->
+<!--                   /> -->
+<!--                 </td> -->
+<!--               </tr> -->
+<!--               <tr> -->
+<!--                 <td> -->
+<!--                   <label>Position:</label> -->
+<!--                 </td> -->
+<!--                 <td> -->
+<!--                   <input -->
+<!--                     class="popup-info" -->
+<!--                     type="text" -->
+<!--                     [(ngModel)]="item.location[2]" -->
+<!--                     readonly -->
+<!--                   /> -->
+<!--                 </td> -->
+<!--               </tr> -->
+<!--               <tr> -->
+<!--                 <td> -->
+<!--                   <label>Height:</label> -->
+<!--                 </td> -->
+<!--                 <td> -->
+<!--                   <input -->
+<!--                     class="popup-info" -->
+<!--                     type="text" -->
+<!--                     [(ngModel)]="item.location[3]" -->
+<!--                     readonly -->
+<!--                   /> -->
+<!--                 </td> -->
+<!--               </tr> -->
+<!--               <tr> -->
+<!--                 <td> -->
+<!--                   <label>Width:</label> -->
+<!--                 </td> -->
+<!--                 <td> -->
+<!--                   <input -->
+<!--                     class="popup-info" -->
+<!--                     type="text" -->
+<!--                     [(ngModel)]="item.location[4]" -->
+<!--                     readonly -->
+<!--                   /> -->
+<!--                 </td> -->
+<!--               </tr> -->
+<!--               <tr> -->
+<!--                 <td> -->
+<!--                   <label>Depth:</label> -->
+<!--                 </td> -->
+<!--                 <td> -->
+<!--                   <input -->
+<!--                     class="popup-info" -->
+<!--                     type="text" -->
+<!--                     [(ngModel)]="item.location[5]" -->
+<!--                     readonly -->
+<!--                   /> -->
+<!--                 </td> -->
+<!--               </tr> -->
+<!--             </table> -->
+<!--           </td> -->
+<!--         </tr> -->
+<!--         <tr> -->
+<!--           <td> -->
+<!--             <label>Count:</label> -->
+<!--           </td> -->
+<!--           <td> -->
+<!--             <input -->
+<!--               class="popup-info" -->
+<!--               type="text" -->
+<!--               [(ngModel)]="item.count" -->
+<!--               readonly -->
+<!--             /> -->
+<!--           </td> -->
+<!--         </tr> -->
+<!--         <tr> -->
+<!--           <td> -->
+<!--             <label>Threshold:</label> -->
+<!--           </td> -->
+<!--           <td> -->
+<!--             <input -->
+<!--               class="popup-info" -->
+<!--               type="text" -->
+<!--               [(ngModel)]="item.threshold" -->
+<!--               readonly -->
+<!--             /> -->
+<!--           </td> -->
+<!--         </tr> -->
+<!--         <tr> -->
+<!--           <td> -->
+<!--             <button (click)="editItem($event)" class="close-button"> -->
+<!--               Edit -->
+<!--             </button> -->
+<!--           </td> -->
+<!--         </tr> -->
+<!--       </table> -->
+<!--     </div> -->
 
-    <button
-      (click)="closePopup($event)"
-      class="close-button border-solid border-gray-50"
-    >
-      Close
-    </button>
-    <button (click)="updateItem($event)" class="close-button">Save</button>
-  </div>
-</div>
+<!--     <button -->
+<!--       (click)="closePopup($event)" -->
+<!--       class="close-button border-solid border-gray-50" -->
+<!--     > -->
+<!--       Close -->
+<!--     </button> -->
+<!--     <button (click)="updateItem($event)" class="close-button">Save</button> -->
+<!--   </div> -->
+<!-- </div> -->

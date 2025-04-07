@@ -1,14 +1,22 @@
 <div class="scrollable-box">
   <table>
-    <app-item-search (formSubmit)="handleSearch($event)" ></app-item-search>
+    <thead>
+      <th colspan="5">
+        <app-item-search (formSubmit)="handleSearch($event)" class="search"></app-item-search>
+      </th>
+    </thead>
 
-    <div class="flex flex-col h-full bg-gray-0 text-black dark:bg-gray-900 dark:text-white" >
-      <tr *ngFor="let item of items" class="hover:bg-gray-100 cursor-pointer">
-        <app-item [item]="item"></app-item>
+    <tbody>
+      <tr *ngFor="let item of items" class="hover:bg-gray-100 cursor-pointer"(click)="onItemClick(item)">
+        <td class="itemColumn">{{ item.name }}</td>
+        <td class="itemColumn">{{ item.size }}</td>
+        <td class="itemColumn">{{ item.is_metric }}</td>
+        <td class="itemColumn">{{ item.count }}</td>
       </tr>
-    </div>
+    </tbody>
   </table>
-</div>
-<!--
 
--->
+  <div *ngIf="isPopupVisible" class="overlay" (click)="closePopup()">
+    <app-item-popup [item]="selectedItem" (close)="closePopup()"></app-item-popup>
+  </div>
+</div>

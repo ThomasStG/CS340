@@ -1,9 +1,17 @@
 <div class="scrollable-box h-full">
-  <app-item-search (formSubmit)="handleSearch($event)"></app-item-search>
+  <thead>
+    <th colspan="5">
+      <app-item-search (formSubmit)="handleSearch($event)"></app-item-search>
+    </th>
+  </thead>
 
-  <div class="content h-full bg-gray-100 text-black dark:bg-gray-900 dark:text-white ">
-    <div *ngFor="let item of items">
+  <tbody class="content h-full bg-gray-100 text-black dark:bg-gray-900 dark:text-white ">
+    <tr *ngFor="let item of items">
       <app-admin-item [item]="item"></app-admin-item>
-    </div>
+    </tr>
+  </tbody>
+
+  <div *ngIf="isPopupVisible" class="overlay" (click)="closePopup()">
+    <app-item-popup [item]="selectedItem" (close)="closePopup()"></app-item-popup>
   </div>
 </div>

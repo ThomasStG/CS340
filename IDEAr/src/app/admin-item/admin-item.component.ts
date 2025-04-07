@@ -19,6 +19,7 @@ export class AdminItemComponent implements OnInit {
     threshold: 0,
   };
   newItem: ItemData = { ...this.item };
+  changeNum = 0;
   ngOnInit() {
     this.item.location = JSON.parse(this.item.location);
     this.newItem = this.item;
@@ -60,5 +61,29 @@ export class AdminItemComponent implements OnInit {
     this.updateItemService.deleteItem(this.item).subscribe((response) => {
       console.log(response);
     });
+  }
+  incrementItem(event: Event) {
+    event.stopPropagation();
+    this.updateItemService
+      .incrementItem(this.item, this.changeNum)
+      .subscribe((response) => {
+        if (response.error) {
+          console.error(response.error);
+        } else {
+          this.item.count += this.changeNum;
+        }
+      });
+  }
+  decrementItem(event: Event) {
+    event.stopPropagation();
+    this.updateItemService
+      .decrementItem(this.item, this.changeNum)
+      .subscribe((response) => {
+        if (response.error) {
+          console.error(response.error);
+        } else {
+          this.item.count -= this.changeNum;
+        }
+      });
   }
 }

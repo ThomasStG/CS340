@@ -1,0 +1,6 @@
+<select id="dropdown" [(ngModel)]="selectedCsvFile">
+  <option *ngFor="let file of csv_files" [value]="file">{{ file }}</option>
+</select>
+<input type="file" (change)="uploadFile($event)" />
+<button (click)="backupData($event)">Backup Data</button>
+<button (click)="loadData($event)">Load Data</button>

@@ -19,16 +19,4 @@ export class ItemComponent implements OnInit {
   ngOnInit() {
     this.item.location = JSON.parse(this.item.location);
   }
-
-  @Input() itemPopup: any; // The item passed to this component
-  isPopupVisible = false;
-
-  showPopup() {
-    this.isPopupVisible = true;
-  }
-
-  closePopup(event: Event) {
-    event.stopPropagation();
-    this.isPopupVisible = false;
-  }
 }

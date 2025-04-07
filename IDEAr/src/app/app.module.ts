@@ -18,11 +18,14 @@ import { FormsModule } from '@angular/forms';
 import { AdminItemComponent } from './admin-item/admin-item.component';
 import { AdminPopupComponent } from './admin-popup/admin-popup.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { DataDownloadComponent } from './data-download/data-download.component';
+import { ItemPopupComponent } from './item-popup/item-popup.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent }, // Home Page
   { path: 'admin', component: AdminComponent }, // Admin Page
   { path: 'authentication', component: AuthenticationComponent },
+  { path: 'data-download', component: DataDownloadComponent },
 ];
 
 @NgModule({
@@ -36,6 +39,8 @@ const routes: Routes = [
     AuthenticationComponent,
     AdminItemComponent,
     AdminPopupComponent,
+    DataDownloadComponent,
+    ItemPopupComponent,
   ],
   imports: [
     ReactiveFormsModule,

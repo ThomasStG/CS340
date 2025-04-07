@@ -1318,3 +1318,1391 @@
 2025-03-26 14:30:06,346 - INFO - 127.0.0.1 - - [26/Mar/2025 14:30:06] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
 2025-03-26 14:30:06,355 - INFO - 127.0.0.1 - - [26/Mar/2025 14:30:06] "POST /isLoggedIn HTTP/1.1" 200 -
 2025-03-26 14:30:06,406 - INFO - 127.0.0.1 - - [26/Mar/2025 14:30:06] "GET /findAll HTTP/1.1" 200 -
+2025-04-05 20:11:37,637 - INFO - API server started 2025-04-05_20-11-37
+2025-04-05 20:11:37,668 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2025-04-05 20:11:37,668 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-05 20:11:37,668 - INFO -  * Restarting with stat
+2025-04-05 20:11:38,176 - INFO - API server started 2025-04-05_20-11-38
+2025-04-05 20:11:38,195 - WARNING -  * Debugger is active!
+2025-04-05 20:11:38,202 - INFO -  * Debugger PIN: 507-368-162
+2025-04-05 20:12:30,623 - INFO - 127.0.0.1 - - [05/Apr/2025 20:12:30] "GET /findAll HTTP/1.1" 200 -
+2025-04-05 20:15:46,949 - INFO - 127.0.0.1 - - [05/Apr/2025 20:15:46] "GET /findAll HTTP/1.1" 200 -
+2025-04-05 20:15:46,949 - INFO - 127.0.0.1 - - [05/Apr/2025 20:15:46] "GET /findAll HTTP/1.1" 200 -
+2025-04-05 20:24:21,292 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/auth.py', reloading
+2025-04-05 20:24:21,329 - INFO -  * Restarting with stat
+2025-04-05 20:24:22,010 - INFO - API server started 2025-04-05_20-24-22
+2025-04-05 20:24:22,034 - WARNING -  * Debugger is active!
+2025-04-05 20:24:22,040 - INFO -  * Debugger PIN: 507-368-162
+2025-04-05 20:25:04,185 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/auth.py', reloading
+2025-04-05 20:25:04,220 - INFO -  * Restarting with stat
+2025-04-05 20:25:04,911 - INFO - API server started 2025-04-05_20-25-04
+2025-04-05 20:25:04,934 - WARNING -  * Debugger is active!
+2025-04-05 20:25:04,940 - INFO -  * Debugger PIN: 507-368-162
+2025-04-05 20:25:25,463 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/auth.py', reloading
+2025-04-05 20:25:25,493 - INFO -  * Restarting with stat
+2025-04-05 20:25:26,200 - INFO - API server started 2025-04-05_20-25-26
+2025-04-05 20:25:26,223 - WARNING -  * Debugger is active!
+2025-04-05 20:25:26,229 - INFO -  * Debugger PIN: 507-368-162
+2025-04-05 20:28:10,345 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/auth.py', reloading
+2025-04-05 20:28:10,381 - INFO -  * Restarting with stat
+2025-04-05 20:28:11,068 - INFO - API server started 2025-04-05_20-28-11
+2025-04-05 20:28:11,092 - WARNING -  * Debugger is active!
+2025-04-05 20:28:11,098 - INFO -  * Debugger PIN: 507-368-162
+2025-04-05 20:28:16,249 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/auth.py', reloading
+2025-04-05 20:28:16,287 - INFO -  * Restarting with stat
+2025-04-05 20:28:16,930 - INFO - API server started 2025-04-05_20-28-16
+2025-04-05 20:28:16,953 - WARNING -  * Debugger is active!
+2025-04-05 20:28:16,959 - INFO -  * Debugger PIN: 507-368-162
+2025-04-05 20:32:06,756 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/testdb.py', reloading
+2025-04-05 20:32:06,791 - INFO -  * Restarting with stat
+2025-04-05 20:32:07,488 - INFO - API server started 2025-04-05_20-32-07
+2025-04-05 20:32:07,508 - WARNING -  * Debugger is active!
+2025-04-05 20:32:07,514 - INFO -  * Debugger PIN: 507-368-162
+2025-04-05 20:32:38,273 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/auth.py', reloading
+2025-04-05 20:32:38,309 - INFO -  * Restarting with stat
+2025-04-05 20:32:38,895 - INFO - API server started 2025-04-05_20-32-38
+2025-04-05 20:32:38,918 - WARNING -  * Debugger is active!
+2025-04-05 20:32:38,924 - INFO -  * Debugger PIN: 507-368-162
+2025-04-05 20:33:26,114 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/testdb.py', reloading
+2025-04-05 20:33:26,147 - INFO -  * Restarting with stat
+2025-04-05 20:33:26,875 - INFO - API server started 2025-04-05_20-33-26
+2025-04-05 20:33:26,898 - WARNING -  * Debugger is active!
+2025-04-05 20:33:26,904 - INFO -  * Debugger PIN: 507-368-162
+2025-04-05 20:34:04,953 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/testdb.py', reloading
+2025-04-05 20:34:04,991 - INFO -  * Restarting with stat
+2025-04-05 20:34:05,660 - INFO - API server started 2025-04-05_20-34-05
+2025-04-05 20:34:05,682 - WARNING -  * Debugger is active!
+2025-04-05 20:34:05,688 - INFO -  * Debugger PIN: 507-368-162
+2025-04-05 20:34:29,290 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/testdb.py', reloading
+2025-04-05 20:34:29,322 - INFO -  * Restarting with stat
+2025-04-05 20:34:29,853 - INFO - API server started 2025-04-05_20-34-29
+2025-04-05 20:34:29,871 - WARNING -  * Debugger is active!
+2025-04-05 20:34:29,877 - INFO -  * Debugger PIN: 507-368-162
+2025-04-05 21:14:25,125 - INFO - API server started 2025-04-05_21-14-25
+2025-04-05 21:14:25,157 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2025-04-05 21:14:25,157 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-05 21:14:25,158 - INFO -  * Restarting with stat
+2025-04-05 21:14:25,759 - INFO - API server started 2025-04-05_21-14-25
+2025-04-05 21:14:25,779 - WARNING -  * Debugger is active!
+2025-04-05 21:14:25,784 - INFO -  * Debugger PIN: 507-368-162
+2025-04-05 21:15:26,198 - INFO - 127.0.0.1 - - [05/Apr/2025 21:15:26] "GET /findAll HTTP/1.1" 200 -
+2025-04-05 21:15:26,208 - INFO - 127.0.0.1 - - [05/Apr/2025 21:15:26] "GET /findAll HTTP/1.1" 200 -
+2025-04-05 21:15:35,319 - INFO - 127.0.0.1 - - [05/Apr/2025 21:15:35] "GET /findAll HTTP/1.1" 200 -
+2025-04-05 21:15:35,321 - INFO - 127.0.0.1 - - [05/Apr/2025 21:15:35] "GET /findAll HTTP/1.1" 200 -
+2025-04-05 21:15:40,344 - INFO - 127.0.0.1 - - [05/Apr/2025 21:15:40] "GET /findAll HTTP/1.1" 200 -
+2025-04-05 21:15:41,336 - INFO - 127.0.0.1 - - [05/Apr/2025 21:15:41] "GET /findAll HTTP/1.1" 200 -
+2025-04-05 21:15:48,601 - INFO - 127.0.0.1 - - [05/Apr/2025 21:15:48] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-05 21:15:48,604 - INFO - 127.0.0.1 - - [05/Apr/2025 21:15:48] "GET /findAll HTTP/1.1" 200 -
+2025-04-05 21:15:50,533 - INFO - 127.0.0.1 - - [05/Apr/2025 21:15:50] "GET /findAll HTTP/1.1" 200 -
+2025-04-05 21:16:43,098 - INFO - 127.0.0.1 - - [05/Apr/2025 21:16:43] "GET /findAll HTTP/1.1" 200 -
+2025-04-05 21:16:43,098 - INFO - 127.0.0.1 - - [05/Apr/2025 21:16:43] "GET /findAll HTTP/1.1" 200 -
+2025-04-05 21:16:45,294 - INFO - 127.0.0.1 - - [05/Apr/2025 21:16:45] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-05 21:16:45,307 - INFO - 127.0.0.1 - - [05/Apr/2025 21:16:45] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-04-05 21:16:45,759 - INFO - 127.0.0.1 - - [05/Apr/2025 21:16:45] "GET /findAll HTTP/1.1" 200 -
+2025-04-05 21:16:57,216 - INFO - 127.0.0.1 - - [05/Apr/2025 21:16:57] "GET /findAll HTTP/1.1" 200 -
+2025-04-05 21:16:57,216 - INFO - 127.0.0.1 - - [05/Apr/2025 21:16:57] "GET /findAll HTTP/1.1" 200 -
+2025-04-05 21:17:02,772 - INFO - 127.0.0.1 - - [05/Apr/2025 21:17:02] "GET /findAll HTTP/1.1" 200 -
+2025-04-05 21:17:02,773 - INFO - 127.0.0.1 - - [05/Apr/2025 21:17:02] "GET /findAll HTTP/1.1" 200 -
+2025-04-05 21:20:39,668 - INFO - 127.0.0.1 - - [05/Apr/2025 21:20:39] "GET /findAll HTTP/1.1" 200 -
+2025-04-05 21:20:39,668 - INFO - 127.0.0.1 - - [05/Apr/2025 21:20:39] "GET /findAll HTTP/1.1" 200 -
+2025-04-05 21:29:33,602 - INFO - 127.0.0.1 - - [05/Apr/2025 21:29:33] "GET /findAll HTTP/1.1" 200 -
+2025-04-05 21:29:33,695 - INFO - 127.0.0.1 - - [05/Apr/2025 21:29:33] "GET /findAll HTTP/1.1" 200 -
+2025-04-06 07:30:07,945 - INFO - 127.0.0.1 - - [06/Apr/2025 07:30:07] "GET /findAll HTTP/1.1" 200 -
+2025-04-06 07:30:07,945 - INFO - 127.0.0.1 - - [06/Apr/2025 07:30:07] "GET /findAll HTTP/1.1" 200 -
+2025-04-06 10:00:06,694 - INFO - 127.0.0.1 - - [06/Apr/2025 10:00:06] "GET /findAll HTTP/1.1" 200 -
+2025-04-06 10:00:06,706 - INFO - 127.0.0.1 - - [06/Apr/2025 10:00:06] "GET /findAll HTTP/1.1" 200 -
+2025-04-06 13:00:06,379 - INFO - 127.0.0.1 - - [06/Apr/2025 13:00:06] "GET /findAll HTTP/1.1" 200 -
+2025-04-06 13:00:06,382 - INFO - 127.0.0.1 - - [06/Apr/2025 13:00:06] "GET /findAll HTTP/1.1" 200 -
+2025-04-06 19:33:47,558 - INFO - 127.0.0.1 - - [06/Apr/2025 19:33:47] "GET /findAll HTTP/1.1" 200 -
+2025-04-06 19:33:47,559 - INFO - 127.0.0.1 - - [06/Apr/2025 19:33:47] "GET /findAll HTTP/1.1" 200 -
+2025-04-06 23:27:55,045 - INFO - API server started 2025-04-06_23-27-55
+2025-04-06 23:27:55,090 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2025-04-06 23:27:55,090 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-06 23:27:55,092 - INFO -  * Restarting with stat
+2025-04-06 23:27:56,309 - INFO - API server started 2025-04-06_23-27-56
+2025-04-06 23:27:56,334 - WARNING -  * Debugger is active!
+2025-04-06 23:27:56,340 - INFO -  * Debugger PIN: 507-368-162
+2025-04-06 23:29:19,251 - INFO - 127.0.0.1 - - [06/Apr/2025 23:29:19] "GET /getFiles HTTP/1.1" 200 -
+2025-04-06 23:29:19,252 - INFO - 127.0.0.1 - - [06/Apr/2025 23:29:19] "GET /getFiles HTTP/1.1" 200 -
+2025-04-06 23:29:30,234 - INFO - 127.0.0.1 - - [06/Apr/2025 23:29:30] "GET /getFiles HTTP/1.1" 200 -
+2025-04-06 23:38:29,638 - ERROR - 127.0.0.1 - - [06/Apr/2025 23:38:29] code 400, message Bad request version ("]|\x06ne%\x00h\x13\x02\x13\x03\x13\x01À/À+À0À,\x00\x9eÀ'\x00gÀ(\x00k\x00£\x00\x9fÌ©Ì¨ÌªÀ\xadÀ\x9fÀ]ÀaÀWÀS\x00¢À¬À\x9eÀ\\À`ÀVÀRÀ$\x00jÀ#\x00@À")
+2025-04-06 23:38:29,639 - INFO - 127.0.0.1 - - [06/Apr/2025 23:38:29] "[31m[1m\x16\x03\x01\x01U\x01\x00\x01Q\x03\x03þ\x87¾\\ï\x84¾Ë\x99_\x09û&\x89n|\x15Á"ß\x16æ~Y\x98\x1a'Ð#\x8c\x82\x02 \x9e\x18Ê\x1a\x86\x97J{\x84á¹Û%°øEèâ\x09¨²¥Dî\x99\x0c]|\x06ne%\x00h\x13\x02\x13\x03\x13\x01À/À+À0À,\x00\x9eÀ'\x00gÀ(\x00k\x00£\x00\x9fÌ©Ì¨ÌªÀ­À\x9fÀ]ÀaÀWÀS\x00¢À¬À\x9eÀ\\À`ÀVÀRÀ$\x00jÀ#\x00@À[0m" 400 -
+2025-04-06 23:38:29,704 - ERROR - 127.0.0.1 - - [06/Apr/2025 23:38:29] code 400, message Bad request version ('§\x80\x1a')
+2025-04-06 23:38:29,704 - INFO - 127.0.0.1 - - [06/Apr/2025 23:38:29] "[31m[1m\x16\x03\x01\x06 \x01\x00\x06\x9c\x03\x03\x1b\x1cBR«/äÔ©PíVF:\x8bõØ[s\x17Éc\x85a\\`\x1f\x1c§\x80\x1a\x85 [0m" 400 -
+2025-04-06 23:38:29,705 - ERROR - 127.0.0.1 - - [06/Apr/2025 23:38:29] code 400, message Bad request version ('ã&à\x92\x16l\x1b')
+2025-04-06 23:38:29,705 - INFO - 127.0.0.1 - - [06/Apr/2025 23:38:29] "[31m[1m\x16\x03\x01\x06À\x01\x00\x06¼\x03\x03ok\x80|Ã\x92y¸ö\x0d\x9e\x00cî\x8fþéð$«DÑ1éY'4Îõù\x1b8 ¦3Í¬)eQgÁÖ\x00\x80@¤¿\x09\x80(\x9f»W\x99[\x1fºwPp·\x82\x8aw\x00 zz\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06SÊÊ\x00\x00\x00\x0d\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01ÿ\x01\x00\x01\x00Di\x00\x05\x00\x03\x02h2\x00\x1b\x00\x03\x02\x00\x02\x003\x04ï\x04í\x1a\x1a\x00\x01\x00\x11ì\x04Àp\x8a\x03£\x82W«":Ê\x8b;!Ê\x087à`®Ê\x80)ü¯ñ!\x1e\x15õ¤ÙªSë\x12¦\x01ÌxmJÍ¶\x00:¨hQ\x13xµ6¼0GT?çôR\x1cè\x09\x11Û¼Ãx\x9a\x11ó"À+r\x88{\x19\x0bÜ\x12ùã7ù\x11\x86P¢Åu\x02?ú{2/&\x1c\x0fç+ÁKyå\x04o@³F>\x89\x8bu\x84\x92ÈÓ\x7fè\x84¥òtUÜ\x99/\x89e§p\x18p*Ta\x06\x80 :\x89ÌWò\x9b¨ÉK^)Oªè7r3\x9dK'\x94ÚÅ\x84\x0dã&à\x92\x16l\x1b[0m" 400 -
+2025-04-06 23:38:43,861 - INFO - API server started 2025-04-06_23-38-43
+2025-04-06 23:38:43,889 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2025-04-06 23:38:43,889 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-06 23:38:43,889 - INFO -  * Restarting with stat
+2025-04-06 23:38:44,548 - INFO - API server started 2025-04-06_23-38-44
+2025-04-06 23:38:44,568 - WARNING -  * Debugger is active!
+2025-04-06 23:38:44,573 - INFO -  * Debugger PIN: 507-368-162
+2025-04-06 23:38:56,436 - ERROR - 127.0.0.1 - - [06/Apr/2025 23:38:56] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x01U\x01\x00\x01Q\x03\x03\x8b\x94\x00äPÇ\x84%%:F¼RÞ+Ïñ\x18Æ\x88\x7fpé-cñ°\x99¿ó!\x92')
+2025-04-06 23:38:56,440 - INFO - 127.0.0.1 - - [06/Apr/2025 23:38:56] "[31m[1m\x16\x03\x01\x01U\x01\x00\x01Q\x03\x03\x8b\x94\x00äPÇ\x84%%:F¼RÞ+Ïñ\x18Æ\x88\x7fpé-cñ°\x99¿ó!\x92 Õÿ`³bÑ\x88Ð3+BZ/ÿ\x93V3\x9fC±3\x82\x17b=\x83\x01\x07ãr\x04\x08\x00h\x13\x02\x13\x03\x13\x01À/À+À0À,\x00\x9eÀ'\x00gÀ(\x00k\x00£\x00\x9fÌ©Ì¨ÌªÀ­À\x9fÀ]ÀaÀWÀS\x00¢À¬À\x9eÀ\\À`ÀVÀRÀ$\x00jÀ#\x00@À[0m" 400 -
+2025-04-06 23:38:56,522 - ERROR - 127.0.0.1 - - [06/Apr/2025 23:38:56] code 400, message Bad request version ("nÉ\x05'\x8c\x8c")
+2025-04-06 23:38:56,522 - INFO - 127.0.0.1 - - [06/Apr/2025 23:38:56] "[31m[1m\x16\x03\x01\x07\x00\x01\x00\x06ü\x03\x03ûå$¸?V\x1f¸:BåÒ EVáÈ\x0fðø¿µòõ½\x98Ë\x00ÉèK\x89 á²WC{Ü¤\x86±·«R\x07\x80\x1bÄ\x9dÎ\x1dnÉ\x05'\x8c\x8c[0m" 400 -
+2025-04-06 23:38:56,522 - ERROR - 127.0.0.1 - - [06/Apr/2025 23:38:56] code 400, message Bad request version ('·þÚ8\x88\x87å[ò\x7f\x80å\x18kLL\x00')
+2025-04-06 23:38:56,522 - INFO - 127.0.0.1 - - [06/Apr/2025 23:38:56] "[31m[1m\x16\x03\x01\x07\x00\x01\x00\x06ü\x03\x03o\x03G\x1e´Þ\x8f¯3ôÞYt\x14<6\x87h\x8bµÎ*\x90­\x1c\x7fÄ#YÊ\x17ô \x9c\x8eq\x82\x1dOÕ\x1b]L\x96>/\x86Û\x0d·þÚ8\x88\x87å[ò\x7f\x80å\x18kLL\x00 [0m" 400 -
+2025-04-06 23:38:57,770 - ERROR - 127.0.0.1 - - [06/Apr/2025 23:38:57] code 400, message Bad request version ("\x96\x00h\x13\x02\x13\x03\x13\x01À/À+À0À,\x00\x9eÀ'\x00gÀ(\x00k\x00£\x00\x9fÌ©Ì¨ÌªÀ\xadÀ\x9fÀ]ÀaÀWÀS\x00¢À¬À\x9eÀ\\À`ÀVÀRÀ$\x00jÀ#\x00@À")
+2025-04-06 23:38:57,770 - INFO - 127.0.0.1 - - [06/Apr/2025 23:38:57] "[31m[1m\x16\x03\x01\x01U\x01\x00\x01Q\x03\x03s±'ê'õ5Ìq°®\x81\x13Ôm ¬\x81¾:÷¡EÒ\x05VÑ\x95\x15"ò£ ZOe-ÂD<\x9d\x12\x94Æ\x1c&\x11s9\x99 \x99Ï[7ºÏÔÌ¿ÿS£\x85\x96\x00h\x13\x02\x13\x03\x13\x01À/À+À0À,\x00\x9eÀ'\x00gÀ(\x00k\x00£\x00\x9fÌ©Ì¨ÌªÀ­À\x9fÀ]ÀaÀWÀS\x00¢À¬À\x9eÀ\\À`ÀVÀRÀ$\x00jÀ#\x00@À[0m" 400 -
+2025-04-06 23:38:57,819 - ERROR - 127.0.0.1 - - [06/Apr/2025 23:38:57] code 400, message Bad request syntax ('\x16\x03\x01\x06à\x01\x00\x06Ü\x03\x03e\x9d\x81\x05v\x8fD¾Ê\x8b±úÃU\x83^neR2hÎ')
+2025-04-06 23:38:57,819 - INFO - 127.0.0.1 - - [06/Apr/2025 23:38:57] "[31m[1m\x16\x03\x01\x06à\x01\x00\x06Ü\x03\x03e\x9d\x81\x05v\x8fD¾Ê\x8b±úÃU\x83^neR2hÎ[0m" 400 -
+2025-04-06 23:38:57,820 - ERROR - 127.0.0.1 - - [06/Apr/2025 23:38:57] code 400, message Bad request version ('\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01\x00')
+2025-04-06 23:38:57,820 - INFO - 127.0.0.1 - - [06/Apr/2025 23:38:57] "[31m[1m\x16\x03\x01\x07\x00\x01\x00\x06ü\x03\x03'\x14C_æÉ_\x15å\x8a\x8d<Â­\x0fßÿ\x99îàÐR\x8b`\x9d1ÉÉ\x86m\x97\x81 ·â°+CMM·}_ÖC\x88V\x1anè\x8aavã°K\x10\x11FáC}x\x07G\x00 \x1a\x1a\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06\x93ÊÊ\x00\x00\x00\x17\x00\x00\x00#\x00\x00\x00+\x00\x07\x06JJ\x03\x04\x03\x03\x00\x0b\x00\x02\x01\x00\x00-\x00\x02\x01\x01\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00\x10\x00\x0e\x00\x0c\x02h2\x08http/1.1\x00\x12\x00\x00\x00\x0d\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01\x00[0m" 400 -
+2025-04-06 23:40:53,648 - ERROR - 127.0.0.1 - - [06/Apr/2025 23:40:53] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x01U\x01\x00\x01Q\x03\x03]ßû¸Ý')
+2025-04-06 23:40:53,649 - INFO - 127.0.0.1 - - [06/Apr/2025 23:40:53] "[31m[1m\x16\x03\x01\x01U\x01\x00\x01Q\x03\x03]ßû¸Ý\x09\x08[0m" 400 -
+2025-04-06 23:40:53,704 - ERROR - 127.0.0.1 - - [06/Apr/2025 23:40:53] code 400, message Bad request version ('s@o!\x91{\x14q\x97ï')
+2025-04-06 23:40:53,705 - INFO - 127.0.0.1 - - [06/Apr/2025 23:40:53] "[31m[1m\x16\x03\x01\x07\x00\x01\x00\x06ü\x03\x03gÉ \x82\x0eá\x03»¬ÿ`ëÅ\x86µ/¸ªY\x16ònÌ\x10!w²_V\x1aC\x89 \x83\x9e\x86H#¹¨÷Ó\x12\x89k³ýf÷\x0fØ\x17\x0d\x96øùT42+fx\\p\x87\x00 jj\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06\x93ÊÊ\x00\x00\x00+\x00\x07\x06êê\x03\x04\x03\x03\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00#\x00\x00\x00\x0b\x00\x02\x01\x00\x00\x10\x00\x0e\x00\x0c\x02h2\x08http/1.1\x00\x0d\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01þ\x0d\x01\x1a\x00\x00\x01\x00\x01¢\x00 P\x81r¢\x0f3\x08ý×\x1c¢þ\x82YËx².ß\x98¦ibÆ\x8dbùð:U\x9c%\x00ð¨®Ê÷YXvòEáªYÔV,Þ^Sàþ¼\x19s+j4¾\x9b\x8eL«æp\x1a\x12\x1b½6Ò,\x01¯îfÝþÑoä\x14Yÿ\x02~nPJwã+í\x06\x80\x04 o¤\x81É\x99\x8e¦ô\x03ý\x01å\x89i+\x89pz4f\x06!\x14\x1e³ÈxE¼\x89±_è -\x10Q\x96qúI\x9b\x01\x99HÅ\x82q\x00\\\x14"súZÖÒ¾\x03AOé\x9eÎÃ´\x00>ÂØÿ¶<¡øßÚEl\x0b\x90}\x8c\x0b\x192\x8fþ½A_£\x9dÆ\x10½\x12ÕîmìÝ\x9d\x841n»iïþ s@o!\x91{\x14q\x97ï[0m" 400 -
+2025-04-06 23:40:53,706 - ERROR - 127.0.0.1 - - [06/Apr/2025 23:40:53] code 400, message Bad request version ('\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01\x00')
+2025-04-06 23:40:53,706 - INFO - 127.0.0.1 - - [06/Apr/2025 23:40:53] "[31m[1m\x16\x03\x01\x06à\x01\x00\x06Ü\x03\x03ô\x97û\x97u\x0f\x00\x93^â9Éä(\x83òDÎ±\x19ó¥Ó(\x99\x1e+KÇª\x0d\x9d \x96q-\x8b\x15\x10S\x9b\x8bìõvXÝoqM\x8a\x86\x15â~\x8aÿåÒrT8æ©\x85\x00 \x9a\x9a\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06sJJ\x00\x00\x00\x0d\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01\x00[0m" 400 -
+2025-04-06 23:41:31,203 - INFO - 127.0.0.1 - - [06/Apr/2025 23:41:31] "GET /getFiles HTTP/1.1" 200 -
+2025-04-06 23:41:39,203 - INFO - 127.0.0.1 - - [06/Apr/2025 23:41:39] "GET /getFiles HTTP/1.1" 200 -
+2025-04-06 23:41:51,851 - INFO - 127.0.0.1 - - [06/Apr/2025 23:41:51] "GET /getFiles HTTP/1.1" 200 -
+2025-04-06 23:42:19,939 - INFO - 127.0.0.1 - - [06/Apr/2025 23:42:19] "GET /getFiles HTTP/1.1" 200 -
+2025-04-06 23:42:26,590 - INFO - 127.0.0.1 - - [06/Apr/2025 23:42:26] "GET /getFiles HTTP/1.1" 200 -
+2025-04-06 23:42:57,302 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/api.py', reloading
+2025-04-06 23:42:57,384 - INFO -  * Restarting with stat
+2025-04-06 23:42:58,364 - INFO - API server started 2025-04-06_23-42-58
+2025-04-06 23:42:58,390 - WARNING -  * Debugger is active!
+2025-04-06 23:42:58,398 - INFO -  * Debugger PIN: 507-368-162
+2025-04-06 23:43:22,017 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/api.py', reloading
+2025-04-06 23:43:22,087 - INFO -  * Restarting with stat
+2025-04-06 23:43:23,001 - INFO - API server started 2025-04-06_23-43-23
+2025-04-06 23:43:23,026 - WARNING -  * Debugger is active!
+2025-04-06 23:43:23,034 - INFO -  * Debugger PIN: 507-368-162
+2025-04-06 23:43:52,847 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-06 23:43:52,937 - INFO -  * Restarting with stat
+2025-04-06 23:43:53,814 - INFO - API server started 2025-04-06_23-43-53
+2025-04-06 23:43:53,839 - WARNING -  * Debugger is active!
+2025-04-06 23:43:53,849 - INFO -  * Debugger PIN: 507-368-162
+2025-04-06 23:44:04,745 - INFO - 127.0.0.1 - - [06/Apr/2025 23:44:04] "GET /getFiles HTTP/1.1" 200 -
+2025-04-06 23:44:26,431 - INFO - 127.0.0.1 - - [06/Apr/2025 23:44:26] "GET /getFiles HTTP/1.1" 200 -
+2025-04-06 23:44:40,532 - INFO - 127.0.0.1 - - [06/Apr/2025 23:44:40] "GET /getFiles HTTP/1.1" 200 -
+2025-04-06 23:44:41,540 - INFO - 127.0.0.1 - - [06/Apr/2025 23:44:41] "GET /getFiles HTTP/1.1" 200 -
+2025-04-06 23:44:43,610 - INFO - 127.0.0.1 - - [06/Apr/2025 23:44:43] "GET /getFiles HTTP/1.1" 200 -
+2025-04-06 23:44:44,001 - INFO - 127.0.0.1 - - [06/Apr/2025 23:44:44] "GET /getFiles HTTP/1.1" 200 -
+2025-04-06 23:44:55,021 - INFO - 127.0.0.1 - - [06/Apr/2025 23:44:55] "GET /getFiles HTTP/1.1" 200 -
+2025-04-06 23:44:57,747 - INFO - 127.0.0.1 - - [06/Apr/2025 23:44:57] "GET /getFiles HTTP/1.1" 200 -
+2025-04-06 23:44:59,782 - INFO - 127.0.0.1 - - [06/Apr/2025 23:44:59] "GET /restoreDatabase?file=../data/SampleData.csv HTTP/1.1" 200 -
+2025-04-06 23:45:01,417 - INFO - 127.0.0.1 - - [06/Apr/2025 23:45:01] "GET /getFiles HTTP/1.1" 200 -
+2025-04-06 23:45:04,052 - INFO - 127.0.0.1 - - [06/Apr/2025 23:45:04] "GET /getFiles HTTP/1.1" 200 -
+2025-04-06 23:47:20,004 - INFO - 127.0.0.1 - - [06/Apr/2025 23:47:20] "GET /restoreDatabase?file=../data/SampleData.csv HTTP/1.1" 200 -
+2025-04-06 23:48:36,119 - DEBUG - Item Self Locking Retaining Ring added
+2025-04-06 23:48:36,120 - DEBUG - Item Self Locking Retaining Ring added
+2025-04-06 23:48:36,121 - DEBUG - Item Flat Washer added
+2025-04-06 23:48:36,121 - DEBUG - Item Flat Washer added
+2025-04-06 23:48:36,122 - DEBUG - Item Lock Washer added
+2025-04-06 23:48:36,122 - DEBUG - Item Lock Washer added
+2025-04-06 23:48:36,123 - DEBUG - Item Flat Washer added
+2025-04-06 23:48:36,123 - DEBUG - Item Flat Washer added
+2025-04-06 23:48:36,124 - DEBUG - Item M5 added
+2025-04-06 23:48:36,124 - DEBUG - Item Tee Nut added
+2025-04-06 23:48:36,124 - DEBUG - Item Tee Nut added
+2025-04-06 23:48:36,125 - DEBUG - Item Washers added
+2025-04-06 23:48:36,125 - DEBUG - Item Tee Nuts added
+2025-04-06 23:48:36,126 - DEBUG - Item Small Nuts added
+2025-04-06 23:48:36,126 - DEBUG - Item Medium Nuts added
+2025-04-06 23:48:36,127 - DEBUG - Item Large Nuts added
+2025-04-06 23:48:36,127 - DEBUG - Item Nylon Inset Nut added
+2025-04-06 23:48:36,128 - DEBUG - Item Nuts added
+2025-04-06 23:48:36,128 - DEBUG - Item Nails added
+2025-04-06 23:48:36,129 - DEBUG - Item Nylon Inset Nut added
+2025-04-06 23:48:36,129 - DEBUG - Item Assorted Screws added
+2025-04-06 23:48:36,129 - DEBUG - Item SHS added
+2025-04-06 23:48:36,130 - DEBUG - Item SHS added
+2025-04-06 23:48:36,130 - DEBUG - Item SHS added
+2025-04-06 23:48:36,131 - DEBUG - Item Coupling Nuts added
+2025-04-06 23:48:36,131 - DEBUG - Item Cap Head Screw & Washer added
+2025-04-06 23:48:36,131 - DEBUG - Item Plastic Screws added
+2025-04-06 23:48:36,132 - DEBUG - Item SHS added
+2025-04-06 23:48:36,132 - DEBUG - Item 10-32 PHS added
+2025-04-06 23:48:36,133 - DEBUG - Item Phil-Pan added
+2025-04-06 23:48:36,133 - DEBUG - Item Phil-Pan added
+2025-04-06 23:48:36,134 - INFO - 127.0.0.1 - - [06/Apr/2025 23:48:36] "GET /restoreDatabase?file=../data/SampleData.csv HTTP/1.1" 200 -
+2025-04-06 23:48:52,279 - INFO - 127.0.0.1 - - [06/Apr/2025 23:48:52] "GET /findAll HTTP/1.1" 200 -
+2025-04-06 23:49:00,571 - INFO - 127.0.0.1 - - [06/Apr/2025 23:49:00] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-06 23:49:00,572 - INFO - 127.0.0.1 - - [06/Apr/2025 23:49:00] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-04-06 23:49:01,305 - INFO - 127.0.0.1 - - [06/Apr/2025 23:49:01] "GET /findAll HTTP/1.1" 200 -
+2025-04-06 23:49:01,886 - INFO - 127.0.0.1 - - [06/Apr/2025 23:49:01] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-04-06 23:49:02,571 - INFO - 127.0.0.1 - - [06/Apr/2025 23:49:02] "GET /getFiles HTTP/1.1" 200 -
+2025-04-06 23:49:03,302 - INFO - 127.0.0.1 - - [06/Apr/2025 23:49:03] "GET /findAll HTTP/1.1" 200 -
+2025-04-06 23:49:04,164 - INFO - 127.0.0.1 - - [06/Apr/2025 23:49:04] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-06 23:49:04,168 - INFO - 127.0.0.1 - - [06/Apr/2025 23:49:04] "GET /findAll HTTP/1.1" 200 -
+2025-04-06 23:49:07,613 - INFO - 127.0.0.1 - - [06/Apr/2025 23:49:07] "GET /findAll HTTP/1.1" 200 -
+2025-04-06 23:49:16,778 - INFO - 127.0.0.1 - - [06/Apr/2025 23:49:16] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 09:10:58,655 - INFO - 127.0.0.1 - - [07/Apr/2025 09:10:58] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 09:32:06,049 - INFO - 127.0.0.1 - - [07/Apr/2025 09:32:06] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 09:45:28,306 - INFO - 127.0.0.1 - - [07/Apr/2025 09:45:28] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 10:49:53,228 - INFO - 127.0.0.1 - - [07/Apr/2025 10:49:53] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 11:30:58,808 - INFO - 127.0.0.1 - - [07/Apr/2025 11:30:58] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 11:31:07,707 - INFO - 127.0.0.1 - - [07/Apr/2025 11:31:07] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 11:32:12,068 - INFO - 127.0.0.1 - - [07/Apr/2025 11:32:12] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:37:16,005 - INFO - 127.0.0.1 - - [07/Apr/2025 12:37:16] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:37:29,502 - INFO - 127.0.0.1 - - [07/Apr/2025 12:37:29] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:37:30,293 - INFO - 127.0.0.1 - - [07/Apr/2025 12:37:30] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 12:37:30,297 - INFO - 127.0.0.1 - - [07/Apr/2025 12:37:30] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 12:37:30,302 - INFO - 127.0.0.1 - - [07/Apr/2025 12:37:30] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:37:31,077 - INFO - 127.0.0.1 - - [07/Apr/2025 12:37:31] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:38:06,648 - INFO - 127.0.0.1 - - [07/Apr/2025 12:38:06] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:38:29,643 - INFO - 127.0.0.1 - - [07/Apr/2025 12:38:29] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:39:06,172 - INFO - 127.0.0.1 - - [07/Apr/2025 12:39:06] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:39:42,890 - INFO - 127.0.0.1 - - [07/Apr/2025 12:39:42] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:40:14,725 - INFO - 127.0.0.1 - - [07/Apr/2025 12:40:14] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:40:20,863 - INFO - 127.0.0.1 - - [07/Apr/2025 12:40:20] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 12:40:20,864 - INFO - 127.0.0.1 - - [07/Apr/2025 12:40:20] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 12:40:20,868 - INFO - 127.0.0.1 - - [07/Apr/2025 12:40:20] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:40:22,836 - INFO - 127.0.0.1 - - [07/Apr/2025 12:40:22] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:40:25,918 - INFO - 127.0.0.1 - - [07/Apr/2025 12:40:25] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 12:40:25,920 - INFO - 127.0.0.1 - - [07/Apr/2025 12:40:25] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 12:40:25,926 - INFO - 127.0.0.1 - - [07/Apr/2025 12:40:25] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:40:39,564 - INFO - 127.0.0.1 - - [07/Apr/2025 12:40:39] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 12:40:39,567 - INFO - 127.0.0.1 - - [07/Apr/2025 12:40:39] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:40:46,232 - INFO - 127.0.0.1 - - [07/Apr/2025 12:40:46] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:40:54,991 - INFO - 127.0.0.1 - - [07/Apr/2025 12:40:54] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:40:58,627 - INFO - 127.0.0.1 - - [07/Apr/2025 12:40:58] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:41:12,015 - INFO - 127.0.0.1 - - [07/Apr/2025 12:41:12] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:41:15,318 - INFO - 127.0.0.1 - - [07/Apr/2025 12:41:15] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:41:31,591 - INFO - 127.0.0.1 - - [07/Apr/2025 12:41:31] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:41:58,898 - INFO - 127.0.0.1 - - [07/Apr/2025 12:41:58] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:42:03,883 - INFO - 127.0.0.1 - - [07/Apr/2025 12:42:03] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 12:42:03,894 - INFO - 127.0.0.1 - - [07/Apr/2025 12:42:03] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 12:42:03,905 - INFO - 127.0.0.1 - - [07/Apr/2025 12:42:03] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:42:04,428 - INFO - 127.0.0.1 - - [07/Apr/2025 12:42:04] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:42:11,720 - INFO - 127.0.0.1 - - [07/Apr/2025 12:42:11] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 12:42:11,722 - INFO - 127.0.0.1 - - [07/Apr/2025 12:42:11] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 12:42:11,725 - INFO - 127.0.0.1 - - [07/Apr/2025 12:42:11] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:42:21,297 - INFO - 127.0.0.1 - - [07/Apr/2025 12:42:21] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:42:24,235 - INFO - 127.0.0.1 - - [07/Apr/2025 12:42:24] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 12:42:24,236 - INFO - 127.0.0.1 - - [07/Apr/2025 12:42:24] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 12:42:24,242 - INFO - 127.0.0.1 - - [07/Apr/2025 12:42:24] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:45:29,455 - INFO - 127.0.0.1 - - [07/Apr/2025 12:45:29] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 12:45:29,458 - INFO - 127.0.0.1 - - [07/Apr/2025 12:45:29] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:45:32,916 - INFO - 127.0.0.1 - - [07/Apr/2025 12:45:32] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:45:33,507 - INFO - 127.0.0.1 - - [07/Apr/2025 12:45:33] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 12:45:33,508 - INFO - 127.0.0.1 - - [07/Apr/2025 12:45:33] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 12:45:33,512 - INFO - 127.0.0.1 - - [07/Apr/2025 12:45:33] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:45:37,684 - INFO - 127.0.0.1 - - [07/Apr/2025 12:45:37] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:45:38,744 - INFO - 127.0.0.1 - - [07/Apr/2025 12:45:38] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 12:45:38,746 - INFO - 127.0.0.1 - - [07/Apr/2025 12:45:38] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 12:45:38,750 - INFO - 127.0.0.1 - - [07/Apr/2025 12:45:38] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:45:39,400 - INFO - 127.0.0.1 - - [07/Apr/2025 12:45:39] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:45:40,866 - INFO - 127.0.0.1 - - [07/Apr/2025 12:45:40] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 12:45:40,871 - INFO - 127.0.0.1 - - [07/Apr/2025 12:45:40] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:45:47,670 - INFO - 127.0.0.1 - - [07/Apr/2025 12:45:47] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 12:45:47,673 - INFO - 127.0.0.1 - - [07/Apr/2025 12:45:47] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:45:48,305 - INFO - 127.0.0.1 - - [07/Apr/2025 12:45:48] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 12:45:48,308 - INFO - 127.0.0.1 - - [07/Apr/2025 12:45:48] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 12:45:48,318 - INFO - 127.0.0.1 - - [07/Apr/2025 12:45:48] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:45:48,898 - INFO - 127.0.0.1 - - [07/Apr/2025 12:45:48] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:45:49,747 - INFO - 127.0.0.1 - - [07/Apr/2025 12:45:49] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 12:45:49,752 - INFO - 127.0.0.1 - - [07/Apr/2025 12:45:49] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:45:51,069 - INFO - 127.0.0.1 - - [07/Apr/2025 12:45:51] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 12:45:51,071 - INFO - 127.0.0.1 - - [07/Apr/2025 12:45:51] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:45:53,166 - INFO - 127.0.0.1 - - [07/Apr/2025 12:45:53] "GET /getFiles HTTP/1.1" 200 -
+2025-04-07 12:46:30,159 - INFO - 127.0.0.1 - - [07/Apr/2025 12:46:30] "GET /getFiles HTTP/1.1" 200 -
+2025-04-07 12:46:32,898 - INFO - 127.0.0.1 - - [07/Apr/2025 12:46:32] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:46:34,251 - INFO - 127.0.0.1 - - [07/Apr/2025 12:46:34] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 12:46:34,254 - INFO - 127.0.0.1 - - [07/Apr/2025 12:46:34] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 12:46:34,259 - INFO - 127.0.0.1 - - [07/Apr/2025 12:46:34] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:46:41,009 - INFO - 127.0.0.1 - - [07/Apr/2025 12:46:41] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:46:42,417 - INFO - 127.0.0.1 - - [07/Apr/2025 12:46:42] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 12:46:42,419 - INFO - 127.0.0.1 - - [07/Apr/2025 12:46:42] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 12:46:42,432 - INFO - 127.0.0.1 - - [07/Apr/2025 12:46:42] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:46:59,322 - INFO - 127.0.0.1 - - [07/Apr/2025 12:46:59] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 12:46:59,324 - INFO - 127.0.0.1 - - [07/Apr/2025 12:46:59] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:49:34,619 - INFO - 127.0.0.1 - - [07/Apr/2025 12:49:34] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:49:42,103 - INFO - 127.0.0.1 - - [07/Apr/2025 12:49:42] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:50:20,682 - INFO - 127.0.0.1 - - [07/Apr/2025 12:50:20] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:50:22,915 - INFO - 127.0.0.1 - - [07/Apr/2025 12:50:22] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:50:24,097 - INFO - 127.0.0.1 - - [07/Apr/2025 12:50:24] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 12:50:24,099 - INFO - 127.0.0.1 - - [07/Apr/2025 12:50:24] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 12:50:24,108 - INFO - 127.0.0.1 - - [07/Apr/2025 12:50:24] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:50:25,798 - INFO - 127.0.0.1 - - [07/Apr/2025 12:50:25] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:51:00,601 - INFO - 127.0.0.1 - - [07/Apr/2025 12:51:00] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:51:05,269 - INFO - 127.0.0.1 - - [07/Apr/2025 12:51:05] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 12:51:05,271 - INFO - 127.0.0.1 - - [07/Apr/2025 12:51:05] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 12:51:05,282 - INFO - 127.0.0.1 - - [07/Apr/2025 12:51:05] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:51:08,648 - INFO - 127.0.0.1 - - [07/Apr/2025 12:51:08] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:51:45,097 - INFO - 127.0.0.1 - - [07/Apr/2025 12:51:45] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:51:45,124 - INFO - 127.0.0.1 - - [07/Apr/2025 12:51:45] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:51:47,902 - INFO - 127.0.0.1 - - [07/Apr/2025 12:51:47] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:51:48,404 - INFO - 127.0.0.1 - - [07/Apr/2025 12:51:48] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 12:51:48,405 - INFO - 127.0.0.1 - - [07/Apr/2025 12:51:48] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 12:51:48,417 - INFO - 127.0.0.1 - - [07/Apr/2025 12:51:48] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:56:16,019 - INFO - 127.0.0.1 - - [07/Apr/2025 12:56:16] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 12:56:16,020 - INFO - 127.0.0.1 - - [07/Apr/2025 12:56:16] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 12:56:16,024 - INFO - 127.0.0.1 - - [07/Apr/2025 12:56:16] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:56:16,025 - INFO - 127.0.0.1 - - [07/Apr/2025 12:56:16] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:58:01,852 - INFO - 127.0.0.1 - - [07/Apr/2025 12:58:01] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:58:01,852 - INFO - 127.0.0.1 - - [07/Apr/2025 12:58:01] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:58:19,568 - INFO - 127.0.0.1 - - [07/Apr/2025 12:58:19] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:59:10,789 - INFO - 127.0.0.1 - - [07/Apr/2025 12:59:10] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:59:20,996 - INFO - 127.0.0.1 - - [07/Apr/2025 12:59:20] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 12:59:38,299 - INFO - 127.0.0.1 - - [07/Apr/2025 12:59:38] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:00:29,210 - INFO - 127.0.0.1 - - [07/Apr/2025 13:00:29] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:00:43,911 - INFO - 127.0.0.1 - - [07/Apr/2025 13:00:43] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:00:58,066 - INFO - 127.0.0.1 - - [07/Apr/2025 13:00:58] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 13:00:58,068 - INFO - 127.0.0.1 - - [07/Apr/2025 13:00:58] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 13:00:58,073 - INFO - 127.0.0.1 - - [07/Apr/2025 13:00:58] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:02:00,384 - INFO - 127.0.0.1 - - [07/Apr/2025 13:02:00] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 13:02:00,387 - INFO - 127.0.0.1 - - [07/Apr/2025 13:02:00] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:02:11,435 - INFO - 127.0.0.1 - - [07/Apr/2025 13:02:11] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:02:14,812 - INFO - 127.0.0.1 - - [07/Apr/2025 13:02:14] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 13:02:14,814 - INFO - 127.0.0.1 - - [07/Apr/2025 13:02:14] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 13:02:14,819 - INFO - 127.0.0.1 - - [07/Apr/2025 13:02:14] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:02:15,773 - INFO - 127.0.0.1 - - [07/Apr/2025 13:02:15] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:02:19,629 - INFO - 127.0.0.1 - - [07/Apr/2025 13:02:19] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 13:02:19,667 - INFO - 127.0.0.1 - - [07/Apr/2025 13:02:19] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:05:20,601 - INFO - 127.0.0.1 - - [07/Apr/2025 13:05:20] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 13:05:20,605 - INFO - 127.0.0.1 - - [07/Apr/2025 13:05:20] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:17:40,636 - INFO - 127.0.0.1 - - [07/Apr/2025 13:17:40] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:17:44,153 - INFO - 127.0.0.1 - - [07/Apr/2025 13:17:44] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:17:44,777 - INFO - 127.0.0.1 - - [07/Apr/2025 13:17:44] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 13:17:44,780 - INFO - 127.0.0.1 - - [07/Apr/2025 13:17:44] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 13:17:44,828 - INFO - 127.0.0.1 - - [07/Apr/2025 13:17:44] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:22:03,293 - INFO - 127.0.0.1 - - [07/Apr/2025 13:22:03] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 13:22:03,298 - INFO - 127.0.0.1 - - [07/Apr/2025 13:22:03] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:22:06,289 - INFO - 127.0.0.1 - - [07/Apr/2025 13:22:06] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:22:07,523 - INFO - 127.0.0.1 - - [07/Apr/2025 13:22:07] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 13:22:07,526 - INFO - 127.0.0.1 - - [07/Apr/2025 13:22:07] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 13:22:07,538 - INFO - 127.0.0.1 - - [07/Apr/2025 13:22:07] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:22:08,174 - INFO - 127.0.0.1 - - [07/Apr/2025 13:22:08] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:24:36,990 - INFO - 127.0.0.1 - - [07/Apr/2025 13:24:36] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:24:54,127 - INFO - 127.0.0.1 - - [07/Apr/2025 13:24:54] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:25:09,462 - INFO - 127.0.0.1 - - [07/Apr/2025 13:25:09] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 13:25:09,466 - INFO - 127.0.0.1 - - [07/Apr/2025 13:25:09] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 13:25:09,472 - INFO - 127.0.0.1 - - [07/Apr/2025 13:25:09] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:25:09,984 - INFO - 127.0.0.1 - - [07/Apr/2025 13:25:09] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:27:23,560 - INFO - 127.0.0.1 - - [07/Apr/2025 13:27:23] "GET /getFiles HTTP/1.1" 200 -
+2025-04-07 13:27:25,580 - INFO - 127.0.0.1 - - [07/Apr/2025 13:27:25] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:27:26,483 - INFO - 127.0.0.1 - - [07/Apr/2025 13:27:26] "GET /getFiles HTTP/1.1" 200 -
+2025-04-07 13:27:32,393 - INFO - 127.0.0.1 - - [07/Apr/2025 13:27:32] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:27:32,837 - INFO - 127.0.0.1 - - [07/Apr/2025 13:27:32] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 13:27:32,840 - INFO - 127.0.0.1 - - [07/Apr/2025 13:27:32] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 13:27:32,843 - INFO - 127.0.0.1 - - [07/Apr/2025 13:27:32] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:27:33,669 - INFO - 127.0.0.1 - - [07/Apr/2025 13:27:33] "GET /getFiles HTTP/1.1" 200 -
+2025-04-07 13:27:43,237 - INFO - 127.0.0.1 - - [07/Apr/2025 13:27:43] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:27:47,910 - INFO - 127.0.0.1 - - [07/Apr/2025 13:27:47] "GET /getFiles HTTP/1.1" 200 -
+2025-04-07 13:27:59,774 - INFO - 127.0.0.1 - - [07/Apr/2025 13:27:59] "GET /getFiles HTTP/1.1" 200 -
+2025-04-07 13:28:03,043 - DEBUG - Item Self Locking Retaining Ring added
+2025-04-07 13:28:03,044 - DEBUG - Item Self Locking Retaining Ring added
+2025-04-07 13:28:03,045 - DEBUG - Item Flat Washer added
+2025-04-07 13:28:03,045 - DEBUG - Item Flat Washer added
+2025-04-07 13:28:03,045 - DEBUG - Item Lock Washer added
+2025-04-07 13:28:03,046 - DEBUG - Item Lock Washer added
+2025-04-07 13:28:03,046 - DEBUG - Item Flat Washer added
+2025-04-07 13:28:03,047 - DEBUG - Item Flat Washer added
+2025-04-07 13:28:03,047 - DEBUG - Item M5 added
+2025-04-07 13:28:03,047 - DEBUG - Item Tee Nut added
+2025-04-07 13:28:03,048 - DEBUG - Item Tee Nut added
+2025-04-07 13:28:03,048 - DEBUG - Item Washers added
+2025-04-07 13:28:03,049 - DEBUG - Item Tee Nuts added
+2025-04-07 13:28:03,049 - DEBUG - Item Small Nuts added
+2025-04-07 13:28:03,049 - DEBUG - Item Medium Nuts added
+2025-04-07 13:28:03,050 - DEBUG - Item Large Nuts added
+2025-04-07 13:28:03,050 - DEBUG - Item Nylon Inset Nut added
+2025-04-07 13:28:03,050 - DEBUG - Item Nuts added
+2025-04-07 13:28:03,051 - DEBUG - Item Nails added
+2025-04-07 13:28:03,051 - DEBUG - Item Nylon Inset Nut added
+2025-04-07 13:28:03,052 - DEBUG - Item Assorted Screws added
+2025-04-07 13:28:03,052 - DEBUG - Item SHS added
+2025-04-07 13:28:03,052 - DEBUG - Item SHS added
+2025-04-07 13:28:03,053 - DEBUG - Item SHS added
+2025-04-07 13:28:03,053 - DEBUG - Item Coupling Nuts added
+2025-04-07 13:28:03,053 - DEBUG - Item Cap Head Screw & Washer added
+2025-04-07 13:28:03,054 - DEBUG - Item Plastic Screws added
+2025-04-07 13:28:03,054 - DEBUG - Item SHS added
+2025-04-07 13:28:03,054 - DEBUG - Item 10-32 PHS added
+2025-04-07 13:28:03,055 - DEBUG - Item Phil-Pan added
+2025-04-07 13:28:03,055 - DEBUG - Item Phil-Pan added
+2025-04-07 13:28:03,055 - INFO - 127.0.0.1 - - [07/Apr/2025 13:28:03] "GET /restoreDatabase?file=../data/SampleData.csv HTTP/1.1" 200 -
+2025-04-07 13:42:18,613 - INFO - 127.0.0.1 - - [07/Apr/2025 13:42:18] "GET /getFiles HTTP/1.1" 200 -
+2025-04-07 13:48:50,224 - INFO - 127.0.0.1 - - [07/Apr/2025 13:48:50] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:48:51,293 - INFO - 127.0.0.1 - - [07/Apr/2025 13:48:51] "GET /getFiles HTTP/1.1" 200 -
+2025-04-07 13:48:52,989 - INFO - 127.0.0.1 - - [07/Apr/2025 13:48:52] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 13:48:52,990 - INFO - 127.0.0.1 - - [07/Apr/2025 13:48:52] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 13:48:52,994 - INFO - 127.0.0.1 - - [07/Apr/2025 13:48:52] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:48:55,703 - INFO - 127.0.0.1 - - [07/Apr/2025 13:48:55] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:48:58,688 - INFO - 127.0.0.1 - - [07/Apr/2025 13:48:58] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 13:48:58,690 - INFO - 127.0.0.1 - - [07/Apr/2025 13:48:58] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 13:48:58,693 - INFO - 127.0.0.1 - - [07/Apr/2025 13:48:58] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:49:31,269 - INFO - 127.0.0.1 - - [07/Apr/2025 13:49:31] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:49:36,104 - INFO - 127.0.0.1 - - [07/Apr/2025 13:49:36] "GET /getFiles HTTP/1.1" 200 -
+2025-04-07 13:49:38,820 - INFO - 127.0.0.1 - - [07/Apr/2025 13:49:38] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:49:40,109 - INFO - 127.0.0.1 - - [07/Apr/2025 13:49:40] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 13:49:40,110 - INFO - 127.0.0.1 - - [07/Apr/2025 13:49:40] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 13:49:40,114 - INFO - 127.0.0.1 - - [07/Apr/2025 13:49:40] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:52:07,231 - INFO - 127.0.0.1 - - [07/Apr/2025 13:52:07] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 13:52:07,234 - INFO - 127.0.0.1 - - [07/Apr/2025 13:52:07] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:52:25,286 - INFO - 127.0.0.1 - - [07/Apr/2025 13:52:25] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:52:32,376 - INFO - 127.0.0.1 - - [07/Apr/2025 13:52:32] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:52:33,960 - INFO - 127.0.0.1 - - [07/Apr/2025 13:52:33] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:52:34,513 - INFO - 127.0.0.1 - - [07/Apr/2025 13:52:34] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 13:52:34,517 - INFO - 127.0.0.1 - - [07/Apr/2025 13:52:34] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 13:52:34,522 - INFO - 127.0.0.1 - - [07/Apr/2025 13:52:34] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:52:35,807 - INFO - 127.0.0.1 - - [07/Apr/2025 13:52:35] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:52:56,862 - INFO - 127.0.0.1 - - [07/Apr/2025 13:52:56] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 13:52:56,863 - INFO - 127.0.0.1 - - [07/Apr/2025 13:52:56] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 13:52:56,867 - INFO - 127.0.0.1 - - [07/Apr/2025 13:52:56] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:53:09,830 - INFO - 127.0.0.1 - - [07/Apr/2025 13:53:09] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:53:14,657 - INFO - 127.0.0.1 - - [07/Apr/2025 13:53:14] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:53:18,075 - INFO - 127.0.0.1 - - [07/Apr/2025 13:53:18] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 13:53:18,076 - INFO - 127.0.0.1 - - [07/Apr/2025 13:53:18] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 13:53:18,079 - INFO - 127.0.0.1 - - [07/Apr/2025 13:53:18] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:54:08,925 - INFO - 127.0.0.1 - - [07/Apr/2025 13:54:08] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:54:53,525 - INFO - 127.0.0.1 - - [07/Apr/2025 13:54:53] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:55:00,793 - INFO - 127.0.0.1 - - [07/Apr/2025 13:55:00] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:55:01,302 - INFO - 127.0.0.1 - - [07/Apr/2025 13:55:01] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 13:55:01,305 - INFO - 127.0.0.1 - - [07/Apr/2025 13:55:01] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 13:55:01,324 - INFO - 127.0.0.1 - - [07/Apr/2025 13:55:01] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 13:55:52,381 - INFO - 127.0.0.1 - - [07/Apr/2025 13:55:52] "GET /getFiles HTTP/1.1" 200 -
+2025-04-07 13:55:59,159 - DEBUG - Item Self Locking Retaining Ring added
+2025-04-07 13:55:59,160 - DEBUG - Item Self Locking Retaining Ring added
+2025-04-07 13:55:59,161 - DEBUG - Item Flat Washer added
+2025-04-07 13:55:59,161 - DEBUG - Item Flat Washer added
+2025-04-07 13:55:59,162 - DEBUG - Item Lock Washer added
+2025-04-07 13:55:59,162 - DEBUG - Item Lock Washer added
+2025-04-07 13:55:59,163 - DEBUG - Item Flat Washer added
+2025-04-07 13:55:59,163 - DEBUG - Item Flat Washer added
+2025-04-07 13:55:59,164 - DEBUG - Item M5 added
+2025-04-07 13:55:59,164 - DEBUG - Item Tee Nut added
+2025-04-07 13:55:59,164 - DEBUG - Item Tee Nut added
+2025-04-07 13:55:59,165 - DEBUG - Item Washers added
+2025-04-07 13:55:59,165 - DEBUG - Item Tee Nuts added
+2025-04-07 13:55:59,165 - DEBUG - Item Small Nuts added
+2025-04-07 13:55:59,166 - DEBUG - Item Medium Nuts added
+2025-04-07 13:55:59,166 - DEBUG - Item Large Nuts added
+2025-04-07 13:55:59,172 - DEBUG - Item Nylon Inset Nut added
+2025-04-07 13:55:59,173 - DEBUG - Item Nuts added
+2025-04-07 13:55:59,175 - DEBUG - Item Nails added
+2025-04-07 13:55:59,176 - DEBUG - Item Nylon Inset Nut added
+2025-04-07 13:55:59,176 - DEBUG - Item Assorted Screws added
+2025-04-07 13:55:59,176 - DEBUG - Item SHS added
+2025-04-07 13:55:59,179 - DEBUG - Item SHS added
+2025-04-07 13:55:59,181 - DEBUG - Item SHS added
+2025-04-07 13:55:59,181 - DEBUG - Item Coupling Nuts added
+2025-04-07 13:55:59,184 - DEBUG - Item Cap Head Screw & Washer added
+2025-04-07 13:55:59,184 - DEBUG - Item Plastic Screws added
+2025-04-07 13:55:59,185 - DEBUG - Item SHS added
+2025-04-07 13:55:59,187 - DEBUG - Item 10-32 PHS added
+2025-04-07 13:55:59,188 - DEBUG - Item Phil-Pan added
+2025-04-07 13:55:59,188 - DEBUG - Item Phil-Pan added
+2025-04-07 13:55:59,189 - INFO - 127.0.0.1 - - [07/Apr/2025 13:55:59] "GET /restoreDatabase?file=../data/SampleData.csv HTTP/1.1" 200 -
+2025-04-07 13:56:01,601 - INFO - 127.0.0.1 - - [07/Apr/2025 13:56:01] "GET /getFiles HTTP/1.1" 200 -
+2025-04-07 13:56:07,052 - INFO - 127.0.0.1 - - [07/Apr/2025 13:56:07] "GET /getFiles HTTP/1.1" 200 -
+2025-04-07 13:56:07,563 - INFO - 127.0.0.1 - - [07/Apr/2025 13:56:07] "GET /getFiles HTTP/1.1" 200 -
+2025-04-07 13:56:07,735 - INFO - 127.0.0.1 - - [07/Apr/2025 13:56:07] "GET /getFiles HTTP/1.1" 200 -
+2025-04-07 13:56:07,910 - INFO - 127.0.0.1 - - [07/Apr/2025 13:56:07] "GET /getFiles HTTP/1.1" 200 -
+2025-04-07 13:56:08,078 - INFO - 127.0.0.1 - - [07/Apr/2025 13:56:08] "GET /getFiles HTTP/1.1" 200 -
+2025-04-07 13:56:08,241 - INFO - 127.0.0.1 - - [07/Apr/2025 13:56:08] "GET /getFiles HTTP/1.1" 200 -
+2025-04-07 13:57:35,733 - INFO - 127.0.0.1 - - [07/Apr/2025 13:57:35] "GET /getFiles HTTP/1.1" 200 -
+2025-04-07 13:57:35,733 - INFO - 127.0.0.1 - - [07/Apr/2025 13:57:35] "GET /getFiles HTTP/1.1" 200 -
+2025-04-07 14:47:20,017 - INFO - 127.0.0.1 - - [07/Apr/2025 14:47:20] "GET /getFiles HTTP/1.1" 200 -
+2025-04-07 15:18:05,935 - INFO - 127.0.0.1 - - [07/Apr/2025 15:18:05] "GET /getFiles HTTP/1.1" 200 -
+2025-04-07 15:27:28,474 - INFO - 127.0.0.1 - - [07/Apr/2025 15:27:28] "GET /getFiles HTTP/1.1" 200 -
+2025-04-07 15:44:41,116 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-07 15:44:41,238 - INFO -  * Restarting with stat
+2025-04-07 15:44:42,588 - INFO - API server started 2025-04-07_15-44-42
+2025-04-07 15:44:42,612 - WARNING -  * Debugger is active!
+2025-04-07 15:44:42,619 - INFO -  * Debugger PIN: 507-368-162
+2025-04-07 15:45:21,850 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-07 15:45:21,997 - INFO -  * Restarting with stat
+2025-04-07 15:45:23,332 - INFO - API server started 2025-04-07_15-45-23
+2025-04-07 15:45:23,352 - WARNING -  * Debugger is active!
+2025-04-07 15:45:23,359 - INFO -  * Debugger PIN: 507-368-162
+2025-04-07 15:47:00,170 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-07 15:47:00,284 - INFO -  * Restarting with stat
+2025-04-07 15:47:01,394 - INFO - API server started 2025-04-07_15-47-01
+2025-04-07 15:47:01,416 - WARNING -  * Debugger is active!
+2025-04-07 15:47:01,422 - INFO -  * Debugger PIN: 507-368-162
+2025-04-07 15:48:11,642 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-07 15:48:11,746 - INFO -  * Restarting with stat
+2025-04-07 15:48:12,964 - INFO - API server started 2025-04-07_15-48-12
+2025-04-07 15:48:12,988 - WARNING -  * Debugger is active!
+2025-04-07 15:48:12,998 - INFO -  * Debugger PIN: 507-368-162
+2025-04-07 15:48:45,244 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-07 15:48:45,351 - INFO -  * Restarting with stat
+2025-04-07 15:48:46,383 - INFO - API server started 2025-04-07_15-48-46
+2025-04-07 15:48:46,402 - WARNING -  * Debugger is active!
+2025-04-07 15:48:46,409 - INFO -  * Debugger PIN: 507-368-162
+2025-04-07 15:49:13,228 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-07 15:49:13,355 - INFO -  * Restarting with stat
+2025-04-07 15:49:14,612 - INFO - API server started 2025-04-07_15-49-14
+2025-04-07 15:49:14,644 - WARNING -  * Debugger is active!
+2025-04-07 15:49:14,660 - INFO -  * Debugger PIN: 507-368-162
+2025-04-07 15:49:20,951 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-07 15:49:21,040 - INFO -  * Restarting with stat
+2025-04-07 15:49:22,301 - INFO - API server started 2025-04-07_15-49-22
+2025-04-07 15:49:22,324 - WARNING -  * Debugger is active!
+2025-04-07 15:49:22,330 - INFO -  * Debugger PIN: 507-368-162
+2025-04-07 15:50:13,906 - INFO - 127.0.0.1 - - [07/Apr/2025 15:50:13] "GET /getFiles HTTP/1.1" 200 -
+2025-04-07 15:53:45,915 - INFO - 127.0.0.1 - - [07/Apr/2025 15:53:45] "GET /getFiles HTTP/1.1" 200 -
+2025-04-07 15:53:45,915 - INFO - 127.0.0.1 - - [07/Apr/2025 15:53:45] "GET /getFiles HTTP/1.1" 200 -
+2025-04-07 15:53:56,281 - INFO - 127.0.0.1 - - [07/Apr/2025 15:53:56] "[35m[1mPOST /uploadFile HTTP/1.1[0m" 500 -
+2025-04-07 15:54:23,849 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-07 15:54:23,964 - INFO -  * Restarting with stat
+2025-04-07 15:54:25,251 - INFO - API server started 2025-04-07_15-54-25
+2025-04-07 15:54:25,275 - WARNING -  * Debugger is active!
+2025-04-07 15:54:25,285 - INFO -  * Debugger PIN: 507-368-162
+2025-04-07 15:54:34,929 - INFO - 127.0.0.1 - - [07/Apr/2025 15:54:34] "GET /getFiles HTTP/1.1" 200 -
+2025-04-07 15:54:47,375 - INFO - 127.0.0.1 - - [07/Apr/2025 15:54:47] "[35m[1mPOST /uploadFile HTTP/1.1[0m" 500 -
+2025-04-07 15:55:59,077 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-07 15:55:59,197 - INFO -  * Restarting with stat
+2025-04-07 15:56:00,312 - INFO - API server started 2025-04-07_15-56-00
+2025-04-07 15:56:00,333 - WARNING -  * Debugger is active!
+2025-04-07 15:56:00,340 - INFO -  * Debugger PIN: 507-368-162
+2025-04-07 15:56:15,273 - INFO - 127.0.0.1 - - [07/Apr/2025 15:56:15] "POST /uploadFile HTTP/1.1" 200 -
+2025-04-07 15:56:21,384 - INFO - 127.0.0.1 - - [07/Apr/2025 15:56:21] "GET /getFiles HTTP/1.1" 200 -
+2025-04-07 15:59:28,741 - INFO - 127.0.0.1 - - [07/Apr/2025 15:59:28] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 15:59:38,081 - INFO - 127.0.0.1 - - [07/Apr/2025 15:59:38] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 15:59:38,082 - INFO - 127.0.0.1 - - [07/Apr/2025 15:59:38] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 15:59:38,087 - INFO - 127.0.0.1 - - [07/Apr/2025 15:59:38] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:00:05,767 - INFO - 127.0.0.1 - - [07/Apr/2025 16:00:05] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:00:05,770 - INFO - 127.0.0.1 - - [07/Apr/2025 16:00:05] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:00:08,508 - INFO - 127.0.0.1 - - [07/Apr/2025 16:00:08] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:00:12,071 - INFO - 127.0.0.1 - - [07/Apr/2025 16:00:12] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 16:00:12,072 - INFO - 127.0.0.1 - - [07/Apr/2025 16:00:12] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:00:12,076 - INFO - 127.0.0.1 - - [07/Apr/2025 16:00:12] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:00:21,614 - INFO - 127.0.0.1 - - [07/Apr/2025 16:00:21] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:00:25,343 - INFO - 127.0.0.1 - - [07/Apr/2025 16:00:25] "GET /getFiles HTTP/1.1" 200 -
+2025-04-07 16:00:29,231 - INFO - 127.0.0.1 - - [07/Apr/2025 16:00:29] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 16:00:29,232 - INFO - 127.0.0.1 - - [07/Apr/2025 16:00:29] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:00:29,240 - INFO - 127.0.0.1 - - [07/Apr/2025 16:00:29] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:00:33,723 - INFO - 127.0.0.1 - - [07/Apr/2025 16:00:33] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:00:33,726 - INFO - 127.0.0.1 - - [07/Apr/2025 16:00:33] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:00:35,928 - INFO - 127.0.0.1 - - [07/Apr/2025 16:00:35] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 16:00:35,932 - INFO - 127.0.0.1 - - [07/Apr/2025 16:00:35] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:00:35,939 - INFO - 127.0.0.1 - - [07/Apr/2025 16:00:35] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:00:38,281 - INFO - 127.0.0.1 - - [07/Apr/2025 16:00:38] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:07:08,928 - INFO - 127.0.0.1 - - [07/Apr/2025 16:07:08] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:07:08,928 - INFO - 127.0.0.1 - - [07/Apr/2025 16:07:08] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:08:12,534 - INFO - 127.0.0.1 - - [07/Apr/2025 16:08:12] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:08:15,712 - INFO - 127.0.0.1 - - [07/Apr/2025 16:08:15] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 16:08:15,714 - INFO - 127.0.0.1 - - [07/Apr/2025 16:08:15] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:08:15,718 - INFO - 127.0.0.1 - - [07/Apr/2025 16:08:15] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:08:43,652 - INFO - 127.0.0.1 - - [07/Apr/2025 16:08:43] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:08:43,656 - INFO - 127.0.0.1 - - [07/Apr/2025 16:08:43] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:09:07,298 - INFO - 127.0.0.1 - - [07/Apr/2025 16:09:07] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:09:11,990 - INFO - 127.0.0.1 - - [07/Apr/2025 16:09:11] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 16:09:11,992 - INFO - 127.0.0.1 - - [07/Apr/2025 16:09:11] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:09:11,999 - INFO - 127.0.0.1 - - [07/Apr/2025 16:09:11] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:09:19,626 - INFO - 127.0.0.1 - - [07/Apr/2025 16:09:19] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:09:19,629 - INFO - 127.0.0.1 - - [07/Apr/2025 16:09:19] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:09:21,548 - INFO - 127.0.0.1 - - [07/Apr/2025 16:09:21] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 16:09:21,550 - INFO - 127.0.0.1 - - [07/Apr/2025 16:09:21] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:09:21,554 - INFO - 127.0.0.1 - - [07/Apr/2025 16:09:21] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:09:33,000 - INFO - 127.0.0.1 - - [07/Apr/2025 16:09:33] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:09:33,003 - INFO - 127.0.0.1 - - [07/Apr/2025 16:09:33] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:09:34,564 - INFO - 127.0.0.1 - - [07/Apr/2025 16:09:34] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 16:09:34,566 - INFO - 127.0.0.1 - - [07/Apr/2025 16:09:34] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:09:34,570 - INFO - 127.0.0.1 - - [07/Apr/2025 16:09:34] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:14:04,678 - INFO - 127.0.0.1 - - [07/Apr/2025 16:14:04] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:14:04,700 - INFO - 127.0.0.1 - - [07/Apr/2025 16:14:04] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:14:07,325 - INFO - 127.0.0.1 - - [07/Apr/2025 16:14:07] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 16:14:07,330 - INFO - 127.0.0.1 - - [07/Apr/2025 16:14:07] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:14:07,335 - INFO - 127.0.0.1 - - [07/Apr/2025 16:14:07] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:14:13,383 - INFO - 127.0.0.1 - - [07/Apr/2025 16:14:13] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:14:13,385 - INFO - 127.0.0.1 - - [07/Apr/2025 16:14:13] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:14:14,943 - INFO - 127.0.0.1 - - [07/Apr/2025 16:14:14] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 16:14:14,945 - INFO - 127.0.0.1 - - [07/Apr/2025 16:14:14] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:14:14,949 - INFO - 127.0.0.1 - - [07/Apr/2025 16:14:14] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:16:51,728 - INFO - 127.0.0.1 - - [07/Apr/2025 16:16:51] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:16:51,737 - INFO - 127.0.0.1 - - [07/Apr/2025 16:16:51] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:16:51,738 - INFO - 127.0.0.1 - - [07/Apr/2025 16:16:51] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:16:51,748 - INFO - 127.0.0.1 - - [07/Apr/2025 16:16:51] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:16:53,623 - INFO - 127.0.0.1 - - [07/Apr/2025 16:16:53] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 16:16:53,624 - INFO - 127.0.0.1 - - [07/Apr/2025 16:16:53] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:16:53,628 - INFO - 127.0.0.1 - - [07/Apr/2025 16:16:53] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:17:03,360 - INFO - 127.0.0.1 - - [07/Apr/2025 16:17:03] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:17:03,362 - INFO - 127.0.0.1 - - [07/Apr/2025 16:17:03] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:17:04,749 - INFO - 127.0.0.1 - - [07/Apr/2025 16:17:04] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 16:17:04,751 - INFO - 127.0.0.1 - - [07/Apr/2025 16:17:04] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:17:04,754 - INFO - 127.0.0.1 - - [07/Apr/2025 16:17:04] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:17:13,384 - INFO - 127.0.0.1 - - [07/Apr/2025 16:17:13] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:17:13,387 - INFO - 127.0.0.1 - - [07/Apr/2025 16:17:13] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:17:15,249 - INFO - 127.0.0.1 - - [07/Apr/2025 16:17:15] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 16:17:15,251 - INFO - 127.0.0.1 - - [07/Apr/2025 16:17:15] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:17:15,255 - INFO - 127.0.0.1 - - [07/Apr/2025 16:17:15] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:18:46,896 - INFO - 127.0.0.1 - - [07/Apr/2025 16:18:46] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:18:46,899 - INFO - 127.0.0.1 - - [07/Apr/2025 16:18:46] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:18:53,638 - INFO - 127.0.0.1 - - [07/Apr/2025 16:18:53] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 16:18:53,640 - INFO - 127.0.0.1 - - [07/Apr/2025 16:18:53] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:18:53,649 - INFO - 127.0.0.1 - - [07/Apr/2025 16:18:53] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:18:55,572 - INFO - 127.0.0.1 - - [07/Apr/2025 16:18:55] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:18:55,575 - INFO - 127.0.0.1 - - [07/Apr/2025 16:18:55] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:22:54,924 - INFO - 127.0.0.1 - - [07/Apr/2025 16:22:54] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:22:54,924 - INFO - 127.0.0.1 - - [07/Apr/2025 16:22:54] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:22:59,101 - INFO - 127.0.0.1 - - [07/Apr/2025 16:22:59] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 16:22:59,104 - INFO - 127.0.0.1 - - [07/Apr/2025 16:22:59] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:22:59,114 - INFO - 127.0.0.1 - - [07/Apr/2025 16:22:59] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:23:02,612 - INFO - 127.0.0.1 - - [07/Apr/2025 16:23:02] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:23:03,588 - INFO - 127.0.0.1 - - [07/Apr/2025 16:23:03] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:23:03,628 - INFO - 127.0.0.1 - - [07/Apr/2025 16:23:03] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:23:12,559 - INFO - 127.0.0.1 - - [07/Apr/2025 16:23:12] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:23:12,563 - INFO - 127.0.0.1 - - [07/Apr/2025 16:23:12] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:23:14,911 - INFO - 127.0.0.1 - - [07/Apr/2025 16:23:14] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 16:23:14,913 - INFO - 127.0.0.1 - - [07/Apr/2025 16:23:14] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:23:14,920 - INFO - 127.0.0.1 - - [07/Apr/2025 16:23:14] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:29:02,884 - INFO - 127.0.0.1 - - [07/Apr/2025 16:29:02] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:29:02,889 - INFO - 127.0.0.1 - - [07/Apr/2025 16:29:02] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:29:48,983 - INFO - 127.0.0.1 - - [07/Apr/2025 16:29:48] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:29:52,784 - INFO - 127.0.0.1 - - [07/Apr/2025 16:29:52] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:30:54,238 - INFO - 127.0.0.1 - - [07/Apr/2025 16:30:54] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:30:57,035 - INFO - 127.0.0.1 - - [07/Apr/2025 16:30:57] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:31:09,063 - INFO - 127.0.0.1 - - [07/Apr/2025 16:31:09] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:31:12,972 - INFO - 127.0.0.1 - - [07/Apr/2025 16:31:12] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 16:31:12,974 - INFO - 127.0.0.1 - - [07/Apr/2025 16:31:12] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:31:12,982 - INFO - 127.0.0.1 - - [07/Apr/2025 16:31:12] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:31:20,143 - INFO - 127.0.0.1 - - [07/Apr/2025 16:31:20] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:31:20,146 - INFO - 127.0.0.1 - - [07/Apr/2025 16:31:20] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:31:20,382 - INFO - 127.0.0.1 - - [07/Apr/2025 16:31:20] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 16:31:20,385 - INFO - 127.0.0.1 - - [07/Apr/2025 16:31:20] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:31:35,726 - INFO - 127.0.0.1 - - [07/Apr/2025 16:31:35] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:31:35,729 - INFO - 127.0.0.1 - - [07/Apr/2025 16:31:35] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:31:39,824 - INFO - 127.0.0.1 - - [07/Apr/2025 16:31:39] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:31:43,976 - INFO - 127.0.0.1 - - [07/Apr/2025 16:31:43] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:32:06,959 - INFO - 127.0.0.1 - - [07/Apr/2025 16:32:06] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:32:24,252 - INFO - 127.0.0.1 - - [07/Apr/2025 16:32:24] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:32:27,068 - INFO - 127.0.0.1 - - [07/Apr/2025 16:32:27] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:32:34,146 - INFO - 127.0.0.1 - - [07/Apr/2025 16:32:34] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:33:12,897 - INFO - 127.0.0.1 - - [07/Apr/2025 16:33:12] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:33:21,709 - INFO - 127.0.0.1 - - [07/Apr/2025 16:33:21] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:33:28,272 - INFO - 127.0.0.1 - - [07/Apr/2025 16:33:28] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:34:28,642 - INFO - 127.0.0.1 - - [07/Apr/2025 16:34:28] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:34:28,642 - INFO - 127.0.0.1 - - [07/Apr/2025 16:34:28] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:34:30,856 - INFO - 127.0.0.1 - - [07/Apr/2025 16:34:30] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:36:02,595 - INFO - 127.0.0.1 - - [07/Apr/2025 16:36:02] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:36:32,706 - INFO - 127.0.0.1 - - [07/Apr/2025 16:36:32] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:36:44,900 - INFO - 127.0.0.1 - - [07/Apr/2025 16:36:44] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:36:47,805 - INFO - 127.0.0.1 - - [07/Apr/2025 16:36:47] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 16:36:47,809 - INFO - 127.0.0.1 - - [07/Apr/2025 16:36:47] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:36:47,820 - INFO - 127.0.0.1 - - [07/Apr/2025 16:36:47] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:36:53,758 - INFO - 127.0.0.1 - - [07/Apr/2025 16:36:53] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:36:53,761 - INFO - 127.0.0.1 - - [07/Apr/2025 16:36:53] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:36:55,329 - INFO - 127.0.0.1 - - [07/Apr/2025 16:36:55] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 16:36:55,333 - INFO - 127.0.0.1 - - [07/Apr/2025 16:36:55] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:36:55,346 - INFO - 127.0.0.1 - - [07/Apr/2025 16:36:55] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:41:14,767 - INFO - 127.0.0.1 - - [07/Apr/2025 16:41:14] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:41:14,768 - INFO - 127.0.0.1 - - [07/Apr/2025 16:41:14] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:41:14,772 - INFO - 127.0.0.1 - - [07/Apr/2025 16:41:14] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:41:14,772 - INFO - 127.0.0.1 - - [07/Apr/2025 16:41:14] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:42:22,138 - INFO - 127.0.0.1 - - [07/Apr/2025 16:42:22] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 16:42:22,140 - INFO - 127.0.0.1 - - [07/Apr/2025 16:42:22] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:42:22,146 - INFO - 127.0.0.1 - - [07/Apr/2025 16:42:22] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:42:25,590 - INFO - 127.0.0.1 - - [07/Apr/2025 16:42:25] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:42:31,121 - INFO - 127.0.0.1 - - [07/Apr/2025 16:42:31] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:42:34,147 - INFO - 127.0.0.1 - - [07/Apr/2025 16:42:34] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:44:19,034 - INFO - 127.0.0.1 - - [07/Apr/2025 16:44:19] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:44:21,590 - INFO - 127.0.0.1 - - [07/Apr/2025 16:44:21] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 16:44:21,594 - INFO - 127.0.0.1 - - [07/Apr/2025 16:44:21] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:44:21,600 - INFO - 127.0.0.1 - - [07/Apr/2025 16:44:21] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:45:07,483 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-07 16:45:07,691 - INFO -  * Restarting with stat
+2025-04-07 16:45:09,081 - INFO - API server started 2025-04-07_16-45-09
+2025-04-07 16:45:09,107 - WARNING -  * Debugger is active!
+2025-04-07 16:45:09,115 - INFO -  * Debugger PIN: 507-368-162
+2025-04-07 16:45:12,229 - INFO - 127.0.0.1 - - [07/Apr/2025 16:45:12] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:45:13,029 - INFO - 127.0.0.1 - - [07/Apr/2025 16:45:13] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 16:45:13,031 - INFO - 127.0.0.1 - - [07/Apr/2025 16:45:13] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:45:13,042 - INFO - 127.0.0.1 - - [07/Apr/2025 16:45:13] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:45:17,489 - INFO - 127.0.0.1 - - [07/Apr/2025 16:45:17] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:45:19,195 - INFO - 127.0.0.1 - - [07/Apr/2025 16:45:19] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 16:45:19,197 - INFO - 127.0.0.1 - - [07/Apr/2025 16:45:19] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:45:19,209 - INFO - 127.0.0.1 - - [07/Apr/2025 16:45:19] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:45:49,392 - INFO - 127.0.0.1 - - [07/Apr/2025 16:45:49] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:45:49,613 - INFO - 127.0.0.1 - - [07/Apr/2025 16:45:49] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 16:45:49,795 - INFO - 127.0.0.1 - - [07/Apr/2025 16:45:49] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:45:54,458 - INFO - 127.0.0.1 - - [07/Apr/2025 16:45:54] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-04-07 16:45:54,460 - INFO - 127.0.0.1 - - [07/Apr/2025 16:45:54] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-04-07 16:45:58,428 - INFO - 127.0.0.1 - - [07/Apr/2025 16:45:58] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 16:45:58,430 - INFO - 127.0.0.1 - - [07/Apr/2025 16:45:58] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:46:07,646 - INFO - 127.0.0.1 - - [07/Apr/2025 16:46:07] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-04-07 16:46:07,648 - INFO - 127.0.0.1 - - [07/Apr/2025 16:46:07] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-04-07 16:47:12,076 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-07 16:47:12,163 - INFO -  * Restarting with stat
+2025-04-07 16:47:13,420 - INFO - API server started 2025-04-07_16-47-13
+2025-04-07 16:47:13,442 - WARNING -  * Debugger is active!
+2025-04-07 16:47:13,450 - INFO -  * Debugger PIN: 507-368-162
+2025-04-07 16:47:15,511 - INFO - 127.0.0.1 - - [07/Apr/2025 16:47:15] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-04-07 16:47:15,515 - INFO - 127.0.0.1 - - [07/Apr/2025 16:47:15] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-04-07 16:47:29,749 - INFO - API server started 2025-04-07_16-47-29
+2025-04-07 16:47:29,779 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2025-04-07 16:47:29,779 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-07 16:47:29,780 - INFO -  * Restarting with stat
+2025-04-07 16:47:30,670 - INFO - API server started 2025-04-07_16-47-30
+2025-04-07 16:47:30,699 - WARNING -  * Debugger is active!
+2025-04-07 16:47:30,710 - INFO -  * Debugger PIN: 507-368-162
+2025-04-07 16:47:46,980 - INFO - 127.0.0.1 - - [07/Apr/2025 16:47:46] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-04-07 16:47:46,984 - INFO - 127.0.0.1 - - [07/Apr/2025 16:47:46] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-04-07 16:48:32,862 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-07 16:48:32,987 - INFO -  * Restarting with stat
+2025-04-07 16:48:34,385 - INFO - API server started 2025-04-07_16-48-34
+2025-04-07 16:48:34,407 - WARNING -  * Debugger is active!
+2025-04-07 16:48:34,414 - INFO -  * Debugger PIN: 507-368-162
+2025-04-07 16:48:34,456 - INFO - 127.0.0.1 - - [07/Apr/2025 16:48:34] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-04-07 16:48:34,465 - INFO - 127.0.0.1 - - [07/Apr/2025 16:48:34] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-04-07 16:49:01,301 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-07 16:49:01,389 - INFO -  * Restarting with stat
+2025-04-07 16:49:02,814 - INFO - API server started 2025-04-07_16-49-02
+2025-04-07 16:49:02,839 - WARNING -  * Debugger is active!
+2025-04-07 16:49:02,848 - INFO -  * Debugger PIN: 507-368-162
+2025-04-07 16:49:03,378 - INFO - 127.0.0.1 - - [07/Apr/2025 16:49:03] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-04-07 16:49:03,381 - INFO - 127.0.0.1 - - [07/Apr/2025 16:49:03] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-04-07 16:49:18,410 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-07 16:49:18,536 - INFO -  * Restarting with stat
+2025-04-07 16:49:19,726 - INFO - API server started 2025-04-07_16-49-19
+2025-04-07 16:49:19,756 - WARNING -  * Debugger is active!
+2025-04-07 16:49:19,766 - INFO -  * Debugger PIN: 507-368-162
+2025-04-07 16:49:20,455 - INFO - 127.0.0.1 - - [07/Apr/2025 16:49:20] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-04-07 16:49:20,457 - INFO - 127.0.0.1 - - [07/Apr/2025 16:49:20] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-04-07 16:49:48,777 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-07 16:49:48,901 - INFO -  * Restarting with stat
+2025-04-07 16:49:50,409 - INFO - API server started 2025-04-07_16-49-50
+2025-04-07 16:49:50,440 - WARNING -  * Debugger is active!
+2025-04-07 16:49:50,467 - INFO -  * Debugger PIN: 507-368-162
+2025-04-07 16:49:50,590 - INFO - 127.0.0.1 - - [07/Apr/2025 16:49:50] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-04-07 16:49:50,594 - INFO - 127.0.0.1 - - [07/Apr/2025 16:49:50] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-04-07 16:49:51,189 - INFO - 127.0.0.1 - - [07/Apr/2025 16:49:51] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-04-07 16:50:00,301 - INFO - 127.0.0.1 - - [07/Apr/2025 16:50:00] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-04-07 16:50:00,305 - INFO - 127.0.0.1 - - [07/Apr/2025 16:50:00] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-04-07 16:50:15,347 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-07 16:50:15,491 - INFO -  * Restarting with stat
+2025-04-07 16:50:16,781 - INFO - API server started 2025-04-07_16-50-16
+2025-04-07 16:50:16,813 - WARNING -  * Debugger is active!
+2025-04-07 16:50:16,843 - INFO -  * Debugger PIN: 507-368-162
+2025-04-07 16:50:17,761 - INFO - 127.0.0.1 - - [07/Apr/2025 16:50:17] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-04-07 16:50:17,764 - INFO - 127.0.0.1 - - [07/Apr/2025 16:50:17] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-04-07 16:51:31,137 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/auth.py', reloading
+2025-04-07 16:51:31,336 - INFO -  * Restarting with stat
+2025-04-07 16:51:32,769 - INFO - API server started 2025-04-07_16-51-32
+2025-04-07 16:51:32,793 - WARNING -  * Debugger is active!
+2025-04-07 16:51:32,801 - INFO -  * Debugger PIN: 507-368-162
+2025-04-07 16:51:32,833 - INFO - 127.0.0.1 - - [07/Apr/2025 16:51:32] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-04-07 16:51:32,836 - INFO - 127.0.0.1 - - [07/Apr/2025 16:51:32] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-04-07 16:51:44,213 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/auth.py', reloading
+2025-04-07 16:51:44,315 - INFO -  * Restarting with stat
+2025-04-07 16:51:45,310 - INFO - API server started 2025-04-07_16-51-45
+2025-04-07 16:51:45,330 - WARNING -  * Debugger is active!
+2025-04-07 16:51:45,338 - INFO -  * Debugger PIN: 507-368-162
+2025-04-07 16:51:46,458 - INFO - 127.0.0.1 - - [07/Apr/2025 16:51:46] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-04-07 16:51:46,462 - INFO - 127.0.0.1 - - [07/Apr/2025 16:51:46] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-04-07 16:52:25,593 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/auth.py', reloading
+2025-04-07 16:52:25,715 - INFO -  * Restarting with stat
+2025-04-07 16:52:26,974 - INFO - API server started 2025-04-07_16-52-26
+2025-04-07 16:52:27,001 - WARNING -  * Debugger is active!
+2025-04-07 16:52:27,011 - INFO -  * Debugger PIN: 507-368-162
+2025-04-07 16:52:27,327 - INFO - 127.0.0.1 - - [07/Apr/2025 16:52:27] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-04-07 16:52:27,333 - INFO - 127.0.0.1 - - [07/Apr/2025 16:52:27] "POST /trylogin HTTP/1.1" 200 -
+2025-04-07 16:52:27,372 - INFO - 127.0.0.1 - - [07/Apr/2025 16:52:27] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 16:52:27,380 - INFO - 127.0.0.1 - - [07/Apr/2025 16:52:27] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:52:39,507 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/auth.py', reloading
+2025-04-07 16:52:39,639 - INFO -  * Restarting with stat
+2025-04-07 16:52:40,685 - INFO - API server started 2025-04-07_16-52-40
+2025-04-07 16:52:40,707 - WARNING -  * Debugger is active!
+2025-04-07 16:52:40,716 - INFO -  * Debugger PIN: 507-368-162
+2025-04-07 16:52:51,081 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/auth.py', reloading
+2025-04-07 16:52:51,196 - INFO -  * Restarting with stat
+2025-04-07 16:52:52,099 - INFO - API server started 2025-04-07_16-52-52
+2025-04-07 16:52:52,122 - WARNING -  * Debugger is active!
+2025-04-07 16:52:52,131 - INFO -  * Debugger PIN: 507-368-162
+2025-04-07 16:52:56,303 - INFO - 127.0.0.1 - - [07/Apr/2025 16:52:56] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-04-07 16:52:56,307 - INFO - 127.0.0.1 - - [07/Apr/2025 16:52:56] "POST /trylogin HTTP/1.1" 200 -
+2025-04-07 16:52:56,331 - INFO - 127.0.0.1 - - [07/Apr/2025 16:52:56] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 16:52:56,340 - INFO - 127.0.0.1 - - [07/Apr/2025 16:52:56] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:53:05,706 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/auth.py', reloading
+2025-04-07 16:53:05,824 - INFO -  * Restarting with stat
+2025-04-07 16:53:07,052 - INFO - API server started 2025-04-07_16-53-07
+2025-04-07 16:53:07,074 - WARNING -  * Debugger is active!
+2025-04-07 16:53:07,081 - INFO -  * Debugger PIN: 507-368-162
+2025-04-07 16:53:13,984 - INFO - 127.0.0.1 - - [07/Apr/2025 16:53:13] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-04-07 16:53:13,990 - INFO - 127.0.0.1 - - [07/Apr/2025 16:53:13] "POST /trylogin HTTP/1.1" 200 -
+2025-04-07 16:53:14,026 - INFO - 127.0.0.1 - - [07/Apr/2025 16:53:14] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 16:53:14,029 - INFO - 127.0.0.1 - - [07/Apr/2025 16:53:14] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:53:26,800 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/auth.py', reloading
+2025-04-07 16:53:26,931 - INFO -  * Restarting with stat
+2025-04-07 16:53:28,135 - INFO - API server started 2025-04-07_16-53-28
+2025-04-07 16:53:28,161 - WARNING -  * Debugger is active!
+2025-04-07 16:53:28,168 - INFO -  * Debugger PIN: 507-368-162
+2025-04-07 16:53:35,157 - INFO - 127.0.0.1 - - [07/Apr/2025 16:53:35] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-04-07 16:53:35,162 - INFO - 127.0.0.1 - - [07/Apr/2025 16:53:35] "POST /trylogin HTTP/1.1" 200 -
+2025-04-07 16:53:35,195 - INFO - 127.0.0.1 - - [07/Apr/2025 16:53:35] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 16:53:35,197 - INFO - 127.0.0.1 - - [07/Apr/2025 16:53:35] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:53:44,887 - INFO - 127.0.0.1 - - [07/Apr/2025 16:53:44] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-04-07 16:53:44,894 - INFO - 127.0.0.1 - - [07/Apr/2025 16:53:44] "POST /trylogin HTTP/1.1" 200 -
+2025-04-07 16:53:44,947 - INFO - 127.0.0.1 - - [07/Apr/2025 16:53:44] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 16:53:44,958 - INFO - 127.0.0.1 - - [07/Apr/2025 16:53:44] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:54:23,763 - INFO - 127.0.0.1 - - [07/Apr/2025 16:54:23] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-04-07 16:54:23,766 - INFO - 127.0.0.1 - - [07/Apr/2025 16:54:23] "POST /trylogin HTTP/1.1" 200 -
+2025-04-07 16:54:23,799 - INFO - 127.0.0.1 - - [07/Apr/2025 16:54:23] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 16:54:23,814 - INFO - 127.0.0.1 - - [07/Apr/2025 16:54:23] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:55:20,078 - INFO - 127.0.0.1 - - [07/Apr/2025 16:55:20] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-04-07 16:55:20,082 - INFO - 127.0.0.1 - - [07/Apr/2025 16:55:20] "[35m[1mPOST /trylogin HTTP/1.1[0m" 500 -
+2025-04-07 16:55:37,434 - INFO - 127.0.0.1 - - [07/Apr/2025 16:55:37] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-04-07 16:55:37,439 - INFO - 127.0.0.1 - - [07/Apr/2025 16:55:37] "POST /trylogin HTTP/1.1" 200 -
+2025-04-07 16:55:37,475 - INFO - 127.0.0.1 - - [07/Apr/2025 16:55:37] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 16:55:37,482 - INFO - 127.0.0.1 - - [07/Apr/2025 16:55:37] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:56:59,791 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/auth.py', reloading
+2025-04-07 16:56:59,889 - INFO -  * Restarting with stat
+2025-04-07 16:57:01,019 - INFO - API server started 2025-04-07_16-57-01
+2025-04-07 16:57:01,044 - WARNING -  * Debugger is active!
+2025-04-07 16:57:01,051 - INFO -  * Debugger PIN: 507-368-162
+2025-04-07 16:57:07,469 - INFO - 127.0.0.1 - - [07/Apr/2025 16:57:07] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-04-07 16:57:07,476 - INFO - 127.0.0.1 - - [07/Apr/2025 16:57:07] "POST /trylogin HTTP/1.1" 200 -
+2025-04-07 16:57:07,524 - INFO - 127.0.0.1 - - [07/Apr/2025 16:57:07] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 16:57:07,528 - INFO - 127.0.0.1 - - [07/Apr/2025 16:57:07] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:57:32,065 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/auth.py', reloading
+2025-04-07 16:57:32,156 - INFO -  * Restarting with stat
+2025-04-07 16:57:33,512 - INFO - API server started 2025-04-07_16-57-33
+2025-04-07 16:57:33,544 - WARNING -  * Debugger is active!
+2025-04-07 16:57:33,561 - INFO -  * Debugger PIN: 507-368-162
+2025-04-07 16:58:06,645 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/auth.py', reloading
+2025-04-07 16:58:06,738 - INFO -  * Restarting with stat
+2025-04-07 16:58:07,816 - INFO - API server started 2025-04-07_16-58-07
+2025-04-07 16:58:07,837 - WARNING -  * Debugger is active!
+2025-04-07 16:58:07,843 - INFO -  * Debugger PIN: 507-368-162
+2025-04-07 16:58:12,654 - INFO - 127.0.0.1 - - [07/Apr/2025 16:58:12] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-04-07 16:58:12,660 - INFO - 127.0.0.1 - - [07/Apr/2025 16:58:12] "POST /trylogin HTTP/1.1" 200 -
+2025-04-07 16:58:12,687 - INFO - 127.0.0.1 - - [07/Apr/2025 16:58:12] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 16:58:12,694 - INFO - 127.0.0.1 - - [07/Apr/2025 16:58:12] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:58:41,874 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/auth.py', reloading
+2025-04-07 16:58:41,997 - INFO -  * Restarting with stat
+2025-04-07 16:58:43,084 - INFO - API server started 2025-04-07_16-58-43
+2025-04-07 16:58:43,108 - WARNING -  * Debugger is active!
+2025-04-07 16:58:43,115 - INFO -  * Debugger PIN: 507-368-162
+2025-04-07 16:58:46,975 - INFO - 127.0.0.1 - - [07/Apr/2025 16:58:46] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-04-07 16:58:46,979 - INFO - 127.0.0.1 - - [07/Apr/2025 16:58:46] "POST /trylogin HTTP/1.1" 200 -
+2025-04-07 16:58:47,009 - INFO - 127.0.0.1 - - [07/Apr/2025 16:58:47] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 16:58:47,013 - INFO - 127.0.0.1 - - [07/Apr/2025 16:58:47] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 16:58:47,019 - INFO - 127.0.0.1 - - [07/Apr/2025 16:58:47] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:58:53,156 - INFO - 127.0.0.1 - - [07/Apr/2025 16:58:53] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:58:54,938 - INFO - 127.0.0.1 - - [07/Apr/2025 16:58:54] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 16:58:54,941 - INFO - 127.0.0.1 - - [07/Apr/2025 16:58:54] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:59:01,003 - INFO - 127.0.0.1 - - [07/Apr/2025 16:59:01] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-04-07 16:59:01,009 - INFO - 127.0.0.1 - - [07/Apr/2025 16:59:01] "POST /trylogin HTTP/1.1" 200 -
+2025-04-07 16:59:01,039 - INFO - 127.0.0.1 - - [07/Apr/2025 16:59:01] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 16:59:01,043 - INFO - 127.0.0.1 - - [07/Apr/2025 16:59:01] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 16:59:01,051 - INFO - 127.0.0.1 - - [07/Apr/2025 16:59:01] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:59:05,205 - INFO - 127.0.0.1 - - [07/Apr/2025 16:59:05] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:59:35,522 - INFO - 127.0.0.1 - - [07/Apr/2025 16:59:35] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 16:59:35,524 - INFO - 127.0.0.1 - - [07/Apr/2025 16:59:35] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 16:59:40,931 - INFO - 127.0.0.1 - - [07/Apr/2025 16:59:40] "OPTIONS /trylogin HTTP/1.1" 200 -
+2025-04-07 16:59:40,935 - INFO - 127.0.0.1 - - [07/Apr/2025 16:59:40] "POST /trylogin HTTP/1.1" 200 -
+2025-04-07 16:59:40,964 - INFO - 127.0.0.1 - - [07/Apr/2025 16:59:40] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 16:59:40,972 - INFO - 127.0.0.1 - - [07/Apr/2025 16:59:40] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 16:59:40,980 - INFO - 127.0.0.1 - - [07/Apr/2025 16:59:40] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:59:43,652 - INFO - 127.0.0.1 - - [07/Apr/2025 16:59:43] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:59:46,102 - INFO - 127.0.0.1 - - [07/Apr/2025 16:59:46] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 16:59:46,104 - INFO - 127.0.0.1 - - [07/Apr/2025 16:59:46] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 16:59:46,107 - INFO - 127.0.0.1 - - [07/Apr/2025 16:59:46] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 16:59:57,057 - INFO - 127.0.0.1 - - [07/Apr/2025 16:59:57] "GET /getFiles HTTP/1.1" 200 -
+2025-04-07 16:59:58,535 - INFO - 127.0.0.1 - - [07/Apr/2025 16:59:58] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 17:00:01,397 - INFO - 127.0.0.1 - - [07/Apr/2025 17:00:01] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 17:00:01,399 - INFO - 127.0.0.1 - - [07/Apr/2025 17:00:01] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 17:00:01,403 - INFO - 127.0.0.1 - - [07/Apr/2025 17:00:01] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 17:00:04,824 - INFO - 127.0.0.1 - - [07/Apr/2025 17:00:04] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 17:00:07,180 - INFO - 127.0.0.1 - - [07/Apr/2025 17:00:07] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 17:00:07,182 - INFO - 127.0.0.1 - - [07/Apr/2025 17:00:07] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 17:00:07,186 - INFO - 127.0.0.1 - - [07/Apr/2025 17:00:07] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 17:00:16,070 - INFO - 127.0.0.1 - - [07/Apr/2025 17:00:16] "GET /getFiles HTTP/1.1" 200 -
+2025-04-07 17:00:29,547 - DEBUG - Item Self Locking Retaining Ring added
+2025-04-07 17:00:29,552 - DEBUG - Item Self Locking Retaining Ring added
+2025-04-07 17:00:29,553 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:29,554 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:29,554 - DEBUG - Item Lock Washer added
+2025-04-07 17:00:29,554 - DEBUG - Item Lock Washer added
+2025-04-07 17:00:29,555 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:29,555 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:29,556 - DEBUG - Item M5 added
+2025-04-07 17:00:29,556 - DEBUG - Item Tee Nut added
+2025-04-07 17:00:29,556 - DEBUG - Item Tee Nut added
+2025-04-07 17:00:29,557 - DEBUG - Item Washers added
+2025-04-07 17:00:29,562 - DEBUG - Item Tee Nuts added
+2025-04-07 17:00:29,562 - DEBUG - Item Small Nuts added
+2025-04-07 17:00:29,562 - DEBUG - Item Medium Nuts added
+2025-04-07 17:00:29,563 - DEBUG - Item Large Nuts added
+2025-04-07 17:00:29,563 - DEBUG - Item Nylon Inset Nut added
+2025-04-07 17:00:29,564 - DEBUG - Item Nuts added
+2025-04-07 17:00:29,579 - DEBUG - Item Nails added
+2025-04-07 17:00:29,579 - DEBUG - Item Nylon Inset Nut added
+2025-04-07 17:00:29,581 - DEBUG - Item Assorted Screws added
+2025-04-07 17:00:29,581 - DEBUG - Item SHS added
+2025-04-07 17:00:29,582 - DEBUG - Item SHS added
+2025-04-07 17:00:29,583 - DEBUG - Item SHS added
+2025-04-07 17:00:29,583 - DEBUG - Item Coupling Nuts added
+2025-04-07 17:00:29,583 - DEBUG - Item Cap Head Screw & Washer added
+2025-04-07 17:00:29,584 - DEBUG - Item Plastic Screws added
+2025-04-07 17:00:29,585 - DEBUG - Item SHS added
+2025-04-07 17:00:29,588 - DEBUG - Item 10-32 PHS added
+2025-04-07 17:00:29,588 - DEBUG - Item Phil-Pan added
+2025-04-07 17:00:29,588 - DEBUG - Item Phil-Pan added
+2025-04-07 17:00:29,589 - INFO - 127.0.0.1 - - [07/Apr/2025 17:00:29] "GET /restoreDatabase?file=../data/SampleData.csv HTTP/1.1" 200 -
+2025-04-07 17:00:31,918 - DEBUG - Item Self Locking Retaining Ring added
+2025-04-07 17:00:31,919 - DEBUG - Item Self Locking Retaining Ring added
+2025-04-07 17:00:31,919 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:31,920 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:31,921 - DEBUG - Item Lock Washer added
+2025-04-07 17:00:31,921 - DEBUG - Item Lock Washer added
+2025-04-07 17:00:31,922 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:31,922 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:31,923 - DEBUG - Item M5 added
+2025-04-07 17:00:31,923 - DEBUG - Item Tee Nut added
+2025-04-07 17:00:31,923 - DEBUG - Item Tee Nut added
+2025-04-07 17:00:31,924 - DEBUG - Item Washers added
+2025-04-07 17:00:31,924 - DEBUG - Item Tee Nuts added
+2025-04-07 17:00:31,924 - DEBUG - Item Small Nuts added
+2025-04-07 17:00:31,925 - DEBUG - Item Medium Nuts added
+2025-04-07 17:00:31,925 - DEBUG - Item Large Nuts added
+2025-04-07 17:00:31,925 - DEBUG - Item Nylon Inset Nut added
+2025-04-07 17:00:31,926 - DEBUG - Item Nuts added
+2025-04-07 17:00:31,926 - DEBUG - Item Nails added
+2025-04-07 17:00:31,927 - DEBUG - Item Nylon Inset Nut added
+2025-04-07 17:00:31,927 - DEBUG - Item Assorted Screws added
+2025-04-07 17:00:31,927 - DEBUG - Item SHS added
+2025-04-07 17:00:31,928 - DEBUG - Item SHS added
+2025-04-07 17:00:31,928 - DEBUG - Item SHS added
+2025-04-07 17:00:31,928 - DEBUG - Item Coupling Nuts added
+2025-04-07 17:00:31,929 - DEBUG - Item Cap Head Screw & Washer added
+2025-04-07 17:00:31,929 - DEBUG - Item Plastic Screws added
+2025-04-07 17:00:31,929 - DEBUG - Item SHS added
+2025-04-07 17:00:31,930 - DEBUG - Item 10-32 PHS added
+2025-04-07 17:00:31,930 - DEBUG - Item Phil-Pan added
+2025-04-07 17:00:31,931 - DEBUG - Item Phil-Pan added
+2025-04-07 17:00:31,931 - INFO - 127.0.0.1 - - [07/Apr/2025 17:00:31] "GET /restoreDatabase?file=../data/SampleData.csv HTTP/1.1" 200 -
+2025-04-07 17:00:32,283 - DEBUG - Item Self Locking Retaining Ring added
+2025-04-07 17:00:32,284 - DEBUG - Item Self Locking Retaining Ring added
+2025-04-07 17:00:32,285 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:32,285 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:32,286 - DEBUG - Item Lock Washer added
+2025-04-07 17:00:32,286 - DEBUG - Item Lock Washer added
+2025-04-07 17:00:32,287 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:32,287 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:32,288 - DEBUG - Item M5 added
+2025-04-07 17:00:32,288 - DEBUG - Item Tee Nut added
+2025-04-07 17:00:32,289 - DEBUG - Item Tee Nut added
+2025-04-07 17:00:32,289 - DEBUG - Item Washers added
+2025-04-07 17:00:32,289 - DEBUG - Item Tee Nuts added
+2025-04-07 17:00:32,290 - DEBUG - Item Small Nuts added
+2025-04-07 17:00:32,290 - DEBUG - Item Medium Nuts added
+2025-04-07 17:00:32,290 - DEBUG - Item Large Nuts added
+2025-04-07 17:00:32,291 - DEBUG - Item Nylon Inset Nut added
+2025-04-07 17:00:32,291 - DEBUG - Item Nuts added
+2025-04-07 17:00:32,291 - DEBUG - Item Nails added
+2025-04-07 17:00:32,292 - DEBUG - Item Nylon Inset Nut added
+2025-04-07 17:00:32,292 - DEBUG - Item Assorted Screws added
+2025-04-07 17:00:32,293 - DEBUG - Item SHS added
+2025-04-07 17:00:32,293 - DEBUG - Item SHS added
+2025-04-07 17:00:32,293 - DEBUG - Item SHS added
+2025-04-07 17:00:32,294 - DEBUG - Item Coupling Nuts added
+2025-04-07 17:00:32,294 - DEBUG - Item Cap Head Screw & Washer added
+2025-04-07 17:00:32,294 - DEBUG - Item Plastic Screws added
+2025-04-07 17:00:32,295 - DEBUG - Item SHS added
+2025-04-07 17:00:32,295 - DEBUG - Item 10-32 PHS added
+2025-04-07 17:00:32,295 - DEBUG - Item Phil-Pan added
+2025-04-07 17:00:32,296 - DEBUG - Item Phil-Pan added
+2025-04-07 17:00:32,296 - INFO - 127.0.0.1 - - [07/Apr/2025 17:00:32] "GET /restoreDatabase?file=../data/SampleData.csv HTTP/1.1" 200 -
+2025-04-07 17:00:32,668 - DEBUG - Item Self Locking Retaining Ring added
+2025-04-07 17:00:32,669 - DEBUG - Item Self Locking Retaining Ring added
+2025-04-07 17:00:32,670 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:32,671 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:32,671 - DEBUG - Item Lock Washer added
+2025-04-07 17:00:32,672 - DEBUG - Item Lock Washer added
+2025-04-07 17:00:32,673 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:32,674 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:32,674 - DEBUG - Item M5 added
+2025-04-07 17:00:32,675 - DEBUG - Item Tee Nut added
+2025-04-07 17:00:32,676 - DEBUG - Item Tee Nut added
+2025-04-07 17:00:32,676 - DEBUG - Item Washers added
+2025-04-07 17:00:32,677 - DEBUG - Item Tee Nuts added
+2025-04-07 17:00:32,678 - DEBUG - Item Small Nuts added
+2025-04-07 17:00:32,679 - DEBUG - Item Medium Nuts added
+2025-04-07 17:00:32,679 - DEBUG - Item Large Nuts added
+2025-04-07 17:00:32,680 - DEBUG - Item Nylon Inset Nut added
+2025-04-07 17:00:32,681 - DEBUG - Item Nuts added
+2025-04-07 17:00:32,681 - DEBUG - Item Nails added
+2025-04-07 17:00:32,682 - DEBUG - Item Nylon Inset Nut added
+2025-04-07 17:00:32,683 - DEBUG - Item Assorted Screws added
+2025-04-07 17:00:32,684 - DEBUG - Item SHS added
+2025-04-07 17:00:32,684 - DEBUG - Item SHS added
+2025-04-07 17:00:32,685 - DEBUG - Item SHS added
+2025-04-07 17:00:32,686 - DEBUG - Item Coupling Nuts added
+2025-04-07 17:00:32,687 - DEBUG - Item Cap Head Screw & Washer added
+2025-04-07 17:00:32,687 - DEBUG - Item Plastic Screws added
+2025-04-07 17:00:32,688 - DEBUG - Item SHS added
+2025-04-07 17:00:32,689 - DEBUG - Item 10-32 PHS added
+2025-04-07 17:00:32,689 - DEBUG - Item Phil-Pan added
+2025-04-07 17:00:32,690 - DEBUG - Item Phil-Pan added
+2025-04-07 17:00:32,691 - INFO - 127.0.0.1 - - [07/Apr/2025 17:00:32] "GET /restoreDatabase?file=../data/SampleData.csv HTTP/1.1" 200 -
+2025-04-07 17:00:32,857 - DEBUG - Item Self Locking Retaining Ring added
+2025-04-07 17:00:32,858 - DEBUG - Item Self Locking Retaining Ring added
+2025-04-07 17:00:32,858 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:32,859 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:32,859 - DEBUG - Item Lock Washer added
+2025-04-07 17:00:32,860 - DEBUG - Item Lock Washer added
+2025-04-07 17:00:32,860 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:32,861 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:32,861 - DEBUG - Item M5 added
+2025-04-07 17:00:32,861 - DEBUG - Item Tee Nut added
+2025-04-07 17:00:32,862 - DEBUG - Item Tee Nut added
+2025-04-07 17:00:32,862 - DEBUG - Item Washers added
+2025-04-07 17:00:32,863 - DEBUG - Item Tee Nuts added
+2025-04-07 17:00:32,863 - DEBUG - Item Small Nuts added
+2025-04-07 17:00:32,864 - DEBUG - Item Medium Nuts added
+2025-04-07 17:00:32,864 - DEBUG - Item Large Nuts added
+2025-04-07 17:00:32,865 - DEBUG - Item Nylon Inset Nut added
+2025-04-07 17:00:32,865 - DEBUG - Item Nuts added
+2025-04-07 17:00:32,866 - DEBUG - Item Nails added
+2025-04-07 17:00:32,866 - DEBUG - Item Nylon Inset Nut added
+2025-04-07 17:00:32,866 - DEBUG - Item Assorted Screws added
+2025-04-07 17:00:32,867 - DEBUG - Item SHS added
+2025-04-07 17:00:32,867 - DEBUG - Item SHS added
+2025-04-07 17:00:32,868 - DEBUG - Item SHS added
+2025-04-07 17:00:32,868 - DEBUG - Item Coupling Nuts added
+2025-04-07 17:00:32,868 - DEBUG - Item Cap Head Screw & Washer added
+2025-04-07 17:00:32,869 - DEBUG - Item Plastic Screws added
+2025-04-07 17:00:32,869 - DEBUG - Item SHS added
+2025-04-07 17:00:32,869 - DEBUG - Item 10-32 PHS added
+2025-04-07 17:00:32,870 - DEBUG - Item Phil-Pan added
+2025-04-07 17:00:32,870 - DEBUG - Item Phil-Pan added
+2025-04-07 17:00:32,871 - INFO - 127.0.0.1 - - [07/Apr/2025 17:00:32] "GET /restoreDatabase?file=../data/SampleData.csv HTTP/1.1" 200 -
+2025-04-07 17:00:33,150 - DEBUG - Item Self Locking Retaining Ring added
+2025-04-07 17:00:33,151 - DEBUG - Item Self Locking Retaining Ring added
+2025-04-07 17:00:33,152 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:33,152 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:33,153 - DEBUG - Item Lock Washer added
+2025-04-07 17:00:33,153 - DEBUG - Item Lock Washer added
+2025-04-07 17:00:33,154 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:33,154 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:33,155 - DEBUG - Item M5 added
+2025-04-07 17:00:33,155 - DEBUG - Item Tee Nut added
+2025-04-07 17:00:33,156 - DEBUG - Item Tee Nut added
+2025-04-07 17:00:33,156 - DEBUG - Item Washers added
+2025-04-07 17:00:33,157 - DEBUG - Item Tee Nuts added
+2025-04-07 17:00:33,157 - DEBUG - Item Small Nuts added
+2025-04-07 17:00:33,157 - DEBUG - Item Medium Nuts added
+2025-04-07 17:00:33,158 - DEBUG - Item Large Nuts added
+2025-04-07 17:00:33,158 - DEBUG - Item Nylon Inset Nut added
+2025-04-07 17:00:33,158 - DEBUG - Item Nuts added
+2025-04-07 17:00:33,159 - DEBUG - Item Nails added
+2025-04-07 17:00:33,159 - DEBUG - Item Nylon Inset Nut added
+2025-04-07 17:00:33,160 - DEBUG - Item Assorted Screws added
+2025-04-07 17:00:33,160 - DEBUG - Item SHS added
+2025-04-07 17:00:33,161 - DEBUG - Item SHS added
+2025-04-07 17:00:33,161 - DEBUG - Item SHS added
+2025-04-07 17:00:33,161 - DEBUG - Item Coupling Nuts added
+2025-04-07 17:00:33,162 - DEBUG - Item Cap Head Screw & Washer added
+2025-04-07 17:00:33,162 - DEBUG - Item Plastic Screws added
+2025-04-07 17:00:33,162 - DEBUG - Item SHS added
+2025-04-07 17:00:33,163 - DEBUG - Item 10-32 PHS added
+2025-04-07 17:00:33,163 - DEBUG - Item Phil-Pan added
+2025-04-07 17:00:33,163 - DEBUG - Item Phil-Pan added
+2025-04-07 17:00:33,164 - INFO - 127.0.0.1 - - [07/Apr/2025 17:00:33] "GET /restoreDatabase?file=../data/SampleData.csv HTTP/1.1" 200 -
+2025-04-07 17:00:33,423 - DEBUG - Item Self Locking Retaining Ring added
+2025-04-07 17:00:33,425 - DEBUG - Item Self Locking Retaining Ring added
+2025-04-07 17:00:33,426 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:33,427 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:33,428 - DEBUG - Item Lock Washer added
+2025-04-07 17:00:33,428 - DEBUG - Item Lock Washer added
+2025-04-07 17:00:33,429 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:33,430 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:33,430 - DEBUG - Item M5 added
+2025-04-07 17:00:33,431 - DEBUG - Item Tee Nut added
+2025-04-07 17:00:33,432 - DEBUG - Item Tee Nut added
+2025-04-07 17:00:33,433 - DEBUG - Item Washers added
+2025-04-07 17:00:33,433 - DEBUG - Item Tee Nuts added
+2025-04-07 17:00:33,433 - DEBUG - Item Small Nuts added
+2025-04-07 17:00:33,435 - DEBUG - Item Medium Nuts added
+2025-04-07 17:00:33,436 - DEBUG - Item Large Nuts added
+2025-04-07 17:00:33,437 - DEBUG - Item Nylon Inset Nut added
+2025-04-07 17:00:33,438 - DEBUG - Item Nuts added
+2025-04-07 17:00:33,439 - DEBUG - Item Nails added
+2025-04-07 17:00:33,442 - DEBUG - Item Nylon Inset Nut added
+2025-04-07 17:00:33,442 - DEBUG - Item Assorted Screws added
+2025-04-07 17:00:33,443 - DEBUG - Item SHS added
+2025-04-07 17:00:33,444 - DEBUG - Item SHS added
+2025-04-07 17:00:33,444 - DEBUG - Item SHS added
+2025-04-07 17:00:33,445 - DEBUG - Item Coupling Nuts added
+2025-04-07 17:00:33,446 - DEBUG - Item Cap Head Screw & Washer added
+2025-04-07 17:00:33,446 - DEBUG - Item Plastic Screws added
+2025-04-07 17:00:33,447 - DEBUG - Item SHS added
+2025-04-07 17:00:33,447 - DEBUG - Item 10-32 PHS added
+2025-04-07 17:00:33,448 - DEBUG - Item Phil-Pan added
+2025-04-07 17:00:33,448 - DEBUG - Item Phil-Pan added
+2025-04-07 17:00:33,449 - INFO - 127.0.0.1 - - [07/Apr/2025 17:00:33] "GET /restoreDatabase?file=../data/SampleData.csv HTTP/1.1" 200 -
+2025-04-07 17:00:33,615 - DEBUG - Item Self Locking Retaining Ring added
+2025-04-07 17:00:33,616 - DEBUG - Item Self Locking Retaining Ring added
+2025-04-07 17:00:33,617 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:33,618 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:33,619 - DEBUG - Item Lock Washer added
+2025-04-07 17:00:33,619 - DEBUG - Item Lock Washer added
+2025-04-07 17:00:33,620 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:33,621 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:33,622 - DEBUG - Item M5 added
+2025-04-07 17:00:33,622 - DEBUG - Item Tee Nut added
+2025-04-07 17:00:33,623 - DEBUG - Item Tee Nut added
+2025-04-07 17:00:33,623 - DEBUG - Item Washers added
+2025-04-07 17:00:33,623 - DEBUG - Item Tee Nuts added
+2025-04-07 17:00:33,624 - DEBUG - Item Small Nuts added
+2025-04-07 17:00:33,624 - DEBUG - Item Medium Nuts added
+2025-04-07 17:00:33,625 - DEBUG - Item Large Nuts added
+2025-04-07 17:00:33,625 - DEBUG - Item Nylon Inset Nut added
+2025-04-07 17:00:33,625 - DEBUG - Item Nuts added
+2025-04-07 17:00:33,626 - DEBUG - Item Nails added
+2025-04-07 17:00:33,627 - DEBUG - Item Nylon Inset Nut added
+2025-04-07 17:00:33,627 - DEBUG - Item Assorted Screws added
+2025-04-07 17:00:33,628 - DEBUG - Item SHS added
+2025-04-07 17:00:33,628 - DEBUG - Item SHS added
+2025-04-07 17:00:33,629 - DEBUG - Item SHS added
+2025-04-07 17:00:33,629 - DEBUG - Item Coupling Nuts added
+2025-04-07 17:00:33,630 - DEBUG - Item Cap Head Screw & Washer added
+2025-04-07 17:00:33,630 - DEBUG - Item Plastic Screws added
+2025-04-07 17:00:33,631 - DEBUG - Item SHS added
+2025-04-07 17:00:33,631 - DEBUG - Item 10-32 PHS added
+2025-04-07 17:00:33,631 - DEBUG - Item Phil-Pan added
+2025-04-07 17:00:33,632 - DEBUG - Item Phil-Pan added
+2025-04-07 17:00:33,632 - INFO - 127.0.0.1 - - [07/Apr/2025 17:00:33] "GET /restoreDatabase?file=../data/SampleData.csv HTTP/1.1" 200 -
+2025-04-07 17:00:38,943 - DEBUG - Item Self Locking Retaining Ring added
+2025-04-07 17:00:38,944 - DEBUG - Item Self Locking Retaining Ring added
+2025-04-07 17:00:38,945 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:38,945 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:38,946 - DEBUG - Item Lock Washer added
+2025-04-07 17:00:38,946 - DEBUG - Item Lock Washer added
+2025-04-07 17:00:38,947 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:38,947 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:38,947 - DEBUG - Item M5 added
+2025-04-07 17:00:38,948 - DEBUG - Item Tee Nut added
+2025-04-07 17:00:38,948 - DEBUG - Item Tee Nut added
+2025-04-07 17:00:38,948 - DEBUG - Item Washers added
+2025-04-07 17:00:38,949 - DEBUG - Item Tee Nuts added
+2025-04-07 17:00:38,949 - DEBUG - Item Small Nuts added
+2025-04-07 17:00:38,950 - DEBUG - Item Medium Nuts added
+2025-04-07 17:00:38,950 - DEBUG - Item Large Nuts added
+2025-04-07 17:00:38,951 - DEBUG - Item Nylon Inset Nut added
+2025-04-07 17:00:38,952 - DEBUG - Item Nuts added
+2025-04-07 17:00:38,952 - DEBUG - Item Nails added
+2025-04-07 17:00:38,953 - DEBUG - Item Nylon Inset Nut added
+2025-04-07 17:00:38,953 - DEBUG - Item Assorted Screws added
+2025-04-07 17:00:38,953 - DEBUG - Item SHS added
+2025-04-07 17:00:38,954 - DEBUG - Item SHS added
+2025-04-07 17:00:38,954 - DEBUG - Item SHS added
+2025-04-07 17:00:38,954 - DEBUG - Item Coupling Nuts added
+2025-04-07 17:00:38,955 - DEBUG - Item Cap Head Screw & Washer added
+2025-04-07 17:00:38,955 - DEBUG - Item Plastic Screws added
+2025-04-07 17:00:38,955 - DEBUG - Item SHS added
+2025-04-07 17:00:38,956 - DEBUG - Item 10-32 PHS added
+2025-04-07 17:00:38,956 - DEBUG - Item Phil-Pan added
+2025-04-07 17:00:38,956 - DEBUG - Item Phil-Pan added
+2025-04-07 17:00:38,957 - INFO - 127.0.0.1 - - [07/Apr/2025 17:00:38] "GET /restoreDatabase?file=../data/SampleData.csv HTTP/1.1" 200 -
+2025-04-07 17:00:39,691 - DEBUG - Item Self Locking Retaining Ring added
+2025-04-07 17:00:39,692 - DEBUG - Item Self Locking Retaining Ring added
+2025-04-07 17:00:39,693 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:39,693 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:39,694 - DEBUG - Item Lock Washer added
+2025-04-07 17:00:39,695 - DEBUG - Item Lock Washer added
+2025-04-07 17:00:39,695 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:39,696 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:39,696 - DEBUG - Item M5 added
+2025-04-07 17:00:39,697 - DEBUG - Item Tee Nut added
+2025-04-07 17:00:39,697 - DEBUG - Item Tee Nut added
+2025-04-07 17:00:39,698 - DEBUG - Item Washers added
+2025-04-07 17:00:39,698 - DEBUG - Item Tee Nuts added
+2025-04-07 17:00:39,698 - DEBUG - Item Small Nuts added
+2025-04-07 17:00:39,699 - DEBUG - Item Medium Nuts added
+2025-04-07 17:00:39,699 - DEBUG - Item Large Nuts added
+2025-04-07 17:00:39,700 - DEBUG - Item Nylon Inset Nut added
+2025-04-07 17:00:39,700 - DEBUG - Item Nuts added
+2025-04-07 17:00:39,701 - DEBUG - Item Nails added
+2025-04-07 17:00:39,702 - DEBUG - Item Nylon Inset Nut added
+2025-04-07 17:00:39,702 - DEBUG - Item Assorted Screws added
+2025-04-07 17:00:39,703 - DEBUG - Item SHS added
+2025-04-07 17:00:39,703 - DEBUG - Item SHS added
+2025-04-07 17:00:39,704 - DEBUG - Item SHS added
+2025-04-07 17:00:39,704 - DEBUG - Item Coupling Nuts added
+2025-04-07 17:00:39,705 - DEBUG - Item Cap Head Screw & Washer added
+2025-04-07 17:00:39,705 - DEBUG - Item Plastic Screws added
+2025-04-07 17:00:39,706 - DEBUG - Item SHS added
+2025-04-07 17:00:39,706 - DEBUG - Item 10-32 PHS added
+2025-04-07 17:00:39,706 - DEBUG - Item Phil-Pan added
+2025-04-07 17:00:39,707 - DEBUG - Item Phil-Pan added
+2025-04-07 17:00:39,707 - INFO - 127.0.0.1 - - [07/Apr/2025 17:00:39] "GET /restoreDatabase?file=../data/SampleData.csv HTTP/1.1" 200 -
+2025-04-07 17:00:40,116 - DEBUG - Item Self Locking Retaining Ring added
+2025-04-07 17:00:40,116 - DEBUG - Item Self Locking Retaining Ring added
+2025-04-07 17:00:40,117 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:40,117 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:40,118 - DEBUG - Item Lock Washer added
+2025-04-07 17:00:40,119 - DEBUG - Item Lock Washer added
+2025-04-07 17:00:40,119 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:40,120 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:40,120 - DEBUG - Item M5 added
+2025-04-07 17:00:40,121 - DEBUG - Item Tee Nut added
+2025-04-07 17:00:40,121 - DEBUG - Item Tee Nut added
+2025-04-07 17:00:40,121 - DEBUG - Item Washers added
+2025-04-07 17:00:40,122 - DEBUG - Item Tee Nuts added
+2025-04-07 17:00:40,122 - DEBUG - Item Small Nuts added
+2025-04-07 17:00:40,122 - DEBUG - Item Medium Nuts added
+2025-04-07 17:00:40,123 - DEBUG - Item Large Nuts added
+2025-04-07 17:00:40,123 - DEBUG - Item Nylon Inset Nut added
+2025-04-07 17:00:40,124 - DEBUG - Item Nuts added
+2025-04-07 17:00:40,124 - DEBUG - Item Nails added
+2025-04-07 17:00:40,124 - DEBUG - Item Nylon Inset Nut added
+2025-04-07 17:00:40,124 - DEBUG - Item Assorted Screws added
+2025-04-07 17:00:40,125 - DEBUG - Item SHS added
+2025-04-07 17:00:40,125 - DEBUG - Item SHS added
+2025-04-07 17:00:40,125 - DEBUG - Item SHS added
+2025-04-07 17:00:40,126 - DEBUG - Item Coupling Nuts added
+2025-04-07 17:00:40,126 - DEBUG - Item Cap Head Screw & Washer added
+2025-04-07 17:00:40,127 - DEBUG - Item Plastic Screws added
+2025-04-07 17:00:40,127 - DEBUG - Item SHS added
+2025-04-07 17:00:40,128 - DEBUG - Item 10-32 PHS added
+2025-04-07 17:00:40,128 - DEBUG - Item Phil-Pan added
+2025-04-07 17:00:40,128 - DEBUG - Item Phil-Pan added
+2025-04-07 17:00:40,129 - INFO - 127.0.0.1 - - [07/Apr/2025 17:00:40] "GET /restoreDatabase?file=../data/SampleData.csv HTTP/1.1" 200 -
+2025-04-07 17:00:43,308 - DEBUG - Item Self Locking Retaining Ring added
+2025-04-07 17:00:43,309 - DEBUG - Item Self Locking Retaining Ring added
+2025-04-07 17:00:43,309 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:43,310 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:43,310 - DEBUG - Item Lock Washer added
+2025-04-07 17:00:43,311 - DEBUG - Item Lock Washer added
+2025-04-07 17:00:43,311 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:43,312 - DEBUG - Item Flat Washer added
+2025-04-07 17:00:43,312 - DEBUG - Item M5 added
+2025-04-07 17:00:43,312 - DEBUG - Item Tee Nut added
+2025-04-07 17:00:43,313 - DEBUG - Item Tee Nut added
+2025-04-07 17:00:43,313 - DEBUG - Item Washers added
+2025-04-07 17:00:43,314 - DEBUG - Item Tee Nuts added
+2025-04-07 17:00:43,314 - DEBUG - Item Small Nuts added
+2025-04-07 17:00:43,314 - DEBUG - Item Medium Nuts added
+2025-04-07 17:00:43,315 - DEBUG - Item Large Nuts added
+2025-04-07 17:00:43,315 - DEBUG - Item Nylon Inset Nut added
+2025-04-07 17:00:43,315 - DEBUG - Item Nuts added
+2025-04-07 17:00:43,316 - DEBUG - Item Nails added
+2025-04-07 17:00:43,316 - DEBUG - Item Nylon Inset Nut added
+2025-04-07 17:00:43,317 - DEBUG - Item Assorted Screws added
+2025-04-07 17:00:43,318 - DEBUG - Item SHS added
+2025-04-07 17:00:43,318 - DEBUG - Item SHS added
+2025-04-07 17:00:43,319 - DEBUG - Item SHS added
+2025-04-07 17:00:43,319 - DEBUG - Item Coupling Nuts added
+2025-04-07 17:00:43,320 - DEBUG - Item Cap Head Screw & Washer added
+2025-04-07 17:00:43,321 - DEBUG - Item Plastic Screws added
+2025-04-07 17:00:43,322 - DEBUG - Item SHS added
+2025-04-07 17:00:43,322 - DEBUG - Item 10-32 PHS added
+2025-04-07 17:00:43,323 - DEBUG - Item Phil-Pan added
+2025-04-07 17:00:43,323 - DEBUG - Item Phil-Pan added
+2025-04-07 17:00:43,323 - INFO - 127.0.0.1 - - [07/Apr/2025 17:00:43] "GET /restoreDatabase?file=../data/SampleData.csv HTTP/1.1" 200 -
+2025-04-07 17:00:54,341 - INFO - 127.0.0.1 - - [07/Apr/2025 17:00:54] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 17:00:56,166 - INFO - 127.0.0.1 - - [07/Apr/2025 17:00:56] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 17:00:56,171 - INFO - 127.0.0.1 - - [07/Apr/2025 17:00:56] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 17:00:56,178 - INFO - 127.0.0.1 - - [07/Apr/2025 17:00:56] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 17:01:03,692 - INFO - 127.0.0.1 - - [07/Apr/2025 17:01:03] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 17:01:03,849 - INFO - 127.0.0.1 - - [07/Apr/2025 17:01:03] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 17:01:03,853 - INFO - 127.0.0.1 - - [07/Apr/2025 17:01:03] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 17:01:03,874 - INFO - 127.0.0.1 - - [07/Apr/2025 17:01:03] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 17:05:47,813 - INFO - 127.0.0.1 - - [07/Apr/2025 17:05:47] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 17:05:48,498 - INFO - 127.0.0.1 - - [07/Apr/2025 17:05:48] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 17:05:48,506 - INFO - 127.0.0.1 - - [07/Apr/2025 17:05:48] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 17:05:48,517 - INFO - 127.0.0.1 - - [07/Apr/2025 17:05:48] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 18:08:05,500 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-07 18:08:05,702 - INFO -  * Restarting with stat
+2025-04-07 18:08:07,702 - INFO - API server started 2025-04-07_18-08-07
+2025-04-07 18:08:07,739 - WARNING -  * Debugger is active!
+2025-04-07 18:08:07,768 - INFO -  * Debugger PIN: 507-368-162
+2025-04-07 18:08:58,487 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-07 18:08:58,574 - INFO -  * Restarting with stat
+2025-04-07 18:08:59,627 - INFO - API server started 2025-04-07_18-08-59
+2025-04-07 18:08:59,654 - WARNING -  * Debugger is active!
+2025-04-07 18:08:59,664 - INFO -  * Debugger PIN: 507-368-162
+2025-04-07 18:09:27,580 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/api.py', reloading
+2025-04-07 18:09:27,683 - INFO -  * Restarting with stat
+2025-04-07 18:09:28,978 - INFO - API server started 2025-04-07_18-09-28
+2025-04-07 18:09:29,002 - WARNING -  * Debugger is active!
+2025-04-07 18:09:29,010 - INFO -  * Debugger PIN: 507-368-162
+2025-04-07 18:10:09,313 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/api.py', reloading
+2025-04-07 18:10:09,414 - INFO -  * Restarting with stat
+2025-04-07 18:10:10,678 - INFO - API server started 2025-04-07_18-10-10
+2025-04-07 18:10:10,704 - WARNING -  * Debugger is active!
+2025-04-07 18:10:10,711 - INFO -  * Debugger PIN: 507-368-162
+2025-04-07 18:12:07,352 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-07 18:12:07,449 - INFO -  * Restarting with stat
+2025-04-07 18:12:08,586 - INFO - API server started 2025-04-07_18-12-08
+2025-04-07 18:12:08,609 - WARNING -  * Debugger is active!
+2025-04-07 18:12:08,617 - INFO -  * Debugger PIN: 507-368-162
+2025-04-07 18:12:53,924 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-07 18:12:54,012 - INFO -  * Restarting with stat
+2025-04-07 18:12:55,243 - INFO - API server started 2025-04-07_18-12-55
+2025-04-07 18:12:55,269 - WARNING -  * Debugger is active!
+2025-04-07 18:12:55,277 - INFO -  * Debugger PIN: 507-368-162
+2025-04-07 18:15:39,688 - INFO - 127.0.0.1 - - [07/Apr/2025 18:15:39] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 18:15:39,841 - INFO - 127.0.0.1 - - [07/Apr/2025 18:15:39] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 18:15:39,844 - INFO - 127.0.0.1 - - [07/Apr/2025 18:15:39] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 18:15:39,866 - INFO - 127.0.0.1 - - [07/Apr/2025 18:15:39] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 18:15:43,655 - INFO - 127.0.0.1 - - [07/Apr/2025 18:15:43] "[35m[1mGET /increment?name=Self%20Locking%20Retaining%20Ring&is_metric=False&size=SM&num=2 HTTP/1.1[0m" 500 -
+2025-04-07 18:15:44,803 - INFO - 127.0.0.1 - - [07/Apr/2025 18:15:44] "[35m[1mGET /increment?name=Self%20Locking%20Retaining%20Ring&is_metric=False&size=SM&num=2 HTTP/1.1[0m" 500 -
+2025-04-07 18:15:45,336 - INFO - 127.0.0.1 - - [07/Apr/2025 18:15:45] "[35m[1mGET /increment?name=Self%20Locking%20Retaining%20Ring&is_metric=False&size=SM&num=2 HTTP/1.1[0m" 500 -
+2025-04-07 18:15:46,116 - INFO - 127.0.0.1 - - [07/Apr/2025 18:15:46] "[35m[1mGET /decrement?name=Self%20Locking%20Retaining%20Ring&is_metric=False&size=SM&num=2 HTTP/1.1[0m" 500 -
+2025-04-07 18:18:41,693 - INFO - 127.0.0.1 - - [07/Apr/2025 18:18:41] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 18:18:41,694 - INFO - 127.0.0.1 - - [07/Apr/2025 18:18:41] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 18:18:41,776 - INFO - 127.0.0.1 - - [07/Apr/2025 18:18:41] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 18:18:41,778 - INFO - 127.0.0.1 - - [07/Apr/2025 18:18:41] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 18:18:41,786 - INFO - 127.0.0.1 - - [07/Apr/2025 18:18:41] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 18:18:44,695 - INFO - 127.0.0.1 - - [07/Apr/2025 18:18:44] "[35m[1mGET /increment?name=Self%20Locking%20Retaining%20Ring&is_metric=False&size=SM&num=1&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NDQwNTk1ODAsImV4cCI6MTc0NDA2MTM4MCwidXNlcm5hbWUiOiJhZG1pbiIsImxldmVsIjowfQ.TEMHmlYcvhPposbQdfOE3tJqXaIm4OY4U0RKsotpibw HTTP/1.1[0m" 500 -
+2025-04-07 18:18:45,658 - INFO - 127.0.0.1 - - [07/Apr/2025 18:18:45] "[35m[1mGET /decrement?name=Self%20Locking%20Retaining%20Ring&is_metric=False&size=SM&num=1&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NDQwNTk1ODAsImV4cCI6MTc0NDA2MTM4MCwidXNlcm5hbWUiOiJhZG1pbiIsImxldmVsIjowfQ.TEMHmlYcvhPposbQdfOE3tJqXaIm4OY4U0RKsotpibw HTTP/1.1[0m" 500 -
+2025-04-07 18:18:47,518 - INFO - 127.0.0.1 - - [07/Apr/2025 18:18:47] "[35m[1mGET /increment?name=Self%20Locking%20Retaining%20Ring&is_metric=False&size=SM&num=2&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NDQwNTk1ODAsImV4cCI6MTc0NDA2MTM4MCwidXNlcm5hbWUiOiJhZG1pbiIsImxldmVsIjowfQ.TEMHmlYcvhPposbQdfOE3tJqXaIm4OY4U0RKsotpibw HTTP/1.1[0m" 500 -
+2025-04-07 18:18:47,818 - INFO - 127.0.0.1 - - [07/Apr/2025 18:18:47] "[35m[1mGET /increment?name=Self%20Locking%20Retaining%20Ring&is_metric=False&size=SM&num=2&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NDQwNTk1ODAsImV4cCI6MTc0NDA2MTM4MCwidXNlcm5hbWUiOiJhZG1pbiIsImxldmVsIjowfQ.TEMHmlYcvhPposbQdfOE3tJqXaIm4OY4U0RKsotpibw HTTP/1.1[0m" 500 -
+2025-04-07 18:18:48,001 - INFO - 127.0.0.1 - - [07/Apr/2025 18:18:48] "[35m[1mGET /increment?name=Self%20Locking%20Retaining%20Ring&is_metric=False&size=SM&num=2&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NDQwNTk1ODAsImV4cCI6MTc0NDA2MTM4MCwidXNlcm5hbWUiOiJhZG1pbiIsImxldmVsIjowfQ.TEMHmlYcvhPposbQdfOE3tJqXaIm4OY4U0RKsotpibw HTTP/1.1[0m" 500 -
+2025-04-07 18:18:48,178 - INFO - 127.0.0.1 - - [07/Apr/2025 18:18:48] "[35m[1mGET /increment?name=Self%20Locking%20Retaining%20Ring&is_metric=False&size=SM&num=2&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NDQwNTk1ODAsImV4cCI6MTc0NDA2MTM4MCwidXNlcm5hbWUiOiJhZG1pbiIsImxldmVsIjowfQ.TEMHmlYcvhPposbQdfOE3tJqXaIm4OY4U0RKsotpibw HTTP/1.1[0m" 500 -
+2025-04-07 18:18:48,359 - INFO - 127.0.0.1 - - [07/Apr/2025 18:18:48] "[35m[1mGET /increment?name=Self%20Locking%20Retaining%20Ring&is_metric=False&size=SM&num=2&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NDQwNTk1ODAsImV4cCI6MTc0NDA2MTM4MCwidXNlcm5hbWUiOiJhZG1pbiIsImxldmVsIjowfQ.TEMHmlYcvhPposbQdfOE3tJqXaIm4OY4U0RKsotpibw HTTP/1.1[0m" 500 -
+2025-04-07 18:18:51,000 - INFO - 127.0.0.1 - - [07/Apr/2025 18:18:51] "[35m[1mGET /increment?name=Self%20Locking%20Retaining%20Ring&is_metric=False&size=LG&num=2&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NDQwNTk1ODAsImV4cCI6MTc0NDA2MTM4MCwidXNlcm5hbWUiOiJhZG1pbiIsImxldmVsIjowfQ.TEMHmlYcvhPposbQdfOE3tJqXaIm4OY4U0RKsotpibw HTTP/1.1[0m" 500 -
+2025-04-07 18:18:51,417 - INFO - 127.0.0.1 - - [07/Apr/2025 18:18:51] "[35m[1mGET /increment?name=Self%20Locking%20Retaining%20Ring&is_metric=False&size=LG&num=2&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NDQwNTk1ODAsImV4cCI6MTc0NDA2MTM4MCwidXNlcm5hbWUiOiJhZG1pbiIsImxldmVsIjowfQ.TEMHmlYcvhPposbQdfOE3tJqXaIm4OY4U0RKsotpibw HTTP/1.1[0m" 500 -
+2025-04-07 18:18:51,618 - INFO - 127.0.0.1 - - [07/Apr/2025 18:18:51] "[35m[1mGET /increment?name=Self%20Locking%20Retaining%20Ring&is_metric=False&size=LG&num=2&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NDQwNTk1ODAsImV4cCI6MTc0NDA2MTM4MCwidXNlcm5hbWUiOiJhZG1pbiIsImxldmVsIjowfQ.TEMHmlYcvhPposbQdfOE3tJqXaIm4OY4U0RKsotpibw HTTP/1.1[0m" 500 -
+2025-04-07 18:19:26,850 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-07 18:19:26,936 - INFO -  * Restarting with stat
+2025-04-07 18:19:28,315 - INFO - API server started 2025-04-07_18-19-28
+2025-04-07 18:19:28,346 - WARNING -  * Debugger is active!
+2025-04-07 18:19:28,356 - INFO -  * Debugger PIN: 507-368-162
+2025-04-07 18:19:31,299 - INFO - 127.0.0.1 - - [07/Apr/2025 18:19:31] "[35m[1mGET /increment?name=Self%20Locking%20Retaining%20Ring&is_metric=False&size=SM&num=2&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NDQwNTk1ODAsImV4cCI6MTc0NDA2MTM4MCwidXNlcm5hbWUiOiJhZG1pbiIsImxldmVsIjowfQ.TEMHmlYcvhPposbQdfOE3tJqXaIm4OY4U0RKsotpibw HTTP/1.1[0m" 500 -
+2025-04-07 18:19:38,060 - INFO - 127.0.0.1 - - [07/Apr/2025 18:19:38] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 18:19:38,276 - INFO - 127.0.0.1 - - [07/Apr/2025 18:19:38] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 18:19:38,285 - INFO - 127.0.0.1 - - [07/Apr/2025 18:19:38] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 18:19:38,317 - INFO - 127.0.0.1 - - [07/Apr/2025 18:19:38] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 18:19:41,476 - INFO - 127.0.0.1 - - [07/Apr/2025 18:19:41] "[35m[1mGET /increment?name=Self%20Locking%20Retaining%20Ring&is_metric=False&size=SM&num=2&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NDQwNTk1ODAsImV4cCI6MTc0NDA2MTM4MCwidXNlcm5hbWUiOiJhZG1pbiIsImxldmVsIjowfQ.TEMHmlYcvhPposbQdfOE3tJqXaIm4OY4U0RKsotpibw HTTP/1.1[0m" 500 -
+2025-04-07 18:21:05,378 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-07 18:21:05,470 - INFO -  * Restarting with stat
+2025-04-07 18:21:06,981 - INFO - API server started 2025-04-07_18-21-06
+2025-04-07 18:21:07,016 - WARNING -  * Debugger is active!
+2025-04-07 18:21:07,026 - INFO -  * Debugger PIN: 507-368-162
+2025-04-07 18:21:08,925 - INFO - 127.0.0.1 - - [07/Apr/2025 18:21:08] "[35m[1mGET /increment?name=Self%20Locking%20Retaining%20Ring&is_metric=False&size=SM&num=2&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NDQwNTk1ODAsImV4cCI6MTc0NDA2MTM4MCwidXNlcm5hbWUiOiJhZG1pbiIsImxldmVsIjowfQ.TEMHmlYcvhPposbQdfOE3tJqXaIm4OY4U0RKsotpibw HTTP/1.1[0m" 500 -
+2025-04-07 18:21:38,193 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-07 18:21:38,292 - INFO -  * Restarting with stat
+2025-04-07 18:21:39,434 - INFO - API server started 2025-04-07_18-21-39
+2025-04-07 18:21:39,456 - WARNING -  * Debugger is active!
+2025-04-07 18:21:39,463 - INFO -  * Debugger PIN: 507-368-162
+2025-04-07 18:22:21,551 - INFO - 127.0.0.1 - - [07/Apr/2025 18:22:21] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 18:22:21,808 - INFO - 127.0.0.1 - - [07/Apr/2025 18:22:21] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 18:22:21,817 - INFO - 127.0.0.1 - - [07/Apr/2025 18:22:21] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 18:22:21,830 - INFO - 127.0.0.1 - - [07/Apr/2025 18:22:21] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 18:22:24,923 - INFO - 127.0.0.1 - - [07/Apr/2025 18:22:24] "[35m[1mGET /increment?name=Self%20Locking%20Retaining%20Ring&is_metric=False&size=SM&num=2&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NDQwNTk1ODAsImV4cCI6MTc0NDA2MTM4MCwidXNlcm5hbWUiOiJhZG1pbiIsImxldmVsIjowfQ.TEMHmlYcvhPposbQdfOE3tJqXaIm4OY4U0RKsotpibw HTTP/1.1[0m" 500 -
+2025-04-07 18:24:47,557 - INFO - 127.0.0.1 - - [07/Apr/2025 18:24:47] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 18:24:47,557 - INFO - 127.0.0.1 - - [07/Apr/2025 18:24:47] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 18:24:47,761 - INFO - 127.0.0.1 - - [07/Apr/2025 18:24:47] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 18:24:47,780 - INFO - 127.0.0.1 - - [07/Apr/2025 18:24:47] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 18:24:47,835 - INFO - 127.0.0.1 - - [07/Apr/2025 18:24:47] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 18:26:07,529 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-07 18:26:07,663 - INFO -  * Restarting with stat
+2025-04-07 18:26:08,747 - INFO - API server started 2025-04-07_18-26-08
+2025-04-07 18:26:08,769 - WARNING -  * Debugger is active!
+2025-04-07 18:26:08,774 - INFO -  * Debugger PIN: 507-368-162
+2025-04-07 18:26:18,685 - INFO - 127.0.0.1 - - [07/Apr/2025 18:26:18] "GET /increment?name=Self%20Locking%20Retaining%20Ring&is_metric=False&size=SM&num=2&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NDQwNTk1ODAsImV4cCI6MTc0NDA2MTM4MCwidXNlcm5hbWUiOiJhZG1pbiIsImxldmVsIjowfQ.TEMHmlYcvhPposbQdfOE3tJqXaIm4OY4U0RKsotpibw HTTP/1.1" 200 -
+2025-04-07 18:26:19,918 - INFO - 127.0.0.1 - - [07/Apr/2025 18:26:19] "GET /increment?name=Self%20Locking%20Retaining%20Ring&is_metric=False&size=SM&num=2&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NDQwNTk1ODAsImV4cCI6MTc0NDA2MTM4MCwidXNlcm5hbWUiOiJhZG1pbiIsImxldmVsIjowfQ.TEMHmlYcvhPposbQdfOE3tJqXaIm4OY4U0RKsotpibw HTTP/1.1" 200 -
+2025-04-07 18:26:21,609 - INFO - 127.0.0.1 - - [07/Apr/2025 18:26:21] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 18:26:21,815 - INFO - 127.0.0.1 - - [07/Apr/2025 18:26:21] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 18:26:21,819 - INFO - 127.0.0.1 - - [07/Apr/2025 18:26:21] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 18:26:21,871 - INFO - 127.0.0.1 - - [07/Apr/2025 18:26:21] "GET /findAll HTTP/1.1" 200 -
+2025-04-07 18:29:33,322 - INFO - 127.0.0.1 - - [07/Apr/2025 18:29:33] "[31m[1mPOST /isLoggedIn HTTP/1.1[0m" 401 -
+2025-04-07 18:29:33,562 - INFO - 127.0.0.1 - - [07/Apr/2025 18:29:33] "OPTIONS /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 18:29:33,572 - INFO - 127.0.0.1 - - [07/Apr/2025 18:29:33] "POST /isLoggedIn HTTP/1.1" 200 -
+2025-04-07 18:29:33,592 - INFO - 127.0.0.1 - - [07/Apr/2025 18:29:33] "GET /findAll HTTP/1.1" 200 -

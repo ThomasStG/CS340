@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ItemSearchComponent } from '../item-search/item-search.component';
 import { ItemData } from '../item-data';
 import { GetItemsService } from '../services/get-items.service';
+import { ItemPopupComponent } from '../item-popup/item-popup.component';
 
 @Component({
   selector: 'app-home',
@@ -11,10 +12,16 @@ import { GetItemsService } from '../services/get-items.service';
 export class HomeComponent {
   items: ItemData[] = [];
   constructor(private getItemsService: GetItemsService) {}
-
-  trackBySize(index: number, item: any) {
-    return item.size;
-  }
+  isPopupVisible = false;
+  selectedItem: ItemData = {
+    id: 0,
+    name: '',
+    size: '',
+    is_metric: 'True',
+    location: '',
+    count: 0,
+    threshold: 0,
+  };
 
   /* incrementCount(item: any) {
     if (!this.itemInput[item.name]) {
@@ -85,5 +92,14 @@ export class HomeComponent {
         console.error('Error fetching item:', err);
       },
     });
+  }
+  onItemClick(item: any) {
+    this.selectedItem = item;
+    this.isPopupVisible = true;
+  }
+
+  // Close popup
+  closePopup() {
+    this.isPopupVisible = false;
   }
 }
