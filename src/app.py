@@ -840,6 +840,17 @@ def change_pass():
     except Exception as e:
         return handle_exceptions(e)
 
+@app.route("/checkToken", methods = ["POST"])
+def check_token():
+    try:
+        data = request.json
+        if data is None or "token" not in data:
+            raise KeyError ("missing required parameters")
+        level = jwt.decode(data["token"], options={"verify_signature":False}).get("level")
+        return jsonify({"status":"success", "level":level}), 200
+        
+    except Exception as e:
+        return handle_exceptions(e)
 
 def run_server():
     """

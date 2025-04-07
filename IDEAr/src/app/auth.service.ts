@@ -70,4 +70,17 @@ export class AuthService {
   removeToken(): void {
     this.cookieService.delete(this.token, '/');
   }
+
+  levelGetter(): Observable<number>{
+    const token = this.cookieService.get(this.token);
+
+    return this.http
+    .post<{
+      level:number;
+    }>('http://127.0.0.1:3000/checkToken', { token })
+    .pipe(
+      map((response?.level ?? 2) => response.output === 'true'), // Ensure output is properly mapped to a boolean
+      catchError(() => of(2)), // Return false in case of an error
+    );
+  }
 }

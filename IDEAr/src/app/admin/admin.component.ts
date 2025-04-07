@@ -81,4 +81,10 @@ export class AdminComponent {
   addItem(event: any) {
     this.dialog.open(AdminPopupComponent);
   }
+
+  check_level(){
+    const level = this.authService.levelGetter().subscribe((level)=> {
+    if (level != 2) return true
+    else return false}
+  )}
 }

@@ -35,6 +35,7 @@ def ensure_table():
                     username TEXT NOT NULL UNIQUE,
                     password TEXT NOT NULL,
                     salt TEXT NOT NULL,
+                    level INTEGER NOT NULL, 
                     token TEXT
                 )
                 """
@@ -43,7 +44,7 @@ def ensure_table():
         connection.close()
 
 
-def generate_token(username: str):
+def generate_token(username: str, level: int):
     load_dotenv("../data/.env")
     SECRET_KEY = os.environ.get("Login_Token_Secret_Key")
     payload = {
@@ -51,6 +52,7 @@ def generate_token(username: str):
         "exp": datetime.datetime.now(datetime.timezone.utc)
         + datetime.timedelta(minutes=30),
         "username": username,
+        "level": level,
     }
     try:
         token = jwt.encode(payload, SECRET_KEY, algorithm="HS256")
@@ -76,9 +78,9 @@ def login(username: str, password: str, cursor: sqlite3.Cursor) -> str:
         "SELECT * FROM users WHERE username = ? AND password = ?",
         (username, password),
     )
-    if cursor.fetchone() is None:
+    if output := cursor.fetchone() is None:
         return ""
-    return generate_token(username)
+    return generate_token(username, output[0][5])
 
 
 def check_token(token: str, username: str, cursor: sqlite3.Cursor) -> bool:
