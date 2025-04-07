@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ItemData } from '../item-data';
 import { UpdateItemService } from '../update-item.service';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-admin-item',
@@ -8,7 +9,10 @@ import { UpdateItemService } from '../update-item.service';
   styleUrl: './admin-item.component.css',
 })
 export class AdminItemComponent implements OnInit {
-  constructor(private updateItemService: UpdateItemService) {}
+  constructor(
+    private updateItemService: UpdateItemService,
+    private authService: AuthService,
+  ) {}
   @Input() item: ItemData = {
     id: 0,
     name: '',
@@ -47,7 +51,7 @@ export class AdminItemComponent implements OnInit {
     this.isEditing = false;
     this.isPopupVisible = false;
     this.updateItemService
-      .updateItem(this.item, this.newItem)
+      .updateItem(this.item, this.newItem, this.authService.getToken())
       .subscribe((response) => {
         console.log(response);
       });

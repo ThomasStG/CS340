@@ -1,20 +1,18 @@
 .header {
-    
-    padding: 10px;
-    position: sticky;
-    top: 0;
-    z-index: 1;
-    display: grid;
-    grid-template-columns: 15% 15% 10% 10% 10% 10% 10% 10% 10%;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
-.headerColumn{
-    height: auto;
-    width: auto;
-    padding: 10px;
+.headerColumn {
+  height: auto;
+  width: auto;
+  padding: 10px;
 }
 
-.textBox{
-    height: 30px;
-    width: auto;
+.textBox {
+  height: 30px;
+  width: auto;
 }
+

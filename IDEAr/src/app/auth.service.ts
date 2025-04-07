@@ -61,7 +61,7 @@ export class AuthService {
       7,
       '/',
       '',
-      false /*TODO: set to true for production */,
+      false, //TODO: set to true for production,
       'Lax',
     );
   }
@@ -82,5 +82,8 @@ export class AuthService {
       map((response?.level ?? 2) => response.output === 'true'), // Ensure output is properly mapped to a boolean
       catchError(() => of(2)), // Return false in case of an error
     );
+  }
+  getToken(): string {
+    return this.cookieService.get(this.token);
   }
 }
