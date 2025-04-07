@@ -376,3 +376,23 @@ def update_item(
     )
     logger.debug("Item %s updated", name)
     connection.commit()
+
+
+if __name__ == "__main__":
+    connection = sqlite3.connect("../data/data.db")
+    cursor = connection.cursor()
+    # cursor.execute(
+    #     """
+    #     INSERT INTO items (name, size, is_metric, location, count, threshold, iscontacted)
+    #     VALUES
+    #     ('test', 'test', 1, '{"shelf": "1", "rack": "1", "box": "1", "height": "1", "width": "1", "depth": "1"}', 1, 1, 0)
+    #     """
+    # )
+    # connection.commit()
+    # connection.close()
+    cursor.execute(
+        """
+        SELECT * FROM items
+        """
+    )
+    print(cursor.fetchall())
