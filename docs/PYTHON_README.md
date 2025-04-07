@@ -121,3 +121,20 @@ If you encounter issues, ensure you are in a python virtual environment.
   - password (str): The hashed password of the user.
 - **Returns**:
   - JSON object indicating success or failure.
+
+## **/isLoggedIn**
+
+- **Description**: Checks if the user is logged in
+- **Parameters**:
+  - token (str): the token of the user
+- **Returns**:
+  - JSON object indicating success or failure if the user is logged in.
+
+## **/register**
+
+- **Description**: register user
+- **parameters**:
+  - username (str): The username of the user.
+  - password (str): The hashed password of the user.
+- **Returns**:
+  - JSON object indicating success or failure...I think
