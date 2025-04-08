@@ -1,7 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ItemData } from '../item-data';
 import { UpdateItemService } from '../update-item.service';
+import { MatDialog } from '@angular/material/dialog';
 import { AuthService } from '../auth.service';
+import { AdminPopupComponent } from '../admin-popup/admin-popup.component';
 
 @Component({
   selector: 'app-admin-item',
@@ -12,6 +14,7 @@ export class AdminItemComponent implements OnInit {
   constructor(
     private updateItemService: UpdateItemService,
     private authService: AuthService,
+    private dialog: MatDialog,
   ) {}
   @Input() item: ItemData = {
     id: 0,
@@ -37,8 +40,10 @@ export class AdminItemComponent implements OnInit {
     this.isEditing = true;
   }
 
-  showPopup() {
-    this.isPopupVisible = true;
+  showPopup(event: any) {
+    this.dialog.open(AdminPopupComponent);
+    const PopUp = this.dialog.open(AdminPopupComponent);
+    PopUp.componentInstance.showItem(this.item);
   }
 
   closePopup(event: Event) {

@@ -19,15 +19,58 @@ export class AdminPopupComponent {
     count: 0,
     threshold: 0,
   };
+  newItem: ItemData = { ...this.item };
   constructor(
     public dialog: MatDialog,
     private updateItemService: UpdateItemService,
     private authService: AuthService,
   ) {}
+
+  isEditing = false;
+  isAdding = false;
+  editItem(event: Event) {
+    event.stopPropagation();
+    this.isEditing = true;
+  }
+
+
+  addingItem() {
+    this.isEditing = true;
+    this.isAdding = true;
+  }
+
+  showItem(item: Partial<ItemData>){
+    if (item) {
+      this.item = { ...this.item, ...item }; // Merge input data into the item
+    }
+    this.isEditing = false;
+    this.isAdding = false;
+  }
+
+  updateItem(event: Event) {
+    event.stopPropagation();
+    this.isEditing = false;
+    this.close();
+    this.updateItemService
+      .updateItem(this.item, this.newItem, this.authService.getToken())
+      .subscribe((response) => {
+        console.log(response);
+      });
+  }
+  deleteItem(event: Event) {
+    event.stopPropagation();
+    this.updateItemService.deleteItem(this.item).subscribe((response) => {
+      console.log(response);
+    });
+  }
   close() {
+    this.isEditing = false;
+    this.isAdding = false;
     this.dialog.closeAll();
   }
   save() {
+    this.isEditing = false;
+    this.isAdding = false;
     this.updateItemService.addItem(this.item).subscribe((response) => {
       if (response.error) {
         console.error(response.error);
