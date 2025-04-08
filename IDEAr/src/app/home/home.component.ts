@@ -3,6 +3,7 @@ import { ItemSearchComponent } from '../item-search/item-search.component';
 import { ItemData } from '../item-data';
 import { GetItemsService } from '../services/get-items.service';
 import { ItemPopupComponent } from '../item-popup/item-popup.component';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -13,6 +14,11 @@ export class HomeComponent {
   items: ItemData[] = [];
   constructor(private getItemsService: GetItemsService) {}
   isPopupVisible = false;
+  searchForm = new FormGroup({
+    name: new FormControl('', Validators.required),
+    size: new FormControl('', Validators.required),
+    metric: new FormControl('True'), // Default value
+  });
   selectedItem: ItemData = {
     id: 0,
     name: '',
@@ -43,7 +49,6 @@ export class HomeComponent {
   singleSearch(data: any) {
     this.getItemsService.getItem(data.name, data.metric, data.size).subscribe({
       next: (response) => {
-        console.log('API Response:', response);
         this.items = response.data; // Extract 'data' from response
       },
       error: (err) => {
@@ -56,11 +61,7 @@ export class HomeComponent {
       .getFuzzyItems(data.name, data.metric, data.size)
       .subscribe({
         next: (response) => {
-          console.log('API Response:', response);
-
-          console.log(response.data);
           this.items = response.data; // Extract 'data' from response
-          console.log(this.items);
         },
         error: (err) => {
           console.error('Error fetching item:', err);
@@ -71,7 +72,6 @@ export class HomeComponent {
   handleSearch(event: { data: any; action: string }) {
     var action = event.action;
     var data = event.data;
-    console.log(data);
     switch (action) {
       case 'single':
         this.singleSearch(data);
@@ -85,7 +85,6 @@ export class HomeComponent {
   ngOnInit(): void {
     this.getItemsService.getAllItems().subscribe({
       next: (response) => {
-        console.log('API Response:', response);
         this.items = response.data; // Extract 'data' from response
       },
       error: (err) => {

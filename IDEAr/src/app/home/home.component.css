@@ -1,11 +1,6 @@
 .scrollable-box {
-  width: 100%;
   height: calc(100% - 50px);
   border: 1px solid #ccc;
-  display: flex;
-  flex-direction: column;
-  margin-left: auto;
-  margin-right: auto;
   overflow-y: scroll;
 }
 

@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ItemData } from '../item-data';
 import { UpdateItemService } from '../services/update-item.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-admin-item',
@@ -8,7 +9,10 @@ import { UpdateItemService } from '../services/update-item.service';
   styleUrl: './admin-item.component.css',
 })
 export class AdminItemComponent implements OnInit {
-  constructor(private updateItemService: UpdateItemService) {}
+  constructor(
+    private updateItemService: UpdateItemService,
+    private authService: AuthService,
+  ) {}
   @Input() item: ItemData = {
     id: 0,
     name: '',
@@ -19,7 +23,7 @@ export class AdminItemComponent implements OnInit {
     threshold: 0,
   };
   newItem: ItemData = { ...this.item };
-  changeNum = 0;
+  toChange = 0;
   ngOnInit() {
     this.item.location = JSON.parse(this.item.location);
     this.newItem = this.item;
@@ -31,10 +35,6 @@ export class AdminItemComponent implements OnInit {
   editItem(event: Event) {
     event.stopPropagation();
     this.isEditing = true;
-  }
-  cancelEditing(event: Event) {
-    event.stopPropagation();
-    this.isEditing = false;
   }
 
   showPopup() {
@@ -65,24 +65,24 @@ export class AdminItemComponent implements OnInit {
   incrementItem(event: Event) {
     event.stopPropagation();
     this.updateItemService
-      .incrementItem(this.item, this.changeNum)
+      .incrementItem(this.item, this.toChange)
       .subscribe((response) => {
         if (response.error) {
           console.error(response.error);
         } else {
-          this.item.count += this.changeNum;
+          this.item.count += this.toChange;
         }
       });
   }
   decrementItem(event: Event) {
     event.stopPropagation();
     this.updateItemService
-      .decrementItem(this.item, this.changeNum)
+      .decrementItem(this.item, this.toChange)
       .subscribe((response) => {
         if (response.error) {
           console.error(response.error);
         } else {
-          this.item.count -= this.changeNum;
+          this.item.count -= this.toChange;
         }
       });
   }

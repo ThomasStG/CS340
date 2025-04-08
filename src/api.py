@@ -301,7 +301,6 @@ def add_item(
         cursor (sqlite3.Cursor): SQLite cursor object to execute queries
         connection (sqlite3.Connection): SQLite connection object to commit changes
     """
-    logger = logging.getLogger(__name__)
     cursor.execute(
         """
                    INSERT INTO items
@@ -312,7 +311,6 @@ def add_item(
         (name, size, is_metric, location, count, threshold, 0),
     )
 
-    logger.debug("Item %s added", name)
     connection.commit()
 
 
@@ -403,7 +401,6 @@ def backup_data(cursor: sqlite3.Cursor) -> None:
 
 
 def get_backup_files() -> list[str]:
-    print(glob.glob("../data/*.csv"))
     return glob.glob("../data/*.csv")
 
 

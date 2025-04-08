@@ -1,29 +1,26 @@
-<tr [formGroup]="searchForm" class="header bg-gray-300 text-black dark:bg-gray-700 dark:text-white">
-  <th class="headerColumn">
-    <p>Name:</p>
+<form
+  [formGroup]="searchForm"
+  class="flex flex-grow flex-wrap w-full items-end"
+  (ngSubmit)="onSubmit('multi')"
+>
+  <div class="flex flex-col min-w-[150px]">
+    <label>Name:</label>
     <input class="textBox" type="text" formControlName="name" />
-    <div *ngIf="searchForm.controls.name.invalid && searchForm.controls.name.touched">
-      <small>Name is required.</small>
-    </div>
-  </th>
-  <th class="headerColumn">
-    <p>Size:</p>
-
+  </div>
+  <div class="flex flex-col min-w-[150px]">
+    <label>Size:</label>
     <input class="textBox" type="text" formControlName="size" />
-    <div *ngIf="searchForm.controls.size.invalid && searchForm.controls.size.touched">
-      <small>Size is required.</small>
-    </div>
-  </th>
-  <th class="headerColumn">
-    <p>Is Metric:</p>
-    <input type="checkbox" formControlName="metric" />
-  </th>
-  <th class="headerColumn">Count</th>
-
-  <th class="headerColumn">
+  </div>
+  <div class="flex flex-col min-w-[150px]">
+    <label class="flex items-center gap-2">
+      <span>Is Metric:</span>
+      <input type="checkbox" formControlName="metric" />
+    </label>
+  </div>
+  <div class="flex flex-col min-w-[150px]">
     <button type="button" (click)="onSubmit('single')">Search</button>
-  </th>
-  <th class="headerColumn">
-    <button type="button" (click)="onSubmit('multi')">Search Similar</button>
-  </th>
-</tr>
+  </div>
+  <div class="flex flex-col min-w-[150px]">
+    <button type="submit">Search Similar</button>
+  </div>
+</form>

@@ -5,6 +5,7 @@ import { ItemData } from '../item-data';
   selector: 'app-item',
   templateUrl: './item.component.html',
   styleUrl: './item.component.css',
+  host: { ngSkipHydration: 'true' },
 })
 export class ItemComponent implements OnInit {
   @Input() item: ItemData = {

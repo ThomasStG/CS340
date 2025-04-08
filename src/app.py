@@ -6,7 +6,6 @@ Functions:
     teardown_db: Cleans up the connections and global variable on quit.
     import_csv: Deletes all items from the database and repopulates with values from a CSV file.
     add_from_csv: Adds items from a CSV file to the database.
-    main: Implements a CLI-based testing environment.  # TODO: DELETE this
     parse_location_to_string: Parses a JSON string into a location.
     parse_location_to_list: Parses a JSON string into a list.
     run_server: Ensures the database has the required table for items, then runs the development server.
@@ -88,69 +87,6 @@ def teardown_db(_: Exception) -> None:
     # closes the connection if it exists
     if db is not None:
         db.close()
-
-
-def main() -> None:
-    """
-    A CLI testing environment for the database
-
-    Args:
-        None
-
-    Returns:
-        None
-    """
-    con = sqlite3.connect("../data/data.db")
-    cur = con.cursor()
-    cur.execute("""SELECT * FROM items""")
-    print(cur.fetchall())
-    while True:
-        choice = input(
-            """1. Search for item by id\n
-    2. increment item by id\n
-    3. decrement item by id\n
-    4. Add item
-    \n5. Remove item\n
-    6. search item by name\n
-    0. exit\n"""
-        )
-        match choice:
-            case 0:
-                cur.close()
-                return
-            case 1:
-                val = int(input("enter the id: "))
-                print(get_item(val, cur))
-            case 2:
-                val = int(input("enter the id: "))
-                count = int(input("how many to add? "))
-                increment_item(val, count, cur, con)
-            case 3:
-                val = int(input("enter the id: "))
-                count = int(input("how many to remove? "))
-                decrement_item(val, count, cur, con)
-            case 4:
-                name = input("enter the name: ")
-                size = input("enter the size: ")
-                is_metric = (
-                    input("Is it metric? (True/False): ").strip().lower() == "true"
-                )
-                location = input("enter the location: ")
-                count = int(input("enter the count: "))
-                threshold = int(input("enter the low threshold: "))
-                add_item(name, size, is_metric, location, count, threshold, cur, con)
-            case 5:
-                val = int(input("enter the id: "))
-                remove_item(val, cur, con)
-            case 6:
-                name = input("name: ")
-                is_metric = (
-                    input("Is it metric? (True/False): ").strip().lower() == "true"
-                )
-                size = input("size: ")
-                item_id = find_by_name(name, is_metric, size, cur)
-                print("id = ", item_id)
-                print(get_item(item_id, cur))
 
 
 def handle_exceptions(exception: Exception) -> jsonify:
@@ -628,10 +564,12 @@ def fuzzy():
     connection = get_db()
     cursor = connection.cursor()
     data = request.args
+    print(data)
     logger = logging.getLogger(__name__)
     if not data or not all(key in data for key in ["name", "is_metric", "size"]):
         raise KeyError("Missing required parameters")
 
+    print(data)
     try:
         logger.info(
             f"""Searching for item with
@@ -641,6 +579,7 @@ def fuzzy():
         )
         metric_val = data["is_metric"].strip().lower() == "true"
         items = fzf(data["name"], metric_val, data["size"], cursor)
+        print(items)
         # parse location and convert is_metric to string
         for item in items:
             if "location" in item and item["location"] is not None:
@@ -763,20 +702,17 @@ def try_login() -> jsonify:
         bool: whether the login was successful
     """
     try:
-        print(request.json)
         data = request.json
         if data is None or "username" not in data or "password" not in data:
             raise KeyError("Missing required parameters")
 
         username = data["username"]
         password = data["password"]
-        print(username, password)
         connection = get_db()
         cursor = connection.cursor()
         stored_salt = get_salt(username, cursor)
 
         salt = bytes.fromhex(stored_salt)  # Convert hex string back to bytes
-        print(salt)
 
         # Create a SHA-256 hash object
         hash_object = hashlib.sha256()
@@ -787,13 +723,10 @@ def try_login() -> jsonify:
         #     # Get the hashed password as a hexadecimal string
         hashed_password = hash_object.hexdigest()
         token = login(username, hashed_password, cursor)
-        print("token")
         if token == "":
-            print("Login failed")
             raise Exception("Login failed")
         return jsonify({"status": "success", "token": token}), 200
     except Exception as e:
-        print("exception")
         return handle_exceptions(e)
 
 
@@ -810,25 +743,20 @@ def is_logged_in():
     """
     try:
         data = request.json
-        print("a")
         if data is None or "token" not in data:
             raise KeyError("Missing required parameters")
 
         token = data["token"]
-        print(token)
         try:
             username = jwt.decode(token, options={"verify_signature": False}).get(
                 "username"
             )
-            print(username)
         except Exception as e:
             return jsonify({"status": "error", "output": "false"}), 401
         connection = get_db()
         cursor = connection.cursor()
         if check_token(token, username, cursor):
-            print("true")
             return jsonify({"status": "success", "output": "true"}), 200
-        print("false")
         return jsonify({"status": "error", "output": "false"}), 401
     except Exception as e:
         return handle_exceptions(e)
@@ -918,9 +846,7 @@ def backup_database():
         json: a message and status code
     """
     try:
-        print("start")
         backup_data(get_db().cursor())
-        print("Database backed up")
 
         return jsonify({"status": "success", "message": "Database backed up"}), 200
     except Exception as e:

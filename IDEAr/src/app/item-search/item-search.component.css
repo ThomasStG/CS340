@@ -8,6 +8,16 @@
   grid-template-columns: 15% 15% 10% 10% 10% 10% 10% 10% 10%;
 }
 
+form {
+  display: flex;
+  flex-wrap: wrap;
+}
+form:first-child {
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 .headerColumn {
   height: auto;
   width: auto;
