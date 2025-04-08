@@ -163,7 +163,7 @@ def change_password(
             "UPDATE users SET password = ? WHERE username = ? AND password = ?",
             (new_password, username, old_password),
         )
-    connection.commit()
+        connection.commit()
 
 def change_accessLevel(
     username: str, 
@@ -183,12 +183,16 @@ def change_accessLevel(
     Returns:
         None
     """
-    # Update the access level
-    cursor.execute(
+    if cursor.fetchone() is None:
+        raise ValueError("No such user exists")
+    else:
+        cursor.execute(
         "UPDATE users SET accessLevel = ? WHERE username = ?",
         (accessLevel, username),
     )
-    connection.commit()
+        connection.commit()
+    # Update the access level
+    
 
 
 def get_salt(username: str, cursor: sqlite3.Cursor) -> str:

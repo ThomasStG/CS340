@@ -897,6 +897,8 @@ def change_accessLevel(username: str, accessLevel: int) -> None:
                 return jsonify({"status": "error", "message": "Unauthorized"}), 401
             
             change_accessLevel(username, accessLevel, cursor, connection)
+            return jsonify({"status": "success", "message": "Access level changed."}), 200
+        
 
         except Exception as e:
             return handle_exceptions(e)
