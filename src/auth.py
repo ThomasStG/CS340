@@ -165,6 +165,31 @@ def change_password(
         )
     connection.commit()
 
+def change_accessLevel(
+    username: str, 
+    accessLevel: int, #0, 1, 2
+    cursor: sqlite3.Cursor,
+    connection: sqlite3.Connection,
+) -> None:
+    """
+    Changes the access level of a user
+
+    Args:
+        username (str): the username of the user
+        accessLevel (int): the new access level of the user
+        cursor (sqlite3.Cursor): the cursor to the database
+        connection (sqlite3.Connection): the connection to the database
+
+    Returns:
+        None
+    """
+    # Update the access level
+    cursor.execute(
+        "UPDATE users SET accessLevel = ? WHERE username = ?",
+        (accessLevel, username),
+    )
+    connection.commit()
+
 
 def get_salt(username: str, cursor: sqlite3.Cursor) -> str:
     """

@@ -834,19 +834,79 @@ def change_pass(username: str, old_password: str, new_password: str) -> jsonify:
             and "username" not in data
             and "old_password" not in data
             and "new_password" not in data
+            and "token" not in data
         ):
             raise KeyError("Missing required parameters")
         else:
             username = data["username"]
             old_password = data["old_password"]
             new_password = data["new_password"]
-            connection = get_db()
-            cursor = connection.cursor()
-            change_password(username, old_password, new_password, cursor, connection)
-            return jsonify({"status": "success", "message": "Password changed"}), 200
+            token = data["token"]
+            try:
+                username = jwt.decode(token, options={"verify_signature": False}).get(
+                    "username"
+                )
+                level = jwt.decode(token, options={"verify_signature": False}).get(
+                    "level"
+                )
+                if not check_token(token, username, cursor):
+                    raise Exception("Invalid token")
+                if level > 0:
+                    return jsonify({"status": "error", "message": "Unauthorized"}), 401
+            
+                connection = get_db()
+                cursor = connection.cursor()
+                change_password(username, old_password, new_password, cursor, connection)
+                return jsonify({"status": "success", "message": "Password changed."}), 200
+            
+            except Exception as e:
+                return handle_exceptions(e)
     except Exception as e:
         return handle_exceptions(e)
 
+@app.route("/changeAccessLevel", methods=["POST"])
+def change_accessLevel(username: str, accessLevel: int) -> None:
+    """
+    Changes the access level of a user
+
+    Args:
+        username (str): the username of the user
+        accessLevel (int): the new access level of the user
+
+    Returns:
+        None
+    """
+    try: 
+        data = request.json #POST request
+        if (
+            data and "username" not in data and "accessLevel" not in data and "token" not in data 
+            ):
+            raise KeyError("Missing required parameters")
+        try:
+            connection = get_db()
+            cursor = connection.cursor()
+            # check if the token is valid
+            token = data["token"]
+            username = jwt.decode(token, options={"verify_signature": False}).get(
+            "username"
+            )
+            accessLevel = jwt.decode(token, options={"verify_signature": False}).get("Level")
+            if not check_token(token, username, cursor):
+                raise Exception("Invalid token")
+            if accessLevel > 0:
+                return jsonify({"status": "error", "message": "Unauthorized"}), 401
+            
+            change_accessLevel(username, accessLevel, cursor, connection)
+
+        except Exception as e:
+            return handle_exceptions(e)
+        
+
+
+    except Exception as e:
+        return handle_exceptions(e)
+        
+    
 
 def run_server():
     """
