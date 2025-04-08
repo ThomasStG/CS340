@@ -35,4 +35,12 @@ export class AuthService {
   getToken(): string | null {
     return localStorage.getItem(this.token);
   }
+  // Angular service to handle password change - not sure if we need this yet
+  // but it's here for future reference
+  /*
+changePassword(currentPassword: string, newPassword: string): Observable<any> {
+  const body = { currentPassword, newPassword };
+  return this.http.post('/api/change-password', body);
+}
+  */
 }

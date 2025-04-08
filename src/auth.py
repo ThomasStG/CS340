@@ -150,10 +150,19 @@ def change_password(
     Returns:
         None
     """
+    # Check if the old password is correct
     cursor.execute(
-        "UPDATE users SET password = ? WHERE username = ? AND password = ?",
-        (new_password, username, old_password),
+        "SELECT * FROM users WHERE username = ? AND password = ?",
+        (username, old_password),
     )
+    if cursor.fetchone() is None:
+        raise ValueError("No such user exists")
+    else:
+        # Update the password
+        cursor.execute(
+            "UPDATE users SET password = ? WHERE username = ? AND password = ?",
+            (new_password, username, old_password),
+        )
     connection.commit()
 
 

@@ -811,8 +811,9 @@ def register():
         return handle_exceptions(e)
 
 
+#assume user is logged in as Admin and the token is valid
 @app.route("/changePassword", methods=["POST"])
-def change_pass():
+def change_pass(username: str, old_password: str, new_password: str) -> jsonify:
     """
     Handles changing a user's password
 
@@ -824,7 +825,9 @@ def change_pass():
     Returns:
         json: a message and status code
     """
+    
     try:
+        
         data = request.json
         if (
             data
@@ -833,14 +836,14 @@ def change_pass():
             and "new_password" not in data
         ):
             raise KeyError("Missing required parameters")
-
-        username = data["username"]
-        old_password = data["old_password"]
-        new_password = data["new_password"]
-        connection = get_db()
-        cursor = connection.cursor()
-        change_password(username, old_password, new_password, cursor, connection)
-        return jsonify({"status": "success", "message": "Password changed"}), 200
+        else:
+            username = data["username"]
+            old_password = data["old_password"]
+            new_password = data["new_password"]
+            connection = get_db()
+            cursor = connection.cursor()
+            change_password(username, old_password, new_password, cursor, connection)
+            return jsonify({"status": "success", "message": "Password changed"}), 200
     except Exception as e:
         return handle_exceptions(e)
 
