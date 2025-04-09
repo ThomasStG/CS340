@@ -383,7 +383,6 @@ def backup_data(cursor: sqlite3.Cursor) -> None:
     column_names = [description[0] for description in cursor.description]
 
     date = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    print(date)
 
     # Open the CSV file for writing
     with open(f"../data/data{date}.csv", "w", newline="") as f:
@@ -391,13 +390,11 @@ def backup_data(cursor: sqlite3.Cursor) -> None:
 
         # Write the header (column names)
         writer.writeheader()
-        print("header written")
 
         # Write the rows (data)
         for item in items:
             row = dict(zip(column_names, item))
             writer.writerow(row)
-        print(items)
 
 
 def get_backup_files() -> list[str]:

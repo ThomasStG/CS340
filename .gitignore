@@ -1,1 +1,3 @@
 data/.env
+logs/
+src/__pycache__/

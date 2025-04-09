@@ -19,12 +19,16 @@ import { AdminPopupComponent } from './admin-popup/admin-popup.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DataDownloadComponent } from './data-download/data-download.component';
 import { ItemPopupComponent } from './item-popup/item-popup.component';
+import { LogsComponent } from './logs/logs.component';
+import { ElectricalHomeComponent } from './electrical-home/electrical-home.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent }, // Home Page
   { path: 'admin', component: AdminComponent }, // Admin Page
   { path: 'authentication', component: AuthenticationComponent },
   { path: 'data-download', component: DataDownloadComponent },
+  { path: 'logs', component: LogsComponent },
+  { path: 'electrical-home', component: ElectricalHomeComponent },
 ];
 
 @NgModule({
@@ -40,6 +44,8 @@ const routes: Routes = [
     AdminPopupComponent,
     DataDownloadComponent,
     ItemPopupComponent,
+    LogsComponent,
+    ElectricalHomeComponent,
   ],
   imports: [
     ReactiveFormsModule,

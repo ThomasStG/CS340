@@ -39,7 +39,8 @@ is_metric=${item.is_metric}&
 size=${item.size}&
 num=${item.count}&
 location=${encodeURIComponent(locationJSON)}&
-threshold=${item.threshold}`;
+threshold=${item.threshold}&
+token=${this.authService.getToken()}`;
     return this.http.get(url);
   }
   decrementItem(item: ItemData, toChange: number): Observable<any> {

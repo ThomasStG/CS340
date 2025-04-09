@@ -106,7 +106,6 @@ def check_token(token: str, username: str, cursor: sqlite3.Cursor) -> bool:
         (username,),
     )
     old_token = cursor.fetchone()[0]
-    print("old", old_token)
     if old_token and old_token != token:
         return False
     return True

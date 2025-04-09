@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { UtilityService } from '../services/utility.service';
+import { saveAs } from 'file-saver';
 
 @Component({
   selector: 'app-data-download',
@@ -46,5 +47,11 @@ export class DataDownloadComponent implements OnInit {
         error: (err) => console.error('Upload error:', err),
       });
     }
+  }
+  downloadFile(fileUrl: string): void {
+    this.utilityService.downloadFile(fileUrl).subscribe((blob: Blob) => {
+      // Use 'saveAs' from the FileSaver library to save the file
+      saveAs(blob, fileUrl); // The file will be saved with the name passed as 'fileUrl'
+    });
   }
 }

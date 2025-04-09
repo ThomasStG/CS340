@@ -4,12 +4,6 @@
   overflow-y: scroll;
 }
 
-.search {
-  position: sticky;
-  top: 0;
-  z-index: 1;
-}
-
 .header {
   background-color: #f0f0f0;
   padding: 10px;
@@ -58,4 +52,9 @@ th:first-child,
 td:first-child {
   white-space: nowrap; /* Prevent text from wrapping */
   width: 1px; /* Allows the column to shrink to fit the widest content */
+}
+thead {
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }

@@ -27,12 +27,14 @@ import json
 import logging
 import os
 import sqlite3
+from io import BytesIO
+from logging.handlers import TimedRotatingFileHandler
 
 import jwt
 import pandas as pd
 import resend
 from dotenv import load_dotenv
-from flask import Flask, g, jsonify, request
+from flask import Flask, g, jsonify, request, send_file
 from flask_cors import CORS
 from werkzeug.utils import secure_filename
 
@@ -125,10 +127,8 @@ def handle_exceptions(exception: Exception) -> jsonify:
 
 
 def generate_token(username: str):
-    print("generate token")
     load_dotenv("../data/.env")
     SECRET_KEY = os.environ.get("Login_Token_Secret_Key")
-    print(SECRET_KEY)
     payload = {
         "iat": datetime.datetime.now(datetime.timezone.utc),
         "exp": datetime.datetime.now(datetime.timezone.utc)
@@ -139,7 +139,6 @@ def generate_token(username: str):
         token = jwt.encode(payload, SECRET_KEY, algorithm="HS256")
         return token
     except Exception as e:
-        print(f"JWT encoding error: {e}")
         raise
 
 
@@ -271,6 +270,11 @@ def increment():
         if not check_token(token, username, cursor):
             raise ValueError("Invalid token")
 
+        logger = logging.getLogger("app")
+        logger.info(
+            f"User '{username}' incremented '{data['name']} {data['size']}' by {data['num']}"
+        )
+
     except Exception as e:
         return handle_exceptions(e)
     try:
@@ -323,8 +327,19 @@ def decrement():
 
     try:
         # check token
-        if not check_token(data["token"], data["name"], cursor):
+        token = data["token"]
+        username = jwt.decode(token, options={"verify_signature": False}).get(
+            "username"
+        )
+
+        if not check_token(token, username, cursor):
             raise ValueError("Invalid token")
+
+        logger = logging.getLogger("app")
+        logger.info(
+            f"User '{username}' decremented '{data['name']} {data['size']}' by {data['num']}"
+        )
+
     except Exception as e:
         return handle_exceptions(e)
 
@@ -482,7 +497,7 @@ def add():
         if not check_token(token, username, cursor):
             raise ValueError("Invalid token")
 
-        logger = logging.getLogger(app)
+        logger = logging.getLogger("app")
         logger.info(
             f"User '{username}' added item with name: {data['name']}, size: {data['size']}, is_metric: {data['is_metric']}, num: {data['num']}, threshold: {data['threshold']}, location: {data['location']}"
         )
@@ -524,7 +539,9 @@ def remove():
     connection = get_db()
     cursor = connection.cursor()
     data = request.args
-    if not data or not all(key in data for key in ["name", "is_metric", "size"]):
+    if not data or not all(
+        key in data for key in ["name", "is_metric", "size", "token"]
+    ):
         raise KeyError("Missing required parameters")
 
     try:
@@ -540,6 +557,11 @@ def remove():
 
         # remove item
         remove_item(item_id, cursor, connection)
+        username = jwt.decode(data["token"], options={"verify_signature": False}).get(
+            "username"
+        )
+        logger = logging.getLogger("app")
+        logger.info(f"User '{username}' removed item '{data['name']}'")
 
         return jsonify({"status": "success"}), 200
     except Exception as e:
@@ -564,12 +586,10 @@ def fuzzy():
     connection = get_db()
     cursor = connection.cursor()
     data = request.args
-    print(data)
     logger = logging.getLogger(__name__)
     if not data or not all(key in data for key in ["name", "is_metric", "size"]):
         raise KeyError("Missing required parameters")
 
-    print(data)
     try:
         logger.info(
             f"""Searching for item with
@@ -579,7 +599,6 @@ def fuzzy():
         )
         metric_val = data["is_metric"].strip().lower() == "true"
         items = fzf(data["name"], metric_val, data["size"], cursor)
-        print(items)
         # parse location and convert is_metric to string
         for item in items:
             if "location" in item and item["location"] is not None:
@@ -666,6 +685,7 @@ def update():
                 "threshold",
                 "id",
                 "count",
+                "token",
             ]
         ):
             raise KeyError("Missing required parameters")
@@ -684,6 +704,11 @@ def update():
             cursor,
             connection,
         )
+        username = jwt.decode(data["token"], options={"verify_signature": False}).get(
+            "username"
+        )
+        logger = logging.getLogger("app")
+        logger.info(f"User '{username}' updated item '{data['name']}'")
         return jsonify({"status": "success"}), 200
     except Exception as e:
         return handle_exceptions(e)
@@ -929,6 +954,61 @@ def upload_file():
         return handle_exceptions(e)
 
 
+@app.route("/downloadFile", methods=["GET"])
+def download_file():
+    """
+    Handles downloading a file
+
+    Args:
+        None
+
+    Returns:
+        json: a message and status code
+    """
+    try:
+        # Get the query parameters from the request
+        file_name = request.args.get("fileName")
+
+        if not file_name:
+            raise KeyError("Missing required 'fileName' parameter")
+
+        # Check if the file exists
+        if not os.path.exists(file_name):
+            raise FileNotFoundError("File not found")
+
+        with open(file_name, "rb") as file:
+            file_content = file.read()
+
+        # Create a BytesIO object to hold the file content in memory
+        blob = BytesIO(file_content)
+        blob.seek(0)  # Make sure the pointer is at the start of the file
+
+        # Send the file as an attachment
+        return send_file(
+            blob,  # Send the in-memory file
+            as_attachment=True,  # This ensures it gets downloaded as a file
+            download_name=file_name,
+        )
+
+    except Exception as e:
+        return handle_exceptions(e)
+
+
+@app.route("/get_log", methods=["GET"])
+def get_log():
+    try:
+        log = ""
+        for file in os.listdir("../logs"):
+            if file.endswith(".log"):
+                with open(f"../logs/{file}", "r") as f:
+                    log += f.read()
+
+            print(log)
+        return jsonify({"status": "success", "log": log}), 200
+    except Exception as e:
+        return handle_exceptions(e)
+
+
 def run_server():
     """
     Ensures the database is has the table for items, then runs the development server
@@ -942,14 +1022,19 @@ def run_server():
     build_db()
 
     # sets up logging
-    date = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    logging.basicConfig(
-        filename=f"../logs/api_log.log",
-        level=logging.DEBUG,
-        format="%(asctime)s - %(levelname)s - %(message)s",
-    )
-    logger = logging.getLogger(__name__)
-    logger.info(f"API server started {date}")
+    logger = logging.getLogger("app")
+    logger.setLevel(logging.INFO)
+    logger.propagate = False  # Prevent duplicate logs in parent logger
+
+    # Add the TimedRotatingFileHandler
+    if not logger.handlers:  # Avoid adding duplicate handlers
+        handler = TimedRotatingFileHandler(
+            "../logs/app.log", when="W0", interval=1, backupCount=4
+        )
+        formatter = logging.Formatter("[%(asctime)s]:  %(message)s")
+        handler.setFormatter(formatter)
+        handler.setLevel(logging.INFO)
+        logger.addHandler(handler)
     app.run(debug=True, port=3000)  # Runs on http://localhost:3000
 
 

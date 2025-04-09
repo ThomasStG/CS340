@@ -43,4 +43,16 @@ export class UtilityService {
     formData.append('file', file);
     return this.http.post('http://127.0.0.1:3000/uploadFile', formData);
   }
+  downloadFile(fileUrl: string): Observable<Blob> {
+    console.log(fileUrl);
+    return this.http.get(
+      `http://127.0.0.1:3000/downloadFile?fileName=${encodeURIComponent(fileUrl)}`,
+      { responseType: 'blob' },
+    );
+  }
+  getLogFiles(): Observable<string> {
+    return this.http.get<{ log: string }>('http://127.0.0.1:3000/get_log').pipe(
+      map((response) => response.log), // Extract 'data' field from the response
+    );
+  }
 }

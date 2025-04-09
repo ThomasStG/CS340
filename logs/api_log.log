@@ -3446,3 +3446,154 @@
             size: s
 2025-04-08 18:10:27,066 - DEBUG - No items found
 2025-04-08 18:10:27,066 - INFO - 127.0.0.1 - - [08/Apr/2025 18:10:27] "GET /fuzzyfind?name=t&is_metric=True&size=s HTTP/1.1" 200 -
+2025-04-08 18:24:47,312 - INFO - API server started 2025-04-08_18-24-47
+2025-04-08 18:24:47,346 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3000
+2025-04-08 18:24:47,346 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-08 18:24:47,347 - INFO -  * Restarting with stat
+2025-04-08 18:24:48,100 - INFO - API server started 2025-04-08_18-24-48
+2025-04-08 18:24:48,119 - WARNING -  * Debugger is active!
+2025-04-08 18:24:48,126 - INFO -  * Debugger PIN: 507-368-162
+2025-04-08 18:24:50,019 - INFO - 127.0.0.1 - - [08/Apr/2025 18:24:50] "GET /getFiles HTTP/1.1" 200 -
+2025-04-08 18:25:31,887 - INFO - 127.0.0.1 - - [08/Apr/2025 18:25:31] "GET /getFiles HTTP/1.1" 200 -
+2025-04-08 18:29:37,792 - INFO - 127.0.0.1 - - [08/Apr/2025 18:29:37] "GET /getFiles HTTP/1.1" 200 -
+2025-04-08 18:29:37,792 - INFO - 127.0.0.1 - - [08/Apr/2025 18:29:37] "GET /getFiles HTTP/1.1" 200 -
+2025-04-08 18:31:02,494 - INFO - 127.0.0.1 - - [08/Apr/2025 18:31:02] "GET /getFiles HTTP/1.1" 200 -
+2025-04-08 18:34:16,271 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-08 18:34:16,522 - INFO -  * Restarting with stat
+2025-04-08 18:34:17,699 - INFO - API server started 2025-04-08_18-34-17
+2025-04-08 18:34:17,722 - WARNING -  * Debugger is active!
+2025-04-08 18:34:17,728 - INFO -  * Debugger PIN: 507-368-162
+2025-04-08 18:34:40,357 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-08 18:34:40,471 - INFO -  * Restarting with stat
+2025-04-08 18:34:41,239 - INFO - API server started 2025-04-08_18-34-41
+2025-04-08 18:34:41,258 - WARNING -  * Debugger is active!
+2025-04-08 18:34:41,264 - INFO -  * Debugger PIN: 507-368-162
+2025-04-08 18:35:08,143 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-08 18:35:08,223 - INFO -  * Restarting with stat
+2025-04-08 18:35:09,200 - INFO - API server started 2025-04-08_18-35-09
+2025-04-08 18:35:09,221 - WARNING -  * Debugger is active!
+2025-04-08 18:35:09,227 - INFO -  * Debugger PIN: 507-368-162
+2025-04-08 18:35:12,343 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-08 18:35:12,427 - INFO -  * Restarting with stat
+2025-04-08 18:35:13,217 - INFO - API server started 2025-04-08_18-35-13
+2025-04-08 18:35:13,239 - WARNING -  * Debugger is active!
+2025-04-08 18:35:13,246 - INFO -  * Debugger PIN: 507-368-162
+2025-04-08 18:39:26,056 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-08 18:39:26,127 - INFO -  * Restarting with stat
+2025-04-08 18:39:28,617 - INFO - API server started 2025-04-08_18-39-28
+2025-04-08 18:39:28,645 - WARNING -  * Debugger is active!
+2025-04-08 18:39:28,651 - INFO -  * Debugger PIN: 507-368-162
+2025-04-08 18:40:25,965 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-08 18:40:26,057 - INFO -  * Restarting with stat
+2025-04-08 18:40:27,198 - INFO - API server started 2025-04-08_18-40-27
+2025-04-08 18:40:27,218 - WARNING -  * Debugger is active!
+2025-04-08 18:40:27,225 - INFO -  * Debugger PIN: 507-368-162
+2025-04-08 18:40:30,341 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-08 18:40:30,433 - INFO -  * Restarting with stat
+2025-04-08 18:40:31,108 - INFO - API server started 2025-04-08_18-40-31
+2025-04-08 18:40:31,125 - WARNING -  * Debugger is active!
+2025-04-08 18:40:31,131 - INFO -  * Debugger PIN: 507-368-162
+2025-04-08 18:41:09,239 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-08 18:41:09,314 - INFO -  * Restarting with stat
+2025-04-08 18:41:10,285 - INFO - API server started 2025-04-08_18-41-10
+2025-04-08 18:41:10,309 - WARNING -  * Debugger is active!
+2025-04-08 18:41:10,315 - INFO -  * Debugger PIN: 507-368-162
+2025-04-08 18:41:14,537 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-08 18:41:14,624 - INFO -  * Restarting with stat
+2025-04-08 18:41:15,495 - INFO - API server started 2025-04-08_18-41-15
+2025-04-08 18:41:15,516 - WARNING -  * Debugger is active!
+2025-04-08 18:41:15,525 - INFO -  * Debugger PIN: 507-368-162
+2025-04-08 18:41:21,514 - INFO - 127.0.0.1 - - [08/Apr/2025 18:41:21] "[31m[1mGET /downloadFile?fileUrl=${fileUrl} HTTP/1.1[0m" 400 -
+2025-04-08 18:41:46,517 - INFO - 127.0.0.1 - - [08/Apr/2025 18:41:46] "GET /getFiles HTTP/1.1" 200 -
+2025-04-08 18:42:37,395 - INFO - 127.0.0.1 - - [08/Apr/2025 18:42:37] "GET /getFiles HTTP/1.1" 200 -
+2025-04-08 18:43:00,063 - INFO - 127.0.0.1 - - [08/Apr/2025 18:43:00] "[31m[1mGET /downloadFile?fileUrl=../data/SampleData.csv HTTP/1.1[0m" 400 -
+2025-04-08 18:44:46,611 - INFO - 127.0.0.1 - - [08/Apr/2025 18:44:46] "GET /getFiles HTTP/1.1" 200 -
+2025-04-08 18:44:46,619 - INFO - 127.0.0.1 - - [08/Apr/2025 18:44:46] "GET /getFiles HTTP/1.1" 200 -
+2025-04-08 18:45:31,152 - INFO - 127.0.0.1 - - [08/Apr/2025 18:45:31] "GET /getFiles HTTP/1.1" 200 -
+2025-04-08 18:45:31,152 - INFO - 127.0.0.1 - - [08/Apr/2025 18:45:31] "GET /getFiles HTTP/1.1" 200 -
+2025-04-08 18:45:34,759 - INFO - 127.0.0.1 - - [08/Apr/2025 18:45:34] "[31m[1mGET /downloadFile?fileUrl=../data/SampleData.csv HTTP/1.1[0m" 400 -
+2025-04-08 18:46:46,821 - INFO - 127.0.0.1 - - [08/Apr/2025 18:46:46] "GET /getFiles HTTP/1.1" 200 -
+2025-04-08 18:46:59,595 - INFO - 127.0.0.1 - - [08/Apr/2025 18:46:59] "[31m[1mGET /downloadFile?fileUrl=../data/SampleData.csv HTTP/1.1[0m" 400 -
+2025-04-08 18:47:08,633 - INFO - 127.0.0.1 - - [08/Apr/2025 18:47:08] "GET /getFiles HTTP/1.1" 200 -
+2025-04-08 18:47:11,911 - INFO - 127.0.0.1 - - [08/Apr/2025 18:47:11] "[31m[1mGET /downloadFile?fileUrl=../data/SampleData.csv HTTP/1.1[0m" 400 -
+2025-04-08 18:48:06,189 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-08 18:48:06,315 - INFO -  * Restarting with stat
+2025-04-08 18:48:07,253 - INFO - API server started 2025-04-08_18-48-07
+2025-04-08 18:48:07,275 - WARNING -  * Debugger is active!
+2025-04-08 18:48:07,280 - INFO -  * Debugger PIN: 507-368-162
+2025-04-08 18:48:14,519 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-08 18:48:14,621 - INFO -  * Restarting with stat
+2025-04-08 18:48:15,421 - INFO - API server started 2025-04-08_18-48-15
+2025-04-08 18:48:15,452 - WARNING -  * Debugger is active!
+2025-04-08 18:48:15,465 - INFO -  * Debugger PIN: 507-368-162
+2025-04-08 18:48:15,845 - INFO - 127.0.0.1 - - [08/Apr/2025 18:48:15] "[31m[1mGET /downloadFile?fileUrl=../data/SampleData.csv HTTP/1.1[0m" 400 -
+2025-04-08 18:49:12,114 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-08 18:49:12,181 - INFO -  * Restarting with stat
+2025-04-08 18:49:13,111 - INFO - API server started 2025-04-08_18-49-13
+2025-04-08 18:49:13,131 - WARNING -  * Debugger is active!
+2025-04-08 18:49:13,137 - INFO -  * Debugger PIN: 507-368-162
+2025-04-08 18:49:14,676 - INFO - 127.0.0.1 - - [08/Apr/2025 18:49:14] "[31m[1mGET /downloadFile?fileUrl=../data/SampleData.csv HTTP/1.1[0m" 400 -
+2025-04-08 18:49:28,518 - INFO - 127.0.0.1 - - [08/Apr/2025 18:49:28] "GET /getFiles HTTP/1.1" 200 -
+2025-04-08 18:49:31,234 - INFO - 127.0.0.1 - - [08/Apr/2025 18:49:31] "[35m[1mGET /downloadFile?fileName=../data/SampleData.csv HTTP/1.1[0m" 500 -
+2025-04-08 18:49:48,227 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-08 18:49:48,331 - INFO -  * Restarting with stat
+2025-04-08 18:49:49,267 - INFO - API server started 2025-04-08_18-49-49
+2025-04-08 18:49:49,291 - WARNING -  * Debugger is active!
+2025-04-08 18:49:49,302 - INFO -  * Debugger PIN: 507-368-162
+2025-04-08 18:49:49,619 - INFO - 127.0.0.1 - - [08/Apr/2025 18:49:49] "[35m[1mGET /downloadFile?fileName=../data/SampleData.csv HTTP/1.1[0m" 500 -
+2025-04-08 18:50:03,826 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-08 18:50:03,926 - INFO -  * Restarting with stat
+2025-04-08 18:50:04,989 - INFO - API server started 2025-04-08_18-50-04
+2025-04-08 18:50:05,010 - WARNING -  * Debugger is active!
+2025-04-08 18:50:05,017 - INFO -  * Debugger PIN: 507-368-162
+2025-04-08 18:50:05,049 - INFO - 127.0.0.1 - - [08/Apr/2025 18:50:05] "[35m[1mGET /downloadFile?fileName=../data/SampleData.csv HTTP/1.1[0m" 500 -
+2025-04-08 18:50:16,854 - INFO - 127.0.0.1 - - [08/Apr/2025 18:50:16] "[35m[1mGET /downloadFile?fileName=../data/SampleData.csv HTTP/1.1[0m" 500 -
+2025-04-08 18:50:25,726 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-08 18:50:25,797 - INFO -  * Restarting with stat
+2025-04-08 18:50:26,751 - INFO - API server started 2025-04-08_18-50-26
+2025-04-08 18:50:26,777 - WARNING -  * Debugger is active!
+2025-04-08 18:50:26,798 - INFO -  * Debugger PIN: 507-368-162
+2025-04-08 18:50:26,864 - INFO - 127.0.0.1 - - [08/Apr/2025 18:50:26] "[35m[1mGET /downloadFile?fileName=../data/SampleData.csv HTTP/1.1[0m" 500 -
+2025-04-08 18:50:42,226 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-08 18:50:42,315 - INFO -  * Restarting with stat
+2025-04-08 18:50:43,208 - INFO - API server started 2025-04-08_18-50-43
+2025-04-08 18:50:43,231 - WARNING -  * Debugger is active!
+2025-04-08 18:50:43,242 - INFO -  * Debugger PIN: 507-368-162
+2025-04-08 18:50:43,541 - INFO - 127.0.0.1 - - [08/Apr/2025 18:50:43] "[35m[1mGET /downloadFile?fileName=../data/SampleData.csv HTTP/1.1[0m" 500 -
+2025-04-08 18:50:51,542 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-08 18:50:51,637 - INFO -  * Restarting with stat
+2025-04-08 18:50:52,522 - INFO - API server started 2025-04-08_18-50-52
+2025-04-08 18:50:52,551 - WARNING -  * Debugger is active!
+2025-04-08 18:50:52,565 - INFO -  * Debugger PIN: 507-368-162
+2025-04-08 18:50:52,601 - INFO - 127.0.0.1 - - [08/Apr/2025 18:50:52] "[35m[1mGET /downloadFile?fileName=../data/SampleData.csv HTTP/1.1[0m" 500 -
+2025-04-08 18:51:00,869 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-08 18:51:00,959 - INFO -  * Restarting with stat
+2025-04-08 18:51:01,756 - INFO - API server started 2025-04-08_18-51-01
+2025-04-08 18:51:01,782 - WARNING -  * Debugger is active!
+2025-04-08 18:51:01,805 - INFO -  * Debugger PIN: 507-368-162
+2025-04-08 18:51:02,022 - INFO - 127.0.0.1 - - [08/Apr/2025 18:51:02] "[35m[1mGET /downloadFile?fileName=../data/SampleData.csv HTTP/1.1[0m" 500 -
+2025-04-08 18:51:36,840 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-08 18:51:36,908 - INFO -  * Restarting with stat
+2025-04-08 18:51:37,814 - INFO - API server started 2025-04-08_18-51-37
+2025-04-08 18:51:37,838 - WARNING -  * Debugger is active!
+2025-04-08 18:51:37,855 - INFO -  * Debugger PIN: 507-368-162
+2025-04-08 18:51:38,453 - INFO - 127.0.0.1 - - [08/Apr/2025 18:51:38] "[35m[1mGET /downloadFile?fileName=../data/SampleData.csv HTTP/1.1[0m" 500 -
+2025-04-08 18:52:01,574 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-08 18:52:01,671 - INFO -  * Restarting with stat
+2025-04-08 18:52:02,655 - INFO - API server started 2025-04-08_18-52-02
+2025-04-08 18:52:02,688 - WARNING -  * Debugger is active!
+2025-04-08 18:52:02,695 - INFO -  * Debugger PIN: 507-368-162
+2025-04-08 18:52:03,905 - INFO - 127.0.0.1 - - [08/Apr/2025 18:52:03] "GET /downloadFile?fileName=../data/SampleData.csv HTTP/1.1" 200 -
+2025-04-08 18:52:34,687 - INFO - 127.0.0.1 - - [08/Apr/2025 18:52:34] "GET /downloadFile?fileName=../data/destinyWeapons.csv HTTP/1.1" 200 -
+2025-04-08 18:52:57,116 - INFO - 127.0.0.1 - - [08/Apr/2025 18:52:57] "GET /getFiles HTTP/1.1" 200 -
+2025-04-08 18:53:57,021 - INFO -  * Detected change in '/Users/thomas/Library/CloudStorage/OneDrive-SNHU/25SPDAY/CS340/CS340/src/app.py', reloading
+2025-04-08 18:53:57,102 - INFO -  * Restarting with stat
+2025-04-08 18:53:58,058 - INFO - API server started 2025-04-08_18-53-58
+2025-04-08 18:53:58,079 - WARNING -  * Debugger is active!
+2025-04-08 18:53:58,085 - INFO -  * Debugger PIN: 507-368-162
+2025-04-08 18:53:58,861 - INFO - 127.0.0.1 - - [08/Apr/2025 18:53:58] "GET /downloadFile?fileName=../data/SampleData.csv HTTP/1.1" 200 -
+2025-04-08 18:54:35,735 - INFO - 127.0.0.1 - - [08/Apr/2025 18:54:35] "POST /uploadFile HTTP/1.1" 200 -
+2025-04-08 18:54:39,683 - INFO - 127.0.0.1 - - [08/Apr/2025 18:54:39] "GET /getFiles HTTP/1.1" 200 -
+2025-04-08 18:54:49,500 - INFO - 127.0.0.1 - - [08/Apr/2025 18:54:49] "GET /restoreDatabase?file=../data/SampleData.csv HTTP/1.1" 200 -
+2025-04-08 19:01:14,854 - INFO - 127.0.0.1 - - [08/Apr/2025 19:01:14] "GET /findAll HTTP/1.1" 200 -
