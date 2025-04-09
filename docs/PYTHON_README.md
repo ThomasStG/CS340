@@ -121,3 +121,39 @@ If you encounter issues, ensure you are in a python virtual environment.
   - password (str): The hashed password of the user.
 - **Returns**:
   - JSON object indicating success or failure.
+
+## **/isLoggedIn**
+
+- **Description**: Checks if the user is logged in
+- **Parameters**:
+  - token (str): the token of the user
+- **Returns**:
+  - JSON object indicating success or failure if the user is logged in.
+
+## **/register**
+
+- **Description**: register user
+- **parameters**:
+  - username (str): The username of the user.
+  - password (str): The hashed password of the user.
+- **Returns**:
+  - JSON object indicating success or failure...I think
+
+## **/changePassword**
+- **Description**: change users password
+- **paramaters**: 
+  - username (str): the username of the user
+  - token (str): the cookie of the user
+  - new_password (str): the new password of the user
+- **returns**:
+  - JSON object: a message and status code
+## **/get_log**
+- **Description**: get the log
+- **paramaters**:
+- **returns**:
+  log file and status code
+
+## **run_server**
+- **Description**: function to run the server
+- **paramaters**: none
+- **returns**:none

@@ -56,7 +56,8 @@ from auth import change_password, check_token, create_account, get_salt, login
 
 app = Flask(__name__)
 CORS(
-    app, supports_credentials=True, origins=["http://localhost:4200"]
+    app,
+    supports_credentials=True,  # origins=["http://localhost:4200"]
 )  # Enable CORS for Angular frontend
 
 
@@ -126,7 +127,7 @@ def handle_exceptions(exception: Exception) -> jsonify:
         )
 
 
-def generate_token(username: str):
+def generate_token(username: str, level: int) -> str:
     load_dotenv("../data/.env")
     SECRET_KEY = os.environ.get("Login_Token_Secret_Key")
     payload = {
@@ -134,6 +135,7 @@ def generate_token(username: str):
         "exp": datetime.datetime.now(datetime.timezone.utc)
         + datetime.timedelta(minutes=30),
         "username": username,
+        "access": level,
     }
     try:
         token = jwt.encode(payload, SECRET_KEY, algorithm="HS256")
@@ -413,18 +415,10 @@ def find_item():
     connection = get_db()
     cursor = connection.cursor()
     data = request.args
-    logger = logging.getLogger(__name__)
     if not data or "name" not in data or "is_metric" not in data or "size" not in data:
         raise KeyError("Missing required parameters")
 
     try:
-        logger.info(
-            f"""Searching for item with
-                name: {data['name']},
-                is_metric: {data['is_metric']},
-                size: {data['size']}"""
-        )
-
         # convert metric_val to a bool
         metric_val = data["is_metric"].strip().lower() == "true"
         item_id = find_by_name(data["name"], metric_val, data["size"], cursor)
@@ -532,6 +526,7 @@ def remove():
        name (str): the name of the item
        is_metric (int): whether the item is metric (1) or not (0)
        size (str): the size of the item
+       token (str): the cookie of the user
 
     Returns:
         json: a message and status code
@@ -543,6 +538,24 @@ def remove():
         key in data for key in ["name", "is_metric", "size", "token"]
     ):
         raise KeyError("Missing required parameters")
+    try:
+        token = data["token"]
+        username, level = jwt.decode(token, options={"verify_signature": False}).get(
+            "username", "level"
+        )
+
+        if not check_token(token, username, cursor):
+            raise ValueError("Invalid token")
+        if level != 0:
+            raise ValueError("User does not have permission to remove items")
+
+        logger = logging.getLogger(app)
+        logger.info(
+            f"User '{username}' removed item with name: {data['name']}, size: {data['size']}, is_metric: {data['is_metric']}"
+        )
+
+    except Exception as e:
+        return handle_exceptions(e)
 
     try:
         # find item
@@ -586,17 +599,10 @@ def fuzzy():
     connection = get_db()
     cursor = connection.cursor()
     data = request.args
-    logger = logging.getLogger(__name__)
     if not data or not all(key in data for key in ["name", "is_metric", "size"]):
         raise KeyError("Missing required parameters")
 
     try:
-        logger.info(
-            f"""Searching for item with
-            name: {data['name']},
-            is_metric: {data['is_metric']},
-            size: {data['size']}"""
-        )
         metric_val = data["is_metric"].strip().lower() == "true"
         items = fzf(data["name"], metric_val, data["size"], cursor)
         # parse location and convert is_metric to string
@@ -666,6 +672,7 @@ def update():
        location (str): the location of the item
        num (int): the number to increment by
        threshold (int): the threshold of the item
+       token (str): the cookie of the user
 
     Returns:
         json: a message and status code
@@ -690,6 +697,21 @@ def update():
         ):
             raise KeyError("Missing required parameters")
 
+        logger = logging.getLogger("app")
+        try:
+            token = data["token"]
+            username = jwt.decode(token, options={"verify_signature": False}).get(
+                "username"
+            )
+            if not check_token(token, username, get_db().cursor()):
+                raise KeyError("Invalid token")
+            logger.info(
+                f"User: '{username}' updated item: {data['size']} {data['name']}"
+            )
+        except Exception as e:
+            logger.error(f"An unvalidated user attempted to update an item")
+
+            return jsonify({"status": "error", "output": "false"}), 401
         connection = get_db()
         cursor = connection.cursor()
         update_item(
@@ -747,9 +769,11 @@ def try_login() -> jsonify:
 
         #     # Get the hashed password as a hexadecimal string
         hashed_password = hash_object.hexdigest()
-        token = login(username, hashed_password, cursor)
+        token = login(username, hashed_password, cursor, connection)
         if token == "":
             raise Exception("Login failed")
+        logger = logging.getLogger("app")
+        logger.info(f"User '{username}' logged in")
         return jsonify({"status": "success", "token": token}), 200
     except Exception as e:
         return handle_exceptions(e)
@@ -776,6 +800,8 @@ def is_logged_in():
             username = jwt.decode(token, options={"verify_signature": False}).get(
                 "username"
             )
+            if not check_token(token, username, get_db().cursor()):
+                raise KeyError("Invalid token")
         except Exception as e:
             return jsonify({"status": "error", "output": "false"}), 401
         connection = get_db()
@@ -796,12 +822,14 @@ def register():
             and "username" not in data
             and "password" not in data
             and "salt" not in data
+            and "level" not in data
         ):
             raise KeyError("Missing required parameters")
 
         username = data["username"]
         password = data["password"]
         salt = data["salt"]
+        level = int(data["level"])
         connection = get_db()
         cursor = connection.cursor()
         salt = os.urandom(32)
@@ -816,10 +844,10 @@ def register():
         hashed_password = hash_object.hexdigest()
 
         if not create_account(
-            username, hashed_password, salt.hex(), cursor, connection
+            username, level, hashed_password, salt.hex(), cursor, connection
         ):
             raise Exception("Login failed")
-        token = generate_token(username)
+        token = generate_token(username, level)
         return jsonify({"status": "success", "token": token}), 200
     except Exception as e:
         return handle_exceptions(e)
@@ -832,7 +860,7 @@ def change_pass():
 
     Args:
         username (str): the username of the user
-        old_password (str): the old password of the user
+        token (str): the cookie of the user
         new_password (str): the new password of the user
 
     Returns:
@@ -843,17 +871,29 @@ def change_pass():
         if (
             data
             and "username" not in data
-            and "old_password" not in data
+            # and "old_password" not in data
             and "new_password" not in data
+            and "token" not in data
         ):
             raise KeyError("Missing required parameters")
 
         username = data["username"]
-        old_password = data["old_password"]
+        # old_password = data["old_password"]
         new_password = data["new_password"]
+        token = data["token"]
+        try:
+            username, levle = jwt.decode(
+                token, options={"verify_signature": False}
+            ).get("username", "level")
+            if not check_token(token, username, cursor):
+                raise ValueError("Invalid token")
+            if not level == 0:
+                raise ValueError("Unauthorized")
+        except Exception as e:
+            return jsonify({"status": "error", "message": "Invalid token"}), 401
         connection = get_db()
         cursor = connection.cursor()
-        change_password(username, old_password, new_password, cursor, connection)
+        change_password(username, new_password, cursor, connection)
         return jsonify({"status": "success", "message": "Password changed"}), 200
     except Exception as e:
         return handle_exceptions(e)
@@ -1005,6 +1045,30 @@ def get_log():
 
             print(log)
         return jsonify({"status": "success", "log": log}), 200
+    except Exception as e:
+        return handle_exceptions(e)
+
+@app.route("/checkToken", methods = ["POST"])
+def check_token():
+    try:
+        data = request.json
+        if data is None or "token" not in data:
+            raise KeyError ("missing required parameters")
+        level = jwt.decode(data["token"], options={"verify_signature":False}).get("level")
+        return jsonify({"status":"success", "level":level}), 200
+        
+    except Exception as e:
+        return handle_exceptions(e)
+
+@app.route("/get_log", methods=["GET"])
+def get_log():
+    try:
+        log = ""
+        for file in os.listdir("../logs"):
+            if file.endswith(".log"):
+                with open(f"../logs/{file}", "r") as f:
+                    log += f.read().replace("\n", "<br>")
+        return log, 200
     except Exception as e:
         return handle_exceptions(e)
 

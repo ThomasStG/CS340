@@ -10,6 +10,7 @@ import { BehaviorSubject } from 'rxjs';
   styleUrl: './app.component.css',
 })
 export class AppComponent implements OnInit {
+export class AppComponent implements OnInit {
   title = 'IDEAr';
   darkMode = new BehaviorSubject<boolean>(false);
 

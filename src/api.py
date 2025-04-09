@@ -266,7 +266,7 @@ def decrement_item(
         ),
     )
     connection.commit()
-    if new_count < int(item[0]["threshold"]) and not item[0]["iscontacted"]:
+    if new_count < int(item[0]["threshold"]) and not item[0]["isContacted"]:
         cursor.execute(
             """
                        UPDATE items SET iscontacted = 1 WHERE id = ?

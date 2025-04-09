@@ -18,6 +18,7 @@ export class AdminComponent {
     private router: Router,
     private getItemsService: GetItemsService,
     private dialog: MatDialog,
+    private dialog: MatDialog,
   ) {}
   items: ItemData[] = [];
   isPopupVisible = false;
@@ -81,6 +82,15 @@ export class AdminComponent {
         break;
     }
   }
+  addItem(event: any) {
+    this.dialog.open(AdminPopupComponent);
+  }
+
+  check_level(){
+    const level = this.authService.levelGetter().subscribe((level)=> {
+    if (level != 2) return true
+    else return false}
+  )}
   addItem(event: any) {
     this.dialog.open(AdminPopupComponent);
   }
