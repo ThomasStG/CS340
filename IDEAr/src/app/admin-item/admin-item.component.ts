@@ -16,11 +16,6 @@ export class AdminItemComponent implements OnInit {
     private authService: AuthService,
     private dialog: MatDialog,
   ) {}
-  constructor(
-    private updateItemService: UpdateItemService,
-    private authService: AuthService,
-    private dialog: MatDialog,
-  ) {}
   @Input() item: ItemData = {
     id: 0,
     name: '',
@@ -31,7 +26,6 @@ export class AdminItemComponent implements OnInit {
     threshold: 0,
   };
   newItem: ItemData = { ...this.item };
-  toChange = 0;
   toChange = 0;
   ngOnInit() {
     this.item.location = JSON.parse(this.item.location);
@@ -62,7 +56,7 @@ export class AdminItemComponent implements OnInit {
     this.isEditing = false;
     this.isPopupVisible = false;
     this.updateItemService
-      .updateItem(this.item, this.newItem, this.authService.getToken())
+      .updateItem(this.item, this.newItem)
       .subscribe((response) => {
         console.log(response);
       });

@@ -5,7 +5,7 @@ import { GetItemsService } from '../services/get-items.service';
 import { ItemData } from '../item-data';
 import { AdminItemComponent } from '../admin-item/admin-item.component';
 import { MatDialog } from '@angular/material/dialog';
-import { UpdateItemService } from '../update-item.service';  // Adjust the path accordingly
+import { UpdateItemService } from '../services/update-item.service'; // Adjust the path accordingly
 import { AdminPopupComponent } from '../admin-popup/admin-popup.component';
 
 @Component({
@@ -18,7 +18,6 @@ export class AdminComponent {
     private authService: AuthService,
     private router: Router,
     private getItemsService: GetItemsService,
-    private dialog: MatDialog,
     private dialog: MatDialog,
   ) {}
   items: ItemData[] = [];
@@ -86,16 +85,14 @@ export class AdminComponent {
   addItem(event: any) {
     this.dialog.open(AdminPopupComponent);
     const PopUp = this.dialog.open(AdminPopupComponent);
-    PopUp.componentInstance.addingItem();
+    PopUp.componentInstance.addingItem(event);
   }
 
-  check_level(){
-    const level = this.authService.levelGetter().subscribe((level)=> {
-    if (level != 2) return true
-    else return false}
-  )}
-  addItem(event: any) {
-    this.dialog.open(AdminPopupComponent);
+  check_level() {
+    const level = this.authService.levelGetter().subscribe((level) => {
+      if (level != 2) return true;
+      else return false;
+    });
   }
   closePopup() {
     this.isPopupVisible = false;

@@ -24,7 +24,8 @@ new_size=${newItem.size}&
 id=${oldItem.id}&
 count=${newItem.count}&
 location=${encodeURIComponent(locationJSON)}&
-threshold=${newItem.threshold}`;
+threshold=${newItem.threshold}&
+token=${this.authService.getToken()}`;
     return this.http.get(url);
   }
   deleteItem(item: ItemData): Observable<any> {
