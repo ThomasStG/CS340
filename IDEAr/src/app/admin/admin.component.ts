@@ -5,6 +5,7 @@ import { GetItemsService } from '../services/get-items.service';
 import { ItemData } from '../item-data';
 import { AdminItemComponent } from '../admin-item/admin-item.component';
 import { MatDialog } from '@angular/material/dialog';
+import { UpdateItemService } from '../update-item.service';  // Adjust the path accordingly
 import { AdminPopupComponent } from '../admin-popup/admin-popup.component';
 
 @Component({
@@ -84,6 +85,8 @@ export class AdminComponent {
   }
   addItem(event: any) {
     this.dialog.open(AdminPopupComponent);
+    const PopUp = this.dialog.open(AdminPopupComponent);
+    PopUp.componentInstance.addingItem();
   }
 
   check_level(){

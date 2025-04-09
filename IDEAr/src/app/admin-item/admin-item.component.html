@@ -1,8 +1,8 @@
 <div class="item" >
-  <div class="itemColumn"(click)="showPopup()">{{ item.name }}</div>
-  <div class="itemColumn"(click)="showPopup()">{{ item.size }}</div>
-  <div class="itemColumn"(click)="showPopup()">{{ item.is_metric }}</div>
-  <div class="itemColumn"(click)="showPopup()">{{ item.count }}</div>
+  <div class="itemColumn"(click)="showPopup($event)">{{ item.name }}</div>
+  <div class="itemColumn"(click)="showPopup($event)">{{ item.size }}</div>
+  <div class="itemColumn"(click)="showPopup($event)">{{ item.is_metric }}</div>
+  <div class="itemColumn"(click)="showPopup($event)">{{ item.count }}</div>
   <div class="flex gap-3">
   <input type="number" [(ngModel)]="toChange" class="bg-gray-50 hover:border-solid hover:border-black-50 hover:border-2 bg-gray-300 dark:bg-gray-800"/>
   <button (click)="incrementItem($event)" class="hover:border-solid hover:border-black-50 hover:border-2">Add</button>
@@ -10,6 +10,7 @@
   </div>
 </div>
 
+<!--
 <div *ngIf="isPopupVisible" class="overlay" (click)="closePopup($event)"></div>
 
 <div *ngIf="isPopupVisible" class="popup">
@@ -172,6 +173,8 @@
         </tr>
       </table>
     </div>
+
+
     <div *ngIf="!isEditing" class="flex flex-col editing-popup">
       <h1 class="popup-header">{{ item.name }}</h1>
       <table>
@@ -345,4 +348,6 @@
     </button>
     <button (click)="updateItem($event)" class="close-button">Save</button>
   </div>
+
 </div>
+-->
