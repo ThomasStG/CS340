@@ -6,7 +6,6 @@ Functions:
     teardown_db: Cleans up the connections and global variable on quit.
     import_csv: Deletes all items from the database and repopulates with values from a CSV file.
     add_from_csv: Adds items from a CSV file to the database.
-    main: Implements a CLI-based testing environment.  # TODO: DELETE this
     parse_location_to_string: Parses a JSON string into a location.
     parse_location_to_list: Parses a JSON string into a list.
     run_server: Ensures the database has the required table for items, then runs the development server.
@@ -28,20 +27,26 @@ import json
 import logging
 import os
 import sqlite3
+from io import BytesIO
+from logging.handlers import TimedRotatingFileHandler
 
 import jwt
+import pandas as pd
 import resend
 from dotenv import load_dotenv
-from flask import Flask, g, jsonify, request
+from flask import Flask, g, jsonify, request, send_file
 from flask_cors import CORS
+from werkzeug.utils import secure_filename
 
 from api import (
     add_item,
+    backup_data,
     build_db,
     decrement_item,
     find_by_name,
     fzf,
     get_all,
+    get_backup_files,
     get_item,
     increment_item,
     remove_item,
@@ -84,69 +89,6 @@ def teardown_db(_: Exception) -> None:
     # closes the connection if it exists
     if db is not None:
         db.close()
-
-
-def main() -> None:
-    """
-    A CLI testing environment for the database
-
-    Args:
-        None
-
-    Returns:
-        None
-    """
-    con = sqlite3.connect("../data/data.db")
-    cur = con.cursor()
-    cur.execute("""SELECT * FROM items""")
-    print(cur.fetchall())
-    while True:
-        choice = input(
-            """1. Search for item by id\n
-    2. increment item by id\n
-    3. decrement item by id\n
-    4. Add item
-    \n5. Remove item\n
-    6. search item by name\n
-    0. exit\n"""
-        )
-        match choice:
-            case 0:
-                cur.close()
-                return
-            case 1:
-                val = int(input("enter the id: "))
-                print(get_item(val, cur))
-            case 2:
-                val = int(input("enter the id: "))
-                count = int(input("how many to add? "))
-                increment_item(val, count, cur, con)
-            case 3:
-                val = int(input("enter the id: "))
-                count = int(input("how many to remove? "))
-                decrement_item(val, count, cur, con)
-            case 4:
-                name = input("enter the name: ")
-                size = input("enter the size: ")
-                is_metric = (
-                    input("Is it metric? (True/False): ").strip().lower() == "true"
-                )
-                location = input("enter the location: ")
-                count = int(input("enter the count: "))
-                threshold = int(input("enter the low threshold: "))
-                add_item(name, size, is_metric, location, count, threshold, cur, con)
-            case 5:
-                val = int(input("enter the id: "))
-                remove_item(val, cur, con)
-            case 6:
-                name = input("name: ")
-                is_metric = (
-                    input("Is it metric? (True/False): ").strip().lower() == "true"
-                )
-                size = input("size: ")
-                item_id = find_by_name(name, is_metric, size, cur)
-                print("id = ", item_id)
-                print(get_item(item_id, cur))
 
 
 def handle_exceptions(exception: Exception) -> jsonify:
@@ -197,7 +139,6 @@ def generate_token(username: str):
         token = jwt.encode(payload, SECRET_KEY, algorithm="HS256")
         return token
     except Exception as e:
-        print(f"JWT encoding error: {e}")
         raise
 
 
@@ -211,27 +152,32 @@ def import_csv(uri: str) -> None:
     Returns:
         None
     """
-    con = sqlite3.connect("../data/data.db")
-    cur = con.cursor()
-    cur.execute(
-        """DELETE FROM items"""
-    )  # delete all items so only csv data is in the database
+    try:
+        con = sqlite3.connect("../data/data.db")
+        cur = con.cursor()
+        cur.execute(
+            """DELETE FROM items"""
+        )  # delete all items so only csv data is in the database
 
-    # open csv file and read the data into the database
-    with open(uri, newline="", encoding="utf-8") as csvfile:
-        spamreader = csv.reader(csvfile, delimiter=",", quotechar="|")
-        for row in spamreader:
+        # open csv file and read the data into the database
+        df = pd.read_csv(uri)
+        for row in df.itertuples():
             add_item(
-                row[1],
-                row[2],
-                row[3] == "1",
-                row[4],
-                int(row[5]),
-                int(row[6]),
+                row.name,
+                row.size,
+                row.is_metric == "1",
+                row.location,
+                row.count,
+                row.threshold,
                 cur,
                 con,
             )
-    con.commit()
+        con.commit()
+    except Exception as e:
+        con.rollback()
+        print(f"Error importing CSV: {e}")
+    finally:
+        con.close()
 
 
 def add_from_csv(uri) -> None:
@@ -244,33 +190,27 @@ def add_from_csv(uri) -> None:
     Returns:
         None
     """
-    with sqlite3.connect("../data/data.db") as con:
+    try:
+        con = sqlite3.connect("../data/data.db")
         cur = con.cursor()
-
-        # open csv file and read the data into the database
-        with open(uri, newline="", encoding="utf-8") as csvfile:
-            spamreader = csv.reader(csvfile, delimiter=",", quotechar="|")
-            for row in spamreader:
-                if len(row) < 7:  # Ensure the row has enough columns
-                    print(f"Skipping malformed row: {row}")
-                    continue
-
-                try:
-                    add_item(
-                        row[1],
-                        row[2],
-                        row[3].strip().lower() == "true",
-                        row[4],
-                        int(row[5]),  # Convert safely
-                        int(row[6]),
-                        cur,
-                        con,
-                    )
-                except ValueError:
-                    print(f"Skipping row due to invalid integer values: {row}")
-                    continue
-
-        con.commit()  # Ensure all changes are committed
+        df = pd.read_csv(uri)
+        for row in df.itertuples():
+            add_item(
+                row.name,
+                row.size,
+                row.is_metric == "1",
+                row.location,
+                row.count,
+                row.threshold,
+                cur,
+                con,
+            )
+        con.commit()
+    except Exception as e:
+        con.rollback()
+        print(f"Error importing CSV: {e}")
+    finally:
+        con.close()
 
 
 def parse_location_to_string(location: str) -> str:
@@ -309,6 +249,7 @@ def increment():
        is_metric (int): whether the item is metric (1) or not (0)
        size (str): the size of the item
        num (int): the number to increment by
+       token (str): the cookie of the user
 
     Returns:
         json: a message and status code
@@ -316,9 +257,26 @@ def increment():
     connection = get_db()
     cursor = connection.cursor()
     data = request.args
-    if not data or not all(key in data for key in ["name", "is_metric", "size", "num"]):
+    if not data or not all(
+        key in data for key in ["name", "is_metric", "size", "num", "token"]
+    ):
         raise KeyError("Missing required parameters")
+    try:
+        token = data["token"]
+        username = jwt.decode(token, options={"verify_signature": False}).get(
+            "username"
+        )
 
+        if not check_token(token, username, cursor):
+            raise ValueError("Invalid token")
+
+        logger = logging.getLogger("app")
+        logger.info(
+            f"User '{username}' incremented '{data['name']} {data['size']}' by {data['num']}"
+        )
+
+    except Exception as e:
+        return handle_exceptions(e)
     try:
         # find item
         item_id = find_by_name(
@@ -354,6 +312,7 @@ def decrement():
        is_metric (int): whether the item is metric (1) or not (0)
        size (str): the size of the item
        num (int): the number to decrement by
+       token (str): the cookie of the user
 
     Returns:
         json: a message and status code
@@ -361,8 +320,28 @@ def decrement():
     connection = get_db()
     cursor = connection.cursor()
     data = request.args
-    if not data or not all(key in data for key in ["name", "is_metric", "size", "num"]):
+    if not data or not all(
+        key in data for key in ["name", "is_metric", "size", "num", "token"]
+    ):
         raise KeyError("Missing required parameters")
+
+    try:
+        # check token
+        token = data["token"]
+        username = jwt.decode(token, options={"verify_signature": False}).get(
+            "username"
+        )
+
+        if not check_token(token, username, cursor):
+            raise ValueError("Invalid token")
+
+        logger = logging.getLogger("app")
+        logger.info(
+            f"User '{username}' decremented '{data['name']} {data['size']}' by {data['num']}"
+        )
+
+    except Exception as e:
+        return handle_exceptions(e)
 
     try:
         # find item
@@ -488,6 +467,8 @@ def add():
        num (int): the number of the item
        threshold (int): the threshold of the item
        location (str): the location of the item
+       token (str): the cookie of the user
+
     Returns:
         json: a message and status code
     """
@@ -496,11 +477,36 @@ def add():
     data = request.args
     if not data or not all(
         key in data
-        for key in ["name", "is_metric", "size", "num", "threshold", "location"]
+        for key in [
+            "name",
+            "is_metric",
+            "size",
+            "num",
+            "threshold",
+            "location",
+            "token",
+        ]
     ):
         raise KeyError("Missing required parameters")
+    try:
+        token = data["token"]
+        username = jwt.decode(token, options={"verify_signature": False}).get(
+            "username"
+        )
+
+        if not check_token(token, username, cursor):
+            raise ValueError("Invalid token")
+
+        logger = logging.getLogger("app")
+        logger.info(
+            f"User '{username}' added item with name: {data['name']}, size: {data['size']}, is_metric: {data['is_metric']}, num: {data['num']}, threshold: {data['threshold']}, location: {data['location']}"
+        )
+
+    except Exception as e:
+        return handle_exceptions(e)
 
     try:
+
         add_item(
             data["name"],
             data["size"],
@@ -533,7 +539,9 @@ def remove():
     connection = get_db()
     cursor = connection.cursor()
     data = request.args
-    if not data or not all(key in data for key in ["name", "is_metric", "size"]):
+    if not data or not all(
+        key in data for key in ["name", "is_metric", "size", "token"]
+    ):
         raise KeyError("Missing required parameters")
 
     try:
@@ -549,6 +557,11 @@ def remove():
 
         # remove item
         remove_item(item_id, cursor, connection)
+        username = jwt.decode(data["token"], options={"verify_signature": False}).get(
+            "username"
+        )
+        logger = logging.getLogger("app")
+        logger.info(f"User '{username}' removed item '{data['name']}'")
 
         return jsonify({"status": "success"}), 200
     except Exception as e:
@@ -672,6 +685,7 @@ def update():
                 "threshold",
                 "id",
                 "count",
+                "token",
             ]
         ):
             raise KeyError("Missing required parameters")
@@ -690,6 +704,11 @@ def update():
             cursor,
             connection,
         )
+        username = jwt.decode(data["token"], options={"verify_signature": False}).get(
+            "username"
+        )
+        logger = logging.getLogger("app")
+        logger.info(f"User '{username}' updated item '{data['name']}'")
         return jsonify({"status": "success"}), 200
     except Exception as e:
         return handle_exceptions(e)
@@ -761,8 +780,8 @@ def is_logged_in():
             return jsonify({"status": "error", "output": "false"}), 401
         connection = get_db()
         cursor = connection.cursor()
-        # if check_token(token, username, cursor):
-        return jsonify({"status": "success", "output": "true"}), 200
+        if check_token(token, username, cursor):
+            return jsonify({"status": "success", "output": "true"}), 200
         return jsonify({"status": "error", "output": "false"}), 401
     except Exception as e:
         return handle_exceptions(e)
@@ -840,6 +859,156 @@ def change_pass():
         return handle_exceptions(e)
 
 
+@app.route("/backupDatabase", methods=["GET"])
+def backup_database():
+    """
+    Handles backing up the database
+
+    Args:
+        None
+
+    Returns:
+        json: a message and status code
+    """
+    try:
+        backup_data(get_db().cursor())
+
+        return jsonify({"status": "success", "message": "Database backed up"}), 200
+    except Exception as e:
+        return handle_exceptions(e)
+
+
+@app.route("/restoreDatabase", methods=["GET"])
+def restore_database():
+    """
+    Handles restoring the database
+
+    Args:
+        None
+
+    Returns:
+        json: a message and status code
+    """
+    try:
+        data = request.args
+        if not data or "file" not in data:
+            raise KeyError("Missing required parameters")
+
+        file = data["file"]
+        import_csv(file)
+
+        return jsonify({"status": "success", "message": "Database restored"}), 200
+    except Exception as e:
+        return handle_exceptions(e)
+
+
+@app.route("/getFiles", methods=["GET"])
+def get_files():
+    """
+    Handles getting the files
+
+    Args:
+        None
+
+    Returns:
+        json: a message and status code
+    """
+    try:
+        return jsonify({"status": "success", "files": get_backup_files()}), 200
+    except Exception as e:
+        return handle_exceptions(e)
+
+
+@app.route("/uploadFile", methods=["POST"])
+def upload_file():
+    """
+    Handles uploading a file
+
+    Args:
+        None
+
+    Returns:
+        json: a message and status code
+    """
+    try:
+        data = request.files
+        if not data or "file" not in data:
+            raise KeyError("Missing required parameters")
+
+        uploaded_file = request.files["file"]
+        filename = secure_filename(uploaded_file.filename)
+        file_path = os.path.join("../data", filename)
+
+        # Read the content BEFORE saving
+        file_contents = uploaded_file.read().decode("utf-8")
+
+        # Save the file
+        with open(file_path, "w", encoding="utf-8") as f:
+            f.write(file_contents)
+
+        # Optionally import the CSV content
+        # import_csv(file_path)
+
+        return jsonify({"status": "success", "message": "File uploaded"}), 200
+    except Exception as e:
+        return handle_exceptions(e)
+
+
+@app.route("/downloadFile", methods=["GET"])
+def download_file():
+    """
+    Handles downloading a file
+
+    Args:
+        None
+
+    Returns:
+        json: a message and status code
+    """
+    try:
+        # Get the query parameters from the request
+        file_name = request.args.get("fileName")
+
+        if not file_name:
+            raise KeyError("Missing required 'fileName' parameter")
+
+        # Check if the file exists
+        if not os.path.exists(file_name):
+            raise FileNotFoundError("File not found")
+
+        with open(file_name, "rb") as file:
+            file_content = file.read()
+
+        # Create a BytesIO object to hold the file content in memory
+        blob = BytesIO(file_content)
+        blob.seek(0)  # Make sure the pointer is at the start of the file
+
+        # Send the file as an attachment
+        return send_file(
+            blob,  # Send the in-memory file
+            as_attachment=True,  # This ensures it gets downloaded as a file
+            download_name=file_name,
+        )
+
+    except Exception as e:
+        return handle_exceptions(e)
+
+
+@app.route("/get_log", methods=["GET"])
+def get_log():
+    try:
+        log = ""
+        for file in os.listdir("../logs"):
+            if file.endswith(".log"):
+                with open(f"../logs/{file}", "r") as f:
+                    log += f.read()
+
+            print(log)
+        return jsonify({"status": "success", "log": log}), 200
+    except Exception as e:
+        return handle_exceptions(e)
+
+
 def run_server():
     """
     Ensures the database is has the table for items, then runs the development server
@@ -853,14 +1022,19 @@ def run_server():
     build_db()
 
     # sets up logging
-    date = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    logging.basicConfig(
-        filename=f"../logs/api_log.log",
-        level=logging.DEBUG,
-        format="%(asctime)s - %(levelname)s - %(message)s",
-    )
-    logger = logging.getLogger(__name__)
-    logger.info(f"API server started {date}")
+    logger = logging.getLogger("app")
+    logger.setLevel(logging.INFO)
+    logger.propagate = False  # Prevent duplicate logs in parent logger
+
+    # Add the TimedRotatingFileHandler
+    if not logger.handlers:  # Avoid adding duplicate handlers
+        handler = TimedRotatingFileHandler(
+            "../logs/app.log", when="W0", interval=1, backupCount=4
+        )
+        formatter = logging.Formatter("[%(asctime)s]:  %(message)s")
+        handler.setFormatter(formatter)
+        handler.setLevel(logging.INFO)
+        logger.addHandler(handler)
     app.run(debug=True, port=3000)  # Runs on http://localhost:3000
 
 

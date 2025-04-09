@@ -4,6 +4,8 @@ import { AuthService } from '../services/auth.service';
 import { GetItemsService } from '../services/get-items.service';
 import { ItemData } from '../item-data';
 import { AdminItemComponent } from '../admin-item/admin-item.component';
+import { MatDialog } from '@angular/material/dialog';
+import { AdminPopupComponent } from '../admin-popup/admin-popup.component';
 
 @Component({
   selector: 'app-admin',
@@ -15,19 +17,29 @@ export class AdminComponent {
     private authService: AuthService,
     private router: Router,
     private getItemsService: GetItemsService,
+    private dialog: MatDialog,
   ) {}
   items: ItemData[] = [];
+  isPopupVisible = false;
+  selectedItem: ItemData = {
+    id: 0,
+    name: '',
+    size: '',
+    is_metric: 'True',
+    location: '',
+    count: 0,
+    threshold: 0,
+  };
   ngOnInit(): void {
-    this.authService.isAuthenticated().subscribe((isAuth) => {
+    this.authService.isAuthenticated().subscribe((isAuth: boolean) => {
       if (!isAuth) {
-        // this.router.navigate(['/authentication']);
-        //} else {
+        this.router.navigate(['/authentication']);
+      } else {
         this.getItemsService.getAllItems().subscribe({
-          next: (response) => {
-            console.log('API Response:', response);
+          next: (response: any) => {
             this.items = response.data; // Extract 'data' from response
           },
-          error: (err) => {
+          error: (err: any) => {
             console.error('Error fetching item:', err);
           },
         });
@@ -36,11 +48,10 @@ export class AdminComponent {
   }
   singleSearch(data: any) {
     this.getItemsService.getItem(data.name, data.metric, data.size).subscribe({
-      next: (response) => {
-        console.log('API Response:', response);
+      next: (response: any) => {
         this.items = response.data; // Extract 'data' from response
       },
-      error: (err) => {
+      error: (err: any) => {
         console.error('Error fetching item:', err);
       },
     });
@@ -49,14 +60,10 @@ export class AdminComponent {
     this.getItemsService
       .getFuzzyItems(data.name, data.metric, data.size)
       .subscribe({
-        next: (response) => {
-          console.log('API Response:', response);
-
-          console.log(response.data);
+        next: (response: any) => {
           this.items = response.data; // Extract 'data' from response
-          console.log(this.items);
         },
-        error: (err) => {
+        error: (err: any) => {
           console.error('Error fetching item:', err);
         },
       });
@@ -65,7 +72,6 @@ export class AdminComponent {
   handleSearch(event: { data: any; action: string }) {
     var action = event.action;
     var data = event.data;
-    console.log(data);
     switch (action) {
       case 'single':
         this.singleSearch(data);
@@ -74,5 +80,15 @@ export class AdminComponent {
         this.multiSearch(data);
         break;
     }
+  }
+  addItem(event: any) {
+    this.dialog.open(AdminPopupComponent);
+  }
+  closePopup() {
+    this.isPopupVisible = false;
+  }
+  onItemClick(item: any) {
+    this.selectedItem = item;
+    this.isPopupVisible = true;
   }
 }

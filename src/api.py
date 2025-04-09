@@ -31,6 +31,9 @@ Dependencies:
     (`python-Levenshtein` is optional but recommended for better performance.)
 """
 
+import csv
+import datetime
+import glob
 import logging
 import sqlite3
 
@@ -214,7 +217,6 @@ def increment_item(
         cursor (sqlite3.Cursor): SQLite cursor object to execute queries
         connection (sqlite3.Connection): SQLite connection object to commit changes
     """
-    logger = logging.getLogger(__name__)
 
     item = get_item(item_id, cursor)  # get items information from id
     new_count = item[0]["count"] + num_added
@@ -231,8 +233,6 @@ def increment_item(
             item_id,
         ),
     )
-
-    logger.debug("Item %i count incremented by %i", item_id, num_added)
 
     connection.commit()  # save the database
 
@@ -255,7 +255,6 @@ def decrement_item(
     Returns:
         int: status code (0/1) for if an email needs to be sent
     """
-    logger = logging.getLogger(__name__)
     item = get_item(item_id, cursor)
     new_count = item[0]["count"] - num_removed
     new_count = max(new_count, 0)
@@ -302,7 +301,6 @@ def add_item(
         cursor (sqlite3.Cursor): SQLite cursor object to execute queries
         connection (sqlite3.Connection): SQLite connection object to commit changes
     """
-    logger = logging.getLogger(__name__)
     cursor.execute(
         """
                    INSERT INTO items
@@ -313,7 +311,6 @@ def add_item(
         (name, size, is_metric, location, count, threshold, 0),
     )
 
-    logger.debug("Item %s added", name)
     connection.commit()
 
 
@@ -376,6 +373,32 @@ def update_item(
     )
     logger.debug("Item %s updated", name)
     connection.commit()
+
+
+def backup_data(cursor: sqlite3.Cursor) -> None:
+    cursor.execute("SELECT * FROM items")
+    items = cursor.fetchall()
+
+    # Assuming column names are available in cursor.description
+    column_names = [description[0] for description in cursor.description]
+
+    date = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+
+    # Open the CSV file for writing
+    with open(f"../data/data{date}.csv", "w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=column_names)
+
+        # Write the header (column names)
+        writer.writeheader()
+
+        # Write the rows (data)
+        for item in items:
+            row = dict(zip(column_names, item))
+            writer.writerow(row)
+
+
+def get_backup_files() -> list[str]:
+    return glob.glob("../data/*.csv")
 
 
 if __name__ == "__main__":

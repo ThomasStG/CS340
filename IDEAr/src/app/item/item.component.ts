@@ -5,6 +5,7 @@ import { ItemData } from '../item-data';
   selector: 'app-item',
   templateUrl: './item.component.html',
   styleUrl: './item.component.css',
+  host: { ngSkipHydration: 'true' },
 })
 export class ItemComponent implements OnInit {
   @Input() item: ItemData = {
@@ -18,17 +19,5 @@ export class ItemComponent implements OnInit {
   };
   ngOnInit() {
     this.item.location = JSON.parse(this.item.location);
-  }
-
-  @Input() itemPopup: any; // The item passed to this component
-  isPopupVisible = false;
-
-  showPopup() {
-    this.isPopupVisible = true;
-  }
-
-  closePopup(event: Event) {
-    event.stopPropagation();
-    this.isPopupVisible = false;
   }
 }

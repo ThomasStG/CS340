@@ -8,15 +8,15 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class ItemSearchComponent {
   @Output() formSubmit = new EventEmitter<any>();
-  myForm = new FormGroup({
+  searchForm = new FormGroup({
     name: new FormControl('', Validators.required),
     size: new FormControl('', Validators.required),
     metric: new FormControl('True'), // Default value
   });
 
   onSubmit(action: string) {
-    if (this.myForm.valid) {
-      this.formSubmit.emit({ data: this.myForm.value, action });
+    if (this.searchForm.valid) {
+      this.formSubmit.emit({ data: this.searchForm.value, action });
     }
   }
 }
