@@ -85,7 +85,7 @@ export class AdminComponent {
   addItem(event: any) {
     this.dialog.open(AdminPopupComponent);
     const PopUp = this.dialog.open(AdminPopupComponent);
-    PopUp.componentInstance.addingItem(event);
+    PopUp.componentInstance.addItem(event);
   }
 
   check_level() {

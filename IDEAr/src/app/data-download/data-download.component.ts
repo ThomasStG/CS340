@@ -18,13 +18,11 @@ export class DataDownloadComponent implements OnInit {
     if (this.selectedCsvFile === '') {
       return;
     }
-    console.log('load');
     this.utilityService.loadFile(this.selectedCsvFile);
   }
 
   backupData(event: Event) {
     event.stopPropagation();
-    console.log('backup');
     this.utilityService.backupDatabase();
     this.utilityService.getFiles().subscribe((response: string[]) => {
       this.csv_files = response;
@@ -32,7 +30,6 @@ export class DataDownloadComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log('in data download');
     this.utilityService.getFiles().subscribe((response: string[]) => {
       this.csv_files = response;
     });
@@ -43,7 +40,6 @@ export class DataDownloadComponent implements OnInit {
     const file = (event.target as HTMLInputElement).files?.[0];
     if (file) {
       this.utilityService.uploadFile(file).subscribe({
-        next: (res) => console.log('Upload success:', res),
         error: (err) => console.error('Upload error:', err),
       });
     }

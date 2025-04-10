@@ -377,6 +377,15 @@ def update_item(
 
 
 def backup_data(cursor: sqlite3.Cursor) -> None:
+    """
+    Creates a backup of the database
+
+    Args:
+        cursor (sqlite3.Cursor): SQLite cursor object to execute queries
+
+    Returns:
+        None
+    """
     cursor.execute("SELECT * FROM items")
     items = cursor.fetchall()
 
@@ -386,8 +395,9 @@ def backup_data(cursor: sqlite3.Cursor) -> None:
     date = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 
     # Open the CSV file for writing
-    with open(f"../data/data{date}.csv", "w", newline="") as f:
+    with open(f"../data/data{date}.csv", "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=column_names)
+        print(f"Created backup file: data{date}.csv")
 
         # Write the header (column names)
         writer.writeheader()
@@ -396,6 +406,8 @@ def backup_data(cursor: sqlite3.Cursor) -> None:
         for item in items:
             row = dict(zip(column_names, item))
             writer.writerow(row)
+
+    print("Backup complete")
 
 
 def get_backup_files() -> list[str]:

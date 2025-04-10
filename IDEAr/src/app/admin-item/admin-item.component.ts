@@ -57,15 +57,11 @@ export class AdminItemComponent implements OnInit {
     this.isPopupVisible = false;
     this.updateItemService
       .updateItem(this.item, this.newItem)
-      .subscribe((response) => {
-        console.log(response);
-      });
+      .subscribe((response) => {});
   }
   deleteItem(event: Event) {
     event.stopPropagation();
-    this.updateItemService.deleteItem(this.item).subscribe((response) => {
-      console.log(response);
-    });
+    this.updateItemService.deleteItem(this.item).subscribe((response) => {});
   }
   incrementItem(event: Event) {
     event.stopPropagation();

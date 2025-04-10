@@ -36,7 +36,15 @@ export class UtilityService {
       );
   }
   backupDatabase(): void {
-    this.http.get('http://127.0.0.1:3000/backupDatabase');
+    this.http.get('http://127.0.0.1:3000/backupDatabase').subscribe({
+      next: (response) => {
+        // Optionally, notify the user with a success message (e.g., Toast, alert)
+      },
+      error: (error) => {
+        console.error('Error during database backup:', error);
+        // Optionally, notify the user with an error message
+      },
+    });
   }
   uploadFile(file: any): Observable<any> {
     const formData = new FormData();
@@ -44,7 +52,6 @@ export class UtilityService {
     return this.http.post('http://127.0.0.1:3000/uploadFile', formData);
   }
   downloadFile(fileUrl: string): Observable<Blob> {
-    console.log(fileUrl);
     return this.http.get(
       `http://127.0.0.1:3000/downloadFile?fileName=${encodeURIComponent(fileUrl)}`,
       { responseType: 'blob' },

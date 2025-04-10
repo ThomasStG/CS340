@@ -8,7 +8,8 @@ Functions:
     add_from_csv: Adds items from a CSV file to the database.
     parse_location_to_string: Parses a JSON string into a location.
     parse_location_to_list: Parses a JSON string into a list.
-    run_server: Ensures the database has the required table for items, then runs the development server.
+    run_server: Ensures the database has the required table for items,
+                then runs the development server.
 
 Endpoints:
     /api/add: Adds a new item to the database.
@@ -20,7 +21,6 @@ Endpoints:
     /api/fuzzyfind: Returns a list of items that are similar to the search term.
 """
 
-import csv
 import datetime
 import hashlib
 import json
@@ -29,13 +29,15 @@ import os
 import sqlite3
 from io import BytesIO
 from logging.handlers import TimedRotatingFileHandler
+from typing import Tuple
 
 import jwt
 import pandas as pd
 import resend
 from dotenv import load_dotenv
-from flask import Flask, g, jsonify, request, send_file
+from flask import Flask, Response, g, jsonify, request, send_file
 from flask_cors import CORS
+from werkzeug.exceptions import Unauthorized
 from werkzeug.utils import secure_filename
 
 from api import (
@@ -94,7 +96,7 @@ def teardown_db(_: Exception) -> None:
         db.close()
 
 
-def handle_exceptions(exception: Exception) -> jsonify:
+def handle_exceptions(exception: Exception) -> Tuple[Response, int]:
     """
     Handles exceptions thrown by the API
 
@@ -130,8 +132,18 @@ def handle_exceptions(exception: Exception) -> jsonify:
 
 
 def generate_token(username: str, level: int) -> str:
+    """
+    Generates a JWT token for a user
+
+    Args:
+        username (str): the username of the user
+        level (int): the access level of the user
+
+    Returns:
+        str: the JWT token
+    """
     load_dotenv("../data/.env")
-    SECRET_KEY = os.environ.get("Login_Token_Secret_Key")
+    secret_key = os.environ.get("Login_Token_Secret_Key")
     payload = {
         "iat": datetime.datetime.now(datetime.timezone.utc),
         "exp": datetime.datetime.now(datetime.timezone.utc)
@@ -140,7 +152,7 @@ def generate_token(username: str, level: int) -> str:
         "access": level,
     }
     try:
-        token = jwt.encode(payload, SECRET_KEY, algorithm="HS256")
+        token = jwt.encode(payload, secret_key, algorithm="HS256")
         return token
     except Exception as e:
         raise
@@ -184,7 +196,7 @@ def import_csv(uri: str) -> None:
         con.close()
 
 
-def add_from_csv(uri) -> None:
+def add_from_csv(uri: str) -> None:
     """
     Adds values from a CSV file to the database
 
@@ -229,7 +241,7 @@ def parse_location_to_string(location: str) -> str:
     return json.dumps(location)
 
 
-def parse_location_to_list(location) -> str:
+def parse_location_to_list(location: str) -> str:
     """
     Parses a location string into json
 
@@ -243,7 +255,7 @@ def parse_location_to_list(location) -> str:
 
 
 @app.route("/increment", methods=["GET"])
-def increment():
+def increment() -> Tuple[Response, int]:
     """
     Handles incrementing an item count in the database.
     Data is passed from frontend through a GET request
@@ -276,7 +288,7 @@ def increment():
 
         logger = logging.getLogger("app")
         logger.info(
-            f"User '{username}' incremented '{data['name']} {data['size']}' by {data['num']}"
+            "User '{username}' incremented '{data['name']} {data['size']}' by {data['num']}"
         )
 
         # find item
@@ -302,7 +314,7 @@ def increment():
 
 
 @app.route("/decrement", methods=["GET"])
-def decrement():
+def decrement() -> Tuple[Response, int]:
     """
     Handles decrementing an item count in the database.
     Data is passed from frontend through a GET request
@@ -394,7 +406,7 @@ def decrement():
 
 
 @app.route("/find", methods=["GET"])
-def find_item():
+def find_item() -> Tuple[Response, int]:
     """
     Handles finding an item the database.
     Data is passed from frontend through a GET request
@@ -449,7 +461,7 @@ def find_item():
 
 
 @app.route("/add", methods=["GET"])
-def add():
+def add() -> Tuple[Response, int]:
     """
     Handles adding a new item the database.
     Data is passed from frontend through a GET request
@@ -502,7 +514,7 @@ def add():
             data["is_metric"].strip().lower() == "true",
             parse_location_to_string(data["location"]),
             int(data["num"]),
-            data["threshold"],
+            int(data["threshold"]),
             cursor,
             connection,
         )
@@ -512,7 +524,7 @@ def add():
 
 
 @app.route("/remove", methods=["GET"])
-def remove():
+def remove() -> Tuple[Response, int]:
     """
     Handles removing an item from the database.
     Data is passed from frontend through a GET request
@@ -567,7 +579,7 @@ def remove():
 
 
 @app.route("/fuzzyfind", methods=["GET"])
-def fuzzy():
+def fuzzy() -> Tuple[Response, int]:
     """
     Handles finding similar items in the database.
     Data is passed from frontend through a GET request
@@ -611,7 +623,7 @@ def fuzzy():
 
 
 @app.route("/findAll", methods=["GET"])
-def list_all():
+def list_all() -> Tuple[Response, int]:
     """
     Handles retrieving all items in the database.
     Data is passed from frontend through a GET request
@@ -646,7 +658,7 @@ def list_all():
 
 
 @app.route("/updateitem", methods=["GET"])
-def update() -> Response:
+def update() -> Tuple[Response, int]:
     """
     Handles updating an item in the database.
     Data is passed from frontend through a GET request
@@ -695,7 +707,7 @@ def update() -> Response:
                 f"User: '{username}' updated item: {data['size']} {data['name']}"
             )
         except Exception as e:
-            logger.error(f"An unvalidated user attempted to update an item")
+            logger.error("An unvalidated user attempted to update an item")
             return jsonify({"status": "error", "output": "false"}), 401
 
         connection = get_db()
@@ -705,7 +717,7 @@ def update() -> Response:
             data["size"],
             data["is_metric"].strip().lower() == "true",
             data["location"],
-            data["threshold"],
+            int(data["threshold"]),
             data["new_name"],
             data["new_size"],
             data["new_is_metric"].strip().lower() == "true",
@@ -718,7 +730,7 @@ def update() -> Response:
 
 
 @app.route("/trylogin", methods=["POST"])
-def try_login() -> jsonify:
+def try_login() -> Tuple[Response, int]:
     """
     Attempts to log the user in
 
@@ -761,7 +773,7 @@ def try_login() -> jsonify:
 
 
 @app.route("/isLoggedIn", methods=["POST"])
-def is_logged_in():
+def is_logged_in() -> Tuple[Response, int]:
     """
     Checks if the user is logged in
 
@@ -772,21 +784,16 @@ def is_logged_in():
         bool: whether the user is logged in
     """
     try:
+        connection = get_db()
+        cursor = connection.cursor()
         data = request.json
         if data is None or "token" not in data:
             raise KeyError("Missing required parameters")
 
         token = data["token"]
-        try:
-            username = jwt.decode(token, options={"verify_signature": False}).get(
-                "username"
-            )
-            if not check_token(token, username, get_db().cursor()):
-                raise KeyError("Invalid token")
-        except Exception as e:
-            return jsonify({"status": "error", "output": "false"}), 401
-        connection = get_db()
-        cursor = connection.cursor()
+        username = jwt.decode(token, options={"verify_signature": False}).get(
+            "username"
+        )
         if check_token(token, username, cursor):
             return jsonify({"status": "success", "output": "true"}), 200
         return jsonify({"status": "error", "output": "false"}), 401
@@ -795,21 +802,19 @@ def is_logged_in():
 
 
 @app.route("/register", methods=["POST"])
-def register():
+def register() -> Tuple[Response, int]:
     try:
         data = request.json
         if (
             data
             and "username" not in data
             and "password" not in data
-            and "salt" not in data
             and "level" not in data
         ):
             raise KeyError("Missing required parameters")
 
         username = data["username"]
         password = data["password"]
-        salt = data["salt"]
         level = int(data["level"])
         connection = get_db()
         cursor = connection.cursor()
@@ -827,7 +832,7 @@ def register():
         if not create_account(
             username, level, hashed_password, salt.hex(), cursor, connection
         ):
-            raise Exception("Login failed")
+            raise Unauthorized("Login failed")
         token = generate_token(username, level)
         return jsonify({"status": "success", "token": token}), 200
     except Exception as e:
@@ -835,7 +840,7 @@ def register():
 
 
 @app.route("/changePassword", methods=["POST"])
-def change_pass():
+def change_pass() -> Tuple[Response, int]:
     """
     Handles changing a user's password
 
@@ -848,32 +853,30 @@ def change_pass():
         json: a message and status code
     """
     try:
+        connection = get_db()
+        cursor = connection.cursor()
         data = request.json
         if (
             data
             and "username" not in data
-            # and "old_password" not in data
             and "new_password" not in data
             and "token" not in data
         ):
             raise KeyError("Missing required parameters")
 
         username = data["username"]
-        # old_password = data["old_password"]
         new_password = data["new_password"]
         token = data["token"]
         try:
-            username, levle = jwt.decode(
+            username, level = jwt.decode(
                 token, options={"verify_signature": False}
             ).get("username", "level")
             if not check_token(token, username, cursor):
                 raise ValueError("Invalid token")
             if not level == 0:
                 raise ValueError("Unauthorized")
-        except Exception as e:
+        except Exception:
             return jsonify({"status": "error", "message": "Invalid token"}), 401
-        connection = get_db()
-        cursor = connection.cursor()
         change_password(username, new_password, cursor, connection)
         return jsonify({"status": "success", "message": "Password changed"}), 200
     except Exception as e:
@@ -881,7 +884,7 @@ def change_pass():
 
 
 @app.route("/backupDatabase", methods=["GET"])
-def backup_database():
+def backup_database() -> Tuple[Response, int]:
     """
     Handles backing up the database
 
@@ -892,6 +895,7 @@ def backup_database():
         json: a message and status code
     """
     try:
+        print("Backing up database...")
         backup_data(get_db().cursor())
 
         return jsonify({"status": "success", "message": "Database backed up"}), 200
@@ -900,7 +904,7 @@ def backup_database():
 
 
 @app.route("/restoreDatabase", methods=["GET"])
-def restore_database():
+def restore_database() -> Tuple[Response, int]:
     """
     Handles restoring the database
 
@@ -924,7 +928,7 @@ def restore_database():
 
 
 @app.route("/getFiles", methods=["GET"])
-def get_files():
+def get_files() -> Tuple[Response, int]:
     """
     Handles getting the files
 
@@ -941,7 +945,7 @@ def get_files():
 
 
 @app.route("/uploadFile", methods=["POST"])
-def upload_file():
+def upload_file() -> Tuple[Response, int]:
     """
     Handles uploading a file
 
@@ -957,7 +961,7 @@ def upload_file():
             raise KeyError("Missing required parameters")
 
         uploaded_file = request.files["file"]
-        filename = secure_filename(uploaded_file.filename)
+        filename = secure_filename(uploaded_file.filename or "uploaded_file.csv")
         file_path = os.path.join("../data", filename)
 
         # Read the content BEFORE saving
@@ -967,16 +971,13 @@ def upload_file():
         with open(file_path, "w", encoding="utf-8") as f:
             f.write(file_contents)
 
-        # Optionally import the CSV content
-        # import_csv(file_path)
-
         return jsonify({"status": "success", "message": "File uploaded"}), 200
     except Exception as e:
         return handle_exceptions(e)
 
 
 @app.route("/downloadFile", methods=["GET"])
-def download_file():
+def download_file() -> Tuple[Response, int]:
     """
     Handles downloading a file
 
@@ -1005,10 +1006,13 @@ def download_file():
         blob.seek(0)  # Make sure the pointer is at the start of the file
 
         # Send the file as an attachment
-        return send_file(
-            blob,  # Send the in-memory file
-            as_attachment=True,  # This ensures it gets downloaded as a file
-            download_name=file_name,
+        return (
+            send_file(
+                blob,  # Send the in-memory file
+                as_attachment=True,  # This ensures it gets downloaded as a file
+                download_name=file_name,
+            ),
+            200,
         )
 
     except Exception as e:
@@ -1016,21 +1020,39 @@ def download_file():
 
 
 @app.route("/get_log", methods=["GET"])
-def get_log():
+def get_log() -> Tuple[Response, int]:
+    """
+    Handles getting the log files contents
+
+    Args:
+        None
+
+    Returns:
+        json: a message and status code
+    """
     try:
-        log = ""
+        log_contents = ""
         for file in os.listdir("../logs"):
             if file.endswith(".log"):
-                with open(f"../logs/{file}", "r") as f:
-                    log += f.read()
+                with open(f"../logs/{file}", "r", encoding="utf-8") as f:
+                    log_contents += f.read()
 
-        return jsonify({"status": "success", "log": log}), 200
+        return jsonify({"status": "success", "log": log_contents}), 200
     except Exception as e:
         return handle_exceptions(e)
 
 
 @app.route("/checkToken", methods=["POST"])
-def check_auth_token():
+def check_auth_token() -> Tuple[Response, int]:
+    """
+    Handles checking the auth token
+
+    Args:
+        None
+
+    Returns:
+        json: a message and status code
+    """
     try:
         data = request.json
         if data is None or "token" not in data:
@@ -1044,7 +1066,7 @@ def check_auth_token():
         return handle_exceptions(e)
 
 
-def run_server():
+def run_server() -> None:
     """
     Ensures the database is has the table for items, then runs the development server
 

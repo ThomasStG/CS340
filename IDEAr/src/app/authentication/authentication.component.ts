@@ -20,10 +20,8 @@ export class AuthenticationComponent {
     this.authService.login(this.username, this.password).subscribe({
       next: (response) => {
         if (response.token) {
-          console.log('loggedin');
           this.router.navigate(['/admin']);
         } else {
-          console.log('login failed');
           console.error(response.error); // "Invalid credentials"
         }
       },

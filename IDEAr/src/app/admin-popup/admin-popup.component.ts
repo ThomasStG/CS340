@@ -64,16 +64,12 @@ export class AdminPopupComponent {
     this.isEditing = false;
     this.updateItemService
       .updateItem(this.item, this.newItem)
-      .subscribe((response) => {
-        console.log(response);
-      });
+      .subscribe((response) => {});
     // TODO: Close popup
   }
   deleteItem(event: Event) {
     event.stopPropagation();
-    this.updateItemService.deleteItem(this.item).subscribe((response) => {
-      console.log(response);
-    });
+    this.updateItemService.deleteItem(this.item).subscribe((response) => {});
   }
   addItem(event: Event) {
     event.stopPropagation();
@@ -86,4 +82,5 @@ export class AdminPopupComponent {
   close() {
     this.dialogRef.close();
   }
+  showItem(item: ItemData) {}
 }
