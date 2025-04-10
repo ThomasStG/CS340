@@ -145,6 +145,7 @@ def fzf(
         """,
         (is_metric,),
     )
+    cursor.execute("SELECT * FROM items")
     data = cursor.fetchall()
 
     if not data:

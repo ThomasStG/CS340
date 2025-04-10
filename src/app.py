@@ -58,7 +58,9 @@ app = Flask(__name__)
 CORS(
     app,
     supports_credentials=True,  # origins=["http://localhost:4200"]
-)  # Enable CORS for Angular frontend
+)
+log = logging.getLogger("werkzeug")
+log.disabled = True  # Enable CORS for Angular frontend
 
 
 def get_db() -> sqlite3.Connection:
@@ -256,14 +258,14 @@ def increment():
     Returns:
         json: a message and status code
     """
-    connection = get_db()
-    cursor = connection.cursor()
-    data = request.args
-    if not data or not all(
-        key in data for key in ["name", "is_metric", "size", "num", "token"]
-    ):
-        raise KeyError("Missing required parameters")
     try:
+        connection = get_db()
+        cursor = connection.cursor()
+        data = request.args
+        if not data or not all(
+            key in data for key in ["name", "is_metric", "size", "num", "token"]
+        ):
+            raise KeyError("Missing required parameters")
         token = data["token"]
         username = jwt.decode(token, options={"verify_signature": False}).get(
             "username"
@@ -277,9 +279,6 @@ def increment():
             f"User '{username}' incremented '{data['name']} {data['size']}' by {data['num']}"
         )
 
-    except Exception as e:
-        return handle_exceptions(e)
-    try:
         # find item
         item_id = find_by_name(
             data["name"],
@@ -319,15 +318,15 @@ def decrement():
     Returns:
         json: a message and status code
     """
-    connection = get_db()
-    cursor = connection.cursor()
-    data = request.args
-    if not data or not all(
-        key in data for key in ["name", "is_metric", "size", "num", "token"]
-    ):
-        raise KeyError("Missing required parameters")
-
     try:
+        connection = get_db()
+        cursor = connection.cursor()
+        data = request.args
+        if not data or not all(
+            key in data for key in ["name", "is_metric", "size", "num", "token"]
+        ):
+            raise KeyError("Missing required parameters")
+
         # check token
         token = data["token"]
         username = jwt.decode(token, options={"verify_signature": False}).get(
@@ -342,10 +341,6 @@ def decrement():
             f"User '{username}' decremented '{data['name']} {data['size']}' by {data['num']}"
         )
 
-    except Exception as e:
-        return handle_exceptions(e)
-
-    try:
         # find item
         item_id = find_by_name(
             data["name"],
@@ -412,15 +407,20 @@ def find_item():
     Returns:
         json: a message and status code
     """
-    connection = get_db()
-    cursor = connection.cursor()
-    data = request.args
-    if not data or "name" not in data or "is_metric" not in data or "size" not in data:
-        raise KeyError("Missing required parameters")
-
     try:
+        connection = get_db()
+        cursor = connection.cursor()
+        data = request.args
+        if (
+            not data
+            or "name" not in data
+            or "is_metric" not in data
+            or "size" not in data
+        ):
+            raise KeyError("Missing required parameters")
+
         # convert metric_val to a bool
-        metric_val = data["is_metric"].strip().lower() == "true"
+        metric_val = int(data["is_metric"].strip().lower() == "true")
         item_id = find_by_name(data["name"], metric_val, data["size"], cursor)
         if item_id is None:
             raise ValueError("Item not found")
@@ -466,23 +466,23 @@ def add():
     Returns:
         json: a message and status code
     """
-    connection = get_db()
-    cursor = connection.cursor()
-    data = request.args
-    if not data or not all(
-        key in data
-        for key in [
-            "name",
-            "is_metric",
-            "size",
-            "num",
-            "threshold",
-            "location",
-            "token",
-        ]
-    ):
-        raise KeyError("Missing required parameters")
     try:
+        connection = get_db()
+        cursor = connection.cursor()
+        data = request.args
+        if not data or not all(
+            key in data
+            for key in [
+                "name",
+                "is_metric",
+                "size",
+                "num",
+                "threshold",
+                "location",
+                "token",
+            ]
+        ):
+            raise KeyError("Missing required parameters")
         token = data["token"]
         username = jwt.decode(token, options={"verify_signature": False}).get(
             "username"
@@ -495,11 +495,6 @@ def add():
         logger.info(
             f"User '{username}' added item with name: {data['name']}, size: {data['size']}, is_metric: {data['is_metric']}, num: {data['num']}, threshold: {data['threshold']}, location: {data['location']}"
         )
-
-    except Exception as e:
-        return handle_exceptions(e)
-
-    try:
 
         add_item(
             data["name"],
@@ -531,14 +526,14 @@ def remove():
     Returns:
         json: a message and status code
     """
-    connection = get_db()
-    cursor = connection.cursor()
-    data = request.args
-    if not data or not all(
-        key in data for key in ["name", "is_metric", "size", "token"]
-    ):
-        raise KeyError("Missing required parameters")
     try:
+        connection = get_db()
+        cursor = connection.cursor()
+        data = request.args
+        if not data or not all(
+            key in data for key in ["name", "is_metric", "size", "token"]
+        ):
+            raise KeyError("Missing required parameters")
         token = data["token"]
         username, level = jwt.decode(token, options={"verify_signature": False}).get(
             "username", "level"
@@ -549,15 +544,11 @@ def remove():
         if level != 0:
             raise ValueError("User does not have permission to remove items")
 
-        logger = logging.getLogger(app)
+        logger = logging.getLogger("app")
         logger.info(
             f"User '{username}' removed item with name: {data['name']}, size: {data['size']}, is_metric: {data['is_metric']}"
         )
 
-    except Exception as e:
-        return handle_exceptions(e)
-
-    try:
         # find item
         item_id = find_by_name(
             data["name"],
@@ -570,12 +561,6 @@ def remove():
 
         # remove item
         remove_item(item_id, cursor, connection)
-        username = jwt.decode(data["token"], options={"verify_signature": False}).get(
-            "username"
-        )
-        logger = logging.getLogger("app")
-        logger.info(f"User '{username}' removed item '{data['name']}'")
-
         return jsonify({"status": "success"}), 200
     except Exception as e:
         return handle_exceptions(e)
@@ -596,15 +581,16 @@ def fuzzy():
     Returns:
         json: a message, and return code, if no error occures data
     """
-    connection = get_db()
-    cursor = connection.cursor()
-    data = request.args
-    if not data or not all(key in data for key in ["name", "is_metric", "size"]):
-        raise KeyError("Missing required parameters")
-
     try:
-        metric_val = data["is_metric"].strip().lower() == "true"
+        connection = get_db()
+        cursor = connection.cursor()
+        data = request.args
+        if not data or not all(key in data for key in ["name", "is_metric", "size"]):
+            raise KeyError("Missing required parameters")
+
+        metric_val = int(data["is_metric"].strip().lower() == "true")
         items = fzf(data["name"], metric_val, data["size"], cursor)
+
         # parse location and convert is_metric to string
         for item in items:
             if "location" in item and item["location"] is not None:
@@ -636,9 +622,9 @@ def list_all():
     Returns:
         json: a message, and return code, if no error occures data
     """
-    connection = get_db()
-    cursor = connection.cursor()
     try:
+        connection = get_db()
+        cursor = connection.cursor()
 
         # gets all items and converts is_metric to string
         items = get_all(cursor)
@@ -660,7 +646,7 @@ def list_all():
 
 
 @app.route("/updateitem", methods=["GET"])
-def update():
+def update() -> Response:
     """
     Handles updating an item in the database.
     Data is passed from frontend through a GET request
@@ -710,8 +696,8 @@ def update():
             )
         except Exception as e:
             logger.error(f"An unvalidated user attempted to update an item")
-
             return jsonify({"status": "error", "output": "false"}), 401
+
         connection = get_db()
         cursor = connection.cursor()
         update_item(
@@ -726,11 +712,6 @@ def update():
             cursor,
             connection,
         )
-        username = jwt.decode(data["token"], options={"verify_signature": False}).get(
-            "username"
-        )
-        logger = logging.getLogger("app")
-        logger.info(f"User '{username}' updated item '{data['name']}'")
         return jsonify({"status": "success"}), 200
     except Exception as e:
         return handle_exceptions(e)
@@ -1043,14 +1024,13 @@ def get_log():
                 with open(f"../logs/{file}", "r") as f:
                     log += f.read()
 
-            print(log)
         return jsonify({"status": "success", "log": log}), 200
     except Exception as e:
         return handle_exceptions(e)
 
 
 @app.route("/checkToken", methods=["POST"])
-def check_token():
+def check_auth_token():
     try:
         data = request.json
         if data is None or "token" not in data:

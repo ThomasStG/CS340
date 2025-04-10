@@ -32,7 +32,6 @@ def ensure_table():
             """
                 CREATE TABLE IF NOT EXISTS users (
                     id INTEGER PRIMARY KEY,
-                    access INTEGER NOT NULL default 3,
                     username TEXT NOT NULL UNIQUE,
                     password TEXT NOT NULL,
                     salt TEXT NOT NULL,
@@ -181,6 +180,8 @@ def get_salt(username: str, cursor: sqlite3.Cursor) -> str:
     cursor.execute("SELECT salt FROM users WHERE username = ?", (username,))
     return cursor.fetchone()[0]
 
+
+# TODO: add a function to update user access level
 
 import hashlib
 import os
