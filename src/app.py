@@ -153,8 +153,10 @@ def generate_token(username: str, level: int) -> str:
     }
     try:
         token = jwt.encode(payload, secret_key, algorithm="HS256")
+
         return token
     except Exception as e:
+        print(e)
         raise
 
 
