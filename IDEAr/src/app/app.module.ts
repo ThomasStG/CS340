@@ -19,7 +19,7 @@ import { AdminPopupComponent } from './admin-popup/admin-popup.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DataDownloadComponent } from './data-download/data-download.component';
 import { ItemPopupComponent } from './item-popup/item-popup.component';
-import { LogsComponent } from './logs/logs.component';
+import { LogPageComponent } from './log-page/log-page.component';
 import { ElectricalHomeComponent } from './electrical-home/electrical-home.component';
 
 const routes: Routes = [
@@ -27,7 +27,7 @@ const routes: Routes = [
   { path: 'admin', component: AdminComponent }, // Admin Page
   { path: 'authentication', component: AuthenticationComponent },
   { path: 'data-download', component: DataDownloadComponent },
-  { path: 'logs', component: LogsComponent },
+  { path: 'logs', component: LogPageComponent },
   { path: 'electrical-home', component: ElectricalHomeComponent },
 ];
 

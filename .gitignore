@@ -1,3 +1,4 @@
 data/.env
 logs/
 src/__pycache__/
+node_modules/
