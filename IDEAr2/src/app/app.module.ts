@@ -2,26 +2,26 @@ import { NgModule } from '@angular/core';
 import {
   BrowserModule,
   provideClientHydration,
+  withEventReplay,
 } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { ItemDescriptionComponent } from './item-description/item-description.component';
-import { ItemComponent } from './item/item.component';
-import { ItemSearchComponent } from './item-search/item-search.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HomeComponent } from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
-import { RouterModule, Routes } from '@angular/router';
-import { AuthenticationComponent } from './authentication/authentication.component';
 import { AdminItemComponent } from './admin-item/admin-item.component';
 import { AdminPopupComponent } from './admin-popup/admin-popup.component';
-import { MatDialogModule } from '@angular/material/dialog';
+import { AuthenticationComponent } from './authentication/authentication.component';
 import { DataDownloadComponent } from './data-download/data-download.component';
-import { ItemPopupComponent } from './item-popup/item-popup.component';
-import { LogsComponent } from './logs/logs.component';
 import { ElectricalHomeComponent } from './electrical-home/electrical-home.component';
-
+import { HomeComponent } from './home/home.component';
+import { ItemComponent } from './item/item.component';
+import { ItemPopupComponent } from './item-popup/item-popup.component';
+import { ItemSearchComponent } from './item-search/item-search.component';
+import { LogPageComponent } from './log-page/log-page.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
+import { MatDialogModule } from '@angular/material/dialog';
 
 const routes: Routes = [
   { path: '', component: HomeComponent }, // Home Page
@@ -35,29 +35,29 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    ItemDescriptionComponent,
-    ItemComponent,
-    ItemSearchComponent,
-    HomeComponent,
     AdminComponent,
-    AuthenticationComponent,
+    AdminIemComponent,
     AdminItemComponent,
     AdminPopupComponent,
+    AuthenticationComponent,
     DataDownloadComponent,
-    ItemPopupComponent,
-    LogsComponent,
     ElectricalHomeComponent,
+    HomeComponent,
+    ItemComponent,
+    ItemPopupComponent,
+    ItemSearchComponent,
+    LogPageComponent,
   ],
   imports: [
-    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(routes),
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule,
+    MatDialogModule,
   ],
-  exports: [RouterModule],
-  providers: [provideClientHydration()],
+  providers: [provideClientHydration(withEventReplay())],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

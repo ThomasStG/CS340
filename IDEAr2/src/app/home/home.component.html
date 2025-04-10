@@ -1,0 +1,29 @@
+<div class="scrollable-box">
+  <app-item-search (formSubmit)="handleSearch($event)"></app-item-search>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Size</th>
+        <th>Metric</th>
+        <th>Count</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let item of items">
+      <tr class="cursor-pointer hover:bg-gray-100" (click)="onItemClick(item)">
+        <td class="itemColumn">{{ item.name }}</td>
+        <td class="itemColumn">{{ item.size }}</td>
+        <td class="itemColumn">{{ item.is_metric }}</td>
+        <td class="itemColumn">{{ item.count }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="isPopupVisible" class="overlay" (click)="closePopup()">
+    <app-item-popup
+      [item]="selectedItem"
+      (close)="closePopup()"
+    ></app-item-popup>
+  </div>
+</div>

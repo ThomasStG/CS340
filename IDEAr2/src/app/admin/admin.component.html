@@ -1,0 +1,54 @@
+<div class="scrollable-box">
+  <app-item-search (formSubmit)="handleSearch($event)"></app-item-search>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Size</th>
+        <th>Metric</th>
+        <th>Count</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let item of items">
+      <tr class="cursor-pointer hover:bg-gray-100" (click)="onItemClick(item)">
+        <td class="itemColumn">{{ item.name }}</td>
+        <td class="itemColumn">{{ item.size }}</td>
+        <td class="itemColumn">{{ item.is_metric }}</td>
+        <td class="itemColumn">{{ item.count }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="isPopupVisible" class="overlay" (click)="closePopup()">
+    <app-admin-popup
+      [item]="selectedItem"
+      (close)="closePopup()"
+    ></app-admin-popup>
+    <!--TODO: Update top to include level check and dark mode-->
+    <div class="flex">
+      <app-item-search
+        (formSubmit)="handleSearch($event)"
+        class="grow"
+      ></app-item-search>
+      <button
+        *ngIf="check_level()"
+        (click)="addItem($event)"
+        class="hover:border-solid hover:border-black-50 hover:border-2 bg-gray-300 dark:bg-gray-700 dark:text-white"
+      >
+        Add Item
+      </button>
+    </div>
+
+    <div
+      class="flex flex-col h-full bg-gray-0 text-black dark:bg-gray-900 dark:text-white"
+    >
+      <div
+        *ngFor="let item of items"
+        class="cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700"
+      >
+        <app-admin-item [item]="item"></app-admin-item>
+      </div>
+    </div>
+  </div>
+</div>
