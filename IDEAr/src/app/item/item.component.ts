@@ -18,6 +18,24 @@ export class ItemComponent implements OnInit {
     threshold: 0,
   };
   ngOnInit() {
-    this.item.location = JSON.parse(this.item.location);
+    console.log('Type of location:', typeof this.item.location);
+
+    if (this.item && this.item.location) {
+      console.log('Before parsing:', this.item.location);
+
+      // Check if the location is a string before parsing
+      if (typeof this.item.location === 'string') {
+        try {
+          this.item.location = JSON.parse(this.item.location);
+          console.log('After parsing:', this.item.location);
+        } catch (error) {
+          console.error('Error parsing location:', error);
+        }
+      } else {
+        console.log('No need to parse, location is already an object/array.');
+      }
+    } else {
+      console.error('Item or location is not defined.');
+    }
   }
 }

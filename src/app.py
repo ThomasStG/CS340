@@ -22,6 +22,7 @@ Endpoints:
 """
 
 import datetime
+import csv
 import hashlib
 import json
 import logging
@@ -160,42 +161,52 @@ def generate_token(username: str, level: int) -> str:
         raise
 
 
-def import_csv(uri: str) -> None:
-    """
-    Deletes all items from the database and repopulates with values from a CSV file
+from pathlib import Path
 
-    Args:
-        uri (str): the filepath to the CSV file
 
-    Returns:
-        None
-    """
+def import_csv(uri):
     try:
-        con = sqlite3.connect("../data/data.db")
-        cur = con.cursor()
-        cur.execute(
-            """DELETE FROM items"""
-        )  # delete all items so only csv data is in the database
+        # Ensure the file exists
+        file_path = Path(uri)
+        if not file_path.is_file():
+            raise FileNotFoundError(f"File not found: {uri}")
 
-        # open csv file and read the data into the database
-        df = pd.read_csv(uri)
-        for row in df.itertuples():
-            add_item(
-                row.name,
-                row.size,
-                row.is_metric == "1",
-                row.location,
-                row.count,
-                row.threshold,
-                cur,
-                con,
-            )
-        con.commit()
-    except Exception as e:
+        # Connect to the database
+        with sqlite3.connect("../data/data.db") as con:
+            cur = con.cursor()
+
+            # Delete all previous data from 'items' table
+            cur.execute("DELETE FROM items")
+
+            # Open and read the file
+            with open(uri, "r") as file:
+                data = [eval(line.strip()) for line in file.readlines()]
+
+            for item in data:
+                add_item(
+                    item[1],  # Column 1
+                    item[2],  # Column 2
+                    item[3] == "1",  # Convert to boolean
+                    parse_location_to_string(item[4]),  # Column 4
+                    item[5],  # Column 5
+                    item[6],  # Column 6
+                    cur,
+                    con,
+                )
+                print(item)
+
+            print("Data imported successfully")
+
+            con.commit()  # Commit changes
+
+    except FileNotFoundError as fnf_error:
+        print(fnf_error)
+    except sqlite3.DatabaseError as db_error:
+        print(f"Database error: {db_error}")
         con.rollback()
+    except Exception as e:
         print(f"Error importing CSV: {e}")
-    finally:
-        con.close()
+        con.rollback()
 
 
 def add_from_csv(uri: str) -> None:
@@ -240,6 +251,8 @@ def parse_location_to_string(location: str) -> str:
     Returns:
         str: representing the json location
     """
+    loc = json.dumps(location)
+    print(loc)
     return json.dumps(location)
 
 
