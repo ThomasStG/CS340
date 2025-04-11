@@ -10,8 +10,8 @@
 2. Run `nvm_setup.exe` and follow the installation steps.
 3. Install Node.js version 18.13:
    ```sh
-   nvm install 18.13
-   nvm use 18.13
+   nvm install 18.19
+   nvm use 18.19
    ```
 
 ### Clone the Project
