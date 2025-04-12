@@ -1,1 +1,17 @@
-<p>log-file-page works!</p>
+<div class="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-gray-300">
+<div class="flex justify-end sticky top-0 z-50 p-2">
+  <button
+    class="bg-gray-300 dark:bg-gray-800 border border-gray-500
+           hover:bg-gray-400 dark:hover:bg-gray-700 text-black dark:text-white
+           px-4 py-2 rounded"
+    (click)="downloadFile($event)">
+    Download Logs
+  </button>
+</div>
+
+<div class="ml-6">
+  <div class="log" *ngFor="let log of log_data.split('\n')">
+    {{ log }}
+  </div>
+</div>
+</div>

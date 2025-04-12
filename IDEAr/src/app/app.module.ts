@@ -21,15 +21,8 @@ import { DataDownloadComponent } from './data-download/data-download.component';
 import { ItemPopupComponent } from './item-popup/item-popup.component';
 import { ElectricalHomeComponent } from './electrical-home/electrical-home.component';
 import { LogFilePageComponent } from './log-file-page/log-file-page.component';
-
-const routes: Routes = [
-  { path: '', component: HomeComponent }, // Home Page
-  { path: 'admin', component: AdminComponent }, // Admin Page
-  { path: 'authentication', component: AuthenticationComponent },
-  { path: 'data-download', component: DataDownloadComponent },
-  { path: 'logs', component: LogFilePageComponent },
-  { path: 'electrical-home', component: ElectricalHomeComponent },
-];
+import { UserManagementComponent } from './user-management/user-management.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +39,8 @@ const routes: Routes = [
     ItemPopupComponent,
     LogFilePageComponent,
     ElectricalHomeComponent,
+    UserManagementComponent,
+    UserComponent,
   ],
   imports: [
     ReactiveFormsModule,
@@ -53,7 +48,7 @@ const routes: Routes = [
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(routes),
+    RouterModule,
   ],
   exports: [RouterModule],
   providers: [provideClientHydration()],

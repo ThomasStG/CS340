@@ -1,15 +1,18 @@
-<select id="dropdown" [(ngModel)]="selectedCsvFile">
-  <option *ngFor="let file of csv_files" [value]="file">{{ file }}</option>
-</select>
-<div class="flex flex-col">
-  <div>
-    <label for="file">Upload File</label>
-    <input type="file" (change)="uploadFile($event)" />
+<div class="align-center justify-center min-h-screen w-full flex flex-row flex-wrap flex-grow flex-gap-10 gap-10 p-2 bg-white dark:bg-gray-900 text-black dark:text-white">
+  <div class="flex flex-col">
+    <select id="dropdown" [(ngModel)]="selectedCsvFile" class="border border-gray-400 rounded-md hover:bg-slate-600 p-2 m-2 bg-slate-500 dark:bg-slate-600 dark:hover:bg-slate-500">
+      <option *ngFor="let file of csv_files" [value]="file">{{ file }}</option>
+    </select>
+    <button (click)="loadData($event)" class="border-solid border-slate-50 rounded-md m-2 p-2 bg-slate-500 text-white hover:bg-slate-600 dark:bg-slate-600 dark:hover:bg-slate-500">Load Data</button>
+    <button (click)="downloadFile(selectedCsvFile)" class="border-solid border-slate-50 rounded-md m-2 p-2 bg-slate-500 text-white hover:bg-slate-600 dark:bg-slate-600 dark:hover:bg-slate-500">Download Data</button>
   </div>
-  <button (click)="backupData($event)"
-class="border-solid border-slate-50 rounded-md p-2 bg-slate-500 text-white hover:bg-slate-600"
->Create New Backup Data</button>
-  <button (click)="loadData($event)" class="border-solid border-slate-50 rounded-md hover:bg-slate-200">Load Data</button>
-  <button (click)="downloadFile(selectedCsvFile)" class="border-solid border-slate-50 rounded-md hover:bg-slate-200">Download Data</button>
-</div>
 
+  <div class="flex flex-col ">
+    <div class="flex flex-row gap-4 p-3 m-4 items-center">
+      <label for="file">Upload File</label> <input type="file" (change)="uploadFile($event)" />
+    </div>
+    <button (click)="backupData($event)"
+      class="border-solid border-slate-50 rounded-md p-2 bg-slate-500 text-white hover:bg-slate-600"
+    >Create New Backup Data</button>
+  </div>
+</div>

@@ -55,7 +55,14 @@ from api import (
     remove_item,
     update_item,
 )
-from auth import change_password, check_token, create_account, get_salt, login
+from auth import (
+    change_password,
+    check_token,
+    create_account,
+    get_salt,
+    login,
+    get_users,
+)
 
 app = Flask(__name__)
 CORS(
@@ -820,11 +827,8 @@ def is_logged_in() -> Tuple[Response, int]:
 def register() -> Tuple[Response, int]:
     try:
         data = request.json
-        if (
-            data
-            and "username" not in data
-            and "password" not in data
-            and "level" not in data
+        if not data or any(
+            key not in data for key in ["username", "password", "level", "token"]
         ):
             raise KeyError("Missing required parameters")
 
@@ -1077,6 +1081,26 @@ def check_auth_token() -> Tuple[Response, int]:
         )
         return jsonify({"status": "success", "level": level}), 200
 
+    except Exception as e:
+        return handle_exceptions(e)
+
+
+@app.route("/getUsers", methods=["GET"])
+def fetch_users() -> Tuple[Response, int]:
+    """
+    Handles getting the users
+
+    Args:
+        None
+
+    Returns:
+        json: a message and status code
+    """
+    try:
+        connection = get_db()
+        cursor = connection.cursor()
+        users = get_users(cursor)
+        return jsonify({"status": "success", "users": users}), 200
     except Exception as e:
         return handle_exceptions(e)
 
