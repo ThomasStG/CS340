@@ -1,11 +1,9 @@
 <!-- Main layout of the app -->
-<div [class.dark]="darkMode | async">
+<div [class.dark]="darkMode | async" class="w-full">
   <div
     class="header"
-    class="bg-gray-100 text-black dark:bg-gray-900 dark:text-white"
+    class="bg-gray-100 pt-4 text-black dark:bg-gray-900 dark:text-white flex flex-row justify-center align-center"
   >
-    <h1>IDEr</h1>
-
     <!-- Navigation -->
     <nav class="flex gap-3 align-center justify-center">
       <button routerLink="/">Home</button>
@@ -13,6 +11,7 @@
       <button routerLink="/data-download">Data Download</button>
       <button routerLink="/electrical-home">Electrical Lab</button>
       <button routerLink="/logs">Logs</button>
+      <button routerLink="/user-management">User Management</button>
       <button (click)="logout()">logout</button>
       <button (click)="setMode(false)">Light Mode☀️</button>
       <button (click)="setMode(true)">Dark Mode🌑</button>
@@ -20,5 +19,5 @@
   </div>
 
   <!-- This will load the current page (Home, Admin, or Authentication) -->
-  <router-outlet></router-outlet>
+  <router-outlet class="w-full"></router-outlet>
 </div>

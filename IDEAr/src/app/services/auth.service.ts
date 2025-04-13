@@ -5,6 +5,8 @@ import { of, tap, Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { CookieService } from 'ngx-cookie-service';
 
+import { UserData } from '../user-data';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -84,5 +86,39 @@ export class AuthService {
   }
   getToken(): string {
     return this.cookieService.get(this.token);
+  }
+  getUsers(): Observable<UserData[]> {
+    return this.http
+      .get<{
+        status: string;
+        users: UserData[];
+      }>('http://127.0.0.1:3000/getUsers')
+      .pipe(map((res) => res.users));
+  }
+  createUser(user: UserData, password: string): Observable<any> {
+    return this.http.post('http://127.0.0.1:3000/register', {
+      username: user.username,
+      password: password,
+      level: user.level,
+      token: this.getToken(),
+    });
+  }
+  updateUser(user: UserData, password: string) {
+    const body = {
+      username: user.username,
+      password: password,
+      level: user.level,
+    };
+
+    return this.http.post<{
+      username: string;
+      password: string;
+      level: number;
+      token: string;
+    }>('http://127.0.0.1:3000/updateUser', body, {
+      headers: {
+        Authorization: `Bearer ${this.getToken()}`,
+      },
+    });
   }
 }

@@ -1,20 +1,34 @@
-<div class="min-h-screen bg-gray-0 dark:bg-gray-900">
-<p class="text-black dark:text-white">You only need to log in if you are an admin or student worker</p>
-<form (submit)="login($event)">
-  <input
-    type="text"
-    [(ngModel)]="username"
-    name="username"
-    placeholder="Username"
-    required
-  />
-  <input
-    type="password"
-    [(ngModel)]="password"
-    name="password"
-    placeholder="Password"
-    required
-  />
-  <button type="submit" class="text-black dark:text-white bg-gray-300 dark:bg-gray-800">Login</button>
-</form>
+<div
+  class="flex flex-col pt-12 items-center min-h-screen w-full bg-gray-0 dark:bg-gray-900 align-center"
+>
+  <p class="text-black dark:text-white mb-2">
+    You only need to log in if you are an admin or student worker
+  </p>
+  <form
+    (submit)="login($event)"
+    class="flex flex-col gap-3 min-w-[150px] max-w-[400px]"
+  >
+    <input
+      type="text"
+      [(ngModel)]="username"
+      class="text-black dark:text-white hover:bg-gray-300 dark:hover:bg-gray-700 dark:bg-gray-600 border border-gray-500 rounded-md"
+      name="username"
+      placeholder="Username"
+      required
+    />
+    <input
+      type="password"
+      [(ngModel)]="password"
+      class="text-black dark:text-white hover:bg-gray-300 dark:hover:bg-gray-700 dark:bg-gray-600 border border-gray-500 rounded-md"
+      name="password"
+      placeholder="Password"
+      required
+    />
+    <button
+      type="submit"
+      class="text-black dark:text-white bg-gray-300 dark:bg-gray-800 hover:bg-gray-400 dark:hover:bg-gray-700 border border-gray-500 rounded-md"
+    >
+      Login
+    </button>
+  </form>
 </div>

@@ -1,11 +1,11 @@
-<div class="scrollable-box dark:bg-gray-900">
+<div class="p-0 m-0 w-full h-full left-0 overflow-y-scroll dark:bg-gray-900">
     <app-item-search
       (formSubmit)="handleSearch($event)"
-    ></app-item-search>
+     ></app-item-search>
 
   <table>
-    <thead>
-      <tr class="bg-gray-0 text-black dark:bg-gray-900 dark:text-white">
+    <thead class="sticky top-0 z-[100]">
+      <tr class="cursor-pointer hover:bg-gray-400 bg-gray-200 bg-gray-0 text-black dark:bg-gray-900 dark:text-white">
         <th>Name</th>
         <th>Size</th>
         <th>Metric</th>

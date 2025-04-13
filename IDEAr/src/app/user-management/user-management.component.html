@@ -1,0 +1,23 @@
+<div *ngIf="users && users.length > 0; else loading">
+  <div *ngFor="let user of users">
+    <app-user [user]="user"></app-user>
+  </div>
+</div>
+<ng-template #loading>
+  <p>Loading users...</p>
+</ng-template>
+
+<form
+  [formGroup]="newUserForm"
+  class="flex flex-row flex-grow flex-wrap items-end gap-4 p-2 justify-center bg-white dark:bg-gray-900 text-black dark:text-white"
+  (ngSubmit)="onSubmit()"
+>
+  <input type="text" formControlName="username" />
+  <input type="password" formControlName="password" />
+  <select formControlName="level">
+    <option value="0">Admin</option>
+    <option value="1">High Level Student Worker</option>
+    <option value="2">Student Worker</option>
+  </select>
+  <button type="submit">Submit</button>
+</form>

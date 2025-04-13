@@ -31,6 +31,7 @@ import sqlite3
 from io import BytesIO
 from logging.handlers import TimedRotatingFileHandler
 from typing import Tuple
+from pathlib import Path
 
 import jwt
 import pandas as pd
@@ -55,7 +56,14 @@ from api import (
     remove_item,
     update_item,
 )
-from auth import change_password, check_token, create_account, get_salt, login
+from auth import (
+    change_password,
+    check_token,
+    create_account,
+    get_salt,
+    login,
+    get_users,
+)
 
 app = Flask(__name__)
 CORS(
@@ -161,7 +169,36 @@ def generate_token(username: str, level: int) -> str:
         raise
 
 
-from pathlib import Path
+def convert_file(filename):
+    try:
+        print("Converting file...")
+        output_filename = os.path.splitext(filename)[0] + "_converted.csv"
+
+        with open(output_filename, "w", newline="") as w:
+            print("Opened output file:", output_filename)
+            writer = w.write
+
+            with open(filename, newline="") as csvfile:
+                print("Reading CSV:", filename)
+                spamreader = csv.reader(csvfile, delimiter=",", quotechar="|")
+
+                for row in spamreader:
+                    print("Row:", row)
+                    if len(row) < 12:
+                        print("Skipping row, not enough columns:", row)
+                        continue
+                    formatted = (
+                        f"['{row[0]}','{row[1]}', {row[2]},"
+                        f"['{row[3]}', '{row[4]}', '{row[5]}', '{row[6]}', '{row[7]}', '{row[8]}'],"
+                        f"{row[9]},{row[10]}, {row[11]}]\n"
+                    )
+                    writer(formatted)
+
+        print("Done. Output file:", output_filename)
+        return output_filename
+
+    except Exception as e:
+        print("? Error occurred:", e)
 
 
 def import_csv(uri):
@@ -184,12 +221,12 @@ def import_csv(uri):
 
             for item in data:
                 add_item(
-                    item[1],  # Column 1
-                    item[2],  # Column 2
-                    item[3] == "1",  # Convert to boolean
-                    parse_location_to_string(item[4]),  # Column 4
-                    item[5],  # Column 5
-                    item[6],  # Column 6
+                    item[0],  # Column 1
+                    item[1],  # Column 2
+                    item[2] == "1",  # Convert to boolean
+                    parse_location_to_string(item[3]),  # Column 4
+                    item[4],  # Column 5
+                    item[5],  # Column 6
                     cur,
                     con,
                 )
@@ -222,19 +259,29 @@ def add_from_csv(uri: str) -> None:
     try:
         con = sqlite3.connect("../data/data.db")
         cur = con.cursor()
-        df = pd.read_csv(uri)
-        for row in df.itertuples():
+        print("Connected to database")
+        with open(uri, "r") as file:
+            data = [eval(line.strip()) for line in file.readlines()]
+
+        print("data", data)
+
+        for item in data:
+            print("item", item)
             add_item(
-                row.name,
-                row.size,
-                row.is_metric == "1",
-                row.location,
-                row.count,
-                row.threshold,
+                item[1],  # Column 1
+                item[2],  # Column 2
+                item[3] == "1",  # Convert to boolean
+                parse_location_to_string(item[4]),  # Column 4
+                item[5],  # Column 5
+                item[6],  # Column 6
                 cur,
                 con,
             )
-        con.commit()
+            print(item)
+
+        print("Data imported successfully")
+
+        con.commit()  # Commit changes
     except Exception as e:
         con.rollback()
         print(f"Error importing CSV: {e}")
@@ -820,11 +867,8 @@ def is_logged_in() -> Tuple[Response, int]:
 def register() -> Tuple[Response, int]:
     try:
         data = request.json
-        if (
-            data
-            and "username" not in data
-            and "password" not in data
-            and "level" not in data
+        if not data or any(
+            key not in data for key in ["username", "password", "level", "token"]
         ):
             raise KeyError("Missing required parameters")
 
@@ -986,6 +1030,49 @@ def upload_file() -> Tuple[Response, int]:
         with open(file_path, "w", encoding="utf-8") as f:
             f.write(file_contents)
 
+        file_path = convert_file(file_path)
+
+        import_csv(file_path)
+
+        return jsonify({"status": "success", "message": "File uploaded"}), 200
+    except Exception as e:
+        return handle_exceptions(e)
+
+
+@app.route("/appendFile", methods=["POST"])
+def append_file() -> Tuple[Response, int]:
+    """
+    Handles uploading a file
+
+    Args:
+        None
+
+    Returns:
+        json: a message and status code
+    """
+    try:
+        print("Appending file...")
+        data = request.files
+        if not data or "file" not in data:
+            raise KeyError("Missing required parameters")
+
+        uploaded_file = request.files["file"]
+        filename = secure_filename(uploaded_file.filename or "uploaded_file.csv")
+        file_path = os.path.join("../data", filename)
+        print(file_path)
+
+        # Read the content BEFORE saving
+        file_contents = uploaded_file.read().decode("utf-8")
+
+        print(file_contents)
+
+        # Save the file
+        with open(file_path, "w", encoding="utf-8") as f:
+            f.write(file_contents)
+
+        file_path = convert_file(file_path)
+
+        add_from_csv(file_path)
         return jsonify({"status": "success", "message": "File uploaded"}), 200
     except Exception as e:
         return handle_exceptions(e)
@@ -1077,6 +1164,26 @@ def check_auth_token() -> Tuple[Response, int]:
         )
         return jsonify({"status": "success", "level": level}), 200
 
+    except Exception as e:
+        return handle_exceptions(e)
+
+
+@app.route("/getUsers", methods=["GET"])
+def fetch_users() -> Tuple[Response, int]:
+    """
+    Handles getting the users
+
+    Args:
+        None
+
+    Returns:
+        json: a message and status code
+    """
+    try:
+        connection = get_db()
+        cursor = connection.cursor()
+        users = get_users(cursor)
+        return jsonify({"status": "success", "users": users}), 200
     except Exception as e:
         return handle_exceptions(e)
 

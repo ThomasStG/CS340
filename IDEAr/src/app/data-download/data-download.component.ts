@@ -11,6 +11,7 @@ import { saveAs } from 'file-saver';
 export class DataDownloadComponent implements OnInit {
   csv_files: string[] = [];
   selectedCsvFile = '';
+  importedFile: File | null = null;
   constructor(private utilityService: UtilityService) {}
 
   loadData(event: Event) {
@@ -35,14 +36,37 @@ export class DataDownloadComponent implements OnInit {
     });
   }
 
-  uploadFile(event: Event) {
-    event.stopPropagation();
-    const file = (event.target as HTMLInputElement).files?.[0];
-    if (file) {
-      this.utilityService.uploadFile(file).subscribe({
-        error: (err) => console.error('Upload error:', err),
-      });
+  onFileSelected(event: Event) {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files.length > 0) {
+      this.importedFile = input.files[0];
+      console.log('File selected:', this.importedFile.name);
     }
+  }
+
+  uploadFile() {
+    if (!this.importedFile) {
+      console.error('No file selected.');
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append('file', this.importedFile);
+
+    // send formData to your backend using HttpClient
+    this.utilityService.uploadFile(this.importedFile).subscribe();
+    console.log('Uploading file:', this.importedFile.name);
+  }
+
+  appendFile() {
+    if (!this.importedFile) {
+      console.error('No file selected.');
+      return;
+    }
+
+    // Similar to uploadFile, or whatever append logic you want
+    this.utilityService.appendFile(this.importedFile).subscribe();
+    console.log('Appending file:', this.importedFile.name);
   }
   downloadFile(fileUrl: string): void {
     this.utilityService.downloadFile(fileUrl).subscribe((blob: Blob) => {
