@@ -51,6 +51,11 @@ export class UtilityService {
     formData.append('file', file);
     return this.http.post('http://127.0.0.1:3000/uploadFile', formData);
   }
+  appendFile(file: any): Observable<any> {
+    const formData = new FormData();
+    formData.append('file', file);
+    return this.http.post('http://127.0.0.1:3000/appendFile', formData);
+  }
   downloadFile(fileUrl: string): Observable<Blob> {
     return this.http.get(
       `http://127.0.0.1:3000/downloadFile?fileName=${encodeURIComponent(fileUrl)}`,
