@@ -1,7 +1,8 @@
+<div class="min-h-screen dark:bg-gray-900">
 <select id="dropdown" [(ngModel)]="selectedCsvFile">
   <option *ngFor="let file of csv_files" [value]="file">{{ file }}</option>
 </select>
-<div class="flex flex-col">
+<div class="flex flex-col bg-gray-0 text-black dark:bg-gray-900 dark:text-white">
   <div>
     <label for="file">Upload File</label>
     <input type="file" (change)="uploadFile($event)" />
@@ -12,4 +13,4 @@ class="border-solid border-slate-50 rounded-md p-2 bg-slate-500 text-white hover
   <button (click)="loadData($event)" class="border-solid border-slate-50 rounded-md hover:bg-slate-200">Load Data</button>
   <button (click)="downloadFile(selectedCsvFile)" class="border-solid border-slate-50 rounded-md hover:bg-slate-200">Download Data</button>
 </div>
-
+</div>

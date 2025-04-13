@@ -1,15 +1,15 @@
 <form
   [formGroup]="searchForm"
-  class="flex flex-grow flex-wrap w-full items-end"
+  class="flex flex-grow flex-wrap w-full items-end bg-gray-100 text-black dark:bg-gray-900 dark:text-white"
   (ngSubmit)="onSubmit('multi')"
 >
   <div class="flex flex-col min-w-[150px]">
     <label>Name:</label>
-    <input class="textBox" type="text" formControlName="name" />
+    <input class="textBox bg-white text-black border border-black" type="text" formControlName="name" />
   </div>
   <div class="flex flex-col min-w-[150px]">
     <label>Size:</label>
-    <input class="textBox dark:text-black" type="text" formControlName="size" />
+    <input class="textBox bg-white text-black border border-black" type="text" formControlName="size" />
   </div>
   <div class="flex flex-col min-w-[150px]">
     <label class="flex items-center gap-2">
@@ -17,10 +17,10 @@
       <input type="checkbox" formControlName="metric" />
     </label>
   </div>
-  <div class="flex flex-col min-w-[150px]">
+  <div class="flex flex-col min-w-[150px] hover:bg-gray-100 hover:dark:bg-gray-600">
     <button type="button" (click)="onSubmit('single')">Search</button>
   </div>
-  <div class="flex flex-col min-w-[150px]">
+  <div class="flex flex-col min-w-[150px] hover:bg-gray-100 hover:dark:bg-gray-600">
     <button type="submit">Search Similar</button>
   </div>
 </form>

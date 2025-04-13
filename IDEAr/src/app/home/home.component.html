@@ -1,11 +1,11 @@
-<div class="scrollable-box">
+<div class="scrollable-box dark:bg-gray-900">
     <app-item-search
       (formSubmit)="handleSearch($event)"
     ></app-item-search>
 
   <table>
     <thead>
-      <tr>
+      <tr class="bg-gray-0 text-black dark:bg-gray-900 dark:text-white">
         <th>Name</th>
         <th>Size</th>
         <th>Metric</th>
@@ -13,7 +13,7 @@
       </tr>
     </thead>
     <tbody *ngFor="let item of items" >
-      <tr class="cursor-pointer hover:bg-gray-100" (click)="onItemClick(item)">
+      <tr class="cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600" (click)="onItemClick(item)">
         <app-item [item]="item"></app-item>
         <!-- <td class="itemColumn">{{ item.name }}</td> -->
         <!-- <td class="itemColumn">{{ item.size }}</td> -->
