@@ -2,7 +2,11 @@
     <app-item-search
       (formSubmit)="handleSearch($event)"
     ></app-item-search>
-
+  <div>
+    <button (click)="addItem($event)">
+      Add Item
+    </button>
+  </div>
   <table>
     <thead>
       <tr>

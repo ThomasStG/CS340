@@ -3,6 +3,8 @@ import { ItemData } from '../item-data';
 import { Input } from '@angular/core';
 import { UpdateItemService } from '../services/update-item.service';
 import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmationPopupComponent } from '../confirmation-popup/confirmation-popup.component';
 
 @Component({
   selector: 'app-admin-popup',
@@ -22,10 +24,11 @@ export class AdminPopupComponent {
   itemTitle = '';
 
   isAdding = false;
-  isPopupVisible = false;
   isEditing = false;
+  value = 'none';
 
   constructor(
+    public dialog: MatDialog,
     private updateItemService: UpdateItemService,
     private dialogRef: MatDialogRef<AdminPopupComponent>,
   ) {}
@@ -41,6 +44,10 @@ export class AdminPopupComponent {
     }
   }
 
+  stopClickPropagation(event: Event) {
+    event.stopPropagation();
+  }
+
   editItem(event: Event) {
     event.stopPropagation();
     this.isEditing = true;
@@ -50,37 +57,65 @@ export class AdminPopupComponent {
     this.isEditing = false;
   }
 
-  showPopup() {
-    this.isPopupVisible = true;
-  }
-
   closePopup(event: Event) {
     event.stopPropagation();
-    this.isPopupVisible = false;
+    this.dialogRef.close();
     this.isEditing = false;
   }
-  updateItem(event: Event) {
-    event.stopPropagation();
+
+  close() {
+    this.dialogRef.close();
     this.isEditing = false;
+    this.isAdding = false;
+  }
+  updateItem() {
+    this.isEditing = false;
+    this.close();
     this.updateItemService
       .updateItem(this.item, this.newItem)
       .subscribe((response) => {});
     // TODO: Close popup
+    this.close()
   }
-  deleteItem(event: Event) {
-    event.stopPropagation();
+  deleteItem() {
     this.updateItemService.deleteItem(this.item).subscribe((response) => {});
+    this.close();
   }
-  addItem(event: Event) {
-    event.stopPropagation();
+  addItem() {
     this.updateItemService.addItem(this.item);
+    this.close();
   }
+
   cancelAdding(event: Event) {
     this.isAdding = false;
     // TODO: Close popup
   }
-  close() {
-    this.dialogRef.close();
+
+  showAddItemPopup(){
+    this.isEditing = true;
+    this.isAdding = true;
   }
-  showItem(item: ItemData) {}
+
+  showItem(item: ItemData) {
+    this.item = item;
+  }
+
+  confirmPopup(value: string){
+    const ConfirmationPopUp = this.dialog.open(ConfirmationPopupComponent);
+    ConfirmationPopUp.afterOpened().subscribe(() => {
+      ConfirmationPopUp.componentInstance.updatePopup(value)
+    });
+
+    ConfirmationPopUp.afterClosed().subscribe((result: boolean) => {
+      if(result === true && value === 'save'){
+        this.updateItem();
+      }
+      if(result === true && value === 'delete'){
+        this.deleteItem();
+      }
+      if(result === true && value === 'add'){
+        this.addItem();
+      }
+    })
+  }
 }
