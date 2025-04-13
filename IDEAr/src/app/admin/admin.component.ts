@@ -83,9 +83,8 @@ export class AdminComponent {
     }
   }
   addItem(event: any) {
-    this.dialog.open(AdminPopupComponent);
     const PopUp = this.dialog.open(AdminPopupComponent);
-    PopUp.componentInstance.addItem(event);
+    PopUp.componentInstance.showAddItemPopup();
   }
 
   check_level() {
@@ -99,6 +98,7 @@ export class AdminComponent {
   }
   onItemClick(item: any) {
     this.selectedItem = item;
-    this.isPopupVisible = true;
+    const PopUp = this.dialog.open(AdminPopupComponent);
+    PopUp.componentInstance.showItem(this.selectedItem);
   }
 }
