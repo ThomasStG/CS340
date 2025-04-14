@@ -1,10 +1,10 @@
-<div class="overlay" (click)="closePopup($event)">
-  <div class="popup" (click)="stopClickPropagation($event)">
+<div class="overlay" [class.dark]="darkMode | async" (click)="closePopup($event)">
+  <div class="popup text-black dark:text-white bg-white dark:bg-gray-900" (click)="stopClickPropagation($event)">
     <div class="popup-content">
       <div *ngIf="isEditing" class="flex flex-col editing-popup">
         <h1 class="popup-header">{{ item.name }}</h1>
         <table>
-          <tr>
+          <tr class="hover:bg-gray-100">
             <td>
               <label>Name:</label>
             </td>
@@ -16,7 +16,7 @@
               />
             </td>
           </tr>
-          <tr>
+          <tr class="hover:bg-gray-100">
             <td>
               <label>Size:</label>
             </td>
@@ -28,7 +28,7 @@
               />
             </td>
           </tr>
-          <tr>
+          <tr class="hover:bg-gray-100">
             <td>
               <label>Metric:</label>
             </td>
@@ -40,7 +40,7 @@
               />
             </td>
           </tr>
-          <tr>
+          <tr class="hover:bg-gray-100">
             <td>
               <label>Location:</label>
             </td>
@@ -121,7 +121,7 @@
               </table>
             </td>
           </tr>
-          <tr>
+          <tr class="hover:bg-gray-100">
             <td>
               <label>Count:</label>
             </td>
@@ -133,7 +133,7 @@
               />
             </td>
           </tr>
-          <tr>
+          <tr class="hover:bg-gray-100">
             <td>
               <label>Threshold:</label>
             </td>
@@ -145,7 +145,7 @@
               />
             </td>
           </tr>
-          <tr *ngIf="!isAdding">
+          <tr *ngIf="!isAdding" class="hover:bg-gray-100">
             <td>
               <button (click)="confirmPopup('save')" class="close-button">
                 Save
@@ -157,7 +157,7 @@
               </button>
             </td>
           </tr>
-          <tr *ngIf="isAdding">
+          <tr *ngIf="isAdding" class="hover:bg-gray-100">
             <td>
               <button (click)="confirmPopup('add')" class="close-button">
                 Add Item
@@ -171,7 +171,7 @@
       <div *ngIf="!isEditing" class="flex flex-col editing-popup">
         <h1 class="popup-header">{{ item.name }}</h1>
         <table>
-          <tr>
+          <tr class="hover:bg-gray-100">
             <td>
               <label>Name:</label>
             </td>
@@ -184,7 +184,7 @@
               />
             </td>
           </tr>
-          <tr>
+          <tr class="hover:bg-gray-100">
             <td>
               <label>Size:</label>
             </td>
@@ -197,7 +197,7 @@
               />
             </td>
           </tr>
-          <tr>
+          <tr class="hover:bg-gray-100">
             <td>
               <label>Metric:</label>
             </td>
@@ -210,7 +210,7 @@
               />
             </td>
           </tr>
-          <tr>
+          <tr class="hover:bg-gray-100">
             <td>
               <label>Location:</label>
             </td>
@@ -297,7 +297,7 @@
               </table>
             </td>
           </tr>
-          <tr>
+          <tr class="hover:bg-gray-100">
             <td>
               <label>Count:</label>
             </td>
@@ -310,7 +310,7 @@
               />
             </td>
           </tr>
-          <tr>
+          <tr class="hover:bg-gray-100">
             <td>
               <label>Threshold:</label>
             </td>
@@ -323,7 +323,7 @@
               />
             </td>
           </tr>
-          <tr>
+          <tr class="hover:bg-gray-100">
             <td>
               <button (click)="editItem($event)" class="close-button">
                 Edit

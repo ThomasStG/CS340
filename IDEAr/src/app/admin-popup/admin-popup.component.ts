@@ -5,6 +5,8 @@ import { UpdateItemService } from '../services/update-item.service';
 import { MatDialogRef } from '@angular/material/dialog';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmationPopupComponent } from '../confirmation-popup/confirmation-popup.component';
+import { UtilityService } from '../services/utility.service';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-admin-popup',
@@ -26,14 +28,17 @@ export class AdminPopupComponent {
   isAdding = false;
   isEditing = false;
   value = 'none';
+  darkMode = new BehaviorSubject<boolean>(false);
 
   constructor(
     public dialog: MatDialog,
     private updateItemService: UpdateItemService,
     private dialogRef: MatDialogRef<AdminPopupComponent>,
+    private utilityService: UtilityService,
   ) {}
   newItem: ItemData = { ...this.item };
   ngOnInit() {
+    this.darkMode.next(this.utilityService.isDarkMode());
     this.item.location = JSON.parse(this.item.location);
     this.newItem = this.item;
     if (this.item.name == '') {
@@ -75,7 +80,7 @@ export class AdminPopupComponent {
       .updateItem(this.item, this.newItem)
       .subscribe((response) => {});
     // TODO: Close popup
-    this.close()
+    this.close();
   }
   deleteItem() {
     this.updateItemService.deleteItem(this.item).subscribe((response) => {});
@@ -91,7 +96,7 @@ export class AdminPopupComponent {
     // TODO: Close popup
   }
 
-  showAddItemPopup(){
+  showAddItemPopup() {
     this.isEditing = true;
     this.isAdding = true;
   }
@@ -100,22 +105,22 @@ export class AdminPopupComponent {
     this.item = item;
   }
 
-  confirmPopup(value: string){
+  confirmPopup(value: string) {
     const ConfirmationPopUp = this.dialog.open(ConfirmationPopupComponent);
     ConfirmationPopUp.afterOpened().subscribe(() => {
-      ConfirmationPopUp.componentInstance.updatePopup(value)
+      ConfirmationPopUp.componentInstance.updatePopup(value);
     });
 
     ConfirmationPopUp.afterClosed().subscribe((result: boolean) => {
-      if(result === true && value === 'save'){
+      if (result === true && value === 'save') {
         this.updateItem();
       }
-      if(result === true && value === 'delete'){
+      if (result === true && value === 'delete') {
         this.deleteItem();
       }
-      if(result === true && value === 'add'){
+      if (result === true && value === 'add') {
         this.addItem();
       }
-    })
+    });
   }
 }
