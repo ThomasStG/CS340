@@ -2,22 +2,32 @@ import { Component, Inject } from '@angular/core';
 import { AdminPopupComponent } from '../admin-popup/admin-popup.component';
 import { MatDialogRef } from '@angular/material/dialog';
 import { MatDialog } from '@angular/material/dialog';
+import { UtilityService } from '../utility.service';
+import { BehaviorSubject } from 'rxjs';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-confirmation-popup',
   templateUrl: './confirmation-popup.component.html',
-  styleUrl: './confirmation-popup.component.css'
+  styleUrl: './confirmation-popup.component.css',
+  standalone: true,
+  imports: [CommonModule]
 })
 export class ConfirmationPopupComponent {
   addItemMethod!: Function;
   deleteItemMethod!: Function;
   updateItemMethod!: Function;
+  darkMode = new BehaviorSubject<boolean>(false);
 
   constructor(
     public dialog: MatDialog,
     private dialogRef: MatDialogRef<ConfirmationPopupComponent>,
+    private utilityService: UtilityService
   ){}
 
+  ngOnInit(){
+    this.darkMode.next(this.utilityService.isDarkMode());
+  }
   isAdding = true;
   isEditing = false;
 
