@@ -18,11 +18,10 @@ td:first-child {
   width: 1px; /* Allows the column to shrink to fit the widest content */
 }
 .scrollable-box {
-    width: 100%;
-    height: 700px;
-    border: 1px solid #ccc;
-    display: flex;
-    flex-direction: column;
-    margin-left: auto;
-    margin-right: auto;
-  }
+  width: 100%;
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+}

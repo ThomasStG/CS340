@@ -1,7 +1,7 @@
 .scrollable-box {
   width: 95%;
   height: 700px;
-  border: 1px solid #ccc;
+  /*border: 1px solid #ccc;*/
   display: flex;
   flex-direction: column;
   margin-left: auto;
