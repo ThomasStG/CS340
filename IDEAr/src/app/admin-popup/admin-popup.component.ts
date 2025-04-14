@@ -7,6 +7,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ConfirmationPopupComponent } from '../confirmation-popup/confirmation-popup.component';
 import { UtilityService } from '../services/utility.service';
 import { BehaviorSubject } from 'rxjs';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-admin-popup',
@@ -35,6 +36,7 @@ export class AdminPopupComponent {
     private updateItemService: UpdateItemService,
     private dialogRef: MatDialogRef<AdminPopupComponent>,
     private utilityService: UtilityService,
+    private authService: AuthService
   ) {}
   newItem: ItemData = { ...this.item };
   ngOnInit() {
@@ -123,4 +125,9 @@ export class AdminPopupComponent {
       }
     });
   }
+  check_level(){
+    const level = this.authService.levelGetter().subscribe((level)=> {
+    if (level < 2 ) return true
+    else return false}
+  )}
 }

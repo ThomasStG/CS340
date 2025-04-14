@@ -89,7 +89,7 @@ export class AdminComponent {
 
   check_level() {
     const level = this.authService.levelGetter().subscribe((level) => {
-      if (level != 2) return true;
+      if (level <= 2) return true;
       else return false;
     });
   }
