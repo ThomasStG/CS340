@@ -110,12 +110,27 @@ export class AuthService {
       level: user.level,
     };
 
+    if (user.username === 'admin') {
+      return;
+    }
     return this.http.post<{
       username: string;
       password: string;
       level: number;
       token: string;
     }>('http://127.0.0.1:3000/updateUser', body, {
+      headers: {
+        Authorization: `Bearer ${this.getToken()}`,
+      },
+    });
+  }
+  deleteUser(username: string) {
+    if (username === 'admin') {
+      return;
+    }
+    return this.http.post('http://127.0.0.1:3000/deleteUser', {
+      username: username,
+      token: this.getToken(),
       headers: {
         Authorization: `Bearer ${this.getToken()}`,
       },

@@ -63,6 +63,7 @@ from auth import (
     get_salt,
     login,
     get_users,
+    delete_user,
 )
 
 app = Flask(__name__)
@@ -888,10 +889,7 @@ def register() -> Tuple[Response, int]:
         # Get the hashed password as a hexadecimal string
         hashed_password = hash_object.hexdigest()
 
-        if not create_account(
-            username, level, hashed_password, salt.hex(), cursor, connection
-        ):
-            raise Unauthorized("Login failed")
+        create_account(username, level, hashed_password, salt.hex(), cursor, connection)
         token = generate_token(username, level)
         return jsonify({"status": "success", "token": token}), 200
     except Exception as e:
@@ -1184,6 +1182,35 @@ def fetch_users() -> Tuple[Response, int]:
         cursor = connection.cursor()
         users = get_users(cursor)
         return jsonify({"status": "success", "users": users}), 200
+    except Exception as e:
+        return handle_exceptions(e)
+
+
+@app.route("/deleteUser", methods=["POST"])
+def delete_user_route() -> Tuple[Response, int]:
+    """
+    Handles deleting a user
+
+    Args:
+        username (str): the username of the user
+        token (str): the cookie of the user
+
+    Returns:
+        json: a message and status code
+    """
+    try:
+        data = request.json
+        connection = get_db()
+        cursor = connection.cursor()
+        if data is None or "data.username" not in data or "token" not in data:
+            raise KeyError("missing required parameters")
+        level = jwt.decode(data["token"], options={"verify_signature": False}).get(
+            "level"
+        )
+        if level != 0:
+            raise KeyError("User does not have admin privileges")
+        delete_user(data["username"], cursor, connection)
+        return jsonify({"status": "success"}), 200
     except Exception as e:
         return handle_exceptions(e)
 

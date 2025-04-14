@@ -1,6 +1,7 @@
 import { Input, Component, OnChanges, SimpleChanges } from '@angular/core';
 import { UserData } from '../user-data';
 import { FormControl, FormGroup } from '@angular/forms';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-user',
@@ -16,6 +17,8 @@ export class UserComponent implements OnChanges {
     authorization: new FormControl('2'),
   });
 
+  constructor(private authService: AuthService) {}
+
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['user'] && this.user) {
       this.userForm.patchValue({
@@ -27,5 +30,19 @@ export class UserComponent implements OnChanges {
 
   onSubmit() {
     const formData = this.userForm.value;
+  }
+  onDelete() {
+    const formData: {
+      name: string;
+      password?: string;
+      authorization?: string;
+    } = this.userForm.value;
+    const username = formData.name;
+
+    if (username) {
+      this.authService.deleteUser(username).subscribe();
+    } else {
+      console.warn('Username is missing in form data');
+    }
   }
 }

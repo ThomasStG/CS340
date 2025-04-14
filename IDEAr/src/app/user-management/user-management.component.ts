@@ -40,6 +40,10 @@ export class UserManagementComponent implements OnInit {
       };
       const pass = formData.password as string;
       this.authService.createUser(data, pass).subscribe();
+      this.authService.getUsers().subscribe((response: UserData[]) => {
+        this.users = response;
+      });
+      this.newUserForm.reset();
     } else {
     }
   }

@@ -197,6 +197,11 @@ def get_users(cursor: sqlite3.Cursor) -> list[dict]:
     return [dict(row) for row in rows]  # Convert Row to dict
 
 
+def delete_user(username: str, cursor: sqlite3.Cursor, connection: sqlite3.Connection):
+    cursor.execute("DELETE FROM users WHERE username = ?", (username,))
+    connection.commit()
+
+
 # TODO: add a function to update user access level
 
 import hashlib
