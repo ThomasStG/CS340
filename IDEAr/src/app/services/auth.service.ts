@@ -124,7 +124,7 @@ export class AuthService {
       },
     });
   }
-  deleteUser(username: string) {
+  deleteUser(username: string | undefined | null) {
     if (username === 'admin') {
       return;
     }

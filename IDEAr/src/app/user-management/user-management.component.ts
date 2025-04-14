@@ -39,12 +39,25 @@ export class UserManagementComponent implements OnInit {
         level: Number(formData.level), // ensure it's a number
       };
       const pass = formData.password as string;
-      this.authService.createUser(data, pass).subscribe();
-      this.authService.getUsers().subscribe((response: UserData[]) => {
-        this.users = response;
+      this.authService.createUser(data, pass).subscribe({
+        next: () => {
+          // After creating the user, fetch the updated list of users
+          this.authService.getUsers().subscribe((response: UserData[]) => {
+            this.users = response; // Update users array with the new data
+          });
+        },
+        error: (error) => {
+          // Handle the error if the user creation fails
+          console.error('User creation failed:', error);
+        },
       });
+
+      // Reset the form after submitting
       this.newUserForm.reset();
     } else {
     }
+  }
+  onUserListUpdated(updatedUsers: UserData[]) {
+    this.users = updatedUsers;
   }
 }

@@ -1202,7 +1202,7 @@ def delete_user_route() -> Tuple[Response, int]:
         data = request.json
         connection = get_db()
         cursor = connection.cursor()
-        if data is None or "data.username" not in data or "token" not in data:
+        if data is None or "username" not in data or "token" not in data:
             raise KeyError("missing required parameters")
         level = jwt.decode(data["token"], options={"verify_signature": False}).get(
             "level"
