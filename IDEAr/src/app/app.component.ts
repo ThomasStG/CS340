@@ -84,4 +84,10 @@ export class AppComponent implements OnInit {
   onAuthSuccess() {
     this.isAuthenticated = true;
   }
+  check_level() {
+    const level = this.authService.levelGetter().subscribe((level) => {
+      if ((level = 0)) return true;
+      else return false;
+    });
+  }
 }

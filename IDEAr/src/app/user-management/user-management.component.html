@@ -1,4 +1,4 @@
-<div class="pt-12 min-h-screen w-full bg-gray-0 dark:bg-gray-900">
+<div *ngIf="check_level()" class="pt-12 min-h-screen w-full bg-gray-0 dark:bg-gray-900">
   <form
     [formGroup]="newUserForm"
     class="flex flex-row flex-grow flex-wrap items-end gap-4 p-2 justify-center bg-white dark:bg-gray-900 text-black dark:text-white"

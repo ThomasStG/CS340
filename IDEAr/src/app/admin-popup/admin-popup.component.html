@@ -323,7 +323,7 @@
               />
             </td>
           </tr>
-          <tr class="hover:bg-gray-100 hover:dark:bg-gray-700">
+          <tr *ngIf="check_level()" class="hover:bg-gray-100 hover:dark:bg-gray-700">
             <td>
               <button (click)="editItem($event)" class="close-button">
                 Edit

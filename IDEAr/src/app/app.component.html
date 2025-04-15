@@ -33,7 +33,11 @@
           </a>
         </div>
       </div>
-      <div #adminDropdownRef class="relative inline-block">
+      <div
+        *ngIf="check_level()"
+        #adminDropdownRef
+        class="relative inline-block"
+      >
         <button
           (click)="toggleDropdown('admin')"
           class="px-4 py-2 bg-blue-600 text-white rounded-md"
@@ -52,7 +56,11 @@
           >
         </div>
       </div>
-      <div #managementDropdownRef class="relative inline-block">
+      <div
+        *ngIf="check_level()"
+        #managementDropdownRef
+        class="relative inline-block"
+      >
         <button
           (click)="toggleDropdown('management')"
           class="px-4 py-2 bg-blue-600 text-white rounded-md"
