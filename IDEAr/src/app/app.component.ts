@@ -29,6 +29,7 @@ export class AppComponent implements OnInit {
     public authService: AuthService,
     public utilityService: UtilityService,
     private eRef: ElementRef,
+    private cdr: ChangeDetectorRef,
     @Inject(PLATFORM_ID) private platformId: Object,
   ) {
     this.isBrowser = isPlatformBrowser(this.platformId);

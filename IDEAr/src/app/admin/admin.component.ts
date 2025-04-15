@@ -19,6 +19,7 @@ export class AdminComponent {
     private router: Router,
     private getItemsService: GetItemsService,
     private dialog: MatDialog,
+    private updateItemService: UpdateItemService,
   ) {}
   items: ItemData[] = [];
   isPopupVisible = false;
@@ -31,6 +32,7 @@ export class AdminComponent {
     count: 0,
     threshold: 0,
   };
+  toChange = 0;
   ngOnInit(): void {
     this.authService.isAuthenticated().subscribe((isAuth: boolean) => {
       if (!isAuth) {
@@ -100,5 +102,29 @@ export class AdminComponent {
     this.selectedItem = item;
     const PopUp = this.dialog.open(AdminPopupComponent);
     PopUp.componentInstance.showItem(this.selectedItem);
+  }
+  incrementItem(event: Event, item: any) {
+    event.stopPropagation();
+    this.updateItemService
+      .incrementItem(item, this.toChange)
+      .subscribe((response) => {
+        if (response.error) {
+          console.error(response.error);
+        } else {
+          item.count += this.toChange;
+        }
+      });
+  }
+  decrementItem(event: Event, item: any) {
+    event.stopPropagation();
+    this.updateItemService
+      .decrementItem(item, this.toChange)
+      .subscribe((response) => {
+        if (response.error) {
+          console.error(response.error);
+        } else {
+          item.count -= this.toChange;
+        }
+      });
   }
 }

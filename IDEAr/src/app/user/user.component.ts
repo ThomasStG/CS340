@@ -32,7 +32,6 @@ export class UserComponent implements OnChanges {
     
     private authService: AuthService,
     private router: Router,
-  ,
     public dialog: MatDialog,
 
   ) {}

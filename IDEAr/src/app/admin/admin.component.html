@@ -1,4 +1,4 @@
-<div class="scrollable-box h-full dark:bg-gray-900 dark:text-white hover">
+<div class="scrollable-box h-full dark:bg-gray-900 dark:text-white hover items-center justify-center">
     <app-item-search
       (formSubmit)="handleSearch($event)"
     ></app-item-search>
@@ -14,6 +14,7 @@
         <th>Size</th>
         <th>Metric</th>
         <th>Count</th>
+        <div class="gap-2 flex items-center"> <label class="font-bold">Amount:</label><input type="number" [(ngModel)]="toChange" class="bg-gray-50 bg-gray-300 dark:bg-gray-800 max-w-[50px] rounded-md p-1"/></div>
       </tr>
     </thead>
     <tbody *ngFor="let item of items" >
@@ -22,6 +23,12 @@
         <td class="itemColumn">{{ item.size }}</td>
         <td class="itemColumn">{{ item.is_metric }}</td>
         <td class="itemColumn">{{ item.count }}</td>
+        <td class="itemColumn">
+        <div class="flex gap-3 items-center" (click)="$event.stopPropagation()">
+          <button (click)="incrementItem($event, item)" class="hover:bg-gray-200 dark:hover:bg-gray-600 rounded-md p-1">Add</button>
+          <button (click)="decrementItem($event, item)"class="hover:bg-gray-200 dark:hover:bg-gray-600 rounded-md p-1">Remove</button>
+        </div>
+      </td>
       </tr>
     </tbody>
   </table>
@@ -32,11 +39,4 @@
 <div class="flex">
   <app-item-search (formSubmit)="handleSearch($event)" class="grow"></app-item-search>
   <button *ngIf="check_level()" (click)="addItem($event)" class="hover:border-solid hover:border-black-50 hover:border-2 bg-gray-300 dark:bg-gray-700 dark:text-white">Add Item</button>
-  </div>
-
-<div class="flex flex-col h-full bg-gray-0 text-black dark:bg-gray-900 dark:text-white" >
-    <div *ngFor="let item of items" class="cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700">
-      <app-admin-item [item]="item"></app-admin-item>
-    </div>
-  </div>
 </div>
