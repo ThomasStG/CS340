@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { UtilityService } from '../services/utility.service';
 import { saveAs } from 'file-saver';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-data-download',
@@ -9,10 +10,11 @@ import { saveAs } from 'file-saver';
   styleUrl: './data-download.component.css',
 })
 export class DataDownloadComponent implements OnInit {
+  
   csv_files: string[] = [];
   selectedCsvFile = '';
   importedFile: File | null = null;
-  constructor(private utilityService: UtilityService) {}
+  constructor(private utilityService: UtilityService, private authService: AuthService,) {}
 
   loadData(event: Event) {
     event.stopPropagation();
@@ -72,6 +74,12 @@ export class DataDownloadComponent implements OnInit {
     this.utilityService.downloadFile(fileUrl).subscribe((blob: Blob) => {
       // Use 'saveAs' from the FileSaver library to save the file
       saveAs(blob, fileUrl); // The file will be saved with the name passed as 'fileUrl'
+    });
+  }
+  check_level() {
+    const level = this.authService.levelGetter().subscribe((level) => {
+      if (level = 0) return true;
+      else return false;
     });
   }
 }

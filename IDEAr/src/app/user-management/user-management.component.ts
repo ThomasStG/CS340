@@ -80,4 +80,10 @@ export class UserManagementComponent implements OnInit {
   onUserListUpdated(updatedUsers: UserData[]) {
     this.users = updatedUsers;
   }
+  check_level() {
+    const level = this.authService.levelGetter().subscribe((level) => {
+      if (level = 0) return true;
+      else return false;
+    });
+  }
 }
