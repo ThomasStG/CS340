@@ -27,7 +27,12 @@ export class AdminComponent {
     name: '',
     size: '',
     is_metric: 'True',
-    location: '',
+    loc_shelf: '',
+    loc_rack: '',
+    loc_box: '',
+    loc_row: '',
+    loc_col: '',
+    loc_depth: '',
     count: 0,
     threshold: 0,
   };

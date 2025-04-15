@@ -35,15 +35,15 @@
             <table>
               <tr>
                 <td>
-                  <label>Unit:</label>
+                  <label>Shelf:</label>
                 </td>
                 <td>
-                  <p class="popup-info">{{ item.location.shelf }}</p>
+                  <p class="popup-info">{{ item.location[0] }}</p>
                 </td>
               </tr>
               <tr>
                 <td>
-                  <label>Shelf:</label>
+                  <label>Rack:</label>
                 </td>
                 <td>
                   <p class="popup-info">{{ item.location[1] }}</p>
@@ -51,7 +51,7 @@
               </tr>
               <tr>
                 <td>
-                  <label>Position:</label>
+                  <label>Box:</label>
                 </td>
                 <td>
                   <p class="popup-info">{{ item.location[2] }}</p>
@@ -59,7 +59,7 @@
               </tr>
               <tr>
                 <td>
-                  <label>Height:</label>
+                  <label>Row:</label>
                 </td>
                 <td>
                   <p class="popup-info">{{ item.location[3] }}</p>
@@ -67,7 +67,7 @@
               </tr>
               <tr>
                 <td>
-                  <label>Width:</label>
+                  <label>Columns:</label>
                 </td>
                 <td>
                   <p class="popup-info">{{ item.location[4] }}</p>

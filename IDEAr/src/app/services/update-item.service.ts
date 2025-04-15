@@ -13,7 +13,7 @@ export class UpdateItemService {
     private authService: AuthService,
   ) {}
   updateItem(newItem: ItemData, oldItem: ItemData): Observable<any> {
-    var locationJSON = JSON.stringify(newItem.location);
+    
     const url = `http://127.0.0.1:3000/updateitem?
 name=${encodeURIComponent(oldItem.name)}&
 new_name=${encodeURIComponent(newItem.name)}&
@@ -22,8 +22,13 @@ new_is_metric=${newItem.is_metric}&
 size=${oldItem.size}&
 new_size=${newItem.size}&
 id=${oldItem.id}&
+loc_shelf=${newItem.loc_shelf}&
+loc_rack=${newItem.loc_rack}&
+loc_box=${newItem.loc_box}&
+loc_row=${newItem.loc_row}&
+loc_col=${newItem.loc_col}&
+loc_depth=${newItem.loc_depth}&
 count=${newItem.count}&
-location=${encodeURIComponent(locationJSON)}&
 threshold=${newItem.threshold}&
 token=${this.authService.getToken()}`;
     return this.http.get(url);
@@ -33,13 +38,18 @@ token=${this.authService.getToken()}`;
     return this.http.get(url);
   }
   addItem(item: ItemData): Observable<any> {
-    var locationJSON = JSON.stringify(item.location);
+    
     const url = `http://127.0.0.1:3000/add?
 name=${encodeURIComponent(item.name)}&
 is_metric=${item.is_metric}&
 size=${item.size}&
+loc_shelf=${item.loc_shelf}&
+loc_rack=${item.loc_rack}&
+loc_box=${item.loc_box}&
+loc_row=${item.loc_row}&
+loc_col=${item.loc_col}&
+loc_depth=${item.loc_depth}&
 num=${item.count}&
-location=${encodeURIComponent(locationJSON)}&
 threshold=${item.threshold}&
 token=${this.authService.getToken()}`;
     return this.http.get(url);

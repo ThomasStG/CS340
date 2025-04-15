@@ -48,61 +48,61 @@
               <table>
                 <tr>
                   <td>
-                    <label>Unit:</label>
-                  </td>
-                  <td>
-                    <input
-                      class="editing-popup-info"
-                      type="text"
-                      [(ngModel)]="item.location[0]"
-                    />
-                  </td>
-                </tr>
-                <tr>
-                  <td>
                     <label>Shelf:</label>
                   </td>
                   <td>
                     <input
                       class="editing-popup-info"
                       type="text"
-                      [(ngModel)]="item.location[1]"
+                      [(ngModel)]="item.loc_shelf"
                     />
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <label>Position:</label>
+                    <label>Rack:</label>
                   </td>
                   <td>
                     <input
                       class="editing-popup-info"
                       type="text"
-                      [(ngModel)]="item.location[2]"
+                      [(ngModel)]="item.loc_rack"
                     />
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <label>Height:</label>
+                    <label>Box:</label>
                   </td>
                   <td>
                     <input
                       class="editing-popup-info"
                       type="text"
-                      [(ngModel)]="item.location[3]"
+                      [(ngModel)]="item.loc_box"
                     />
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <label>Width:</label>
+                    <label>Row:</label>
                   </td>
                   <td>
                     <input
                       class="editing-popup-info"
                       type="text"
-                      [(ngModel)]="item.location[4]"
+                      [(ngModel)]="item.loc_row"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>Column:</label>
+                  </td>
+                  <td>
+                    <input
+                      class="editing-popup-info"
+                      type="text"
+                      [(ngModel)]="item.loc_col"
                     />
                   </td>
                 </tr>
@@ -114,7 +114,7 @@
                     <input
                       class="editing-popup-info"
                       type="text"
-                      [(ngModel)]="item.location[5]"
+                      [(ngModel)]="item.loc_depth"
                     />
                   </td>
                 </tr>
@@ -218,65 +218,65 @@
               <table>
                 <tr>
                   <td>
-                    <label>Unit:</label>
-                  </td>
-                  <td>
-                    <input
-                      class="popup-info"
-                      type="text"
-                      [(ngModel)]="item.location[0]"
-                      readonly
-                    />
-                  </td>
-                </tr>
-                <tr>
-                  <td>
                     <label>Shelf:</label>
                   </td>
                   <td>
                     <input
                       class="popup-info"
                       type="text"
-                      [(ngModel)]="item.location[1]"
+                      [(ngModel)]="item.loc_shelf"
                       readonly
                     />
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <label>Position:</label>
+                    <label>Rack:</label>
                   </td>
                   <td>
                     <input
                       class="popup-info"
                       type="text"
-                      [(ngModel)]="item.location[2]"
+                      [(ngModel)]="item.loc_rack"
                       readonly
                     />
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <label>Height:</label>
+                    <label>Box:</label>
                   </td>
                   <td>
                     <input
                       class="popup-info"
                       type="text"
-                      [(ngModel)]="item.location[3]"
+                      [(ngModel)]="item.loc_box"
                       readonly
                     />
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <label>Width:</label>
+                    <label>Row:</label>
                   </td>
                   <td>
                     <input
                       class="popup-info"
                       type="text"
-                      [(ngModel)]="item.location[4]"
+                      [(ngModel)]="item.loc_row"
+                      readonly
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>Column:</label>
+                  </td>
+                  <td>
+                    <input
+                      class="popup-info"
+                      type="text"
+                      [(ngModel)]="item.loc_col"
                       readonly
                     />
                   </td>
@@ -289,7 +289,7 @@
                     <input
                       class="popup-info"
                       type="text"
-                      [(ngModel)]="item.location[5]"
+                      [(ngModel)]="item.loc_depth"
                       readonly
                     />
                   </td>
