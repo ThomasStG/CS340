@@ -2,6 +2,9 @@ import { Input, Component, OnChanges, SimpleChanges } from '@angular/core';
 import { UserData } from '../user-data';
 import { FormControl, FormGroup } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmationPopupComponent } from '../confirmation-popup/confirmation-popup.component';
+
 
 @Component({
   selector: 'app-user',
@@ -17,7 +20,11 @@ export class UserComponent implements OnChanges {
     authorization: new FormControl('2'),
   });
 
-  constructor(private authService: AuthService) {}
+  constructor(
+    private authService: AuthService,
+    public dialog: MatDialog,
+
+  ) {}
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['user'] && this.user) {
@@ -28,21 +35,26 @@ export class UserComponent implements OnChanges {
     }
   }
 
-  onSubmit() {
+  onUpdate() {
     const formData = this.userForm.value;
   }
   onDelete() {
-    const formData: {
-      name: string;
-      password?: string;
-      authorization?: string;
-    } = this.userForm.value;
-    const username = formData.name;
-
-    if (username) {
-      this.authService.deleteUser(username).subscribe();
-    } else {
-      console.warn('Username is missing in form data');
-    }
   }
+
+
+  confirmPopup(value: string) {
+      const ConfirmationPopUp = this.dialog.open(ConfirmationPopupComponent);
+      ConfirmationPopUp.afterOpened().subscribe(() => {
+        ConfirmationPopUp.componentInstance.updatePopup(value);
+      });
+  
+      ConfirmationPopUp.afterClosed().subscribe((result: boolean) => {
+        if (result === true && value === 'update') {
+          this.onUpdate();
+        }
+        if (result === true && value === 'delete') {
+          this.onDelete();
+        }
+      });
+    }
 }
