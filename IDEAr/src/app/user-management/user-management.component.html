@@ -7,7 +7,7 @@
   <p>Loading users...</p>
 </ng-template>
 
-<form
+<form  *ngIf="check_level()"
   [formGroup]="newUserForm"
   class="flex flex-row flex-grow flex-wrap items-end gap-4 p-2 justify-center bg-white dark:bg-gray-900 text-black dark:text-white"
   (ngSubmit)="onSubmit()"

@@ -43,4 +43,10 @@ export class UserManagementComponent implements OnInit {
     } else {
     }
   }
+  check_level() {
+    const level = this.authService.levelGetter().subscribe((level) => {
+      if (level = 0) return true;
+      else return false;
+    });
+  }
 }
