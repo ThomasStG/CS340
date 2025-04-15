@@ -144,6 +144,7 @@ def create_account(
 def change_password(
     username: str,
     new_password: str,
+    level: int,
     cursor: sqlite3.Cursor,
     connection: sqlite3.Connection,
 ) -> None:
@@ -153,16 +154,28 @@ def change_password(
     Args:
         username (str): the username of the user
         new_password (str): the new password of the user
+        level (int): the access level of the user
         cursor (sqlite3.Cursor): the cursor to the database
         connection (sqlite3.Connection): the connection to the database
 
     Returns:
         None
     """
-    cursor.execute(
-        "UPDATE users SET password = ? WHERE username = ?",
-        (new_password, username),
-    )
+    if new_password == "":
+        cursor.execute(
+            "UPDATE users SET level = ? WHERE username = ?",
+            (level, username),
+        )
+    else:
+        cursor.execute("SELECT salt FROM users WHERE username = ?", (username,))
+        salt = cursor.fetchone()[0]
+        hash_object = hashlib.sha256()
+        hash_object.update(salt.encode("utf-8") + new_password.encode("utf-8"))
+        new_password_hash = hash_object.hexdigest()
+        cursor.execute(
+            "UPDATE users SET password = ?, level = ? WHERE username = ?",
+            (new_password_hash, level, username),
+        )
     connection.commit()
 
 

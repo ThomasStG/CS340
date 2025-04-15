@@ -896,15 +896,16 @@ def register() -> Tuple[Response, int]:
         return handle_exceptions(e)
 
 
-@app.route("/changePassword", methods=["POST"])
+@app.route("/updateUser", methods=["POST"])
 def change_pass() -> Tuple[Response, int]:
     """
     Handles changing a user's password
 
     Args:
         username (str): the username of the user
-        token (str): the cookie of the user
+        level str: the cookie of the user
         new_password (str): the new password of the user
+        token (str): the token of the user
 
     Returns:
         json: a message and status code
@@ -913,28 +914,31 @@ def change_pass() -> Tuple[Response, int]:
         connection = get_db()
         cursor = connection.cursor()
         data = request.json
-        if (
-            data
-            and "username" not in data
-            and "new_password" not in data
-            and "token" not in data
+        print(data)
+        if not data or not all(
+            k in data for k in ("username", "password", "level", "token")
         ):
             raise KeyError("Missing required parameters")
 
         username = data["username"]
-        new_password = data["new_password"]
+        new_password = data["password"]
+        level = data["level"]
         token = data["token"]
+        print(level)
         try:
-            username, level = jwt.decode(
-                token, options={"verify_signature": False}
-            ).get("username", "level")
-            if not check_token(token, username, cursor):
+            print("token", data["level"])
+            decoded_token = jwt.decode(token, options={"verify_signature": False})
+
+            test_level = decoded_token.get("level")
+            test_username = decoded_token.get("username")
+            print(test_level, test_username)
+            if not check_token(token, test_username, cursor):
                 raise ValueError("Invalid token")
-            if not level == 0:
+            if not test_level == 0:
                 raise ValueError("Unauthorized")
         except Exception:
             return jsonify({"status": "error", "message": "Invalid token"}), 401
-        change_password(username, new_password, cursor, connection)
+        change_password(username, new_password, level, cursor, connection)
         return jsonify({"status": "success", "message": "Password changed"}), 200
     except Exception as e:
         return handle_exceptions(e)

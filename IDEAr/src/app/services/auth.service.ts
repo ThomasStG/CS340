@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { of, tap, Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { CookieService } from 'ngx-cookie-service';
+import { BehaviorSubject } from 'rxjs';
 
 import { UserData } from '../user-data';
 
@@ -12,6 +13,8 @@ import { UserData } from '../user-data';
 })
 export class AuthService {
   private token: string = 'auth_token';
+  private authState = new BehaviorSubject<boolean>(false);
+  authState$ = this.authState.asObservable();
 
   constructor(
     private http: HttpClient,
@@ -30,6 +33,7 @@ export class AuthService {
         tap((response) => {
           if (response.token) {
             this.setToken(response.token);
+            this.setAuthState(true);
           }
         }),
       );
@@ -39,6 +43,9 @@ export class AuthService {
   logout(): void {
     this.removeToken();
     this.router.navigate(['/']);
+  }
+  setAuthState(state: boolean) {
+    this.authState.next(state);
   }
 
   // ? Check Authentication Status
@@ -103,26 +110,30 @@ export class AuthService {
       token: this.getToken(),
     });
   }
-  updateUser(user: UserData, password: string) {
+  updateUser(
+    username: string,
+    password: string,
+    level: number,
+  ): Observable<any> | undefined {
+    console.log(username);
     const body = {
-      username: user.username,
+      username: username,
       password: password,
-      level: user.level,
+      level: level,
+      token: this.getToken(),
     };
 
-    if (user.username === 'admin') {
+    if (username === 'admin') {
+      console.log('Admin cannot be updated');
       return;
     }
+    console.log(body);
     return this.http.post<{
       username: string;
       password: string;
       level: number;
       token: string;
-    }>('http://127.0.0.1:3000/updateUser', body, {
-      headers: {
-        Authorization: `Bearer ${this.getToken()}`,
-      },
-    });
+    }>('http://127.0.0.1:3000/updateUser', body);
   }
   deleteUser(username: string | undefined | null) {
     if (username === 'admin') {

@@ -44,15 +44,11 @@ export class UserComponent implements OnChanges {
     const username = formData.name;
     const password = formData.password;
     const level = Number(formData.authorization);
-    if (
-      typeof username === 'string' &&
-      username.trim() !== '' &&
-      typeof password === 'string' &&
-      password.trim() !== '' &&
-      typeof level === 'number'
-    ) {
-      const user = { username, level };
-      const result = this.authService.updateUser(user, password);
+    console.log(level);
+    if (typeof username === 'string' && typeof password === 'string') {
+      console.log(username, password, level);
+      const user: UserData = { username: username, level: level };
+      const result = this.authService.updateUser(username, password, level);
 
       if (result) {
         result.subscribe({
