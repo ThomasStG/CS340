@@ -13,7 +13,6 @@ import { EventEmitter } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmationPopupComponent } from '../confirmation-popup/confirmation-popup.component';
 
-
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -29,12 +28,9 @@ export class UserComponent implements OnChanges {
     authorization: new FormControl('2'),
   });
   constructor(
-    
     private authService: AuthService,
     private router: Router,
-  ,
     public dialog: MatDialog,
-
   ) {}
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -124,20 +120,19 @@ export class UserComponent implements OnChanges {
     }
   }
 
-
   confirmPopup(value: string) {
-      const ConfirmationPopUp = this.dialog.open(ConfirmationPopupComponent);
-      ConfirmationPopUp.afterOpened().subscribe(() => {
-        ConfirmationPopUp.componentInstance.updatePopup(value);
-      });
-  
-      ConfirmationPopUp.afterClosed().subscribe((result: boolean) => {
-        if (result === true && value === 'update') {
-          this.onUpdate();
-        }
-        if (result === true && value === 'delete') {
-          this.onDelete();
-        }
-      });
-    }
+    const ConfirmationPopUp = this.dialog.open(ConfirmationPopupComponent);
+    ConfirmationPopUp.afterOpened().subscribe(() => {
+      ConfirmationPopUp.componentInstance.updatePopup(value);
+    });
+
+    ConfirmationPopUp.afterClosed().subscribe((result: boolean) => {
+      if (result === true && value === 'update') {
+        this.onUpdate();
+      }
+      if (result === true && value === 'delete') {
+        this.onDelete();
+      }
+    });
+  }
 }

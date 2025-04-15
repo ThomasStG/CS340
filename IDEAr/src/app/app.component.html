@@ -1,5 +1,8 @@
 <!-- Main layout of the app -->
-<div [class.dark]="darkMode | async" class="w-full">
+<div
+  [class.dark]="darkMode | async"
+  class="w-full min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white"
+>
   <div
     class="bg-gray-100 pt-4 text-black dark:bg-gray-900 dark:text-white flex flex-row justify-center items-center"
   >
@@ -116,8 +119,5 @@
   </div>
 
   <!-- This will load the current page (Home, Admin, or Authentication) -->
-  <router-outlet
-    (isAuthenticated)="onAuthSuccess()"
-    class="w-full"
-  ></router-outlet>
+  <router-outlet class="w-full"></router-outlet>
 </div>
