@@ -41,6 +41,7 @@ from flask import Flask, Response, g, jsonify, request, send_file
 from flask_cors import CORS
 from werkzeug.exceptions import Unauthorized
 from werkzeug.utils import secure_filename
+import ast
 
 from api import (
     add_item,
@@ -217,16 +218,23 @@ def import_csv(uri):
 
             # Open and read the file
             with open(uri, "r") as file:
-                data = [eval(line.strip()) for line in file.readlines()]
+                data = [ast.literal_eval(line.strip()) for line in file.readlines()]
 
             for item in data:
                 add_item(
-                    item[0],  # Column 1
-                    item[1],  # Column 2
-                    item[2] == "1",  # Convert to boolean
-                    parse_location_to_string(item[3]),  # Column 4
-                    item[4],  # Column 5
-                    item[5],  # Column 6
+                    item[0],  # Column 1 ID
+                    item[1],  # name
+                    item[2],  # size
+                    item[3] == 1,  # Column 5 metric
+                    item[4],  # Column 6 shelf
+                    item[5],  # Column 7 rack
+                    item[6],  # Column 8 box
+                    item[7],  # Column 9 row
+                    item[8],  # Column 10 column
+                    item[9],  # Column 11 depth
+                    item[10],  # Column 12 count
+                    item[11],  # Column 13 threshold
+                    item[12],  # Column 14 isContacted
                     cur,
                     con,
                 )
@@ -271,9 +279,14 @@ def add_from_csv(uri: str) -> None:
                 item[1],  # Column 1
                 item[2],  # Column 2
                 item[3] == "1",  # Convert to boolean
-                parse_location_to_string(item[4]),  # Column 4
-                item[5],  # Column 5
-                item[6],  # Column 6
+                item[4],  # Column 4 Shelf
+                item[5],  # Column 5 Rack
+                item[6],  # Column 6 Box
+                item[7],  # Column 7 Row
+                item[8],  # Column 8 Column
+                item[9],  # Column 9 Depth
+                item[10],  # Column 10 Count
+                item[11],  # Column 11 Threshold
                 cur,
                 con,
             )
@@ -313,7 +326,19 @@ def parse_location_to_list(location: str) -> str:
     Returns:
         json: representing the same location
     """
+    
     return json.loads(location)
+
+def parse_location_to_list(item):
+
+      return [
+        str(item.get("loc_shelf", "")).strip(),
+        str(item.get("loc_rack", "")).strip(),
+        str(item.get("loc_box", "")).strip(),
+        str(item.get("loc_row", "")).strip(),
+        str(item.get("loc_column", "")).strip(),
+        str(item.get("loc_depth", "")).strip()
+    ]
 
 
 @app.route("/increment", methods=["GET"])
@@ -502,10 +527,10 @@ def find_item() -> Tuple[Response, int]:
 
         if (
             isinstance(item, dict)
-            and "location" in item
-            and item[0]["location"] is not None
+            and "loc_shelf" in item
+            and item.get("loc_shelf") is not None
         ):
-            item[0]["location"] = parse_location_to_list(item[0]["location"])
+            item["location"] = parse_location_to_list(item)
         item[0]["is_metric"] = data["is_metric"].strip().capitalize()
 
         return (
@@ -534,12 +559,13 @@ def add() -> Tuple[Response, int]:
        size (str): the size of the item
        num (int): the number of the item
        threshold (int): the threshold of the item
-       location (str): the location of the item
+       locations (str): the location of the item
        token (str): the cookie of the user
 
     Returns:
         json: a message and status code
     """
+    
     try:
         connection = get_db()
         cursor = connection.cursor()
@@ -550,9 +576,14 @@ def add() -> Tuple[Response, int]:
                 "name",
                 "is_metric",
                 "size",
+                "loc_shelf",
+                "loc_rack",
+                "loc_box",
+                "loc_row",
+                "loc_column",
+                "loc_depth",
                 "num",
                 "threshold",
-                "location",
                 "token",
             ]
         ):
@@ -567,14 +598,19 @@ def add() -> Tuple[Response, int]:
 
         logger = logging.getLogger("app")
         logger.info(
-            f"User '{username}' added item with name: {data['name']}, size: {data['size']}, is_metric: {data['is_metric']}, num: {data['num']}, threshold: {data['threshold']}, location: {data['location']}"
+            f"User '{username}' added item with name: {data['name']}, size: {data['size']}, is_metric: {data['is_metric']}, num: {data['num']}, threshold: {data['threshold']}, loc_shelf: {data['loc_shelf']}, loc_rack: {data['loc_rack']}, loc_box: {data['loc_box']}, loc_row: {data['loc_row']}, loc_column: {data['loc_column']}, loc_depth: {data['loc_depth']}"
         )
 
         add_item(
             data["name"],
             data["size"],
             data["is_metric"].strip().lower() == "true",
-            parse_location_to_string(data["location"]),
+            data["loc_shelf"],
+            data["loc_rack"],
+            data["loc_box"],
+            data["loc_row"],
+            data["loc_column"],
+            data["loc_depth"],
             int(data["num"]),
             int(data["threshold"]),
             cursor,
@@ -667,8 +703,8 @@ def fuzzy() -> Tuple[Response, int]:
 
         # parse location and convert is_metric to string
         for item in items:
-            if "location" in item and item["location"] is not None:
-                item["location"] = parse_location_to_list(item["location"])
+            if "loc_shelf" in item and item["loc_shelf"] is not None:
+                item["location"] = parse_location_to_list(item)
             item["is_metric"] = str(metric_val)
         return (
             jsonify(
@@ -729,7 +765,7 @@ def update() -> Tuple[Response, int]:
        name (str): the name of the item
        is_metric (int): whether the item is metric (1) or not (0)
        size (str): the size of the item
-       location (str): the location of the item
+       locations (str): the location of the item
        num (int): the number to increment by
        threshold (int): the threshold of the item
        token (str): the cookie of the user
@@ -748,7 +784,12 @@ def update() -> Tuple[Response, int]:
                 "new_name",
                 "new_size",
                 "new_is_metric",
-                "location",
+                "loc_shelf",
+                "loc_rack",
+                "loc_box",
+                "loc_row",
+                "loc_column",
+                "loc_depth",
                 "threshold",
                 "id",
                 "count",
@@ -769,7 +810,7 @@ def update() -> Tuple[Response, int]:
                 f"User: '{username}' updated item: {data['size']} {data['name']}"
             )
         except Exception as e:
-            logger.error("An unvalidated user attempted to update an item")
+            logger.error("An invalidated user attempted to update an item")
             return jsonify({"status": "error", "output": "false"}), 401
 
         connection = get_db()
@@ -778,11 +819,17 @@ def update() -> Tuple[Response, int]:
             data["name"],
             data["size"],
             data["is_metric"].strip().lower() == "true",
-            data["location"],
+            data["loc_shelf"],
+            data["loc_rack"],
+            data["loc_box"],
+            data["loc_row"],
+            data["loc_column"],
+            data["loc_depth"],
             int(data["threshold"]),
             data["new_name"],
             data["new_size"],
             data["new_is_metric"].strip().lower() == "true",
+            data["new_count"],
             cursor,
             connection,
         )

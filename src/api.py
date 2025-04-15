@@ -293,6 +293,7 @@ def decrement_item(
 
 
 def add_item(
+    id: str,
     name: str,
     size: str,
     is_metric: int,
@@ -304,6 +305,7 @@ def add_item(
     loc_depth: str,
     count: int,
     threshold: int,
+    isContacted: str,
     cursor: sqlite3.Cursor,
     connection: sqlite3.Connection,
 ) -> None:
@@ -328,12 +330,12 @@ def add_item(
     cursor.execute(
         """
                    INSERT INTO items
-                   (name, size, is_metric, loc_shelf, 
+                   (id, name, size, is_metric, loc_shelf, 
                    loc_rack, loc_box, loc_row, loc_column, loc_depth, count, threshold, isContacted)
                    VALUES
-                    (?,?,?,?,?,?,?)
+                    (?,?,?,?,?,?,?,?,?,?,?,?,?)
                    """,
-        (name, size, is_metric, loc_shelf, loc_rack, loc_box, loc_row, loc_column, loc_depth, count, threshold, 0),
+        (id, name, size, is_metric, loc_shelf, loc_rack, loc_box, loc_row, loc_column, loc_depth, count, threshold, isContacted),
     )
 
     connection.commit()
@@ -375,6 +377,7 @@ def update_item(
     new_name: str,
     new_size: str,
     new_is_metric: bool,
+    new_count: int,
     cursor: sqlite3.Cursor,
     connection: sqlite3.Connection,
 ) -> None:
@@ -397,9 +400,10 @@ def update_item(
     item_id = find_by_name(name, is_metric, size, cursor)
     cursor.execute(
         """
-                   UPDATE items SET name = ?, size = ?, is_metric = ?, location = ?, threshold = ? WHERE id = ?
+                   UPDATE items SET name = ?, size = ?, is_metric = ?, loc_shelf = ?, 
+                   loc_rack = ?, loc_box = ?, loc_row = ?, loc_column = ?, loc_depth = ?, threshold = ? WHERE id = ?
                    """,
-        (new_name, new_size, new_is_metric, location, threshold, item_id),
+        (new_name, new_size, new_is_metric, loc_shelf, loc_rack, loc_box, loc_row, loc_column, loc_depth, new_count, threshold, item_id),
     )
     logger.debug("Item %s updated", name)
     connection.commit()
