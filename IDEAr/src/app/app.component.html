@@ -1,5 +1,8 @@
 <!-- Main layout of the app -->
-<div [class.dark]="darkMode | async" class="w-full">
+<div
+  [class.dark]="darkMode | async"
+  class="w-full min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white"
+>
   <div
     class="bg-gray-100 pt-4 text-black dark:bg-gray-900 dark:text-white flex flex-row justify-center items-center"
   >
@@ -30,7 +33,11 @@
           </a>
         </div>
       </div>
-      <div #adminDropdownRef class="relative inline-block">
+      <div
+        *ngIf="check_level()"
+        #adminDropdownRef
+        class="relative inline-block"
+      >
         <button
           (click)="toggleDropdown('admin')"
           class="px-4 py-2 bg-blue-600 text-white rounded-md"
@@ -49,7 +56,11 @@
           >
         </div>
       </div>
-      <div #managementDropdownRef class="relative inline-block">
+      <div
+        *ngIf="check_level()"
+        #managementDropdownRef
+        class="relative inline-block"
+      >
         <button
           (click)="toggleDropdown('management')"
           class="px-4 py-2 bg-blue-600 text-white rounded-md"
@@ -116,8 +127,5 @@
   </div>
 
   <!-- This will load the current page (Home, Admin, or Authentication) -->
-  <router-outlet
-    (isAuthenticated)="onAuthSuccess()"
-    class="w-full"
-  ></router-outlet>
+  <router-outlet class="w-full"></router-outlet>
 </div>
