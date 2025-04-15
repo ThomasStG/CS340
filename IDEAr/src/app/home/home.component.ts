@@ -3,6 +3,7 @@ import { ItemSearchComponent } from '../item-search/item-search.component';
 import { ItemData } from '../item-data';
 import { GetItemsService } from '../services/get-items.service';
 import { ItemPopupComponent } from '../item-popup/item-popup.component';
+import { MatDialog } from '@angular/material/dialog';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
@@ -12,7 +13,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class HomeComponent {
   items: ItemData[] = [];
-  constructor(private getItemsService: GetItemsService) {}
+  constructor(private getItemsService: GetItemsService, private dialog: MatDialog,) {}
   isPopupVisible = false;
   searchForm = new FormGroup({
     name: new FormControl('', Validators.required),
@@ -94,7 +95,8 @@ export class HomeComponent {
   }
   onItemClick(item: any) {
     this.selectedItem = item;
-    this.isPopupVisible = true;
+    const PopUp = this.dialog.open(ItemPopupComponent);
+    PopUp.componentInstance.showItem(this.selectedItem);
   }
 
   // Close popup

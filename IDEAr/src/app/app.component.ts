@@ -6,6 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 
 import { Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -58,6 +59,7 @@ export class AppComponent implements OnInit {
   setMode(val: boolean) {
     this.utilityService.setMode(val);
     this.darkMode.next(val);
+    this.cdr.detectChanges();
   }
 
   ngOnInit() {

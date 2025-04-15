@@ -3,6 +3,9 @@ import { OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { UserData } from '../user-data';
 import { FormControl, FormGroup } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmationPopupComponent } from '../confirmation-popup/confirmation-popup.component';
+
 
 @Component({
   selector: 'app-user-management',
@@ -18,14 +21,18 @@ export class UserManagementComponent implements OnInit {
     level: new FormControl('2'),
   });
 
-  constructor(private authService: AuthService) {}
+  constructor(
+    private authService: AuthService,
+    public dialog: MatDialog,
+
+  ) {}
 
   ngOnInit(): void {
     this.authService.getUsers().subscribe((response: UserData[]) => {
       this.users = response;
     });
   }
-  onSubmit() {
+  onCreate() {
     const formData = this.newUserForm.value;
 
     if (
@@ -57,6 +64,19 @@ export class UserManagementComponent implements OnInit {
     } else {
     }
   }
+
+  confirmPopup(value: string) {
+        const ConfirmationPopUp = this.dialog.open(ConfirmationPopupComponent);
+        ConfirmationPopUp.afterOpened().subscribe(() => {
+          ConfirmationPopUp.componentInstance.updatePopup(value);
+        });
+    
+        ConfirmationPopUp.afterClosed().subscribe((result: boolean) => {
+          if (result === true && value === 'create') {
+            this.onCreate();
+          }
+        });
+      }
   onUserListUpdated(updatedUsers: UserData[]) {
     this.users = updatedUsers;
   }
