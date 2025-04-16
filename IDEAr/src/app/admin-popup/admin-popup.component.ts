@@ -20,7 +20,12 @@ export class AdminPopupComponent {
     name: '',
     size: '',
     is_metric: 'True',
-    location: '',
+    loc_shelf: '',
+    loc_rack: '',
+    loc_box: '',
+    loc_row: '',
+    loc_col: '',
+    loc_depth: '',
     count: 0,
     threshold: 0,
   };
@@ -36,12 +41,11 @@ export class AdminPopupComponent {
     private updateItemService: UpdateItemService,
     private dialogRef: MatDialogRef<AdminPopupComponent>,
     private utilityService: UtilityService,
-    private authService: AuthService
+    private authService: AuthService,
   ) {}
   newItem: ItemData = { ...this.item };
   ngOnInit() {
     this.darkMode.next(this.utilityService.isDarkMode());
-    this.item.location = JSON.parse(this.item.location);
     this.newItem = this.item;
     if (this.item.name == '') {
       this.itemTitle = 'New Item';
@@ -57,7 +61,11 @@ export class AdminPopupComponent {
 
   editItem(event: Event) {
     event.stopPropagation();
-    this.isEditing = true;
+    this.authService.getAuthLevel().subscribe((level) => {
+      if (level < 2) {
+        this.isEditing = true;
+      }
+    });
   }
   cancelEditing(event: Event) {
     event.stopPropagation();
@@ -85,12 +93,14 @@ export class AdminPopupComponent {
     this.close();
   }
   deleteItem() {
-    this.updateItemService.deleteItem(this.item).subscribe((response) => {});
-    this.close();
+    this.updateItemService.deleteItem(this.item).subscribe((then) => {
+      this.close();
+    });
   }
   addItem() {
-    this.updateItemService.addItem(this.item);
-    this.close();
+    this.updateItemService.addItem(this.item).subscribe((then) => {
+      this.close();
+    });
   }
 
   cancelAdding(event: Event) {
@@ -125,9 +135,10 @@ export class AdminPopupComponent {
       }
     });
   }
-  check_level(){
-    const level = this.authService.levelGetter().subscribe((level)=> {
-    if (level < 2 ) return true
-    else return false}
-  )}
+  check_level() {
+    const level = this.authService.levelGetter().subscribe((level) => {
+      if (level < 2) return true;
+      else return false;
+    });
+  }
 }

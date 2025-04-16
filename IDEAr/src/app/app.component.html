@@ -7,7 +7,7 @@
     class="bg-gray-100 pt-4 text-black dark:bg-gray-900 dark:text-white flex flex-row justify-center items-center"
   >
     <!-- Navigation -->
-    <nav class="flex gap-3 align-center justify-center">
+    <nav class="z-[100] flex gap-3 align-center justify-center">
       <div #homeDropdownRef class="relative inline-block">
         <button
           (click)="toggleDropdown('home')"
@@ -33,31 +33,26 @@
           </a>
         </div>
       </div>
-      <div
-        *ngIf="check_level()"
-        #adminDropdownRef
-        class="relative inline-block"
-      >
-        <button
-          (click)="toggleDropdown('admin')"
-          class="px-4 py-2 bg-blue-600 text-white rounded-md"
-        >
-          Admin
-        </button>
-        <div
-          *ngIf="showAdminDropdown"
-          class="absolute left-0 mt-2 w-40 bg-white border rounded-md shadow-lg z-10"
-          (click)="$event.stopPropagation()"
-        >
-          <a
-            routerLink="/admin"
-            class="block px-4 py-2 hover:bg-gray-100 text-black dark:text-white bg-slate-500 dark:bg-slate-600"
-            >IDEA Lab Admin</a
+        <div  #adminDropdownRef class="relative inline-block">
+          <button
+            (click)="toggleDropdown('admin')"
+            class="px-4 py-2 bg-blue-600 text-white rounded-md"
           >
+            Admin
+          </button>
+          <div
+            *ngIf="showAdminDropdown"
+            class="absolute left-0 mt-2 w-40 bg-white border rounded-md shadow-lg z-10"
+            (click)="$event.stopPropagation()"
+          >
+            <a
+              routerLink="/admin"
+              class="block px-4 py-2 hover:bg-gray-100 text-black dark:text-white bg-slate-500 dark:bg-slate-600"
+              >IDEA Lab Admin</a
+            >
+          </div>
         </div>
-      </div>
       <div
-        *ngIf="check_level()"
         #managementDropdownRef
         class="relative inline-block"
       >
@@ -92,14 +87,14 @@
       <button
         *ngIf="!isAuthenticated"
         routerLink="/authentication"
-        class="px-4 py-2 bg-blue-600 text-white border rounded-md"
+        class="px-4 py-2 bg-blue-600 text-white rounded-md"
       >
         Login
       </button>
       <button
         *ngIf="isAuthenticated"
         (click)="logout()"
-        class="px-4 py-2 bg-blue-600 text-white border rounded-md"
+        class="px-4 py-2 bg-blue-600 text-white rounded-md"
       >
         Logout
       </button>

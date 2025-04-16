@@ -206,7 +206,6 @@ def get_users(cursor: sqlite3.Cursor) -> list[dict]:
     """
     cursor.execute("SELECT username, level FROM users")
     rows = cursor.fetchall()
-    print([dict(row) for row in rows])
     return [dict(row) for row in rows]  # Convert Row to dict
 
 

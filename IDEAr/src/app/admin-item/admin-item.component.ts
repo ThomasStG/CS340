@@ -21,14 +21,19 @@ export class AdminItemComponent implements OnInit {
     name: '',
     size: '',
     is_metric: 'True',
-    location: '',
+    loc_shelf: '',
+    loc_rack: '',
+    loc_box: '',
+    loc_row: '',
+    loc_col: '',
+    loc_depth: '',
     count: 0,
     threshold: 0,
   };
   newItem: ItemData = { ...this.item };
   toChange = 0;
   ngOnInit() {
-    this.item.location = JSON.parse(this.item.location);
+    //this.item.location = JSON.parse(this.item.location);
     this.newItem = this.item;
   }
 

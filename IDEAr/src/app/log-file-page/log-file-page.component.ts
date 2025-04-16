@@ -3,6 +3,7 @@ import { OnInit } from '@angular/core';
 import { UtilityService } from '../services/utility.service';
 import { saveAs } from 'file-saver';
 import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-log-file-page',
@@ -11,11 +12,20 @@ import { AuthService } from '../services/auth.service';
 })
 export class LogFilePageComponent implements OnInit {
   log_data: string = '';
-  constructor(private utilityService: UtilityService, private authService: AuthService) {}
+  constructor(
+    private utilityService: UtilityService,
+    private authService: AuthService,
+    private router: Router,
+  ) {}
   ngOnInit(): void {
-    console.log('in data download');
-    this.utilityService.getLogFiles().subscribe((response: string) => {
-      this.log_data = response;
+    this.authService.getAuthLevel().subscribe((level) => {
+      if (level == 0) {
+        this.utilityService.getLogFiles().subscribe((response: string) => {
+          this.log_data = response;
+        });
+      } else {
+        this.router.navigate(['/authentication']);
+      }
     });
   }
   downloadFile(event: Event): void {

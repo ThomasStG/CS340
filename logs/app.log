@@ -10,6 +10,60 @@
 [2025-04-15 15:55:46,430]:  User 'admin' logged in
 [2025-04-15 15:56:05,292]:  User 'admin' logged in
 [2025-04-15 15:57:27,758]:  User 'admin' logged in
+[2025-04-15 19:26:26,595]:  User 'admin' logged in
+[2025-04-15 19:27:26,292]:  User 'admin' logged in
+[2025-04-15 19:32:59,814]:  User 'admin' logged in
+[2025-04-15 19:38:26,002]:  User 'admin' logged in
+[2025-04-15 19:41:07,365]:  User 'admin' logged in
+[2025-04-15 19:41:17,869]:  User 'admin' logged in
+[2025-04-15 19:42:00,729]:  User 'admin' logged in
+[2025-04-15 19:43:13,659]:  User 'admin' logged in
+[2025-04-15 19:48:08,554]:  User 'admin' logged in
+[2025-04-15 19:59:23,250]:  User 'admin' logged in
+[2025-04-15 20:03:10,218]:  User 'admin' logged in
+[2025-04-15 20:06:07,737]:  User 'admin' logged in
+[2025-04-15 20:07:46,403]:  User 'admin' logged in
+[2025-04-15 20:13:57,625]:  User 'hsw' logged in
+[2025-04-15 20:14:27,457]:  User 'sw' logged in
+[2025-04-15 20:15:03,775]:  User 'admin' logged in
+[2025-04-15 20:15:38,070]:  User 'hsw' logged in
+[2025-04-15 20:16:17,906]:  User 'admin' logged in
+[2025-04-15 20:17:23,200]:  User 'admin' logged in
+[2025-04-15 20:18:44,277]:  User 'admin' logged in
+[2025-04-15 20:19:18,702]:  User 'sw' logged in
+[2025-04-15 20:19:36,608]:  User 'admin' logged in
+[2025-04-15 20:22:11,246]:  User 'admin' logged in
+[2025-04-15 20:23:26,025]:  User 'hsw' logged in
+[2025-04-15 20:23:39,056]:  User 'sw' logged in
+[2025-04-15 20:30:36,133]:  User 'admin' logged in
+[2025-04-15 20:33:46,234]:  User 'admin' logged in
+[2025-04-15 20:35:45,533]:  User 'admin' logged in
+[2025-04-15 20:42:39,491]:  User 'admin' logged in
+[2025-04-15 20:43:17,591]:  User: 'admin' updated item: 1/2 Lock Washer
+[2025-04-15 20:43:54,408]:  User 'admin' logged in
+[2025-04-15 20:44:05,973]:  User: 'admin' updated item: SM Self Locking Retaining Ring
+[2025-04-15 20:46:27,770]:  User 'admin' logged in
+[2025-04-15 20:46:35,409]:  User: 'admin' updated item: SM Self Locking Retaining Ring
+[2025-04-15 20:49:06,631]:  User 'admin' logged in
+[2025-04-15 20:49:12,833]:  User: 'admin' updated item: LG Self Locking Retaining Ring
+[2025-04-15 20:50:06,767]:  User: 'admin' updated item: LG Self Locking Retaining Ring
+[2025-04-15 20:53:43,968]:  User 'admin' logged in
+[2025-04-15 20:53:55,692]:  User: 'admin' updated item: SM Self Locking Retaining Ring
+[2025-04-15 20:55:21,420]:  User: 'admin' updated item: SM Self Locking Retaining Ring
+[2025-04-15 20:56:33,253]:  User 'admin' logged in
+[2025-04-15 21:01:42,364]:  User 'admin' logged in
+[2025-04-15 21:05:55,919]:  User 'admin' logged in
+[2025-04-15 21:13:40,750]:  User 'admin' logged in
+[2025-04-15 21:21:01,002]:  User 'admin' added item with name: t, size: d, is_metric: True, num: 0, threshold: 0, loc_shelf: 2, loc_rack: 3, loc_box: d, loc_row: v, loc_col: d, loc_depth: s
+[2025-04-15 21:21:14,573]:  User 'admin' added item with name: t, size: d, is_metric: True, num: 0, threshold: 0, loc_shelf: 2, loc_rack: 3, loc_box: d, loc_row: v, loc_col: d, loc_depth: s
+[2025-04-15 21:30:24,935]:  User 'admin' added item with name: add, size: add, is_metric: True, num: 0, threshold: 0, loc_shelf: add, loc_rack: add, loc_box: add, loc_row: add, loc_col: add, loc_depth: add
+[2025-04-15 21:31:56,361]:  User 'admin' added item with name: add, size: add, is_metric: True, num: 0, threshold: 0, loc_shelf: add, loc_rack: add, loc_box: adda, loc_row: dd, loc_col: add, loc_depth: add
+[2025-04-15 21:42:26,188]:  User 'admin' added item with name: add, size: add, is_metric: 1, num: 0, threshold: 0, loc_shelf: this, loc_rack: silly , loc_box: little, loc_row: item, loc_col: please, loc_depth: ?!?!?!?!?!
+[2025-04-15 21:46:40,709]:  User: 'admin' updated item: SM Self Locking Retaining Ring
+[2025-04-15 21:57:54,854]:  User 'admin' logged in
+[2025-04-15 22:00:46,683]:  User 'admin' added item with name: as, size: as, is_metric: 1, num: 0, threshold: 0, loc_shelf: as, loc_rack: as, loc_box: as, loc_row: as, loc_col: as, loc_depth: as
+[2025-04-15 22:07:07,228]:  User 'admin' removed item with name: as, size: as, is_metric: False
+[2025-04-15 22:18:22,212]:  User 'admin' logged in
 [2025-04-15 16:31:27,713]:  User: 'admin' updated item: LG Self Locking Retaining Ring
 [2025-04-15 16:45:04,730]:  User '{username}' incremented '{data['name']} {data['size']}' by {data['num']}
 [2025-04-15 16:45:08,229]:  User '{username}' incremented '{data['name']} {data['size']}' by {data['num']}

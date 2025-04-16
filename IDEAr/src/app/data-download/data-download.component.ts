@@ -3,6 +3,7 @@ import { OnInit } from '@angular/core';
 import { UtilityService } from '../services/utility.service';
 import { saveAs } from 'file-saver';
 import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-data-download',
@@ -10,11 +11,14 @@ import { AuthService } from '../services/auth.service';
   styleUrl: './data-download.component.css',
 })
 export class DataDownloadComponent implements OnInit {
-  
   csv_files: string[] = [];
   selectedCsvFile = '';
   importedFile: File | null = null;
-  constructor(private utilityService: UtilityService, private authService: AuthService,) {}
+  constructor(
+    private utilityService: UtilityService,
+    private authService: AuthService,
+    private router: Router,
+  ) {}
 
   loadData(event: Event) {
     event.stopPropagation();
@@ -33,8 +37,14 @@ export class DataDownloadComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.utilityService.getFiles().subscribe((response: string[]) => {
-      this.csv_files = response;
+    this.authService.getAuthLevel().subscribe((level) => {
+      if (level == 0) {
+        this.utilityService.getFiles().subscribe((response: string[]) => {
+          this.csv_files = response;
+        });
+      } else {
+        this.router.navigate(['/authentication']);
+      }
     });
   }
 
@@ -78,7 +88,7 @@ export class DataDownloadComponent implements OnInit {
   }
   check_level() {
     const level = this.authService.levelGetter().subscribe((level) => {
-      if (level = 0) return true;
+      if (level == 0) return true;
       else return false;
     });
   }

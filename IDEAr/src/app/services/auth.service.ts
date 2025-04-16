@@ -15,6 +15,8 @@ export class AuthService {
   private token: string = 'auth_token';
   private authState = new BehaviorSubject<boolean>(false);
   authState$ = this.authState.asObservable();
+  private _authLevel = new BehaviorSubject<number>(3); // Default level set to 3 (or any other default)
+  public authLevel$ = this._authLevel.asObservable();
 
   constructor(
     private http: HttpClient,
@@ -27,6 +29,7 @@ export class AuthService {
       .post<{
         token?: string;
         message?: string;
+        level?: number;
         error?: string;
       }>('http://127.0.0.1:3000/trylogin', { username, password })
       .pipe(
@@ -34,6 +37,9 @@ export class AuthService {
           if (response.token) {
             this.setToken(response.token);
             this.setAuthState(true);
+          }
+          if (response.level) {
+            this._authLevel.next(response.level);
           }
         }),
       );
@@ -78,6 +84,17 @@ export class AuthService {
   // ? Remove Token from Cookies
   removeToken(): void {
     this.cookieService.delete(this.token, '/');
+  }
+  getAuthLevel(): Observable<number> {
+    const token = this.cookieService.get(this.token);
+    return this.http
+      .post<{
+        level: number;
+      }>('http://127.0.0.1:3000/checkToken', { token })
+      .pipe(
+        map((response) => response?.level ?? 2), // Ensure output is properly mapped to a boolean
+        catchError(() => of(2)), // Return 2 in case of an error
+      );
   }
 
   levelGetter(): Observable<number> {

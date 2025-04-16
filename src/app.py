@@ -41,6 +41,7 @@ from flask import Flask, Response, g, jsonify, request, send_file
 from flask_cors import CORS
 from werkzeug.exceptions import Unauthorized
 from werkzeug.utils import secure_filename
+import ast
 
 from api import (
     add_item,
@@ -67,9 +68,13 @@ from auth import (
 )
 
 app = Flask(__name__)
+
 CORS(
     app,
-    supports_credentials=True,  # origins=["http://localhost:4200"]
+    supports_credentials=True,
+    origins=["http://localhost:4200"],
+    methods=["GET", "POST"],
+    allow_headers=["Content-Type", "Authorization"],
 )
 log = logging.getLogger("werkzeug")
 log.disabled = True  # Enable CORS for Angular frontend
@@ -176,15 +181,12 @@ def convert_file(filename):
         output_filename = os.path.splitext(filename)[0] + "_converted.csv"
 
         with open(output_filename, "w", newline="") as w:
-            print("Opened output file:", output_filename)
             writer = w.write
 
             with open(filename, newline="") as csvfile:
-                print("Reading CSV:", filename)
                 spamreader = csv.reader(csvfile, delimiter=",", quotechar="|")
 
                 for row in spamreader:
-                    print("Row:", row)
                     if len(row) < 12:
                         print("Skipping row, not enough columns:", row)
                         continue
@@ -195,7 +197,6 @@ def convert_file(filename):
                     )
                     writer(formatted)
 
-        print("Done. Output file:", output_filename)
         return output_filename
 
     except Exception as e:
@@ -217,25 +218,54 @@ def import_csv(uri):
             cur.execute("DELETE FROM items")
 
             # Open and read the file
-            with open(uri, "r") as file:
-                data = [eval(line.strip()) for line in file.readlines()]
+            with open(uri, "r", newline="") as file:
+                reader = csv.reader(file)
+                headers = next(reader)  # Skip header
 
-            for item in data:
-                add_item(
-                    item[0],  # Column 1
-                    item[1],  # Column 2
-                    item[2] == "1",  # Convert to boolean
-                    parse_location_to_string(item[3]),  # Column 4
-                    item[4],  # Column 5
-                    item[5],  # Column 6
-                    cur,
-                    con,
-                )
-                print(item)
+                for row in reader:
+                    # Skip empty or malformed rows
+                    if len(row) < 13:
+                        print(f"Skipping row (too short): {row}")
+                        continue
 
-            print("Data imported successfully")
+                    try:
+                        if len(row) == 13:
+                            add_item(
+                                row[0],  # name
+                                row[1],  # size
+                                row[2] == "1",  # is_metric as bool
+                                row[3],  # loc_shelf
+                                row[4],  # loc_rack
+                                row[5],  # loc_box
+                                row[6],  # loc_row
+                                row[7],  # loc_col
+                                row[8],  # loc_depth
+                                int(row[9]),  # count
+                                int(row[10]),  # threshold
+                                cur,
+                                con,
+                            )
+                        else:
+                            add_item(
+                                row[1],  # name
+                                row[2],  # size
+                                row[3] == "1",  # is_metric as bool
+                                row[4],  # loc_shelf
+                                row[5],  # loc_rack
+                                row[6],  # loc_box
+                                row[7],  # loc_row
+                                row[8],  # loc_col
+                                row[9],  # loc_depth
+                                int(row[10]),  # count
+                                int(row[11]),  # threshold
+                                cur,
+                                con,
+                            )
+                    except Exception as row_err:
+                        print(f"Error processing row {row}: {row_err}")
 
-            con.commit()  # Commit changes
+            con.commit()
+            print("Data imported successfully.")
 
     except FileNotFoundError as fnf_error:
         print(fnf_error)
@@ -264,21 +294,22 @@ def add_from_csv(uri: str) -> None:
         with open(uri, "r") as file:
             data = [eval(line.strip()) for line in file.readlines()]
 
-        print("data", data)
-
         for item in data:
-            print("item", item)
             add_item(
                 item[1],  # Column 1
                 item[2],  # Column 2
                 item[3] == "1",  # Convert to boolean
-                parse_location_to_string(item[4]),  # Column 4
-                item[5],  # Column 5
-                item[6],  # Column 6
+                item[4],  # Column 4 Shelf
+                item[5],  # Column 5 Rack
+                item[6],  # Column 6 Box
+                item[7],  # Column 7 Row
+                item[8],  # Column 8 Column
+                item[9],  # Column 9 Depth
+                item[10],  # Column 10 Count
+                item[11],  # Column 11 Threshold
                 cur,
                 con,
             )
-            print(item)
 
         print("Data imported successfully")
 
@@ -300,7 +331,6 @@ def parse_location_to_string(location: str) -> str:
         str: representing the json location
     """
     loc = json.dumps(location)
-    print(loc)
     return json.dumps(location)
 
 
@@ -314,7 +344,20 @@ def parse_location_to_list(location: str) -> str:
     Returns:
         json: representing the same location
     """
+
     return json.loads(location)
+
+
+def parse_location_to_list(item):
+
+    return [
+        str(item.get("loc_shelf", "")).strip(),
+        str(item.get("loc_rack", "")).strip(),
+        str(item.get("loc_box", "")).strip(),
+        str(item.get("loc_row", "")).strip(),
+        str(item.get("loc_col", "")).strip(),
+        str(item.get("loc_depth", "")).strip(),
+    ]
 
 
 @app.route("/increment", methods=["GET"])
@@ -503,10 +546,10 @@ def find_item() -> Tuple[Response, int]:
 
         if (
             isinstance(item, dict)
-            and "location" in item
-            and item[0]["location"] is not None
+            and "loc_shelf" in item
+            and item.get("loc_shelf") is not None
         ):
-            item[0]["location"] = parse_location_to_list(item[0]["location"])
+            item["location"] = parse_location_to_list(item)
         item[0]["is_metric"] = data["is_metric"].strip().capitalize()
 
         return (
@@ -523,7 +566,7 @@ def find_item() -> Tuple[Response, int]:
         return handle_exceptions(e)
 
 
-@app.route("/add", methods=["GET"])
+@app.route("/addItem", methods=["GET"])
 def add() -> Tuple[Response, int]:
     """
     Handles adding a new item the database.
@@ -535,25 +578,34 @@ def add() -> Tuple[Response, int]:
        size (str): the size of the item
        num (int): the number of the item
        threshold (int): the threshold of the item
-       location (str): the location of the item
+       locations (str): the location of the item
        token (str): the cookie of the user
 
     Returns:
         json: a message and status code
     """
+    print("Adding item...")
+
     try:
         connection = get_db()
         cursor = connection.cursor()
+        print("Connected to database")
         data = request.args
+        print(dict(request.args))
         if not data or not all(
             key in data
             for key in [
                 "name",
                 "is_metric",
                 "size",
+                "loc_shelf",
+                "loc_rack",
+                "loc_box",
+                "loc_row",
+                "loc_col",
+                "loc_depth",
                 "num",
                 "threshold",
-                "location",
                 "token",
             ]
         ):
@@ -568,14 +620,19 @@ def add() -> Tuple[Response, int]:
 
         logger = logging.getLogger("app")
         logger.info(
-            f"User '{username}' added item with name: {data['name']}, size: {data['size']}, is_metric: {data['is_metric']}, num: {data['num']}, threshold: {data['threshold']}, location: {data['location']}"
+            f"User '{username}' added item with name: {data['name']}, size: {data['size']}, is_metric: {data['is_metric']}, num: {data['num']}, threshold: {data['threshold']}, loc_shelf: {data['loc_shelf']}, loc_rack: {data['loc_rack']}, loc_box: {data['loc_box']}, loc_row: {data['loc_row']}, loc_col: {data['loc_col']}, loc_depth: {data['loc_depth']}"
         )
 
         add_item(
             data["name"],
             data["size"],
             data["is_metric"].strip().lower() == "true",
-            parse_location_to_string(data["location"]),
+            data["loc_shelf"],
+            data["loc_rack"],
+            data["loc_box"],
+            data["loc_row"],
+            data["loc_col"],
+            data["loc_depth"],
             int(data["num"]),
             int(data["threshold"]),
             cursor,
@@ -610,13 +667,13 @@ def remove() -> Tuple[Response, int]:
         ):
             raise KeyError("Missing required parameters")
         token = data["token"]
-        username, level = jwt.decode(token, options={"verify_signature": False}).get(
-            "username", "level"
-        )
+        decoded_token = jwt.decode(token, options={"verify_signature": False})
+        username = decoded_token.get("username")
+        level = decoded_token.get("level")
 
         if not check_token(token, username, cursor):
             raise ValueError("Invalid token")
-        if level != 0:
+        if level > 1:
             raise ValueError("User does not have permission to remove items")
 
         logger = logging.getLogger("app")
@@ -668,8 +725,8 @@ def fuzzy() -> Tuple[Response, int]:
 
         # parse location and convert is_metric to string
         for item in items:
-            if "location" in item and item["location"] is not None:
-                item["location"] = parse_location_to_list(item["location"])
+            if "loc_shelf" in item and item["loc_shelf"] is not None:
+                item["location"] = parse_location_to_list(item)
             item["is_metric"] = str(metric_val)
         return (
             jsonify(
@@ -730,7 +787,7 @@ def update() -> Tuple[Response, int]:
        name (str): the name of the item
        is_metric (int): whether the item is metric (1) or not (0)
        size (str): the size of the item
-       location (str): the location of the item
+       locations (str): the location of the item
        num (int): the number to increment by
        threshold (int): the threshold of the item
        token (str): the cookie of the user
@@ -749,7 +806,13 @@ def update() -> Tuple[Response, int]:
                 "new_name",
                 "new_size",
                 "new_is_metric",
-                "location",
+                "loc_shelf",
+                "loc_rack",
+                "loc_box",
+                "loc_row",
+                "loc_col",
+                "loc_depth",
+                "count",
                 "threshold",
                 "id",
                 "count",
@@ -770,7 +833,7 @@ def update() -> Tuple[Response, int]:
                 f"User: '{username}' updated item: {data['size']} {data['name']}"
             )
         except Exception as e:
-            logger.error("An unvalidated user attempted to update an item")
+            logger.error("An invalidated user attempted to update an item")
             return jsonify({"status": "error", "output": "false"}), 401
 
         connection = get_db()
@@ -779,11 +842,17 @@ def update() -> Tuple[Response, int]:
             data["name"],
             data["size"],
             data["is_metric"].strip().lower() == "true",
-            data["location"],
+            data["loc_shelf"],
+            data["loc_rack"],
+            data["loc_box"],
+            data["loc_row"],
+            data["loc_col"],
+            data["loc_depth"],
             int(data["threshold"]),
             data["new_name"],
             data["new_size"],
             data["new_is_metric"].strip().lower() == "true",
+            data["count"],
             cursor,
             connection,
         )
@@ -914,7 +983,6 @@ def change_pass() -> Tuple[Response, int]:
         connection = get_db()
         cursor = connection.cursor()
         data = request.json
-        print(data)
         if not data or not all(
             k in data for k in ("username", "password", "level", "token")
         ):
@@ -924,14 +992,11 @@ def change_pass() -> Tuple[Response, int]:
         new_password = data["password"]
         level = data["level"]
         token = data["token"]
-        print(level)
         try:
-            print("token", data["level"])
             decoded_token = jwt.decode(token, options={"verify_signature": False})
 
             test_level = decoded_token.get("level")
             test_username = decoded_token.get("username")
-            print(test_level, test_username)
             if not check_token(token, test_username, cursor):
                 raise ValueError("Invalid token")
             if not test_level == 0:
@@ -1061,12 +1126,9 @@ def append_file() -> Tuple[Response, int]:
         uploaded_file = request.files["file"]
         filename = secure_filename(uploaded_file.filename or "uploaded_file.csv")
         file_path = os.path.join("../data", filename)
-        print(file_path)
 
         # Read the content BEFORE saving
         file_contents = uploaded_file.read().decode("utf-8")
-
-        print(file_contents)
 
         # Save the file
         with open(file_path, "w", encoding="utf-8") as f:
