@@ -36,7 +36,7 @@
               <input
                 class="editing-popup-info dark:bg-gray-600"
                 type="text"
-                [(ngModel)]="item.is_metric"
+                [(ngModel)]="newItem.is_metric"
               />
             </td>
           </tr>
@@ -54,7 +54,7 @@
                     <input
                       class="editing-popup-info dark:bg-gray-600"
                       type="text"
-                      [(ngModel)]="item.loc_shelf"
+                      [(ngModel)]="newItem.loc_shelf"
                     />
                   </td>
                 </tr>
@@ -78,7 +78,7 @@
                     <input
                       class="editing-popup-info dark:bg-gray-600"
                       type="text"
-                      [(ngModel)]="item.loc_box"
+                      [(ngModel)]="newItem.loc_box"
                     />
                   </td>
                 </tr>
@@ -90,7 +90,7 @@
                     <input
                       class="editing-popup-info dark:bg-gray-600"
                       type="text"
-                      [(ngModel)]="item.loc_row"
+                      [(ngModel)]="newItem.loc_row"
                     />
                   </td>
                 </tr>
@@ -100,9 +100,9 @@
                   </td>
                   <td>
                     <input
-                      class="editing-popup-info"
+                      class="editing-popup-info dark:bg-gray-600"
                       type="text"
-                      [(ngModel)]="item.loc_col"
+                      [(ngModel)]="newItem.loc_col"
                     />
                   </td>
                 </tr>
@@ -114,7 +114,7 @@
                     <input
                       class="editing-popup-info dark:bg-gray-600"
                       type="text"
-                      [(ngModel)]="item.loc_depth"
+                      [(ngModel)]="newItem.loc_depth"
                     />
                   </td>
                 </tr>
@@ -129,7 +129,7 @@
               <input
                 class="editing-popup-info dark:bg-gray-600"
                 type="text"
-                [(ngModel)]="item.count"
+                [(ngModel)]="newItem.count"
               />
             </td>
           </tr>
@@ -141,7 +141,7 @@
               <input
                 class="editing-popup-info dark:bg-gray-600"
                 type="text"
-                [(ngModel)]="item.threshold"
+                [(ngModel)]="newItem.threshold"
               />
             </td>
           </tr>
@@ -274,7 +274,7 @@
                   </td>
                   <td>
                     <input
-                      class="popup-info"
+                      class="popup-info dark:bg-gray-600"
                       type="text"
                       [(ngModel)]="item.loc_col"
                       readonly

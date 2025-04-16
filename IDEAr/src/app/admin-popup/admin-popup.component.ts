@@ -93,12 +93,14 @@ export class AdminPopupComponent {
     this.close();
   }
   deleteItem() {
-    this.updateItemService.deleteItem(this.item).subscribe((response) => {});
-    this.close();
+    this.updateItemService.deleteItem(this.item).subscribe((then) => {
+      this.close();
+    });
   }
   addItem() {
-    this.updateItemService.addItem(this.item);
-    this.close();
+    this.updateItemService.addItem(this.item).subscribe((then) => {
+      this.close();
+    });
   }
 
   cancelAdding(event: Event) {

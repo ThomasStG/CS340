@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ItemData } from '../item-data';
 import { AuthService } from './auth.service';
+import { HttpParams } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -12,8 +13,7 @@ export class UpdateItemService {
     private http: HttpClient,
     private authService: AuthService,
   ) {}
-  updateItem(newItem: ItemData, oldItem: ItemData): Observable<any> {
-    
+  updateItem(oldItem: ItemData, newItem: ItemData): Observable<any> {
     const url = `http://127.0.0.1:3000/updateitem?
 name=${encodeURIComponent(oldItem.name)}&
 new_name=${encodeURIComponent(newItem.name)}&
@@ -34,25 +34,27 @@ token=${this.authService.getToken()}`;
     return this.http.get(url);
   }
   deleteItem(item: ItemData): Observable<any> {
-    const url = `http://127.0.0.1:3000/deleteitem?id=${item.id}`;
+    const url = `http://127.0.0.1:3000/remove?name=${encodeURIComponent(item.name)}&is_metric=${item.is_metric}&size=${item.size}&token=${this.authService.getToken()}`;
     return this.http.get(url);
   }
+
   addItem(item: ItemData): Observable<any> {
-    
-    const url = `http://127.0.0.1:3000/add?
-name=${encodeURIComponent(item.name)}&
-is_metric=${item.is_metric}&
-size=${item.size}&
-loc_shelf=${item.loc_shelf}&
-loc_rack=${item.loc_rack}&
-loc_box=${item.loc_box}&
-loc_row=${item.loc_row}&
-loc_col=${item.loc_col}&
-loc_depth=${item.loc_depth}&
-num=${item.count}&
-threshold=${item.threshold}&
-token=${this.authService.getToken()}`;
-    return this.http.get(url);
+    const params = new HttpParams()
+      .set('name', item.name)
+      .set('is_metric', item.is_metric ? '1' : '0') // Ensure it's '1' or '0'
+      .set('size', item.size)
+      .set('loc_shelf', item.loc_shelf)
+      .set('loc_rack', item.loc_rack)
+      .set('loc_box', item.loc_box)
+      .set('loc_row', item.loc_row)
+      .set('loc_col', item.loc_col)
+      .set('loc_depth', item.loc_depth)
+      .set('num', item.count.toString())
+      .set('threshold', item.threshold.toString())
+      .set('token', this.authService.getToken());
+
+    const url = 'http://127.0.0.1:3000/addItem';
+    return this.http.get(url, { params });
   }
   decrementItem(item: ItemData, toChange: number): Observable<any> {
     const token = this.authService.getToken();

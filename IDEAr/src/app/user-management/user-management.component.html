@@ -15,7 +15,7 @@
   </form>
   <div *ngIf="users && users.length > 0; else loading">
     <div *ngFor="let user of users">
-      <app-user [user]="user" (userListUpdated)="onUserListUpdated($event)"></app-user>
+      <app-user *ngIf="user.username != 'admin'" [user]="user" (userListUpdated)="onUserListUpdated($event)"></app-user>
 
     </div>
   </div>

@@ -87,14 +87,14 @@
       <button
         *ngIf="!isAuthenticated"
         routerLink="/authentication"
-        class="px-4 py-2 bg-blue-600 text-white border rounded-md"
+        class="px-4 py-2 bg-blue-600 text-white rounded-md"
       >
         Login
       </button>
       <button
         *ngIf="isAuthenticated"
         (click)="logout()"
-        class="px-4 py-2 bg-blue-600 text-white border rounded-md"
+        class="px-4 py-2 bg-blue-600 text-white rounded-md"
       >
         Logout
       </button>
