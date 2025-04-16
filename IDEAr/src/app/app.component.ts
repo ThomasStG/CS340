@@ -3,10 +3,13 @@ import { AuthService } from './services/auth.service';
 import { OnInit } from '@angular/core';
 import { UtilityService } from './services/utility.service';
 import { BehaviorSubject } from 'rxjs';
-
+import { filter } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 import { Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { ChangeDetectorRef } from '@angular/core';
+import { Router } from '@angular/router';
+import { NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -24,12 +27,14 @@ export class AppComponent implements OnInit {
   @ViewChild('homeDropdownRef') homeDropdownRef!: ElementRef;
   @ViewChild('adminDropdownRef') adminDropdownRef!: ElementRef;
   @ViewChild('managementDropdownRef') managementDropdownRef!: ElementRef;
+  authLevel = 2;
 
   constructor(
     public authService: AuthService,
     public utilityService: UtilityService,
     private eRef: ElementRef,
     private cdr: ChangeDetectorRef,
+    private router: Router,
     @Inject(PLATFORM_ID) private platformId: Object,
   ) {
     this.isBrowser = isPlatformBrowser(this.platformId);
@@ -70,6 +75,14 @@ export class AppComponent implements OnInit {
         this.onAuthSuccess();
       }
     });
+    this.authService.levelGetter().subscribe((level) => {
+      this.authLevel = level;
+    });
+    this.authService.getAuthLevel().subscribe((level) => {
+      this.authLevel = level;
+      console.log('User authentication level:', this.authLevel);
+    });
+    console.log(this.authLevel);
   }
   toggleDarkMode() {
     this.setMode(!this.darkMode.value);
@@ -84,10 +97,8 @@ export class AppComponent implements OnInit {
   onAuthSuccess() {
     this.isAuthenticated = true;
   }
-  check_level() {
-    const level = this.authService.levelGetter().subscribe((level) => {
-      if ((level = 0)) return true;
-      else return false;
-    });
+  check_level(check: number): boolean {
+    if (this.authLevel <= check) return true;
+    else return false;
   }
 }

@@ -1,4 +1,4 @@
-<div *ngIf="check_level()" class="pt-12 min-h-screen w-full bg-gray-0 dark:bg-gray-900">
+<div class="pt-12 min-h-screen w-full bg-gray-0 dark:bg-gray-900">
   <form
     [formGroup]="newUserForm"
     class="flex flex-row flex-grow flex-wrap items-end gap-4 p-2 justify-center bg-white dark:bg-gray-900 text-black dark:text-white"
@@ -11,7 +11,7 @@
       <option value="1">High Level Student Worker</option>
       <option value="2">Student Worker</option>
     </select>
-    <button type="submit" class="bg-ray-100 dark:bg-gray-900 text-gray-400  border border-gray-400 rounded-md hover:bg-slate-600 p-2 m-2 bg-slate-500 dark:bg-slate-600 dark:hover:bg-slate-500">Create User</button>
+    <button type="submit" class="bg-gray-100 dark:bg-gray-900 text-gray-400  border border-gray-400 rounded-md hover:bg-slate-600 p-2 m-2 bg-slate-500 dark:bg-slate-600 dark:hover:bg-slate-500">Create User</button>
   </form>
   <div *ngIf="users && users.length > 0; else loading">
     <div *ngFor="let user of users">

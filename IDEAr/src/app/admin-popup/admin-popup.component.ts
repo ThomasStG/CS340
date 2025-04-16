@@ -36,7 +36,7 @@ export class AdminPopupComponent {
     private updateItemService: UpdateItemService,
     private dialogRef: MatDialogRef<AdminPopupComponent>,
     private utilityService: UtilityService,
-    private authService: AuthService
+    private authService: AuthService,
   ) {}
   newItem: ItemData = { ...this.item };
   ngOnInit() {
@@ -57,7 +57,11 @@ export class AdminPopupComponent {
 
   editItem(event: Event) {
     event.stopPropagation();
-    this.isEditing = true;
+    this.authService.getAuthLevel().subscribe((level) => {
+      if (level < 2) {
+        this.isEditing = true;
+      }
+    });
   }
   cancelEditing(event: Event) {
     event.stopPropagation();
@@ -125,9 +129,10 @@ export class AdminPopupComponent {
       }
     });
   }
-  check_level(){
-    const level = this.authService.levelGetter().subscribe((level)=> {
-    if (level < 2 ) return true
-    else return false}
-  )}
+  check_level() {
+    const level = this.authService.levelGetter().subscribe((level) => {
+      if (level < 2) return true;
+      else return false;
+    });
+  }
 }
