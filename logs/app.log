@@ -53,3 +53,7 @@
 [2025-04-15 16:51:17,788]:  User 'admin' decremented 'Flat Washer 7/16' by 1000
 [2025-04-15 16:51:17,932]:  User 'admin' decremented 'Flat Washer 7/16' by 1000
 [2025-04-15 16:51:18,078]:  User 'admin' decremented 'Flat Washer 7/16' by 1000
+[2025-04-15 22:52:56,345]:  User '{username}' incremented '{data['name']} {data['size']}' by {data['num']}
+[2025-04-15 22:52:57,106]:  User 'admin' decremented 'Self Locking Retaining Ring SM' by 10
+[2025-04-15 22:52:58,533]:  User '{username}' incremented '{data['name']} {data['size']}' by {data['num']}
+[2025-04-15 22:52:59,236]:  User 'admin' decremented 'Self Locking Retaining Ring SM' by 10
