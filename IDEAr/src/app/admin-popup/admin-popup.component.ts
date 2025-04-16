@@ -20,7 +20,12 @@ export class AdminPopupComponent {
     name: '',
     size: '',
     is_metric: 'True',
-    location: '',
+    loc_shelf: '',
+    loc_rack: '',
+    loc_box: '',
+    loc_row: '',
+    loc_col: '',
+    loc_depth: '',
     count: 0,
     threshold: 0,
   };
@@ -41,7 +46,6 @@ export class AdminPopupComponent {
   newItem: ItemData = { ...this.item };
   ngOnInit() {
     this.darkMode.next(this.utilityService.isDarkMode());
-    this.item.location = JSON.parse(this.item.location);
     this.newItem = this.item;
     if (this.item.name == '') {
       this.itemTitle = 'New Item';
