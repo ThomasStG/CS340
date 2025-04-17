@@ -7,6 +7,7 @@ import { AdminItemComponent } from '../admin-item/admin-item.component';
 import { MatDialog } from '@angular/material/dialog';
 import { UpdateItemService } from '../services/update-item.service'; // Adjust the path accordingly
 import { AdminPopupComponent } from '../admin-popup/admin-popup.component';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-admin',
@@ -23,6 +24,8 @@ export class AdminComponent {
   ) {}
   items: ItemData[] = [];
   isPopupVisible = false;
+  signal: any;
+  private sub!: Subscription;
   selectedItem: ItemData = {
     id: 0,
     name: '',
@@ -42,17 +45,35 @@ export class AdminComponent {
     this.authService.isAuthenticated().subscribe((isAuth: boolean) => {
       if (!isAuth) {
         this.router.navigate(['/authentication']);
-      } else {
-        this.getItemsService.getAllItems().subscribe({
-          next: (response: any) => {
-            this.items = response.data; // Extract 'data' from response
-          },
-          error: (err: any) => {
-            console.error('Error fetching item:', err);
-          },
-        });
+        return;
       }
+
+      this.loadItems(); // Separate method to keep it clean
+
+      this.sub = this.updateItemService.signal$.subscribe((data: any) => {
+        this.signal = data;
+        this.loadItems(); // Reuse item-fetching logic
+      });
     });
+  }
+
+  loadItems(): void {
+    this.getItemsService.getAllItems().subscribe({
+      next: (response: any) => {
+        console.log(response);
+        this.items = response.data;
+      },
+      error: (err: any) => {
+        console.error('Error fetching items:', err);
+      },
+    });
+  }
+  trackByItemId(index: number, item: ItemData): number {
+    return item.id; // Assuming 'id' is the unique identifier for each item
+  }
+
+  ngOnDestroy() {
+    this.sub?.unsubscribe();
   }
   singleSearch(data: any) {
     this.getItemsService.getItem(data.name, data.metric, data.size).subscribe({
@@ -90,8 +111,12 @@ export class AdminComponent {
     }
   }
   addItem(event: any) {
-    const PopUp = this.dialog.open(AdminPopupComponent);
-    PopUp.componentInstance.showAddItemPopup();
+    this.authService.levelGetter().subscribe((level) => {
+      if (level < 2) {
+        const PopUp = this.dialog.open(AdminPopupComponent);
+        PopUp.componentInstance.showAddItemPopup();
+      }
+    });
   }
 
   check_level() {
@@ -102,6 +127,11 @@ export class AdminComponent {
   }
   closePopup() {
     this.isPopupVisible = false;
+    this.getItemsService.getAllItems().subscribe({
+      next: (response) => {
+        this.items = response.data;
+      },
+    });
   }
   onItemClick(item: any) {
     this.selectedItem = item;

@@ -111,3 +111,61 @@
 [2025-04-15 22:52:57,106]:  User 'admin' decremented 'Self Locking Retaining Ring SM' by 10
 [2025-04-15 22:52:58,533]:  User '{username}' incremented '{data['name']} {data['size']}' by {data['num']}
 [2025-04-15 22:52:59,236]:  User 'admin' decremented 'Self Locking Retaining Ring SM' by 10
+[2025-04-16 08:42:56,406]:  User 'admin' logged in
+[2025-04-16 08:43:07,830]:  User 'admin' removed item with name: add, size: add, is_metric: False
+[2025-04-16 08:43:13,275]:  User 'admin' removed item with name: add, size: add, is_metric: False
+[2025-04-16 08:43:19,040]:  User 'admin' removed item with name: add, size: add, is_metric: True
+[2025-04-16 08:43:23,310]:  User 'admin' removed item with name: add, size: add, is_metric: True
+[2025-04-16 08:47:51,442]:  User: 'admin' updated item: d t
+[2025-04-16 08:48:05,536]:  User: 'admin' updated item: d test
+[2025-04-16 08:48:11,885]:  User 'admin' removed item with name: test, size: d, is_metric: True
+[2025-04-16 08:48:28,128]:  User 'admin' removed item with name: t, size: d, is_metric: True
+[2025-04-16 08:59:05,191]:  User 'admin' removed item with name: t, size: d, is_metric: True
+[2025-04-16 09:02:11,523]:  User 'admin' added item with name: test, size: a, is_metric: 1, num: 0, threshold: 0, loc_shelf: a, loc_rack: b, loc_box: c, loc_row: d, loc_col: e, loc_depth: f
+[2025-04-16 09:02:20,908]:  User 'admin' removed item with name: test, size: a, is_metric: False
+[2025-04-16 09:04:08,489]:  User 'admin' added item with name: a, size: b, is_metric: 1, num: 0, threshold: 0, loc_shelf: c, loc_rack: d, loc_box: f, loc_row: c, loc_col: d, loc_depth: a
+[2025-04-16 09:05:29,775]:  User 'admin' added item with name: ab, size: b, is_metric: 1, num: 0, threshold: 0, loc_shelf: c, loc_rack: d, loc_box: e, loc_row: f, loc_col: g, loc_depth: 1
+[2025-04-16 09:05:45,758]:  User 'admin' removed item with name: a, size: b, is_metric: False
+[2025-04-16 09:08:14,304]:  User 'admin' added item with name: a, size: bc, is_metric: 1, num: 0, threshold: 0, loc_shelf: d, loc_rack: d, loc_box: d, loc_row: d1, loc_col: 2, loc_depth: 2
+[2025-04-16 09:10:12,006]:  User 'admin' removed item with name: a, size: bc, is_metric: False
+[2025-04-16 09:10:32,707]:  User 'admin' added item with name: test, size: size1, is_metric: 1, num: 0, threshold: 0, loc_shelf: 12, loc_rack: 2, loc_box: 3, loc_row: 4, loc_col: 5, loc_depth: 6
+[2025-04-16 09:10:38,590]:  User 'admin' removed item with name: test, size: size1, is_metric: False
+[2025-04-16 09:10:43,029]:  User 'admin' removed item with name: ab, size: b, is_metric: False
+[2025-04-16 09:27:43,224]:  User 'admin' logged in
+[2025-04-16 10:29:26,942]:  User 'admin' added item with name: , size: , is_metric: 1, num: 0, threshold: 0, loc_shelf: , loc_rack: , loc_box: , loc_row: , loc_col: , loc_depth: 
+[2025-04-16 10:30:12,076]:  User 'admin' added item with name: t, size: t, is_metric: 1, num: 0, threshold: 0, loc_shelf: t, loc_rack: t, loc_box: t, loc_row: t, loc_col: t, loc_depth: t
+[2025-04-16 10:30:29,290]:  User 'admin' removed item with name: t, size: t, is_metric: False
+[2025-04-16 10:31:03,414]:  User 'admin' logged in
+[2025-04-16 10:31:19,445]:  User 'admin' logged in
+[2025-04-16 10:36:16,234]:  User 'admin' logged in
+[2025-04-16 10:46:25,276]:  User 'admin' logged in
+[2025-04-16 10:47:35,329]:  User 'sw' logged in
+[2025-04-16 10:54:45,903]:  User 'admin' logged in
+[2025-04-16 10:56:38,317]:  User 'sw' logged in
+[2025-04-16 11:14:56,604]:  User 'sw' added item with name: admin Itemt, size: estt, is_metric: 1, num: 0, threshold: 0, loc_shelf: t, loc_rack: t, loc_box: t, loc_row: t, loc_col: t, loc_depth: t
+[2025-04-16 11:16:00,262]:  User 'admin' logged in
+[2025-04-16 11:19:33,769]:  User 'sw' logged in
+[2025-04-16 11:19:39,368]:  User '{username}' incremented '{data['name']} {data['size']}' by {data['num']}
+[2025-04-16 11:22:07,419]:  User 'hsw' logged in
+[2025-04-16 11:22:22,184]:  User 'admin' logged in
+[2025-04-16 11:25:57,328]:  User: 'admin' updated item: .5 M5
+[2025-04-16 11:26:47,210]:  User: 'admin' updated item: .5 M4
+[2025-04-16 11:27:30,664]:  User: 'admin' updated item: LG Self Locking Retaining Ring
+[2025-04-16 11:30:44,152]:  User: 'admin' updated item: SML Self Locking Retaining Ring
+[2025-04-16 11:35:19,514]:  User: 'admin' updated item: SM Self Locking Retaining Ring
+[2025-04-16 11:35:54,872]:  User: 'admin' updated item: SM Self Locking Retaining Ring
+[2025-04-16 11:36:56,758]:  User: 'admin' updated item: LG Self Locking Retaining Ring
+[2025-04-16 11:37:16,357]:  User: 'admin' updated item: SM Self Locking Retaining Ring
+[2025-04-16 11:38:36,274]:  User: 'admin' updated item: SM Self Locking Retaining Ring
+[2025-04-16 11:39:25,061]:  User 'admin' logged in
+[2025-04-16 11:40:16,650]:  User: 'admin' updated item: .5 M5
+[2025-04-16 11:40:28,053]:  User: 'admin' updated item: .5 M4
+[2025-04-16 11:42:21,730]:  User: 'admin' updated item: SM Self Locking Retaining Ring - test
+[2025-04-16 11:45:22,313]:  User 'admin' logged in
+[2025-04-16 11:51:43,790]:  User 'sw' logged in
+[2025-04-16 11:51:53,670]:  User 'sw' decremented 'Self Locking Retaining Ring SM' by 10
+[2025-04-16 11:51:55,103]:  User 'sw' decremented 'Self Locking Retaining Ring SM' by 10
+[2025-04-16 11:52:55,970]:  User 'admin' logged in
+[2025-04-16 11:53:57,388]:  User 'admin' logged in
+[2025-04-16 11:59:42,040]:  User 'John' logged in
+[2025-04-16 12:00:43,235]:  User: 'John' updated item: LG Self Locking Retaining Ring

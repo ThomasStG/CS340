@@ -4,14 +4,14 @@
   class="w-full min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white"
 >
   <div
-    class="bg-gray-100 pt-4 text-black dark:bg-gray-900 dark:text-white flex flex-row justify-center items-center"
+    class="bg-gray-100 pt-4 text-black dark:bg-gray-900 dark:text-white flex flex-row justify-center items-center z-[1000]"
   >
     <!-- Navigation -->
     <nav class="z-[100] flex gap-3 align-center justify-center">
       <div #homeDropdownRef class="relative inline-block">
         <button
           (click)="toggleDropdown('home')"
-          class="px-4 py-2 bg-blue-600 text-white rounded-md"
+          class="px-4 py-2 bg-blue-900 text-white rounded-md"
         >
           Home
         </button>
@@ -33,10 +33,12 @@
           </a>
         </div>
       </div>
-        <div  #adminDropdownRef class="relative inline-block">
+        <div
+          *ngIf="isAuthenticated"
+          #adminDropdownRef class="relative inline-block">
           <button
             (click)="toggleDropdown('admin')"
-            class="px-4 py-2 bg-blue-600 text-white rounded-md"
+            class="px-4 py-2 bg-blue-900 text-white rounded-md"
           >
             Admin
           </button>
@@ -53,12 +55,13 @@
           </div>
         </div>
       <div
+          *ngIf="isAuthenticated"
         #managementDropdownRef
         class="relative inline-block"
       >
         <button
           (click)="toggleDropdown('management')"
-          class="px-4 py-2 bg-blue-600 text-white rounded-md"
+          class="px-4 py-2 bg-blue-900 text-white rounded-md"
         >
           Management
         </button>
@@ -87,14 +90,14 @@
       <button
         *ngIf="!isAuthenticated"
         routerLink="/authentication"
-        class="px-4 py-2 bg-blue-600 text-white rounded-md"
+        class="px-4 py-2 bg-blue-900 text-white rounded-md"
       >
         Login
       </button>
       <button
         *ngIf="isAuthenticated"
         (click)="logout()"
-        class="px-4 py-2 bg-blue-600 text-white rounded-md"
+        class="px-4 py-2 bg-blue-900 text-white rounded-md"
       >
         Logout
       </button>
@@ -110,7 +113,7 @@
             class="sr-only peer"
           />
           <div
-            class="relative w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-600 peer-checked:after:translate-x-full rtl:peer-checked:after:translate-x-[-100%] peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-500 peer-checked:bg-blue-600 dark:peer-checked:bg-blue-600"
+            class="relative w-9 h-5 bg-[rgb(243,208,20)] peer-focus:outline-none dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-600 peer-checked:after:translate-x-full rtl:peer-checked:after:translate-x-[-100%] peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-[rgb(8,34,65)] dark:after:bg-[rgb(243,208,20)] after:border[rgb(243,208,20)] after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-500 peer-checked:bg-blue-900 dark:peer-checked:bg-blue-900"
           ></div>
           <span
             class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300"

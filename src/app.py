@@ -39,9 +39,7 @@ import resend
 from dotenv import load_dotenv
 from flask import Flask, Response, g, jsonify, request, send_file
 from flask_cors import CORS
-from werkzeug.exceptions import Unauthorized
 from werkzeug.utils import secure_filename
-import ast
 
 from api import (
     add_item,
@@ -229,7 +227,7 @@ def import_csv(uri):
                         continue
 
                     try:
-                        if len(row) == 13:
+                        if len(row) > 13:
                             add_item(
                                 row[0],  # name
                                 row[1],  # size
@@ -277,7 +275,7 @@ def import_csv(uri):
         con.rollback()
 
 
-def add_from_csv(uri: str) -> None:
+def add_from_csv(file_stream: bytes) -> None:
     """
     Adds values from a CSV file to the database
 
@@ -291,8 +289,8 @@ def add_from_csv(uri: str) -> None:
         con = sqlite3.connect("../data/data.db")
         cur = con.cursor()
         print("Connected to database")
-        with open(uri, "r") as file:
-            data = [eval(line.strip()) for line in file.readlines()]
+        reader = csv.DictReader(file_stream)
+        data = [row for row in reader]
 
         for item in data:
             add_item(
@@ -796,6 +794,7 @@ def update() -> Tuple[Response, int]:
         json: a message and status code
     """
     try:
+        print("Updating item...")
         data = request.args
         if not data or not all(
             key in data
@@ -815,7 +814,6 @@ def update() -> Tuple[Response, int]:
                 "count",
                 "threshold",
                 "id",
-                "count",
                 "token",
             ]
         ):
@@ -1124,19 +1122,11 @@ def append_file() -> Tuple[Response, int]:
             raise KeyError("Missing required parameters")
 
         uploaded_file = request.files["file"]
-        filename = secure_filename(uploaded_file.filename or "uploaded_file.csv")
-        file_path = os.path.join("../data", filename)
 
-        # Read the content BEFORE saving
-        file_contents = uploaded_file.read().decode("utf-8")
+        # Directly wrap the file stream in TextIOWrapper
+        file_stream = io.TextIOWrapper(uploaded_file.stream, encoding="utf-8")
 
-        # Save the file
-        with open(file_path, "w", encoding="utf-8") as f:
-            f.write(file_contents)
-
-        file_path = convert_file(file_path)
-
-        add_from_csv(file_path)
+        add_from_csv(file_stream)
         return jsonify({"status": "success", "message": "File uploaded"}), 200
     except Exception as e:
         return handle_exceptions(e)
