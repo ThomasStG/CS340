@@ -1,13 +1,13 @@
 id,name,size,is_metric,loc_shelf,loc_rack,loc_box,loc_row,loc_col,loc_depth,count,threshold,isContacted
-1,Self Locking Retaining Ring,SM,0,2,1,1,1,1,1,847,100,0
-2,Self Locking Retaining Ring,LG,0,1,1,1,1,1,1,32,0,0
+1,Self Locking Retaining Ring,SM,0,2,1,1,1,1,1,827,100,0
+2,Self Locking Retaining Ring,LG,0,1,1,1,1,1,1,4,0,0
 3,Flat Washer,7/16,0,1,1,1,1,1,1,2,0,0
 4,Flat Washer,9/16,0,1,1,1,1,1,1,56,0,0
 5,Lock Washer,1/2,0,1,1,1,1,1,1,56,0,0
 6,Lock Washer,3/8,0,1,1,1,1,1,1,56,0,0
 7,Flat Washer,3/8,0,1,1,1,1,1,1,68,0,0
 8,Flat Washer,5/8,0,1,1,1,1,1,1,21,0,0
-9,M5,.5,1,1,1,1,1,1,1,45,0,0
+9,M5,.5,1,2,1,1,1,1,1,45,0,0
 10,Tee Nut,6/32,0,1,1,1,1,1,1,57,0,0
 11,Tee Nut,8/32,0,1,1,1,1,1,1,69,0,0
 12,Washers,1/2,0,1,1,1,1,1,1,22,0,0

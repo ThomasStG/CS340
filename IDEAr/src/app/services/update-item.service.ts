@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Subject, Observable, tap } from 'rxjs';
 import { ItemData } from '../item-data';
 import { AuthService } from './auth.service';
 import { HttpParams } from '@angular/common/http';
@@ -9,6 +9,14 @@ import { HttpParams } from '@angular/common/http';
   providedIn: 'root',
 })
 export class UpdateItemService {
+  private signalSource = new Subject<any>();
+
+  signal$ = this.signalSource.asObservable();
+  sendSignal(data: any) {
+    console.log(data);
+    this.signalSource.next(data);
+  }
+
   constructor(
     private http: HttpClient,
     private authService: AuthService,
@@ -31,11 +39,12 @@ loc_depth=${newItem.loc_depth}&
 count=${newItem.count}&
 threshold=${newItem.threshold}&
 token=${this.authService.getToken()}`;
-    return this.http.get(url);
+    console.log('Calling update endpoint:', url);
+    return this.http.get(url).pipe(tap(() => this.sendSignal('refresh Items')));
   }
   deleteItem(item: ItemData): Observable<any> {
     const url = `http://127.0.0.1:3000/remove?name=${encodeURIComponent(item.name)}&is_metric=${item.is_metric}&size=${item.size}&token=${this.authService.getToken()}`;
-    return this.http.get(url);
+    return this.http.get(url).pipe(tap(() => this.sendSignal('refresh Items')));
   }
 
   addItem(item: ItemData): Observable<any> {
@@ -54,7 +63,9 @@ token=${this.authService.getToken()}`;
       .set('token', this.authService.getToken());
 
     const url = 'http://127.0.0.1:3000/addItem';
-    return this.http.get(url, { params });
+    return this.http
+      .get(url, { params })
+      .pipe(tap(() => this.sendSignal('refresh Items')));
   }
   decrementItem(item: ItemData, toChange: number): Observable<any> {
     const token = this.authService.getToken();

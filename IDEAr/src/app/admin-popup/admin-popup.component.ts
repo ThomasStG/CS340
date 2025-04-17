@@ -88,8 +88,11 @@ export class AdminPopupComponent {
     this.close();
     this.updateItemService
       .updateItem(this.item, this.newItem)
-      .subscribe((response) => {});
+      .subscribe((response) => {
+        console.log(response);
+      });
     // TODO: Close popup
+
     this.close();
   }
   deleteItem() {
@@ -117,10 +120,10 @@ export class AdminPopupComponent {
     this.item = item;
   }
 
-  confirmPopup(value: string) {
+  confirmPopup(value: string, message: string) {
     const ConfirmationPopUp = this.dialog.open(ConfirmationPopupComponent);
     ConfirmationPopUp.afterOpened().subscribe(() => {
-      ConfirmationPopUp.componentInstance.updatePopup(value);
+      ConfirmationPopUp.componentInstance.updatePopup(value, message);
     });
 
     ConfirmationPopUp.afterClosed().subscribe((result: boolean) => {

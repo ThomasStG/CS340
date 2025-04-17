@@ -1,18 +1,15 @@
 <div [class.dark]="darkMode | async" class="overlay">
-    <div class="popup dark:text-white dark:bg-gray-900">
-      <div class="popup-content">
-        <div class="Header dark:text-white dark:bg-gray-900">
-            Are you sure you would like to proceed with this process?
-        </div>
-        <div>
-            <button (click)="confirm($event)">
-                Confirm
-            </button>
-            <button (click)="cancel($event)">
-                Cancel
-            </button>
-        </div>
+  <div class="popup dark:text-white dark:bg-gray-900">
+    <div class="popup-content">
+      <div class="Header dark:text-white dark:bg-gray-900">
+        {{ message }}
+      </div>
+      <div>
+        <button (click)="confirm($event)">Confirm</button>
+        <button (click)="cancel($event)">Cancel</button>
       </div>
     </div>
-  </div>>
-  
+  </div>
+</div>
+>
+

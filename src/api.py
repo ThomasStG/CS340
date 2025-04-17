@@ -80,7 +80,7 @@ def get_all(cursor: sqlite3.Cursor) -> list[dict]:
     """
     cursor.execute(
         """
-                   SELECT id, name, is_metric, size, loc_shelf,
+                   SELECT id, name, size, is_metric, loc_shelf,
                    loc_rack, loc_box, loc_row, loc_col, 
                    loc_depth, count, threshold, isContacted
                    FROM items
@@ -116,6 +116,8 @@ def find_by_name(
         (name, is_metric, size),
     )
     item = cursor.fetchone()  # Fetch the first matching row
+    if item is None:
+        raise ValueError("Item not found. No update performed.")
 
     return item[0] if item else None  # Return ID if found, otherwise None
 
@@ -335,6 +337,65 @@ def add_item(
         ),
     )
 
+    connection.commit()
+
+
+def append_item(
+    name: str,
+    size: str,
+    is_metric: int,
+    loc_shelf: str,
+    loc_rack: str,
+    loc_box: str,
+    loc_row: str,
+    loc_col: str,
+    loc_depth: str,
+    count: int,
+    threshold: int,
+    cursor: sqlite3.Cursor,
+    connection: sqlite3.Connection,
+) -> None:
+    """
+    Adds a new item to the database or updates an existing one by incrementing the count.
+
+    Args:
+        name (str): name of the item
+        size (str): size of the item
+        is_metric (int): whether the item is metric (1) or not (0)
+        loc_shelf (str): the location string of the item on what shelf
+        loc_rack (str): the location string of the item on what rack
+        loc_box (str): the location string of the item on what box
+        loc_row (str): the location string of the item on what row
+        loc_col (str): the location string of the item on what column
+        loc_depth (str): the location string of the item on what depth
+        count (int): the current number of items in stock
+        threshold (int): the minimum threshold before ordering more
+        cursor (sqlite3.Cursor): SQLite cursor object to execute queries
+        connection (sqlite3.Connection): SQLite connection object to commit changes
+    """
+    cursor.execute(
+        """
+        INSERT INTO items 
+            (name, size, is_metric, loc_shelf, loc_rack, loc_box, loc_row, loc_col, loc_depth, count, threshold)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ON CONFLICT(name, is_metric, size) 
+        DO UPDATE SET 
+            count = count + excluded.count
+        """,
+        (
+            name,
+            size,
+            is_metric,
+            loc_shelf,
+            loc_rack,
+            loc_box,
+            loc_row,
+            loc_col,
+            loc_depth,
+            count,
+            threshold,
+        ),
+    )
     connection.commit()
 
 

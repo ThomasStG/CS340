@@ -1,10 +1,10 @@
 import { ViewChild, Component, ElementRef, HostListener } from '@angular/core';
 import { AuthService } from './services/auth.service';
-import { OnInit } from '@angular/core';
+import { OnInit, OnDestroy } from '@angular/core';
 import { UtilityService } from './services/utility.service';
 import { BehaviorSubject } from 'rxjs';
 import { filter } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { ChangeDetectorRef } from '@angular/core';
@@ -16,7 +16,7 @@ import { NavigationEnd } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
   title = 'IDEAr';
   darkMode = new BehaviorSubject<boolean>(true);
   showHomeDropdown = false;
@@ -28,6 +28,8 @@ export class AppComponent implements OnInit {
   @ViewChild('adminDropdownRef') adminDropdownRef!: ElementRef;
   @ViewChild('managementDropdownRef') managementDropdownRef!: ElementRef;
   authLevel = 2;
+  signal: any;
+  private sub!: Subscription;
 
   constructor(
     public authService: AuthService,
@@ -70,8 +72,9 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.darkMode.next(this.utilityService.isDarkMode());
-    this.authService.authState$.subscribe((isAuthed) => {
-      if (isAuthed) {
+    this.authService.isAuthenticated().subscribe((isAuthed) => {
+      this.isAuthenticated = isAuthed;
+      if (this.isAuthenticated) {
         this.onAuthSuccess();
       }
     });
@@ -80,9 +83,14 @@ export class AppComponent implements OnInit {
     });
     this.authService.getAuthLevel().subscribe((level) => {
       this.authLevel = level;
-      console.log('User authentication level:', this.authLevel);
     });
-    console.log(this.authLevel);
+    this.sub = this.authService.signal$.subscribe((data: any) => {
+      this.signal = data;
+      this.isAuthenticated = true;
+    });
+  }
+  ngOnDestroy() {
+    this.sub?.unsubscribe();
   }
   toggleDarkMode() {
     this.setMode(!this.darkMode.value);

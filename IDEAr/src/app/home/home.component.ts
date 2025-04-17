@@ -13,7 +13,10 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class HomeComponent {
   items: ItemData[] = [];
-  constructor(private getItemsService: GetItemsService, private dialog: MatDialog,) {}
+  constructor(
+    private getItemsService: GetItemsService,
+    private dialog: MatDialog,
+  ) {}
   isPopupVisible = false;
   searchForm = new FormGroup({
     name: new FormControl('', Validators.required),
@@ -35,23 +38,6 @@ export class HomeComponent {
     threshold: 0,
   };
 
-  /* incrementCount(item: any) {
-    if (!this.itemInput[item.name]) {
-      this.itemInput[item.name] = 1;
-    }
-    item.count += this.itemInput[item.name];
-  }
-
-  decrementCount(item: any) {
-    if (!this.itemInput[item.name]) {
-      this.itemInput[item.name] = 1;
-    }
-    item.count -= this.itemInput[item.name];
-  }
-
-  getName(event: any) {
-    alert(`Item Name: ${event.target.id}`);
-  } */
   singleSearch(data: any) {
     this.getItemsService.getItem(data.name, data.metric, data.size).subscribe({
       next: (response) => {
@@ -91,6 +77,7 @@ export class HomeComponent {
   ngOnInit(): void {
     this.getItemsService.getAllItems().subscribe({
       next: (response) => {
+        console.log(response.data);
         this.items = response.data; // Extract 'data' from response
       },
       error: (err) => {

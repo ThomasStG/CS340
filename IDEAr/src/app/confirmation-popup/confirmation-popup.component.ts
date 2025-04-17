@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, Input } from '@angular/core';
 import { AdminPopupComponent } from '../admin-popup/admin-popup.component';
 import { MatDialogRef } from '@angular/material/dialog';
 import { MatDialog } from '@angular/material/dialog';
@@ -18,6 +18,7 @@ export class ConfirmationPopupComponent {
   deleteItemMethod!: Function;
   updateItemMethod!: Function;
   darkMode = new BehaviorSubject<boolean>(false);
+  message = '';
 
   constructor(
     public dialog: MatDialog,
@@ -39,7 +40,7 @@ export class ConfirmationPopupComponent {
     this.dialogRef.close(false);
   }
 
-  updatePopup(value: string) {
+  updatePopup(value: string, message?: string) {
     if (value == 'add') {
       this.isAdding = true;
       this.isEditing = false;
@@ -52,5 +53,8 @@ export class ConfirmationPopupComponent {
       this.isAdding = false;
       this.isAdding = false;
     } // Set the current action ('add', 'delete', 'update')
+
+    this.message =
+      message || 'Are you sure you would like to proceed with this process?';
   }
 }

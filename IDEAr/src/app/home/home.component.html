@@ -1,27 +1,29 @@
-<div class="p-0 m-0 w-full h-full left-0 overflow-y-scroll dark:bg-gray-900">
+<div class="p-0 m-0 w-full h-full left-0  dark:bg-gray-900">
     <app-item-search
       (formSubmit)="handleSearch($event)"
      ></app-item-search>
 
-  <table>
-    <thead class="sticky top-0 z-[100]">
-      <tr class="cursor-pointer hover:bg-gray-400 bg-gray-200 bg-gray-0 text-black dark:bg-gray-900 dark:text-white hover:dark:bg-gray-600">
-        <th>Name</th>
-        <th>Size</th>
-        <th>Metric</th>
-        <th>Count</th>
-      </tr>
-    </thead>
-    <tbody *ngFor="let item of items" >
-      <tr class="cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-white" (click)="onItemClick(item)">
-        <!-- <app-item [item]="item"></app-item>-->
-        <td class="itemColumn">{{ item.name }}</td>
-        <td class="itemColumn">{{ item.size }}</td>
-        <td class="itemColumn">{{ item.is_metric }}</td>
-        <td class="itemColumn">{{ item.count }}</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="overflow-y-scroll h-[calc(100vh-8rem)]">
+    <table>
+      <thead class="sticky top-0 z-[100]">
+        <tr class="cursor-pointer hover:bg-gray-400 bg-gray-200 bg-gray-0 text-black dark:bg-gray-900 dark:text-white hover:dark:bg-gray-600">
+          <th>Name</th>
+          <th>Size</th>
+          <th>Metric</th>
+          <th>Count</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let item of items" >
+        <tr class="cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-white" (click)="onItemClick(item)">
+          <!-- <app-item [item]="item"></app-item>-->
+          <td class="itemColumn">{{ item.name }}</td>
+          <td class="itemColumn">{{ item.size }}</td>
+          <td class="itemColumn">{{ item.is_metric }}</td>
+          <td class="itemColumn">{{ item.count }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
   <div *ngIf="isPopupVisible" class="overlay" (click)="closePopup()">
     <app-item-popup [item]="selectedItem" (close)="closePopup()"></app-item-popup>

@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { of, tap, Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { CookieService } from 'ngx-cookie-service';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 import { UserData } from '../user-data';
 
@@ -17,6 +17,13 @@ export class AuthService {
   authState$ = this.authState.asObservable();
   private _authLevel = new BehaviorSubject<number>(3); // Default level set to 3 (or any other default)
   public authLevel$ = this._authLevel.asObservable();
+  private signalSource = new Subject<any>();
+
+  signal$ = this.signalSource.asObservable();
+  sendSignal(data: any) {
+    console.log(data);
+    this.signalSource.next(data);
+  }
 
   constructor(
     private http: HttpClient,
@@ -36,6 +43,7 @@ export class AuthService {
         tap((response) => {
           if (response.token) {
             this.setToken(response.token);
+            this.sendSignal(response.token);
             this.setAuthState(true);
           }
           if (response.level) {
