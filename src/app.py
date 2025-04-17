@@ -42,6 +42,7 @@ from flask_cors import CORS
 from werkzeug.utils import secure_filename
 
 from api import (
+    append_item,
     add_item,
     backup_data,
     build_db,
@@ -292,22 +293,42 @@ def add_from_csv(file_stream: bytes) -> None:
         reader = csv.DictReader(file_stream)
         data = [row for row in reader]
 
-        for item in data:
-            add_item(
-                item[1],  # Column 1
-                item[2],  # Column 2
-                item[3] == "1",  # Convert to boolean
-                item[4],  # Column 4 Shelf
-                item[5],  # Column 5 Rack
-                item[6],  # Column 6 Box
-                item[7],  # Column 7 Row
-                item[8],  # Column 8 Column
-                item[9],  # Column 9 Depth
-                item[10],  # Column 10 Count
-                item[11],  # Column 11 Threshold
-                cur,
-                con,
-            )
+        for row in data:
+            try:
+                if len(row) > 13:
+                    append_item(
+                        row[0],  # name
+                        row[1],  # size
+                        row[2] == "1",  # is_metric as bool
+                        row[3],  # loc_shelf
+                        row[4],  # loc_rack
+                        row[5],  # loc_box
+                        row[6],  # loc_row
+                        row[7],  # loc_col
+                        row[8],  # loc_depth
+                        int(row[9]),  # count
+                        int(row[10]),  # threshold
+                        cur,
+                        con,
+                    )
+                else:
+                    append_item(
+                        row[1],  # name
+                        row[2],  # size
+                        row[3] == "1",  # is_metric as bool
+                        row[4],  # loc_shelf
+                        row[5],  # loc_rack
+                        row[6],  # loc_box
+                        row[7],  # loc_row
+                        row[8],  # loc_col
+                        row[9],  # loc_depth
+                        int(row[10]),  # count
+                        int(row[11]),  # threshold
+                        cur,
+                        con,
+                    )
+            except Exception as row_err:
+                print(f"Error processing row {row}: {row_err}")
 
         print("Data imported successfully")
 
