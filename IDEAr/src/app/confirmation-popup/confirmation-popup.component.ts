@@ -19,6 +19,8 @@ export class ConfirmationPopupComponent {
   updateItemMethod!: Function;
   darkMode = new BehaviorSubject<boolean>(false);
   message = '';
+  action = ''
+  warning = false;
 
   constructor(
     public dialog: MatDialog,
@@ -29,8 +31,6 @@ export class ConfirmationPopupComponent {
   ngOnInit() {
     this.darkMode.next(this.utilityService.isDarkMode());
   }
-  isAdding = true;
-  isEditing = false;
 
   confirm(event: Event) {
     this.dialogRef.close(true);
@@ -40,21 +40,46 @@ export class ConfirmationPopupComponent {
     this.dialogRef.close(false);
   }
 
-  updatePopup(value: string, message?: string) {
-    if (value == 'add') {
-      this.isAdding = true;
-      this.isEditing = false;
-    }
-    if (value == 'save') {
-      this.isAdding = false;
-      this.isEditing = true;
-    }
-    if (value == 'delete') {
-      this.isAdding = false;
-      this.isAdding = false;
-    } // Set the current action ('add', 'delete', 'update')
+  updatePopup(value: string, warning: boolean) {
+    this.action = value;
+    this.warning = warning;
 
-    this.message =
-      message || 'Are you sure you would like to proceed with this process?';
+    if(value === 'updateItem'){
+      this.message = 'You are about to overwrite this item\'s data with new item data.';
+    }
+    if(value === 'deleteItem'){
+      this.message = 'You are about to delete this item from the database.';
+    }
+    if(value === 'addItem'){
+      this.message = 'You are about to add an item to the database.';
+    }
+    if(value === 'updateUser'){
+      this.message = 'You are about to change this users information.';
+    }
+    if(value === 'deleteUser'){
+      this.message = 'You are about to delete this user from the database.';
+    }
+    if(value === 'addUser'){
+      this.message = 'You are about to add this user to the database.';
+    }
+    if(value === 'backupData'){
+      this.message = 'You are about to create a backup of the database.';
+    }
+    if(value === 'uploadData'){
+      this.message = 'You are about to upload a new file to the program (not to the database).';
+    }
+    if(value === 'appendData'){
+      this.message = 'You are about to append the data to the database adding new data and updating current.';
+    }
+    if(value === 'downloadData'){
+      this.message = 'You are about to create a downloaded .csv of the database.';
+    }
+    if(value === 'loadData'){
+      this.message = 'You are about to load a .csv to the database and overwrite all data currently in the database.';
+    }
+  }
+
+  loadDataPopup(){
+    this.action = 'loadData';
   }
 }

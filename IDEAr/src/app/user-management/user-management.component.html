@@ -2,7 +2,7 @@
   <form
     [formGroup]="newUserForm"
     class="flex flex-row flex-grow flex-wrap items-end gap-4 p-2 justify-center bg-white dark:bg-gray-900 text-black dark:text-white"
-    (ngSubmit)="confirmPopup('create')"
+    (ngSubmit)="confirmPopup('addUser', false)"
   >
     <input type="text" formControlName="username" placeholder="Username" class="bg-gray-100 dark:bg-gray-900 text-black dark:text-white border border-gray-400 rounded-md hover:bg-slate-600 p-2 m-2 bg-slate-500 dark:bg-slate-600 dark:hover:bg-slate-500"/>
     <input type="password" formControlName="password" placeholder="Password" class="bg-gray-100 dark:bg-gray-900 text-black dark:text-white border border-gray-400 rounded-md hover:bg-slate-600 p-2 m-2 bg-slate-500 dark:bg-slate-600 dark:hover:bg-slate-500"/>

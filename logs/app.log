@@ -113,3 +113,8 @@
 [2025-04-15 22:52:59,236]:  User 'admin' decremented 'Self Locking Retaining Ring SM' by 10
 [2025-04-16 11:32:03,733]:  User 'admin' logged in
 [2025-04-16 11:32:15,661]:  User: 'admin' updated item: SML Self Locking Retaining Ring
+[2025-04-17 12:17:06,110]:  User 'admin' logged in
+[2025-04-17 16:22:09,751]:  User 'admin' added item with name: Test, size: Test, is_metric: 1, num: 0, threshold: 0, loc_shelf: 1, loc_rack: 1, loc_box: 1, loc_row: 1, loc_col: 1, loc_depth: 1
+[2025-04-17 16:25:37,533]:  User: 'admin' updated item: Test Test1
+[2025-04-17 16:26:02,555]:  User 'admin' removed item with name: Test1, size: Test, is_metric: False
+[2025-04-17 16:26:14,400]:  User 'admin' removed item with name: Test, size: Test, is_metric: False

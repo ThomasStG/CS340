@@ -1,15 +1,16 @@
+<!-- updated component template -->
 <div [class.dark]="darkMode | async" class="overlay">
   <div class="popup dark:text-white dark:bg-gray-900">
-    <div class="popup-content">
-      <div class="Header dark:text-white dark:bg-gray-900">
-        {{ message }}
-      </div>
-      <div>
-        <button (click)="confirm($event)">Confirm</button>
-        <button (click)="cancel($event)">Cancel</button>
-      </div>
+    <div *ngIf="warning" class="popup-content warning-content">
+      <p class="Warning">⚠️ WARNING!!!!</p>
+    </div>
+    <div class="popup-content message-content">
+      <p class="message">{{ message }}</p>
+      <p class="subtext">Would you like to proceed with this action?</p>
+    </div>
+    <div class="button-group">
+      <button class="btn-outline" (click)="confirm($event)">Confirm</button>
+      <button class="btn-outline" (click)="cancel($event)">Cancel</button>
     </div>
   </div>
 </div>
->
-

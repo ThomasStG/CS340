@@ -79,14 +79,14 @@ export class UserManagementComponent implements OnInit {
     }
   }
 
-  confirmPopup(value: string) {
+  confirmPopup(value: string, warning: boolean) {
     const ConfirmationPopUp = this.dialog.open(ConfirmationPopupComponent);
     ConfirmationPopUp.afterOpened().subscribe(() => {
-      ConfirmationPopUp.componentInstance.updatePopup(value);
+      ConfirmationPopUp.componentInstance.updatePopup(value, warning);
     });
 
     ConfirmationPopUp.afterClosed().subscribe((result: boolean) => {
-      if (result === true && value === 'create') {
+      if (result === true && value === 'addUser') {
         this.onCreate();
       }
     });

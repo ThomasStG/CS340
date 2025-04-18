@@ -120,17 +120,17 @@ export class UserComponent implements OnChanges {
     }
   }
 
-  confirmPopup(value: string) {
+  confirmPopup(value: string, warning: boolean) {
     const ConfirmationPopUp = this.dialog.open(ConfirmationPopupComponent);
     ConfirmationPopUp.afterOpened().subscribe(() => {
-      ConfirmationPopUp.componentInstance.updatePopup(value);
+      ConfirmationPopUp.componentInstance.updatePopup(value, warning);
     });
 
     ConfirmationPopUp.afterClosed().subscribe((result: boolean) => {
-      if (result === true && value === 'update') {
+      if (result === true && value === 'updateUser') {
         this.onUpdate();
       }
-      if (result === true && value === 'delete') {
+      if (result === true && value === 'deleteUser') {
         this.onDelete();
       }
     });

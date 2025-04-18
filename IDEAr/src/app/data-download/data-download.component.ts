@@ -4,6 +4,8 @@ import { UtilityService } from '../services/utility.service';
 import { saveAs } from 'file-saver';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmationPopupComponent } from '../confirmation-popup/confirmation-popup.component';
 
 @Component({
   selector: 'app-data-download',
@@ -18,6 +20,7 @@ export class DataDownloadComponent implements OnInit {
     private utilityService: UtilityService,
     private authService: AuthService,
     private router: Router,
+    public dialog: MatDialog,
   ) {}
 
   loadData(event: Event) {
@@ -92,4 +95,29 @@ export class DataDownloadComponent implements OnInit {
       else return false;
     });
   }
+
+  confirmPopup(value: string, warning: boolean, event: any, fileURL: string) {
+      const ConfirmationPopUp = this.dialog.open(ConfirmationPopupComponent);
+      ConfirmationPopUp.afterOpened().subscribe(() => {
+        ConfirmationPopUp.componentInstance.updatePopup(value, warning);
+      });
+  
+      ConfirmationPopUp.afterClosed().subscribe((result: boolean) => {
+        if (result === true && value === 'backupData') {
+          this.backupData(event);
+        }
+        if (result === true && value === 'uploadData') {
+          this.uploadFile();
+        }
+        if (result === true && value === 'appendData') {
+          this.appendFile();
+        }
+        if (result === true && value === 'downloadData') {
+          this.downloadFile(fileURL);
+        }
+        if (result === true && value === 'loadData') {
+          this.loadData(event);
+        }
+      });
+    }
 }

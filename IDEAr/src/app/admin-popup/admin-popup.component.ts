@@ -120,20 +120,20 @@ export class AdminPopupComponent {
     this.item = item;
   }
 
-  confirmPopup(value: string, message: string) {
+  confirmPopup(value: string, warning: boolean) {
     const ConfirmationPopUp = this.dialog.open(ConfirmationPopupComponent);
     ConfirmationPopUp.afterOpened().subscribe(() => {
-      ConfirmationPopUp.componentInstance.updatePopup(value, message);
+      ConfirmationPopUp.componentInstance.updatePopup(value, warning);
     });
 
     ConfirmationPopUp.afterClosed().subscribe((result: boolean) => {
-      if (result === true && value === 'save') {
+      if (result === true && value === 'updateItem') {
         this.updateItem();
       }
-      if (result === true && value === 'delete') {
+      if (result === true && value === 'deleteItem') {
         this.deleteItem();
       }
-      if (result === true && value === 'add') {
+      if (result === true && value === 'addItem') {
         this.addItem();
       }
     });

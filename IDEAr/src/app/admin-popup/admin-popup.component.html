@@ -147,19 +147,19 @@
           </tr>
           <tr *ngIf="!isAdding" class="hover:bg-gray-100 hover:dark:bg-gray-700">
             <td>
-              <button (click)="confirmPopup('save', 'Are you sure you would like to save you changes to this item?')" class="close-button">
+              <button (click)="confirmPopup('updateItem', true)" class="close-button">
                 Save
               </button>
             </td>
             <td>
-              <button (click)="confirmPopup('delete', 'Are you sure you would like to delete this item?')" class="close-button">
+              <button (click)="confirmPopup('deleteItem', true)" class="close-button">
                 Delete
               </button>
             </td>
           </tr>
           <tr *ngIf="isAdding" class="hover:bg-gray-100">
             <td>
-              <button (click)="confirmPopup('add', 'Are you sure you would like to add this item?')" class="close-button">
+              <button (click)="confirmPopup('addItem', false)" class="close-button">
                 Add Item
               </button>
             </td>
