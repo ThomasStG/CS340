@@ -118,3 +118,7 @@
 [2025-04-17 16:25:37,533]:  User: 'admin' updated item: Test Test1
 [2025-04-17 16:26:02,555]:  User 'admin' removed item with name: Test1, size: Test, is_metric: False
 [2025-04-17 16:26:14,400]:  User 'admin' removed item with name: Test, size: Test, is_metric: False
+[2025-04-18 21:29:52,578]:  User 'admin' logged in
+[2025-04-18 21:30:14,625]:  User 'admin' decremented 'Self Locking Retaining Ring SM' by 10
+[2025-04-18 21:30:57,696]:  User: 'admin' updated item: SML Self Locking Retaining 
+[2025-04-18 21:31:11,103]:  User: 'admin' updated item: SM Self Locking Retaining Ring
