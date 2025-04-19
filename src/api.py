@@ -296,66 +296,6 @@ def add_item(
     connection: sqlite3.Connection,
 ) -> None:
     """
-    Adds a new item to the database
-
-    Args:
-        name (str): name of the item
-        size (str): size of the item
-        is_metric (int): whether the item is metric (1) or not (0)
-        loc_shelf (str): the location string of the item on what shelf
-        loc_rack (str): the location string of the item on what rack
-        loc_box (str): the location string of the item on what box
-        loc_row (str): the location string of the item on what row
-        loc_col (str): the location string of the item on what column
-        loc_depth (str): the location string of the item on what depth
-        count (int): the current number of items in stock
-        threshold (int): the minimum threshold before ordering more
-        cursor (sqlite3.Cursor): SQLite cursor object to execute queries
-        connection (sqlite3.Connection): SQLite connection object to commit changes
-    """
-    print("Adding item")
-    cursor.execute(
-        """
-                   INSERT INTO items
-                   ( name, size, is_metric, loc_shelf, 
-                   loc_rack, loc_box, loc_row, loc_col, loc_depth, count, threshold)
-                   VALUES
-                    (?,?,?,?,?,?,?,?,?,?,?)
-                   """,
-        (
-            name,
-            size,
-            is_metric,
-            loc_shelf,
-            loc_rack,
-            loc_box,
-            loc_row,
-            loc_col,
-            loc_depth,
-            count,
-            threshold,
-        ),
-    )
-
-    connection.commit()
-
-
-def append_item(
-    name: str,
-    size: str,
-    is_metric: int,
-    loc_shelf: str,
-    loc_rack: str,
-    loc_box: str,
-    loc_row: str,
-    loc_col: str,
-    loc_depth: str,
-    count: int,
-    threshold: int,
-    cursor: sqlite3.Cursor,
-    connection: sqlite3.Connection,
-) -> None:
-    """
     Adds a new item to the database or updates an existing one by incrementing the count.
 
     Args:
@@ -372,6 +312,9 @@ def append_item(
         threshold (int): the minimum threshold before ordering more
         cursor (sqlite3.Cursor): SQLite cursor object to execute queries
         connection (sqlite3.Connection): SQLite connection object to commit changes
+
+    Returns:
+        None
     """
     cursor.execute(
         """
@@ -409,6 +352,9 @@ def remove_item(
         item_id (int): item id to delete
         cursor (sqlite3.Cursor): SQLite cursor object to execute queries
         connection (sqlite3.Connection): SQLite connection object to commit changes
+
+    Returns:
+        None
     """
     cursor.execute(
         """
@@ -444,7 +390,12 @@ def update_item(
         name (str): name of the item
         size (str): size of the item
         is_metric (int): whether the item is metric (1) or not (0)
-        locations (str): the location string of the item
+        loc_shelf (str): the location string of the item on what shelf
+        loc_rack (str): the location string of the item on what rack
+        loc_box (str): the location string of the item on what box
+        loc_row (str): the location string of the item on what row
+        loc_col (str): the location string of the item on what column
+        loc_depth (str): the location string of the item on what depth
         threshold (int): the minimum threshold before ordering more
         cursor (sqlite3.Cursor): SQLite cursor object to execute queries
         connection (sqlite3.Connection): SQLite connection object to commit changes
@@ -511,21 +462,21 @@ def backup_data(cursor: sqlite3.Cursor) -> None:
 
 
 def get_backup_files() -> list[str]:
+    """
+    Returns a list of backup files
+
+    Args:
+        None
+
+    Returns:
+        list[str]: list of backup files
+    """
     return glob.glob("../data/*.csv")
 
 
 if __name__ == "__main__":
     connection = sqlite3.connect("../data/data.db")
     cursor = connection.cursor()
-    # cursor.execute(
-    #     """
-    #     INSERT INTO items (name, size, is_metric, location, count, threshold, iscontacted)
-    #     VALUES
-    #     ('test', 'test', 1, '{"shelf": "1", "rack": "1", "box": "1", "height": "1", "width": "1", "depth": "1"}', 1, 1, 0)
-    #     """
-    # )
-    # connection.commit()
-    # connection.close()
     cursor.execute(
         """
         SELECT * FROM items

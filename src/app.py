@@ -3,6 +3,8 @@ This module provides an API for an inventory management system.
 
 Functions:
     get_db: Initializes a connection to the database using a global variable.
+    handle_exceptions: Handles exceptions raised by the API.
+    generate_token: Generates a login token for a user.
     teardown_db: Cleans up the connections and global variable on quit.
     import_csv: Deletes all items from the database and repopulates with values from a CSV file.
     add_from_csv: Adds items from a CSV file to the database.
@@ -12,13 +14,32 @@ Functions:
                 then runs the development server.
 
 Endpoints:
-    /api/add: Adds a new item to the database.
+    /api/addItem: Adds a new item to the database.
     /api/find: Returns a specific item from the database.
     /api/findAll: Returns all items from the database.
     /api/increment: Increments an item's count by `num_added`.
     /api/decrement: Decrements an item's count by `num_removed`.
     /api/remove: Deletes an item from the database.
     /api/fuzzyfind: Returns a list of items that are similar to the search term.
+    /api/updateitem: Updates an item in the database.
+
+    /api/register: Registers a new user.
+    /api/trylogin: Tries to log in a user.
+    /api/isLoggedIn: Checks if a user is logged in.
+    /api/updateUser: Updates a user's password or access level.
+    /api/checkToken: Checks if a token is valid.
+    /api/getUsers: Returns a list of users.
+    /api/deleteUser: Deletes a user.
+
+    /api/backupDatabase: Backs up the database.
+    /api/restoreDatabase: Restores the database from a backup.
+    /api/getFiles: Returns a list of files in the database.
+    /api/uploadFile: Uploads a file to the database.
+    /api/appendFile: Appends a file to the database.
+    /api/downloadFile: Downloads a file from the database.
+    /api/getBackupFiles: Returns a list of backup files.
+
+    /api/get_log: Returns a list of log entries.
 """
 
 import datetime
@@ -42,7 +63,6 @@ from flask_cors import CORS
 from werkzeug.utils import secure_filename
 
 from api import (
-    append_item,
     add_item,
     backup_data,
     build_db,
@@ -174,35 +194,16 @@ def generate_token(username: str, level: int) -> str:
         raise
 
 
-def convert_file(filename):
-    try:
-        print("Converting file...")
-        output_filename = os.path.splitext(filename)[0] + "_converted.csv"
+def import_csv(uri: str) -> None:
+    """
+    Imports a CSV file into the database
 
-        with open(output_filename, "w", newline="") as w:
-            writer = w.write
+    Args:
+        uri (str): the path to the CSV file
 
-            with open(filename, newline="") as csvfile:
-                spamreader = csv.reader(csvfile, delimiter=",", quotechar="|")
-
-                for row in spamreader:
-                    if len(row) < 12:
-                        print("Skipping row, not enough columns:", row)
-                        continue
-                    formatted = (
-                        f"['{row[0]}','{row[1]}', {row[2]},"
-                        f"['{row[3]}', '{row[4]}', '{row[5]}', '{row[6]}', '{row[7]}', '{row[8]}'],"
-                        f"{row[9]},{row[10]}, {row[11]}]\n"
-                    )
-                    writer(formatted)
-
-        return output_filename
-
-    except Exception as e:
-        print("? Error occurred:", e)
-
-
-def import_csv(uri):
+    Returns:
+        None
+    """
     try:
         # Ensure the file exists
         file_path = Path(uri)
@@ -296,7 +297,7 @@ def add_from_csv(file_stream: bytes) -> None:
         for row in data:
             try:
                 if len(row) > 13:
-                    append_item(
+                    add_item(
                         row[0],  # name
                         row[1],  # size
                         row[2] == "1",  # is_metric as bool
@@ -312,7 +313,7 @@ def add_from_csv(file_stream: bytes) -> None:
                         con,
                     )
                 else:
-                    append_item(
+                    add_item(
                         row[1],  # name
                         row[2],  # size
                         row[3] == "1",  # is_metric as bool
@@ -349,26 +350,18 @@ def parse_location_to_string(location: str) -> str:
     Returns:
         str: representing the json location
     """
-    loc = json.dumps(location)
     return json.dumps(location)
 
 
-def parse_location_to_list(location: str) -> str:
+def parse_location_to_list(item: dict) -> list:
     """
-    Parses a location string into json
+    Parses a json string into a location
 
     Args:
-        location (str): a location string
-
+        item (dict): Item data
     Returns:
-        json: representing the same location
+        list: representing the json location
     """
-
-    return json.loads(location)
-
-
-def parse_location_to_list(item):
-
     return [
         str(item.get("loc_shelf", "")).strip(),
         str(item.get("loc_rack", "")).strip(),
@@ -393,7 +386,7 @@ def increment() -> Tuple[Response, int]:
        token (str): the cookie of the user
 
     Returns:
-        json: a message and status code
+        Tuple[Response, int]: a message and status code
     """
     try:
         connection = get_db()
@@ -453,7 +446,7 @@ def decrement() -> Tuple[Response, int]:
        token (str): the cookie of the user
 
     Returns:
-        json: a message and status code
+        Tuple[Response, int]: a message and status code
     """
     try:
         connection = get_db()
@@ -542,7 +535,7 @@ def find_item() -> Tuple[Response, int]:
        size (str): the size of the item
 
     Returns:
-        json: a message and status code
+        Tuple[Response, int]: a message and status code
     """
     try:
         connection = get_db()
@@ -597,11 +590,16 @@ def add() -> Tuple[Response, int]:
        size (str): the size of the item
        num (int): the number of the item
        threshold (int): the threshold of the item
-       locations (str): the location of the item
+       loc_shelf (str): the location of the item on what shelf
+       loc_rack (str): the location of the item on what rack
+       loc_box (str): the location of the item on what box
+       loc_row (str): the location of the item on what row
+       loc_col (str): the location of the item on what column
+       loc_depth (str): the location of the item on what depth
        token (str): the cookie of the user
 
     Returns:
-        json: a message and status code
+        Tuple[Response, int]: a message and status code
     """
     print("Adding item...")
 
@@ -675,7 +673,7 @@ def remove() -> Tuple[Response, int]:
        token (str): the cookie of the user
 
     Returns:
-        json: a message and status code
+        Tuple[Response, int]: a message and status code
     """
     try:
         connection = get_db()
@@ -727,10 +725,9 @@ def fuzzy() -> Tuple[Response, int]:
        name (str): the name of the item
        is_metric (int): whether the item is metric (1) or not (0)
        size (str): the size of the item
-       num (int): the number to increment by
 
     Returns:
-        json: a message, and return code, if no error occures data
+        Tuple[Response, int]: a message and status code
     """
     try:
         connection = get_db()
@@ -771,7 +768,7 @@ def list_all() -> Tuple[Response, int]:
         None
 
     Returns:
-        json: a message, and return code, if no error occures data
+        Tuple[Response, int]: a message with possible data and status code
     """
     try:
         connection = get_db()
@@ -806,13 +803,22 @@ def update() -> Tuple[Response, int]:
        name (str): the name of the item
        is_metric (int): whether the item is metric (1) or not (0)
        size (str): the size of the item
-       locations (str): the location of the item
+       new_name (str): the new name of the item
+       new_size (str): the new size of the item
+       new_is_metric (int): whether the item is metric (1) or not (0)
+       loc_shelf (str): the location of the item on what shelf
+       loc_rack (str): the location of the item on what rack
+       loc_box (str): the location of the item on what box in the rack
+       loc_row (str): the location of the item on what row in the box
+       loc_col (str): the location of the item on what column in the row
+       loc_depth (str): the location of the item on what depth in the box
        num (int): the number to increment by
        threshold (int): the threshold of the item
+       id (int): the id of the item
        token (str): the cookie of the user
 
     Returns:
-        json: a message and status code
+        Tuple[Response, int]: a message and status code
     """
     try:
         print("Updating item...")
@@ -890,7 +896,7 @@ def try_login() -> Tuple[Response, int]:
         password (str): the hashed password of the user
 
     Returns:
-        bool: whether the login was successful
+        Tuple[Response, int]: a message with possible auth token and status code
     """
     try:
         data = request.json
@@ -932,7 +938,7 @@ def is_logged_in() -> Tuple[Response, int]:
         token (str): the token of the user
 
     Returns:
-        bool: whether the user is logged in
+        Tuple[Response, int]: a message and status code
     """
     try:
         connection = get_db()
@@ -954,6 +960,18 @@ def is_logged_in() -> Tuple[Response, int]:
 
 @app.route("/register", methods=["POST"])
 def register() -> Tuple[Response, int]:
+    """
+    Registers a new user
+
+    Args:
+        username (str): the username of the user
+        password (str): the hashed password of the user
+        level (int): the level of the user
+        token (str): the token of the current logged in user
+
+    Returns:
+        Tuple[Response, int]: a message with possible auth token and status code
+    """
     try:
         data = request.json
         if not data or any(
@@ -964,6 +982,15 @@ def register() -> Tuple[Response, int]:
         username = data["username"]
         password = data["password"]
         level = int(data["level"])
+        token = data["token"]
+        auth_level = jwt.decode(token, options={"verify_signature": False}).get("level")
+        test_username = jwt.decode(token, options={"verify_signature": False}).get(
+            "username"
+        )
+        if not check_token(auth_token, test_username, cursor):
+            raise ValueError("Invalid token")
+        if not auth_level == 0:
+            raise ValueError("Unauthorized")
         connection = get_db()
         cursor = connection.cursor()
         salt = os.urandom(32)
@@ -996,7 +1023,7 @@ def change_pass() -> Tuple[Response, int]:
         token (str): the token of the user
 
     Returns:
-        json: a message and status code
+        Tuple[Response, int]: a message and status code
     """
     try:
         connection = get_db()
@@ -1037,7 +1064,7 @@ def backup_database() -> Tuple[Response, int]:
         None
 
     Returns:
-        json: a message and status code
+        Tuple[Response, int]: a message and status code
     """
     try:
         print("Backing up database...")
@@ -1054,10 +1081,10 @@ def restore_database() -> Tuple[Response, int]:
     Handles restoring the database
 
     Args:
-        None
+        file (str): the file to restore
 
     Returns:
-        json: a message and status code
+        Tuple[Response, int]: a message and status code
     """
     try:
         data = request.args
@@ -1081,7 +1108,7 @@ def get_files() -> Tuple[Response, int]:
         None
 
     Returns:
-        json: a message and status code
+        Tuple[Response, int]: a message with possible list of files and status code
     """
     try:
         return jsonify({"status": "success", "files": get_backup_files()}), 200
@@ -1095,10 +1122,10 @@ def upload_file() -> Tuple[Response, int]:
     Handles uploading a file
 
     Args:
-        None
+        file (bytes): the file to upload
 
     Returns:
-        json: a message and status code
+        Tuple[Response, int]: a message and status code
     """
     try:
         data = request.files
@@ -1131,10 +1158,10 @@ def append_file() -> Tuple[Response, int]:
     Handles uploading a file
 
     Args:
-        None
+        file (bytes): the file to upload
 
     Returns:
-        json: a message and status code
+        Tuple[Response, int]: a message and status code
     """
     try:
         print("Appending file...")
@@ -1159,10 +1186,10 @@ def download_file() -> Tuple[Response, int]:
     Handles downloading a file
 
     Args:
-        None
+        fileName (str): the name of the file to download
 
     Returns:
-        json: a message and status code
+        Tuple[Response, int]: a message and status code
     """
     try:
         # Get the query parameters from the request
@@ -1205,7 +1232,7 @@ def get_log() -> Tuple[Response, int]:
         None
 
     Returns:
-        json: a message and status code
+        Tuple[Response, int]: a message with possible log contents and status code
     """
     try:
         log_contents = ""
@@ -1225,10 +1252,10 @@ def check_auth_token() -> Tuple[Response, int]:
     Handles checking the auth token
 
     Args:
-        None
+        token (str): the token to check
 
     Returns:
-        json: a message and status code
+        Tuple[Response, int]: a message with possible level and status code
     """
     try:
         data = request.json
@@ -1252,7 +1279,7 @@ def fetch_users() -> Tuple[Response, int]:
         None
 
     Returns:
-        json: a message and status code
+        Tuple[Response, int]: a message with possible users and status code
     """
     try:
         connection = get_db()
@@ -1273,7 +1300,7 @@ def delete_user_route() -> Tuple[Response, int]:
         token (str): the cookie of the user
 
     Returns:
-        json: a message and status code
+        Tuple[Response, int]: a message and status code
     """
     try:
         data = request.json

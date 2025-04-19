@@ -145,21 +145,21 @@
               />
             </td>
           </tr>
-          <tr *ngIf="!isAdding" class="hover:bg-gray-100 hover:dark:bg-gray-700">
-            <td>
-              <button (click)="confirmPopup('updateItem', true)" class="close-button">
+          <tr *ngIf="!isAdding" >
+            <td class="items-center justify-center">
+              <button (click)="confirmPopup('updateItem', true)" class="close-button w-full h-full border border-gray-50 dark:bg-gray-700 rounded-md dark:hover:bg-gray-600 hover:bg-gray-300">
                 Save
               </button>
             </td>
             <td>
-              <button (click)="confirmPopup('deleteItem', true)" class="close-button">
+              <button (click)="confirmPopup('deleteItem', true)" class="close-button w-20 h-full border border-gray-50 dark:bg-gray-700 rounded-md dark:hover:bg-gray-600 hover:bg-gray-300">
                 Delete
               </button>
             </td>
           </tr>
-          <tr *ngIf="isAdding" class="hover:bg-gray-100">
+          <tr *ngIf="isAdding">
             <td>
-              <button (click)="confirmPopup('addItem', false)" class="close-button">
+              <button (click)="confirmPopup('addItem', false)" class="close-button w-full h-full border border-gray-50 dark:bg-gray-700 rounded-md dark:hover:bg-gray-600 hover:bg-gray-300">
                 Add Item
               </button>
             </td>
@@ -323,9 +323,9 @@
               />
             </td>
           </tr>
-          <tr class="hover:bg-gray-100 hover:dark:bg-gray-700">
+          <tr >
             <td>
-              <button (click)="editItem($event)" class="close-button">
+              <button (click)="editItem($event)" class="close-button w-full h-full border border-gray-50 dark:bg-gray-700 rounded-md hover:dark:bg-gray-600 hover:bg-gray-300">
                 Edit
               </button>
             </td>
@@ -335,7 +335,7 @@
 
       <button
         (click)="closePopup($event)"
-        class="close-button border-solid border-gray-50 hover:dark:bg-gray-700"
+        class="close-button w-full h-full border border-gray-50 dark:bg-gray-700 rounded-md dark:hover:bg-gray-600 hover:bg-gray-300"
       >
         Close
       </button>

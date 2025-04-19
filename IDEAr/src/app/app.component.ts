@@ -30,6 +30,7 @@ export class AppComponent implements OnInit, OnDestroy {
   authLevel = 2;
   signal: any;
   private sub!: Subscription;
+  isHamburger = false;
 
   constructor(
     public authService: AuthService,
