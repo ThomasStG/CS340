@@ -121,6 +121,12 @@ export class AdminPopupComponent {
   }
 
   confirmPopup(value: string, warning: boolean) {
+
+    if(this.newItem['name'] === '' || this.newItem['size'] === '' || this.newItem['is_metric'] === '' ){
+      value = 'missingData';
+      warning = true;
+    }
+
     const ConfirmationPopUp = this.dialog.open(ConfirmationPopupComponent);
     ConfirmationPopUp.afterOpened().subscribe(() => {
       ConfirmationPopUp.componentInstance.updatePopup(value, warning);
@@ -134,6 +140,7 @@ export class AdminPopupComponent {
         this.deleteItem();
       }
       if (result === true && value === 'addItem') {
+        console.log('test');
         this.addItem();
       }
     });

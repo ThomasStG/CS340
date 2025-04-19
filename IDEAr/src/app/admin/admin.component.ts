@@ -75,6 +75,7 @@ export class AdminComponent {
   ngOnDestroy() {
     this.sub?.unsubscribe();
   }
+
   singleSearch(data: any) {
     this.getItemsService.getItem(data.name, data.metric, data.size).subscribe({
       next: (response: any) => {

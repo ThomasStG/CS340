@@ -118,7 +118,20 @@
 [2025-04-17 16:25:37,533]:  User: 'admin' updated item: Test Test1
 [2025-04-17 16:26:02,555]:  User 'admin' removed item with name: Test1, size: Test, is_metric: False
 [2025-04-17 16:26:14,400]:  User 'admin' removed item with name: Test, size: Test, is_metric: False
+<<<<<<< HEAD
 [2025-04-18 21:29:52,578]:  User 'admin' logged in
 [2025-04-18 21:30:14,625]:  User 'admin' decremented 'Self Locking Retaining Ring SM' by 10
 [2025-04-18 21:30:57,696]:  User: 'admin' updated item: SML Self Locking Retaining 
 [2025-04-18 21:31:11,103]:  User: 'admin' updated item: SM Self Locking Retaining Ring
+=======
+[2025-04-18 11:15:19,055]:  User: 'John' updated item: SM Self Locking Retaining Ring
+[2025-04-18 12:07:04,431]:  User 'admin' logged in
+>>>>>>> c0ecbf9bd7c600492f96003fdd107293feeed1b0
+[2025-04-19 15:16:50,994]:  User 'admin' logged in
+[2025-04-19 15:56:38,998]:  User 'admin' logged in
+[2025-04-19 16:17:07,366]:  User 'admin' added item with name: Test Item, size: 1234, is_metric: 1, num: 0, threshold: 0, loc_shelf: , loc_rack: , loc_box: , loc_row: , loc_col: , loc_depth: 
+[2025-04-19 16:17:57,006]:  User 'admin' added item with name: Test, size: Test, is_metric: 1, num: 0, threshold: 0, loc_shelf: , loc_rack: , loc_box: , loc_row: , loc_col: , loc_depth: 
+[2025-04-19 16:18:29,710]:  User 'admin' added item with name: Test, size: Test, is_metric: 1, num: 0, threshold: 0, loc_shelf: , loc_rack: , loc_box: , loc_row: , loc_col: , loc_depth: 
+[2025-04-19 16:19:09,493]:  User 'admin' added item with name: Phil flat head, size: 1/2, is_metric: 1, num: 0, threshold: 0, loc_shelf: , loc_rack: , loc_box: , loc_row: , loc_col: , loc_depth: 
+[2025-04-19 16:19:55,231]:  User 'admin' added item with name: Test, size: Test, is_metric: 1, num: 0, threshold: 0, loc_shelf: 1, loc_rack: 1, loc_box: 1, loc_row: 1, loc_col: 1, loc_depth: 1
+[2025-04-19 16:20:32,017]:  User 'admin' added item with name: Test, size: Test, is_metric: 1, num: 0, threshold: 0, loc_shelf: , loc_rack: , loc_box: , loc_row: , loc_col: , loc_depth: 

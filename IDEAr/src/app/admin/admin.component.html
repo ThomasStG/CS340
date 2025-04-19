@@ -3,6 +3,10 @@
     <app-item-search
       (formSubmit)="handleSearch($event)"
     ></app-item-search>
+    <button (click)="loadItems()"
+      class="text-black dark:text-white hover:bg-gray-300 dark:hover:bg-gray-700 dark:bg-gray-600 border border-gray-500 rounded-md pl-4 pr-4 mr-4 items-center">
+      Cancel Search
+    </button>
     <button (click)="addItem($event)"
       class="text-black dark:text-white hover:bg-gray-300 dark:hover:bg-gray-700 dark:bg-gray-600 border border-gray-500 rounded-md pl-4 pr-4 items-center">
       Add Item

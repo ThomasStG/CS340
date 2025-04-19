@@ -75,15 +75,7 @@ export class HomeComponent {
   }
 
   ngOnInit(): void {
-    this.getItemsService.getAllItems().subscribe({
-      next: (response) => {
-        console.log(response.data);
-        this.items = response.data; // Extract 'data' from response
-      },
-      error: (err) => {
-        console.error('Error fetching item:', err);
-      },
-    });
+    this.loadItems();
   }
   onItemClick(item: any) {
     this.selectedItem = item;
@@ -94,5 +86,17 @@ export class HomeComponent {
   // Close popup
   closePopup() {
     this.isPopupVisible = false;
+  }
+
+  loadItems(): void {
+    this.getItemsService.getAllItems().subscribe({
+      next: (response: any) => {
+        console.log(response);
+        this.items = response.data;
+      },
+      error: (err: any) => {
+        console.error('Error fetching items:', err);
+      },
+    });
   }
 }

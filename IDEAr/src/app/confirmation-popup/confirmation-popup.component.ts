@@ -77,6 +77,9 @@ export class ConfirmationPopupComponent {
     if(value === 'loadData'){
       this.message = 'You are about to load a .csv to the database and overwrite all data currently in the database.';
     }
+    if(value === 'missingData'){
+      this.message = 'You are missing data for this action please go back and fill in the name, size, and metric to continue.';
+    }
   }
 
   loadDataPopup(){
