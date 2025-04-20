@@ -111,7 +111,7 @@ def find_by_name(
     cursor.execute(
         """
         SELECT id FROM items 
-        WHERE name = ? AND is_metric = ? AND size = ? 
+        WHERE LOWER(name) = LOWER(?) AND is_metric = ? AND LOWER(size) = LOWER(?) 
         """,
         (name, is_metric, size),
     )
@@ -123,7 +123,7 @@ def find_by_name(
 
 
 def fzf(
-    name: str, is_metric: int, size: str, cursor: sqlite3.Cursor, top_n: int = 5
+    name: str, is_metric: int, size: str, cursor: sqlite3.Cursor, top_n: int = 10
 ) -> list[dict]:
     """
     finds the 5 most similar items to the input
@@ -317,28 +317,41 @@ def add_item(
         None
     """
     cursor.execute(
-        """
-        INSERT INTO items 
-            (name, size, is_metric, loc_shelf, loc_rack, loc_box, loc_row, loc_col, loc_depth, count, threshold)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-        ON CONFLICT(name, is_metric, size) 
-        DO UPDATE SET 
-            count = count + excluded.count
-        """,
-        (
-            name,
-            size,
-            is_metric,
-            loc_shelf,
-            loc_rack,
-            loc_box,
-            loc_row,
-            loc_col,
-            loc_depth,
-            count,
-            threshold,
-        ),
+        """SELECT count FROM items WHERE name = ? and is_metric = ? and size = ?""",
+        (name, is_metric, size),
     )
+    item = cursor.fetchone()
+    if item is not None:
+        new_count = item[0] + count
+        cursor.execute(
+            """UPDATE items set count = ? WHERE name = ? and is_metric = ? and size = ?""",
+            (new_count, name, is_metric, size),
+        )
+    else:
+
+        cursor.execute(
+            """
+                       INSERT INTO items
+                       ( name, size, is_metric, loc_shelf, 
+                       loc_rack, loc_box, loc_row, loc_col, loc_depth, count, threshold)
+                       VALUES
+                        (?,?,?,?,?,?,?,?,?,?,?)
+                       """,
+            (
+                name,
+                size,
+                is_metric,
+                loc_shelf,
+                loc_rack,
+                loc_box,
+                loc_row,
+                loc_col,
+                loc_depth,
+                count,
+                threshold,
+            ),
+        )
+
     connection.commit()
 
 

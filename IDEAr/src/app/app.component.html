@@ -7,7 +7,7 @@
     class="bg-gray-100 pt-4 text-black dark:bg-gray-900 dark:text-white flex flex-row justify-center items-center z-[1000]"
   >
     <!-- Navigation -->
-    <nav>
+    <nav class="z-[100]">
       <div class="hidden md:flex z-[100]  gap-3 align-center justify-center">
         <div #homeDropdownRef class="relative inline-block">
           <button
@@ -102,8 +102,6 @@
         >
           Logout
         </button>
-        <!-- <button (click)="setMode(false)">Light Mode☀️</button> -->
-        <!-- <button (click)="setMode(true)">Dark Mode🌑</button> -->
         <div class="flex p-2 rounded-sm hover:bg-gray-100 dark:hover:bg-gray-600">
           <label class="inline-flex items-center w-full cursor-pointer">
             <input
@@ -129,28 +127,46 @@
           ham
           </button>
           </div>
-          <div *ngIf="isHamburger">
-            <ul class="bg-black flex flex-col">
-            <li #homeDropdownRef class="flex flex-row">
-              <button (click)="toggleDropdown('home')">
-                Home
-              </button>
-              <div class="flex-col relative inline-block">
-                <a
-                  routerLink="/home"
-                  class="block px-4 py-2 hover:bg-gray-100 text-black dark:text-white bg-slate-500 dark:bg-slate-600"
-                  >Home</a
-                >
-                <a
-                  routerLink="/electrical-home"
-                  class="block px-4 py-2 hover:bg-gray-100 text-black dark:text-white bg-slate-500 dark:bg-slate-600"
-                  >Electrical Home</a
-                >
-              </div>
-            </li>
-            </ul>
+        <div *ngIf="isHamburger" class="flex flex-col bg-black text-white">
+          <!-- Home Dropdown in Mobile -->
+          <div class="relative flex flex-row">
+            <button (click)="toggleDropdown('home')" class="px-4 py-2 bg-blue-900 text-white w-full text-left">
+              Home
+            </button>
+            <div *ngIf="showHomeDropdown" class="flex flex-col bg-white"
+            (click)="$event.stopPropagation()"
+            >
+              <a routerLink="/" class="px-4 py-2 hover:bg-gray-100 dark:text-white">IDEA Lab Home</a>
+              <a routerLink="/electrical-home" class="px-4 py-2 hover:bg-gray-100 dark:text-white">Electrical Home</a>
+            </div>
           </div>
-          test
+
+          <!-- Admin Dropdown in Mobile -->
+          <div *ngIf="isAuthenticated" class="relative">
+            <button (click)="toggleDropdown('admin')" class="px-4 py-2 bg-blue-900 text-white w-full text-left">
+              Admin
+            </button>
+            <div *ngIf="showAdminDropdown" class="flex flex-col bg-white"
+            (click)="$event.stopPropagation()"
+            >
+              <a routerLink="/admin" class="px-4 py-2 hover:bg-gray-100 dark:text-white">IDEA Lab Admin</a>
+            </div>
+          </div>
+
+          <!-- Management Dropdown in Mobile -->
+          <div *ngIf="isAuthenticated" class="relative" #managementDropdownRef>
+            <button (click)="toggleDropdown('management')" class="px-4 py-2 bg-blue-900 text-white w-full text-left">
+              Management
+            </button>
+            <div *ngIf="showManagementDropdown" class="flex flex-col bg-white"
+            (click)="$event.stopPropagation()"
+            >
+              <a routerLink="/user-management" class="px-4 py-2 hover:bg-gray-100 dark:text-white">User Management</a>
+              <a routerLink="/logs" class="px-4 py-2 hover:bg-gray-100 dark:text-white">User Logs</a>
+              <a routerLink="/data-download" class="px-4 py-2 hover:bg-gray-100 dark:text-white">Data Download</a>
+            </div>
+          </div>
+        </div>
         </div>
     </nav>
   </div>

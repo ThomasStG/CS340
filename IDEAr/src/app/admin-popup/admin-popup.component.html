@@ -1,8 +1,10 @@
-<div class="overlay" [class.dark]="darkMode | async" (click)="closePopup($event)">
-  <div class="popup text-black dark:text-white bg-white dark:bg-gray-900" (click)="stopClickPropagation($event)">
-    <div class="popup-content">
-      <div *ngIf="isEditing" class="flex flex-col editing-popup">
-        <h1 class="popup-header">{{ item.name }}</h1>
+<div class="fixed top-0 left-0 w-full h-full bg-black/50 z-[9998]" [class.dark]="darkMode | async" (click)="closePopup($event)">
+  <div class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-5 shadow-lg z-[9999] w-[70%] min-w-[400px] text-black dark:text-white bg-white dark:bg-gray-900" (click)="stopClickPropagation($event)">
+    <div class="p-5 flex flex-col">
+      <div *ngIf="isEditing" class="flex flex-col">
+        <h1 class="font-bold text-[30px] text-center w-full">
+          {{ item.name }}
+        </h1>
         <table>
           <tr class="hover:bg-gray-100 hover:dark:bg-gray-700">
             <td>
@@ -10,7 +12,7 @@
             </td>
             <td>
               <input
-                class="editing-popup-info dark:bg-gray-600"
+                class="border border-gray-400 rounded-md text-[15px] w-full dark:bg-gray-600"
                 type="text"
                 [(ngModel)]="newItem.name"
               />
@@ -22,7 +24,7 @@
             </td>
             <td>
               <input
-                class="editing-popup-info dark:bg-gray-600"
+                class="border border-gray-400 rounded-md text-[15px] w-full dark:bg-gray-600"
                 type="text"
                 [(ngModel)]="newItem.size"
               />
@@ -34,7 +36,7 @@
             </td>
             <td>
               <input
-                class="editing-popup-info dark:bg-gray-600"
+                class="border border-gray-400 rounded-md text-[15px] w-full dark:bg-gray-600"
                 type="text"
                 [(ngModel)]="newItem.is_metric"
               />
@@ -52,7 +54,7 @@
                   </td>
                   <td>
                     <input
-                      class="editing-popup-info dark:bg-gray-600"
+                      class="border border-gray-400 rounded-md text-[15px] w-full dark:bg-gray-600"
                       type="text"
                       [(ngModel)]="newItem.loc_shelf"
                     />
@@ -64,7 +66,7 @@
                   </td>
                   <td>
                     <input
-                      class="editing-popup-info dark:bg-gray-600"
+                      class="border border-gray-400 rounded-md text-[15px] w-full dark:bg-gray-600"
                       type="text"
                       [(ngModel)]="newItem.loc_rack"
                     />
@@ -76,7 +78,7 @@
                   </td>
                   <td>
                     <input
-                      class="editing-popup-info dark:bg-gray-600"
+                      class="border border-gray-400 rounded-md text-[15px] w-full dark:bg-gray-600"
                       type="text"
                       [(ngModel)]="newItem.loc_box"
                     />
@@ -88,7 +90,7 @@
                   </td>
                   <td>
                     <input
-                      class="editing-popup-info dark:bg-gray-600"
+                      class="border border-gray-400 rounded-md text-[15px] w-full dark:bg-gray-600"
                       type="text"
                       [(ngModel)]="newItem.loc_row"
                     />
@@ -100,7 +102,7 @@
                   </td>
                   <td>
                     <input
-                      class="editing-popup-info dark:bg-gray-600"
+                      class="border border-gray-400 rounded-md text-[15px] w-full dark:bg-gray-600"
                       type="text"
                       [(ngModel)]="newItem.loc_col"
                     />
@@ -112,7 +114,7 @@
                   </td>
                   <td>
                     <input
-                      class="editing-popup-info dark:bg-gray-600"
+                      class="border border-gray-400 rounded-md text-[15px] w-full dark:bg-gray-600"
                       type="text"
                       [(ngModel)]="newItem.loc_depth"
                     />
@@ -127,7 +129,7 @@
             </td>
             <td>
               <input
-                class="editing-popup-info dark:bg-gray-600"
+                class="border border-gray-400 rounded-md text-[15px] w-full dark:bg-gray-600"
                 type="text"
                 [(ngModel)]="newItem.count"
               />
@@ -139,7 +141,7 @@
             </td>
             <td>
               <input
-                class="editing-popup-info dark:bg-gray-600"
+                class="border border-gray-400 rounded-md text-[15px] w-full dark:bg-gray-600"
                 type="text"
                 [(ngModel)]="newItem.threshold"
               />
@@ -147,19 +149,19 @@
           </tr>
           <tr *ngIf="!isAdding" >
             <td class="items-center justify-center">
-              <button (click)="confirmPopup('updateItem', true)" class="close-button w-full h-full border border-gray-50 dark:bg-gray-700 rounded-md dark:hover:bg-gray-600 hover:bg-gray-300">
+              <button (click)="confirmPopup('updateItem', true)" class="w-full h-full border border-gray-50 items-center dark:bg-gray-700 rounded-md dark:hover:bg-gray-600 hover:bg-gray-300">
                 Save
               </button>
             </td>
             <td>
-              <button (click)="confirmPopup('deleteItem', true)" class="close-button w-20 h-full border border-gray-50 dark:bg-gray-700 rounded-md dark:hover:bg-gray-600 hover:bg-gray-300">
+              <button (click)="confirmPopup('deleteItem', true)" class="w-20 h-full border border-gray-50 items-center dark:bg-gray-700 rounded-md dark:hover:bg-gray-600 hover:bg-gray-300">
                 Delete
               </button>
             </td>
           </tr>
           <tr *ngIf="isAdding">
             <td>
-              <button (click)="confirmPopup('addItem', false)" class="close-button w-full h-full border border-gray-50 dark:bg-gray-700 rounded-md dark:hover:bg-gray-600 hover:bg-gray-300">
+              <button (click)="confirmPopup('addItem', false)" class="w-full h-full border border-gray-50 items-center dark:bg-gray-700 rounded-md dark:hover:bg-gray-600 hover:bg-gray-300">
                 Add Item
               </button>
             </td>
@@ -168,8 +170,8 @@
       </div>
 
 
-      <div *ngIf="!isEditing" class="flex flex-col editing-popup">
-        <h1 class="popup-header">{{ item.name }}</h1>
+      <div *ngIf="!isEditing" class="flex flex-col">
+        <h1 class="font-bold text-[30px] text-center w-full">{{ item.name }}</h1>
         <table>
           <tr class="hover:bg-gray-100 hover:dark:bg-gray-700">
             <td>
@@ -177,7 +179,7 @@
             </td>
             <td>
               <input
-                class="popup-info dark:bg-gray-600"
+                class="font-bold text-[15px]  w-full dark:bg-gray-600"
                 type="text"
                 [(ngModel)]="item.name"
                 readonly
@@ -190,7 +192,7 @@
             </td>
             <td>
               <input
-                class="popup-info dark:bg-gray-600"
+                class="font-bold text-[15px]  w-full dark:bg-gray-600"
                 type="text"
                 [(ngModel)]="item.size"
                 readonly
@@ -203,7 +205,7 @@
             </td>
             <td>
               <input
-                class="popup-info dark:bg-gray-600"
+                class="font-bold text-[15px]  w-full dark:bg-gray-600"
                 type="text"
                 [(ngModel)]="item.is_metric"
                 readonly
@@ -222,7 +224,7 @@
                   </td>
                   <td>
                     <input
-                      class="popup-info dark:bg-gray-600"
+                      class="border rounded-sm w-full dark:bg-gray-600"
                       type="text"
                       [(ngModel)]="item.loc_shelf"
                       readonly
@@ -235,7 +237,7 @@
                   </td>
                   <td>
                     <input
-                      class="popup-info dark:bg-gray-600"
+                      class="border rounded-sm w-full dark:bg-gray-600"
                       type="text"
                       [(ngModel)]="item.loc_rack"
                       readonly
@@ -248,7 +250,7 @@
                   </td>
                   <td>
                     <input
-                      class="popup-info dark:bg-gray-600"
+                      class="border rounded-sm w-full dark:bg-gray-600"
                       type="text"
                       [(ngModel)]="item.loc_box"
                       readonly
@@ -261,7 +263,7 @@
                   </td>
                   <td>
                     <input
-                      class="popup-info dark:bg-gray-600"
+                      class="border rounded-sm w-full dark:bg-gray-600"
                       type="text"
                       [(ngModel)]="item.loc_row"
                       readonly
@@ -274,7 +276,7 @@
                   </td>
                   <td>
                     <input
-                      class="popup-info dark:bg-gray-600"
+                      class="border rounded-sm w-full dark:bg-gray-600"
                       type="text"
                       [(ngModel)]="item.loc_col"
                       readonly
@@ -287,7 +289,7 @@
                   </td>
                   <td>
                     <input
-                      class="popup-info dark:bg-gray-600"
+                      class="border rounded-sm w-full dark:bg-gray-600"
                       type="text"
                       [(ngModel)]="item.loc_depth"
                       readonly
@@ -303,7 +305,7 @@
             </td>
             <td>
               <input
-                class="popup-info dark:bg-gray-600"
+                class="border rounded-sm w-full dark:bg-gray-600"
                 type="text"
                 [(ngModel)]="item.count"
                 readonly
@@ -316,7 +318,7 @@
             </td>
             <td>
               <input
-                class="popup-info dark:bg-gray-600"
+                class="border rounded-sm w-full dark:bg-gray-600"
                 type="text"
                 [(ngModel)]="item.threshold"
                 readonly
@@ -325,7 +327,7 @@
           </tr>
           <tr >
             <td>
-              <button (click)="editItem($event)" class="close-button w-full h-full border border-gray-50 dark:bg-gray-700 rounded-md hover:dark:bg-gray-600 hover:bg-gray-300">
+              <button (click)="editItem($event)" class="items-center w-full h-full border border-gray-50 dark:bg-gray-700 rounded-md hover:dark:bg-gray-600 hover:bg-gray-300">
                 Edit
               </button>
             </td>
@@ -335,11 +337,10 @@
 
       <button
         (click)="closePopup($event)"
-        class="close-button w-full h-full border border-gray-50 dark:bg-gray-700 rounded-md dark:hover:bg-gray-600 hover:bg-gray-300"
+        class="w-full h-full border border-gray-50 items-center dark:bg-gray-700 rounded-md dark:hover:bg-gray-600 hover:bg-gray-300"
       >
         Close
       </button>
-      <!-- <button (click)="updateItem($event)" class="close-button">Save</button> -->
     </div>
   </div>
 </div>

@@ -120,3 +120,5 @@
 [2025-04-17 16:26:14,400]:  User 'admin' removed item with name: Test, size: Test, is_metric: False
 [2025-04-18 11:15:19,055]:  User: 'John' updated item: SM Self Locking Retaining Ring
 [2025-04-18 12:07:04,431]:  User 'admin' logged in
+[2025-04-20 09:11:48,208]:  User 'admin' added item with name: test, size: t, is_metric: 1, num: 0, threshold: 0, loc_shelf: , loc_rack: , loc_box: , loc_row: , loc_col: , loc_depth: 
+[2025-04-20 09:12:00,163]:  User 'admin' removed item with name: test, size: t, is_metric: False
