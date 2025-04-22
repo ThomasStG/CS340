@@ -44,7 +44,7 @@ def build_db() -> None:
     """
     Ensures the table exists in the database
     """
-    with sqlite3.connect("data/data.db") as connection:
+    with sqlite3.connect("../data/data.db") as connection:
         cursor = connection.cursor()
         # Create a table
         cursor.execute(

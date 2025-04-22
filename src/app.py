@@ -107,7 +107,7 @@ def get_db() -> sqlite3.Connection:
         g.db (sqlite3.Connection): the connection.
     """
     if "db" not in g:
-        g.db = sqlite3.connect("data/data.db")
+        g.db = sqlite3.connect("..data/data.db")
         g.db.row_factory = sqlite3.Row  # Allows dictionary-like row access
     return g.db
 
