@@ -1,7 +1,13 @@
-<div class="p-0 m-0 w-full h-full left-0 dark:bg-gray-900">
+<div class="p-0 m-0 w-full h-full left-0  dark:bg-gray-900">
+  <div class="flex justify-center items-baseline">
     <app-item-search
       (formSubmit)="handleSearch($event)"
-     ></app-item-search>
+    ></app-item-search>
+    <button (click)="loadItems()"
+      class="text-black dark:text-white hover:bg-gray-300 dark:hover:bg-gray-700 dark:bg-gray-600 border border-gray-500 rounded-md pl-4 pr-4 mr-4 items-center">
+      Cancel Search
+    </button>
+  </div>
 
   <div class="overflow-y-scroll h-[calc(100vh-8rem)]">
     <table>
