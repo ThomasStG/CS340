@@ -107,7 +107,7 @@ def get_db() -> sqlite3.Connection:
         g.db (sqlite3.Connection): the connection.
     """
     if "db" not in g:
-        g.db = sqlite3.connect("../data/data.db")
+        g.db = sqlite3.connect("data/data.db")
         g.db.row_factory = sqlite3.Row  # Allows dictionary-like row access
     return g.db
 
@@ -396,6 +396,7 @@ def increment() -> Tuple[Response, int]:
             key in data for key in ["name", "is_metric", "size", "num", "token"]
         ):
             raise KeyError("Missing required parameters")
+
         token = data["token"]
         username = jwt.decode(token, options={"verify_signature": False}).get(
             "username"
@@ -406,7 +407,7 @@ def increment() -> Tuple[Response, int]:
 
         logger = logging.getLogger("app")
         logger.info(
-            "User '{username}' incremented '{data['name']} {data['size']}' by {data['num']}"
+            f"User '{username}' incremented '{data['name']} {data['size']}' by {data['num']}"
         )
 
         # find item
@@ -922,8 +923,6 @@ def try_login() -> Tuple[Response, int]:
         token = login(username, hashed_password, cursor, connection)
         if token == "":
             raise Exception("Login failed")
-        logger = logging.getLogger("app")
-        logger.info(f"User '{username}' logged in")
         return jsonify({"status": "success", "token": token}), 200
     except Exception as e:
         return handle_exceptions(e)
@@ -1237,9 +1236,9 @@ def get_log() -> Tuple[Response, int]:
     try:
         log_contents = ""
         for file in os.listdir("../logs"):
-            if file.endswith(".log"):
-                with open(f"../logs/{file}", "r", encoding="utf-8") as f:
-                    log_contents += f.read()
+            with open(f"../logs/{file}", "r", encoding="utf-8") as f:
+                print(f"Reading log file: {file}")
+                log_contents += f.read()
 
         return jsonify({"status": "success", "log": log_contents}), 200
     except Exception as e:
@@ -1345,8 +1344,8 @@ def run_server() -> None:
         handler.setFormatter(formatter)
         handler.setLevel(logging.INFO)
         logger.addHandler(handler)
-    app.run(debug=True, port=3000)  # Runs on http://localhost:3000
+    app.run(host="0.0.0.0", port=3000)  # Runs on http://localhost:3000
 
 
 if __name__ == "__main__":
-    pass
+    run_server()
