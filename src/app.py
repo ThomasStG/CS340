@@ -107,7 +107,7 @@ def get_db() -> sqlite3.Connection:
         g.db (sqlite3.Connection): the connection.
     """
     if "db" not in g:
-        g.db = sqlite3.connect("../data/data.db")
+        g.db = sqlite3.connect("data/data.db")
         g.db.row_factory = sqlite3.Row  # Allows dictionary-like row access
     return g.db
 
@@ -1345,8 +1345,9 @@ def run_server() -> None:
         handler.setFormatter(formatter)
         handler.setLevel(logging.INFO)
         logger.addHandler(handler)
-    app.run(debug=True, port=3000)  # Runs on http://localhost:3000
 
 
 if __name__ == "__main__":
     pass
+
+run_server()
