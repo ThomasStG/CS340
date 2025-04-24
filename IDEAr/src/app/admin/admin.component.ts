@@ -22,11 +22,12 @@ export class AdminComponent {
     private dialog: MatDialog,
     private updateItemService: UpdateItemService,
   ) {}
-  items: ItemData[] = [];
-  isPopupVisible = false;
-  signal: any;
-  private sub!: Subscription;
+  items: ItemData[] = []; // the list of items
+  isPopupVisible = false; // flag to determine if the popup is visible
+  signal: any; // variable to hold the signal sent by updateItemService
+  private sub!: Subscription; // variable to hold the subscription
   selectedItem: ItemData = {
+    // variable to hold the selected item
     id: 0,
     name: '',
     size: '',
@@ -40,24 +41,43 @@ export class AdminComponent {
     count: 0,
     threshold: 0,
   };
-  toChange = 0;
+  toChange = 0; // variable to hold the number of items to add or remove
   ngOnInit(): void {
+    /*
+     * Runs on component initialization. Checks if the user is authenticated, if not, navigates to the authentication page,
+     * otherwise load the item list and subscribe to a signal to refresh items on update.
+     *
+     * Args:
+     *   None
+     *
+     * Returns:
+     *   None
+     */
     this.authService.isAuthenticated().subscribe((isAuth: boolean) => {
       if (!isAuth) {
         this.router.navigate(['/authentication']);
         return;
       }
 
-      this.loadItems(); // Separate method to keep it clean
+      this.loadItems();
 
       this.sub = this.updateItemService.signal$.subscribe((data: any) => {
         this.signal = data;
-        this.loadItems(); // Reuse item-fetching logic
+        this.loadItems();
       });
     });
   }
 
   loadItems(): void {
+    /*
+     * Fetches the list of items from the server and updates the items array.
+     *
+     * Args:
+     *   None
+     *
+     * Returns:
+     *   None
+     */
     this.getItemsService.getAllItems().subscribe({
       next: (response: any) => {
         console.log(response);
@@ -69,14 +89,42 @@ export class AdminComponent {
     });
   }
   trackByItemId(index: number, item: ItemData): number {
+    /*
+     * Returns the unique identifier for each item in the list.
+     *
+     * Args:
+     *   index: The index of the item in the list.
+     *   item: The item object.
+     *
+     * Returns:
+     *   The unique identifier for the item.
+     */
     return item.id; // Assuming 'id' is the unique identifier for each item
   }
 
   ngOnDestroy() {
+    /*
+     * Unsubscribes from the subscription when the component is destroyed.
+     *
+     * Args:
+     *   None
+     *
+     * Returns:
+     *   None
+     */
     this.sub?.unsubscribe();
   }
 
   singleSearch(data: any) {
+    /*
+     * Fetches a single item from the server based on the provided data.
+     *
+     * Args:
+     *   data: The ItemData object containing the item information.
+     *
+     * Returns:
+     *   None
+     */
     this.getItemsService.getItem(data.name, data.metric, data.size).subscribe({
       next: (response: any) => {
         this.items = response.data; // Extract 'data' from response
@@ -87,6 +135,15 @@ export class AdminComponent {
     });
   }
   multiSearch(data: any) {
+    /*
+     * Fetches multiple items from the server based on the provided data.
+     *
+     * Args:
+     *   data: The ItemData object containing the item information.
+     *
+     * Returns:
+     *   None
+     */
     this.getItemsService
       .getFuzzyItems(data.name, data.metric, data.size)
       .subscribe({
@@ -100,6 +157,15 @@ export class AdminComponent {
   }
 
   handleSearch(event: { data: any; action: string }) {
+    /*
+     * Handles the search event and fetches items based on the provided data.
+     *
+     * Args:
+     *   event: The event object containing the search data and action.
+     *
+     * Returns:
+     *   None
+     */
     var action = event.action;
     var data = event.data;
     switch (action) {
@@ -112,6 +178,15 @@ export class AdminComponent {
     }
   }
   addItem(event: any) {
+    /*
+     * Opens the admin popup to add a new item.
+     *
+     * Args:
+     *   event: The event object.
+     *
+     * Returns:
+     *   None
+     */
     this.authService.levelGetter().subscribe((level) => {
       if (level < 2) {
         const PopUp = this.dialog.open(AdminPopupComponent);
@@ -121,12 +196,31 @@ export class AdminComponent {
   }
 
   check_level() {
+    /*
+     * Checks if the user's authentication level is not 2 (generic student worker).
+     *
+     * Args:
+     *   None
+     *
+     * Returns:
+     *   True if the user's authentication level is not 2, false otherwise.
+     */
     const level = this.authService.levelGetter().subscribe((level) => {
       if (level != 2) return true;
       else return false;
     });
   }
+
   closePopup() {
+    /*
+     * Closes the admin popup and reloads the items.
+     *
+     * Args:
+     *   None
+     *
+     * Returns:
+     *   None
+     */
     this.isPopupVisible = false;
     this.getItemsService.getAllItems().subscribe({
       next: (response) => {
@@ -134,12 +228,33 @@ export class AdminComponent {
       },
     });
   }
+
   onItemClick(item: any) {
+    /*
+     * Opens the admin popup to edit an item.
+     *
+     * Args:
+     *   item: The item object.
+     *
+     * Returns:
+     *   None
+     */
     this.selectedItem = item;
     const PopUp = this.dialog.open(AdminPopupComponent);
     PopUp.componentInstance.showItem(this.selectedItem);
   }
+
   incrementItem(event: Event, item: any) {
+    /*
+     * Increments the count of an item.
+     *
+     * Args:
+     *   event: The event object.
+     *   item: The item object.
+     *
+     * Returns:
+     *   None
+     */
     event.stopPropagation();
     this.updateItemService
       .incrementItem(item, this.toChange)
@@ -151,7 +266,18 @@ export class AdminComponent {
         }
       });
   }
+
   decrementItem(event: Event, item: any) {
+    /*
+     * Decrements the count of an item.
+     *
+     * Args:
+     *   event: The event object.
+     *   item: The item object.
+     *
+     * Returns:
+     *   None
+     */
     event.stopPropagation();
     this.updateItemService
       .decrementItem(item, this.toChange)
