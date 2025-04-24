@@ -91,7 +91,7 @@ app = Flask(__name__)
 CORS(
     app,
     supports_credentials=True,
-    origins=["http://localhost:4200"],
+    origins=["http://localhost:8080"],
     methods=["GET", "POST"],
     allow_headers=["Content-Type", "Authorization"],
 )
@@ -176,7 +176,7 @@ def generate_token(username: str, level: int) -> str:
     Returns:
         str: the JWT token
     """
-    load_dotenv("../data/.env")
+    load_dotenv("data/.env")
     secret_key = os.environ.get("Login_Token_Secret_Key")
     payload = {
         "iat": datetime.datetime.now(datetime.timezone.utc),
@@ -481,6 +481,9 @@ def decrement() -> Tuple[Response, int]:
         if item_id is None:
             raise ValueError("Item not found")
 
+        name = data["name"]
+        size = data["size"]
+        is_metric = data["is_metric"].strip().lower() == "true"
         # decrement item
         message_status = decrement_item(
             item_id,
@@ -491,19 +494,19 @@ def decrement() -> Tuple[Response, int]:
         if message_status == 1:
             # send email
             try:
-                load_dotenv("../data/.env")
-
+                load_dotenv("data/.env")
+                print("Resend API Key:", os.getenv("Resend_API"))
                 resend.api_key = os.getenv("Resend_API")
                 _ = resend.Emails.send(
                     {
                         "from": "onboarding@resend.dev",
                         "to": "i91503647@gmail.com",
-                        "subject": f"{data['name']} {data['size']} is running low!",
+                        "subject": f"{name} {size} is running low!",
                         "html": f"""
                         <h2>Stock Reminder</h2>
-                        <p>This is a reminder to stock up on <strong>{data['name']} {data['size']}</strong>.</p>
+                        <p>This is a reminder to stock up on <strong>{name} {size}</strong>.</p>
 
-                        <p><strong>Current count:</strong> {data['count']}</p>""",
+                        <p><strong>Current count:</strong> {data["num"]}</p>""",
                     }
                 )
                 print("Sending Email")
