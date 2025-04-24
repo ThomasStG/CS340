@@ -30,15 +30,21 @@ export class ConfirmationPopupComponent {
 
   ngOnInit() {
     this.darkMode.next(this.utilityService.isDarkMode());
-  }
+  } // Initialize the component (confirmation popup)
+  // Args: None
+  // Returns: void
 
   confirm(event: Event) {
     this.dialogRef.close(true);
-  }
+  } // Close the dialog  (confirm action)
+  // Args: event: Event - The event that triggered the confirmation popup
+  // Returns: void
 
   cancel(event: Event) {
     this.dialogRef.close(false);
-  }
+  } // Close the dialog (cancel action)
+  // Args: event: Event - The event that triggered the confirmation popup
+  // Returns: void
 
   updatePopup(value: string, warning: boolean) {
     this.action = value;
@@ -80,9 +86,14 @@ export class ConfirmationPopupComponent {
     if(value === 'missingData'){
       this.message = 'You are missing data for this action please go back and fill in the name, size, and metric to continue.';
     }
-  }
+  } // Update the popup message and action based on the value and warning parameters
+  // Args: value: string - The value to set the action to
+  //       warning: boolean - The warning flag to set the warning message
+  // Returns: void
 
   loadDataPopup(){
     this.action = 'loadData';
-  }
+  } // Load data popup
+  // Args: None
+  // Returns: void
 }
