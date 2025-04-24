@@ -2,6 +2,10 @@ import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { UtilityService } from '../services/utility.service';
 import { saveAs } from 'file-saver';
+import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmationPopupComponent } from '../confirmation-popup/confirmation-popup.component';
 
 @Component({
   selector: 'app-data-download',
@@ -12,7 +16,12 @@ export class DataDownloadComponent implements OnInit {
   csv_files: string[] = [];
   selectedCsvFile = '';
   importedFile: File | null = null;
-  constructor(private utilityService: UtilityService) {}
+  constructor(
+    private utilityService: UtilityService,
+    private authService: AuthService,
+    private router: Router,
+    public dialog: MatDialog,
+  ) {}
 
   loadData(event: Event) {
     event.stopPropagation();
@@ -31,8 +40,14 @@ export class DataDownloadComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.utilityService.getFiles().subscribe((response: string[]) => {
-      this.csv_files = response;
+    this.authService.getAuthLevel().subscribe((level) => {
+      if (level == 0) {
+        this.utilityService.getFiles().subscribe((response: string[]) => {
+          this.csv_files = response;
+        });
+      } else {
+        this.router.navigate(['/authentication']);
+      }
     });
   }
 
@@ -74,4 +89,35 @@ export class DataDownloadComponent implements OnInit {
       saveAs(blob, fileUrl); // The file will be saved with the name passed as 'fileUrl'
     });
   }
+  check_level() {
+    const level = this.authService.levelGetter().subscribe((level) => {
+      if (level == 0) return true;
+      else return false;
+    });
+  }
+
+  confirmPopup(value: string, warning: boolean, event: any, fileURL: string) {
+      const ConfirmationPopUp = this.dialog.open(ConfirmationPopupComponent);
+      ConfirmationPopUp.afterOpened().subscribe(() => {
+        ConfirmationPopUp.componentInstance.updatePopup(value, warning);
+      });
+  
+      ConfirmationPopUp.afterClosed().subscribe((result: boolean) => {
+        if (result === true && value === 'backupData') {
+          this.backupData(event);
+        }
+        if (result === true && value === 'uploadData') {
+          this.uploadFile();
+        }
+        if (result === true && value === 'appendData') {
+          this.appendFile();
+        }
+        if (result === true && value === 'downloadData') {
+          this.downloadFile(fileURL);
+        }
+        if (result === true && value === 'loadData') {
+          this.loadData(event);
+        }
+      });
+    }
 }

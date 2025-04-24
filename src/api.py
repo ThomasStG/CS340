@@ -44,8 +44,7 @@ def build_db() -> None:
     """
     Ensures the table exists in the database
     """
-    logger = logging.getLogger(__name__)
-    with sqlite3.connect("../data/data.db") as connection:
+    with sqlite3.connect("data/data.db") as connection:
         cursor = connection.cursor()
         # Create a table
         cursor.execute(
@@ -59,7 +58,7 @@ def build_db() -> None:
                     loc_rack TEXT NOT NULL,
                     loc_box TEXT NOT NULL,
                     loc_row TEXT NOT NULL,
-                    loc_column TEXT NOT NULL,
+                    loc_col TEXT NOT NULL,
                     loc_depth TEXT NOT NULL,
                     count INTEGER NOT NULL, 
                     threshold INTEGER NOT NULL, 
@@ -79,18 +78,15 @@ def get_all(cursor: sqlite3.Cursor) -> list[dict]:
     Returns:
         list[dict]: list of items in dictionary
     """
-    logger = logging.getLogger(__name__)
     cursor.execute(
         """
-                   SELECT id, name, is_metric, size, loc_shelf,
-                   loc_rack, loc_box, loc_row, loc_column, 
-                   loc_depth, count, threshold
+                   SELECT id, name, size, is_metric, loc_shelf,
+                   loc_rack, loc_box, loc_row, loc_col, 
+                   loc_depth, count, threshold, isContacted
                    FROM items
                    """
     )
     items = cursor.fetchall()
-    if not items:
-        logger.debug("No items found")
 
     return [
         dict(zip([column[0] for column in cursor.description], row)) for row in items
@@ -112,24 +108,22 @@ def find_by_name(
     Returns:
         int: item id of the object
     """
-    logger = logging.getLogger(__name__)
     cursor.execute(
         """
         SELECT id FROM items 
-        WHERE name = ? AND is_metric = ? AND size = ? 
+        WHERE LOWER(name) = LOWER(?) AND is_metric = ? AND LOWER(size) = LOWER(?) 
         """,
         (name, is_metric, size),
     )
     item = cursor.fetchone()  # Fetch the first matching row
-
-    if not item:
-        logger.debug("Item not found")
+    if item is None:
+        raise ValueError("Item not found. No update performed.")
 
     return item[0] if item else None  # Return ID if found, otherwise None
 
 
 def fzf(
-    name: str, is_metric: int, size: str, cursor: sqlite3.Cursor, top_n: int = 5
+    name: str, is_metric: int, size: str, cursor: sqlite3.Cursor, top_n: int = 10
 ) -> list[dict]:
     """
     finds the 5 most similar items to the input
@@ -144,11 +138,10 @@ def fzf(
     Returns:
         list[dict]: list of json objects
     """
-    logger = logging.getLogger(__name__)
     cursor.execute(
         """
         SELECT id, name, is_metric, size, loc_shelf, loc_rack, loc_box,
-        loc_row, loc_column, loc_depth, count, threshold
+        loc_row, loc_col, loc_depth, count, threshold
         FROM items WHERE is_metric = ?
         """,
         (is_metric,),
@@ -157,7 +150,6 @@ def fzf(
     data = cursor.fetchall()
 
     if not data:
-        logger.debug("No items found")
         return []
 
     # Convert rows to dictionaries
@@ -191,7 +183,6 @@ def get_item(item_id: int, cursor: sqlite3.Cursor) -> list[dict]:
     Returns:
         list[dict]: item information as a dict in a list.
     """
-    logger = logging.getLogger(__name__)
     cursor.execute(
         """SELECT 
             id,
@@ -202,7 +193,7 @@ def get_item(item_id: int, cursor: sqlite3.Cursor) -> list[dict]:
             loc_rack,
             loc_box,
             loc_row,
-            loc_column,
+            loc_col,
             loc_depth, 
             count, 
             threshold, 
@@ -212,9 +203,6 @@ def get_item(item_id: int, cursor: sqlite3.Cursor) -> list[dict]:
         (item_id,),
     )
     item = cursor.fetchone()
-
-    if not item:
-        logger.debug("Item not found")
 
     return [dict(item)] if item else None  # Convert Row to a dictionary
 
@@ -293,7 +281,6 @@ def decrement_item(
 
 
 def add_item(
-    id: str,
     name: str,
     size: str,
     is_metric: int,
@@ -301,16 +288,15 @@ def add_item(
     loc_rack: str,
     loc_box: str,
     loc_row: str,
-    loc_column: str,
+    loc_col: str,
     loc_depth: str,
     count: int,
     threshold: int,
-    isContacted: str,
     cursor: sqlite3.Cursor,
     connection: sqlite3.Connection,
 ) -> None:
     """
-    Adds a new item to the database
+    Adds a new item to the database or updates an existing one by incrementing the count.
 
     Args:
         name (str): name of the item
@@ -320,23 +306,51 @@ def add_item(
         loc_rack (str): the location string of the item on what rack
         loc_box (str): the location string of the item on what box
         loc_row (str): the location string of the item on what row
-        loc_column (str): the location string of the item on what column
+        loc_col (str): the location string of the item on what column
         loc_depth (str): the location string of the item on what depth
         count (int): the current number of items in stock
         threshold (int): the minimum threshold before ordering more
         cursor (sqlite3.Cursor): SQLite cursor object to execute queries
         connection (sqlite3.Connection): SQLite connection object to commit changes
+
+    Returns:
+        None
     """
     cursor.execute(
-        """
-                   INSERT INTO items
-                   (id, name, size, is_metric, loc_shelf, 
-                   loc_rack, loc_box, loc_row, loc_column, loc_depth, count, threshold, isContacted)
-                   VALUES
-                    (?,?,?,?,?,?,?,?,?,?,?,?,?)
-                   """,
-        (id, name, size, is_metric, loc_shelf, loc_rack, loc_box, loc_row, loc_column, loc_depth, count, threshold, isContacted),
+        """SELECT count FROM items WHERE name = ? and is_metric = ? and size = ?""",
+        (name, is_metric, size),
     )
+    item = cursor.fetchone()
+    if item is not None:
+        new_count = item[0] + count
+        cursor.execute(
+            """UPDATE items set count = ? WHERE name = ? and is_metric = ? and size = ?""",
+            (new_count, name, is_metric, size),
+        )
+    else:
+
+        cursor.execute(
+            """
+                       INSERT INTO items
+                       ( name, size, is_metric, loc_shelf, 
+                       loc_rack, loc_box, loc_row, loc_col, loc_depth, count, threshold)
+                       VALUES
+                        (?,?,?,?,?,?,?,?,?,?,?)
+                       """,
+            (
+                name,
+                size,
+                is_metric,
+                loc_shelf,
+                loc_rack,
+                loc_box,
+                loc_row,
+                loc_col,
+                loc_depth,
+                count,
+                threshold,
+            ),
+        )
 
     connection.commit()
 
@@ -351,15 +365,16 @@ def remove_item(
         item_id (int): item id to delete
         cursor (sqlite3.Cursor): SQLite cursor object to execute queries
         connection (sqlite3.Connection): SQLite connection object to commit changes
+
+    Returns:
+        None
     """
-    logger = logging.getLogger(__name__)
     cursor.execute(
         """
                     DELETE FROM items WHERE id = ?
                    """,
         (item_id,),
     )
-    logger.debug("Item %i removed", item_id)
     connection.commit()
 
 
@@ -371,7 +386,7 @@ def update_item(
     loc_rack: str,
     loc_box: str,
     loc_row: str,
-    loc_column: str,
+    loc_col: str,
     loc_depth: str,
     threshold: int,
     new_name: str,
@@ -388,7 +403,12 @@ def update_item(
         name (str): name of the item
         size (str): size of the item
         is_metric (int): whether the item is metric (1) or not (0)
-        locations (str): the location string of the item
+        loc_shelf (str): the location string of the item on what shelf
+        loc_rack (str): the location string of the item on what rack
+        loc_box (str): the location string of the item on what box
+        loc_row (str): the location string of the item on what row
+        loc_col (str): the location string of the item on what column
+        loc_depth (str): the location string of the item on what depth
         threshold (int): the minimum threshold before ordering more
         cursor (sqlite3.Cursor): SQLite cursor object to execute queries
         connection (sqlite3.Connection): SQLite connection object to commit changes
@@ -396,16 +416,27 @@ def update_item(
     Returns:
         None
     """
-    logger = logging.getLogger(__name__)
     item_id = find_by_name(name, is_metric, size, cursor)
     cursor.execute(
         """
                    UPDATE items SET name = ?, size = ?, is_metric = ?, loc_shelf = ?, 
-                   loc_rack = ?, loc_box = ?, loc_row = ?, loc_column = ?, loc_depth = ?, threshold = ? WHERE id = ?
+                   loc_rack = ?, loc_box = ?, loc_row = ?, loc_col = ?, loc_depth = ?, count = ?, threshold = ? WHERE id = ?
                    """,
-        (new_name, new_size, new_is_metric, loc_shelf, loc_rack, loc_box, loc_row, loc_column, loc_depth, new_count, threshold, item_id),
+        (
+            new_name,
+            new_size,
+            new_is_metric,
+            loc_shelf,
+            loc_rack,
+            loc_box,
+            loc_row,
+            loc_col,
+            loc_depth,
+            new_count,
+            threshold,
+            item_id,
+        ),
     )
-    logger.debug("Item %s updated", name)
     connection.commit()
 
 
@@ -444,21 +475,21 @@ def backup_data(cursor: sqlite3.Cursor) -> None:
 
 
 def get_backup_files() -> list[str]:
+    """
+    Returns a list of backup files
+
+    Args:
+        None
+
+    Returns:
+        list[str]: list of backup files
+    """
     return glob.glob("../data/*.csv")
 
 
 if __name__ == "__main__":
     connection = sqlite3.connect("../data/data.db")
     cursor = connection.cursor()
-    # cursor.execute(
-    #     """
-    #     INSERT INTO items (name, size, is_metric, location, count, threshold, iscontacted)
-    #     VALUES
-    #     ('test', 'test', 1, '{"shelf": "1", "rack": "1", "box": "1", "height": "1", "width": "1", "depth": "1"}', 1, 1, 0)
-    #     """
-    # )
-    # connection.commit()
-    # connection.close()
     cursor.execute(
         """
         SELECT * FROM items

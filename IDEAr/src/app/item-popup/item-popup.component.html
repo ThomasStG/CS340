@@ -1,14 +1,21 @@
-<div class="overlay" (click)="closePopup()">
-  <div class="popup">
-    <div class="popup-content">
-      <h1 class="popup-header">{{ item.name }}</h1>
+<div
+  class="fixed top-0 left-0 w-full h-full bg-black/50 z-[9998]"
+  [class.dark]="darkMode | async"
+  (click)="closePopup($event)"
+>
+  <div
+    class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-5 shadow-lg z-[9999] w-[70%] min-w-[400px] text-black dark:text-white bg-white dark:bg-gray-900"
+    (click)="stopClickPropagation($event)"
+  >
+    <div class="p-5 flex flex-col">
+      <h1 class="font-bold text-[30px] text-center w-full">{{ item.name }}</h1>
       <table>
         <tr>
           <td>
             <label>Name:</label>
           </td>
           <td>
-            <p class="popup-info">{{ item.name }}</p>
+            <p class="rounded-sm text-[15px] w-full">{{ item.name }}</p>
           </td>
         </tr>
         <tr>
@@ -16,7 +23,7 @@
             <label>Size:</label>
           </td>
           <td>
-            <p class="popup-info">{{ item.size }}</p>
+            <p class="rounded-sm text-[15px] w-full">{{ item.size }}</p>
           </td>
         </tr>
         <tr>
@@ -24,7 +31,7 @@
             <label>Metric:</label>
           </td>
           <td>
-            <p class="popup-info">{{ item.is_metric }}</p>
+            <p class="rounded-sm text-[15px] w-full">{{ item.is_metric }}</p>
           </td>
         </tr>
         <tr>
@@ -38,7 +45,9 @@
                   <label>Shelf:</label>
                 </td>
                 <td>
-                  <p class="popup-info">{{ item.location[0] }}</p>
+                  <p class="rounded-sm text-[15px] w-full">
+                    {{ item.loc_shelf }}
+                  </p>
                 </td>
               </tr>
               <tr>
@@ -46,7 +55,9 @@
                   <label>Rack:</label>
                 </td>
                 <td>
-                  <p class="popup-info">{{ item.location[1] }}</p>
+                  <p class="rounded-sm text-[15px] w-full">
+                    {{ item.loc_rack }}
+                  </p>
                 </td>
               </tr>
               <tr>
@@ -54,7 +65,9 @@
                   <label>Box:</label>
                 </td>
                 <td>
-                  <p class="popup-info">{{ item.location[2] }}</p>
+                  <p class="rounded-sm text-[15px] w-full">
+                    {{ item.loc_box }}
+                  </p>
                 </td>
               </tr>
               <tr>
@@ -62,7 +75,9 @@
                   <label>Row:</label>
                 </td>
                 <td>
-                  <p class="popup-info">{{ item.location[3] }}</p>
+                  <p class="rounded-sm text-[15px] w-full">
+                    {{ item.loc_row }}
+                  </p>
                 </td>
               </tr>
               <tr>
@@ -70,7 +85,9 @@
                   <label>Columns:</label>
                 </td>
                 <td>
-                  <p class="popup-info">{{ item.location[4] }}</p>
+                  <p class="rounded-sm text-[15px] w-full">
+                    {{ item.loc_col }}
+                  </p>
                 </td>
               </tr>
               <tr>
@@ -78,7 +95,9 @@
                   <label>Depth:</label>
                 </td>
                 <td>
-                  <p class="popup-info">{{ item.location[5] }}</p>
+                  <p class="rounded-sm text-[15px] w-full">
+                    {{ item.loc_depth }}
+                  </p>
                 </td>
               </tr>
             </table>
@@ -89,12 +108,17 @@
             <label>Count:</label>
           </td>
           <td>
-            <p class="popup-info">{{ item.count }}</p>
+            <p class="rounded-sm text-[15px] w-full">{{ item.count }}</p>
           </td>
         </tr>
         <tr>
           <td>
-            <button (click)="closePopup()" class="close-button">Close</button>
+            <button
+              (click)="closePopup($event)"
+              class="w-full h-full border border-gray-50 items-center dark:bg-gray-700 rounded-md dark:hover:bg-gray-600 hover:bg-gray-300"
+            >
+              Close
+            </button>
           </td>
         </tr>
       </table>

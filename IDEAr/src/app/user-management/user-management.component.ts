@@ -3,6 +3,11 @@ import { OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { UserData } from '../user-data';
 import { FormControl, FormGroup } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmationPopupComponent } from '../confirmation-popup/confirmation-popup.component';
+import { Observable } from 'rxjs';
+import { filter } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-management',
@@ -18,14 +23,30 @@ export class UserManagementComponent implements OnInit {
     level: new FormControl('2'),
   });
 
-  constructor(private authService: AuthService) {}
+  level$ = this.authService
+    .levelGetter()
+    .pipe(
+      filter((level): level is number => level !== null),
+    ) as Observable<number>;
+
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    public dialog: MatDialog,
+  ) {}
 
   ngOnInit(): void {
-    this.authService.getUsers().subscribe((response: UserData[]) => {
-      this.users = response;
+    this.authService.getAuthLevel().subscribe((level) => {
+      if (level == 0) {
+        this.authService.getUsers().subscribe((response: UserData[]) => {
+          this.users = response;
+        });
+      } else {
+        this.router.navigate(['/authentication']);
+      }
     });
   }
-  onSubmit() {
+  onCreate() {
     const formData = this.newUserForm.value;
 
     if (
@@ -39,8 +60,44 @@ export class UserManagementComponent implements OnInit {
         level: Number(formData.level), // ensure it's a number
       };
       const pass = formData.password as string;
-      this.authService.createUser(data, pass).subscribe();
+      this.authService.createUser(data, pass).subscribe({
+        next: () => {
+          // After creating the user, fetch the updated list of users
+          this.authService.getUsers().subscribe((response: UserData[]) => {
+            this.users = response; // Update users array with the new data
+          });
+        },
+        error: (error) => {
+          // Handle the error if the user creation fails
+          console.error('User creation failed:', error);
+        },
+      });
+
+      // Reset the form after submitting
+      this.newUserForm.reset();
     } else {
     }
+  }
+
+  confirmPopup(value: string, warning: boolean) {
+    const ConfirmationPopUp = this.dialog.open(ConfirmationPopupComponent);
+    ConfirmationPopUp.afterOpened().subscribe(() => {
+      ConfirmationPopUp.componentInstance.updatePopup(value, warning);
+    });
+
+    ConfirmationPopUp.afterClosed().subscribe((result: boolean) => {
+      if (result === true && value === 'addUser') {
+        this.onCreate();
+      }
+    });
+  }
+  onUserListUpdated(updatedUsers: UserData[]) {
+    this.users = updatedUsers;
+  }
+  check_level() {
+    const level = this.authService.levelGetter().subscribe((level) => {
+      if (level == 0) return true;
+      else return false;
+    });
   }
 }

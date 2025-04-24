@@ -1,20 +1,173 @@
 <!-- Main layout of the app -->
-<div [class.dark]="darkMode | async" class="w-full">
+<div
+  [class.dark]="darkMode | async"
+  class="w-full min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white"
+>
   <div
-    class="header"
-    class="bg-gray-100 pt-4 text-black dark:bg-gray-900 dark:text-white flex flex-row justify-center align-center"
+    class="bg-gray-100 pt-4 text-black dark:bg-gray-900 dark:text-white flex flex-row justify-center items-center z-[1000]"
   >
     <!-- Navigation -->
-    <nav class="flex gap-3 align-center justify-center">
-      <button routerLink="/">Home</button>
-      <button routerLink="/admin">Admin</button>
-      <button routerLink="/data-download">Data Download</button>
-      <button routerLink="/electrical-home">Electrical Lab</button>
-      <button routerLink="/logs">Logs</button>
-      <button routerLink="/user-management">User Management</button>
-      <button (click)="logout()">logout</button>
-      <button (click)="setMode(false)">Light Mode☀️</button>
-      <button (click)="setMode(true)">Dark Mode🌑</button>
+    <nav class="z-[100]">
+      <div class="hidden md:flex z-[100]  gap-3 align-center justify-center">
+        <div #homeDropdownRef class="relative inline-block">
+          <button
+            (click)="toggleDropdown('home')"
+            class="px-4 py-2 bg-blue-900 text-white rounded-md"
+          >
+            Home
+          </button>
+          <div
+            *ngIf="showHomeDropdown"
+            class="absolute left-0 mt-2 w-40 bg-white border rounded-md shadow-lg z-10"
+            (click)="$event.stopPropagation()"
+          >
+            <a
+              routerLink="/"
+              class="block px-4 py-2 hover:bg-gray-100 text-black dark:text-white bg-slate-500 dark:bg-slate-600"
+              >IDEA Lab Home</a
+            >
+            <a
+              routerLink="/electrical-home"
+              class="block px-4 py-2 hover:bg-gray-100 text-black dark:text-white bg-slate-500 dark:bg-slate-600"
+            >
+              Electrical Lab Home
+            </a>
+          </div>
+        </div>
+          <div
+            *ngIf="isAuthenticated"
+            #adminDropdownRef class="relative inline-block">
+            <button
+              (click)="toggleDropdown('admin')"
+              class="px-4 py-2 bg-blue-900 text-white rounded-md"
+            >
+              Admin
+            </button>
+            <div
+              *ngIf="showAdminDropdown"
+              class="absolute left-0 mt-2 w-40 bg-white border rounded-md shadow-lg z-10"
+              (click)="$event.stopPropagation()"
+            >
+              <a
+                routerLink="/admin"
+                class="block px-4 py-2 hover:bg-gray-100 text-black dark:text-white bg-slate-500 dark:bg-slate-600"
+                >IDEA Lab Admin</a
+              >
+            </div>
+          </div>
+        <div
+            *ngIf="isAuthenticated"
+          #managementDropdownRef
+          class="relative inline-block"
+        >
+          <button
+            (click)="toggleDropdown('management')"
+            class="px-4 py-2 bg-blue-900 text-white rounded-md"
+          >
+            Management
+          </button>
+          <div
+            *ngIf="showManagementDropdown"
+            class="absolute left-0 mt-2 w-40 bg-white border rounded-md shadow-lg z-10"
+            (click)="$event.stopPropagation()"
+          >
+            <a
+              routerLink="/user-management"
+              class="block px-4 py-2 hover:bg-gray-100 text-black dark:text-white bg-slate-500 dark:bg-slate-600"
+              >User Management</a
+            >
+            <a
+              routerLink="/logs"
+              class="block px-4 py-2 hover:bg-gray-100 text-black dark:text-white bg-slate-500 dark:bg-slate-600"
+              >User Logs</a
+            >
+            <a
+              routerLink="/data-download"
+              class="block px-4 py-2 hover:bg-gray-100 text-black dark:text-white bg-slate-500 dark:bg-slate-600"
+              >Data Download</a
+            >
+          </div>
+        </div>
+        <button
+          *ngIf="!isAuthenticated"
+          routerLink="/authentication"
+          class="px-4 py-2 bg-blue-900 text-white rounded-md"
+        >
+          Login
+        </button>
+        <button
+          *ngIf="isAuthenticated"
+          (click)="logout()"
+          class="px-4 py-2 bg-blue-900 text-white rounded-md"
+        >
+          Logout
+        </button>
+        <div class="flex p-2 rounded-sm hover:bg-gray-100 dark:hover:bg-gray-600">
+          <label class="inline-flex items-center w-full cursor-pointer">
+            <input
+              type="checkbox"
+              value=""
+              (click)="toggleDarkMode()"
+              [checked]="darkMode | async"
+              class="sr-only peer"
+            />
+            <div
+              class="relative w-9 h-5 bg-[rgb(243,208,20)] peer-focus:outline-none dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-600 peer-checked:after:translate-x-full rtl:peer-checked:after:translate-x-[-100%] peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-[rgb(8,34,65)] dark:after:bg-[rgb(243,208,20)] after:border[rgb(243,208,20)] after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-500 peer-checked:bg-blue-900 dark:peer-checked:bg-blue-900"
+            ></div>
+            <span
+              class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300"
+              >Toggle Light Mode</span
+            >
+          </label>
+        </div>
+        </div>
+        <div class="flex md:hidden flex-col relative inline-block">
+          <div>
+          <button (click)="isHamburger = !isHamburger">
+          ham
+          </button>
+          </div>
+        <div *ngIf="isHamburger" class="flex flex-col bg-black text-white">
+          <!-- Home Dropdown in Mobile -->
+          <div class="relative flex flex-row">
+            <button (click)="toggleDropdown('home')" class="px-4 py-2 bg-blue-900 text-white w-full text-left">
+              Home
+            </button>
+            <div *ngIf="showHomeDropdown" class="flex flex-col bg-white"
+            (click)="$event.stopPropagation()"
+            >
+              <a routerLink="/" class="px-4 py-2 hover:bg-gray-100 dark:text-white">IDEA Lab Home</a>
+              <a routerLink="/electrical-home" class="px-4 py-2 hover:bg-gray-100 dark:text-white">Electrical Home</a>
+            </div>
+          </div>
+
+          <!-- Admin Dropdown in Mobile -->
+          <div *ngIf="isAuthenticated" class="relative">
+            <button (click)="toggleDropdown('admin')" class="px-4 py-2 bg-blue-900 text-white w-full text-left">
+              Admin
+            </button>
+            <div *ngIf="showAdminDropdown" class="flex flex-col bg-white"
+            (click)="$event.stopPropagation()"
+            >
+              <a routerLink="/admin" class="px-4 py-2 hover:bg-gray-100 dark:text-white">IDEA Lab Admin</a>
+            </div>
+          </div>
+
+          <!-- Management Dropdown in Mobile -->
+          <div *ngIf="isAuthenticated" class="relative" #managementDropdownRef>
+            <button (click)="toggleDropdown('management')" class="px-4 py-2 bg-blue-900 text-white w-full text-left">
+              Management
+            </button>
+            <div *ngIf="showManagementDropdown" class="flex flex-col bg-white"
+            (click)="$event.stopPropagation()"
+            >
+              <a routerLink="/user-management" class="px-4 py-2 hover:bg-gray-100 dark:text-white">User Management</a>
+              <a routerLink="/logs" class="px-4 py-2 hover:bg-gray-100 dark:text-white">User Logs</a>
+              <a routerLink="/data-download" class="px-4 py-2 hover:bg-gray-100 dark:text-white">Data Download</a>
+            </div>
+          </div>
+        </div>
+        </div>
     </nav>
   </div>
 

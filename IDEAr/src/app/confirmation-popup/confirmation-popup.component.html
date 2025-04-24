@@ -1,18 +1,18 @@
-<div class="overlay">
-    <div class="popup">
-      <div class="popup-content">
-        <div class="Header">
-            Are you sure you would like to proceed with this process?
-        </div>
-        <div>
-            <button (click)="confirm($event)">
-                Confirm
-            </button>
-            <button (click)="cancel($event)">
-                Cancel
-            </button>
-        </div>
+<!-- updated component template -->
+<div [class.dark]="darkMode | async">
+  <div class="fixed inset-0 bg-black/50 dark:bg-white/50 flex justify-center items-center z-[9998]">
+    <div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] max-w-[400px] p-5 shadow-lg z-[9999] dark:text-white bg-white dark:bg-gray-700 rounded-lg">
+      <div *ngIf="warning" class="w-full text-center bg-red-100 dark:bg-red-600 p-2 pl-10 pr-10 rounded-md">
+        <p class="font-bold text-red dark:text-red-100 m-0">⚠️ WARNING!!!!</p>
+      </div>
+      <div class="w-full text-center rounded-md mb-2">
+        <p class="mb-4 text-[1.1rem]">{{ message }}</p>
+        <p class="text-[0.9rem] text-slate-800 dark:text-slate-200 m-0">Would you like to proceed with this action?</p>
+      </div>
+      <div class="flex gap-3 w-full justify-center">
+        <button class="flex-1 px-3 py-2 text-[0.95rem] bg-transparent border-2 border-current  cursor-pointer transition-colors duration-200 hover:bg-gray-100 rounded-md" (click)="confirm($event)">Confirm</button>
+        <button class="flex-1 px-3 py-2 text-[0.95rem] bg-transparent border-2 border-current  cursor-pointer transition-colors duration-200 hover:bg-gray-100 rounded-md" (click)="cancel($event)">Cancel</button>
       </div>
     </div>
-  </div>>
-  
+  </div>
+</div>

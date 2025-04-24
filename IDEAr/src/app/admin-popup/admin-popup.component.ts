@@ -7,6 +7,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ConfirmationPopupComponent } from '../confirmation-popup/confirmation-popup.component';
 import { UtilityService } from '../services/utility.service';
 import { BehaviorSubject } from 'rxjs';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-admin-popup',
@@ -40,6 +41,7 @@ export class AdminPopupComponent {
     private updateItemService: UpdateItemService,
     private dialogRef: MatDialogRef<AdminPopupComponent>,
     private utilityService: UtilityService,
+    private authService: AuthService,
   ) {}
   newItem: ItemData = { ...this.item };
   ngOnInit() {
@@ -59,7 +61,11 @@ export class AdminPopupComponent {
 
   editItem(event: Event) {
     event.stopPropagation();
-    this.isEditing = true;
+    this.authService.getAuthLevel().subscribe((level) => {
+      if (level < 2) {
+        this.isEditing = true;
+      }
+    });
   }
   cancelEditing(event: Event) {
     event.stopPropagation();
@@ -82,17 +88,22 @@ export class AdminPopupComponent {
     this.close();
     this.updateItemService
       .updateItem(this.item, this.newItem)
-      .subscribe((response) => {});
+      .subscribe((response) => {
+        console.log(response);
+      });
     // TODO: Close popup
+
     this.close();
   }
   deleteItem() {
-    this.updateItemService.deleteItem(this.item).subscribe((response) => {});
-    this.close();
+    this.updateItemService.deleteItem(this.item).subscribe((then) => {
+      this.close();
+    });
   }
   addItem() {
-    this.updateItemService.addItem(this.item);
-    this.close();
+    this.updateItemService.addItem(this.item).subscribe((then) => {
+      this.close();
+    });
   }
 
   cancelAdding(event: Event) {
@@ -109,22 +120,35 @@ export class AdminPopupComponent {
     this.item = item;
   }
 
-  confirmPopup(value: string) {
+  confirmPopup(value: string, warning: boolean) {
+
+    if(this.newItem['name'] === '' || this.newItem['size'] === '' || this.newItem['is_metric'] === '' ){
+      value = 'missingData';
+      warning = true;
+    }
+
     const ConfirmationPopUp = this.dialog.open(ConfirmationPopupComponent);
     ConfirmationPopUp.afterOpened().subscribe(() => {
-      ConfirmationPopUp.componentInstance.updatePopup(value);
+      ConfirmationPopUp.componentInstance.updatePopup(value, warning);
     });
 
     ConfirmationPopUp.afterClosed().subscribe((result: boolean) => {
-      if (result === true && value === 'save') {
+      if (result === true && value === 'updateItem') {
         this.updateItem();
       }
-      if (result === true && value === 'delete') {
+      if (result === true && value === 'deleteItem') {
         this.deleteItem();
       }
-      if (result === true && value === 'add') {
+      if (result === true && value === 'addItem') {
+        console.log('test');
         this.addItem();
       }
+    });
+  }
+  check_level() {
+    const level = this.authService.levelGetter().subscribe((level) => {
+      if (level < 2) return true;
+      else return false;
     });
   }
 }
