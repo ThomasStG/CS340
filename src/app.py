@@ -505,8 +505,7 @@ def decrement() -> Tuple[Response, int]:
                         "html": f"""
                         <h2>Stock Reminder</h2>
                         <p>This is a reminder to stock up on <strong>{name} {size}</strong>.</p>
-
-                        <p><strong>Current count:</strong> {data["num"]}</p>""",
+                        """,
                     }
                 )
                 print("Sending Email")
