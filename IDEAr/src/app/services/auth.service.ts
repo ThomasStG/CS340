@@ -29,7 +29,15 @@ export class AuthService {
     private http: HttpClient,
     private router: Router,
     private cookieService: CookieService,
-  ) {}
+  ) {/*
+     *constructs the website
+     *
+     * Args:
+     *   http, router, cookieService
+     *
+     * Returns:
+     *   None
+     */}
 
   login(username: string, password: string): Observable<any> {
     return this.http
@@ -51,15 +59,42 @@ export class AuthService {
           }
         }),
       );
+    /*
+     * Grabs usename and password to login user
+     *
+     * Args:
+     *   username (string), password (string
+     *
+     * Returns:
+     *   an http responce this.http containg tokens, messages, levels, and erors
+     */
   }
 
   // ? Logout (Removes Token & Redirects)
   logout(): void {
     this.removeToken();
     this.router.navigate(['/']);
+    /*
+     * Logs user out, removes tokens
+     *
+     * Args:
+     *   None
+     *
+     * Returns:
+     *   None
+     */
   }
   setAuthState(state: boolean) {
     this.authState.next(state);
+    /*
+     * Sets Authentication state
+     *
+     * Args:
+     *   state boolean
+     *
+     * Returns:
+     *   None
+     */
   }
 
   // ? Check Authentication Status
@@ -74,6 +109,15 @@ export class AuthService {
         map((response) => response.output === 'true'), // Ensure output is properly mapped to a boolean
         catchError(() => of(false)), // Return false in case of an error
       );
+    /*
+     * Checks to see if user is logged in, with a catch error if they are not
+     *
+     * Args:
+     *   None
+     *
+     * Returns:
+     *   boolean
+     */
   }
 
   // ? Set Token in Cookie (7-Day Expiry)
@@ -87,9 +131,18 @@ export class AuthService {
       false, //TODO: set to true for production,
       'Lax',
     );
+    /*
+     * Sets token in cookie to expire after 7 days
+     *
+     * Args:
+     *  token string
+     *
+     * Returns:
+     *   None
+     */
   }
 
-  // ? Remove Token from Cookies
+  // ? Remove Token from Cookies, no args, no returns
   removeToken(): void {
     this.cookieService.delete(this.token, '/');
   }
@@ -103,6 +156,15 @@ export class AuthService {
         map((response) => response?.level ?? 2), // Ensure output is properly mapped to a boolean
         catchError(() => of(2)), // Return 2 in case of an error
       );
+    /*
+     * within the cookies gets the authentication level and has a check to make sure its mapped correctly
+     *
+     * Args:
+     *   None
+     *
+     * Returns:
+     *   a number
+     */
   }
 
   levelGetter(): Observable<number> {
@@ -115,8 +177,17 @@ export class AuthService {
         map((response) => response?.level ?? 2), // Ensure output is properly mapped to a boolean
         catchError(() => of(2)), // Return 2 in case of an error
       );
+    /*
+     * within the cookies gets the authentication level and has a check to make sure its mapped correctly
+     *
+     * Args:
+     *   None
+     *
+     * Returns:
+     *   a number
+     */
   }
-  getToken(): string {
+  getToken(): string { //gets token, returns a string 
     return this.cookieService.get(this.token);
   }
   getUsers(): Observable<UserData[]> {
@@ -126,6 +197,15 @@ export class AuthService {
         users: UserData[];
       }>('http://127.0.0.1:3000/getUsers')
       .pipe(map((res) => res.users));
+    /*
+     * gets token, returns string
+     *
+     * Args:
+     *   None
+     *
+     * Returns:
+     *   string
+     */
   }
   createUser(user: UserData, password: string): Observable<any> {
     return this.http.post('http://127.0.0.1:3000/register', {
@@ -134,8 +214,17 @@ export class AuthService {
       level: user.level,
       token: this.getToken(),
     });
+    /*
+     * makes and retruns user and what level they are
+     *
+     * Args:
+     *   user, password
+     *
+     * Returns:
+     *  a registered user
+     */
   }
-  updateUser(
+  updateUser( //cubdates user with imputs of username, password, and level.
     username: string,
     password: string,
     level: number,
@@ -160,7 +249,7 @@ export class AuthService {
       token: string;
     }>('http://127.0.0.1:3000/updateUser', body);
   }
-  deleteUser(username: string | undefined | null) {
+  deleteUser(username: string | undefined | null) { // deletes a user, args of username
     if (username === 'admin') {
       return;
     }
