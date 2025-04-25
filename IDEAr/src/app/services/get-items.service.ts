@@ -23,7 +23,7 @@ export class GetItemsService {
      * gets item searched for
      *
      * Args:
-     *   anme, metric, size
+     *   name, metric, size
      *
      * Returns:
      *   the specified item
@@ -40,7 +40,7 @@ export class GetItemsService {
      * gets item similar to searched for if it cant get the item
      *
      * Args:
-     *   anme, metric, size
+     *   name, metric, size
      *
      * Returns:
      *   similar item
