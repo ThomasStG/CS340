@@ -18,5 +18,14 @@ export class ItemSearchComponent {
     if (this.searchForm.valid) {
       this.formSubmit.emit({ data: this.searchForm.value, action });
     }
+    /*
+     * Runs on component submission. Checks if the search fourm is valid. if it is, submit the data.
+     *
+     * Args:
+     *   string
+     *
+     * Returns:
+     *   None
+     */
   }
 }
