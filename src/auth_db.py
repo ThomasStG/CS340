@@ -30,7 +30,7 @@ def ensure_table():
     Returns:
         None
     """
-    with sqlite3.connect("../data/data.db") as connection:
+    with sqlite3.connect("data/data.db") as connection:
         cursor = connection.cursor()
         cursor.execute(
             """

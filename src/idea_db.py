@@ -34,8 +34,8 @@ Dependencies:
 import csv
 import datetime
 import glob
-import logging
 import sqlite3
+from typing import Optional
 
 from fuzzywuzzy import fuzz, process
 
@@ -126,7 +126,7 @@ def fzf(
     name: str, is_metric: int, size: str, cursor: sqlite3.Cursor, top_n: int = 10
 ) -> list[dict]:
     """
-    finds the 5 most similar items to the input
+    finds the top_n most similar items to the input
 
     Args:
         name (str): the name of the item
@@ -172,7 +172,7 @@ def fzf(
     return results  # Return structured output
 
 
-def get_item(item_id: int, cursor: sqlite3.Cursor) -> list[dict]:
+def get_item(item_id: int, cursor: sqlite3.Cursor) -> Optional[list[dict]]:
     """
     returns item information from item id
 
@@ -221,6 +221,8 @@ def increment_item(
     """
 
     item = get_item(item_id, cursor)  # get items information from id
+    if item is None:
+        raise ValueError("Item not found. No update performed.")
     new_count = item[0]["count"] + num_added
     is_contacted = 1
     if new_count > item[0]["threshold"]:
@@ -258,6 +260,8 @@ def decrement_item(
         int: status code (0/1) for if an email needs to be sent
     """
     item = get_item(item_id, cursor)
+    if item is None:
+        raise ValueError("Item not found. No update performed.")
     new_count = item[0]["count"] - num_removed
     new_count = max(new_count, 0)
     cursor.execute(
@@ -459,7 +463,9 @@ def backup_data(cursor: sqlite3.Cursor) -> None:
     date = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 
     # Open the CSV file for writing
-    with open(f"../data/data{date}.csv", "w", newline="", encoding="utf-8") as f:
+    with open(
+        f"../data/idea_lab/data-{date}.csv", "w", newline="", encoding="utf-8"
+    ) as f:
         writer = csv.DictWriter(f, fieldnames=column_names)
         print(f"Created backup file: data{date}.csv")
 
@@ -488,11 +494,11 @@ def get_backup_files() -> list[str]:
 
 
 if __name__ == "__main__":
-    connection = sqlite3.connect("../data/data.db")
-    cursor = connection.cursor()
-    cursor.execute(
+    con = sqlite3.connect("../data/data.db")
+    cur = con.cursor()
+    cur.execute(
         """
         SELECT * FROM items
         """
     )
-    print(cursor.fetchall())
+    print(cur.fetchall())
