@@ -1075,7 +1075,7 @@ def backup_data_el(cursor: sqlite3.Cursor) -> None:
     passive_columns.append("type")
 
     # Add type tag to each passive item
-    passive_items = [item + ("passive",) for item in passive_items_raw]
+    passive_items = [tuple(item) + ("passive",) for item in passive_items_raw]
 
     # Fetch active items
     cursor.execute("SELECT * FROM electrical_active_items")
@@ -1084,7 +1084,7 @@ def backup_data_el(cursor: sqlite3.Cursor) -> None:
     active_columns.append("type")
 
     # Add type tag to each active item
-    active_items = [item + ("active",) for item in active_items_raw]
+    active_items = [tuple(item) + ("active",) for item in active_items_raw]
 
     # Combine columns and remove duplicates
     column_names = list(set(passive_columns + active_columns))
