@@ -459,7 +459,9 @@ def backup_data(cursor: sqlite3.Cursor) -> None:
     date = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 
     # Open the CSV file for writing
-    with open(f"../data/data{date}.csv", "w", newline="", encoding="utf-8") as f:
+    with open(
+        f"../data/idea_lab/data{date}.csv", "w", newline="", encoding="utf-8"
+    ) as f:
         writer = csv.DictWriter(f, fieldnames=column_names)
         print(f"Created backup file: data{date}.csv")
 

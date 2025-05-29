@@ -96,7 +96,6 @@ export class DataDownloadComponent implements OnInit {
   // Args: None
   // Returns: void
 
-
   downloadFile(fileUrl: string): void {
     this.utilityService.downloadFile(fileUrl).subscribe((blob: Blob) => {
       // Use 'saveAs' from the FileSaver library to save the file
@@ -106,6 +105,20 @@ export class DataDownloadComponent implements OnInit {
   // Args: fileUrl: string - The URL of the file to download
   // Returns: void
 
+  deleteBackup(fileUrl: string): void {
+    this.utilityService.deleteBackup(fileUrl).subscribe({
+      next: (response) => {
+        // Optionally, notify the user with a success message (e.g., Toast, alert)
+        this.utilityService.getFiles().subscribe((response: string[]) => {
+          this.csv_files = response;
+        });
+      },
+      error: (error) => {
+        console.error('Error during file deletion:', error);
+        // Optionally, notify the user with an error message
+      },
+    });
+  }
 
   check_level() {
     const level = this.authService.levelGetter().subscribe((level) => {
@@ -117,30 +130,29 @@ export class DataDownloadComponent implements OnInit {
   // Returns: boolean
 
   confirmPopup(value: string, warning: boolean, event: any, fileURL: string) {
-      const ConfirmationPopUp = this.dialog.open(ConfirmationPopupComponent);
-      ConfirmationPopUp.afterOpened().subscribe(() => {
-        ConfirmationPopUp.componentInstance.updatePopup(value, warning);
-      });
-  
-      ConfirmationPopUp.afterClosed().subscribe((result: boolean) => {
-        if (result === true && value === 'backupData') {
-          this.backupData(event);
-        }
-        if (result === true && value === 'uploadData') {
-          this.uploadFile();
-        }
-        if (result === true && value === 'appendData') {
-          this.appendFile();
-        }
-        if (result === true && value === 'downloadData') {
-          this.downloadFile(fileURL);
-        }
-        if (result === true && value === 'loadData') {
-          this.loadData(event);
-        }
-      });
-    } // Confirm the action in the popup
-  // Args: value: string - The action to confirm, warning: boolean - Whether it's a warning, 
+    const ConfirmationPopUp = this.dialog.open(ConfirmationPopupComponent);
+    ConfirmationPopUp.afterOpened().subscribe(() => {
+      ConfirmationPopUp.componentInstance.updatePopup(value, warning);
+    });
+
+    ConfirmationPopUp.afterClosed().subscribe((result: boolean) => {
+      if (result === true && value === 'backupData') {
+        console.log('Backup data');
+        this.backupData(event);
+      } else if (result === true && value === 'uploadData') {
+        this.uploadFile();
+      } else if (result === true && value === 'appendData') {
+        this.appendFile();
+      } else if (result === true && value === 'downloadData') {
+        this.downloadFile(fileURL);
+      } else if (result === true && value === 'loadData') {
+        this.loadData(event);
+      } else if (result === true && value === 'deleteBackup') {
+        this.deleteBackup(fileURL);
+      }
+    });
+  } // Confirm the action in the popup
+  // Args: value: string - The action to confirm, warning: boolean - Whether it's a warning,
   // Args: event: any - The event that triggered the action, fileURL: string - The URL of the file to download
   // Returns: void
 }

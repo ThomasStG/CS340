@@ -43,7 +43,7 @@ export class ElectricalSearchService {
     id: number,
   ): Observable<any> {
     return this.http.get<any>(
-      `http://localhost:3000/electricalFuzzyAssembly?type=${type}&name=${name}&id=${id}`,
+      `http://localhost:3000/electricalFuzzyAssembly?subtype=${type}&name=${name}&id=${id}`,
     );
   }
   searchIdenticalAssembly(
@@ -52,7 +52,7 @@ export class ElectricalSearchService {
     id: number,
   ): Observable<any> {
     return this.http.get<any>(
-      `http://localhost:3000/electricalFindAssembly?type=${type}&name=${name}&id=${id}`,
+      `http://localhost:3000/electricalFindAssembly?subtype=${type}&name=${name}&id=${id}`,
     );
   }
 

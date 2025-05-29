@@ -19,7 +19,7 @@ export class ConfirmationPopupComponent {
   updateItemMethod!: Function;
   darkMode = new BehaviorSubject<boolean>(false);
   message = '';
-  action = ''
+  action = '';
   warning = false;
 
   constructor(
@@ -50,48 +50,72 @@ export class ConfirmationPopupComponent {
     this.action = value;
     this.warning = warning;
 
-    if(value === 'updateItem'){
-      this.message = 'You are about to overwrite this item\'s data with new item data.';
-    }
-    if(value === 'deleteItem'){
-      this.message = 'You are about to delete this item from the database.';
-    }
-    if(value === 'addItem'){
-      this.message = 'You are about to add an item to the database.';
-    }
-    if(value === 'updateUser'){
-      this.message = 'You are about to change this users information.';
-    }
-    if(value === 'deleteUser'){
-      this.message = 'You are about to delete this user from the database.';
-    }
-    if(value === 'addUser'){
-      this.message = 'You are about to add this user to the database.';
-    }
-    if(value === 'backupData'){
-      this.message = 'You are about to create a backup of the database.';
-    }
-    if(value === 'uploadData'){
-      this.message = 'You are about to upload a new file to the program (not to the database).';
-    }
-    if(value === 'appendData'){
-      this.message = 'You are about to append the data to the database adding new data and updating current.';
-    }
-    if(value === 'downloadData'){
-      this.message = 'You are about to create a downloaded .csv of the database.';
-    }
-    if(value === 'loadData'){
-      this.message = 'You are about to load a .csv to the database and overwrite all data currently in the database.';
-    }
-    if(value === 'missingData'){
-      this.message = 'You are missing data for this action please go back and fill in the name, size, and metric to continue.';
+    switch (value) {
+      case 'updateItem':
+        this.message =
+          "You are about to overwrite this item's data with new item data.";
+        break;
+
+      case 'deleteItem':
+        this.message = 'You are about to delete this item from the database.';
+        break;
+
+      case 'addItem':
+        this.message = 'You are about to add an item to the database.';
+        break;
+
+      case 'updateUser':
+        this.message = 'You are about to change this users information.';
+        break;
+
+      case 'deleteUser':
+        this.message = 'You are about to delete this user from the database.';
+        break;
+
+      case 'addUser':
+        this.message = 'You are about to add this user to the database.';
+        break;
+
+      case 'backupData':
+        this.message = 'You are about to create a backup of the database.';
+        break;
+
+      case 'uploadData':
+        this.message =
+          'You are about to upload a new file to the program (not to the database).';
+        break;
+
+      case 'appendData':
+        this.message =
+          'You are about to append the data to the database adding new data and updating current.';
+        break;
+
+      case 'downloadData':
+        this.message =
+          'You are about to create a downloaded .csv of the database.';
+        break;
+
+      case 'loadData':
+        this.message =
+          'You are about to load a .csv to the database and overwrite all data currently in the database.';
+        break;
+
+      case 'missingData':
+        this.message =
+          'You are missing data for this action please go back and fill in the name, size, and metric to continue.';
+        break;
+      case 'deleteBackup':
+        this.message = 'You are about to delete this backup file.';
+        break;
+      default:
+        break;
     }
   } // Update the popup message and action based on the value and warning parameters
   // Args: value: string - The value to set the action to
   //       warning: boolean - The warning flag to set the warning message
   // Returns: void
 
-  loadDataPopup(){
+  loadDataPopup() {
     this.action = 'loadData';
   } // Load data popup
   // Args: None

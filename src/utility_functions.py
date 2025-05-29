@@ -105,6 +105,19 @@ def generate_token(username: str, level: int) -> str:
         raise
 
 
+def delete_backup(file_path: str) -> None:
+    """
+    Deletes a backup file
+
+    Args:
+        file_path (str): the path to the backup file
+
+    Returns:
+        None
+    """
+    os.remove(file_path)
+
+
 def import_csv(uri: str) -> None:
     """
     Imports a CSV file into the database

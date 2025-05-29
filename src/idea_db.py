@@ -467,7 +467,8 @@ def backup_data(cursor: sqlite3.Cursor) -> None:
         f"../data/idea_lab/data-{date}.csv", "w", newline="", encoding="utf-8"
     ) as f:
         writer = csv.DictWriter(f, fieldnames=column_names)
-        print(f"Created backup file: data{date}.csv")
+        print("a")
+        print(f"Created backup file: /data/idea_lab/data{date}.csv")
 
         # Write the header (column names)
         writer.writeheader()

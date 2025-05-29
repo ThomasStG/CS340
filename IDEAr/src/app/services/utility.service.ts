@@ -15,21 +15,21 @@ export class UtilityService {
 
   setMode(val: boolean): void {
     this.cookieService.set(this.dayNight, val.toString());
-     /*
+    /*
      * sets light or dark mode
      *
      * Args:
      *   boolean
      *
      * Returns:
-     *  
+     *
      */
   }
 
   isDarkMode(): boolean {
     const cookie = this.cookieService.get(this.dayNight);
     return cookie.toLowerCase() == 'true';
-     /*
+    /*
      * checks to see if this is dark mode
      *
      * Args:
@@ -44,14 +44,14 @@ export class UtilityService {
     this.http
       .get(`http://127.0.0.1:3000/restoreDatabase?file=${file}`)
       .subscribe();
-     /*
+    /*
      * loads file
      *
      * Args:
      *   dile as string
      *
      * Returns:
-     *  
+     *
      */
   }
   getFiles(): Observable<string[]> {
@@ -61,7 +61,7 @@ export class UtilityService {
       .pipe(
         map((response) => response.files), // Extract 'data' field from the response
       );
-     /*
+    /*
      * gets files
      *
      * Args:
@@ -82,7 +82,7 @@ export class UtilityService {
         // Optionally, notify the user with an error message
       },
     });
-     /*
+    /*
      * backs up database, with error checking if something goes wrong
      *
      * Args:
@@ -96,7 +96,7 @@ export class UtilityService {
     const formData = new FormData();
     formData.append('file', file);
     return this.http.post('http://127.0.0.1:3000/uploadFile', formData);
-     /*
+    /*
      * uploading for files
      *
      * Args:
@@ -110,7 +110,7 @@ export class UtilityService {
     const formData = new FormData();
     formData.append('file', file);
     return this.http.post('http://127.0.0.1:3000/appendFile', formData);
-     /*
+    /*
      * appends file
      *
      * Args:
@@ -125,7 +125,7 @@ export class UtilityService {
       `http://127.0.0.1:3000/downloadFile?fileName=${encodeURIComponent(fileUrl)}`,
       { responseType: 'blob' },
     );
-     /*
+    /*
      * downloading a file
      *
      * Args:
@@ -139,11 +139,11 @@ export class UtilityService {
     return this.http.get<{ log: string }>('http://127.0.0.1:3000/get_log').pipe(
       map((response) => response.log), // Extract 'data' field from the response
     );
-     /*
+    /*
      * gets the log files
      *
      * Args:
-     *   
+     *
      *
      * Returns:
      *  list of logs
@@ -211,5 +211,13 @@ export class UtilityService {
       'http://127.0.0.1:3000/appendFileElectrical',
       formData,
     );
+  }
+  deleteBackup(file: string): Observable<any> {
+    const body = {
+      file: file,
+    };
+    return this.http
+      .post(`http://127.0.0.1:3000/deleteBackupFile`, body)
+      .pipe(map((response) => response));
   }
 }

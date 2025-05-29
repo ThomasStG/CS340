@@ -102,6 +102,22 @@ export class DataDownloadElectricalComponent implements OnInit {
       saveAs(blob, fileUrl); // The file will be saved with the name passed as 'fileUrl'
     });
   }
+  deleteBackup(fileUrl: string): void {
+    this.utilityService.deleteBackup(fileUrl).subscribe({
+      next: (response) => {
+        // Optionally, notify the user with a success message (e.g., Toast, alert)
+        this.utilityService
+          .getElectricalFiles()
+          .subscribe((response: string[]) => {
+            this.csv_files = response;
+          });
+      },
+      error: (error) => {
+        console.error('Error during file deletion:', error);
+        // Optionally, notify the user with an error message
+      },
+    });
+  }
   check_level() {
     const level = this.authService.levelGetter().subscribe((level) => {
       if (level == 0) return true;
@@ -130,6 +146,9 @@ export class DataDownloadElectricalComponent implements OnInit {
       }
       if (result === true && value === 'loadData') {
         this.loadData(event);
+      }
+      if (result === true && value === 'deleteBackup') {
+        this.deleteBackup(fileURL);
       }
     });
   }

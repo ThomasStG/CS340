@@ -92,6 +92,7 @@ from idea_endpoints import (
 )
 from utility_functions import (
     add_from_csv,
+    delete_backup,
     get_db,
     handle_exceptions,
     import_csv,
@@ -663,7 +664,32 @@ def backup_database_el() -> Tuple[Response, int]:
         cursor = get_db().cursor()
         print("Backing up database...")
         backup_data_el(cursor)
+        print("Backing up database...")
         return jsonify({"status": "success", "message": "Database backed up"}), 200
+    except Exception as e:
+        return handle_exceptions(e)
+
+
+@app.route("/deleteBackupFile", methods=["POST"])
+def delete_backup_file() -> Tuple[Response, int]:
+    """
+    Handles deleting a backup file
+
+    Args:
+        None
+
+    Returns:
+        Tuple[Response, int]: a message and status code
+    """
+    try:
+        data = request.json
+        if not data or "file" not in data:
+            raise KeyError("Missing required parameters")
+
+        file = data["file"]
+        delete_backup(file)
+
+        return jsonify({"status": "success", "message": "Backup file deleted"}), 200
     except Exception as e:
         return handle_exceptions(e)
 
