@@ -39,16 +39,6 @@ def ensure_tables():
     """
     with sqlite3.connect("../data/data.db") as connection:
         cursor = connection.cursor()
-        # cursor.execute(
-        #     """
-        #     DROP TABLE IF EXISTS electrical_active_items
-        #     """
-        # )
-        # cursor.execute(
-        #     """
-        #     DROP TABLE IF EXISTS electrical_passive_items
-        #     """
-        # )
         cursor.execute(
             """
                 CREATE TABLE IF NOT EXISTS electrical_active_items (
@@ -127,7 +117,7 @@ def add_active_item_el(
     description: str,
     item_type: str,
     is_assembly: bool = False,
-):
+) -> None:
     """
     Adds an item to the database
 
@@ -219,7 +209,7 @@ def add_passive_item_el(
     mounting_method: str,
     cursor: sqlite3.Cursor,
     connection: sqlite3.Connection,
-):
+) -> None:
     """
     Adds an item to the database
 
@@ -378,27 +368,26 @@ def update_passive_item_el(
     mounting_method: str,
     cursor: sqlite3.Cursor,
     connection: sqlite3.Connection,
-):
-    print(
-        item_id,
-        part_number,
-        item_type,
-        link,
-        value,
-        location,
-        rack,
-        slot,
-        count,
-        max_p,
-        max_v,
-        max_i,
-        i_hold,
-        tolerance,
-        polarity,
-        seller,
-        dielectric_material,
-        mounting_method,
-    )
+) -> None:
+    """
+    updates an item in the database
+
+    Args:
+        item_id (int): item id to update
+        part_number (str): part number of the item
+        item_type (str): type of the item
+        link (str): link to the item
+        value (float): value of the item
+        location (str): location of the item
+        rack (int): rack number of the item
+        slot (str): slot number of the item
+        count (int): count of the item
+        cursor (sqlite3.Cursor): SQLite cursor object to execute queries
+        connection (sqlite3.Connection): SQLite connection object to commit changes
+
+    Returns:
+        None
+    """
     cursor.execute(
         """
                     UPDATE electrical_passive_items 
@@ -460,7 +449,27 @@ def update_active_item_el(
     subtype: str,
     cursor: sqlite3.Cursor,
     connection: sqlite3.Connection,
-):
+) -> None:
+    """
+    updates an item in the database
+
+    Args:
+        item_id (int): item id to update
+        name (str): name of the item
+        new_item_id (str): new item id
+        new_name (str): new name of the item
+        location (str): location of the item
+        rack (int): rack number of the item
+        slot (str): slot number of the item
+        count (int): count of the item
+        link (str): link to the item
+        description (str): description of the item
+        cursor (sqlite3.Cursor): SQLite cursor object to execute queries
+        connection (sqlite3.Connection): SQLite connection object to commit changes
+
+    Returns:
+        None
+    """
     cursor.execute(
         """
                     UPDATE electrical_active_items 
@@ -627,7 +636,18 @@ def decrement_passive_item_el(
     cursor: sqlite3.Cursor,
     connection: sqlite3.Connection,
 ) -> None:
+    """
+    decrements the count of an item in the passive items table
 
+    Args:
+        item_id (int): id of the item
+        num_to_remove (int): number of items to remove
+        cursor (sqlite3.Cursor): SQLite cursor object to execute queries
+        connection (sqlite3.Connection): SQLite connection object to commit changes
+
+    Returns:
+        None
+    """
     # TODO: add  email/threshold check
     cursor.execute(
         """
@@ -864,7 +884,18 @@ def search_below_threshold_el(
     types: list[str] = [],
     threshold: int = 50,
 ) -> list[dict]:
-    """ """
+    """
+    Search for items in the database that have a count below a certain threshold.
+
+    Args:
+        cursor (sqlite3.Cursor): SQLite cursor object to execute queries.
+        tables (list[str], optional): List of tables to search. Defaults to [].
+        types (list[str], optional): List of types to search. Defaults to [].
+        threshold (int, optional): Threshold value for the count. Defaults to 50.
+
+    Returns:
+        list[dict]: List of dictionaries containing matched items.
+    """
     table_dict = {
         "passive": "electrical_passive_items",
         "active": "electrical_active_items",
@@ -925,7 +956,19 @@ def get_tooltip(cursor: sqlite3.Cursor) -> str:
     return cursor.fetchone()[0]
 
 
-def calculate_multiplier(cursor: sqlite3.Cursor, connection: sqlite3.Connection):
+def calculate_multiplier(
+    cursor: sqlite3.Cursor, connection: sqlite3.Connection
+) -> None:
+    """
+    Calculate the multiplier value for each passive item type in the database.
+
+    Args:
+        cursor (sqlite3.Cursor): SQLite cursor object to execute queries.
+        connection (sqlite3.Connection): SQLite connection object to commit changes.
+
+    Returns:
+        None
+    """
     types = [
         "Resistor",
         "capacitor",
@@ -944,8 +987,6 @@ def calculate_multiplier(cursor: sqlite3.Cursor, connection: sqlite3.Connection)
         -9: "n",  # nano
         -6: "u",  # micro
         -3: "m",  # milli
-        -2: "c",  # centi
-        -1: "d",  # deci
         0: "",  # no prefix
         3: "k",  # kilo
         6: "M",  # mega
@@ -1005,7 +1046,13 @@ def calculate_multiplier(cursor: sqlite3.Cursor, connection: sqlite3.Connection)
     connection.commit()
 
 
-def get_multiplier(cursor: sqlite3.Cursor):
+def get_multiplier(cursor: sqlite3.Cursor) -> str:
+    """
+    Get the multiplier value from the database.
+
+    Returns:
+        str: The multiplier value stored in the database.
+    """
     type_dict = {
         "Resistor": "Ohm",
         "Capacitor": "Farad",
@@ -1016,8 +1063,6 @@ def get_multiplier(cursor: sqlite3.Cursor):
         "n": 10**-9,
         "u": 10**-6,
         "m": 10**-3,
-        "c": 10**-2,
-        "d": 10**-1,
         "": 1,
         "k": 10**3,
         "M": 10**6,
@@ -1043,7 +1088,6 @@ def get_multiplier(cursor: sqlite3.Cursor):
             value = value_dict.get(prefix, 1)
             values.append(value)
         results.append({"type": item_type[0], "multiplier": mults, "values": values})
-    print(results)
 
     return results
 
