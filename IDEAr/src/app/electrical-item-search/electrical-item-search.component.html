@@ -12,7 +12,6 @@
       <option selected disabled value="">Select a type</option>
       <option value="passive">Passive</option>
       <option value="active">Active</option>
-      <option value="assembly">Assembly</option>
     </select>
   </div>
   <div class="flex flex-wrap flex-grow justify-center gap-4 items-center">
@@ -61,6 +60,7 @@
             type="text"
             formControlName="search_percent"
           />
+          %
         </div>
         <div class="flex  items-center gap-1">
           <label>Mounting Method:</label>
@@ -69,7 +69,7 @@
           formControlName="mounting_method"
           class="text-black dark:text-white bg-gray-100 hover:bg-gray-300 dark:hover:bg-gray-700 dark:bg-gray-600 border border-gray-500 rounded-md"
           >
-            <option disabled selected value="">Select a mounting method</option>
+            <option value="">Any</option>
             <option value="SMD">SMD</option>
             <option value="Through Hole">Through Hole</option>
           </select>
