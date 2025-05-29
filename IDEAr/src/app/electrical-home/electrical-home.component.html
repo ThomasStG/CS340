@@ -1,1 +1,85 @@
-<p class="min-h-screen dark:text-white dark:bg-gray-900">electrical lab home will go here</p>
+<div class="p-0 m-0 w-full h-full left-0 dark:bg-gray-900">
+  <app-electrical-item-search
+    (formSubmit)="onSearch($event)"
+    (clear)="onClear($event)"
+  ></app-electrical-item-search>
+  <div
+    *ngIf="items.length === 0"
+    class="text-black dark:text-white bg-gray-100 dark:bg-gray-900 h-full flex flex-col items-center justify-center m-auto fixed index-0 w-full"
+  >
+    <textarea type="text" [(ngModel)]="helpText" disabled readonly
+    class="text-black dark:text-white bg-gray-100 dark:bg-gray-900 w-full max-w-lg p-4 rounded-md text-center"
+ rows="30" cols="100">
+    {{ helpText }}
+    </textarea>
+    </div>
+  <div
+    *ngIf="searched"
+    class="overflow-y-scroll h-[calc(100vh-8rem)] min-w-full">
+
+    <table *ngIf="type === 'passive'">
+      <thead class="sticky top-0 z-[100]">
+        <tr class="bg-gray-200 bg-gray-0 text-black dark:bg-gray-900 dark:text-white">
+          <th>Type</th>
+          <th *ngIf="subtype === 'resistor'">Max P</th>
+          <th *ngIf="subtype === 'capacitor'">Max V</th>
+          <th>Value</th>
+          <th>Unit</th>
+          <th>Mounting Method</th>
+          <th>Tolerance</th>
+          <th>Count</th>
+        </tr>
+      </thead>
+      <tbody class="dark:text-white">
+        <tr *ngFor="let item of items" (click)="onItemClick(item)" class="cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600">
+          <td>{{ subtype }}</td>
+          <td *ngIf="subtype === 'resistor'">{{ item.max_power }}</td>
+          <td *ngIf="subtype === 'capacitor'">{{ item.max_voltage }}</td>
+          <td>{{ item.value }}</td>
+          <td>{{ unit }}</td>
+          <td>{{ item.mounting_method }}</td>
+          <td>{{ item.tolerance }}</td>
+          <td>{{ item.count }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <table *ngIf="type === 'assembly'">
+      <thead>
+        <tr class="cursor-pointer hover:bg-gray-400 bg-gray-200 bg-gray-0 text-black dark:bg-gray-900 dark:text-white hover:dark:bg-gray-600">
+          <th>Type</th>
+          <th>Name</th>
+          <th>Part ID</th>
+          <th>Count</th>
+        </tr>
+      </thead>
+      <tbody class="dark:text-white">
+        <tr *ngFor="let item of items" (click)="onItemClick(item)" class="cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600">
+          <td>{{ item.subtype }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.part_id }}</td>
+          <td>{{ item.count }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <table *ngIf="type === 'Active'">
+      <thead>
+        <tr class="bg-gray-200 bg-gray-0 text-black dark:bg-gray-900 dark:text-white">
+          <th>Name</th>
+          <th>Part ID</th>
+          <th>Count</th>
+        </tr>
+      </thead>
+      <tbody class="dark:text-white">
+        <tr *ngFor="let item of items" (click)="onItemClick(item)" class="cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600">
+          <td>{{ item.name }}</td>
+          <td>{{ item.part_id }}</td>
+          <td>{{ item.count }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="isPopupVisible" class="" (click)="closePopup()">
+    <app-electrical-item-popup [item]="selectedItem" (close)="closePopup()"></app-electrical-item-popup>
+  </div>
+</div>

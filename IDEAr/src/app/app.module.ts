@@ -20,9 +20,15 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { DataDownloadComponent } from './data-download/data-download.component';
 import { ItemPopupComponent } from './item-popup/item-popup.component';
 import { ElectricalHomeComponent } from './electrical-home/electrical-home.component';
+import { ElectricalItemSearchComponent } from './electrical-item-search/electrical-item-search.component';
 import { LogFilePageComponent } from './log-file-page/log-file-page.component';
 import { UserManagementComponent } from './user-management/user-management.component';
 import { UserComponent } from './user/user.component';
+import { ElectricalItemPopupComponent } from './electrical-item-popup/electrical-item-popup.component';
+import { ElectricalAdminComponent } from './electrical-admin/electrical-admin.component';
+import { ElectricalAdminPopupComponent } from './electrical-admin-popup/electrical-admin-popup.component';
+import { ElectricalAdminSearchComponent } from './electrical-admin-search/electrical-admin-search.component';
+import { DataDownloadElectricalComponent } from './data-download-electrical/data-download-electrical.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +47,12 @@ import { UserComponent } from './user/user.component';
     ElectricalHomeComponent,
     UserManagementComponent,
     UserComponent,
+    ElectricalItemSearchComponent,
+    ElectricalItemPopupComponent,
+    ElectricalAdminComponent,
+    ElectricalAdminPopupComponent,
+    ElectricalAdminSearchComponent,
+    DataDownloadElectricalComponent,
   ],
   imports: [
     ReactiveFormsModule,

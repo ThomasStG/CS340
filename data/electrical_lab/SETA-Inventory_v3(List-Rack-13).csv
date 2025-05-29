@@ -1,0 +1,407 @@
+MM74HC153N,Selector/Multiplexer,High-Speed CMOS Logic Dual 4- to 1-Line Selector/Multiplexer,https://www.ti.com/lit/ds/symlink/cd74hc153.pdf,EL,13,7,4-1 MUX X2 74HC153,,,,,0
+74HCT165N,Shift Registers,SNx4HC165 8-Bit Parallel-Load Shift Registers,https://www.ti.com/lit/ds/symlink/sn74hc165.pdf,EL,13,34,8 BIT SHFT REG 74HCT165,,,,,0 
+MC14174BCP,HexType D Flip-Flop,hex  type  D  flipâ€“flop  is  constructed  with  MOSPâ€“channel  and  Nâ€“channel  enhancement,https://www.alldatasheet.com/datasheet-pdf/view/11971/ONSEMI/MC14174BCP.html,EL,13,1,3ST DRVR X8 74ACT244 SO 0030,,,,,0 
+74HC251AP,8-Channel Multiplexer,TOSHIBA CMOS Digital Integrated Circuit Silicon Monolithic,https://www.alldatasheet.com/datasheet-pdf/view/15573/PHILIPS/74HC251.html,EL,13,65,3ST 8CH MUX 74HC251,,,,,0 
+74F541N,BUFFERS/DRIVERS,OCTAL BUFFERS/DRIVERS WITH 3-STATE OUTPUTS,https://www.alldatasheet.com/datasheet-pdf/view/50366/FAIRCHILD/74F541.html,EL,13,68,3ST DRVR X8 74F541,,,,,0 
+SN74AS573N,TRANSPARENT LATCHES ,OCTAL D-TYPE TRANSPARENT LATCHES WITH 3 STATE OUTPUTS,https://www.alldatasheet.com/datasheet-pdf/view/28021/TI/SN74LS373N.html,EL,13,12,3ST LATCH X8 74AS573,,,,,0 
+74HC14AP,HEX SCHMITT INVERTER,HIGH SPEED CMOS SCHMITT INVERTER,https://www.alldatasheet.com/datasheet-pdf/view/83116/TOSHIBA/74HC14AP.html,EL,13,64,Inverter 74HC14AP,,,,,0 
+MM74HC4020N,Binary Counter,"14-Stage Binary Counter , 12-Stage Binary Counter",https://www.alldatasheet.com/datasheet-pdf/view/15607/PHILIPS/74HC4020N.html,EL,13,9,6100015 74H4020,,,,,0 
+AM9513APC,System timing controller,16 bit counter system timing controller,https://www.alldatasheet.com/datasheet-pdf/view/133430/AMD/AM9513APC.html,EL,13,4,AM9513 500716,,,,,0 
+ATV750,Programmable Logic Device,High Density UV Erasable Programmable Logic Device,https://www.alldatasheet.com/datasheet-pdf/view/56266/ATMEL/ATV750.html,EL,13,55,BLANK IN BLACK BOX,,,,,0 
+D87C51,MICROCONTROLLER,CHMOSSINGLE-CHIP8-BIT MICROCONTROLLER,https://www.alldatasheet.com/datasheet-pdf/view/66130/INTEL/D87C51.html,EL,13,12,BLANK IN CLEAR BOX,,,,,0 
+GAL22V10B,Array Logic,High Performance E2CMOS PLDGeneric Array Logic,https://www.alldatasheet.com/datasheet-pdf/view/70193/LATTICE/GAL22V10.html,EL,13,2,BLANK IN BLACK BOX,,,,,0 
+SN74LS160AN,4-BIT COUNTERS,SYNCHRONOUS 4-BIT COUNTERS,https://www.alldatasheet.com/datasheet-pdf/view/27421/TI/SN74LS160AN.html,EL,13,6,SYNC 4 BIT CTR 74LS160,,,,,0 
+74HC165N,Shift Registers,8-bit parallel-in/serial-out shift register,https://www.alldatasheet.com/datasheet-pdf/view/15555/PHILIPS/74HC165N.html,EL,13,5,8 BIT SHFT REG 74HC165,,,,,0 
+SN74HC244N,OCTAL BUFFERS AND LINE DRIVERS,OCTAL BUFFERS AND LINE DRIVERSWITH 3-STATE OUTPUTS,https://www.alldatasheet.com/datasheet-pdf/view/27911/TI/SN74HC244N.html,EL,13,1,6100011 74HC244,,,,,0 
+SN74ALS273N,FLIP-FLOPS,OCTAL D-TYPE FLIP-FLOPS WITH CLEAR,https://www.alldatasheet.com/datasheet-pdf/view/1731954/TI1/SN74ALS273N.html,EL,13,25,D FLOP X8 74ALS273,,,,,0 
+74HC541N,Octal buffer/line driver,Octal buffer/line driver; 3-state,https://www.alldatasheet.com/datasheet-pdf/view/15642/PHILIPS/74HC541N.html,EL,13,19,3ST DRVR X8 74HC541,,,,,0 
+74ACT574,FLIP FLOP,OCTAL D-TYPE FLIP FLOPWITH 3 STATE OUTPUT NON INVERTING,https://www.alldatasheet.com/datasheet-pdf/view/21769/STMICROELECTRONICS/74ACT574.html,EL,13,83,3ST D FLOP X8 74ACT574,,,,,0 
+SN74HC595N,SHIFT REGISTERS,8-BIT SHIFT REGISTERSWITH 3-STATE OUTPUT REGISTERS,https://www.alldatasheet.com/datasheet-pdf/view/27939/TI/SN74HC595N.html,EL,13,4,8 BIT SR+LATCH 74HC595,,,,,0 
+MAX379CPE,Analog Multiplexers,"High-Voltage, Fault-ProtectedAnalog Multiplexers",https://www.alldatasheet.com/datasheet-pdf/view/73241/MAXIM/MAX379CPE.html,EL,13,9,MAX379 4-1 MPX,,,,,0 
+AD7846JP,Voltage Output DAC,LC2MOS16-Bit Voltage Output DAC,https://www.alldatasheet.com/datasheet-pdf/view/283608/AD/AD7846JP.html,EL,13,54,USED ICS SALVAGED FROM JUNK P.C. BOARDS,,,,,0 
+OP249GP, Operational Amplifier,"Dual, PrecisionJFET High Speed Operational Amplifier",https://www.alldatasheet.com/datasheet-pdf/view/49050/AD/OP249GP.html,EL,13,1,BLANK IN CLEAR BOX,,,,,0 
+AMP02,Instrumentation Amplifier,High Accuracy 8-PinInstrumentation Amplifier,https://www.alldatasheet.com/datasheet-pdf/view/48924/AD/AMP02.html,EL,13,1,BLANK IN CLEAR BOX,,,,,0 
+AT22V10,Programmable Logic Device,High Speed UV Erasable Programmable Logic Device,https://www.alldatasheet.com/datasheet-pdf/view/129438/ATMEL/AT22V10.html,EL,13,2,BLANK IN CLEAR BOX,,,,,0 
+74HC164,Shift Register,8-Bit Serial-in/Parallel-out Shift Register,https://www.alldatasheet.com/datasheet-pdf/view/53751/FAIRCHILD/MM74HC164N.html,EL,13,24,8 BIT SHIFT REG 74HC164 SO1464,,,,,0 
+MC14060B,Binary Counter,14-Bit Binary Counter and Oscillator,https://www.alldatasheet.com/datasheet-pdf/view/11959/ONSEMI/MC14060B.html,EL,13,115,OSC-COUNTER MC14060BCP 6100039,,,,,0 
+74ACT245PC,Bidirectional Transceiver ,Octal Bidirectional Transceiver with 3-STATE Inputs/Outputs,https://www.alldatasheet.com/datasheet-pdf/view/50146/FAIRCHILD/74ACT245PC.html,EL,13,8,3ST XCVR X8 74ACT245 SO 0024,,,,,0 
+74ACT373PC,OCTAL D-TYPE LATCH,OCTAL D-TYPE LATCHWITH 3 STATE OUTPUT NON INVERTING,https://www.alldatasheet.com/datasheet-pdf/view/21765/STMICROELECTRONICS/74ACT373.html,EL,13,8,D FLOP X8 74ACT373,,,,,0 
+74HCT541N,buffer/line driver,Octal buffer/line driver; 3-state,https://www.alldatasheet.com/datasheet-pdf/view/650281/NXP/74HCT541N.html,EL,13,32,3ST DRVR X8 74HCT541,,,,,0 
+MM74HC574N,Flip-Flop,3-STATE Octal D-Type Edge-Triggered Flip-Flop,https://www.alldatasheet.com/datasheet-pdf/view/53784/FAIRCHILD/MM74HC574N.html,EL,13,20,3ST D FLOP X8 74HC574,,,,,0 
+74HC597N,shift register,8-bit shift register with input flip-flops,https://www.alldatasheet.com/datasheet-pdf/view/15650/PHILIPS/74HC597N.html,EL,13,20,8 BIT SHFT REG 74HC597,,,,,0 
+BTW69-800,BTW 69,BTW 69 (N),https://www.alldatasheet.com/datasheet-pdf/view/22043/STMICROELECTRONICS/BTW69-800.html,EL,13,9,BTW69-800 SCR FOR DIMMERS,,,,,0 
+LF398N8,AMPLIFIER,PRECISION SAMPLE AND HOLD AMPLIFIER,https://www.alldatasheet.com/datasheet-pdf/view/70231/LINER/LF398N8.html,EL,13,1,BLANK IN CLEAR BOX,,,,,0 
+74ACT244,BUFFER,OCTAL BUS BUFFER WITH 3 STATE OUTPUTS (NON INVERTED),https://www.alldatasheet.com/datasheet-pdf/view/21758/STMICROELECTRONICS/74ACT244.html,EL,13,1,BLANK IN BLACK BOX,,,,,0 
+SN74ALS646NT,TRANSCEIVER,OCTAL BUS TRANSCEIVERS AND REGISTERS WITH 3 STATE OUTPUTS,https://rocelec.widen.net/view/pdf/zucxpawolj/TXIIS140294-1.pdf?t.download=true&u=5oefqw,EL,13,20,3ST XCVR X8 74ALS646 SO 0025,,,,,0 
+74HCT574N,D-type flip-flop,Octal D-type flip-flop; positiveedge-trigger; 3-state,https://www.alldatasheet.com/datasheet-pdf/view/15646/PHILIPS/74HCT574N.html,EL,13,25,3ST D FLOP X8 74HCT574,,,,,0 
+74HCT164N,shift register,"8-bit serial-in, parallel-out shift register",https://www.alldatasheet.com/datasheet-pdf/view/101617/PHILIPS/74HCT164N.html,EL,13,22,8 BIT SHFT REG 74HCT164,,,,,0 
+74AC244,Octal Buffer/,Octal Buffer/Line Driver with 3-STATE Outputs,https://www.alldatasheet.com/datasheet-pdf/view/50136/FAIRCHILD/74AC244.html,EL,13,12,74AC244,,,,,0 
+MM74HCT245,TRANCEIVER,OCTAL 3-STATE TRANSCEIVER,https://www.mouser.com/datasheet/2/308/1/MM74HCT245_D-2315793.pdf,EL,13,6,6100068 74HCT245,,,,,0 
+CD74ACT541E,Buffer/Line Drivers,"Octal Buffer/Line Drivers, 3-State",https://www.ti.com/lit/ds/symlink/cd74act541.pdf,EL,13,45,3ST DRVR X8 74ACT541,,,,,0 
+CD74ACT573E,TRANSPARENT LATCHES ,OCTAL TRANSPARENT LATCHES,https://www.ti.com/lit/ds/symlink/cd74ac573.pdf,EL,13,85,3ST LATCH X8 74ACT573,,,,,0 
+MM74HC4051N,Multiplexer,"8-Channel Analog Multiplexer, Dual 4-Channel Analog Multiplexer, Triple 2-Channel Analog Multiplexer",https://www.alldatasheet.com/datasheet-pdf/view/53771/FAIRCHILD/MM74HC4051N.html,EL,13,1,BLANK IN CLEAR BOX,,,,,0 
+CS5101A-JL8,Converter,"16-Bit, 100 kHz / 20 kHz A/D Converters",https://www.alldatasheet.com/datasheet-pdf/view/58139/CIRRUS/CS5101A-JL8.html,EL,13,4,CX5101-JL8 P00316,,,,,0
+10000000,10,M¿,0.5,1,Through hole,EL,1,690003-1005,DALE CMF55 10M 1%TI 0343,
+10000000,10,M¿,,5,Through hole,EL,1,10M 5%,,
+1000000,1,M¿,,1,Through hole,EL,1,6900003-1004 1 MEGOHM,,
+2210000,2.21,M¿,0.25,2,Through hole,EL,1,6900003-2214 2.21 MEGOHM,RLR7C 2214F SD 528AJ,
+6800000,6.8,M¿,0.25,2,Through hole,EL,1,6900003-6804 6.8 MEGOHM,DALE 9521 RN55D 6814F,
+442000,442,k¿,,,Through hole,EL,1,6900003-4423 442K,,
+470000,470,k¿,,1,Through hole,EL,1,690003-4703 470K,,
+499000,499,k¿,0.5,1,Through hole,EL,1,6900005-4993 499K 1/2W,,
+425000,425,k¿,,1,Through hole,EL,1,6900003-8253 825K,,
+215000,215,k¿,,1,Through hole,EL,1,6900003-2153 215K,,
+221000,221,k¿,,1,Through hole,EL,1,6900003-2213 221K,,
+332000,332,k¿,,1,Through hole,EL,1,690003-3323 332K,,
+348000,348,k¿,,1,Through hole,EL,1,6900003-3483 348K,,
+412000,412,k¿,,1,Through hole,EL,1,6900003-4123 412K,,
+100000,100,k¿,,1,Through hole,EL,1,6900003-1003 100K,271-100K,
+121000,121,k¿,,1,Through hole,EL,1,690003-1213 121K,,
+143000,143,k¿,,1,Through hole,EL,1,690003-1433 143K,,
+147000,147,k¿,,1,Through hole,EL,1,690003-1473 147K,,
+200000,200,k¿,0.125,1,Through hole,EL,1,6900003-2003 200K,1135-1493-ND,
+300,300,¿,0.25,5,Through hole,EL,2,S00010-301,,Carbon
+330,330,¿,0.25,5,Through hole,EL,2,S00010-331,,Carbon
+360,360,¿,0.25,5,Through hole,EL,2,S00010-361,,Carbon
+390,390,¿,0.25,5,Through hole,EL,2,S00010-391,,Carbon
+430,430,¿,0.25,5,Through hole,EL,2,S00010-431,,Carbon
+470,470,¿,0.25,5,Through hole,EL,2,S00010-471,,Carbon
+510,510,¿,0.25,5,Through hole,EL,2,S00010-511,,Carbon
+560,560,¿,0.25,5,Through hole,EL,2,S00010-561,,Carbon
+620,620,¿,0.25,5,Through hole,EL,2,S00010-621,,Carbon
+680,680,¿,0.25,5,Through hole,EL,2,S00010-681,,Carbon
+750,750,¿,0.25,5,Through hole,EL,2,S00010-751,,Carbon
+820,820,¿,0.25,5,Through hole,EL,2,S00010-821,,Carbon
+910,910,¿,0.25,5,Through hole,EL,2,S00010-911,,Carbon
+1000,1,k¿,,5,Through hole,EL,2,1K,,
+1100,1.1,k¿,0.25,5,Through hole,EL,2,S00010-112,,Carbon
+1200,1.2,k¿,0.25,5,Through hole,EL,2,S00010-122,,Carbon
+1300,1.3,k¿,0.25,5,Through hole,EL,2,S00010-132,,Carbon
+1500,1.5,k¿,0.25,5,Through hole,EL,2,S00010-152,,Carbon
+1600,1.6,k¿,0.25,5,Through hole,EL,2,S00010-162,,Carbon
+1800,1.8,k¿,0.25,5,Through hole,EL,2,S00010-182,,Carbon
+2000,2,k¿,0.25,5,Through hole,EL,2,S00010-202,,Carbon
+2200,2.2,k¿,0.25,5,Through hole,EL,2,S00010-222,,Carbon
+2400,2.4,k¿,0.25,5,Through hole,EL,2,S00010-242,,Carbon
+2700,2.7,k¿,0.25,5,Through hole,EL,2,S00010-272,,Carbon
+3000,3,k¿,0.25,5,Through hole,EL,2,S00010-302,,Carbon
+3300,3.3,k¿,0.25,5,Through hole,EL,2,S00010-332,,Carbon
+3600,3.6,k¿,0.25,5,Through hole,EL,2,S00010-362,,Carbon
+3900,3.9,k¿,0.25,5,Through hole,EL,2,S00010-392,,Carbon
+,,k¿,0.25,,Through hole,EL,2,0,,
+4700,4.7,k¿,0.25,5,Through hole,EL,2,S00010-472,,Carbon
+5100,5.1,k¿,0.25,5,Through hole,EL,2,S00010-512,,Carbon
+5600,5.6,k¿,0.25,5,Through hole,EL,2,S00010-532,,Carbon
+6200,6.2,k¿,0.25,5,Through hole,EL,2,S00010-622,,Carbon
+6800,6.8,k¿,0.25,5,Through hole,EL,2,S00010-682,,Carbon
+7500,7.5,k¿,0.25,5,Through hole,EL,2,S00010-752,,Carbon
+8200,8.2,k¿,0.25,5,Through hole,EL,2,S00010-822,,Carbon
+9100,9.1,k¿,0.25,5,Through hole,EL,2,S00010-912,,Carbon
+10000,10,k¿,0.25,,Through hole,EL,2,10K,,
+11000,11,k¿,0.25,5,Through hole,EL,2,S00010-113,,Carbon
+12000,12,k¿,0.25,5,Through hole,EL,2,S00010-123,,Carbon
+13000,13,k¿,0.25,5,Through hole,EL,2,S00010-133,,Carbon
+15000,15,k¿,0.25,5,Through hole,EL,2,S00010-153,,Carbon
+16000,16,k¿,0.25,5,Through hole,EL,2,S00010-163,,Carbon
+18000,18,k¿,0.25,5,Through hole,EL,2,S00010-183,,Carbon
+20000,20,k¿,0.25,5,Through hole,EL,2,S00010-203,,Carbon
+22000,22,k¿,0.25,5,Through hole,EL,2,S00010-223,,Carbon
+24000,24,k¿,0.25,5,Through hole,EL,2,S00010-243,,Carbon
+27000,27,k¿,0.25,5,Through hole,EL,2,S00010-273,,Carbon
+3000000,3,M¿,0.25,5,Through hole,EL,3,S00010-305,,Carbon
+3300000,3.3,M¿,0.25,5,Through hole,EL,3,S00010-335,,Carbon
+2600000,3.6,M¿,0.25,5,Through hole,EL,3,S00010-365,,Carbon
+3900000,3.9,M¿,0.25,5,Through hole,EL,3,S00010-395,,Carbon
+4300000,4.3,M¿,0.25,5,Through hole,EL,3,S00010-435,,Carbon
+4700000,4.7,M¿,0.25,5,Through hole,EL,3,S00010-475,,Carbon
+5100000,5.1,M¿,0.25,5,Through hole,EL,3,S00010-515,,Carbon
+5600123,5.6,M¿,0.25,5,Through hole,EL,3,S00010-535,,Carbon
+6200000,6.2,M¿,0.25,5,Through hole,EL,3,S00010-625,,Carbon
+6800000,6.8,M¿,0.25,5,Through hole,EL,3,S00010-685,,Carbon
+7500000,7.5,M¿,0.25,5,Through hole,EL,3,S00010-755,,Carbon
+8200000,8.2,M¿,0.25,5,Through hole,EL,3,S00010-825,,Carbon
+9100000,9.1,M¿,0.25,5,Through hole,EL,3,S00010-915,,Carbon
+10000000,10,M¿,0.25,5,Through hole,EL,3,S00010-106,,Carbon
+11000000,11,M¿,0.25,5,Through hole,EL,3,S00010-116,,Carbon
+12000000,12,M¿,0.25,5,Through hole,EL,3,S00010-126,,Carbon
+13000000,13,M¿,0.25,5,Through hole,EL,3,S00010-136,,Carbon
+15000000,15,M¿,0.25,5,Through hole,EL,3,S00010-156,,Carbon
+16000000,16,M¿,0.25,5,Through hole,EL,3,S00010-166,,Carbon
+18000000,18,M¿,0.25,5,Through hole,EL,3,S00010-186,,Carbon
+20000000,20,M¿,0.25,5,Through hole,EL,3,S00010-206,,Carbon
+22000000,22,M¿,0.25,5,Through hole,EL,3,S00010-226,,Carbon
+2400000,2.4,M¿,0.25,5,Through hole,EL,3,S01197-2R4,,Carbon
+500000,500,k¿,0.25,5,Through hole,EL,4,,,
+10000,10,k¿,0.25,1,Through hole,EL,4,,,
+1000,1,k¿,0.25,1,Through hole,EL,4,,,
+43000,43,k¿,0.25,5,Through hole,EL,4,,,
+47.5,47.5,¿,0.25,5,Through hole,EL,4,,,
+200,200,¿,0.25,5,Through hole,EL,4,,,
+200,200,¿,0.25,5,Through hole,EL,4,,,
+1,1,¿,0.05,5,Through hole,EL,4,P00011-IR0,,
+6.8,6.8,¿,0.5,5,Through hole,EL,4,,,
+200,200,¿,0.5,5,Through hole,EL,4,,,
+10,10,¿,0.25,5,Through hole,EL,4,,,
+75,75,¿,0.5,1,Through hole,EL,4,,,
+330,330,¿,1.2,5,Through hole,EL,4,,,
+390,390,¿,1.2,5,Through hole,EL,4,,,
+4.7,4.7,¿,1,5,Through hole,EL,4,,,
+560,560,¿,0.5,5,Through hole,EL,4,,,
+1000,1,k¿,0.5,5,Through hole,EL,4,,,
+240,240,¿,1,5,Through hole,EL,4,,,
+200000,200,k¿,2,5,Through hole,EL,4,,,
+100000,100,¿,2,5,Through hole,EL,4,,0-count,
+0.5,0.5,¿,3&5,5,Through hole,EL,4,,,
+20,20,¿,10,5,Through hole,EL,4,,,
+200,200,¿,3,5,Through hole,EL,4,,,
+0.01,0.01,¿,10,1,Screw Mountaid,EL,4,,DALE LVR-10 .01¿  1% 10W 8923,
+0.02,0.02,¿,10,1,Screw Mountaid,EL,4,,DALE LVR-10 .02¿  1% 10W 8952,
+0.05,0.05,¿,10,1,Screw Mountaid,EL,4,,DALE LVR-10 .05¿  1% 10W 8949,
+0.01,0.01,¿,10,1,Screw Mountaid,EL,4,,DALE LVR-10 .01¿  1% 10W 9001,
+20000,20,k¿,20,1,Screw Mountaid,EL,4,,CLAROSTAT VPR-20H 2K 411-8435,
+3,3,¿,0.25,5,Through hole,EL,5,P00010-3R0,,Carbon
+3.3,3.3,¿,0.25,5,Through hole,EL,5,P00010-3R3,,Carbon
+3.6,3.6,¿,0.25,5,Through hole,EL,5,P00010-3R6,,Carbon
+3.9,3.9,¿,0.25,5,Through hole,EL,5,P00010-3R9,,Carbon
+4.3,4.3,¿,0.25,5,Through hole,EL,5,P00010-4R3,,Carbon
+4.7,4.7,¿,0.25,5,Through hole,EL,5,P00010-4R7,,Carbon
+5.1,5.1,¿,0.25,5,Through hole,EL,5,P00010-5R1,,Carbon
+5.6,5.6,¿,0.25,5,Through hole,EL,5,P00010-5R3,,Carbon
+6.2,6.2,¿,0.25,5,Through hole,EL,5,P00010-6R2,,Carbon
+6.8,6.8,¿,0.25,5,Through hole,EL,5,P00010-8R8,,Carbon
+7.5,7.5,¿,0.25,5,Through hole,EL,5,P00010-754,,Carbon
+8.2,8.2,¿,0.25,5,Through hole,EL,5,P00010-8R2,,Carbon
+9.1,9.1,¿,0.25,5,Through hole,EL,5,P00010-9R1,,Carbon
+10,10,¿,0.25,5,Through hole,EL,5,P00010-100,,Carbon
+11,11,¿,0.25,5,Through hole,EL,5,P00010-110,,Carbon
+12,12,¿,0.25,5,Through hole,EL,5,P00010-120,,Carbon
+13,13,¿,0.25,5,Through hole,EL,5,,,
+15,15,¿,0.25,5,Through hole,EL,5,P00010-150,,Carbon
+16,16,¿,0.25,5,Through hole,EL,5,P00010-160,,Carbon
+18,18,¿,0.25,5,Through hole,EL,5,P00010-180,,Carbon
+20,20,¿,0.25,5,Through hole,EL,5,P00010-200,,Carbon
+22,22,¿,0.25,5,Through hole,EL,5,P00010-220,,Carbon
+24,24,¿,0.25,5,Through hole,EL,5,P00010-240,,Carbon
+27,27,¿,0.25,5,Through hole,EL,5,P00010-270,,Carbon
+30,30,¿,0.25,5,Through hole,EL,5,P00010-300,,Carbon
+33,33,¿,0.25,5,Through hole,EL,5,P00010-330,,Carbon
+36,36,¿,0.25,5,Through hole,EL,5,P00010-360,,Carbon
+39,39,¿,0.25,5,Through hole,EL,5,P00010-390,,Carbon
+43,43,¿,0.25,5,Through hole,EL,5,P00010-430,,Carbon
+47,47,¿,0.25,5,Through hole,EL,5,P00010-470,,Carbon
+51,51,¿,0.25,5,Through hole,EL,5,P00010-510,,Carbon
+56,56,¿,0.25,5,Through hole,EL,5,P00010-560,,Carbon
+62,62,¿,0.25,5,Through hole,EL,5,P00010-620,,Carbon
+68,68,¿,0.25,5,Through hole,EL,5,P00010-680,,Carbon
+75,75,¿,0.25,5,Through hole,EL,5,P00010-750,,Carbon
+82,82,¿,0.25,5,Through hole,EL,5,P00010-820,,Carbon
+91,91,¿,0.25,5,Through hole,EL,5,P00010-910,,Carbon
+100,100,¿,0.25,5,Through hole,EL,5,P00010-101,,Carbon
+110,110,¿,0.25,5,Through hole,EL,5,P00010-111,,Carbon
+120,120,¿,0.25,5,Through hole,EL,5,P00010-121,,Carbon
+130,130,¿,0.25,5,Through hole,EL,5,P00010-131,,Carbon
+150,150,¿,0.25,5,Through hole,EL,5,P00010-151,,Carbon
+160,160,¿,0.25,5,Through hole,EL,5,P00010-161,,Carbon
+180,180,¿,0.25,5,Through hole,EL,5,P00010-181,,Carbon
+200,200,¿,0.25,5,Through hole,EL,5,,,Carbon
+220,220,¿,0.25,5,Through hole,EL,5,P00010-221,,Carbon
+240,240,¿,0.25,5,Through hole,EL,5,P00010-241,,Carbon
+270,270,¿,0.25,5,Through hole,EL,5,P00010-271,,Carbon
+30000,30,k¿,0.25,5,Through hole,EL,6,,,
+33000,33,k¿,0.25,5,Through hole,EL,6,P00010-333,,Carbon
+36000,36,k¿,0.25,5,Through hole,EL,6,P00010-363,,Carbon
+39000,39,k¿,0.25,5,Through hole,EL,6,P00010-393,,Carbon
+43000,43,k¿,0.25,5,Through hole,EL,6,P00010-433,,Carbon
+47000,47,k¿,0.25,5,Through hole,EL,6,P00010-473,,Carbon
+51000,51,k¿,0.25,5,Through hole,EL,6,P00010-513,,Carbon
+56000,56,k¿,0.25,5,Through hole,EL,6,P00010-563,,Carbon
+62000,62,k¿,0.25,5,Through hole,EL,6,P00010-623,,Carbon
+68000,68,k¿,0.25,5,Through hole,EL,6,P00010-683,,Carbon
+75000,75,k¿,0.25,5,Through hole,EL,6,P00010-753,,Carbon
+82000,82,k¿,0.25,5,Through hole,EL,6,P00010-823,,Carbon
+91000,91,k¿,0.25,5,Through hole,EL,6,P00010-913,,Carbon
+100000,100,k¿,0.25,5,Through hole,EL,6,P00010-104,,Carbon
+110000,110,k¿,0.25,5,Through hole,EL,6,P00010-114,,Carbon
+120000,120,k¿,0.25,5,Through hole,EL,6,P00010-124,,Carbon
+130000,130,k¿,0.25,5,Through hole,EL,6,P00010-134,,Carbon
+150000,150,k¿,0.25,5,Through hole,EL,6,P00010-154,,Carbon
+160000,160,k¿,0.25,5,Through hole,EL,6,P00010-164,,Carbon
+180000,180,k¿,0.25,5,Through hole,EL,6,P00010-184,,Carbon
+200000,200,k¿,0.25,5,Through hole,EL,6,P00010-204,,Carbon
+220000,220,k¿,0.25,5,Through hole,EL,6,P00010-224,,Carbon
+240000,240,k¿,0.25,5,Through hole,EL,6,P00010-244,,Carbon
+270000,270,k¿,0.25,5,Through hole,EL,6,P00010-274,,Carbon
+300000,300,k¿,0.25,5,Through hole,EL,6,P00010-304,,Carbon
+330000,330,k¿,0.25,5,Through hole,EL,6,P00010-334,,Carbon
+360000,360,k¿,0.25,5,Through hole,EL,6,P00010-364,,Carbon
+390000,390,k¿,0.25,5,Through hole,EL,6,P00010-394,,Carbon
+430000,430,k¿,0.25,5,Through hole,EL,6,P00010-434,,Carbon
+470000,470,k¿,0.25,5,Through hole,EL,6,P00010-474,,Carbon
+510000,510,k¿,0.25,5,Through hole,EL,6,P00010-517,,Carbon
+560000,560,k¿,0.25,5,Through hole,EL,6,P00010-564,,Carbon
+620000,620,k¿,0.25,5,Through hole,EL,6,P00010-624,,Carbon
+680000,680,k¿,0.25,5,Through hole,EL,6,P00010-684,,Carbon
+750000,750,k¿,0.25,5,Through hole,EL,6,P00010-754,,Carbon
+820000,820,k¿,0.25,5,Through hole,EL,6,P00010-824,,Carbon
+910000,910,k¿,0.25,5,Through hole,EL,6,P00010-914,,Carbon
+1000000,1,M¿,0.25,5,Through hole,EL,6,P00010-105,,Carbon
+1100000,1.1,M¿,0.25,5,Through hole,EL,6,P00010-115,,Carbon
+1200000,1.2,M¿,0.25,5,Through hole,EL,6,P00010-125,,Carbon
+1300000,1.3,M¿,0.25,5,Through hole,EL,6,P00010-135,,Carbon
+1500000,1.5,M¿,0.25,5,Through hole,EL,6,P00010-155,,Carbon
+1600000,1.6,M¿,0.25,5,Through hole,EL,6,P00010-165,,Carbon
+1800000,1.8,M¿,0.25,5,Through hole,EL,6,P00010-185,,Carbon
+2000000,2,M¿,0.25,5,Through hole,EL,6,P00010-205,,Carbon
+2200000,2.2,M¿,0.25,5,Through hole,EL,6,P00010-225,,Carbon
+2400000,2.4,M¿,0.25,5,Through hole,EL,6,P00010-245,,Carbon
+2700000,2.7,M¿,0.25,5,Through hole,EL,6,P00010-275,,Carbon
+42200,42.2,k¿,0.25,1,Through hole,EL,7,6900003-4222,,
+47500,47.5,k¿,0.25,1,Through hole,EL,7,6900003-4752,,
+49900,49.9,k¿,0.25,1,Through hole,EL,7,6900003-4992,,
+56200,56.2,k¿,0.25,1,Through hole,EL,7,6900003-5622,,
+78700,78.7,k¿,0.25,1,Through hole,EL,7,6900003-7872,,
+20000,20,k¿,0.25,1,Through hole,EL,7,6900003-2002,,
+22100,22.1,k¿,0.25,1,Through hole,EL,7,6900003-2212,,
+24300,24.3,k¿,0.25,1,Through hole,EL,7,6900003-2432,,
+33200,33.2,k¿,0.25,1,Through hole,EL,7,6900003-3322,,
+34800,34.8,k¿,0.25,1,Through hole,EL,7,6900003-3482,,
+10000,10,k¿,0.25,1,Through hole,EL,7,6900003-1002,,
+10000,11,k¿,0.25,1,Through hole,EL,7,6900003-1102,,
+14000,14,k¿,0.25,1,Through hole,EL,7,6900003-1402,,
+16200,16.2,k¿,0.25,1,Through hole,EL,7,6900003-1622,,
+16500,16.5,k¿,0.25,1,Through hole,EL,7,6900003-1652,,
+6490,6.49,k¿,0.25,1,Through hole,EL,7,6900003-6491,,
+7500,7.5,k¿,0.25,1,Through hole,EL,7,6900003-7511,,
+8250,8.25,k¿,0.25,1,Through hole,EL,7,6900003-8251,,
+9090,9.9,k¿,0.25,1,Through hole,EL,7,6900003-9091,,
+825,825,¿,0.25,1,Through hole,EL,7,6900003-8250,,
+5000,5,k¿,0.25,1,Through hole,EL,7,6900003-5001,,
+5110,5.11,k¿,0.25,1,Through hole,EL,7,6900003-5111,,
+5230,5.23,k¿,0.25,1,Through hole,EL,7,6900003-5231,,
+5360,5.36,k¿,0.25,1,Through hole,EL,7,6900003-5361,,
+5900,5.9,k¿,0.25,1,Through hole,EL,7,6900003-5901,,
+4020,4.02,k¿,0.25,1,Through hole,EL,7,6900003-4021,,
+4420,4.42,k¿,0.25,1,Through hole,EL,7,6900003-4421,,
+4530,4.53,k¿,0.25,1,Through hole,EL,7,6900003-4531,,
+4750,4.75,k¿,0.25,1,Through hole,EL,7,6900003-4751,,
+4990,4.99,k¿,0.25,1,Through hole,EL,7,6900003-4991,,
+3010,3.01,k¿,0.25,1,Through hole,EL,7,6900003-3011,,
+3090,3.09,k¿,0.25,1,Through hole,EL,7,6900003-3091,,
+3650,3.65,k¿,0.25,1,Through hole,EL,7,6900003-3651,,
+3700,3.7,k¿,0.25,1,Through hole,EL,7,6900003-3701,,
+3740,3.74,k¿,0.25,1,Through hole,EL,7,6900003-3741,,
+2000,2,k¿,0.25,1,Through hole,EL,7,6900003-2001,,
+2210,2.21,k¿,0.25,1,Through hole,EL,7,6900003-2211,,
+2370,2.37,k¿,0.25,1,Through hole,EL,7,6900003-2371,,
+2490,2.47,k¿,0.25,1,Through hole,EL,7,6900003-2491,,
+1500,1.5,k¿,0.25,1,Through hole,EL,7,6900003-1501,,
+1620,1.62,k¿,0.25,1,Through hole,EL,7,6900003-1621,,
+1650,1.65,k¿,0.25,1,Through hole,EL,7,6900003-1651,,
+1000,1,k¿,0.25,1,Through hole,EL,7,6900003-1001,,
+1020,1.02,k¿,0.25,1,Through hole,EL,7,6900003-1021,,
+1210,1.21,k¿,0.25,1,Through hole,EL,7,6900003-1211,,
+1300,1.3,k¿,0.25,1,Through hole,EL,7,6900003-1301,,
+1400,1.4,k¿,0.25,1,Through hole,EL,7,6900003-1401,,
+510,510,¿,0.25,5,Metal Oxide,EL,8,,,
+511,511,¿,0.25,1,Through hole,EL,8,6900003-5110,,
+665,665,¿,0.25,5,Through hole,EL,8,6900005-6650,,
+681,681,¿,0.25,1,Through hole,EL,8,6900003-6810,,
+750,750,¿,0.25,1,Through hole,EL,8,6900003-7510,,
+332,332,¿,0.25,1,Through hole,EL,8,6900003-3320,,
+412,412,¿,0.25,1,Through hole,EL,8,6900003-4210,,
+499,499,¿,0.25,5,Through hole,EL,8,6900005-4990,,
+499,499,¿,0.25,1,Through hole,EL,8,6900003-4990,,
+510,510,¿,0.25,1,Through hole,EL,8,6900003-5100,,
+210,210,¿,0.25,1,Through hole,EL,8,6900003-2100,,
+215,215,¿,0.25,1,Through hole,EL,8,6900003-2150,,
+221,221,¿,0.25,1,Through hole,EL,8,6900003-2210,,
+249,249,¿,0.25,1,Through hole,EL,8,6900003-2490,,
+261,261,¿,0.25,1,Through hole,EL,8,6900003-2610,,
+140,140,¿,0.25,1,Through hole,EL,8,6900003-1400,,
+150,150,¿,0.25,1,Through hole,EL,8,6900003-1500,,
+187,187,¿,0.25,1,Through hole,EL,8,6900003-1870,,
+191,191,¿,0.25,1,Through hole,EL,8,6900003-1910,,
+100,100,¿,0.25,1,Through hole,EL,8,6900003-1000,,
+110,110,¿,0.25,1,Through hole,EL,8,6900003-1100,,
+121,121,¿,0.25,1,Through hole,EL,8,6900003-1210,,
+121,121,¿,0.25,5,Through hole,EL,8,6900005-1210,,
+499,499,¿,0.25,1,Through hole,EL,8,6900003-49R9,,
+475,475,¿,0.25,1,Through hole,EL,8,6900003-47R5,,
+562,562,¿,0.25,1,Through hole,EL,8,6900003-56R2,,
+100,100,¿,0.25,1,Through hole,EL,8,6900003-10R0,,
+110,110,¿,0.25,1,Through hole,EL,8,6900003-11R0,,
+182,182,¿,0.25,1,Through hole,EL,8,6900003-18R2,,
+332,332,¿,0.25,1,Through hole,EL,8,6900003-33R2,,
+750,750,¿,0.25,1,Through hole,EL,8,6900003-7R50,,
+100,100,¿,0.25,5,Through hole,EL,8,6900005-1R00,,
+274,274,¿,0.25,1,Through hole,EL,8,6900003-2R74,,
+680,680,¿,0.25,1,Through hole,EL,8,6900003-6R8,,
+0,0,¿,0.25,1,Through hole,EL,8,,,
+1,1,¿,0.25,1,Through hole,EL,9,,,
+1.2,1.2,¿,0.25,1,Through hole,EL,9,,,
+1.2,1.2,¿,0.25,1,Through hole,EL,9,,,
+1.5,1.5,¿,0.25,1,Through hole,EL,9,,,
+1.8,1.8,¿,0.25,1,Through hole,EL,9,,,
+2.2,2.2,¿,0.25,1,Through hole,EL,9,,,
+2.7,2.7,¿,0.25,1,Through hole,EL,9,,,
+3.3,3.3,¿,0.25,1,Through hole,EL,9,,,
+3.9,3.9,¿,0.25,1,Through hole,EL,9,,,
+4.7,4.7,¿,0.25,1,Through hole,EL,9,,,
+5.6,5.6,¿,0.25,1,Through hole,EL,9,,,
+6.8,6.8,¿,0.25,1,Through hole,EL,9,,,
+8.2,8.2,¿,0.25,1,Through hole,EL,9,,,
+10,10,¿,0.25,1,Through hole,EL,9,,,
+12,12,¿,0.25,1,Through hole,EL,9,,,
+15,15,¿,0.25,1,Through hole,EL,9,,,
+18,18,¿,0.25,1,Through hole,EL,9,,,
+22,22,¿,0.25,1,Through hole,EL,9,,,
+27,27,¿,0.25,1,Through hole,EL,9,,,
+33,33,¿,0.25,1,Through hole,EL,9,,,
+39,39,¿,0.25,1,Through hole,EL,9,,,
+47,47,¿,0.25,1,Through hole,EL,9,,,
+56,56,¿,0.25,1,Through hole,EL,9,,,
+68,68,¿,0.25,1,Through hole,EL,9,,,
+82,82,¿,0.25,1,Through hole,EL,9,,,
+100,100,¿,0.25,1,Through hole,EL,9,,,
+120,120,¿,0.25,1,Through hole,EL,9,,,
+150,150,¿,0.25,1,Through hole,EL,9,,,
+270,270,¿,0.25,1,Through hole,EL,9,,,
+330,330,¿,0.25,1,Through hole,EL,9,,,
+390,390,¿,0.25,1,Through hole,EL,9,,,
+470,470,¿,0.25,1,Through hole,EL,9,,,
+560,560,¿,0.25,1,Through hole,EL,9,,,
+680,680,¿,0.25,1,Through hole,EL,9,,,
+820,820,¿,0.25,1,Through hole,EL,9,,,
+560,560,¿,0.25,1,Through hole,EL,9,,,
+680,680,¿,0.25,1,Through hole,EL,9,,,
+820,820,¿,0.25,1,Through hole,EL,9,,,
+1200,1.2,k¿,0.25,1,Through hole,EL,9,,,
+1500,1.5,k¿,0.25,1,Through hole,EL,9,,,
+1800,1.8,k¿,0.25,1,Through hole,EL,9,,,
+2200,2.2,k¿,0.25,1,Through hole,EL,9,,,
+2700,2.7,k¿,0.25,1,Through hole,EL,9,,,
+3300,3.3,k¿,0.25,1,Through hole,EL,9,,,
+3900,3.9,k¿,0.25,1,Through hole,EL,9,,,
+4700,4.7,k¿,0.25,1,Through hole,EL,9,,,
+5600,5.6,k¿,0.25,1,Through hole,EL,9,,,
+6800,6.8,k¿,0.25,1,Through hole,EL,9,,,
+8200,8.2,k¿,0.25,1,Through hole,EL,9,,,
+12000,12,k¿,0.25,1,Through hole,EL,9,,,
+15000,15,k¿,0.25,1,Through hole,EL,9,,,
+22000,22,k¿,0.25,1,Through hole,EL,9,,,
+27000,27,k¿,0.25,1,Through hole,EL,9,,,
+39000,39,k¿,0.25,1,Through hole,EL,9,,,
+47000,47,k¿,0.25,1,Through hole,EL,9,,,
+82000,82,k¿,0.25,1,Through hole,EL,9,,,
+120000,120,k¿,0.25,1,Through hole,EL,9,,,
+15000,150,k¿,0.25,1,Through hole,EL,9,,,
+180000,180,k¿,0.25,1,Through hole,EL,9,,,
+220000,220,k¿,0.25,1,Through hole,EL,9,,,
+270000,270,k¿,0.25,1,Through hole,EL,9,,,
+330000,330,k¿,0.25,1,Through hole,EL,9,,,
+390000,390,k¿,0.25,1,Through hole,EL,9,,,
+470000,470,k¿,0.25,1,Through hole,EL,9,,,
+560000,560,k¿,0.25,1,Through hole,EL,9,,,
+680000,680,k¿,0.25,1,Through hole,EL,9,,,
+820000,820,k¿,0.25,1,Through hole,EL,9,,,
+56000,56,k¿,0.25,1,Through hole,EL,9,,,

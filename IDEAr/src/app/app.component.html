@@ -14,7 +14,7 @@
             (click)="toggleDropdown('home')"
             class="px-4 py-2 bg-blue-900 text-white rounded-md"
           >
-            Home
+            Labs
           </button>
           <div
             *ngIf="showHomeDropdown"
@@ -24,13 +24,13 @@
             <a
               routerLink="/"
               class="block px-4 py-2 hover:bg-gray-100 text-black dark:text-white bg-slate-500 dark:bg-slate-600"
-              >IDEA Lab Home</a
+              >IDEA Lab</a
             >
             <a
               routerLink="/electrical-home"
               class="block px-4 py-2 hover:bg-gray-100 text-black dark:text-white bg-slate-500 dark:bg-slate-600"
             >
-              Electrical Lab Home
+              Electrical Lab
             </a>
           </div>
         </div>
@@ -53,6 +53,12 @@
                 class="block px-4 py-2 hover:bg-gray-100 text-black dark:text-white bg-slate-500 dark:bg-slate-600"
                 >IDEA Lab Admin</a
               >
+              <a
+                routerLink="/electrical-admin"
+                class="block px-4 py-2 hover:bg-gray-100 text-black dark:text-white bg-slate-500 dark:bg-slate-600"
+              >
+                Electrical Lab Admin
+              </a>
             </div>
           </div>
         <div
@@ -82,9 +88,14 @@
               >User Logs</a
             >
             <a
-              routerLink="/data-download"
+              routerLink="/data-download-idea"
               class="block px-4 py-2 hover:bg-gray-100 text-black dark:text-white bg-slate-500 dark:bg-slate-600"
-              >Data Download</a
+              >Data Download IDEA Lab</a
+            >
+            <a
+              routerLink="/data-download-electrical"
+              class="block px-4 py-2 hover:bg-gray-100 text-black dark:text-white bg-slate-500 dark:bg-slate-600"
+              >Data Download Electrical Lab</a
             >
           </div>
         </div>

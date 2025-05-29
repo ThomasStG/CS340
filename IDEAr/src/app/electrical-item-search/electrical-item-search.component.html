@@ -1,0 +1,145 @@
+<form
+  [formGroup]="electricalSearchForm"
+  class="flex flex-wrap items-center gap-4 p-2 bg-white dark:bg-gray-900 text-black dark:text-white w-full"
+  (ngSubmit)="onSubmit('multi')"
+>
+  <div class="flex flex-shrink-0  flex-row justify-center mr-auto">
+    <select
+      id="type"
+      formControlName="type"
+      class="text-black dark:text-white bg-gray-100 hover:bg-gray-300 dark:hover:bg-gray-700 dark:bg-gray-600 border border-gray-500 rounded-md items-center"
+    >
+      <option selected disabled value="">Select a type</option>
+      <option value="passive">Passive</option>
+      <option value="active">Active</option>
+      <option value="assembly">Assembly</option>
+    </select>
+  </div>
+  <div class="flex flex-wrap flex-grow justify-center gap-4 items-center">
+    <div
+      class="flex  items-center gap-4 flex-wrap"
+      *ngIf="electricalSearchForm.get('type')?.value === 'passive'"
+    >
+      <div>
+        <select
+          id="passiveType"
+          formControlName="passiveType"
+          class="text-black dark:text-white bg-gray-100 hover:bg-gray-300 dark:hover:bg-gray-700 dark:bg-gray-600 border border-gray-500 rounded-md"
+          (change)="onPassiveTypeChange()"
+        >
+          <option disabled selected value="">Select a type</option>
+          <option value="Resistor">Resistor</option>
+          <option value="Capacitor">Capacitor</option>
+          <option value="Polyfuse">Polyfuse</option>
+        </select>
+      </div>
+      <div *ngIf="electricalSearchForm.get('passiveType')?.value !== ''" class="flex flex-row gap-3">
+        <div class="flex w-fit items-center gap-1">
+          <label>Value:</label>
+          <input
+            class="text-black dark:text-white w-[10ch] bg-gray-100 hover:bg-gray-300 dark:hover:bg-gray-700 dark:bg-gray-600 border border-gray-500 rounded-md"
+            type="text"
+            formControlName="passiveValue"
+          />
+        </div>
+        <div class="flex  items-center gap-1">
+          <select
+            id="unit"
+            formControlName="passiveUnit"
+            [compareWith]="compareUnits"
+            class="text-black dark:text-white bg-gray-100 hover:bg-gray-300 dark:hover:bg-gray-700 dark:bg-gray-600 border border-gray-500 rounded-md"
+          >
+            <ng-container *ngFor="let multiplier of multipliers; index as i">
+              <option [ngValue]="{ value: multiplier_values[i], label: multiplier }">{{ multiplier }}</option>
+            </ng-container>
+          </select>
+        </div>
+        <div class="flex max-w-[6ch] items-center gap-1">
+          <label>&plusmn;</label>
+          <input
+            class="text-black dark:text-white w-[4ch] bg-gray-100 hover:bg-gray-300 dark:hover:bg-gray-700 dark:bg-gray-600 border border-gray-500 rounded-md"
+            type="text"
+            formControlName="search_percent"
+          />
+        </div>
+        <div class="flex  items-center gap-1">
+          <label>Mounting Method:</label>
+          <select
+          id="mounting_method"
+          formControlName="mounting_method"
+          class="text-black dark:text-white bg-gray-100 hover:bg-gray-300 dark:hover:bg-gray-700 dark:bg-gray-600 border border-gray-500 rounded-md"
+          >
+            <option disabled selected value="">Select a mounting method</option>
+            <option value="SMD">SMD</option>
+            <option value="Through Hole">Through Hole</option>
+          </select>
+        </div>
+        <div class="flex  items-center gap-1">
+          <label>Tolerance:</label>
+          <input
+            class="text-black dark:text-white bg-gray-100 hover:bg-gray-300 dark:hover:bg-gray-700 dark:bg-gray-600 border border-gray-500 rounded-md"
+            type="text"
+            formControlName="passiveTolerance"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex min-w-[150px] items-center gap-4"
+      *ngIf="electricalSearchForm.get('type')?.value === 'active'"
+    >
+      <div class="flex flex-col">
+        <div class="flex min-w-[150px] items-center gap-4">
+          <div>
+            <label>Name:</label>
+            <input
+              class="text-black dark:text-white bg-gray-100 hover:bg-gray-300 dark:hover:bg-gray-700 dark:bg-gray-600 border border-gray-500 rounded-md"
+              type="text"
+              formControlName="activeName"
+            />
+          </div>
+          <div>
+            <label>Id:</label>
+            <input
+              class="text-black dark:text-white bg-gray-100 hover:bg-gray-300 dark:hover:bg-gray-700 dark:bg-gray-600 border border-gray-500 rounded-md w-[15ch]"
+              type="text"
+              formControlName="activeId"
+            />
+          </div>
+        </div>
+
+        <p class="text-red-500 justify-center text-center">
+          {{ errorMessage }}
+        </p>
+      </div>
+    </div>
+    <div class="flex flex-row gap-3 ml-auto">
+      <div class="flex flex-col">
+        <button
+          type="button"
+          (click)="clearForm()"
+          class="text-black dark:text-white hover:bg-gray-300 dark:hover:bg-gray-700 dark:bg-gray-600 border border-gray-500 rounded-md pl-2 pr-2"
+        >
+          Clear
+        </button>
+      </div>
+      <div class="flex flex-col">
+        <button
+          type="button"
+          (click)="onSubmit('single')"
+          class="text-black dark:text-white hover:bg-gray-300 dark:hover:bg-gray-700 dark:bg-gray-600 border border-gray-500 rounded-md pl-2 pr-2"
+        >
+          Search
+        </button>
+      </div>
+      <div class="flex flex-col">
+        <button
+          type="submit"
+          class="text-black dark:text-white hover:bg-gray-300 dark:hover:bg-gray-700 dark:bg-gray-600 border border-gray-500 rounded-md pl-2 pr-2"
+        >
+          Search Similar
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

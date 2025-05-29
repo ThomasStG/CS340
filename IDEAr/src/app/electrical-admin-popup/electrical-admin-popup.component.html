@@ -1,0 +1,554 @@
+<div
+  class="fixed top-0 left-0 w-full h-full bg-black/50 z-[9998]"
+  [class.dark]="darkMode | async"
+  (click)="closePopup($event)"
+>
+  <div
+    class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-5 shadow-lg z-[9999] w-[70%] min-w-[400px] text-black dark:text-white bg-white dark:bg-gray-900"
+    (click)="$event.stopPropagation()"
+  >
+    <select
+      id="type"
+      [(ngModel)]="item.type"
+      class="text-black dark:text-white bg-gray-100 hover:bg-gray-300 dark:hover:bg-gray-700 dark:bg-gray-600 border border-gray-500 rounded-md align-center"
+      *ngIf="isAdding"
+    >
+      <option selected disabled value="">Select a type</option>
+      <option value="passive">Passive</option>
+      <option value="active">Active</option>
+      <option value="assembly">Assembly</option>
+    </select>
+    <div class="p-5 flex flex-col" *ngIf="item.type === 'passive'">
+      <h1 class="font-bold text-[30px] text-center w-full">
+        {{ item.subtype }}
+      </h1>
+      <table>
+        <tr>
+        <td>
+          <label>Type:</label>
+          </td>
+          <td>
+            <select
+              id="passiveType"
+              [(ngModel)]="item.subtype"
+              class="text-black dark:text-white bg-gray-100 hover:bg-gray-300 dark:hover:bg-gray-700 dark:bg-gray-600 border border-gray-500 rounded-md"
+            >
+              <option value="">Select a type</option>
+              <option value="Resistor">Resistor</option>
+              <option value="Capacitor">Capacitor</option>
+              <option value="Polyfuse">Polyfuse</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Part Number:</label>
+          </td>
+          <td>
+            <input
+              class="border border-gray-400 rounded-md text-[15px] w-full dark:bg-gray-600"
+              type="text"
+              [(ngModel)]="item.part_number"
+              [readonly]="!isEditing"
+            />
+          </td>
+        <tr>
+          <td>
+            <label>Value:</label>
+          </td>
+          <td>
+            <input
+              class="border border-gray-400 rounded-md text-[15px] w-full dark:bg-gray-600"
+              type="number"
+              [(ngModel)]="item.value"
+              [readonly]="!isEditing"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Max Voltage:</label>
+          </td>
+          <td>
+            <input
+              class="border border-gray-400 rounded-md text-[15px] w-full dark:bg-gray-600"
+              type="number"
+              [(ngModel)]="item.max_v"
+              [readonly]="!isEditing"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Max Power:</label>
+          </td>
+          <td>
+            <input
+              class="border border-gray-400 rounded-md text-[15px] w-full dark:bg-gray-600"
+              type="number"
+              [(ngModel)]="item.max_p"
+              [readonly]="!isEditing"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Max Current:</label>
+          </td>
+          <td>
+            <input
+              class="border border-gray-400 rounded-md text-[15px] w-full dark:bg-gray-600"
+              type="number"
+              [(ngModel)]="item.max_i"
+              [readonly]="!isEditing"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Current Hold:</label>
+          </td>
+          <td>
+            <input
+              class="border border-gray-400 rounded-md text-[15px] w-full dark:bg-gray-600"
+              type="number"
+              [(ngModel)]="item.i_hold"
+              [readonly]="!isEditing"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Tolerance:</label>
+          </td>
+          <td class="flex items-center">
+            <input
+              class="border border-gray-400 rounded-md text-[15px] w-full dark:bg-gray-600"
+              type="number"
+              [(ngModel)]="item.tolerance"
+              [readonly]="!isEditing"
+            /><div class="ml-2 min-w-[3ch]">&pm;%</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Count:</label>
+          </td>
+          <td>
+            <input
+              class="border border-gray-400 rounded-md text-[15px] w-full dark:bg-gray-600"
+              type="number"
+              [(ngModel)]="item.count"
+              [readonly]="!isEditing"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Reference URL:</label>
+          </td>
+          <td>
+            <input
+              class="border border-gray-400 rounded-md text-[15px] w-full dark:bg-gray-600"
+              type="text"
+              [(ngModel)]="item.link"
+              [readonly]="!isEditing"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Location:</label>
+          </td>
+          <td>
+            <input
+              class="border border-gray-400 rounded-md text-[15px] w-full dark:bg-gray-600"
+              type="text"
+              [(ngModel)]="item.location"
+              [readonly]="!isEditing"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Rack:</label>
+          </td>
+          <td>
+            <input
+              class="border border-gray-400 rounded-md text-[15px] w-full dark:bg-gray-600"
+              type="number"
+              [(ngModel)]="item.rack"
+              [readonly]="!isEditing"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Slot:</label>
+          </td>
+          <td>
+            <input
+              class="border border-gray-400 rounded-md text-[15px] w-full dark:bg-gray-600"
+              type="text"
+              [(ngModel)]="item.slot"
+              [readonly]="!isEditing"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Polarity:</label>
+          </td>
+          <td>
+            <input
+              class="border border-gray-400 rounded-md text-[15px] w-full dark:bg-gray-600"
+              type="text"
+              [(ngModel)]="item.polarity"
+              [readonly]="!isEditing"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Seller:</label>
+          </td>
+          <td>
+            <input
+              class="border border-gray-400 rounded-md text-[15px] w-full dark:bg-gray-600"
+              type="text"
+              [(ngModel)]="item.seller"
+              [readonly]="!isEditing"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Dielectric Material:</label>
+          </td>
+          <td>
+            <input
+              class="border border-gray-400 rounded-md text-[15px] w-full dark:bg-gray-600"
+              type="number"
+              [(ngModel)]="item.dielectric_material"
+              [readonly]="!isEditing"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Mounting Method</label>
+          </td>
+          <td>
+            <input
+              class="border border-gray-400 rounded-md text-[15px] w-full dark:bg-gray-600"
+              type="number"
+              [(ngModel)]="item.mounting_method"
+              [readonly]="!isEditing"
+            />
+          </td>
+        <tr>
+          <td>
+            <button
+              (click)="editItem($event)"
+              class="w-full h-full border border-gray-50 items-center dark:bg-gray-700 rounded-md dark:hover:bg-gray-600 hover:bg-gray-300"
+              *ngIf="!isEditing && !isAdding"
+            >
+              Edit
+            </button>
+          </td>
+          <td>
+            <button
+              (click)="saveItem($event)"
+              class="w-full h-full border border-gray-50 items-center dark:bg-gray-700 rounded-md dark:hover:bg-gray-600 hover:bg-gray-300"
+              *ngIf="isEditing && !isAdding"
+            >
+              Save
+            </button>
+            <button
+              (click)="addItem($event)"
+              class="w-full h-full border border-gray-50 items-center dark:bg-gray-700 rounded-md dark:hover:bg-gray-600 hover:bg-gray-300"
+              *ngIf="isAdding"
+            >
+              Add Item
+            </button>
+          </td>
+          <td>
+            <button
+              (click)="closePopup($event)"
+              class="w-full h-full border border-gray-50 items-center dark:bg-gray-700 rounded-md dark:hover:bg-gray-600 hover:bg-gray-300"
+            >
+              Close
+            </button>
+          </td>
+          <td>
+            <button
+              (click)="deleteItem($event)"
+              class="w-full h-full border border-gray-50 items-center dark:bg-gray-700 rounded-md dark:hover:bg-gray-600 hover:bg-gray-300"
+              *ngIf="isEditing"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="p-5 flex flex-col" *ngIf="item.type === 'assembly'">
+      <h1 class="font-bold text-[30px] text-center w-full">
+        {{ item.subtype }}
+      </h1>
+      <table>
+        <tr>
+          <td>
+            <label>Name:</label>
+          </td>
+          <td>
+            <input
+              class="border border-gray-400 rounded-md text-[15px] w-full dark:bg-gray-600"
+              type="text"
+              [(ngModel)]="newItem.name"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>ID:</label>
+          </td>
+          <td>
+            <input
+              class="border border-gray-400 rounded-md text-[15px] w-full dark:bg-gray-600"
+              type="text"
+              [(ngModel)]="newItem.part_id"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Count:</label>
+          </td>
+          <td>
+            <p class="rounded-sm text-[15px] w-full">{{ item.count }}</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Location:</label>
+          </td>
+          <td>
+            <p class="rounded-sm text-[15px] w-full">{{ item.location }}</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Rack:</label>
+          </td>
+          <td>
+            <p class="rounded-sm text-[15px] w-full">
+              {{ item.rack }}
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Slot:</label>
+          </td>
+          <td>
+            <p class="rounded-sm text-[15px] w-full">{{ item.slot }}</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Reference URL:</label>
+          </td>
+          <td>
+            <p class="rounded-sm text-[15px] w-full">{{ item.link }}</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button
+              (click)="editItem($event)"
+              class="w-full h-full border border-gray-50 items-center dark:bg-gray-700 rounded-md dark:hover:bg-gray-600 hover:bg-gray-300"
+              *ngIf="!isEditing && !isAdding"
+            >
+              Edit
+            </button>
+          </td>
+          <td>
+            <button
+              (click)="saveItem($event)"
+              class="w-full h-full border border-gray-50 items-center dark:bg-gray-700 rounded-md dark:hover:bg-gray-600 hover:bg-gray-300"
+              *ngIf="isEditing || isAdding"
+            >
+              Save
+            </button>
+          </td>
+          <td>
+            <button
+              (click)="closePopup($event)"
+              class="w-full h-full border border-gray-50 items-center dark:bg-gray-700 rounded-md dark:hover:bg-gray-600 hover:bg-gray-300"
+            >
+              Close
+            </button>
+          </td>
+          <td>
+            <button
+              (click)="deleteItem($event)"
+              class="w-full h-full border border-gray-50 items-center dark:bg-gray-700 rounded-md dark:hover:bg-gray-600 hover:bg-gray-300"
+              *ngIf="isEditing"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="p-5 flex flex-col" *ngIf="item.type === 'active'">
+      <h1 class="font-bold text-[30px] text-center w-full">
+        {{ item.name }}
+      </h1>
+      <table>
+        <tr>
+          <td>
+            <label>Name:</label>
+          </td>
+          <td>
+            <input
+              class="border border-gray-400 rounded-md text-[15px] w-full dark:bg-gray-600"
+              type="text"
+              [(ngModel)]="newItem.name"
+              [readonly]="!isEditing"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>ID:</label>
+          </td>
+          <td>
+            <input
+              class="border border-gray-400 rounded-md text-[15px] w-full dark:bg-gray-600"
+              type="text"
+              [(ngModel)]="newItem.part_id"
+              [readonly]="!isEditing"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Count:</label>
+          </td>
+          <td>
+            <input
+              class="border border-gray-400 rounded-md text-[15px] w-full dark:bg-gray-600"
+              type="number"
+              [(ngModel)]="newItem.count"
+              [readonly]="!isEditing"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Location:</label>
+          </td>
+          <td>
+            <input
+              class="border border-gray-400 rounded-md text-[15px] w-full dark:bg-gray-600"
+              type="text"
+              [(ngModel)]="newItem.location"
+              [readonly]="!isEditing"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Rack:</label>
+          </td>
+          <td>
+            <input
+              class="border border-gray-400 rounded-md text-[15px] w-full dark:bg-gray-600"
+              type="number"
+              [(ngModel)]="newItem.rack"
+              [readonly]="!isEditing"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Slot:</label>
+          </td>
+          <td>
+            <input
+              class="border border-gray-400 rounded-md text-[15px] w-full dark:bg-gray-600"
+              type="text"
+              [(ngModel)]="newItem.slot"
+              [readonly]="!isEditing"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Reference URL:</label>
+          </td>
+          <td>
+            <input
+              class="border border-gray-400 rounded-md text-[15px] w-full dark:bg-gray-600"
+              type="text"
+              [(ngModel)]="newItem.link"
+              [readonly]="!isEditing"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Description:</label>
+          </td>
+          <td>
+            <input
+              class="border border-gray-400 rounded-md text-[15px] w-full dark:bg-gray-600 h-auto"
+              type="text"
+              [(ngModel)]="newItem.description"
+              [readonly]="!isEditing"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button
+              (click)="editItem($event)"
+              class="w-full h-full border border-gray-50 items-center dark:bg-gray-700 rounded-md dark:hover:bg-gray-600 hover:bg-gray-300"
+              *ngIf="!isEditing && !isAdding"
+            >
+              Edit
+            </button>
+          </td>
+          <td>
+            <button
+              (click)="saveItem($event)"
+              class="w-full h-full border border-gray-50 items-center dark:bg-gray-700 rounded-md dark:hover:bg-gray-600 hover:bg-gray-300"
+              *ngIf="isEditing || isAdding"
+            >
+              Save
+            </button>
+          </td>
+          <td>
+            <button
+              (click)="closePopup($event)"
+              class="w-full h-full border border-gray-50 items-center dark:bg-gray-700 rounded-md dark:hover:bg-gray-600 hover:bg-gray-300"
+            >
+              Close
+            </button>
+          </td>
+          <td>
+            <button
+              (click)="deleteItem($event)"
+              class="w-full h-full border border-gray-50 items-center dark:bg-gray-700 rounded-md dark:hover:bg-gray-600 hover:bg-gray-300"
+              *ngIf="isEditing"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

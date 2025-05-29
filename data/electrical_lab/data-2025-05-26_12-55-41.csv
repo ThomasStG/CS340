@@ -1,0 +1,525 @@
+Ref Value (Ohms),Description,Is Contacted,Seller,id,Dielectric Material,Tolerance (+/-%),Subtype,Name*,Count,Mounting Method,Slot,Part #,Rack,Max. P (W),Max. V (V),Max. I (A),I Hold (A),Polarity,Link,Is Assembly,Location,Ref. ID*,Type
+4.0,,0,Seller for Resistor,1,,1.0,Resistor,,7,Through hole,690003-1005,DALE CMF55 10M 1%TI 0343,1,0.5,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,2,,5.0,Resistor,,34,Through hole,10M 5%,,1,1.0,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,3,,1.0,Resistor,,1,Through hole,6900003-1004 1 MEGOHM,,1,1.0,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,4,,2.0,Resistor,,65,Through hole,6900003-2214 2.21 MEGOHM,RLR7C 2214F SD 528AJ,1,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,5,,2.0,Resistor,,68,Through hole,6900003-6804 6.8 MEGOHM,DALE 9521 RN55D 6814F,1,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,6,,1.0,Resistor,,64,Through hole,690003-4703 470K,,1,1.0,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,7,,1.0,Resistor,,9,Through hole,6900005-4993 499K 1/2W,,1,0.5,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,8,,1.0,Resistor,,4,Through hole,6900003-8253 825K,,1,1.0,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,9,,1.0,Resistor,,55,Through hole,6900003-2153 215K,,1,1.0,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,10,,1.0,Resistor,,12,Through hole,6900003-2213 221K,,1,1.0,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,11,,1.0,Resistor,,2,Through hole,690003-3323 332K,,1,1.0,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,12,,1.0,Resistor,,6,Through hole,6900003-3483 348K,,1,1.0,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,13,,1.0,Resistor,,5,Through hole,6900003-4123 412K,,1,1.0,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,14,,1.0,Resistor,,1,Through hole,6900003-1003 100K,271-100K,1,1.0,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,15,,1.0,Resistor,,25,Through hole,690003-1213 121K,,1,1.0,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,16,,1.0,Resistor,,19,Through hole,690003-1433 143K,,1,1.0,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,17,,1.0,Resistor,,83,Through hole,690003-1473 147K,,1,1.0,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,18,,1.0,Resistor,,4,Through hole,6900003-2003 200K,1135-1493-ND,1,0.125,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,19,Carbon,5.0,Resistor,,9,Through hole,S00010-301,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,20,Carbon,5.0,Resistor,,54,Through hole,S00010-331,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,21,Carbon,5.0,Resistor,,1,Through hole,S00010-361,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,22,Carbon,5.0,Resistor,,1,Through hole,S00010-391,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,23,Carbon,5.0,Resistor,,2,Through hole,S00010-431,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,24,Carbon,5.0,Resistor,,24,Through hole,S00010-471,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,25,Carbon,5.0,Resistor,,115,Through hole,S00010-511,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,26,Carbon,5.0,Resistor,,8,Through hole,S00010-561,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,27,Carbon,5.0,Resistor,,8,Through hole,S00010-621,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,28,Carbon,5.0,Resistor,,32,Through hole,S00010-681,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,29,Carbon,5.0,Resistor,,20,Through hole,S00010-751,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,30,Carbon,5.0,Resistor,,20,Through hole,S00010-821,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,31,Carbon,5.0,Resistor,,9,Through hole,S00010-911,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,32,,5.0,Resistor,,1,Through hole,1K,,2,1.0,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,33,Carbon,5.0,Resistor,,1,Through hole,S00010-112,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,34,Carbon,5.0,Resistor,,20,Through hole,S00010-122,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,35,Carbon,5.0,Resistor,,25,Through hole,S00010-132,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,36,Carbon,5.0,Resistor,,22,Through hole,S00010-152,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,37,Carbon,5.0,Resistor,,12,Through hole,S00010-162,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,38,Carbon,5.0,Resistor,,6,Through hole,S00010-182,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,39,Carbon,5.0,Resistor,,45,Through hole,S00010-202,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,40,Carbon,5.0,Resistor,,85,Through hole,S00010-222,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,41,Carbon,5.0,Resistor,,1,Through hole,S00010-242,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,42,Carbon,5.0,Resistor,,4,Through hole,S00010-272,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,43,Carbon,5.0,Resistor,,7,Through hole,S00010-302,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,44,Carbon,5.0,Resistor,,34,Through hole,S00010-332,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,45,Carbon,5.0,Resistor,,1,Through hole,S00010-362,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,46,Carbon,5.0,Resistor,,65,Through hole,S00010-392,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,47,Carbon,5.0,Resistor,,12,Through hole,S00010-472,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,48,Carbon,5.0,Resistor,,64,Through hole,S00010-512,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,49,Carbon,5.0,Resistor,,9,Through hole,S00010-532,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,50,Carbon,5.0,Resistor,,4,Through hole,S00010-622,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,51,Carbon,5.0,Resistor,,55,Through hole,S00010-682,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,52,Carbon,5.0,Resistor,,12,Through hole,S00010-752,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,53,Carbon,5.0,Resistor,,2,Through hole,S00010-822,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,54,Carbon,5.0,Resistor,,6,Through hole,S00010-912,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,55,Carbon,5.0,Resistor,,1,Through hole,S00010-113,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,56,Carbon,5.0,Resistor,,25,Through hole,S00010-123,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,57,Carbon,5.0,Resistor,,19,Through hole,S00010-133,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,58,Carbon,5.0,Resistor,,83,Through hole,S00010-153,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,59,Carbon,5.0,Resistor,,4,Through hole,S00010-163,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,60,Carbon,5.0,Resistor,,9,Through hole,S00010-183,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,61,Carbon,5.0,Resistor,,54,Through hole,S00010-203,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,62,Carbon,5.0,Resistor,,1,Through hole,S00010-223,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,63,Carbon,5.0,Resistor,,1,Through hole,S00010-243,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,64,Carbon,5.0,Resistor,,2,Through hole,S00010-273,,2,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,65,Carbon,5.0,Resistor,,24,Through hole,S00010-305,,3,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,66,Carbon,5.0,Resistor,,115,Through hole,S00010-335,,3,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,67,Carbon,5.0,Resistor,,8,Through hole,S00010-365,,3,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,68,Carbon,5.0,Resistor,,8,Through hole,S00010-395,,3,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,69,Carbon,5.0,Resistor,,32,Through hole,S00010-435,,3,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,70,Carbon,5.0,Resistor,,20,Through hole,S00010-475,,3,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,71,Carbon,5.0,Resistor,,20,Through hole,S00010-515,,3,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,72,Carbon,5.0,Resistor,,9,Through hole,S00010-535,,3,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,73,Carbon,5.0,Resistor,,1,Through hole,S00010-625,,3,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,74,Carbon,5.0,Resistor,,1,Through hole,S00010-685,,3,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,75,Carbon,5.0,Resistor,,20,Through hole,S00010-755,,3,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,76,Carbon,5.0,Resistor,,25,Through hole,S00010-825,,3,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,77,Carbon,5.0,Resistor,,22,Through hole,S00010-915,,3,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,78,Carbon,5.0,Resistor,,12,Through hole,S00010-106,,3,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,79,Carbon,5.0,Resistor,,6,Through hole,S00010-116,,3,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,80,Carbon,5.0,Resistor,,45,Through hole,S00010-126,,3,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,81,Carbon,5.0,Resistor,,85,Through hole,S00010-136,,3,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,82,Carbon,5.0,Resistor,,1,Through hole,S00010-156,,3,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,83,Carbon,5.0,Resistor,,4,Through hole,S00010-166,,3,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,84,Carbon,5.0,Resistor,,7,Through hole,S00010-186,,3,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,85,Carbon,5.0,Resistor,,34,Through hole,S00010-206,,3,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,86,Carbon,5.0,Resistor,,1,Through hole,S00010-226,,3,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,87,Carbon,5.0,Resistor,,65,Through hole,S01197-2R4,,3,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,88,,5.0,Resistor,,68,Through hole,,,4,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,89,,1.0,Resistor,,12,Through hole,,,4,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,90,,1.0,Resistor,,64,Through hole,,,4,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,91,,5.0,Resistor,,9,Through hole,,,4,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,92,,5.0,Resistor,,4,Through hole,,,4,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,93,,5.0,Resistor,,55,Through hole,,,4,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,94,,5.0,Resistor,,12,Through hole,,,4,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,95,,5.0,Resistor,,2,Through hole,P00011-IR0,,4,0.05,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,96,,5.0,Resistor,,6,Through hole,,,4,0.5,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,97,,5.0,Resistor,,5,Through hole,,,4,0.5,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,98,,5.0,Resistor,,1,Through hole,,,4,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,99,,1.0,Resistor,,25,Through hole,,,4,0.5,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,100,,5.0,Resistor,,19,Through hole,,,4,1.2,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,101,,5.0,Resistor,,83,Through hole,,,4,1.2,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,102,,5.0,Resistor,,4,Through hole,,,4,1.0,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,103,,5.0,Resistor,,9,Through hole,,,4,0.5,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,104,,5.0,Resistor,,54,Through hole,,,4,0.5,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,105,,5.0,Resistor,,1,Through hole,,,4,1.0,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,106,,5.0,Resistor,,1,Through hole,,,4,2.0,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,107,,5.0,Resistor,,2,Through hole,,0-count,4,2.0,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,108,,5.0,Resistor,,24,Through hole,,,4,3.0,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,109,,5.0,Resistor,,115,Through hole,,,4,10.0,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,110,,5.0,Resistor,,8,Through hole,,,4,3.0,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,111,,1.0,Resistor,,8,Screw Mountaid,,DALE LVR-10 .01Œ©  1% 10W 8923,4,10.0,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,112,,1.0,Resistor,,32,Screw Mountaid,,DALE LVR-10 .02Œ©  1% 10W 8952,4,10.0,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,113,,1.0,Resistor,,20,Screw Mountaid,,DALE LVR-10 .05Œ©  1% 10W 8949,4,10.0,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,114,,1.0,Resistor,,20,Screw Mountaid,,DALE LVR-10 .01Œ©  1% 10W 9001,4,10.0,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.0,,0,Seller for Resistor,115,,1.0,Resistor,,9,Screw Mountaid,,CLAROSTAT VPR-20H 2K 411-8435,4,20.0,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+10000000.0,,0,Seller for Resistor,116,Carbon,5.0,Resistor,,1,Through hole,P00010-3R0,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+10000000.0,,0,Seller for Resistor,117,Carbon,5.0,Resistor,,1,Through hole,P00010-3R3,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+1000000.0,,0,Seller for Resistor,118,Carbon,5.0,Resistor,,20,Through hole,P00010-3R6,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+2210000.0,,0,Seller for Resistor,119,Carbon,5.0,Resistor,,25,Through hole,P00010-3R9,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+6800000.0,,0,Seller for Resistor,120,Carbon,5.0,Resistor,,22,Through hole,P00010-4R3,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+442000.0,,0,Seller for Resistor,121,Carbon,5.0,Resistor,,12,Through hole,P00010-4R7,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+470000.0,,0,Seller for Resistor,122,Carbon,5.0,Resistor,,6,Through hole,P00010-5R1,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+499000.0,,0,Seller for Resistor,123,Carbon,5.0,Resistor,,45,Through hole,P00010-5R3,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+425000.0,,0,Seller for Resistor,124,Carbon,5.0,Resistor,,85,Through hole,P00010-6R2,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+215000.0,,0,Seller for Resistor,125,Carbon,5.0,Resistor,,1,Through hole,P00010-8R8,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+221000.0,,0,Seller for Resistor,126,Carbon,5.0,Resistor,,4,Through hole,P00010-754,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+332000.0,,0,Seller for Resistor,127,Carbon,5.0,Resistor,,7,Through hole,P00010-8R2,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+348000.0,,0,Seller for Resistor,128,Carbon,5.0,Resistor,,34,Through hole,P00010-9R1,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+412000.0,,0,Seller for Resistor,129,Carbon,5.0,Resistor,,1,Through hole,P00010-100,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+100000.0,,0,Seller for Resistor,130,Carbon,5.0,Resistor,,65,Through hole,P00010-110,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+121000.0,,0,Seller for Resistor,131,Carbon,5.0,Resistor,,68,Through hole,P00010-120,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+143000.0,,0,Seller for Resistor,132,,5.0,Resistor,,12,Through hole,,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+147000.0,,0,Seller for Resistor,133,Carbon,5.0,Resistor,,64,Through hole,P00010-150,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+200000.0,,0,Seller for Resistor,134,Carbon,5.0,Resistor,,9,Through hole,P00010-160,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+300.0,,0,Seller for Resistor,135,Carbon,5.0,Resistor,,4,Through hole,P00010-180,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+330.0,,0,Seller for Resistor,136,Carbon,5.0,Resistor,,55,Through hole,P00010-200,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+360.0,,0,Seller for Resistor,137,Carbon,5.0,Resistor,,12,Through hole,P00010-220,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+390.0,,0,Seller for Resistor,138,Carbon,5.0,Resistor,,2,Through hole,P00010-240,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+430.0,,0,Seller for Resistor,139,Carbon,5.0,Resistor,,6,Through hole,P00010-270,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+470.0,,0,Seller for Resistor,140,Carbon,5.0,Resistor,,5,Through hole,P00010-300,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+510.0,,0,Seller for Resistor,141,Carbon,5.0,Resistor,,1,Through hole,P00010-330,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+560.0,,0,Seller for Resistor,142,Carbon,5.0,Resistor,,25,Through hole,P00010-360,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+620.0,,0,Seller for Resistor,143,Carbon,5.0,Resistor,,19,Through hole,P00010-390,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+680.0,,0,Seller for Resistor,144,Carbon,5.0,Resistor,,83,Through hole,P00010-430,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+750.0,,0,Seller for Resistor,145,Carbon,5.0,Resistor,,4,Through hole,P00010-470,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+820.0,,0,Seller for Resistor,146,Carbon,5.0,Resistor,,9,Through hole,P00010-510,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+910.0,,0,Seller for Resistor,147,Carbon,5.0,Resistor,,54,Through hole,P00010-560,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+1000.0,,0,Seller for Resistor,148,Carbon,5.0,Resistor,,1,Through hole,P00010-620,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+1100.0,,0,Seller for Resistor,149,Carbon,5.0,Resistor,,1,Through hole,P00010-680,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+1200.0,,0,Seller for Resistor,150,Carbon,5.0,Resistor,,2,Through hole,P00010-750,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+1300.0,,0,Seller for Resistor,151,Carbon,5.0,Resistor,,24,Through hole,P00010-820,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+1500.0,,0,Seller for Resistor,152,Carbon,5.0,Resistor,,115,Through hole,P00010-910,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+1600.0,,0,Seller for Resistor,153,Carbon,5.0,Resistor,,8,Through hole,P00010-101,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+1800.0,,0,Seller for Resistor,154,Carbon,5.0,Resistor,,8,Through hole,P00010-111,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+2000.0,,0,Seller for Resistor,155,Carbon,5.0,Resistor,,32,Through hole,P00010-121,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+2200.0,,0,Seller for Resistor,156,Carbon,5.0,Resistor,,20,Through hole,P00010-131,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+2400.0,,0,Seller for Resistor,157,Carbon,5.0,Resistor,,20,Through hole,P00010-151,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+2700.0,,0,Seller for Resistor,158,Carbon,5.0,Resistor,,9,Through hole,P00010-161,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+3000.0,,0,Seller for Resistor,159,Carbon,5.0,Resistor,,1,Through hole,P00010-181,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+3300.0,,0,Seller for Resistor,160,Carbon,5.0,Resistor,,1,Through hole,,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+3600.0,,0,Seller for Resistor,161,Carbon,5.0,Resistor,,20,Through hole,P00010-221,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+3900.0,,0,Seller for Resistor,162,Carbon,5.0,Resistor,,25,Through hole,P00010-241,,5,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4700.0,,0,Seller for Resistor,163,,5.0,Resistor,,12,Through hole,,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+5100.0,,0,Seller for Resistor,164,Carbon,5.0,Resistor,,6,Through hole,P00010-333,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+5600.0,,0,Seller for Resistor,165,Carbon,5.0,Resistor,,45,Through hole,P00010-363,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+6200.0,,0,Seller for Resistor,166,Carbon,5.0,Resistor,,85,Through hole,P00010-393,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+6800.0,,0,Seller for Resistor,167,Carbon,5.0,Resistor,,1,Through hole,P00010-433,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+7500.0,,0,Seller for Resistor,168,Carbon,5.0,Resistor,,4,Through hole,P00010-473,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+8200.0,,0,Seller for Resistor,169,Carbon,5.0,Resistor,,7,Through hole,P00010-513,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+9100.0,,0,Seller for Resistor,170,Carbon,5.0,Resistor,,34,Through hole,P00010-563,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+10000.0,,0,Seller for Resistor,171,Carbon,5.0,Resistor,,1,Through hole,P00010-623,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+11000.0,,0,Seller for Resistor,172,Carbon,5.0,Resistor,,65,Through hole,P00010-683,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+12000.0,,0,Seller for Resistor,173,Carbon,5.0,Resistor,,68,Through hole,P00010-753,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+13000.0,,0,Seller for Resistor,174,Carbon,5.0,Resistor,,12,Through hole,P00010-823,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+15000.0,,0,Seller for Resistor,175,Carbon,5.0,Resistor,,64,Through hole,P00010-913,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+16000.0,,0,Seller for Resistor,176,Carbon,5.0,Resistor,,9,Through hole,P00010-104,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+18000.0,,0,Seller for Resistor,177,Carbon,5.0,Resistor,,4,Through hole,P00010-114,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+20000.0,,0,Seller for Resistor,178,Carbon,5.0,Resistor,,55,Through hole,P00010-124,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+22000.0,,0,Seller for Resistor,179,Carbon,5.0,Resistor,,12,Through hole,P00010-134,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+24000.0,,0,Seller for Resistor,180,Carbon,5.0,Resistor,,2,Through hole,P00010-154,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+27000.0,,0,Seller for Resistor,181,Carbon,5.0,Resistor,,6,Through hole,P00010-164,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+3000000.0,,0,Seller for Resistor,182,Carbon,5.0,Resistor,,5,Through hole,P00010-184,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+3300000.0,,0,Seller for Resistor,183,Carbon,5.0,Resistor,,1,Through hole,P00010-204,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+2600000.0,,0,Seller for Resistor,184,Carbon,5.0,Resistor,,25,Through hole,P00010-224,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+3900000.0,,0,Seller for Resistor,185,Carbon,5.0,Resistor,,19,Through hole,P00010-244,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4300000.0,,0,Seller for Resistor,186,Carbon,5.0,Resistor,,83,Through hole,P00010-274,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4700000.0,,0,Seller for Resistor,187,Carbon,5.0,Resistor,,4,Through hole,P00010-304,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+5100000.0,,0,Seller for Resistor,188,Carbon,5.0,Resistor,,9,Through hole,P00010-334,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+5600123.0,,0,Seller for Resistor,189,Carbon,5.0,Resistor,,54,Through hole,P00010-364,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+6200000.0,,0,Seller for Resistor,190,Carbon,5.0,Resistor,,1,Through hole,P00010-394,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+6800000.0,,0,Seller for Resistor,191,Carbon,5.0,Resistor,,1,Through hole,P00010-434,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+7500000.0,,0,Seller for Resistor,192,Carbon,5.0,Resistor,,2,Through hole,P00010-474,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+8200000.0,,0,Seller for Resistor,193,Carbon,5.0,Resistor,,24,Through hole,P00010-517,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+9100000.0,,0,Seller for Resistor,194,Carbon,5.0,Resistor,,115,Through hole,P00010-564,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+10000000.0,,0,Seller for Resistor,195,Carbon,5.0,Resistor,,8,Through hole,P00010-624,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+11000000.0,,0,Seller for Resistor,196,Carbon,5.0,Resistor,,8,Through hole,P00010-684,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+12000000.0,,0,Seller for Resistor,197,Carbon,5.0,Resistor,,32,Through hole,P00010-754,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+13000000.0,,0,Seller for Resistor,198,Carbon,5.0,Resistor,,20,Through hole,P00010-824,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+15000000.0,,0,Seller for Resistor,199,Carbon,5.0,Resistor,,20,Through hole,P00010-914,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+16000000.0,,0,Seller for Resistor,200,Carbon,5.0,Resistor,,9,Through hole,P00010-105,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+18000000.0,,0,Seller for Resistor,201,Carbon,5.0,Resistor,,1,Through hole,P00010-115,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+20000000.0,,0,Seller for Resistor,202,Carbon,5.0,Resistor,,1,Through hole,P00010-125,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+22000000.0,,0,Seller for Resistor,203,Carbon,5.0,Resistor,,20,Through hole,P00010-135,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+2400000.0,,0,Seller for Resistor,204,Carbon,5.0,Resistor,,25,Through hole,P00010-155,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+500000.0,,0,Seller for Resistor,205,Carbon,5.0,Resistor,,22,Through hole,P00010-165,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+10000.0,,0,Seller for Resistor,206,Carbon,5.0,Resistor,,12,Through hole,P00010-185,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+1000.0,,0,Seller for Resistor,207,Carbon,5.0,Resistor,,6,Through hole,P00010-205,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+43000.0,,0,Seller for Resistor,208,Carbon,5.0,Resistor,,45,Through hole,P00010-225,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+47.5,,0,Seller for Resistor,209,Carbon,5.0,Resistor,,85,Through hole,P00010-245,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+200.0,,0,Seller for Resistor,210,Carbon,5.0,Resistor,,1,Through hole,P00010-275,,6,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+200.0,,0,Seller for Resistor,211,,1.0,Resistor,,4,Through hole,6900003-4222,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+1.0,,0,Seller for Resistor,212,,1.0,Resistor,,7,Through hole,6900003-4752,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+6.8,,0,Seller for Resistor,213,,1.0,Resistor,,34,Through hole,6900003-4992,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+200.0,,0,Seller for Resistor,214,,1.0,Resistor,,1,Through hole,6900003-5622,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+10.0,,0,Seller for Resistor,215,,1.0,Resistor,,65,Through hole,6900003-7872,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+75.0,,0,Seller for Resistor,216,,1.0,Resistor,,68,Through hole,6900003-2002,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+330.0,,0,Seller for Resistor,217,,1.0,Resistor,,12,Through hole,6900003-2212,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+390.0,,0,Seller for Resistor,218,,1.0,Resistor,,64,Through hole,6900003-2432,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.7,,0,Seller for Resistor,219,,1.0,Resistor,,9,Through hole,6900003-3322,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+560.0,,0,Seller for Resistor,220,,1.0,Resistor,,4,Through hole,6900003-3482,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+1000.0,,0,Seller for Resistor,221,,1.0,Resistor,,55,Through hole,6900003-1002,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+240.0,,0,Seller for Resistor,222,,1.0,Resistor,,12,Through hole,6900003-1102,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+200000.0,,0,Seller for Resistor,223,,1.0,Resistor,,2,Through hole,6900003-1402,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+100000.0,,0,Seller for Resistor,224,,1.0,Resistor,,6,Through hole,6900003-1622,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+0.5,,0,Seller for Resistor,225,,1.0,Resistor,,5,Through hole,6900003-1652,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+20.0,,0,Seller for Resistor,226,,1.0,Resistor,,1,Through hole,6900003-6491,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+200.0,,0,Seller for Resistor,227,,1.0,Resistor,,25,Through hole,6900003-7511,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+0.01,,0,Seller for Resistor,228,,1.0,Resistor,,19,Through hole,6900003-8251,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+0.02,,0,Seller for Resistor,229,,1.0,Resistor,,83,Through hole,6900003-9091,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+0.05,,0,Seller for Resistor,230,,1.0,Resistor,,4,Through hole,6900003-8250,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+0.01,,0,Seller for Resistor,231,,1.0,Resistor,,9,Through hole,6900003-5001,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+20000.0,,0,Seller for Resistor,232,,1.0,Resistor,,54,Through hole,6900003-5111,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+3.0,,0,Seller for Resistor,233,,1.0,Resistor,,1,Through hole,6900003-5231,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+3.3,,0,Seller for Resistor,234,,1.0,Resistor,,1,Through hole,6900003-5361,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+3.6,,0,Seller for Resistor,235,,1.0,Resistor,,2,Through hole,6900003-5901,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+3.9,,0,Seller for Resistor,236,,1.0,Resistor,,24,Through hole,6900003-4021,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.3,,0,Seller for Resistor,237,,1.0,Resistor,,115,Through hole,6900003-4421,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4.7,,0,Seller for Resistor,238,,1.0,Resistor,,8,Through hole,6900003-4531,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+5.1,,0,Seller for Resistor,239,,1.0,Resistor,,8,Through hole,6900003-4751,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+5.6,,0,Seller for Resistor,240,,1.0,Resistor,,32,Through hole,6900003-4991,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+6.2,,0,Seller for Resistor,241,,1.0,Resistor,,20,Through hole,6900003-3011,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+6.8,,0,Seller for Resistor,242,,1.0,Resistor,,20,Through hole,6900003-3091,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+7.5,,0,Seller for Resistor,243,,1.0,Resistor,,9,Through hole,6900003-3651,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+8.2,,0,Seller for Resistor,244,,1.0,Resistor,,1,Through hole,6900003-3701,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+9.1,,0,Seller for Resistor,245,,1.0,Resistor,,1,Through hole,6900003-3741,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+10.0,,0,Seller for Resistor,246,,1.0,Resistor,,20,Through hole,6900003-2001,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+11.0,,0,Seller for Resistor,247,,1.0,Resistor,,25,Through hole,6900003-2211,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+12.0,,0,Seller for Resistor,248,,1.0,Resistor,,22,Through hole,6900003-2371,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+13.0,,0,Seller for Resistor,249,,1.0,Resistor,,12,Through hole,6900003-2491,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+15.0,,0,Seller for Resistor,250,,1.0,Resistor,,6,Through hole,6900003-1501,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+16.0,,0,Seller for Resistor,251,,1.0,Resistor,,45,Through hole,6900003-1621,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+18.0,,0,Seller for Resistor,252,,1.0,Resistor,,85,Through hole,6900003-1651,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+20.0,,0,Seller for Resistor,253,,1.0,Resistor,,1,Through hole,6900003-1001,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+22.0,,0,Seller for Resistor,254,,1.0,Resistor,,4,Through hole,6900003-1021,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+24.0,,0,Seller for Resistor,255,,1.0,Resistor,,7,Through hole,6900003-1211,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+27.0,,0,Seller for Resistor,256,,1.0,Resistor,,34,Through hole,6900003-1301,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+30.0,,0,Seller for Resistor,257,,1.0,Resistor,,1,Through hole,6900003-1401,,7,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+33.0,,0,Seller for Resistor,258,,5.0,Resistor,,65,Metal Oxide,,,8,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+36.0,,0,Seller for Resistor,259,,1.0,Resistor,,68,Through hole,6900003-5110,,8,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+39.0,,0,Seller for Resistor,260,,5.0,Resistor,,12,Through hole,6900005-6650,,8,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+43.0,,0,Seller for Resistor,261,,1.0,Resistor,,64,Through hole,6900003-6810,,8,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+47.0,,0,Seller for Resistor,262,,1.0,Resistor,,9,Through hole,6900003-7510,,8,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+51.0,,0,Seller for Resistor,263,,1.0,Resistor,,4,Through hole,6900003-3320,,8,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+56.0,,0,Seller for Resistor,264,,1.0,Resistor,,55,Through hole,6900003-4210,,8,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+62.0,,0,Seller for Resistor,265,,5.0,Resistor,,12,Through hole,6900005-4990,,8,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+68.0,,0,Seller for Resistor,266,,1.0,Resistor,,2,Through hole,6900003-4990,,8,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+75.0,,0,Seller for Resistor,267,,1.0,Resistor,,6,Through hole,6900003-5100,,8,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+82.0,,0,Seller for Resistor,268,,1.0,Resistor,,5,Through hole,6900003-2100,,8,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+91.0,,0,Seller for Resistor,269,,1.0,Resistor,,1,Through hole,6900003-2150,,8,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+100.0,,0,Seller for Resistor,270,,1.0,Resistor,,25,Through hole,6900003-2210,,8,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+110.0,,0,Seller for Resistor,271,,1.0,Resistor,,19,Through hole,6900003-2490,,8,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+120.0,,0,Seller for Resistor,272,,1.0,Resistor,,83,Through hole,6900003-2610,,8,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+130.0,,0,Seller for Resistor,273,,1.0,Resistor,,4,Through hole,6900003-1400,,8,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+150.0,,0,Seller for Resistor,274,,1.0,Resistor,,9,Through hole,6900003-1500,,8,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+160.0,,0,Seller for Resistor,275,,1.0,Resistor,,54,Through hole,6900003-1870,,8,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+180.0,,0,Seller for Resistor,276,,1.0,Resistor,,1,Through hole,6900003-1910,,8,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+200.0,,0,Seller for Resistor,277,,1.0,Resistor,,1,Through hole,6900003-1000,,8,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+220.0,,0,Seller for Resistor,278,,1.0,Resistor,,2,Through hole,6900003-1100,,8,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+240.0,,0,Seller for Resistor,279,,1.0,Resistor,,24,Through hole,6900003-1210,,8,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+270.0,,0,Seller for Resistor,280,,5.0,Resistor,,115,Through hole,6900005-1210,,8,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+30000.0,,0,Seller for Resistor,281,,1.0,Resistor,,8,Through hole,6900003-49R9,,8,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+33000.0,,0,Seller for Resistor,282,,1.0,Resistor,,8,Through hole,6900003-47R5,,8,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+36000.0,,0,Seller for Resistor,283,,1.0,Resistor,,32,Through hole,6900003-56R2,,8,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+39000.0,,0,Seller for Resistor,284,,1.0,Resistor,,20,Through hole,6900003-10R0,,8,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+43000.0,,0,Seller for Resistor,285,,1.0,Resistor,,20,Through hole,6900003-11R0,,8,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+47000.0,,0,Seller for Resistor,286,,1.0,Resistor,,9,Through hole,6900003-18R2,,8,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+51000.0,,0,Seller for Resistor,287,,1.0,Resistor,,1,Through hole,6900003-33R2,,8,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+56000.0,,0,Seller for Resistor,288,,1.0,Resistor,,1,Through hole,6900003-7R50,,8,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+62000.0,,0,Seller for Resistor,289,,5.0,Resistor,,20,Through hole,6900005-1R00,,8,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+68000.0,,0,Seller for Resistor,290,,1.0,Resistor,,25,Through hole,6900003-2R74,,8,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+75000.0,,0,Seller for Resistor,291,,1.0,Resistor,,22,Through hole,6900003-6R8,,8,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+82000.0,,0,Seller for Resistor,292,,1.0,Resistor,,12,Through hole,,,8,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+91000.0,,0,Seller for Resistor,293,,1.0,Resistor,,6,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+100000.0,,0,Seller for Resistor,294,,1.0,Resistor,,45,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+110000.0,,0,Seller for Resistor,295,,1.0,Resistor,,85,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+120000.0,,0,Seller for Resistor,296,,1.0,Resistor,,1,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+130000.0,,0,Seller for Resistor,297,,1.0,Resistor,,4,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+150000.0,,0,Seller for Resistor,298,,1.0,Resistor,,7,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+160000.0,,0,Seller for Resistor,299,,1.0,Resistor,,34,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+180000.0,,0,Seller for Resistor,300,,1.0,Resistor,,1,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+200000.0,,0,Seller for Resistor,301,,1.0,Resistor,,65,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+220000.0,,0,Seller for Resistor,302,,1.0,Resistor,,68,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+240000.0,,0,Seller for Resistor,303,,1.0,Resistor,,12,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+270000.0,,0,Seller for Resistor,304,,1.0,Resistor,,64,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+300000.0,,0,Seller for Resistor,305,,1.0,Resistor,,9,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+330000.0,,0,Seller for Resistor,306,,1.0,Resistor,,4,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+360000.0,,0,Seller for Resistor,307,,1.0,Resistor,,55,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+390000.0,,0,Seller for Resistor,308,,1.0,Resistor,,12,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+430000.0,,0,Seller for Resistor,309,,1.0,Resistor,,2,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+470000.0,,0,Seller for Resistor,310,,1.0,Resistor,,6,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+510000.0,,0,Seller for Resistor,311,,1.0,Resistor,,5,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+560000.0,,0,Seller for Resistor,312,,1.0,Resistor,,1,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+620000.0,,0,Seller for Resistor,313,,1.0,Resistor,,25,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+680000.0,,0,Seller for Resistor,314,,1.0,Resistor,,19,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+750000.0,,0,Seller for Resistor,315,,1.0,Resistor,,83,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+820000.0,,0,Seller for Resistor,316,,1.0,Resistor,,4,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+910000.0,,0,Seller for Resistor,317,,1.0,Resistor,,9,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+1000000.0,,0,Seller for Resistor,318,,1.0,Resistor,,54,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+1100000.0,,0,Seller for Resistor,319,,1.0,Resistor,,1,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+1200000.0,,0,Seller for Resistor,320,,1.0,Resistor,,1,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+1300000.0,,0,Seller for Resistor,321,,1.0,Resistor,,2,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+1500000.0,,0,Seller for Resistor,322,,1.0,Resistor,,24,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+1600000.0,,0,Seller for Resistor,323,,1.0,Resistor,,115,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+1800000.0,,0,Seller for Resistor,324,,1.0,Resistor,,8,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+2000000.0,,0,Seller for Resistor,325,,1.0,Resistor,,8,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+2200000.0,,0,Seller for Resistor,326,,1.0,Resistor,,32,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+2400000.0,,0,Seller for Resistor,327,,1.0,Resistor,,20,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+2700000.0,,0,Seller for Resistor,328,,1.0,Resistor,,20,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+42200.0,,0,Seller for Resistor,329,,1.0,Resistor,,9,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+47500.0,,0,Seller for Resistor,330,,1.0,Resistor,,1,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+49900.0,,0,Seller for Resistor,331,,1.0,Resistor,,1,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+56200.0,,0,Seller for Resistor,332,,1.0,Resistor,,20,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+78700.0,,0,Seller for Resistor,333,,1.0,Resistor,,25,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+20000.0,,0,Seller for Resistor,334,,1.0,Resistor,,22,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+22100.0,,0,Seller for Resistor,335,,1.0,Resistor,,12,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+24300.0,,0,Seller for Resistor,336,,1.0,Resistor,,6,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+33200.0,,0,Seller for Resistor,337,,1.0,Resistor,,45,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+34800.0,,0,Seller for Resistor,338,,1.0,Resistor,,85,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+10000.0,,0,Seller for Resistor,339,,1.0,Resistor,,1,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+10000.0,,0,Seller for Resistor,340,,1.0,Resistor,,4,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+14000.0,,0,Seller for Resistor,341,,1.0,Resistor,,7,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+16200.0,,0,Seller for Resistor,342,,1.0,Resistor,,34,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+16500.0,,0,Seller for Resistor,343,,1.0,Resistor,,1,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+6490.0,,0,Seller for Resistor,344,,1.0,Resistor,,65,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+7500.0,,0,Seller for Resistor,345,,1.0,Resistor,,68,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+8250.0,,0,Seller for Resistor,346,,1.0,Resistor,,12,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+9090.0,,0,Seller for Resistor,347,,1.0,Resistor,,64,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+825.0,,0,Seller for Resistor,348,,1.0,Resistor,,9,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+5000.0,,0,Seller for Resistor,349,,1.0,Resistor,,4,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+5110.0,,0,Seller for Resistor,350,,1.0,Resistor,,55,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+5230.0,,0,Seller for Resistor,351,,1.0,Resistor,,12,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+5360.0,,0,Seller for Resistor,352,,1.0,Resistor,,2,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+5900.0,,0,Seller for Resistor,353,,1.0,Resistor,,6,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4020.0,,0,Seller for Resistor,354,,1.0,Resistor,,5,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4420.0,,0,Seller for Resistor,355,,1.0,Resistor,,1,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4530.0,,0,Seller for Resistor,356,,1.0,Resistor,,25,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4750.0,,0,Seller for Resistor,357,,1.0,Resistor,,19,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+4990.0,,0,Seller for Resistor,358,,1.0,Resistor,,83,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+3010.0,,0,Seller for Resistor,359,,1.0,Resistor,,4,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+3090.0,,0,Seller for Resistor,360,,1.0,Resistor,,9,Through hole,,,9,0.25,0.0,0.0,1,Link for Resistor,,EL,,0.0,passive
+3650.0,,0,Seller for Resistor,361,,1.0,Resistor,,54,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+3700.0,,0,Seller for Resistor,362,,1.0,Resistor,,1,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+3740.0,,0,Seller for Resistor,363,,5.0,Resistor,,1,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+2000.0,,0,Seller for Resistor,364,,1.0,Resistor,,2,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+2210.0,,0,Seller for Resistor,365,,1.0,Resistor,,24,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+2370.0,,0,Seller for Resistor,366,,1.0,Resistor,,115,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+2490.0,,0,Seller for Resistor,367,,1.0,Resistor,,8,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+1500.0,,0,Seller for Resistor,368,,1.0,Resistor,,8,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+1620.0,,0,Seller for Resistor,369,,1.0,Resistor,,32,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+1650.0,,0,Seller for Resistor,370,,1.0,Resistor,,20,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+1000.0,,0,Seller for Resistor,371,,1.0,Resistor,,20,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+1020.0,,0,Seller for Resistor,372,,5.0,Resistor,,9,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+1210.0,,0,Seller for Resistor,373,,1.0,Resistor,,1,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+1300.0,,0,Seller for Resistor,374,,1.0,Resistor,,1,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+1400.0,,0,Seller for Resistor,375,,1.0,Resistor,,20,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+510.0,,0,Seller for Resistor,376,,1.0,Resistor,,25,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+511.0,,0,Seller for Resistor,377,,1.0,Resistor,,22,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+665.0,,0,Seller for Resistor,378,,1.0,Resistor,,12,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+681.0,,0,Seller for Resistor,379,,1.0,Resistor,,6,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+750.0,,0,Seller for Resistor,380,,1.0,Resistor,,45,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+332.0,,0,Seller for Resistor,381,,1.0,Resistor,,85,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+412.0,,0,Seller for Resistor,382,,1.0,Resistor,,1,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+499.0,,0,Seller for Resistor,383,,1.0,Resistor,,4,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+499.0,,0,Seller for Resistor,384,,1.0,Resistor,,7,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+510.0,,0,Seller for Resistor,385,,1.0,Resistor,,34,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+210.0,,0,Seller for Resistor,386,,1.0,Resistor,,1,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+215.0,,0,Seller for Resistor,387,,1.0,Resistor,,65,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+221.0,,0,Seller for Resistor,388,,1.0,Resistor,,68,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+249.0,,0,Seller for Resistor,389,,1.0,Resistor,,12,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+261.0,,0,Seller for Resistor,390,,1.0,Resistor,,64,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+140.0,,0,Seller for Resistor,391,,1.0,Resistor,,9,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+150.0,,0,Seller for Resistor,392,,1.0,Resistor,,4,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+187.0,,0,Seller for Resistor,393,,1.0,Resistor,,55,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+191.0,,0,Seller for Resistor,394,,1.0,Resistor,,12,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+100.0,,0,Seller for Resistor,395,,1.0,Resistor,,2,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+110.0,,0,Seller for Resistor,396,,1.0,Resistor,,6,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+121.0,,0,Seller for Resistor,397,,1.0,Resistor,,5,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+121.0,,0,Seller for Resistor,398,,1.0,Resistor,,1,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+499.0,,0,Seller for Resistor,399,,1.0,Resistor,,25,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+475.0,,0,Seller for Resistor,400,,1.0,Resistor,,19,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+562.0,,0,Seller for Resistor,401,,1.0,Resistor,,83,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+100.0,,0,Seller for Resistor,402,,1.0,Resistor,,4,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+110.0,,0,Seller for Resistor,403,,1.0,Resistor,,9,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+182.0,,0,Seller for Resistor,404,,1.0,Resistor,,54,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+332.0,,0,Seller for Resistor,405,,1.0,Resistor,,1,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+750.0,,0,Seller for Resistor,406,,1.0,Resistor,,1,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+100.0,,0,Seller for Resistor,407,,1.0,Resistor,,2,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+274.0,,0,Seller for Resistor,408,,1.0,Resistor,,24,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+680.0,,0,Seller for Resistor,409,,1.0,Resistor,,115,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+0.0,,0,Seller for Resistor,410,,1.0,Resistor,,8,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+1.0,,0,Seller for Resistor,411,,1.0,Resistor,,8,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+1.2,,0,Seller for Resistor,412,,1.0,Resistor,,32,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+1.2,,0,Seller for Resistor,413,,1.0,Resistor,,20,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+1.5,,0,Seller for Resistor,414,,1.0,Resistor,,20,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+1.8,,0,Seller for Resistor,415,,1.0,Resistor,,9,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+2.2,,0,Seller for Resistor,416,,1.0,Resistor,,1,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+2.7,,0,Seller for Resistor,417,,1.0,Resistor,,1,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+3.3,,0,Seller for Resistor,418,,1.0,Resistor,,20,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+3.9,,0,Seller for Resistor,419,,1.0,Resistor,,25,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+4.7,,0,Seller for Resistor,420,,1.0,Resistor,,22,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+5.6,,0,Seller for Resistor,421,,1.0,Resistor,,12,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+6.8,,0,Seller for Resistor,422,,1.0,Resistor,,6,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+8.2,,0,Seller for Resistor,423,,1.0,Resistor,,45,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+10.0,,0,Seller for Resistor,424,,1.0,Resistor,,85,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+12.0,,0,Seller for Resistor,425,,1.0,Resistor,,1,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+15.0,,0,Seller for Resistor,426,,1.0,Resistor,,4,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+18.0,,0,Seller for Resistor,427,,1.0,Resistor,,7,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+22.0,,0,Seller for Resistor,428,,1.0,Resistor,,34,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+27.0,,0,Seller for Resistor,429,,1.0,Resistor,,1,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+33.0,,0,Seller for Resistor,430,,1.0,Resistor,,65,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+39.0,,0,Seller for Resistor,431,,1.0,Resistor,,68,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+47.0,,0,Seller for Resistor,432,,1.0,Resistor,,12,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+56.0,,0,Seller for Resistor,433,,1.0,Resistor,,64,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+68.0,,0,Seller for Resistor,434,,1.0,Resistor,,9,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+82.0,,0,Seller for Resistor,435,,1.0,Resistor,,4,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+100.0,,0,Seller for Resistor,436,,1.0,Resistor,,55,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+120.0,,0,Seller for Resistor,437,,1.0,Resistor,,12,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+150.0,,0,Seller for Resistor,438,,1.0,Resistor,,2,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+270.0,,0,Seller for Resistor,439,,1.0,Resistor,,6,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+330.0,,0,Seller for Resistor,440,,1.0,Resistor,,5,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+390.0,,0,Seller for Resistor,441,,1.0,Resistor,,1,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+470.0,,0,Seller for Resistor,442,,1.0,Resistor,,25,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+560.0,,0,Seller for Resistor,443,,1.0,Resistor,,19,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+680.0,,0,Seller for Resistor,444,,1.0,Resistor,,83,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+820.0,,0,Seller for Resistor,445,,1.0,Resistor,,4,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+560.0,,0,Seller for Resistor,446,,5.0,Resistor,,9,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+680.0,,0,Seller for Resistor,447,,1.0,Resistor,,54,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+820.0,,0,Seller for Resistor,448,,1.0,Resistor,,1,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+1200.0,,0,Seller for Resistor,449,,1.0,Resistor,,1,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+1500.0,,0,Seller for Resistor,450,,1.0,Resistor,,2,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+1800.0,,0,Seller for Resistor,451,,1.0,Resistor,,24,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+2200.0,,0,Seller for Resistor,452,,1.0,Resistor,,115,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+2700.0,,0,Seller for Resistor,453,,1.0,Resistor,,8,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+3300.0,,0,Seller for Resistor,454,,1.0,Resistor,,8,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+3900.0,,0,Seller for Resistor,455,,5.0,Resistor,,32,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+4700.0,,0,Seller for Resistor,456,,1.0,Resistor,,20,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+5600.0,,0,Seller for Resistor,457,,1.0,Resistor,,20,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+6800.0,,0,Seller for Resistor,458,,1.0,Resistor,,9,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+8200.0,,0,Seller for Resistor,459,,1.0,Resistor,,1,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+12000.0,,0,Seller for Resistor,460,,1.0,Resistor,,1,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+15000.0,,0,Seller for Resistor,461,,1.0,Resistor,,20,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+22000.0,,0,Seller for Resistor,462,,1.0,Resistor,,25,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+27000.0,,0,Seller for Resistor,463,,1.0,Resistor,,22,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+39000.0,,0,Seller for Resistor,464,,1.0,Resistor,,12,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+47000.0,,0,Seller for Resistor,465,,1.0,Resistor,,6,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+82000.0,,0,Seller for Resistor,466,,1.0,Resistor,,45,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+120000.0,,0,Seller for Resistor,467,,1.0,Resistor,,85,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+15000.0,,0,Seller for Resistor,468,,1.0,Resistor,,1,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+180000.0,,0,Seller for Resistor,469,,1.0,Resistor,,4,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+220000.0,,0,Seller for Resistor,470,,1.0,Resistor,,7,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+270000.0,,0,Seller for Resistor,471,,1.0,Resistor,,34,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+330000.0,,0,Seller for Resistor,472,,1.0,Resistor,,1,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+390000.0,,0,Seller for Resistor,473,,1.0,Resistor,,65,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+470000.0,,0,Seller for Resistor,474,,1.0,Resistor,,68,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+560000.0,,0,Seller for Resistor,475,,1.0,Resistor,,12,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+680000.0,,0,Seller for Resistor,476,,1.0,Resistor,,64,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+820000.0,,0,Seller for Resistor,477,,1.0,Resistor,,9,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+56000.0,,0,Seller for Resistor,478,,1.0,Resistor,,4,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+56000.0,,0,Seller for Resistor,479,,1.0,Resistor,,55,,,,10,1.0,0.0,0.0,1,Link for Resistor,,,,0.0,passive
+3.0,,0,3,480,3,3.0,resistor,,3,3,3,3,3,3.0,3.0,3.0,3,3,,3,,3.0,passive
+1.0,,0,1,481,1,1.0,resistor,,1,1,1,1,1,1.0,1.0,1.0,1,1,,1,,1.0,passive
+1.0,,0,1,482,1,1.0,resistor,,1,1,1,1,1,1.0,1.0,1.0,1,1,,EL,,1.0,passive
+1.0,,0,1,483,1,1.0,resistor,,1,1,1,1,1,1.0,1.0,1.0,1,1,,EL,,1.0,passive
+2.0,,0,3,484,3,2.0,resistor,,2,3,2,1,2,2.0,2.0,2.0,2,2,,EL,,2.0,passive
+1.0,,0,1,485,11,1.0,resistor,,1,1,1,1,1,1.0,1.0,1.0,1,1,,EL,,1.0,passive
+888.0,,0,3,486,3,1.0,resistor,,1,3,3,1,12,62.0,64.0,63.0,3,1,,EL,,61.0,passive
+,High-Speed CMOS Logic Dual 4- to 1-Line Selector/Multiplexer,0,,1,,,,Selector/Multiplexer,7,,10,,13,,,,,https://www.ti.com/lit/ds/symlink/cd74hc153.pdf,0,EL,MM74HC153N,,active
+,SNx4HC165 8-Bit Parallel-Load Shift Registers,0,,2,,,,Shift Registers,34,,,,13,,,,,https://www.ti.com/lit/ds/symlink/sn74hc165.pdf,0,EL,74HCT165N,,active
+,hex  type  D  flip√¢¬Ä¬ìflop  is  constructed  with  MOSP√¢¬Ä¬ìchannel  and  N√¢¬Ä¬ìchannel  enhancement,0,,3,,,,HexType D Flip-Flop,1,,,,13,,,,,https://www.alldatasheet.com/datasheet-pdf/view/11971/ONSEMI/MC14174BCP.html,0,Electrical Lab,MC14174BCP,,active
+,TOSHIBA CMOS Digital Integrated Circuit Silicon Monolithic,0,,4,,,,8-Channel Multiplexer,65,,,,13,,,,,https://www.alldatasheet.com/datasheet-pdf/view/15573/PHILIPS/74HC251.html,0,EL,74HC251AP,,active
+,OCTAL BUFFERS/DRIVERS WITH 3-STATE OUTPUTS,0,,5,,,,BUFFERS/DRIVERS,68,,,,13,,,,,https://www.alldatasheet.com/datasheet-pdf/view/50366/FAIRCHILD/74F541.html,0,EL,74F541N,,active
+,OCTAL D-TYPE TRANSPARENT LATCHES WITH 3 STATE OUTPUTS,0,,6,,,,TRANSPARENT LATCHES ,12,,,,13,,,,,https://www.alldatasheet.com/datasheet-pdf/view/28021/TI/SN74LS373N.html,0,EL,SN74AS573N,,active
+,HIGH SPEED CMOS SCHMITT INVERTER,0,,7,,,,HEX SCHMITT INVERTER,64,,,,13,,,,,https://www.alldatasheet.com/datasheet-pdf/view/83116/TOSHIBA/74HC14AP.html,0,EL,74HC14AP,,active
+,"14-Stage Binary Counter , 12-Stage Binary Counter",0,,8,,,,Binary Counter,9,,,,13,,,,,https://www.alldatasheet.com/datasheet-pdf/view/15607/PHILIPS/74HC4020N.html,0,EL,MM74HC4020N,,active
+,16 bit counter system timing controller,0,,9,,,,System timing controller,4,,,,13,,,,,https://www.alldatasheet.com/datasheet-pdf/view/133430/AMD/AM9513APC.html,0,EL,AM9513APC,,active
+,High Density UV Erasable Programmable Logic Device,0,,10,,,,Programmable Logic Device,55,,,,13,,,,,https://www.alldatasheet.com/datasheet-pdf/view/56266/ATMEL/ATV750.html,0,EL,ATV750,,active
+,CHMOSSINGLE-CHIP8-BIT MICROCONTROLLER,0,,11,,,,MICROCONTROLLER,12,,,,13,,,,,https://www.alldatasheet.com/datasheet-pdf/view/66130/INTEL/D87C51.html,0,EL,D87C51,,active
+,High Performance E2CMOS PLDGeneric Array Logic,0,,12,,,,Array Logic,2,,,,13,,,,,https://www.alldatasheet.com/datasheet-pdf/view/70193/LATTICE/GAL22V10.html,0,EL,GAL22V10B,,active
+,SYNCHRONOUS 4-BIT COUNTERS,0,,13,,,,4-BIT COUNTERS,6,,,,13,,,,,https://www.alldatasheet.com/datasheet-pdf/view/27421/TI/SN74LS160AN.html,0,EL,SN74LS160AN,,active
+,OCTAL BUFFERS AND LINE DRIVERSWITH 3-STATE OUTPUTS,0,,14,,,,OCTAL BUFFERS AND LINE DRIVERS,1,,,,13,,,,,https://www.alldatasheet.com/datasheet-pdf/view/27911/TI/SN74HC244N.html,0,EL,SN74HC244N,,active
+,OCTAL D-TYPE FLIP-FLOPS WITH CLEAR,0,,15,,,,FLIP-FLOPS,25,,,,13,,,,,https://www.alldatasheet.com/datasheet-pdf/view/1731954/TI1/SN74ALS273N.html,0,EL,SN74ALS273N,,active
+,Octal buffer/line driver; 3-state,0,,16,,,,Octal buffer/line driver,19,,,,13,,,,,https://www.alldatasheet.com/datasheet-pdf/view/15642/PHILIPS/74HC541N.html,0,EL,74HC541N,,active
+,OCTAL D-TYPE FLIP FLOPWITH 3 STATE OUTPUT NON INVERTING,0,,17,,,,FLIP FLOP,83,,,,13,,,,,https://www.alldatasheet.com/datasheet-pdf/view/21769/STMICROELECTRONICS/74ACT574.html,0,EL,74ACT574,,active
+,8-BIT SHIFT REGISTERSWITH 3-STATE OUTPUT REGISTERS,0,,18,,,,SHIFT REGISTERS,4,,,,13,,,,,https://www.alldatasheet.com/datasheet-pdf/view/27939/TI/SN74HC595N.html,0,EL,SN74HC595N,,active
+,"High-Voltage, Fault-ProtectedAnalog Multiplexers",0,,19,,,,Analog Multiplexers,9,,,,13,,,,,https://www.alldatasheet.com/datasheet-pdf/view/73241/MAXIM/MAX379CPE.html,0,EL,MAX379CPE,,active
+,LC2MOS16-Bit Voltage Output DAC,0,,20,,,,Voltage Output DAC,54,,,,13,,,,,https://www.alldatasheet.com/datasheet-pdf/view/283608/AD/AD7846JP.html,0,EL,AD7846JP,,active
+,"Dual, PrecisionJFET High Speed Operational Amplifier",0,,21,,,, Operational Amplifier,1,,,,13,,,,,https://www.alldatasheet.com/datasheet-pdf/view/49050/AD/OP249GP.html,0,EL,OP249GP,,active
+,High Accuracy 8-PinInstrumentation Amplifier,0,,22,,,,Instrumentation Amplifier,1,,,,13,,,,,https://www.alldatasheet.com/datasheet-pdf/view/48924/AD/AMP02.html,0,EL,AMP02,,active
+,8-Bit Serial-in/Parallel-out Shift Register,0,,23,,,,Shift Register,24,,,,13,,,,,https://www.alldatasheet.com/datasheet-pdf/view/53751/FAIRCHILD/MM74HC164N.html,0,EL,74HC164,,active
+,Octal Bidirectional Transceiver with 3-STATE Inputs/Outputs,0,,24,,,,Bidirectional Transceiver ,8,,,,13,,,,,https://www.alldatasheet.com/datasheet-pdf/view/50146/FAIRCHILD/74ACT245PC.html,0,EL,74ACT245PC,,active
+,OCTAL D-TYPE LATCHWITH 3 STATE OUTPUT NON INVERTING,0,,25,,,,OCTAL D-TYPE LATCH,8,,,,13,,,,,https://www.alldatasheet.com/datasheet-pdf/view/21765/STMICROELECTRONICS/74ACT373.html,0,EL,74ACT373PC,,active
+,Octal buffer/line driver; 3-state,0,,26,,,,buffer/line driver,32,,,,13,,,,,https://www.alldatasheet.com/datasheet-pdf/view/650281/NXP/74HCT541N.html,0,EL,74HCT541N,,active
+,3-STATE Octal D-Type Edge-Triggered Flip-Flop,0,,27,,,,Flip-Flop,20,,,,13,,,,,https://www.alldatasheet.com/datasheet-pdf/view/53784/FAIRCHILD/MM74HC574N.html,0,EL,MM74HC574N,,active
+,8-bit shift register with input flip-flops,0,,28,,,,shift register,20,,,,13,,,,,https://www.alldatasheet.com/datasheet-pdf/view/15650/PHILIPS/74HC597N.html,0,EL,74HC597N,,active
+,BTW 69 (N),0,,29,,,,BTW 69,9,,,,13,,,,,https://www.alldatasheet.com/datasheet-pdf/view/22043/STMICROELECTRONICS/BTW69-800.html,0,EL,BTW69-800,,active
+,PRECISION SAMPLE AND HOLD AMPLIFIER,0,,30,,,,AMPLIFIER,1,,,,13,,,,,https://www.alldatasheet.com/datasheet-pdf/view/70231/LINER/LF398N8.html,0,EL,LF398N8,,active
+,OCTAL BUS BUFFER WITH 3 STATE OUTPUTS (NON INVERTED),0,,31,,,,BUFFER,1,,,,13,,,,,https://www.alldatasheet.com/datasheet-pdf/view/21758/STMICROELECTRONICS/74ACT244.html,0,EL,74ACT244,,active
+,OCTAL BUS TRANSCEIVERS AND REGISTERS WITH 3 STATE OUTPUTS,0,,32,,,,TRANSCEIVER,20,,,,13,,,,,https://rocelec.widen.net/view/pdf/zucxpawolj/TXIIS140294-1.pdf?t.download=true&u=5oefqw,0,EL,SN74ALS646NT,,active
+,Octal D-type flip-flop; positiveedge-trigger; 3-state,0,,33,,,,D-type flip-flop,25,,,,13,,,,,https://www.alldatasheet.com/datasheet-pdf/view/15646/PHILIPS/74HCT574N.html,0,EL,74HCT574N,,active
+,Octal Buffer/Line Driver with 3-STATE Outputs,0,,34,,,,Octal Buffer/,12,,,,13,,,,,https://www.alldatasheet.com/datasheet-pdf/view/50136/FAIRCHILD/74AC244.html,0,EL,74AC244,,active
+,OCTAL 3-STATE TRANSCEIVER,0,,35,,,,TRANCEIVER,6,,,,13,,,,,https://www.mouser.com/datasheet/2/308/1/MM74HCT245_D-2315793.pdf,0,EL,MM74HCT245,,active
+,"Octal Buffer/Line Drivers, 3-State",0,,36,,,,Buffer/Line Drivers,45,,,,13,,,,,https://www.ti.com/lit/ds/symlink/cd74act541.pdf,0,EL,CD74ACT541E,,active
+,"8-Channel Analog Multiplexer, Dual 4-Channel Analog Multiplexer, Triple 2-Channel Analog Multiplexer",0,,37,,,,Multiplexer,1,,,,13,,,,,https://www.alldatasheet.com/datasheet-pdf/view/53771/FAIRCHILD/MM74HC4051N.html,0,EL,MM74HC4051N,,active
+,"16-Bit, 100 kHz / 20 kHz A/D Converters",0,,38,,,,Converter,4,,,,13,,,,,https://www.alldatasheet.com/datasheet-pdf/view/58139/CIRRUS/CS5101A-JL8.html,0,EL,CS5101A-JL8,,active

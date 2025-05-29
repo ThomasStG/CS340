@@ -1,0 +1,162 @@
+<div class="p-0 m-0 w-full h-full left-0 dark:bg-gray-900">
+  <div class="flex">
+    <app-electrical-admin-search class="w-full"
+      (formSubmit)="onSearch($event)"
+      (clear)="onClear($event)"
+    ></app-electrical-admin-search>
+  </div>
+  <div
+    *ngIf="items.length === 0"
+    class="text-black dark:text-white bg-gray-100 dark:bg-gray-900 h-full flex flex-col items-center justify-center m-auto fixed index-0 w-full gap-2"
+  >
+    <textarea
+    type="text"
+    [(ngModel)]="helpText"
+    [readonly]="!editingText"
+    class="text-black dark:text-white bg-gray-100 dark:bg-gray-900 w-full max-w-lg border p-4 rounded-md text-center"
+    [ngClass]="{'hover:bg-gray-300 dark:hover:bg-gray-700': editingText}"
+    rows="30" cols="100">
+    {{ helpText }}
+    </textarea>
+    <button (click)="editText()" class="text-black dark:text-white pt-1 pb-1 pl-2 pr-2 bg-gray-100 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-700 border border-gray-500 rounded-md" *ngIf="!editingText">Edit</button>
+    <div class="flex gap-2 flex-row">
+    <button (click)="saveText()" class="text-black dark:text-white pt-1 pb-1 pl-2 pr-2 bg-gray-100 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-700 border border-gray-500 rounded-md" *ngIf="editingText">Save</button>
+    <button (click)="cancelText()" class="text-black dark:text-white pt-1 pb-1 pl-2 pr-2 bg-gray-100 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-700 border border-gray-500 rounded-md" *ngIf="editingText">Cancel</button>
+    </div>
+  </div>
+  <div
+    *ngIf="searched"
+    class="text-black dark:text-white bg-gray-100 dark:bg-gray-600"
+  >
+    <table *ngIf="type === 'passive'">
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Value</th>
+          <th>Unit</th>
+          <th *ngIf="subtype === 'resistor'">Max P</th>
+          <th *ngIf="subtype === 'capacitor'">Max V</th>
+          <th>Count</th>
+          <th>Amount: <input type="number" [(ngModel)]="amount"/></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of items" (click)="onItemClick(item)">
+          <td>{{ subtype }}</td>
+          <td>{{ item.value }}</td>
+          <td>{{ unit }}</td>
+          <td *ngIf="subtype === 'resistor'">{{ item.max_power }}</td>
+          <td *ngIf="subtype === 'capacitor'">{{ item.max_voltage }}</td>
+          <td>{{ item.count }}</td>
+          <td>
+            <button (click)="increment(item, $event)" class="text-black dark:text-white pt-1 pb-1 pl-2 pr-2 bg-gray-100 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-700 border border-gray-500 rounded-md">Add</button>
+            <button (click)="decrement(item, $event)" class="text-black dark:text-white pt-1 pb-1 pl-2 pr-2 bg-gray-100 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-700 border border-gray-500 rounded-md">Remove</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table *ngIf="type === 'assembly'">
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Name</th>
+          <th>Part ID</th>
+          <th>Count</th>
+          <th>Amount: <input type="number" [(ngModel)]="amount"/></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of items" (click)="onItemClick(item)">
+          <td>{{ subtype }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.part_id }}</td>
+          <td>{{ item.count }}</td>
+          <td>
+            <button (click)="increment(item, $event)" class="text-black dark:text-white pt-1 pb-1 pl-2 pr-2 bg-gray-100 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-700 border border-gray-500 rounded-md">Add</button>
+            <button (click)="decrement(item, $event)" class="text-black dark:text-white pt-1 pb-1 pl-2 pr-2 bg-gray-100 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-700 border border-gray-500 rounded-md">Remove</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table *ngIf="type === 'active'">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Part ID</th>
+          <th>Count</th>
+          <th>Amount: <input type="number" [(ngModel)]="amount"/></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of items" (click)="onItemClick(item)">
+          <td>{{ item.name }}</td>
+          <td>{{ item.part_id }}</td>
+          <td>{{ item.count }}</td>
+          <td>
+            <button (click)="increment(item, $event)" class="text-black dark:text-white pt-1 pb-1 pl-2 pr-2 bg-gray-100 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-700 border border-gray-500 rounded-md">Add</button>
+            <button (click)="decrement(item, $event)" class="text-black dark:text-white pt-1 pb-1 pl-2 pr-2 bg-gray-100 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-700 border border-gray-500 rounded-md">Remove</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table *ngIf="type !== 'passive' && type !== 'assembly' && type !== 'active'">
+      <thead class="text-black dark:text-white bg-gray-100 dark:bg-gray-600 w-full">
+        <tr class="dark:bg-gray-700">
+          <th>Name</th>
+          <th>Part ID</th>
+          <th colspan="1"></th>
+          <th>Count</th>
+          <th class="z-300">Amount: <input type="number" [(ngModel)]="amount" class="text-black dark:text-white bg-gray-100 hover:bg-gray-300 dark:hover:bg-gray-700 dark:bg-gray-600 border border-gray-500 rounded-md"/></th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let item of items">
+          <tr *ngIf="item.type === 'active'" (click)="onItemClick(item)">
+            <td>{{ item.name }}</td>
+            <td>{{ item.part_id }}</td>
+            <td colspan="1"></td>
+            <td>{{ item.count }}</td>
+            <td>
+              <button (click)="increment(item, $event)" class="text-black dark:text-white pt-1 pb-1 pl-2 pr-2 bg-gray-100 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-700 border border-gray-500 rounded-md">Add</button>
+              <button (click)="decrement(item, $event)" class="text-black dark:text-white pt-1 pb-1 pl-2 pr-2 bg-gray-100 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-700 border border-gray-500 rounded-md">Remove</button>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+      <thead class="text-black dark:text-white bg-gray-100 dark:bg-gray-700 z-299">
+        <tr class="dark:bg-gray-700">
+          <th>Type</th>
+          <th>Value</th>
+          <th>Unit</th>
+          <th *ngIf="type === 'Resistor'">Max P</th>
+          <th *ngIf="type === 'Capacitor'">Max V</th>
+          <th>Count</th>
+          <th class="z-300">Amount: <input type="number" [(ngModel)]="amount" class="text-black dark:text-white bg-gray-100 hover:bg-gray-300 dark:hover:bg-gray-700 dark:bg-gray-600 border border-gray-500 rounded-md"/></th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let item of items">
+          <tr *ngIf="item.type === 'passive'" (click)="onItemClick(item)">
+            <td>{{ item.subtype }}</td>
+            <td>{{ item.value }}</td>
+            <td>Ohms</td>
+            <td *ngIf="type === 'Resistor'">{{ item.max_power }}</td>
+            <td *ngIf="type === 'Capacitor'">{{ item.max_voltage }}</td>
+            <td>{{ item.count }}</td>
+            <td>
+              <button (click)="increment(item, $event)" class="text-black dark:text-white pt-1 pb-1 pl-2 pr-2 bg-gray-100 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-700 border border-gray-500 rounded-md">Add</button>
+              <button (click)="decrement(item, $event)" class="text-black dark:text-white pt-1 pb-1 pl-2 pr-2 bg-gray-100 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-700 border border-gray-500 rounded-md">Remove</button>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="isPopupVisible" class="" (click)="closePopup($event)">
+    <app-item-popup
+      [item]="selectedItem"
+      (close)="closePopup($event)"
+    ></app-item-popup>
+  </div>
+</div>
