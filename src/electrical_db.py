@@ -150,6 +150,23 @@ def add_active_item_el(
             location = "EL"
         cursor.execute(
             """
+            SELECT * FROM electrical_active_items WHERE part_id = ?
+            """,
+            (part_id),
+        )
+        if cursor.fetchone() is not None:
+            cursor.execute(
+                """
+                UPDATE electrical_active_items 
+                SET count = count + ? 
+                WHERE part_id = ?
+                """,
+                (count, part_id),
+            )
+            connection.commit()
+            return
+        cursor.execute(
+            """
             INSERT INTO electrical_active_items (
                 name,
                 part_id,
@@ -232,29 +249,11 @@ def add_passive_item_el(
         (value, item_type, tolerance, mounting_method, location, rack, slot),
     )
     old_item = cursor.fetchone()
-    # TODO: Check if location is important to part_number changing
 
-    if old_item and old_item["part_number"] == part_number:
-        print("updating")
-        update_passive_item_el(
+    if old_item:
+        increment_passive_item_el(
             old_item["id"],
-            part_number,
-            item_type,
-            link,
-            value,
-            location,
-            rack,
-            slot,
-            count + old_item["count"],
-            max_p,
-            max_v,
-            max_i,
-            i_hold,
-            tolerance,
-            polarity,
-            seller,
-            dielectric_material,
-            mounting_method,
+            count,
             cursor,
             connection,
         )
