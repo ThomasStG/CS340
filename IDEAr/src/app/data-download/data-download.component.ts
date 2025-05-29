@@ -29,7 +29,9 @@ export class DataDownloadComponent implements OnInit {
       return;
     }
     this.utilityService.loadFile(this.selectedCsvFile);
-  }
+  } // Load data from the selected CSV file
+  // Args: event: Event - The event that triggered the load data action
+  // Returns: void
 
   backupData(event: Event) {
     event.stopPropagation();
@@ -37,7 +39,9 @@ export class DataDownloadComponent implements OnInit {
     this.utilityService.getFiles().subscribe((response: string[]) => {
       this.csv_files = response;
     });
-  }
+  } // Backup the database
+  // Args: event: Event - The event that triggered the backup data action
+  // Returns: void
 
   ngOnInit(): void {
     this.authService.getAuthLevel().subscribe((level) => {
@@ -49,7 +53,9 @@ export class DataDownloadComponent implements OnInit {
         this.router.navigate(['/authentication']);
       }
     });
-  }
+  } // Initialize the component (data download)
+  // Args: None
+  // Returns: void
 
   onFileSelected(event: Event) {
     const input = event.target as HTMLInputElement;
@@ -57,7 +63,9 @@ export class DataDownloadComponent implements OnInit {
       this.importedFile = input.files[0];
       console.log('File selected:', this.importedFile.name);
     }
-  }
+  } // Handle file selection
+  // Args: event: Event - The event that triggered the file selection
+  // Returns: void
 
   uploadFile() {
     if (!this.importedFile) {
@@ -71,7 +79,9 @@ export class DataDownloadComponent implements OnInit {
     // send formData to your backend using HttpClient
     this.utilityService.uploadFile(this.importedFile).subscribe();
     console.log('Uploading file:', this.importedFile.name);
-  }
+  } // Upload the selected file
+  // Args: None
+  // Returns: void
 
   appendFile() {
     if (!this.importedFile) {
@@ -82,19 +92,29 @@ export class DataDownloadComponent implements OnInit {
     // Similar to uploadFile, or whatever append logic you want
     this.utilityService.appendFile(this.importedFile).subscribe();
     console.log('Appending file:', this.importedFile.name);
-  }
+  } // Append the selected file
+  // Args: None
+  // Returns: void
+
+
   downloadFile(fileUrl: string): void {
     this.utilityService.downloadFile(fileUrl).subscribe((blob: Blob) => {
       // Use 'saveAs' from the FileSaver library to save the file
       saveAs(blob, fileUrl); // The file will be saved with the name passed as 'fileUrl'
     });
-  }
+  } // Download the selected file
+  // Args: fileUrl: string - The URL of the file to download
+  // Returns: void
+
+
   check_level() {
     const level = this.authService.levelGetter().subscribe((level) => {
       if (level == 0) return true;
       else return false;
     });
-  }
+  } // Check the user's authentication level
+  // Args: None
+  // Returns: boolean
 
   confirmPopup(value: string, warning: boolean, event: any, fileURL: string) {
       const ConfirmationPopUp = this.dialog.open(ConfirmationPopupComponent);
@@ -119,5 +139,8 @@ export class DataDownloadComponent implements OnInit {
           this.loadData(event);
         }
       });
-    }
+    } // Confirm the action in the popup
+  // Args: value: string - The action to confirm, warning: boolean - Whether it's a warning, 
+  // Args: event: any - The event that triggered the action, fileURL: string - The URL of the file to download
+  // Returns: void
 }

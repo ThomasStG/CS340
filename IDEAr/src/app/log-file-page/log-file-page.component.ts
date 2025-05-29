@@ -27,6 +27,16 @@ export class LogFilePageComponent implements OnInit {
         this.router.navigate(['/authentication']);
       }
     });
+    /*
+     * Runs on component initialization. Checks if the user is authenticated and level 0.  if not, navigates to the authentication page,
+     * otherwise load the item list and subscribe to a signal to refresh items on update.
+     *
+     * Args:
+     *   None
+     *
+     * Returns:
+     *   None
+     */
   }
   downloadFile(event: Event): void {
     event.stopPropagation();
@@ -34,11 +44,29 @@ export class LogFilePageComponent implements OnInit {
       type: 'text/plain;charset=utf-8',
     });
     saveAs(blob, 'log.txt');
+    /*
+     * downloads a file, converts file into plaintext (readable stuffs) and saves it to computer as log.txt
+     *
+     * Args:
+     *   Event
+     *
+     * Returns:
+     *   None
+     */
   }
   check_level() {
     const level = this.authService.levelGetter().subscribe((level) => {
       if (level != 2) return true;
       else return false;
     });
+    /*
+     *  Checks if the user has permission to acesss this feature, if they are not 2 return false, else true
+     *
+     * Args:
+     *   None
+     *
+     * Returns:
+     *   bool true/false
+     */
   }
 }

@@ -39,6 +39,15 @@ export class HomeComponent {
   };
 
   singleSearch(data: any) {
+    /*
+     * Fetches a single item from the server based on the provided data.
+     *
+     * Args:
+     *   data: The ItemData object containing the item information.
+     *
+     * Returns:
+     *   None
+     */
     this.getItemsService.getItem(data.name, data.metric, data.size).subscribe({
       next: (response) => {
         this.items = response.data; // Extract 'data' from response
@@ -49,6 +58,15 @@ export class HomeComponent {
     });
   }
   multiSearch(data: any) {
+    /*
+     * Fetches multiple items from the server based on the provided data.
+     *
+     * Args:
+     *   data: The ItemData object containing the item information.
+     *
+     * Returns:
+     *   None
+     */
     this.getItemsService
       .getFuzzyItems(data.name, data.metric, data.size)
       .subscribe({
@@ -62,6 +80,15 @@ export class HomeComponent {
   }
 
   handleSearch(event: { data: any; action: string }) {
+    /*
+     * Handles the search event and fetches items based on the provided data.
+     *
+     * Args:
+     *   event: The event object containing the search data and action.
+     *
+     * Returns:
+     *   None
+     */
     var action = event.action;
     var data = event.data;
     switch (action) {
@@ -75,9 +102,27 @@ export class HomeComponent {
   }
 
   ngOnInit(): void {
+    /*
+     * Loades the item list 
+     *
+     * Args:
+     *   None
+     *
+     * Returns:
+     *   None
+     */
     this.loadItems();
   }
   onItemClick(item: any) {
+    /*
+     * Opens a item popup with sending the items data
+     *
+     * Args:
+     *   Selected items data
+     *
+     * Returns:
+     *   None
+     */
     this.selectedItem = item;
     const PopUp = this.dialog.open(ItemPopupComponent);
     PopUp.componentInstance.showItem(this.selectedItem);
@@ -85,10 +130,28 @@ export class HomeComponent {
 
   // Close popup
   closePopup() {
+    /*
+     * Sets the visibility variable to false
+     *
+     * Args:
+     *   None
+     *
+     * Returns:
+     *   None
+     */
     this.isPopupVisible = false;
   }
 
   loadItems(): void {
+    /*
+     * Call getAllItems from the get item service and loads them all to the screen.
+     *
+     * Args:
+     *   None
+     *
+     * Returns:
+     *   None
+     */
     this.getItemsService.getAllItems().subscribe({
       next: (response: any) => {
         console.log(response);

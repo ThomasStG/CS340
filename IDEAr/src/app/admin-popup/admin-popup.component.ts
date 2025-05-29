@@ -43,21 +43,25 @@ export class AdminPopupComponent {
     private utilityService: UtilityService,
     private authService: AuthService,
   ) {}
-  newItem: ItemData = { ...this.item };
+  newItem: ItemData = { ...this.item }; 
   ngOnInit() {
-    this.darkMode.next(this.utilityService.isDarkMode());
-    this.newItem = this.item;
+    this.darkMode.next(this.utilityService.isDarkMode()); // Check dark mode status
+    this.newItem = this.item; 
     if (this.item.name == '') {
       this.itemTitle = 'New Item';
       this.isAdding = true;
     } else {
       this.itemTitle = this.item.name;
     }
-  }
+  } // Initialize the component (admin popup)
+  // Args: None
+  // Returns: void
 
   stopClickPropagation(event: Event) {
     event.stopPropagation();
-  }
+  } // Prevent click event from propagating to the parent element
+  // Args: event: Event
+  // Returns: void
 
   editItem(event: Event) {
     event.stopPropagation();
@@ -66,23 +70,32 @@ export class AdminPopupComponent {
         this.isEditing = true;
       }
     });
-  }
+  } // Allow editing of the item through the popup
+  // Args: event: Event
+  // Returns: void
   cancelEditing(event: Event) {
     event.stopPropagation();
     this.isEditing = false;
-  }
+  } // Cancel editing of the item through the popup
+  // Args: event: Event
+  // Returns: void
 
   closePopup(event: Event) {
     event.stopPropagation();
     this.dialogRef.close();
     this.isEditing = false;
-  }
+  } // Close the popup when clicking outside of it
+  // Args: event: Event
+  // Returns: void
 
   close() {
     this.dialogRef.close();
     this.isEditing = false;
     this.isAdding = false;
-  }
+  } // Close the popup when clicking outside of it 
+  // Args: None
+  // Returns: void
+
   updateItem() {
     this.isEditing = false;
     this.close();
@@ -91,64 +104,85 @@ export class AdminPopupComponent {
       .subscribe((response) => {
         console.log(response);
       });
-    // TODO: Close popup
+    
 
-    this.close();
-  }
+    this.close(); //close the popup
+  } // update the item
+  // Args: None
+  // Returns: void
+
+
   deleteItem() {
     this.updateItemService.deleteItem(this.item).subscribe((then) => {
       this.close();
     });
-  }
+  } // delete the item
+// Args: None
+// Returns: void
+
   addItem() {
     this.updateItemService.addItem(this.item).subscribe((then) => {
       this.close();
     });
-  }
+  } // add the item
+  // Args: None
+  // Returns: void
 
   cancelAdding(event: Event) {
     this.isAdding = false;
-    // TODO: Close popup
-  }
+    // cancel adding the item through the popup
+  } // Args: event: Event
+  // Returns: void
 
   showAddItemPopup() {
     this.isEditing = true;
     this.isAdding = true;
-  }
+  } // show the add item popup
+  // Args: None
+  // Returns: void
 
   showItem(item: ItemData) {
     this.item = item;
-  }
+  } // show the item in the popup
+  // Args: item: ItemData
+  // Returns: void
 
   confirmPopup(value: string, warning: boolean) {
 
     if(this.newItem['name'] === '' || this.newItem['size'] === '' || this.newItem['is_metric'] === '' ){
       value = 'missingData';
       warning = true;
-    }
+    } // Check if the item has all the required fields filled in
 
     const ConfirmationPopUp = this.dialog.open(ConfirmationPopupComponent);
     ConfirmationPopUp.afterOpened().subscribe(() => {
       ConfirmationPopUp.componentInstance.updatePopup(value, warning);
-    });
+    }); // Open the confirmation popup and pass the value and warning to it
+    
 
     ConfirmationPopUp.afterClosed().subscribe((result: boolean) => {
       if (result === true && value === 'updateItem') {
-        this.updateItem();
-      }
+        this.updateItem(); 
+      } // Update the item 
       if (result === true && value === 'deleteItem') {
         this.deleteItem();
-      }
+      } // Delete the item
       if (result === true && value === 'addItem') {
         console.log('test');
         this.addItem();
-      }
+      } // Add the item
     });
-  }
+  } // confirming popup actions
+  // Args: value: string, warning: boolean
+  // Returns: void
+
+
   check_level() {
     const level = this.authService.levelGetter().subscribe((level) => {
       if (level < 2) return true;
       else return false;
     });
-  }
+  } // Check the level (access) of the user
+  // Args: None
+  // Returns: boolean
 }

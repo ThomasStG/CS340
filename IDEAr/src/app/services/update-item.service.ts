@@ -41,10 +41,28 @@ threshold=${newItem.threshold}&
 token=${this.authService.getToken()}`;
     console.log('Calling update endpoint:', url);
     return this.http.get(url).pipe(tap(() => this.sendSignal('refresh Items')));
+    /*
+     * updates item, can update: name, metric status, size, id, location, count
+     *
+     * Args:
+     *   name, metric, size
+     *
+     * Returns:
+     *   
+     */
   }
   deleteItem(item: ItemData): Observable<any> {
     const url = `http://127.0.0.1:3000/remove?name=${encodeURIComponent(item.name)}&is_metric=${item.is_metric}&size=${item.size}&token=${this.authService.getToken()}`;
     return this.http.get(url).pipe(tap(() => this.sendSignal('refresh Items')));
+    /*
+     * gets item and deletes it
+     *
+     * Args:
+     *   itemData
+     *
+     * Returns:
+     *  
+     */
   }
 
   addItem(item: ItemData): Observable<any> {
@@ -66,15 +84,42 @@ token=${this.authService.getToken()}`;
     return this.http
       .get(url, { params })
       .pipe(tap(() => this.sendSignal('refresh Items')));
+    /*
+     * adds item to dataset
+     *
+     * Args:
+     *   ItemData
+     *
+     * Returns:
+     *   a new item for the lst
+     */
   }
   decrementItem(item: ItemData, toChange: number): Observable<any> {
     const token = this.authService.getToken();
     const url = `http://127.0.0.1:3000/decrement?name=${encodeURIComponent(item.name)}&is_metric=${item.is_metric}&size=${item.size}&num=${toChange}&token=${token}`;
     return this.http.get(url);
+    /*
+     * decrements item
+     *
+     * Args:
+     *   ItemData, number
+     *
+     * Returns:
+     *  
+     */
   }
   incrementItem(item: ItemData, toChange: number): Observable<any> {
     const token = this.authService.getToken();
     const url = `http://127.0.0.1:3000/increment?name=${encodeURIComponent(item.name)}&is_metric=${item.is_metric}&size=${item.size}&num=${toChange}&token=${token}`;
     return this.http.get(url);
+     /*
+     * increments item
+     *
+     * Args:
+     *   ItemData, number
+     *
+     * Returns:
+     *  
+     */
   }
 }

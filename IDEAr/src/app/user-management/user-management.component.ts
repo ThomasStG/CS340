@@ -45,6 +45,16 @@ export class UserManagementComponent implements OnInit {
         this.router.navigate(['/authentication']);
       }
     });
+     /*
+     * Runs on component initialization. Checks if the user is authenticated, if not, navigates to the authentication page,
+     * otherwise load the item list and subscribe to a signal to refresh items on update.
+     *
+     * Args:
+     *   None
+     *
+     * Returns:
+     *   None
+     */
   }
   onCreate() {
     const formData = this.newUserForm.value;
@@ -77,6 +87,15 @@ export class UserManagementComponent implements OnInit {
       this.newUserForm.reset();
     } else {
     }
+     /*
+     * creates the fourm for new user creation, has error handling 
+     *
+     * Args:
+     *   None
+     *
+     * Returns:
+     *   None
+     */
   }
 
   confirmPopup(value: string, warning: boolean) {
@@ -90,14 +109,41 @@ export class UserManagementComponent implements OnInit {
         this.onCreate();
       }
     });
+     /*
+     * Conforms that user wants to commit chnages
+     *
+     * Args:
+     *   string values and a warning boolean
+     *
+     * Returns:
+     *   None
+     */
   }
   onUserListUpdated(updatedUsers: UserData[]) {
     this.users = updatedUsers;
+     /*
+     * updates list for user [?]
+     *
+     * Args:
+     *  user data
+     *
+     * Returns:
+     *   None
+     */
   }
   check_level() {
     const level = this.authService.levelGetter().subscribe((level) => {
       if (level == 0) return true;
       else return false;
     });
+     /*
+     * checks level of user
+     *
+     * Args:
+     *   None
+     *
+     * Returns:
+     *   bool
+     */
   }
 }

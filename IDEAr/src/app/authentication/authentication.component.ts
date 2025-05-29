@@ -18,6 +18,15 @@ export class AuthenticationComponent {
     private authService: AuthService,
   ) {}
   login(event: Event): void {
+    /*
+     * Calls auth service and subscribes to get a a response of login and sets a timeout time if a token is sent back.
+     *
+     * Args:
+     *   event: the event object
+     *
+     * Returns:
+     *   None
+     */
     this.authService.login(this.username, this.password).subscribe({
       next: (response) => {
         if (response.token) {

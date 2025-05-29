@@ -40,6 +40,15 @@ export class UserComponent implements OnChanges {
         authorization: String(this.user.level),
       });
     }
+     /*
+     *  ???
+     *
+     * Args:
+     *   None
+     *
+     * Returns:
+     *   None
+     */
   }
 
   onUpdate() {
@@ -74,6 +83,15 @@ export class UserComponent implements OnChanges {
     } else {
       console.warn('Invalid or missing username');
     }
+     /*
+     * sets values on update
+     *
+     * Args:
+     *   None
+     *
+     * Returns:
+     *   updated user / error messages
+     */
   }
 
   // onDelete() {
@@ -118,6 +136,15 @@ export class UserComponent implements OnChanges {
     } else {
       console.warn('Invalid or missing username');
     }
+     /*
+     * updates for deleting user and deisplaying new user list
+     *
+     * Args:
+     *   None
+     *
+     * Returns:
+     *   error or updated user list
+     */
   }
 
   confirmPopup(value: string, warning: boolean) {
@@ -134,5 +161,14 @@ export class UserComponent implements OnChanges {
         this.onDelete();
       }
     });
+     /*
+     * Confirmations for updating or deleting users
+     *
+     * Args:
+     *   string and waring boolean
+     *
+     * Returns:
+     *   updated user list
+     */
   }
 }
