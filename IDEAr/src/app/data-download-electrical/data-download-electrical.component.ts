@@ -33,7 +33,6 @@ export class DataDownloadElectricalComponent implements OnInit {
 
   backupData(event: Event) {
     event.stopPropagation();
-    console.log('Backup data');
     this.utilityService.backupDatabaseElectrical().subscribe({
       next: (response) => {
         // Optionally, notify the user with a success message (e.g., Toast, alert)
@@ -68,7 +67,6 @@ export class DataDownloadElectricalComponent implements OnInit {
     const input = event.target as HTMLInputElement;
     if (input.files && input.files.length > 0) {
       this.importedFile = input.files[0];
-      console.log('File selected:', this.importedFile.name);
     }
   }
 
@@ -83,7 +81,6 @@ export class DataDownloadElectricalComponent implements OnInit {
 
     // send formData to your backend using HttpClient
     this.utilityService.uploadFile(this.importedFile).subscribe();
-    console.log('Uploading file:', this.importedFile.name);
   }
 
   appendFile() {
@@ -94,7 +91,6 @@ export class DataDownloadElectricalComponent implements OnInit {
 
     // Similar to uploadFile, or whatever append logic you want
     this.utilityService.appendFileElectrical(this.importedFile).subscribe();
-    console.log('Appending file:', this.importedFile.name);
   }
   downloadFile(fileUrl: string): void {
     this.utilityService.downloadFile(fileUrl).subscribe((blob: Blob) => {

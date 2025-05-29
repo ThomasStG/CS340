@@ -45,14 +45,11 @@ export class ElectricalAdminSearchComponent {
   ngOnInit() {}
   onPassiveTypeChange() {
     const type = this.electricalSearchForm.get('passiveType')?.value;
-    console.log(type);
     this.utilityService
       .getElectricalMultiplier()
       .subscribe(
         (data: { type: string; multiplier: string[]; values: number[] }[]) => {
-          console.log(data);
           const found = data.find((item) => item.type === type);
-          console.log(found);
           if (found) {
             this.multipliers = found.multiplier;
             this.multiplier_values = found.values;
@@ -60,8 +57,6 @@ export class ElectricalAdminSearchComponent {
               value: this.multiplier_values[0],
               label: this.multipliers[0],
             });
-            console.log(this.multipliers);
-            console.log(this.electricalSearchForm);
           } else {
             this.multipliers = [];
             this.multiplier_values = [];
@@ -86,11 +81,9 @@ export class ElectricalAdminSearchComponent {
       return;
     }
     const unit = data.passiveUnit?.label;
-    console.log(this.electricalSearchForm.value);
     const multiplier: number = Number(data.passiveUnit?.value);
     const value: number = Number(data.passiveValue);
     data.passiveValue = value * multiplier;
-    console.log(data);
     switch (action) {
       case 'single':
         this.singleSearch(data, multiplier, unit);
@@ -150,8 +143,6 @@ export class ElectricalAdminSearchComponent {
   multiSearch(data: any, multiplier: number, unit?: string) {
     switch (data.type) {
       case 'active':
-        console.log(data.activeName);
-        console.log(data.activeId);
         this.electricalSearchService
           .searchSimilarActive(data.activeName, data.activeId)
           .subscribe((response) => {
@@ -162,7 +153,6 @@ export class ElectricalAdminSearchComponent {
           });
         break;
       case 'passive':
-        console.log(data);
         this.electricalSearchService
           .searchSimilarPassive(
             data.passiveValue,
@@ -172,7 +162,6 @@ export class ElectricalAdminSearchComponent {
             data.search_percent,
           )
           .subscribe((response) => {
-            console.log(response.data.items[0].type);
             this.formSubmit.emit({
               items: response.data.items,
               index: response.data.index,
@@ -227,7 +216,6 @@ export class ElectricalAdminSearchComponent {
         this.electricalSearchService
           .searchThreshold(data)
           .subscribe((response: any) => {
-            console.log(response);
             this.formSubmit.emit({
               items: response.items,
               type: 'active',
@@ -238,7 +226,6 @@ export class ElectricalAdminSearchComponent {
         this.electricalSearchService
           .searchThreshold(data)
           .subscribe((response: any) => {
-            console.log(response);
             this.formSubmit.emit({
               items: response.items,
               type: 'passive',
@@ -254,7 +241,6 @@ export class ElectricalAdminSearchComponent {
         this.electricalSearchService
           .searchThreshold(data)
           .subscribe((response: any) => {
-            console.log(response);
             this.formSubmit.emit({
               items: response.items,
               type: 'assembly',
@@ -266,7 +252,6 @@ export class ElectricalAdminSearchComponent {
         this.electricalSearchService
           .searchThreshold(data)
           .subscribe((response: any) => {
-            console.log(response);
             this.formSubmit.emit({
               items: response.items,
             });

@@ -42,10 +42,7 @@ export class ElectricalAdminComponent {
     this.editingText = true;
   }
   saveText() {
-    console.log(this.helpText);
-    this.utilityService
-      .setElectricalTooltip(this.helpText)
-      .subscribe((_) => console.log('Tooltip updated'));
+    this.utilityService.setElectricalTooltip(this.helpText).subscribe();
     this.editingText = false;
   }
   cancelText() {
@@ -62,14 +59,10 @@ export class ElectricalAdminComponent {
     unit?: string;
     multiplier?: number;
   }) {
-    console.log(event);
     this.items = event.items;
     this.searched = true;
     this.type = event.type;
-    console.log(this.type);
-    for (let i = 0; i < this.items.length; i++) {
-      console.log(this.items[i].type);
-    }
+    for (let i = 0; i < this.items.length; i++) {}
     if (event.unit) {
       this.unit = event.unit;
     }
@@ -82,18 +75,15 @@ export class ElectricalAdminComponent {
         this.items[i].value = this.items[i].value / multiplier;
       }
     }
-    console.log(this.items);
   }
 
   onItemClick(item: any) {
-    console.log('item clicked');
     this.selectedItem = item;
     const PopUp = this.dialog.open(ElectricalAdminPopupComponent);
     PopUp.componentInstance.showItem(this.selectedItem);
   }
 
   closePopup(event: { item: any; type: string } | any) {
-    console.log('event', event);
     const type = event?.type;
     this.isPopupVisible = false;
     const item = event?.item;
@@ -106,7 +96,6 @@ export class ElectricalAdminComponent {
       // Update the item in place
       this.items[index] = item;
     } else if (type === 'delete' && index !== -1) {
-      console.log(index);
       // Remove the item
       this.items.splice(index, 1);
     }

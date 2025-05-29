@@ -52,7 +52,6 @@ export class ElectricalAdminPopupComponent {
   newItem: any = { ...this.item };
   ngOnInit() {
     this.darkMode.next(this.utilityService.isDarkMode());
-    console.log(this.item);
     this.newItem = { ...this.item };
   }
 
@@ -93,7 +92,6 @@ export class ElectricalAdminPopupComponent {
 
   closePopup(event: Event, type?: string) {
     event.stopPropagation();
-    console.log(this.newItem);
     this.close.emit([type, this.newItem]);
     this.dialogRef.close();
   }

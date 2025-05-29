@@ -21,7 +21,6 @@ export class AuthService {
 
   signal$ = this.signalSource.asObservable();
   sendSignal(data: any) {
-    console.log(data);
     this.signalSource.next(data);
   }
 
@@ -29,7 +28,8 @@ export class AuthService {
     private http: HttpClient,
     private router: Router,
     private cookieService: CookieService,
-  ) {/*
+  ) {
+    /*
      *constructs the website
      *
      * Args:
@@ -37,7 +37,8 @@ export class AuthService {
      *
      * Returns:
      *   None
-     */}
+     */
+  }
 
   login(username: string, password: string): Observable<any> {
     return this.http
@@ -187,7 +188,8 @@ export class AuthService {
      *   a number
      */
   }
-  getToken(): string { //gets token, returns a string 
+  getToken(): string {
+    //gets token, returns a string
     return this.cookieService.get(this.token);
   }
   getUsers(): Observable<UserData[]> {
@@ -224,12 +226,12 @@ export class AuthService {
      *  a registered user
      */
   }
-  updateUser( //cubdates user with imputs of username, password, and level.
+  updateUser(
+    //cubdates user with imputs of username, password, and level.
     username: string,
     password: string,
     level: number,
   ): Observable<any> | undefined {
-    console.log(username);
     const body = {
       username: username,
       password: password,
@@ -238,10 +240,8 @@ export class AuthService {
     };
 
     if (username === 'admin') {
-      console.log('Admin cannot be updated');
       return;
     }
-    console.log(body);
     return this.http.post<{
       username: string;
       password: string;
@@ -249,7 +249,8 @@ export class AuthService {
       token: string;
     }>('http://127.0.0.1:3000/updateUser', body);
   }
-  deleteUser(username: string | undefined | null) { // deletes a user, args of username
+  deleteUser(username: string | undefined | null) {
+    // deletes a user, args of username
     if (username === 'admin') {
       return;
     }

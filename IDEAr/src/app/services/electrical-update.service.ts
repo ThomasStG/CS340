@@ -14,8 +14,6 @@ export class ElectricalUpdateService {
   }
 
   updateItem(item: any, old_item: any): Observable<any> {
-    console.log(item.subtype);
-    console.log(item.max_p);
     const body: any = {
       item_id: item.id,
       name: old_item.name,
@@ -43,7 +41,6 @@ export class ElectricalUpdateService {
       polarity: item.polarity,
       is_assembly: item.is_assembly,
     };
-    console.log('body', body);
     return this.http.post('http://127.0.0.1:3000/electricalUpdateItem', body);
   }
 

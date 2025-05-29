@@ -43,10 +43,10 @@ export class AdminPopupComponent {
     private utilityService: UtilityService,
     private authService: AuthService,
   ) {}
-  newItem: ItemData = { ...this.item }; 
+  newItem: ItemData = { ...this.item };
   ngOnInit() {
     this.darkMode.next(this.utilityService.isDarkMode()); // Check dark mode status
-    this.newItem = this.item; 
+    this.newItem = this.item;
     if (this.item.name == '') {
       this.itemTitle = 'New Item';
       this.isAdding = true;
@@ -92,7 +92,7 @@ export class AdminPopupComponent {
     this.dialogRef.close();
     this.isEditing = false;
     this.isAdding = false;
-  } // Close the popup when clicking outside of it 
+  } // Close the popup when clicking outside of it
   // Args: None
   // Returns: void
 
@@ -101,24 +101,20 @@ export class AdminPopupComponent {
     this.close();
     this.updateItemService
       .updateItem(this.item, this.newItem)
-      .subscribe((response) => {
-        console.log(response);
-      });
-    
+      .subscribe((response) => {});
 
     this.close(); //close the popup
   } // update the item
   // Args: None
   // Returns: void
 
-
   deleteItem() {
     this.updateItemService.deleteItem(this.item).subscribe((then) => {
       this.close();
     });
   } // delete the item
-// Args: None
-// Returns: void
+  // Args: None
+  // Returns: void
 
   addItem() {
     this.updateItemService.addItem(this.item).subscribe((then) => {
@@ -148,8 +144,11 @@ export class AdminPopupComponent {
   // Returns: void
 
   confirmPopup(value: string, warning: boolean) {
-
-    if(this.newItem['name'] === '' || this.newItem['size'] === '' || this.newItem['is_metric'] === '' ){
+    if (
+      this.newItem['name'] === '' ||
+      this.newItem['size'] === '' ||
+      this.newItem['is_metric'] === ''
+    ) {
       value = 'missingData';
       warning = true;
     } // Check if the item has all the required fields filled in
@@ -158,24 +157,21 @@ export class AdminPopupComponent {
     ConfirmationPopUp.afterOpened().subscribe(() => {
       ConfirmationPopUp.componentInstance.updatePopup(value, warning);
     }); // Open the confirmation popup and pass the value and warning to it
-    
 
     ConfirmationPopUp.afterClosed().subscribe((result: boolean) => {
       if (result === true && value === 'updateItem') {
-        this.updateItem(); 
-      } // Update the item 
+        this.updateItem();
+      } // Update the item
       if (result === true && value === 'deleteItem') {
         this.deleteItem();
       } // Delete the item
       if (result === true && value === 'addItem') {
-        console.log('test');
         this.addItem();
       } // Add the item
     });
   } // confirming popup actions
   // Args: value: string, warning: boolean
   // Returns: void
-
 
   check_level() {
     const level = this.authService.levelGetter().subscribe((level) => {

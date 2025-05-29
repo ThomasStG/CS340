@@ -13,7 +13,6 @@ export class UpdateItemService {
 
   signal$ = this.signalSource.asObservable();
   sendSignal(data: any) {
-    console.log(data);
     this.signalSource.next(data);
   }
 
@@ -39,7 +38,6 @@ loc_depth=${newItem.loc_depth}&
 count=${newItem.count}&
 threshold=${newItem.threshold}&
 token=${this.authService.getToken()}`;
-    console.log('Calling update endpoint:', url);
     return this.http.get(url).pipe(tap(() => this.sendSignal('refresh Items')));
     /*
      * updates item, can update: name, metric status, size, id, location, count
@@ -48,7 +46,7 @@ token=${this.authService.getToken()}`;
      *   name, metric, size
      *
      * Returns:
-     *   
+     *
      */
   }
   deleteItem(item: ItemData): Observable<any> {
@@ -61,7 +59,7 @@ token=${this.authService.getToken()}`;
      *   itemData
      *
      * Returns:
-     *  
+     *
      */
   }
 
@@ -105,21 +103,21 @@ token=${this.authService.getToken()}`;
      *   ItemData, number
      *
      * Returns:
-     *  
+     *
      */
   }
   incrementItem(item: ItemData, toChange: number): Observable<any> {
     const token = this.authService.getToken();
     const url = `http://127.0.0.1:3000/increment?name=${encodeURIComponent(item.name)}&is_metric=${item.is_metric}&size=${item.size}&num=${toChange}&token=${token}`;
     return this.http.get(url);
-     /*
+    /*
      * increments item
      *
      * Args:
      *   ItemData, number
      *
      * Returns:
-     *  
+     *
      */
   }
 }

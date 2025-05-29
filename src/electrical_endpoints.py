@@ -25,7 +25,32 @@ from electrical_db import (  # update_passive,; update_active,
 from utility_functions import get_db, handle_exceptions
 
 
-def add_passive_item():
+def add_passive_item() -> Tuple[Response, int]:
+    """
+    Endpoint for adding a passive item
+
+    Args:
+        part_number (str): part number of the item
+        item_type (str): type of the item
+        link (str): link to the item
+        value (float): value of the item
+        location (str): location of the item
+        rack (int): rack number of the item
+        slot (str): slot of the item
+        count (int): count of the item
+        max_p (float): maximum power of the item
+        max_v (float): maximum voltage of the item
+        max_i (float): maximum current of the item
+        tolerance (float): tolerance of the item
+        i_hold (float): hold current of the item
+        polarity (bool): polarity of the item
+        seller (str): seller of the item
+        dielectric_material (str): dielectric material of the item
+        mounting_method (str): mounting method of the item
+
+    Returns:
+        Tuple[Response, int]: a message and status code
+    """
     try:
         data = request.get_json()
         if not data or not all(
@@ -95,7 +120,24 @@ def add_passive_item():
         return handle_exceptions(e)
 
 
-def add_active_item():
+def add_active_item() -> Tuple[Response, int]:
+    """
+    Endpoint for adding an active item
+
+    Args:
+        name (str): name of the item
+        part_id (str): part id of the item
+        location (str): location of the item
+        rack (int): rack number of the item
+        slot (str): slot of the item
+        count (int): count of the item
+        link (str): link to the item
+        description (str): description of the item
+        item_type (str): type of the item
+
+    Returns:
+        Tuple[Response, int]: a message and status code
+    """
     try:
         data = request.get_json()
         if not data or not all(
@@ -141,10 +183,19 @@ def add_active_item():
         return handle_exceptions(e)
 
 
-def remove_passive_item():
+def remove_passive_item() -> Tuple[Response, int]:
+    """
+    Endpoint for removing a passive item
+
+    Args:
+        subtype (str): subtype of the item
+        id (str): id of the item
+
+    Returns:
+        Tuple[Response, int]: a message and status code
+    """
     try:
         data = request.get_json()["item"]
-        print(data)
         if not data or not all(
             [
                 "subtype" in data,
@@ -162,7 +213,17 @@ def remove_passive_item():
         return handle_exceptions(e)
 
 
-def remove_active_item():
+def remove_active_item() -> Tuple[Response, int]:
+    """
+    Endpoint for removing an active item
+
+    Args:
+        name (str): name of the item
+        part_id (str): part id of the item
+
+    Returns:
+        Tuple[Response, int]: a message and status code
+    """
     try:
         data = request.get_json()
         if not data or "name" not in data and "part_id" not in data:
@@ -186,9 +247,18 @@ def remove_active_item():
         return handle_exceptions(e)
 
 
-def find_passive_item():
+def find_passive_item() -> Tuple[Response, int]:
+    """
+    Endpoint for finding a passive item
+
+    Args:
+        item_type (str): type of the item
+        value (str): value of the item
+
+    Returns:
+        Tuple[Response, int]: a message and status code
+    """
     try:
-        print("Finding passive item...")
         data = request.args
         if not data or "item_type" not in data or "value" not in data:
             raise KeyError("Missing required parameters")
@@ -219,9 +289,21 @@ def find_passive_item():
         return handle_exceptions(e)
 
 
-def find_active_item(is_assembly: bool = False):
+def find_active_item(is_assembly: bool = False) -> Tuple[Response, int]:
+    """
+    Endpoint for finding an active item
+
+    Args:
+        one of these must be provided
+        name (str) optional: name of the item
+        part_id (str) optional: part id of the item
+
+        is_assembly (bool) optional: whether the item is an assembly
+
+    Returns:
+        Tuple[Response, int]: a message and status code
+    """
     try:
-        print("Finding active item...")
         data = request.get_json()
         if not data or "name" not in data and "part_id" not in data:
             raise KeyError("Missing required parameters")
@@ -253,12 +335,23 @@ def find_active_item(is_assembly: bool = False):
         return handle_exceptions(e)
 
 
-def fuzzy_find_passive_item():
+def fuzzy_find_passive_item() -> Tuple[Response, int]:
+    """
+    Endpoint for fuzzy finding a passive item
+
+    Args:
+        value (str): value of the item
+        tolerance (str): tolerance of the item
+        mounting_method (str): mounting method of the item
+        item_type (str): type of the item
+
+    Returns:
+        Tuple[Response, int]: a message and status code
+    """
     try:
         data = request.args
         if not data or "value" not in data:
             raise KeyError("Missing required parameters")
-        print("Fuzzy finding passive item...")
         cursor = get_db().cursor()
         value = float(data["value"])
         tolerance = data.get("tolerance", "").strip()
@@ -274,7 +367,6 @@ def fuzzy_find_passive_item():
             item_type = None
         search_percent_str = data.get("search_percent", "").strip()
         if search_percent_str and search_percent_str.isnumeric():
-            print(search_percent_str)
             search_percent = float(search_percent_str)
         else:
             search_percent = 0.50
@@ -293,10 +385,6 @@ def fuzzy_find_passive_item():
         item_index = items.index(min(items, key=lambda x: abs(x["value"] - value)))
         items_length = len(items)
 
-        print(items)
-        for item in items:
-            print(item)
-
         return (
             jsonify(
                 {
@@ -314,9 +402,21 @@ def fuzzy_find_passive_item():
         return handle_exceptions(e)
 
 
-def fuzzy_find_active_item(is_assembly: bool = False):
+def fuzzy_find_active_item(is_assembly: bool = False) -> Tuple[Response, int]:
+    """
+    Endpoint for fuzzy finding an active item
+
+    Args:
+        one of these must be provided
+        name (str) optional: name of the item
+        part_id (str) optional: part id of the item
+
+        is_assembly (bool) optional: whether the item is an assembly
+
+    Returns:
+        Tuple[Response, int]: a message and status code
+    """
     try:
-        print("Fuzzy finding active item...")
         data = request.args
         if not data or "name" not in data and "part_id" not in data:
             raise KeyError("Missing required parameters")
@@ -326,7 +426,6 @@ def fuzzy_find_active_item(is_assembly: bool = False):
             subtype = data["subtype"]
         if "part_id" in data:
             part_id = data["part_id"]
-            print(part_id)
             return (
                 jsonify(
                     {
@@ -354,9 +453,18 @@ def fuzzy_find_active_item(is_assembly: bool = False):
         return handle_exceptions(e)
 
 
-def decrement_passive_item():
+def decrement_passive_item() -> Tuple[Response, int]:
+    """
+    Handles decrementing the count of a passive item
+
+    Args:
+        id (str): The id of the item
+        num_to_remove (int): The number of items to remove
+
+    Returns:
+        Tuple[Response, int]: a message and status code
+    """
     try:
-        print("Decrementing passive item...")
         data = request.get_json()
         if not data or "id" not in data or "num_to_remove" not in data:
             raise KeyError("Missing required parameters")
@@ -402,9 +510,18 @@ def decrement_active_item() -> Tuple[Response, int]:
         return handle_exceptions(e)
 
 
-def increment_passive_item():
+def increment_passive_item() -> Tuple[Response, int]:
+    """
+    Handles incrementing the count of a passive item
+
+    Args:
+        id (str): The id of the item
+        num_to_add (int): The number of items to add
+
+    Returns:
+        Tuple[Response, int]: a message and status code
+    """
     try:
-        print("Incrementing passive item...")
         data = request.get_json()
         if not data or "item_id" not in data or "num_to_add" not in data:
             raise KeyError("Missing required parameters")
@@ -418,9 +535,19 @@ def increment_passive_item():
         return handle_exceptions(e)
 
 
-def increment_active_item():
+def increment_active_item() -> Tuple[Response, int]:
+    """
+    Handles incrementing the count of an active item
+
+    Args:
+        name (str) optional: The name of the item
+        part_id (str) optional: The part id of the item
+        num_to_add (int): The number of items to add
+
+    Returns:
+        Tuple[Response, int]: a message and status code
+    """
     try:
-        print("Incrementing active item...")
         data = request.get_json()
         if (
             not data
@@ -445,9 +572,17 @@ def increment_active_item():
         return handle_exceptions(e)
 
 
-def find_below_threshold():
+def find_below_threshold() -> Tuple[Response, int]:
+    """
+    Endpoint for finding items below a threshold
+
+    Args:
+        threshold (int): The threshold to find items below
+
+    Returns:
+        Tuple[Response, int]: a message and status code
+    """
     try:
-        print("Finding items below threshold...")
         data = request.json
         if not data or "threshold" not in data:
             raise KeyError("Missing required parameters")
@@ -455,7 +590,6 @@ def find_below_threshold():
         table_list = data.get("table", ["passive", "active", "assembly"])
         type_list = data.get("type", [])
         cursor = get_db().cursor()
-        print(table_list, type_list, threshold)
         items = search_below_threshold_el(cursor, table_list, type_list, threshold)
         return (
             jsonify(
@@ -470,9 +604,17 @@ def find_below_threshold():
         return handle_exceptions(e)
 
 
-def electrical_update_tooltip():
+def electrical_update_tooltip() -> Tuple[Response, int]:
+    """
+    Endpoint for updating the tooltip
+
+    Args:
+        tooltip (str): The tooltip to update
+
+    Returns:
+        Tuple[Response, int]: a message and status code
+    """
     try:
-        print("Updating tooltip...")
         data = request.json
         tooltip = data.get("tooltip", "")
         if not tooltip:
@@ -483,9 +625,14 @@ def electrical_update_tooltip():
         return handle_exceptions(e)
 
 
-def electrical_get_tooltip():
+def electrical_get_tooltip() -> Tuple[Response, int]:
+    """
+    Endpoint for getting the tooltip
+
+    Returns:
+        Tuple[Response, int]: a message and status code
+    """
     try:
-        print("Getting tooltip...")
         return (
             jsonify({"status": "success", "tooltip": get_tooltip(get_db().cursor())}),
             200,
@@ -494,46 +641,37 @@ def electrical_get_tooltip():
         return handle_exceptions(e)
 
 
-def electrical_update_item():
+def electrical_update_item() -> Tuple[Response, int]:
+    """
+    Endpoint for updating an item
+
+    Returns:
+        Tuple[Response, int]: a message and status code
+    """
     try:
-        print("Updating item...")
         data = request.json
         if not data:
             raise KeyError("Missing required parameters")
         item_type = data["type"]
         connection = get_db()
         cursor = connection.cursor()
-        print(data)
         match item_type:
             case "active":
                 item_name = data["name"]
-                print(item_name)
                 item_id = data["part_id"]
-                print(item_id)
                 new_name = data["new_name"]
-                print(new_name)
                 new_item_id = data["new_part_id"]
-                print(new_item_id)
                 location = data["location"]
-                print(location)
                 rack = data["rack"]
-                print(rack)
                 slot = data["slot"]
-                print(slot)
                 count = data["count"]
-                print(count)
                 link = data["link"]
-                print(link)
                 description = data["description"]
-                print(description)
                 is_assembly = data["is_assembly"]
-                print(is_assembly)
                 try:
                     subtype = data["subtype"]
                 except KeyError:
                     subtype = ""
-                print("subtype")
-                print("editing")
                 update_active_item_el(
                     name=item_name,
                     item_id=item_id,
@@ -551,7 +689,6 @@ def electrical_update_item():
                     connection=connection,
                 )
             case "passive":
-                print(data["max_p"])
                 item_id = data["item_id"]
                 part_number = data["part_number"]
                 subtype = data["subtype"]
@@ -594,50 +731,41 @@ def electrical_update_item():
                     cursor=cursor,
                     connection=connection,
                 )
-        print("updated")
 
         return jsonify({"status": "success", "message": "Item updated"}), 200
     except Exception as e:
         return handle_exceptions(e)
 
 
-def electrical_add_item():
+def electrical_add_item() -> Tuple[Response, int]:
+    """
+    Endpoint for adding an item
+
+    Returns:
+        Tuple[Response, int]: a message and status code
+    """
     try:
-        print("Adding item...")
         data = request.json
         if not data:
             raise KeyError("Missing required parameters")
         item_type = data["type"]
         connection = get_db()
         cursor = connection.cursor()
-        print(item_type)
-        print(data)
         match item_type:
             case "active":
                 item_name = data["name"]
-                print(item_name)
                 item_id = data["part_id"]
-                print(item_id)
                 location = data["location"]
-                print(location)
                 rack = data["rack"]
-                print(rack)
                 slot = data["slot"]
-                print(slot)
                 count = data["count"]
-                print(count)
                 link = data["link"]
-                print(link)
                 description = data["description"]
-                print(description)
                 is_assembly = data["is_assembly"]
-                print(is_assembly)
                 try:
                     subtype = data["subtype"]
                 except KeyError:
                     subtype = ""
-                print("subtype")
-                print("editing")
                 add_active_item_el(
                     name=item_name,
                     part_id=item_id,
@@ -691,14 +819,19 @@ def electrical_add_item():
                     cursor=cursor,
                     connection=connection,
                 )
-        print("updated")
 
         return jsonify({"status": "success", "message": "Item updated"}), 200
     except Exception as e:
         return handle_exceptions(e)
 
 
-def update_mult():
+def update_mult() -> Tuple[Response, int]:
+    """
+    Endpoint for updating the multiplier list for the passive items
+
+    Returns:
+        Tuple[Response, int]: a message and status code
+    """
     try:
         connection = get_db()
         cursor = connection.cursor()
@@ -708,7 +841,13 @@ def update_mult():
         return handle_exceptions(e)
 
 
-def get_mult():
+def get_mult() -> Tuple[Response, int]:
+    """
+    Endpoint for getting the multiplier list for the passive items
+
+    Returns:
+        Tuple[Response, int]: a message and status code
+    """
     try:
         connection = get_db()
         cursor = connection.cursor()

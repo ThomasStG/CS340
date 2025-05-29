@@ -61,7 +61,6 @@ export class DataDownloadComponent implements OnInit {
     const input = event.target as HTMLInputElement;
     if (input.files && input.files.length > 0) {
       this.importedFile = input.files[0];
-      console.log('File selected:', this.importedFile.name);
     }
   } // Handle file selection
   // Args: event: Event - The event that triggered the file selection
@@ -78,7 +77,6 @@ export class DataDownloadComponent implements OnInit {
 
     // send formData to your backend using HttpClient
     this.utilityService.uploadFile(this.importedFile).subscribe();
-    console.log('Uploading file:', this.importedFile.name);
   } // Upload the selected file
   // Args: None
   // Returns: void
@@ -91,7 +89,6 @@ export class DataDownloadComponent implements OnInit {
 
     // Similar to uploadFile, or whatever append logic you want
     this.utilityService.appendFile(this.importedFile).subscribe();
-    console.log('Appending file:', this.importedFile.name);
   } // Append the selected file
   // Args: None
   // Returns: void
@@ -137,7 +134,6 @@ export class DataDownloadComponent implements OnInit {
 
     ConfirmationPopUp.afterClosed().subscribe((result: boolean) => {
       if (result === true && value === 'backupData') {
-        console.log('Backup data');
         this.backupData(event);
       } else if (result === true && value === 'uploadData') {
         this.uploadFile();

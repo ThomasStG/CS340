@@ -182,10 +182,8 @@ def add_active_item_el(
                 is_assembly,
             ),
         )
-        print("Item added to database")
         connection.commit()
     except sqlite3.IntegrityError:
-        print("Item already exists in database")
         connection.commit()
 
 
@@ -700,9 +698,6 @@ def search_passive_el(
     if conditions:
         query += " AND " + " AND ".join(conditions)
 
-    print(query)
-    print(params)
-
     cursor.execute(query, params)
 
     output = [{**dict(row), "type": "passive"} for row in cursor.fetchall()]
@@ -793,13 +788,8 @@ def search_similar_passive_items_el(
     if conditions:
         query += " AND ".join(conditions) + " ORDER BY value DESC"
 
-    print(query)
-    print(params)
-
     cursor.execute(query, params)
     items = cursor.fetchall()
-    for item in items:
-        print("item: ", item)
 
     output = [{**dict(row), "type": "passive"} for row in items]
     return output
@@ -1103,7 +1093,6 @@ def get_backup_files_el() -> list[str]:
         list[str]: list of backup files
     """
     files = glob.glob("../data/electrical_lab/*.csv")
-    print(files)
     return files
 
 
@@ -1151,8 +1140,5 @@ def backup_data_el(cursor: sqlite3.Cursor) -> None:
         f"../data/electrical_lab/data-{date}.csv", "w", newline="", encoding="utf-8"
     ) as f:
         writer = csv.DictWriter(f, fieldnames=column_names)
-        print(f"Created backup file: data-{date}.csv")
         writer.writeheader()
         writer.writerows(rows)
-
-    print("Backup complete")

@@ -9,7 +9,6 @@ export class ElectricalSearchService {
   constructor(private http: HttpClient) {}
 
   searchSimilarActive(name: string, id: number): Observable<any> {
-    console.log(name, id);
     return this.http.get<any>(
       `http://localhost:3000/electricalFuzzyActive?name=${name}&part_id=${id}`,
     );
@@ -27,7 +26,6 @@ export class ElectricalSearchService {
     item_type: string,
     search_percent: number,
   ): Observable<any> {
-    console.log(value, tolerance, mounting_method, item_type, search_percent);
     return this.http.get<any>(
       `http://localhost:3000/electricalFuzzyPassive?value=${value}&tolerance=${tolerance}&mounting_method=${mounting_method}&item_type=${item_type}&search_percent=${search_percent}`,
     );

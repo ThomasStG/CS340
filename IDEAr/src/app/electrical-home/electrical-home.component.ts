@@ -42,14 +42,12 @@ export class ElectricalHomeComponent {
     unit?: string;
     multiplier?: number;
   }) {
-    console.log(event);
     this.items = event.items;
     this.searched = true;
     this.type = event.type;
     switch (this.type) {
       case 'passive':
         this.unit = event.unit;
-        console.log(this.unit);
         this.subtype = event.subtype;
         if (event.multiplier) {
           for (let i = 0; i < this.items.length; i++) {
@@ -62,15 +60,11 @@ export class ElectricalHomeComponent {
         break;
       case 'active':
         this.items = event.items;
-        console.log(event);
-        console.log(this.items);
-        console.log('active');
         break;
     }
   }
 
   onItemClick(item: any) {
-    console.log('item clicked');
     this.selectedItem = item;
     const PopUp = this.dialog.open(ElectricalItemPopupComponent);
     PopUp.componentInstance.showItem(this.selectedItem);

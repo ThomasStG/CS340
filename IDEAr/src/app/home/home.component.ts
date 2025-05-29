@@ -103,7 +103,7 @@ export class HomeComponent {
 
   ngOnInit(): void {
     /*
-     * Loades the item list 
+     * Loades the item list
      *
      * Args:
      *   None
@@ -154,7 +154,6 @@ export class HomeComponent {
      */
     this.getItemsService.getAllItems().subscribe({
       next: (response: any) => {
-        console.log(response);
         this.items = response.data;
       },
       error: (err: any) => {

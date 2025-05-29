@@ -47,7 +47,6 @@ export class ElectricalItemPopupComponent {
   newItem: ElectricalItemData = { ...this.item };
   ngOnInit() {
     this.darkMode.next(this.utilityService.isDarkMode());
-    console.log(this.item);
   }
 
   showItem(item: any) {

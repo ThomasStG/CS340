@@ -45,7 +45,6 @@ export class ElectricalItemSearchComponent {
       .getElectricalMultiplier()
       .subscribe(
         (data: { type: string; multiplier: string[]; values: number[] }[]) => {
-          console.log(data);
           const found = data.find((item) => item.type === type);
           if (found) {
             this.multipliers = found.multiplier;
@@ -54,8 +53,6 @@ export class ElectricalItemSearchComponent {
               value: this.multiplier_values[0],
               label: this.multipliers[0],
             });
-            console.log(this.multipliers);
-            console.log(this.electricalSearchForm);
           } else {
             this.multipliers = [];
             this.multiplier_values = [];
@@ -80,11 +77,9 @@ export class ElectricalItemSearchComponent {
       return;
     }
     const unit = data.passiveUnit?.label;
-    console.log(this.electricalSearchForm.value);
     const multiplier: number = Number(data.passiveUnit?.value);
     const value: number = Number(data.passiveValue);
     data.passiveValue = value * multiplier;
-    console.log(data);
     switch (action) {
       case 'single':
         this.singleSearch(data, multiplier, unit);
@@ -144,8 +139,6 @@ export class ElectricalItemSearchComponent {
   multiSearch(data: any, multiplier: number, unit?: string) {
     switch (data.type) {
       case 'active':
-        console.log(data.activeName);
-        console.log(data.activeId);
         this.electricalSearchService
           .searchSimilarActive(data.activeName, data.activeId)
           .subscribe((response) => {

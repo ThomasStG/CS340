@@ -40,7 +40,7 @@ export class UserComponent implements OnChanges {
         authorization: String(this.user.level),
       });
     }
-     /*
+    /*
      *  ???
      *
      * Args:
@@ -56,9 +56,7 @@ export class UserComponent implements OnChanges {
     const username = formData.name;
     const password = formData.password;
     const level = Number(formData.authorization);
-    console.log(level);
     if (typeof username === 'string' && typeof password === 'string') {
-      console.log(username, password, level);
       const user: UserData = { username: username, level: level };
       const result = this.authService.updateUser(username, password, level);
 
@@ -83,7 +81,7 @@ export class UserComponent implements OnChanges {
     } else {
       console.warn('Invalid or missing username');
     }
-     /*
+    /*
      * sets values on update
      *
      * Args:
@@ -136,7 +134,7 @@ export class UserComponent implements OnChanges {
     } else {
       console.warn('Invalid or missing username');
     }
-     /*
+    /*
      * updates for deleting user and deisplaying new user list
      *
      * Args:
@@ -161,7 +159,7 @@ export class UserComponent implements OnChanges {
         this.onDelete();
       }
     });
-     /*
+    /*
      * Confirmations for updating or deleting users
      *
      * Args:

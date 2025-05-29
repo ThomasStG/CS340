@@ -101,7 +101,6 @@ def generate_token(username: str, level: int) -> str:
 
         return token
     except Exception as e:
-        print(e)
         raise
 
 
@@ -149,7 +148,6 @@ def import_csv(uri: str) -> None:
                 for row in reader:
                     # Skip empty or malformed rows
                     if len(row) < 13:
-                        print(f"Skipping row (too short): {row}")
                         continue
 
                     try:
@@ -186,10 +184,9 @@ def import_csv(uri: str) -> None:
                                 con,
                             )
                     except Exception as row_err:
-                        print(f"Error processing row {row}: {row_err}")
+                        raise row_err
 
             con.commit()
-            print("Data imported successfully.")
 
     except FileNotFoundError as fnf_error:
         print(fnf_error)
@@ -252,8 +249,6 @@ def add_from_csv(file_stream: bytes) -> None:
             except Exception as row_err:
                 print(f"Error processing row {row}: {row_err}")
 
-        print("Data imported successfully")
-
         con.commit()  # Commit changes
     except Exception as e:
         print(f"Error importing CSV: {e}")
@@ -278,14 +273,34 @@ def parse_location_to_list(item: dict) -> list:
     ]
 
 
-def safe_int(value, default=0):
+def safe_int(value, default=0) -> int:
+    """
+    Safely converts a string to an integer
+
+    Args:
+        value (str): the value to convert
+        default (int, optional): the default value to return if the conversion fails. Defaults to 0.
+
+    Returns:
+        int: the converted value
+    """
     try:
         return int(value)
     except (ValueError, TypeError):
         return default
 
 
-def safe_float(value, default=0.0):
+def safe_float(value, default=0.0) -> float:
+    """
+    Safely converts a string to a float
+
+    Args:
+        value (str): the value to convert
+        default (float, optional): the default value to return if the conversion fails. Defaults to 0.0.
+
+    Returns:
+        float: the converted value
+    """
     try:
         return float(value)
     except (ValueError, TypeError):
@@ -321,7 +336,6 @@ def import_csv_el(uri: str) -> None:
         None
     """
     with sqlite3.connect("../data/data.db") as con:
-        print("Connected to database")
         cur = con.cursor()
         with open(uri, mode="r", encoding="utf-8") as f:
             reader = csv.DictReader(f)
@@ -331,7 +345,6 @@ def import_csv_el(uri: str) -> None:
                 try:
                     match (row["Type"]):
                         case "passive":
-                            print("passive")
                             add_passive_item_el(
                                 value=float(row["Ref Value (Ohms)"]),
                                 max_p=float(row["Max. P (W)"]),
@@ -354,7 +367,6 @@ def import_csv_el(uri: str) -> None:
                                 connection=con,
                             )
                         case "active":
-                            print("active")
                             add_active_item_el(
                                 cursor=cur,
                                 connection=con,

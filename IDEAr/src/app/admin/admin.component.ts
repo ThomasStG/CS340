@@ -80,7 +80,6 @@ export class AdminComponent {
      */
     this.getItemsService.getAllItems().subscribe({
       next: (response: any) => {
-        console.log(response);
         this.items = response.data;
       },
       error: (err: any) => {

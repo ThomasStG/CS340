@@ -240,7 +240,6 @@ def backup_database() -> Tuple[Response, int]:
         Tuple[Response, int]: a message and status code
     """
     try:
-        print("Backing up database...")
         backup_data(get_db().cursor())
 
         return jsonify({"status": "success", "message": "Database backed up"}), 200
@@ -335,7 +334,6 @@ def append_file() -> Tuple[Response, int]:
         Tuple[Response, int]: a message and status code
     """
     try:
-        print("Appending file...")
         data = request.files
         if not data or "file" not in data:
             raise KeyError("Missing required parameters")
@@ -409,7 +407,6 @@ def get_log() -> Tuple[Response, int]:
         log_contents = ""
         for file in os.listdir("../logs"):
             with open(f"../logs/{file}", "r", encoding="utf-8") as f:
-                print(f"Reading log file: {file}")
                 log_contents += f.read()
 
         return jsonify({"status": "success", "log": log_contents}), 200
@@ -446,7 +443,6 @@ def add_passive_el() -> Tuple[Response, int]:
     """
     endpoint to add a passive item
     """
-    print("Adding passive item...")
     return electrical_add_item()
 
 
@@ -455,7 +451,6 @@ def remove_passive_el() -> Tuple[Response, int]:
     """
     endpoint to remove a passive item
     """
-    print("Removing passive item...")
     return remove_passive_item()
 
 
@@ -533,22 +528,33 @@ def find_below_threshold_el() -> Tuple[Response, int]:
 
 @app.route("/getElectricalTooltip", methods=["GET"])
 def get_tooltip_el() -> Tuple[Response, int]:
+    """
+    endpoint to get the tooltip
+    """
     return electrical_get_tooltip()
 
 
 @app.route("/setElectricalTooltip", methods=["POST"])
 def set_tooltip_el() -> Tuple[Response, int]:
-    print("Updating tooltip...")
+    """
+    endpoint to set the tooltip
+    """
     return electrical_update_tooltip()
 
 
 @app.route("/updateMultipliers", methods=["GET"])
 def update_multipliers() -> Tuple[Response, int]:
+    """
+    endpoint to update the multipliers
+    """
     return update_mult()
 
 
 @app.route("/getMultipliers", methods=["GET"])
 def get_multipliers() -> Tuple[Response, int]:
+    """
+    endpoint to get the multipliers
+    """
     return get_mult()
 
 
@@ -586,7 +592,6 @@ def restore_database_el() -> Tuple[Response, int]:
             raise KeyError("Missing required parameters")
 
         file = data["file"]
-        print("Restoring database...")
         refresh_from_csv_el(file)
 
         return jsonify({"status": "success", "message": "Database restored"}), 200
@@ -600,7 +605,6 @@ def append_file_el() -> Tuple[Response, int]:
     endpoint to append a file to the database
     """
     try:
-        print("Appending file...")
         data = request.files
         if not data or "file" not in data:
             raise KeyError("Missing required parameters")
@@ -612,7 +616,6 @@ def append_file_el() -> Tuple[Response, int]:
 
         with open("../data/electrical_lab/append.csv", "w") as f:
             f.write(file_stream.read())
-        print("Appended file 2...")
 
         import_csv_el("../data/electrical_lab/append.csv")
         os.remove("../data/electrical_lab/append.csv")
@@ -662,9 +665,7 @@ def backup_database_el() -> Tuple[Response, int]:
     """
     try:
         cursor = get_db().cursor()
-        print("Backing up database...")
         backup_data_el(cursor)
-        print("Backing up database...")
         return jsonify({"status": "success", "message": "Database backed up"}), 200
     except Exception as e:
         return handle_exceptions(e)
