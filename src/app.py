@@ -35,6 +35,7 @@ Endpoints:
     /get_log: Returns a list of log entries.
 """
 
+import hashlib
 import io
 import logging
 import os
@@ -54,6 +55,7 @@ from auth_endpoints import (
     check_login_state,
     delete_user_route,
     get_all_users,
+    get_salt,
     register_new_user,
     try_login,
 )
@@ -198,33 +200,7 @@ def attempt_login() -> Tuple[Response, int]:
     """
     endpoint to try to log in a user
     """
-    try:
-        data = request.json
-        if data is None or "username" not in data or "password" not in data:
-            raise KeyError("Missing required parameters")
-
-        username = data["username"]
-        password = data["password"]
-        connection = get_db()
-        cursor = connection.cursor()
-        stored_salt = get_salt(username, cursor)
-
-        salt = bytes.fromhex(stored_salt)  # Convert hex string back to bytes
-
-        # Create a SHA-256 hash object
-        hash_object = hashlib.sha256()
-
-        #     # Update the hash object with the salt and password
-        hash_object.update(salt + password.encode("utf-8"))
-
-        #     # Get the hashed password as a hexadecimal string
-        hashed_password = hash_object.hexdigest()
-        token = login(username, hashed_password, cursor, connection)
-        if token == "":
-            raise Exception("Login failed")
-        return jsonify({"status": "success", "token": token}), 200
-    except Exception as e:
-        return handle_exceptions(e)
+    return try_login()
 
 
 @app.route("/isLoggedIn", methods=["POST"])

@@ -13,6 +13,7 @@ It includes functions to:
 """
 
 import datetime
+import hashlib
 import os
 import sqlite3
 
