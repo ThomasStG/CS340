@@ -506,6 +506,22 @@ def fuzzy_find_active_el() -> Tuple[Response, int]:
     return fuzzy_find_active_item()
 
 
+@app.route("/electricalFindAssembly", methods=["GET"])
+def find_assembly_el() -> Tuple[Response, int]:
+    """
+    endpoint to find an assembly
+    """
+    return find_active_item(True)
+
+
+@app.route("/electricalFuzzyAssembly", methods=["GET"])
+def fuzzy_find_assembly_el() -> Tuple[Response, int]:
+    """
+    endpoint to fuzzy find assemblies
+    """
+    return fuzzy_find_active_item(True)
+
+
 @app.route("/electricalFindBelowThreshold", methods=["POST"])
 def find_below_threshold_el() -> Tuple[Response, int]:
     """

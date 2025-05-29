@@ -692,6 +692,8 @@ def search_passive_el(
 def search_active_el(
     cursor: sqlite3.Cursor,
     item_id: Optional[int] = None,
+    is_assembly: bool = False,
+    subtype: Optional[str] = None,
     name: Optional[str] = None,
 ) -> list:
     """
@@ -705,9 +707,10 @@ def search_active_el(
     Returns:
         list: List of active items that match the search criteria.
     """
-    query = "SELECT * FROM electrical_active_items WHERE location = 'EL'"
+    query = "SELECT * FROM electrical_active_items WHERE location = 'EL' AND is_assembly = ?"
     conditions = []
     params = []
+    params.append(is_assembly)
 
     if item_id:
         conditions.append("id = ?")
@@ -715,6 +718,9 @@ def search_active_el(
     if name:
         conditions.append("name = ?")
         params.append(name)
+    if subtype:
+        conditions.append("subtype = ?")
+        params.append(subtype)
 
     if conditions:
         query += " AND ".join(conditions)
@@ -784,6 +790,7 @@ def search_similar_active_items_el(
     name: Optional[str] = "",
     part_id: Optional[str] = "",
     is_assembly: bool = False,
+    subtype: Optional[str] = None,
     top_n: int = 10,
 ) -> list:
     """
@@ -804,6 +811,13 @@ def search_similar_active_items_el(
         name = name.strip().lower()
     if part_id:
         part_id = part_id.strip().lower()
+    query = "SELECT * FROM electrical_active_items WHERE location = 'EL' AND is_assembly = ?"
+    params = []
+    params.append(is_assembly)
+    if subtype:
+        subtype = subtype.strip().lower()
+        query += " AND subtype = ?"
+        params.append(subtype)
 
     # Initial query to get all data from the database
     cursor.execute(

@@ -13,6 +13,7 @@
         <option selected disabled value="">Select a type</option>
         <option value="passive">Passive</option>
         <option value="active">Active</option>
+        <option value="assembly">Assembly</option>
       </select>
     </div>
     <div class="flex flex-wrap flex-grow justify-center gap-4">
@@ -91,7 +92,7 @@
       </div>
       <div
         class="flex  align-center gap-4"
-        *ngIf="electricalSearchForm.get('type')?.value === 'active'"
+        *ngIf="electricalSearchForm.get('type')?.value === 'active' || electricalSearchForm.get('type')?.value === 'assembly'"
       >
         <div class="flex flex-col">
           <div class="flex  align-center gap-4">
@@ -110,6 +111,18 @@
                 type="text"
                 formControlName="activeId"
               />
+            </div>
+            <div *ngIf="electricalSearchForm.get('type')?.value === 'assembly'">
+              <label>Type:</label>
+              <select
+                id="assemblyType"
+                formControlName="assemblyType"
+                class="text-black dark:text-white bg-gray-100 hover:bg-gray-300 dark:hover:bg-gray-700 dark:bg-gray-600 border border-gray-500 rounded-md"
+              >
+                <option value="">Any</option>
+                <option value="mechanical">Mechanical</option>
+                <option value="electrical">Electrical</option>
+              </select>
             </div>
           </div>
 

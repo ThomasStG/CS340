@@ -219,24 +219,34 @@ def find_passive_item():
         return handle_exceptions(e)
 
 
-def find_active_item():
+def find_active_item(is_assembly: bool = False):
     try:
         print("Finding active item...")
         data = request.get_json()
         if not data or "name" not in data and "part_id" not in data:
             raise KeyError("Missing required parameters")
+        if is_assembly and "subtype" in data:
+            subtype = data["subtype"]
         cursor = get_db().cursor()
         if "part_id" in data:
             part_id = data["part_id"]
             return (
                 jsonify(
-                    {"status": "success", "item": search_active_el(cursor, part_id)}
+                    {
+                        "status": "success",
+                        "item": search_active_el(cursor, part_id, is_assembly, subtype),
+                    }
                 ),
                 200,
             )
         name = data["name"]
         return (
-            jsonify({"status": "success", "item": search_active_el(cursor, name)}),
+            jsonify(
+                {
+                    "status": "success",
+                    "item": search_active_el(cursor, name, is_assembly, subtype),
+                }
+            ),
             200,
         )
     except Exception as e:
@@ -304,15 +314,16 @@ def fuzzy_find_passive_item():
         return handle_exceptions(e)
 
 
-def fuzzy_find_active_item():
+def fuzzy_find_active_item(is_assembly: bool = False):
     try:
         print("Fuzzy finding active item...")
         data = request.args
         if not data or "name" not in data and "part_id" not in data:
-            print(data)
             raise KeyError("Missing required parameters")
         cursor = get_db().cursor()
-        print(data)
+        subtype = None
+        if is_assembly and "subtype" in data:
+            subtype = data["subtype"]
         if "part_id" in data:
             part_id = data["part_id"]
             print(part_id)
@@ -320,7 +331,9 @@ def fuzzy_find_active_item():
                 jsonify(
                     {
                         "status": "success",
-                        "items": search_similar_active_items_el(cursor, part_id),
+                        "items": search_similar_active_items_el(
+                            cursor, part_id, is_assembly=is_assembly, subtype=subtype
+                        ),
                     }
                 ),
                 200,
@@ -330,7 +343,9 @@ def fuzzy_find_active_item():
             jsonify(
                 {
                     "status": "success",
-                    "items": search_similar_active_items_el(cursor, name),
+                    "items": search_similar_active_items_el(
+                        cursor, name, is_assembly=is_assembly, subtype=subtype
+                    ),
                 }
             ),
             200,
