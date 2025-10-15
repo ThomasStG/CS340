@@ -80,3 +80,11 @@ npx tailwindcss init -p
 ```
 
 For more details, check the [Tailwind CSS Documentation](https://tailwindcss.com/docs/installation/using-vite).
+
+## How to run
+```sh
+cd idear
+npm start
+cd ../src
+python3 main.py OR py main.py
+```
